@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>¿Qué cocino hoy? | Cocina sin líos con Macarena</title>
+<meta name="description" content="Elige tiempo y antojo y deja que Cocina sin líos te proponga ideas para cocinar hoy.">
+<link rel="canonical" href="https://cocinasinlios.github.io/que-cocino.html">
+<style>
+:root{--cream:#fbf6ee;--paper:#fffdfa;--ink:#25251f;--muted:#706f67;--dark:#2b3a30;--sage:#dce8d8;--peach:#f1d8c6;--butter:#f2df9d;--pink:#edd6d7;--terr:#d36f4b;--line:#e8dfd2}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.5}a{color:inherit;text-decoration:none}.wrap{width:min(1060px,92vw);margin:auto}h1,h2,h3{font-family:Georgia,serif;font-weight:500;line-height:1.03}.eyebrow{font-size:11px;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;color:#687769}
+header{position:sticky;top:0;z-index:30;background:rgba(251,246,238,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.nav{height:70px;display:flex;align-items:center;gap:20px}.brand{font-family:Georgia,serif;font-size:23px;font-weight:700;line-height:.95}.brand small{display:block;font-family:Inter,sans-serif;font-size:9px;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted);margin-top:6px}.back{margin-left:auto;font-weight:850;font-size:13px}
+.hero{padding:58px 0 26px;text-align:center}.hero h1{font-size:clamp(52px,7vw,82px);letter-spacing:-2.8px;margin:8px auto 15px;max-width:850px}.hero p{color:var(--muted);font-size:17px;max-width:700px;margin:auto}
+.game{padding:24px 0 70px}.panel{background:var(--paper);border:1px solid var(--line);border-radius:32px;padding:34px;box-shadow:0 18px 55px rgba(58,51,42,.08)}.question{margin-bottom:28px}.question h2{font-size:32px;margin:0 0 13px}.choices{display:flex;flex-wrap:wrap;gap:9px}.choice{border:1px solid var(--line);background:white;border-radius:999px;padding:11px 15px;font-weight:850;cursor:pointer}.choice.active{background:var(--dark);color:white;border-color:var(--dark)}
+.go{width:100%;border:0;background:var(--terr);color:white;border-radius:18px;padding:16px;font-weight:900;font-size:15px;cursor:pointer;margin-top:10px}.go:hover{filter:brightness(.96)}
+.results{display:none;margin-top:38px}.results.show{display:block}.results-head{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:18px}.results h2{font-size:39px;margin:0}.again{border:0;background:var(--butter);border-radius:999px;padding:9px 13px;font-weight:900;cursor:pointer}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.card{background:white;border-radius:25px;overflow:hidden;border:1px solid var(--line);box-shadow:0 8px 25px rgba(57,51,43,.05)}.photo{height:220px;background-image:url("assets/sprite.webp");background-repeat:no-repeat;background-size:300% 200%}.body{padding:19px}.body small{font-size:10px;text-transform:uppercase;letter-spacing:1.2px;font-weight:900;color:#718071}.body h3{font-size:27px;margin:7px 0 8px}.body p{font-size:13px;color:var(--muted);margin:0 0 13px}.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;background:var(--dark);color:white;padding:11px 15px;font-size:12px;font-weight:900}.real-hummus{background-image:url("assets/hummus.webp");background-size:cover;background-position:center}.real-pasta{background-image:url("assets/pasta.webp");background-size:cover;background-position:center}.real-tortitas{background-image:url("assets/tortitas.webp");background-size:cover;background-position:center}
+.note{margin-top:22px;background:var(--sage);border-radius:20px;padding:18px;font-size:13px;color:#566158}
+footer{background:#202b24;color:#dce5df;padding:40px 0}footer p{color:#aebbb3;font-size:12px}
+@media(max-width:760px){.grid{grid-template-columns:1fr}.photo{height:280px}.panel{padding:25px}.results-head{display:block}.again{margin-top:10px}}
+@media(max-width:520px){.hero h1{font-size:47px}.back{display:none}.question h2{font-size:27px}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav"><a class="brand" href="/">Cocina sin líos<small>con Macarena</small></a><a class="back" href="/">← Volver</a></div></header>
+<main>
+<section class="hero"><div class="wrap"><div class="eyebrow">El anti “no sé qué hacer”</div><h1>Vale, ¿qué cocinamos hoy?</h1><p>Dime cuánto tiempo tienes y qué te pide el cuerpo. Yo te doy tres ideas para que dejes de mirar la nevera como si fuera a contestarte.</p></div></section>
+<section class="game"><div class="wrap panel">
+<div class="question"><h2>1. ¿Cuánto tiempo tienes?</h2><div class="choices" data-group="time"><button class="choice active" data-value="15">Voy tarde · 15 min</button><button class="choice" data-value="30">Tengo media hora</button><button class="choice" data-value="60">Hoy puedo cocinar</button></div></div>
+<div class="question"><h2>2. ¿Qué te apetece?</h2><div class="choices" data-group="mood"><button class="choice active" data-value="salado">Algo salado</button><button class="choice" data-value="ligero">Algo ligero</button><button class="choice" data-value="comfort">Comida de abrazo</button><button class="choice" data-value="dulce">Dame dulce</button><button class="choice" data-value="daigual">Sorpréndeme</button></div></div>
+<div class="question"><h2>3. ¿Qué quieres conseguir?</h2><div class="choices" data-group="goal"><button class="choice active" data-value="rapido">Resolver hoy</button><button class="choice" data-value="aprovechar">Aprovechar lo que tengo</button><button class="choice" data-value="aprender">Aprender algo con Thermomix</button></div></div>
+<button id="go" class="go">Dame tres ideas ✦</button>
+<div id="results" class="results"><div class="results-head"><h2>Esto haría yo hoy.</h2><button id="again" class="again">🎲 Dame otras</button></div><div id="grid" class="grid"></div><div class="note">No tienes que elegir “la receta perfecta”. El objetivo es pasar de <b>“no sé qué hacer”</b> a tener tres opciones razonables en diez segundos.</div></div>
+</div></section>
+</main>
+<footer><div class="wrap"><b>Cocina sin líos con Macarena</b><p>Ideas de cocina doméstica. Las recetas completas publicadas incluyen explicación y recomendaciones específicas.</p></div></footer>
+<script>
+const data=[
+{title:"Hummus cremoso",time:15,mood:["salado","ligero"],goal:["rapido","aprender","aprovechar"],desc:"Con garbanzos cocidos y poco más montas una cena o picoteo.",url:"/receta-hummus.html",photo:"real-hummus",learn:"textura y triturado"},
+{title:"Pasta pesto para repetir",time:30,mood:["salado","comfort"],goal:["rapido","aprender"],desc:"Una cena agradecida y una buena excusa para entender una salsa.",url:"/receta-pasta-pesto.html",photo:"real-pasta",learn:"emulsión y textura"},
+{title:"Tortitas de domingo",time:30,mood:["dulce","comfort"],goal:["rapido","aprender"],desc:"Desayuno, merienda o rescate emocional de martes.",url:"/receta-tortitas.html",photo:"real-tortitas",learn:"mezcla y reposo"},
+{title:"Salmón con verduras",time:30,mood:["salado","ligero"],goal:["rapido","aprender"],desc:"Plato completo con muy poca conversación interna.",url:"/recetas.html?f=cena",photo:"p4",learn:"cocción coordinada"},
+{title:"Albóndigas con tomate",time:60,mood:["salado","comfort"],goal:["aprender","aprovechar"],desc:"Para cocinar una vez y agradecerlo dos días.",url:"/recetas.html?f=organiza",photo:"p5",learn:"carne y movimiento"},
+{title:"Crema de verduras",time:30,mood:["salado","ligero","comfort"],goal:["aprovechar","aprender"],desc:"Perfecta para vaciar verduras y practicar texturas.",url:"/recetas.html?f=vegetal",photo:"p1",learn:"triturado y cantidad"},
+{title:"Pizza fácil",time:60,mood:["salado","comfort"],goal:["aprender"],desc:"Para una noche de pizza sin necesidad de llamar a nadie.",url:"/recetas.html?f=cena",photo:"p2",learn:"masa y fermentación"},
+{title:"Avena con frutos rojos",time:15,mood:["dulce","ligero"],goal:["rapido","aprovechar"],desc:"Desayuno que se deja preparado antes de que empiece el caos.",url:"/recetas.html?f=organiza",photo:"p3",learn:"proporción y reposo"},
+{title:"Quiche de verduras",time:60,mood:["salado","comfort"],goal:["aprovechar","aprender"],desc:"Buenísima para convertir restos de verduras en una cena decente.",url:"/recetas.html?f=cena",photo:"p6",learn:"cuajado y aprovechamiento"}
+];
+let state={time:"15",mood:"salado",goal:"rapido"};
+document.querySelectorAll(".choices").forEach(group=>group.querySelectorAll(".choice").forEach(btn=>btn.addEventListener("click",()=>{group.querySelectorAll(".choice").forEach(x=>x.classList.remove("active"));btn.classList.add("active");state[group.dataset.group]=btn.dataset.value})));
+function render(){
+ let pool=data.filter(x=>x.time<=Number(state.time)&& (state.mood==="daigual"||x.mood.includes(state.mood)) && x.goal.includes(state.goal));
+ if(pool.length<3) pool=data.filter(x=>x.time<=Math.max(Number(state.time),30) && (state.mood==="daigual"||x.mood.includes(state.mood)));
+ if(pool.length<3) pool=data.filter(x=>x.time<=60);
+ pool=[...pool].sort(()=>Math.random()-.5).slice(0,3);
+ const g=document.getElementById("grid");g.innerHTML=pool.map(x=>'<article class="card"><div class="photo '+x.photo+'"></div><div class="body"><small>'+x.time+' min · aprendes '+x.learn+'</small><h3>'+x.title+'</h3><p>'+x.desc+'</p><a class="btn" href="'+x.url+'">Ver idea</a></div></article>').join("");
+ document.getElementById("results").classList.add("show");document.getElementById("results").scrollIntoView({behavior:"smooth",block:"start"});
+}
+document.getElementById("go").addEventListener("click",render);document.getElementById("again").addEventListener("click",render);
+</script>
+</body></html>
