@@ -3,197 +3,80 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Cocina sin líos con Macarena | Thermomix sin complicarte</title>
-<meta name="description" content="Recetas, menús y explicaciones claras para entender tu Thermomix, organizarte y cocinar sin complicarte. Con Macarena, agente comercial oficial Thermomix.">
+<title>Cocina sin líos con Macarena | Recetas, Thermomix y cocina real</title>
+<meta name="description" content="Recetas que apetecen, menús que solucionan la semana y explicaciones para entender tu Thermomix de verdad. Cocina sin líos con Macarena.">
 <meta name="robots" content="index,follow">
-<meta name="theme-color" content="#f7f2e9">
+<meta name="theme-color" content="#fbf6ee">
 <link rel="canonical" href="https://cocinasinlios.github.io/">
 <meta property="og:title" content="Cocina sin líos con Macarena">
-<meta property="og:description" content="Aprende a entender tu Thermomix, no solo a seguirla: recetas, organización y explicaciones claras de lo que ocurre dentro.">
+<meta property="og:description" content="Recetas, cocina real y Thermomix explicada para que cocinar te resulte más fácil y más apetecible.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://cocinasinlios.github.io/">
 <style>
 :root{
- --cream:#f7f2e9;--paper:#fffdf9;--ink:#22231f;--muted:#6d7068;--sage:#dfe8dc;
- --sage2:#eef3eb;--olive:#61705f;--dark:#26352c;--terr:#c56f4e;--sand:#e7d8c3;
- --line:#e5ded3;--white:#fff;--shadow:0 18px 60px rgba(45,49,40,.11)
+ --cream:#fbf6ee;--paper:#fffdfa;--ink:#25251f;--muted:#706f67;--dark:#2b3a30;
+ --sage:#dce8d8;--sage2:#eef5eb;--terr:#d36f4b;--peach:#f1d8c6;--butter:#f2df9d;
+ --pink:#f0d8d5;--line:#e8dfd2;--shadow:0 18px 55px rgba(58,51,42,.12)
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;background:var(--cream);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.55}
-a{color:inherit;text-decoration:none}
-img{max-width:100%;display:block}
-.wrap{width:min(1180px,92vw);margin:auto}
-.serif,h1,h2,h3{font-family:Georgia,"Times New Roman",serif}
-.eyebrow{font-size:12px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:var(--olive)}
-.topbar{background:var(--dark);color:#eef3eb;text-align:center;font-size:12px;padding:9px 15px;letter-spacing:.2px}
-header{position:sticky;top:0;z-index:50;background:rgba(247,242,233,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(38,53,44,.08)}
-.nav{height:76px;display:flex;align-items:center;gap:28px}
-.brand{font-size:26px;font-weight:700;letter-spacing:-.8px;line-height:.95}
-.brand small{display:block;font-family:Inter,ui-sans-serif,sans-serif;font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-top:6px}
-nav{margin-left:auto;display:flex;gap:24px;font-size:14px}
-nav a{position:relative}
-nav a:after{content:"";position:absolute;left:0;right:100%;bottom:-7px;height:1px;background:var(--dark);transition:.25s}
-nav a:hover:after{right:0}
-.navcta,.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;font-weight:800;transition:.2s}
-.navcta{background:var(--dark);color:white;padding:11px 17px;font-size:13px}
-.navcta:hover,.btn.primary:hover{transform:translateY(-1px);box-shadow:0 8px 22px rgba(38,53,44,.16)}
+a{color:inherit;text-decoration:none}.wrap{width:min(1180px,92vw);margin:auto}
+h1,h2,h3,.serif{font-family:Georgia,"Times New Roman",serif;font-weight:500}
+.eyebrow{font-size:11px;font-weight:900;letter-spacing:1.55px;text-transform:uppercase;color:#6b7a6b}
+.topbar{background:#d6734f;color:#fff7f1;text-align:center;padding:8px 14px;font-size:12px;font-weight:700}
+header{position:sticky;top:0;z-index:60;background:rgba(251,246,238,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(50,52,45,.07)}
+.nav{height:74px;display:flex;align-items:center;gap:26px}.brand{font-size:26px;line-height:.95;font-weight:700;letter-spacing:-.8px}.brand small{display:block;font-family:Inter,sans-serif;font-size:9px;text-transform:uppercase;letter-spacing:2px;color:var(--muted);margin-top:7px}
+nav{margin-left:auto;display:flex;gap:22px;font-size:13px;font-weight:700}nav a:hover{color:var(--terr)}
+.navcta,.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;font-weight:900;transition:.2s}.navcta{background:var(--dark);color:white;padding:11px 17px;font-size:13px}.btn{padding:13px 19px;font-size:13px;border:1px solid var(--dark)}.btn.primary{background:var(--dark);color:white}.btn.light{background:white;border-color:white}.btn.ghost{background:transparent}
 .mobile-nav{display:none}
-.hero{padding:72px 0 44px}
-.hero-grid{display:grid;grid-template-columns:.94fr 1.06fr;gap:58px;align-items:center}
-.hero-copy{padding:20px 0}
-h1{font-size:clamp(48px,6.2vw,82px);line-height:.98;letter-spacing:-3.1px;margin:10px 0 22px;max-width:710px;font-weight:500}
-.hero-copy p{font-size:19px;line-height:1.65;color:var(--muted);max-width:640px;margin:0}
-.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
-.btn{padding:14px 20px;border:1px solid var(--dark);font-size:14px}
-.btn.primary{background:var(--dark);color:white}
-.btn.secondary{background:rgba(255,255,255,.65)}
-.hero-visual{position:relative}
-.hero-photo{border-radius:34px;overflow:hidden;box-shadow:var(--shadow);aspect-ratio:4/5;background:#ddd}
-.hero-photo img{width:100%;height:100%;object-fit:cover}
-.hero-note{position:absolute;left:-24px;bottom:28px;background:rgba(255,253,249,.96);padding:18px 20px;border-radius:18px;box-shadow:0 12px 35px rgba(42,46,39,.13);max-width:250px}
-.hero-note strong{display:block;font-family:Georgia,serif;font-size:19px;margin-bottom:4px}
-.hero-note span{font-size:12px;color:var(--muted)}
-.trustline{display:flex;gap:22px;flex-wrap:wrap;margin-top:27px;font-size:12px;color:var(--muted)}
-.trustline b{color:var(--dark)}
-.quick{padding:30px 0 58px}
-.quick-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}
-.quick-card{background:rgba(255,255,255,.72);border:1px solid var(--line);border-radius:20px;padding:20px;min-height:126px;transition:.2s}
-.quick-card:hover{transform:translateY(-3px);background:#fff;box-shadow:0 10px 30px rgba(45,49,40,.07)}
-.quick-card .icon{font-size:22px;margin-bottom:17px}.quick-card b{display:block;font-size:15px;margin-bottom:5px}.quick-card span{font-size:13px;color:var(--muted)}
-section{padding:78px 0}
-.section-head{display:grid;grid-template-columns:1fr .9fr;gap:50px;align-items:end;margin-bottom:34px}
-.section-head h2{font-size:clamp(38px,4.5vw,58px);line-height:1.02;letter-spacing:-1.6px;margin:7px 0 0;font-weight:500}
-.section-head p{margin:0;color:var(--muted);max-width:540px;font-size:16px}
-.editorial{background:var(--paper)}
-.editorial-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:20px}
-.feature-card{position:relative;min-height:520px;border-radius:30px;overflow:hidden;background:var(--dark);color:white}
-.feature-image{position:absolute;inset:0;background-image:linear-gradient(to top,rgba(20,29,23,.78) 4%,rgba(20,29,23,.08) 65%),url("assets/hero-tm.webp");background-size:cover;background-position:center}
-.feature-content{position:absolute;left:34px;right:34px;bottom:31px}
-.feature-content h3{font-size:40px;line-height:1;margin:8px 0 12px;font-weight:500}
-.feature-content p{max-width:560px;color:#eef4ee;margin:0 0 18px}
-.side-stack{display:grid;grid-template-rows:1fr 1fr;gap:20px}
-.soft-card{border-radius:28px;padding:29px;background:var(--sage2);display:flex;flex-direction:column;justify-content:space-between;min-height:250px}
-.soft-card.peach{background:#efe1d5}
-.soft-card h3{font-size:30px;line-height:1.05;margin:8px 0}
-.soft-card p{color:var(--muted);margin:0}
-.arrow{font-size:22px}
-.recipes{background:#f1e8db}
-.recipe-grid{display:grid;grid-template-columns:1.2fr .8fr .8fr;gap:17px}
-.recipe{background:#fff;border-radius:27px;overflow:hidden;box-shadow:0 8px 26px rgba(45,49,40,.05)}
-.recipe-photo{height:265px;background-image:url("assets/sprite.webp");background-repeat:no-repeat;background-size:300% 200%}
-.recipe:first-child .recipe-photo{height:390px}
-.hummus{background-position:50% 0}
-.pasta{background-position:100% 0}
-.pancakes{background-position:0 100%}
-.batch{background-position:50% 100%}
-.pizza{background-position:100% 100%}
-.aboutphoto{background-position:0 0}
-.recipe-body{padding:22px 23px 24px}
-.recipe-body small{font-size:11px;text-transform:uppercase;letter-spacing:1.2px;color:var(--olive);font-weight:800}
-.recipe-body h3{font-size:28px;margin:7px 0 8px;font-weight:500}
-.recipe-body p{color:var(--muted);font-size:14px;margin:0}
-.master{background:var(--dark);color:white}
-.master-grid{display:grid;grid-template-columns:.86fr 1.14fr;gap:55px;align-items:center}
-.master-photo{min-height:520px;border-radius:30px;background-image:url("assets/hero-tm.webp");background-size:cover;background-position:48% 35%;box-shadow:0 18px 55px rgba(0,0,0,.18)}
-.master h2{font-size:clamp(42px,5vw,63px);line-height:1.02;margin:8px 0 22px;font-weight:500}
-.master p{color:#d9e2dc;font-size:17px}
-.master-list{display:grid;grid-template-columns:1fr 1fr;gap:9px 20px;margin:26px 0 28px;padding:0;list-style:none}
-.master-list li{border-top:1px solid rgba(255,255,255,.16);padding:12px 0;font-size:14px}
-.master .btn{border-color:white}.master .btn.secondary{color:white;background:transparent}
-.week{background:var(--paper)}
-.week-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:24px;align-items:stretch}
-.week-photo{min-height:500px;border-radius:30px;background-image:url("assets/sprite.webp");background-size:300% 200%;background-position:50% 100%;background-repeat:no-repeat}
-.week-copy{border-radius:30px;background:var(--sage);padding:50px}
-.week-copy h2{font-size:51px;line-height:1.02;font-weight:500;margin:8px 0 18px}
-.week-copy p{color:#526155;font-size:17px}
-.week-points{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:28px}
-.week-point{background:rgba(255,255,255,.5);border-radius:16px;padding:15px;font-size:13px;font-weight:700}
-.tm7{padding-top:90px}
-.tm7box{background:#e8d9c8;border-radius:34px;padding:55px;display:grid;grid-template-columns:1.12fr .88fr;gap:45px}
-.tm7box h2{font-size:50px;line-height:1.04;margin:8px 0 20px;font-weight:500}
-.tm7box p{color:#665f55;font-size:17px}
-.faqs{display:grid;gap:10px}
-.faq{background:rgba(255,255,255,.7);border-radius:16px;padding:17px 18px;font-size:14px;font-weight:800}
-.about{background:var(--paper)}
-.about-grid{display:grid;grid-template-columns:.78fr 1.22fr;gap:55px;align-items:center}
-.about-img{min-height:555px;border-radius:32px;background-image:url("assets/sprite.webp");background-size:300% 200%;background-position:0 0;background-repeat:no-repeat}
-.about h2{font-size:55px;line-height:1.02;margin:8px 0 20px;font-weight:500}
-.about p{color:var(--muted);font-size:17px;max-width:650px}
-.quote{font-family:Georgia,serif;font-size:25px;line-height:1.35;color:var(--dark);border-left:2px solid var(--terr);padding-left:20px;margin:25px 0}
-.consult{padding-top:15px}
-.consult-box{background:#cb714f;color:white;border-radius:32px;padding:52px;display:grid;grid-template-columns:1.25fr .75fr;gap:30px;align-items:center}
-.consult-box h2{font-size:48px;line-height:1.02;margin:7px 0 12px;font-weight:500}
-.consult-box p{color:#fff1eb;margin:0;max-width:650px}
-.consult-box .btn{background:white;color:var(--dark);border-color:white}
-.legal{padding:28px 0 0;font-size:12px;color:var(--muted)}
-footer{margin-top:65px;background:#1f2b24;color:#dbe4dd;padding:48px 0}
-.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:35px}
-footer .brand{color:white}footer a{color:#dbe4dd}footer p{color:#aebbb3;font-size:13px}
-.wa-float{position:fixed;right:18px;bottom:18px;z-index:70;width:56px;height:56px;border-radius:50%;background:#1f6c4b;color:#fff;display:grid;place-items:center;box-shadow:0 12px 30px rgba(25,62,45,.28);font-weight:900;font-size:20px}
 
-.method{background:var(--paper);padding-top:32px}
-.method-shell{border:1px solid var(--line);border-radius:30px;padding:34px;background:linear-gradient(145deg,#fffdf9,#f2eee6)}
-.method-title{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:end;margin-bottom:28px}
-.method-title h2{font-size:47px;line-height:1.02;margin:7px 0 0;font-weight:500}
-.method-title p{margin:0;color:var(--muted);font-size:16px}
-.method-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
-.method-step{background:white;border:1px solid var(--line);border-radius:19px;padding:19px;min-height:150px}
-.method-step b{font-family:Georgia,serif;font-size:24px;display:block;margin:7px 0}
-.method-step span{font-size:13px;color:var(--muted)}
-.method-step em{font-style:normal;font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:var(--terr);font-weight:800}
+.hero{padding:50px 0 30px}.hero-grid{display:grid;grid-template-columns:.88fr 1.12fr;gap:44px;align-items:center}
+.hero-copy{padding:14px 0}.hero h1{font-size:clamp(50px,6.4vw,86px);line-height:.94;letter-spacing:-3.4px;margin:10px 0 21px}.hero p{font-size:18px;color:var(--muted);max-width:620px;margin:0}
+.actions{display:flex;flex-wrap:wrap;gap:11px;margin-top:25px}.mini-proof{display:flex;gap:16px;flex-wrap:wrap;margin-top:25px;color:var(--muted);font-size:12px}.mini-proof b{color:var(--terr)}
+.hero-collage{display:grid;grid-template-columns:1.1fr .9fr;grid-template-rows:260px 260px;gap:14px;position:relative}
+.tile{border-radius:28px;overflow:hidden;background-image:url("assets/sprite.webp");background-repeat:no-repeat;background-size:300% 200%;box-shadow:var(--shadow)}
+.tile.one{grid-row:1/3;background-position:50% 0}.tile.two{background-position:100% 0}.tile.three{background-position:0 100%}
+.sticker{position:absolute;right:18px;bottom:20px;background:var(--butter);padding:13px 16px;border-radius:999px;transform:rotate(-3deg);font-family:Georgia,serif;font-size:17px;box-shadow:0 8px 25px rgba(45,40,34,.12)}
+.sticker strong{font-weight:500}
 
-.inside{background:#f0e8dc}
-.inside-grid{display:grid;grid-template-columns:.96fr 1.04fr;gap:30px;align-items:stretch}
-.inside-visual{position:relative;min-height:620px;border-radius:32px;overflow:hidden;background-image:linear-gradient(to top,rgba(21,28,24,.36),rgba(21,28,24,.02)),url("assets/hero-tm.webp");background-size:cover;background-position:center}
-.inside-badge{position:absolute;left:24px;top:24px;background:rgba(255,253,249,.94);border-radius:16px;padding:13px 15px;max-width:240px;box-shadow:0 10px 30px rgba(0,0,0,.09)}
-.inside-badge strong{display:block;font-family:Georgia,serif;font-size:20px}
-.inside-badge span{font-size:12px;color:var(--muted)}
-.inside-panel{background:var(--paper);border-radius:32px;padding:36px;display:flex;flex-direction:column}
-.inside-panel h2{font-size:48px;line-height:1.02;margin:7px 0 14px;font-weight:500}
-.inside-panel>p{color:var(--muted);margin:0 0 24px}
-.inside-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
-.inside-tab{border:1px solid var(--line);background:white;border-radius:999px;padding:10px 13px;font-weight:800;font-size:12px;cursor:pointer}
-.inside-tab.active{background:var(--dark);border-color:var(--dark);color:white}
-.inside-card{margin-top:auto;background:var(--sage2);border-radius:24px;padding:25px;min-height:265px}
-.inside-card small{font-size:11px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:var(--olive)}
-.inside-card h3{font-size:31px;line-height:1.05;margin:8px 0 12px;font-weight:500}
-.inside-card p{color:#546158;margin:0 0 16px}
-.inside-translate{background:white;border-radius:16px;padding:15px;font-size:13px}
-.inside-translate b{display:block;margin-bottom:4px;color:var(--dark)}
-.inside-note{font-size:11px;color:var(--muted);margin-top:15px}
+.explore{padding:34px 0 68px}.explore h2{font-size:32px;margin:0 0 18px}.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{padding:11px 15px;border-radius:999px;background:white;border:1px solid var(--line);font-weight:800;font-size:13px;transition:.2s}.chip:hover{transform:translateY(-2px);background:var(--sage2)}
 
-.fade{opacity:0;transform:translateY(16px);transition:.6s ease}.fade.in{opacity:1;transform:none}
-@media(max-width:900px){
- nav{display:none}.mobile-nav{display:block;margin-left:auto}.navcta{display:none}
- .hero-grid,.section-head,.editorial-grid,.master-grid,.week-grid,.tm7box,.about-grid,.consult-box,.footer-grid,.method-title,.inside-grid{grid-template-columns:1fr}
- .hero{padding-top:42px}.hero-copy{order:2}.hero-visual{order:1}.hero-photo{aspect-ratio:4/4.4}.hero-note{left:14px;bottom:14px}
- .quick-grid{grid-template-columns:1fr 1fr}.recipe-grid{grid-template-columns:1fr 1fr}.recipe:first-child{grid-column:1/-1}
- .recipe:first-child .recipe-photo{height:340px}.master-photo,.week-photo,.about-img{min-height:430px}
- .tm7box,.week-copy,.consult-box{padding:34px}.master-list{grid-template-columns:1fr}.method-steps{grid-template-columns:1fr 1fr}.inside-visual{min-height:460px}
-}
-@media(max-width:580px){
- .wrap{width:min(94vw,1180px)}.topbar{font-size:11px}.nav{height:68px}.brand{font-size:23px}
- h1{font-size:47px;letter-spacing:-2px}.hero-copy p{font-size:17px}.hero-note{max-width:220px}
- .quick-grid,.recipe-grid,.week-points{grid-template-columns:1fr}.recipe:first-child{grid-column:auto}
- section{padding:62px 0}.section-head h2{font-size:40px}.feature-card{min-height:460px}.feature-content{left:24px;right:24px}
- .feature-content h3{font-size:34px}.recipe-photo,.recipe:first-child .recipe-photo{height:300px}
- .master-photo,.week-photo,.about-img{min-height:380px}.master h2,.about h2,.week-copy h2,.tm7box h2,.consult-box h2{font-size:40px}
- .tm7box,.week-copy,.consult-box{padding:27px}.actions{flex-direction:column}.btn{width:100%}.trustline{gap:11px}.method-shell,.inside-panel{padding:24px}.method-title h2,.inside-panel h2{font-size:38px}.method-steps{grid-template-columns:1fr}.inside-visual{min-height:360px}
-}
+.magazine{background:var(--paper);padding:76px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:30px}.section-head h2{font-size:clamp(38px,4.8vw,60px);line-height:1;margin:6px 0 0;letter-spacing:-1.7px}.section-head p{max-width:470px;color:var(--muted);margin:0}
+.mag-grid{display:grid;grid-template-columns:1.08fr .92fr .92fr;grid-auto-rows:255px;gap:16px}.mag-card{position:relative;border-radius:27px;overflow:hidden;background:white}.mag-card.big{grid-row:span 2}.mag-photo{position:absolute;inset:0;background-image:url("assets/sprite.webp");background-repeat:no-repeat;background-size:300% 200%;transition:transform .35s}.mag-card:hover .mag-photo{transform:scale(1.035)}
+.mag1{background-position:100% 0}.mag2{background-position:50% 0}.mag3{background-position:100% 100%}.mag4{background-position:0 100%}.mag5{background-position:50% 100%}
+.shade{position:absolute;inset:0;background:linear-gradient(to top,rgba(25,26,22,.72),rgba(25,26,22,.02) 62%)}
+.mag-copy{position:absolute;left:22px;right:22px;bottom:20px;color:white}.mag-copy span{font-size:10px;font-weight:900;letter-spacing:1.3px;text-transform:uppercase}.mag-copy h3{font-size:28px;line-height:1.02;margin:6px 0}.mag-card.big .mag-copy h3{font-size:41px}.mag-copy p{font-size:13px;margin:0;color:#f3f0ea}
+
+.signature{padding:78px 0;background:#f0e4d8}.signature-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:22px}.sig-card{border-radius:30px;padding:35px;min-height:420px;display:flex;flex-direction:column;justify-content:space-between}.sig-card.learn{background:var(--dark);color:white}.sig-card.rescue{background:var(--sage)}.sig-card h2{font-size:46px;line-height:1.02;margin:8px 0 15px}.sig-card p{font-size:16px;margin:0;max-width:560px}.sig-card.learn p{color:#dce5de}.sig-card.rescue p{color:#536055}
+.sig-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:25px}.sig-list span{border:1px solid rgba(255,255,255,.22);padding:8px 11px;border-radius:999px;font-size:11px;font-weight:800}.rescue .sig-list span{border-color:rgba(38,52,43,.16)}
+.sig-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}.learn .btn{border-color:white}.learn .btn.ghost{color:white}.rescue .btn{background:var(--dark);color:white}
+
+.week{padding:80px 0;background:var(--paper)}.week-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:20px;align-items:stretch}.week-copy{background:var(--peach);border-radius:30px;padding:42px}.week-copy h2{font-size:51px;line-height:1.02;margin:8px 0 17px}.week-copy p{color:#655b54;font-size:16px}.week-tags{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:24px}.week-tags span{background:rgba(255,255,255,.55);border-radius:16px;padding:14px;font-size:13px;font-weight:800}
+.week-photo{border-radius:30px;background-image:url("assets/sprite.webp");background-size:300% 200%;background-position:50% 100%;background-repeat:no-repeat;min-height:500px}
+
+.tm7{padding:80px 0;background:#eee7dc}.tm7-grid{display:grid;grid-template-columns:.98fr 1.02fr;gap:22px;align-items:center}.tm7-photo{min-height:540px;border-radius:30px;background:url("assets/hero-tm.webp") center/cover;box-shadow:var(--shadow)}.tm7-copy{padding:35px}.tm7-copy h2{font-size:52px;line-height:1.01;margin:8px 0 17px}.tm7-copy p{color:var(--muted);font-size:16px}.questions{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0}.questions span{background:white;border:1px solid var(--line);border-radius:999px;padding:9px 12px;font-size:12px;font-weight:800}
+
+.about{padding:82px 0;background:var(--paper)}.about-grid{display:grid;grid-template-columns:.78fr 1.22fr;gap:50px;align-items:center}.about-img{min-height:560px;border-radius:32px;background-image:url("assets/sprite.webp");background-repeat:no-repeat;background-size:300% 200%;background-position:0 0}.about h2{font-size:52px;line-height:1.02;margin:8px 0 18px}.about p{color:var(--muted);font-size:16px;max-width:650px}.quote{font-family:Georgia,serif;font-size:25px;line-height:1.3;border-left:3px solid var(--terr);padding-left:18px;margin:24px 0;color:var(--dark)}
+
+.guide{padding:0 0 82px;background:var(--paper)}.guide-box{background:var(--butter);border-radius:32px;padding:45px;display:grid;grid-template-columns:1.25fr .75fr;gap:35px;align-items:center}.guide-box h2{font-size:44px;line-height:1.03;margin:7px 0 12px}.guide-box p{margin:0;color:#5f5846}
+.legal{padding:22px 0 0;color:var(--muted);font-size:11px}
+footer{background:#202b24;color:#dce5df;padding:47px 0}.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:35px}footer p{color:#aebbb3;font-size:13px}footer a:hover{color:white}
+.wa-float{position:fixed;right:18px;bottom:18px;z-index:80;width:57px;height:57px;border-radius:50%;background:#1f6c4b;color:white;display:grid;place-items:center;font-weight:900;box-shadow:0 12px 30px rgba(24,70,48,.27)}
+.fade{opacity:0;transform:translateY(15px);transition:.55s ease}.fade.in{opacity:1;transform:none}
+@media(max-width:900px){nav{display:none}.mobile-nav{display:block;margin-left:auto}.navcta{display:none}.hero-grid,.signature-grid,.week-grid,.tm7-grid,.about-grid,.guide-box{grid-template-columns:1fr}.hero-copy{order:2}.hero-collage{order:1}.hero-collage{grid-template-rows:220px 220px}.mag-grid{grid-template-columns:1fr 1fr}.mag-card.big{grid-column:1/-1;grid-row:auto;min-height:380px}.week-photo{min-height:420px}.footer-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.wrap{width:min(94vw,1180px)}.hero{padding-top:28px}.hero h1{font-size:47px;letter-spacing:-2px}.hero-collage{grid-template-columns:1fr 1fr;grid-template-rows:220px 160px}.tile.one{grid-column:1/-1;grid-row:auto}.section-head{display:block}.section-head p{margin-top:14px}.mag-grid{grid-template-columns:1fr;grid-auto-rows:270px}.mag-card.big{grid-column:auto;min-height:360px}.signature,.week,.tm7,.about{padding:62px 0}.sig-card{padding:27px;min-height:380px}.sig-card h2,.week-copy h2,.tm7-copy h2,.about h2{font-size:40px}.week-copy,.tm7-copy{padding:27px}.week-tags{grid-template-columns:1fr}.guide-box{padding:28px}.guide-box h2{font-size:37px}.actions,.sig-actions{flex-direction:column}.btn{width:100%}.sticker{font-size:14px}.about-img{min-height:430px}}
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","name":"Cocina sin líos con Macarena","url":"https://cocinasinlios.github.io/","description":"Recetas, organización y acompañamiento para sacar partido a Thermomix sin complicarte."}
+{"@context":"https://schema.org","@type":"WebSite","name":"Cocina sin líos con Macarena","url":"https://cocinasinlios.github.io/","description":"Recetas, menús y aprendizaje práctico para entender Thermomix y cocinar con menos líos."}
 </script>
 </head>
 <body>
-<div class="topbar">Aprende a entender tu Thermomix, no solo a seguirla · cocina práctica y vida real</div>
+<div class="topbar">Recetas que apetecen · ideas que solucionan · Thermomix explicada sin rollos</div>
 <header>
  <div class="wrap nav">
-  <a class="brand serif" href="#">Cocina sin líos<small>con Macarena</small></a>
-  <nav>
-   <a href="#metodo">Método</a><a href="#dentro">Cómo funciona</a><a href="/academia.html">Academia</a><a href="/diagnostico.html">¿Qué ha salido mal?</a><a href="#recetas">Recetas</a><a href="#tm7">TM7</a>
-  </nav>
+  <a class="brand" href="#">Cocina sin líos<small>con Macarena</small></a>
+  <nav><a href="#recetas">Recetas</a><a href="#menus">Menús</a><a href="/academia.html">Aprende</a><a href="/diagnostico.html">Rescate</a><a href="#tm7">TM7</a><a href="#macarena">Macarena</a></nav>
   <div class="mobile-nav">☰</div>
   <a class="navcta" href="https://wa.me/34640761605?text=Hola%20Macarena%2C%20he%20llegado%20desde%20tu%20web." target="_blank" rel="noopener">Habla conmigo</a>
  </div>
@@ -203,159 +86,92 @@ footer .brand{color:white}footer a{color:#dbe4dd}footer p{color:#aebbb3;font-siz
 <section class="hero">
  <div class="wrap hero-grid">
   <div class="hero-copy fade">
-   <div class="eyebrow">Cocina sin líos · Thermomix explicada de verdad</div>
-   <h1>Aprende a entender tu Thermomix, no solo a seguirla.</h1>
-   <p>Recetas, organización y explicaciones para que sepas qué está pasando dentro, por qué haces cada paso y cómo adaptar lo aprendido a tu cocina real.</p>
-   <div class="actions">
-    <a class="btn primary" href="#empieza">Quiero empezar sin líos</a>
-    <a class="btn secondary" href="#tm7">Estoy pensando en una TM7</a>
-   </div>
-   <div class="trustline"><span><b>✓</b> entiendes el porqué</span><span><b>✓</b> aprendes a corregir</span><span><b>✓</b> adaptas con criterio</span></div>
+   <div class="eyebrow">Cocina real · Thermomix · cero complicaciones</div>
+   <h1>Que abrir la nevera te dé ideas, no pereza.</h1>
+   <p>Aquí vienes a encontrar algo rico que hacer hoy, organizar mejor tu semana y, de paso, entender por fin por qué tu Thermomix hace lo que hace.</p>
+   <div class="actions"><a class="btn primary" href="#recetas">A ver qué cocino</a><a class="btn ghost" href="/diagnostico.html">Algo me ha salido mal</a></div>
+   <div class="mini-proof"><span><b>✓</b> recetas de diario</span><span><b>✓</b> ideas rápidas</span><span><b>✓</b> Thermomix con sentido</span></div>
   </div>
-  <div class="hero-visual fade">
-   <div class="hero-photo"><img src="assets/hero-tm.webp" alt="Thermomix TM7 en una cocina luminosa"></div>
-   <div class="hero-note"><strong>La receta es el ejemplo. Entenderla es el objetivo.</strong><span>Quiero que ganes criterio, autonomía y confianza.</span></div>
+  <div class="hero-collage fade">
+   <div class="tile one"></div><div class="tile two"></div><div class="tile three"></div>
+   <div class="sticker"><strong>Hoy cocinamos sin líos ✦</strong></div>
   </div>
  </div>
 </section>
 
-<section class="quick">
- <div class="wrap quick-grid">
-  <a class="quick-card" href="/diagnostico.html"><div class="icon">🧩</div><b>Algo me ha salido mal</b><span>Diagnostica qué variable conviene revisar antes de corregir a ciegas.</span></a>
-  <a class="quick-card" href="#menus"><div class="icon">🗓</div><b>Organízame la semana</b><span>Menús, aprovechamiento y preparaciones que cunden.</span></a>
-  <a class="quick-card" href="/academia.html"><div class="icon">🧠</div><b>Quiero entender mi Thermomix</b><span>Entra en la Academia Sin Líos y aprende por módulos.</span></a>
-  <a class="quick-card" href="#tm7"><div class="icon">✨</div><b>Estoy valorando una TM7</b><span>Te cuento cómo encaja en una cocina real.</span></a>
+<section class="explore">
+ <div class="wrap fade">
+  <h2>¿Qué necesitas hoy?</h2>
+  <div class="chips">
+   <a class="chip" href="#recetas">🍝 Cena rápida</a>
+   <a class="chip" href="#menus">🗓 Menú de la semana</a>
+   <a class="chip" href="#recetas">🥣 Básicos que siempre salen</a>
+   <a class="chip" href="#recetas">🍰 Algo dulce</a>
+   <a class="chip" href="/diagnostico.html">🧩 Rescatar una receta</a>
+   <a class="chip" href="/academia.html">🧠 Entender mi Thermomix</a>
+   <a class="chip" href="#tm7">✨ Estoy mirando la TM7</a>
+  </div>
  </div>
 </section>
 
-<section id="metodo" class="method">
+<section id="recetas" class="magazine">
  <div class="wrap">
-  <div class="method-shell fade">
-   <div class="method-title">
-    <div><div class="eyebrow">Método Sin Líos</div><h2>La receta no termina cuando sale el plato.</h2></div>
-    <p>Cada contenido tiene que dejarte algo que puedas reutilizar. Mi método sigue siempre la misma lógica: <b>entiende → cocina → corrige → adapta → organiza</b>.</p>
-   </div>
-   <div class="method-steps">
-    <div class="method-step"><em>01</em><b>Entiende</b><span>Qué hacen tiempo, temperatura, velocidad, cuchillas, giro inverso y vapor.</span></div>
-    <div class="method-step"><em>02</em><b>Cocina</b><span>Usa una receta para ver esa técnica funcionando de verdad.</span></div>
-    <div class="method-step"><em>03</em><b>Corrige</b><span>Aprende a diagnosticar texturas, cocciones y resultados que no salen como esperabas.</span></div>
-    <div class="method-step"><em>04</em><b>Adapta</b><span>Gana criterio para modificar raciones, tiempos o acabados sin hacerlo a ciegas.</span></div>
-    <div class="method-step"><em>05</em><b>Organiza</b><span>Integra lo aprendido en menús, cocina por niveles y semanas reales.</span></div>
-   </div>
+  <div class="section-head fade"><div><div class="eyebrow">Para abrir apetito</div><h2>Empieza por algo que te apetezca.</h2></div><p>No hace falta “estudiar” la web. Entra por una receta, una idea o un antojo. La parte de aprender aparece mientras cocinas.</p></div>
+  <div class="mag-grid">
+   <a class="mag-card big fade" href="#"><div class="mag-photo mag1"></div><div class="shade"></div><div class="mag-copy"><span>Favorito sin líos</span><h3>Pasta cremosa para una noche de “no sé qué hacer”</h3><p>Rápida, agradecida y con truco para entender la textura.</p></div></a>
+   <a class="mag-card fade" href="#"><div class="mag-photo mag2"></div><div class="shade"></div><div class="mag-copy"><span>Picoteo</span><h3>Hummus que repetirás</h3></div></a>
+   <a class="mag-card fade" href="#"><div class="mag-photo mag3"></div><div class="shade"></div><div class="mag-copy"><span>Cena</span><h3>Pizza fácil de verdad</h3></div></a>
+   <a class="mag-card fade" href="#"><div class="mag-photo mag4"></div><div class="shade"></div><div class="mag-copy"><span>Desayuno</span><h3>Domingo en un plato</h3></div></a>
+   <a class="mag-card fade" href="#"><div class="mag-photo mag5"></div><div class="shade"></div><div class="mag-copy"><span>Organización</span><h3>Dejar cosas hechas sin perder el domingo</h3></div></a>
   </div>
  </div>
 </section>
 
-<section id="dentro" class="inside">
- <div class="wrap inside-grid">
-  <div class="inside-visual fade">
-   <div class="inside-badge"><strong>¿Qué está pasando dentro?</strong><span>Toca cada concepto y conviértelo en una decisión de cocina.</span></div>
-  </div>
-  <div class="inside-panel fade">
-   <div class="eyebrow">Thermomix desde dentro</div>
-   <h2>Deja de ver números. Empieza a ver efectos.</h2>
-   <p>El objetivo no es memorizar combinaciones. Es relacionar cada ajuste con el resultado que buscas.</p>
-   <div class="inside-tabs">
-    <button class="inside-tab active" data-key="velocidad">Velocidad</button>
-    <button class="inside-tab" data-key="tiempo">Tiempo</button>
-    <button class="inside-tab" data-key="temperatura">Temperatura</button>
-    <button class="inside-tab" data-key="giro">Giro inverso</button>
-    <button class="inside-tab" data-key="vapor">Vapor</button>
-    <button class="inside-tab" data-key="cantidad">Cantidad</button>
+<section class="signature">
+ <div class="wrap signature-grid">
+  <article class="sig-card learn fade">
+   <div>
+    <div class="eyebrow" style="color:#b9c9bc">Aquí está mi diferencia</div>
+    <h2>Cocinas una receta. Aprendes algo que te sirve en veinte.</h2>
+    <p>Mientras preparas algo rico te explico qué está pasando dentro del vaso, por qué se usa esa velocidad o qué cambia si modificas la cantidad. Sin convertir tu cocina en una clase teórica.</p>
+    <div class="sig-list"><span>velocidad</span><span>texturas</span><span>temperatura</span><span>giro inverso</span><span>vapor</span><span>cantidades</span></div>
    </div>
-   <div class="inside-card">
-    <small id="insideLabel">Dentro del vaso</small>
-    <h3 id="insideTitle">La velocidad cambia cuánto y cómo se mueve el alimento.</h3>
-    <p id="insideText">A mayor velocidad aumenta la acción mecánica sobre los ingredientes. El resultado puede pasar de mezclar y mover a picar, triturar o emulsionar, según el alimento, la cantidad y el tiempo.</p>
-    <div class="inside-translate"><b>Macarena te lo traduce</b><span id="insideTranslate">No busques siempre “más velocidad”. Busca la textura que necesitas.</span></div>
-    <div class="inside-note">Explicación didáctica general. Los resultados concretos dependen de la receta, la cantidad y el ingrediente.</div>
+   <div class="sig-actions"><a class="btn light" href="/academia.html">Entrar a “Thermomix por dentro”</a></div>
+  </article>
+  <article class="sig-card rescue fade">
+   <div>
+    <div class="eyebrow">Rescate sin líos</div>
+    <h2>¿Se ha cortado? ¿Está líquido? ¿La carne ha desaparecido?</h2>
+    <p>No quiero que tires la receta ni que empieces a tocar botones al azar. El solucionador te ayuda a revisar causas probables y entender qué mirar la próxima vez.</p>
+    <div class="sig-list"><span>salsa líquida</span><span>carne deshecha</span><span>emulsión cortada</span><span>Varoma desigual</span><span>masa rara</span></div>
    </div>
-  </div>
- </div>
-</section>
-
-<section id="empieza" class="editorial">
- <div class="wrap">
-  <div class="section-head fade">
-   <div><div class="eyebrow">Empieza por aquí</div><h2>Que estrenar tu TM7 dé ilusión, no vértigo.</h2></div>
-   <p>Quiero que desde el primer día entiendas qué tienes entre manos. No una guía fría: una ruta sencilla para coger confianza, cocinar y dejar de depender de cada paso escrito.</p>
-  </div>
-  <div class="editorial-grid">
-   <article class="feature-card fade">
-    <div class="feature-image"></div>
-    <div class="feature-content">
-     <div class="eyebrow" style="color:#dbe8df">Guía gratuita</div>
-     <h3>Los primeros 7 días con tu TM7, sin agobios.</h3>
-     <p>Qué hacer al abrirla, qué cocinar primero, qué merece la pena aprender y qué errores puedes ahorrarte.</p>
-     <a class="btn secondary" style="background:white;color:#233027;border-color:white" href="https://wa.me/34640761605?text=Hola%20Macarena%2C%20quiero%20la%20gu%C3%ADa%20de%20los%20primeros%207%20d%C3%ADas%20con%20TM7." target="_blank" rel="noopener">Pedir mi guía</a>
-    </div>
-   </article>
-   <div class="side-stack">
-    <a class="soft-card fade" href="#aprende"><div><div class="eyebrow">Entiéndela</div><h3>Velocidad, temperatura y tiempo</h3><p>Las tres variables que cambian casi todo dentro del vaso, explicadas sin tecnicismos.</p></div><div class="arrow">↗</div></a>
-    <a class="soft-card peach fade" href="#menus"><div><div class="eyebrow">Organízate</div><h3>Una semana que no empieza preguntando «¿qué hago hoy?»</h3><p>Menos improvisación, menos compras sueltas y más comida que se aprovecha.</p></div><div class="arrow">↗</div></a>
-   </div>
-  </div>
- </div>
-</section>
-
-<section id="recetas" class="recipes">
- <div class="wrap">
-  <div class="section-head fade">
-   <div><div class="eyebrow">Recetas sin líos</div><h2>Comida que apetece y que cabe en una semana normal.</h2></div>
-   <p>No quiero recetas para coleccionar. Quiero platos que puedas repetir, adaptar y convertir en parte de tu cocina cotidiana.</p>
-  </div>
-  <div class="recipe-grid">
-   <article class="recipe fade"><div class="recipe-photo hummus"></div><div class="recipe-body"><small>Picoteo · básico</small><h3>Hummus cremoso</h3><p>Un básico que resuelve meriendas, cenas y aperitivos en muy poco tiempo.</p></div></article>
-   <article class="recipe fade"><div class="recipe-photo pasta"></div><div class="recipe-body"><small>Comida rápida</small><h3>Pasta para repetir</h3><p>Salsas sencillas, ingredientes cotidianos y cero complicación.</p></div></article>
-   <article class="recipe fade"><div class="recipe-photo pancakes"></div><div class="recipe-body"><small>Desayuno</small><h3>Desayunos que hacen domingo</h3><p>Recetas fáciles que también funcionan un martes con prisas.</p></div></article>
-  </div>
- </div>
-</section>
-
-<section id="aprende" class="master">
- <div class="wrap master-grid">
-  <div class="master-photo fade"></div>
-  <div class="fade">
-   <div class="eyebrow" style="color:#b9cbbd">Aprende tu Thermomix</div>
-   <h2>Una receta te resuelve hoy. Entenderla te sirve para siempre.</h2>
-   <p>Aquí aprenderás a leer una receta con otros ojos: qué efecto busca cada paso, cómo reconocer un error y qué variables conviene revisar antes de cambiar nada.</p>
-   <ul class="master-list">
-    <li>Velocidades y texturas</li><li>Temperatura y cocción</li><li>Giro inverso y carnes</li><li>Vaso, cestillo y Varoma</li><li>Cómo adaptar raciones</li><li>Qué hacer cuando algo sale mal</li>
-   </ul>
-   <div class="actions"><a class="btn secondary" href="/academia.html">Entrar en la Academia</a><a class="btn secondary" href="/diagnostico.html">Diagnosticar un problema</a></div>
-  </div>
+   <div class="sig-actions"><a class="btn" href="/diagnostico.html">Abrir el solucionador</a></div>
+  </article>
  </div>
 </section>
 
 <section id="menus" class="week">
  <div class="wrap week-grid">
-  <div class="week-photo fade"></div>
   <div class="week-copy fade">
-   <div class="eyebrow">Menús sin líos</div>
-   <h2>La semana se cocina mejor cuando no improvisas cada día.</h2>
-   <p>Mi idea no es cocinar veinte tuppers el domingo. Es dejar preparadas las cosas que realmente te ahorran tiempo y hacer que los ingredientes aparezcan en varios platos.</p>
-   <div class="week-points">
-    <div class="week-point">5 comidas + 5 cenas</div><div class="week-point">Lista de compra útil</div>
-    <div class="week-point">Preparaciones que adelantas</div><div class="week-point">Aprovechamiento real</div>
-   </div>
+   <div class="eyebrow">La semana resuelta</div>
+   <h2>Menos “¿qué cenamos?”. Más abrir y tenerlo medio pensado.</h2>
+   <p>Menús realistas, preparaciones que se aprovechan en varios platos y una lista de compra que no parece escrita para un restaurante.</p>
+   <div class="week-tags"><span>5 comidas + 5 cenas</span><span>Lista de compra</span><span>Qué adelantar</span><span>Cómo reaprovechar</span></div>
+   <div class="actions"><a class="btn primary" href="https://wa.me/34640761605?text=Hola%20Macarena%2C%20quiero%20que%20me%20avises%20de%20tus%20men%C3%BAs%20sin%20l%C3%ADos." target="_blank" rel="noopener">Quiero estos menús</a></div>
   </div>
+  <div class="week-photo fade"></div>
  </div>
 </section>
 
 <section id="tm7" class="tm7">
- <div class="wrap tm7box fade">
-  <div>
-   <div class="eyebrow">¿Estás pensando en una TM7?</div>
-   <h2>Primero entiende si encaja contigo. Después decides.</h2>
-   <p>No encontrarás un carrito de compra aquí. Te explico qué hace, qué cambia respecto a otros modelos, cómo sería utilizarla en tu casa y qué acompañamiento tendrías conmigo.</p>
-   <div class="actions"><a class="btn primary" href="https://wa.me/34640761605?text=Hola%20Macarena%2C%20estoy%20valorando%20una%20TM7%20y%20quiero%20que%20me%20cuentes." target="_blank" rel="noopener">Preguntarme por WhatsApp</a></div>
-  </div>
-  <div class="faqs">
-   <div class="faq">¿Tiene sentido si somos solo dos?</div>
-   <div class="faq">¿Y si ya tengo airfryer?</div>
-   <div class="faq">¿Qué cambia frente a TM6?</div>
-   <div class="faq">¿Necesito Cookidoo para usarla?</div>
-   <div class="faq">¿Cómo es una demostración conmigo?</div>
+ <div class="wrap tm7-grid">
+  <div class="tm7-photo fade"></div>
+  <div class="tm7-copy fade">
+   <div class="eyebrow">Si estás mirando la TM7</div>
+   <h2>No te la vendo aquí. Te ayudo a saber si te encaja.</h2>
+   <p>Te cuento cómo se usa en una casa normal, qué cambia respecto a otros modelos, qué dudas aparecen de verdad y cómo sería tenerme como persona de referencia después.</p>
+   <div class="questions"><span>¿Somos solo dos?</span><span>¿Y si ya tengo airfryer?</span><span>¿TM6 o TM7?</span><span>¿Hace falta Cookidoo?</span><span>¿Qué acompañamiento tengo?</span></div>
+   <a class="btn primary" href="https://wa.me/34640761605?text=Hola%20Macarena%2C%20estoy%20valorando%20una%20TM7%20y%20quiero%20que%20me%20cuentes." target="_blank" rel="noopener">Te cuento mi caso</a>
   </div>
  </div>
 </section>
@@ -364,56 +180,35 @@ footer .brand{color:white}footer a{color:#dbe4dd}footer p{color:#aebbb3;font-siz
  <div class="wrap about-grid">
   <div class="about-img fade" role="img" aria-label="Macarena"></div>
   <div class="fade">
-   <div class="eyebrow">Soy Macarena</div>
-   <h2>Quiero que tu Thermomix te simplifique la vida de verdad.</h2>
-   <p>Me gusta acompañar a las personas desde antes de decidir si Thermomix encaja en su casa y, sobre todo, después de estrenarla: cuando llegan las preguntas reales, los días con prisa y las recetas que hay que adaptar.</p>
-   <div class="quote">«No quiero que solo uses tu Thermomix. Quiero que la entiendas hasta que puedas tomar decisiones con ella.»</div>
-   <p><b>Agente comercial oficial Thermomix®.</b> La compra de Thermomix® se gestiona a través de los canales oficiales autorizados por Vorwerk; esta web es informativa y de acompañamiento.</p>
-   <div class="actions">
-    <a class="btn primary" href="https://wa.me/34640761605?text=Hola%20Macarena%2C%20he%20llegado%20desde%20Cocina%20sin%20l%C3%ADos." target="_blank" rel="noopener">Hablar conmigo</a>
-    <a class="btn secondary" href="https://instagram.com/thermomixsinlios" target="_blank" rel="noopener">@thermomixsinlios</a>
-   </div>
+   <div class="eyebrow">Detrás de Cocina sin líos</div>
+   <h2>Soy Macarena. Y quiero que cocines con más confianza, no con más instrucciones.</h2>
+   <p>Me interesa mucho más que entiendas por qué una receta funciona que conseguir que memorices una lista de botones. Por eso aquí mezclo cocina de diario, organización y explicación práctica de Thermomix.</p>
+   <div class="quote">«La receta te resuelve una comida. Entenderla te resuelve muchas.»</div>
+   <p><b>Agente comercial oficial Thermomix®.</b> Si estás valorando una máquina o ya la tienes y necesitas acompañamiento, puedes escribirme directamente.</p>
+   <div class="actions"><a class="btn primary" href="https://wa.me/34640761605?text=Hola%20Macarena%2C%20he%20llegado%20desde%20Cocina%20sin%20l%C3%ADos." target="_blank" rel="noopener">Hablar conmigo</a><a class="btn ghost" href="https://instagram.com/thermomixsinlios" target="_blank" rel="noopener">@thermomixsinlios</a></div>
   </div>
  </div>
 </section>
 
-<section class="consult">
- <div class="wrap consult-box fade">
-  <div><div class="eyebrow" style="color:#ffe3d8">Consultorio sin líos</div><h2>¿Te ha pasado algo cocinando y no sabes por qué?</h2><p>Pregúntamelo. Las dudas reales son las mejores clases: carne que se deshace, salsa demasiado líquida, una receta que quieres duplicar o una función que no terminas de entender.</p></div>
-  <div><a class="btn" href="/diagnostico.html">Abrir el solucionador</a></div>
+<section class="guide">
+ <div class="wrap">
+  <div class="guide-box fade">
+   <div><div class="eyebrow">Para empezar bien</div><h2>¿Acabas de estrenar tu TM7?</h2><p>He preparado una guía para acompañarte los primeros días: qué mirar, qué probar, qué merece la pena entender primero y qué errores puedes evitar.</p></div>
+   <div><a class="btn primary" href="https://wa.me/34640761605?text=Hola%20Macarena%2C%20quiero%20la%20gu%C3%ADa%20de%20los%20primeros%20d%C3%ADas%20con%20TM7." target="_blank" rel="noopener">Pedir la guía</a></div>
+  </div>
+  <div class="legal">Thermomix® es una marca de Vorwerk. Cocina sin líos es una web independiente de contenido y acompañamiento y no funciona como tienda online de Thermomix®. La compra se gestiona a través de los canales oficiales autorizados.</div>
  </div>
- <div class="wrap legal">Esta versión no utiliza formularios de registro ni cookies propias de seguimiento. Los enlaces a WhatsApp e Instagram abren servicios externos sujetos a sus propias políticas. Thermomix® es una marca de Vorwerk. Cocina sin líos no es una tienda online de Thermomix®.</div>
 </section>
 </main>
 
-<footer>
- <div class="wrap footer-grid">
-  <div><div class="brand serif">Cocina sin líos<small style="color:#94a399">con Macarena</small></div><p>Aprende a entender tu Thermomix, no solo a seguirla. Recetas, organización y acompañamiento para ganar criterio y autonomía.</p></div>
-  <div><b>Explora</b><p><a href="#metodo">Método Sin Líos</a><br><a href="#dentro">Thermomix desde dentro</a><br><a href="/academia.html">Academia Sin Líos</a><br><a href="/diagnostico.html">¿Qué ha salido mal?</a></p></div>
-  <div><b>Contacto</b><p><a href="https://wa.me/34640761605" target="_blank" rel="noopener">WhatsApp</a><br><a href="https://instagram.com/thermomixsinlios" target="_blank" rel="noopener">Instagram</a><br><a href="#tm7">Información TM7</a></p></div>
- </div>
-</footer>
-<a class="wa-float" href="https://wa.me/34640761605?text=Hola%20Macarena%2C%20he%20llegado%20desde%20tu%20web." target="_blank" rel="noopener" aria-label="Hablar por WhatsApp">W</a>
+<footer><div class="wrap footer-grid">
+ <div><div class="brand" style="color:white">Cocina sin líos<small style="color:#9faaa2">con Macarena</small></div><p>Recetas que apetecen, organización que ayuda y Thermomix explicada para que cada vez dependas menos de seguir instrucciones.</p></div>
+ <div><b>Explora</b><p><a href="#recetas">Recetas</a><br><a href="#menus">Menús</a><br><a href="/academia.html">Aprende</a><br><a href="/diagnostico.html">Rescate</a></p></div>
+ <div><b>Contacto</b><p><a href="https://wa.me/34640761605" target="_blank" rel="noopener">WhatsApp</a><br><a href="https://instagram.com/thermomixsinlios" target="_blank" rel="noopener">Instagram</a><br><a href="#tm7">Información TM7</a></p></div>
+</div></footer>
+<a class="wa-float" href="https://wa.me/34640761605?text=Hola%20Macarena%2C%20he%20llegado%20desde%20tu%20web." target="_blank" rel="noopener" aria-label="WhatsApp">W</a>
 <script>
-const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add("in")}),{threshold:.08});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add("in")}),{threshold:.08});
 document.querySelectorAll(".fade").forEach(el=>io.observe(el));
-
-const insideData={
- velocidad:{label:"Dentro del vaso",title:"La velocidad cambia cuánto y cómo se mueve el alimento.",text:"A mayor velocidad aumenta la acción mecánica sobre los ingredientes. El resultado puede pasar de mezclar y mover a picar, triturar o emulsionar, según el alimento, la cantidad y el tiempo.",translate:"No busques siempre “más velocidad”. Busca la textura que necesitas."},
- tiempo:{label:"Tiempo de acción",title:"El tiempo decide cuánto dura ese efecto.",text:"Mantener una misma acción durante más tiempo puede cambiar mucho el resultado: un picado puede hacerse más fino, una mezcla más homogénea o una cocción avanzar más.",translate:"Tiempo y velocidad trabajan juntos. Cambiar uno sin pensar en el otro cambia el resultado."},
- temperatura:{label:"Aplicación de calor",title:"La temperatura no cocina sola: necesita tiempo, cantidad y contexto.",text:"Calentar una preparación modifica textura, cocción y comportamiento de los ingredientes. La cantidad de comida y su temperatura inicial influyen en cómo evoluciona el proceso.",translate:"No pienses solo “a cuántos grados”. Piensa también cuánto hay dentro y durante cuánto tiempo."},
- giro:{label:"Movimiento de las cuchillas",title:"El giro inverso busca mover con menos acción de corte.",text:"Cuando una preparación necesita conservar mejor la estructura de sus ingredientes, el sentido de giro puede reducir la acción cortante de los filos. Aun así, velocidad, tiempo y tipo de alimento siguen importando.",translate:"Giro inverso ayuda, pero no convierte cualquier velocidad en una mezcla delicada."},
- vapor:{label:"Cocción por vapor",title:"El vapor necesita circular para cocinar de forma uniforme.",text:"En la cocción al vapor importa que exista circulación alrededor de los alimentos. Cómo colocas y distribuyes la comida influye en el resultado.",translate:"No llenes pensando solo en capacidad. Piensa en dejar camino al vapor."},
- cantidad:{label:"Carga del vaso",title:"La misma receta cambia cuando cambia la cantidad.",text:"Más o menos cantidad altera el movimiento de los ingredientes, la velocidad con la que se calientan y la forma en que interactúan con las cuchillas.",translate:"Duplicar ingredientes no significa automáticamente duplicar tiempo, temperatura o velocidad."}
-};
-document.querySelectorAll(".inside-tab").forEach(btn=>btn.addEventListener("click",()=>{
- document.querySelectorAll(".inside-tab").forEach(b=>b.classList.remove("active"));
- btn.classList.add("active");
- const d=insideData[btn.dataset.key];
- document.getElementById("insideLabel").textContent=d.label;
- document.getElementById("insideTitle").textContent=d.title;
- document.getElementById("insideText").textContent=d.text;
- document.getElementById("insideTranslate").textContent=d.translate;
-}));
 </script>
 </body></html>
