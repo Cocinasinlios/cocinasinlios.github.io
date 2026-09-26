@@ -9,7 +9,7 @@
 <meta name="theme-color" content="#f7f2e9">
 <link rel="canonical" href="https://cocinasinlios.github.io/">
 <meta property="og:title" content="Cocina sin líos con Macarena">
-<meta property="og:description" content="Cocina fácil, organización y Thermomix explicada sin tecnicismos.">
+<meta property="og:description" content="Aprende a entender tu Thermomix, no solo a seguirla: recetas, organización y explicaciones claras de lo que ocurre dentro.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://cocinasinlios.github.io/">
 <style>
@@ -131,14 +131,46 @@ footer{margin-top:65px;background:#1f2b24;color:#dbe4dd;padding:48px 0}
 .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:35px}
 footer .brand{color:white}footer a{color:#dbe4dd}footer p{color:#aebbb3;font-size:13px}
 .wa-float{position:fixed;right:18px;bottom:18px;z-index:70;width:56px;height:56px;border-radius:50%;background:#1f6c4b;color:#fff;display:grid;place-items:center;box-shadow:0 12px 30px rgba(25,62,45,.28);font-weight:900;font-size:20px}
+
+.method{background:var(--paper);padding-top:32px}
+.method-shell{border:1px solid var(--line);border-radius:30px;padding:34px;background:linear-gradient(145deg,#fffdf9,#f2eee6)}
+.method-title{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:end;margin-bottom:28px}
+.method-title h2{font-size:47px;line-height:1.02;margin:7px 0 0;font-weight:500}
+.method-title p{margin:0;color:var(--muted);font-size:16px}
+.method-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.method-step{background:white;border:1px solid var(--line);border-radius:19px;padding:19px;min-height:150px}
+.method-step b{font-family:Georgia,serif;font-size:24px;display:block;margin:7px 0}
+.method-step span{font-size:13px;color:var(--muted)}
+.method-step em{font-style:normal;font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:var(--terr);font-weight:800}
+
+.inside{background:#f0e8dc}
+.inside-grid{display:grid;grid-template-columns:.96fr 1.04fr;gap:30px;align-items:stretch}
+.inside-visual{position:relative;min-height:620px;border-radius:32px;overflow:hidden;background-image:linear-gradient(to top,rgba(21,28,24,.36),rgba(21,28,24,.02)),url("assets/hero-tm.webp");background-size:cover;background-position:center}
+.inside-badge{position:absolute;left:24px;top:24px;background:rgba(255,253,249,.94);border-radius:16px;padding:13px 15px;max-width:240px;box-shadow:0 10px 30px rgba(0,0,0,.09)}
+.inside-badge strong{display:block;font-family:Georgia,serif;font-size:20px}
+.inside-badge span{font-size:12px;color:var(--muted)}
+.inside-panel{background:var(--paper);border-radius:32px;padding:36px;display:flex;flex-direction:column}
+.inside-panel h2{font-size:48px;line-height:1.02;margin:7px 0 14px;font-weight:500}
+.inside-panel>p{color:var(--muted);margin:0 0 24px}
+.inside-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.inside-tab{border:1px solid var(--line);background:white;border-radius:999px;padding:10px 13px;font-weight:800;font-size:12px;cursor:pointer}
+.inside-tab.active{background:var(--dark);border-color:var(--dark);color:white}
+.inside-card{margin-top:auto;background:var(--sage2);border-radius:24px;padding:25px;min-height:265px}
+.inside-card small{font-size:11px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:var(--olive)}
+.inside-card h3{font-size:31px;line-height:1.05;margin:8px 0 12px;font-weight:500}
+.inside-card p{color:#546158;margin:0 0 16px}
+.inside-translate{background:white;border-radius:16px;padding:15px;font-size:13px}
+.inside-translate b{display:block;margin-bottom:4px;color:var(--dark)}
+.inside-note{font-size:11px;color:var(--muted);margin-top:15px}
+
 .fade{opacity:0;transform:translateY(16px);transition:.6s ease}.fade.in{opacity:1;transform:none}
 @media(max-width:900px){
  nav{display:none}.mobile-nav{display:block;margin-left:auto}.navcta{display:none}
- .hero-grid,.section-head,.editorial-grid,.master-grid,.week-grid,.tm7box,.about-grid,.consult-box,.footer-grid{grid-template-columns:1fr}
+ .hero-grid,.section-head,.editorial-grid,.master-grid,.week-grid,.tm7box,.about-grid,.consult-box,.footer-grid,.method-title,.inside-grid{grid-template-columns:1fr}
  .hero{padding-top:42px}.hero-copy{order:2}.hero-visual{order:1}.hero-photo{aspect-ratio:4/4.4}.hero-note{left:14px;bottom:14px}
  .quick-grid{grid-template-columns:1fr 1fr}.recipe-grid{grid-template-columns:1fr 1fr}.recipe:first-child{grid-column:1/-1}
  .recipe:first-child .recipe-photo{height:340px}.master-photo,.week-photo,.about-img{min-height:430px}
- .tm7box,.week-copy,.consult-box{padding:34px}.master-list{grid-template-columns:1fr}
+ .tm7box,.week-copy,.consult-box{padding:34px}.master-list{grid-template-columns:1fr}.method-steps{grid-template-columns:1fr 1fr}.inside-visual{min-height:460px}
 }
 @media(max-width:580px){
  .wrap{width:min(94vw,1180px)}.topbar{font-size:11px}.nav{height:68px}.brand{font-size:23px}
@@ -147,7 +179,7 @@ footer .brand{color:white}footer a{color:#dbe4dd}footer p{color:#aebbb3;font-siz
  section{padding:62px 0}.section-head h2{font-size:40px}.feature-card{min-height:460px}.feature-content{left:24px;right:24px}
  .feature-content h3{font-size:34px}.recipe-photo,.recipe:first-child .recipe-photo{height:300px}
  .master-photo,.week-photo,.about-img{min-height:380px}.master h2,.about h2,.week-copy h2,.tm7box h2,.consult-box h2{font-size:40px}
- .tm7box,.week-copy,.consult-box{padding:27px}.actions{flex-direction:column}.btn{width:100%}.trustline{gap:11px}
+ .tm7box,.week-copy,.consult-box{padding:27px}.actions{flex-direction:column}.btn{width:100%}.trustline{gap:11px}.method-shell,.inside-panel{padding:24px}.method-title h2,.inside-panel h2{font-size:38px}.method-steps{grid-template-columns:1fr}.inside-visual{min-height:360px}
 }
 </style>
 <script type="application/ld+json">
@@ -155,12 +187,12 @@ footer .brand{color:white}footer a{color:#dbe4dd}footer p{color:#aebbb3;font-siz
 </script>
 </head>
 <body>
-<div class="topbar">Cocina práctica, Thermomix® y vida real · sin complicarte más de la cuenta</div>
+<div class="topbar">Aprende a entender tu Thermomix, no solo a seguirla · cocina práctica y vida real</div>
 <header>
  <div class="wrap nav">
   <a class="brand serif" href="#">Cocina sin líos<small>con Macarena</small></a>
   <nav>
-   <a href="#empieza">Empieza aquí</a><a href="#recetas">Recetas</a><a href="#aprende">Aprende</a><a href="#menus">Menús</a><a href="#tm7">TM7</a><a href="#macarena">Macarena</a>
+   <a href="#metodo">Método</a><a href="#dentro">Cómo funciona</a><a href="#recetas">Recetas</a><a href="#aprende">Aprende</a><a href="#menus">Menús</a><a href="#tm7">TM7</a><a href="#macarena">Macarena</a>
   </nav>
   <div class="mobile-nav">☰</div>
   <a class="navcta" href="https://wa.me/34640761605?text=Hola%20Macarena%2C%20he%20llegado%20desde%20tu%20web." target="_blank" rel="noopener">Habla conmigo</a>
@@ -171,18 +203,18 @@ footer .brand{color:white}footer a{color:#dbe4dd}footer p{color:#aebbb3;font-siz
 <section class="hero">
  <div class="wrap hero-grid">
   <div class="hero-copy fade">
-   <div class="eyebrow">Cocina fácil · organización · Thermomix®</div>
-   <h1>Cocinar rico sin que la cocina te coma la vida.</h1>
-   <p>Recetas que repetirás, menús que te solucionan la semana y explicaciones claras para que entiendas tu Thermomix y la uses de verdad.</p>
+   <div class="eyebrow">Cocina sin líos · Thermomix explicada de verdad</div>
+   <h1>Aprende a entender tu Thermomix, no solo a seguirla.</h1>
+   <p>Recetas, organización y explicaciones para que sepas qué está pasando dentro, por qué haces cada paso y cómo adaptar lo aprendido a tu cocina real.</p>
    <div class="actions">
     <a class="btn primary" href="#empieza">Quiero empezar sin líos</a>
     <a class="btn secondary" href="#tm7">Estoy pensando en una TM7</a>
    </div>
-   <div class="trustline"><span><b>✓</b> recetas de vida real</span><span><b>✓</b> explicaciones claras</span><span><b>✓</b> acompañamiento personal</span></div>
+   <div class="trustline"><span><b>✓</b> entiendes el porqué</span><span><b>✓</b> aprendes a corregir</span><span><b>✓</b> adaptas con criterio</span></div>
   </div>
   <div class="hero-visual fade">
    <div class="hero-photo"><img src="assets/hero-tm.webp" alt="Thermomix TM7 en una cocina luminosa"></div>
-   <div class="hero-note"><strong>Menos recetas guardadas. Más recetas hechas.</strong><span>Esa es la idea de Cocina sin líos.</span></div>
+   <div class="hero-note"><strong>La receta es el ejemplo. Entenderla es el objetivo.</strong><span>Quiero que ganes criterio, autonomía y confianza.</span></div>
   </div>
  </div>
 </section>
@@ -193,6 +225,52 @@ footer .brand{color:white}footer a{color:#dbe4dd}footer p{color:#aebbb3;font-siz
   <a class="quick-card" href="#menus"><div class="icon">🗓</div><b>Organízame la semana</b><span>Menús, aprovechamiento y preparaciones que cunden.</span></a>
   <a class="quick-card" href="#aprende"><div class="icon">🧠</div><b>Quiero entender mi Thermomix</b><span>No solo qué tocar: por qué funciona.</span></a>
   <a class="quick-card" href="#tm7"><div class="icon">✨</div><b>Estoy valorando una TM7</b><span>Te cuento cómo encaja en una cocina real.</span></a>
+ </div>
+</section>
+
+<section id="metodo" class="method">
+ <div class="wrap">
+  <div class="method-shell fade">
+   <div class="method-title">
+    <div><div class="eyebrow">Método Sin Líos</div><h2>La receta no termina cuando sale el plato.</h2></div>
+    <p>Cada contenido tiene que dejarte algo que puedas reutilizar. Mi método sigue siempre la misma lógica: <b>entiende → cocina → corrige → adapta → organiza</b>.</p>
+   </div>
+   <div class="method-steps">
+    <div class="method-step"><em>01</em><b>Entiende</b><span>Qué hacen tiempo, temperatura, velocidad, cuchillas, giro inverso y vapor.</span></div>
+    <div class="method-step"><em>02</em><b>Cocina</b><span>Usa una receta para ver esa técnica funcionando de verdad.</span></div>
+    <div class="method-step"><em>03</em><b>Corrige</b><span>Aprende a diagnosticar texturas, cocciones y resultados que no salen como esperabas.</span></div>
+    <div class="method-step"><em>04</em><b>Adapta</b><span>Gana criterio para modificar raciones, tiempos o acabados sin hacerlo a ciegas.</span></div>
+    <div class="method-step"><em>05</em><b>Organiza</b><span>Integra lo aprendido en menús, cocina por niveles y semanas reales.</span></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="dentro" class="inside">
+ <div class="wrap inside-grid">
+  <div class="inside-visual fade">
+   <div class="inside-badge"><strong>¿Qué está pasando dentro?</strong><span>Toca cada concepto y conviértelo en una decisión de cocina.</span></div>
+  </div>
+  <div class="inside-panel fade">
+   <div class="eyebrow">Thermomix desde dentro</div>
+   <h2>Deja de ver números. Empieza a ver efectos.</h2>
+   <p>El objetivo no es memorizar combinaciones. Es relacionar cada ajuste con el resultado que buscas.</p>
+   <div class="inside-tabs">
+    <button class="inside-tab active" data-key="velocidad">Velocidad</button>
+    <button class="inside-tab" data-key="tiempo">Tiempo</button>
+    <button class="inside-tab" data-key="temperatura">Temperatura</button>
+    <button class="inside-tab" data-key="giro">Giro inverso</button>
+    <button class="inside-tab" data-key="vapor">Vapor</button>
+    <button class="inside-tab" data-key="cantidad">Cantidad</button>
+   </div>
+   <div class="inside-card">
+    <small id="insideLabel">Dentro del vaso</small>
+    <h3 id="insideTitle">La velocidad cambia cuánto y cómo se mueve el alimento.</h3>
+    <p id="insideText">A mayor velocidad aumenta la acción mecánica sobre los ingredientes. El resultado puede pasar de mezclar y mover a picar, triturar o emulsionar, según el alimento, la cantidad y el tiempo.</p>
+    <div class="inside-translate"><b>Macarena te lo traduce</b><span id="insideTranslate">No busques siempre “más velocidad”. Busca la textura que necesitas.</span></div>
+    <div class="inside-note">Explicación didáctica general. Los resultados concretos dependen de la receta, la cantidad y el ingrediente.</div>
+   </div>
+  </div>
  </div>
 </section>
 
@@ -239,8 +317,8 @@ footer .brand{color:white}footer a{color:#dbe4dd}footer p{color:#aebbb3;font-siz
   <div class="master-photo fade"></div>
   <div class="fade">
    <div class="eyebrow" style="color:#b9cbbd">Aprende tu Thermomix</div>
-   <h2>No memorices botones. Entiende qué ocurre dentro.</h2>
-   <p>Esta es la parte que quiero convertir en la gran diferencia de Cocina sin líos: enseñarte a pensar con la máquina para que puedas cocinar con más criterio y menos miedo.</p>
+   <h2>Una receta te resuelve hoy. Entenderla te sirve para siempre.</h2>
+   <p>Aquí aprenderás a leer una receta con otros ojos: qué efecto busca cada paso, cómo reconocer un error y qué variables conviene revisar antes de cambiar nada.</p>
    <ul class="master-list">
     <li>Velocidades y texturas</li><li>Temperatura y cocción</li><li>Giro inverso y carnes</li><li>Vaso, cestillo y Varoma</li><li>Cómo adaptar raciones</li><li>Qué hacer cuando algo sale mal</li>
    </ul>
@@ -289,7 +367,7 @@ footer .brand{color:white}footer a{color:#dbe4dd}footer p{color:#aebbb3;font-siz
    <div class="eyebrow">Soy Macarena</div>
    <h2>Quiero que tu Thermomix te simplifique la vida de verdad.</h2>
    <p>Me gusta acompañar a las personas desde antes de decidir si Thermomix encaja en su casa y, sobre todo, después de estrenarla: cuando llegan las preguntas reales, los días con prisa y las recetas que hay que adaptar.</p>
-   <div class="quote">«No quiero que tengas una Thermomix. Quiero que la uses.»</div>
+   <div class="quote">«No quiero que solo uses tu Thermomix. Quiero que la entiendas hasta que puedas tomar decisiones con ella.»</div>
    <p><b>Agente comercial oficial Thermomix®.</b> La compra de Thermomix® se gestiona a través de los canales oficiales autorizados por Vorwerk; esta web es informativa y de acompañamiento.</p>
    <div class="actions">
     <a class="btn primary" href="https://wa.me/34640761605?text=Hola%20Macarena%2C%20he%20llegado%20desde%20Cocina%20sin%20l%C3%ADos." target="_blank" rel="noopener">Hablar conmigo</a>
@@ -310,8 +388,8 @@ footer .brand{color:white}footer a{color:#dbe4dd}footer p{color:#aebbb3;font-siz
 
 <footer>
  <div class="wrap footer-grid">
-  <div><div class="brand serif">Cocina sin líos<small style="color:#94a399">con Macarena</small></div><p>Recetas, organización y acompañamiento para que cocinar sea más fácil y tu Thermomix tenga sentido en tu día a día.</p></div>
-  <div><b>Explora</b><p><a href="#empieza">Empieza aquí</a><br><a href="#recetas">Recetas</a><br><a href="#aprende">Aprende</a><br><a href="#menus">Menús</a></p></div>
+  <div><div class="brand serif">Cocina sin líos<small style="color:#94a399">con Macarena</small></div><p>Aprende a entender tu Thermomix, no solo a seguirla. Recetas, organización y acompañamiento para ganar criterio y autonomía.</p></div>
+  <div><b>Explora</b><p><a href="#metodo">Método Sin Líos</a><br><a href="#dentro">Thermomix desde dentro</a><br><a href="#recetas">Recetas</a><br><a href="#aprende">Aprende</a></p></div>
   <div><b>Contacto</b><p><a href="https://wa.me/34640761605" target="_blank" rel="noopener">WhatsApp</a><br><a href="https://instagram.com/thermomixsinlios" target="_blank" rel="noopener">Instagram</a><br><a href="#tm7">Información TM7</a></p></div>
  </div>
 </footer>
@@ -319,5 +397,23 @@ footer .brand{color:white}footer a{color:#dbe4dd}footer p{color:#aebbb3;font-siz
 <script>
 const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add("in")}),{threshold:.08});
 document.querySelectorAll(".fade").forEach(el=>io.observe(el));
+
+const insideData={
+ velocidad:{label:"Dentro del vaso",title:"La velocidad cambia cuánto y cómo se mueve el alimento.",text:"A mayor velocidad aumenta la acción mecánica sobre los ingredientes. El resultado puede pasar de mezclar y mover a picar, triturar o emulsionar, según el alimento, la cantidad y el tiempo.",translate:"No busques siempre “más velocidad”. Busca la textura que necesitas."},
+ tiempo:{label:"Tiempo de acción",title:"El tiempo decide cuánto dura ese efecto.",text:"Mantener una misma acción durante más tiempo puede cambiar mucho el resultado: un picado puede hacerse más fino, una mezcla más homogénea o una cocción avanzar más.",translate:"Tiempo y velocidad trabajan juntos. Cambiar uno sin pensar en el otro cambia el resultado."},
+ temperatura:{label:"Aplicación de calor",title:"La temperatura no cocina sola: necesita tiempo, cantidad y contexto.",text:"Calentar una preparación modifica textura, cocción y comportamiento de los ingredientes. La cantidad de comida y su temperatura inicial influyen en cómo evoluciona el proceso.",translate:"No pienses solo “a cuántos grados”. Piensa también cuánto hay dentro y durante cuánto tiempo."},
+ giro:{label:"Movimiento de las cuchillas",title:"El giro inverso busca mover con menos acción de corte.",text:"Cuando una preparación necesita conservar mejor la estructura de sus ingredientes, el sentido de giro puede reducir la acción cortante de los filos. Aun así, velocidad, tiempo y tipo de alimento siguen importando.",translate:"Giro inverso ayuda, pero no convierte cualquier velocidad en una mezcla delicada."},
+ vapor:{label:"Cocción por vapor",title:"El vapor necesita circular para cocinar de forma uniforme.",text:"En la cocción al vapor importa que exista circulación alrededor de los alimentos. Cómo colocas y distribuyes la comida influye en el resultado.",translate:"No llenes pensando solo en capacidad. Piensa en dejar camino al vapor."},
+ cantidad:{label:"Carga del vaso",title:"La misma receta cambia cuando cambia la cantidad.",text:"Más o menos cantidad altera el movimiento de los ingredientes, la velocidad con la que se calientan y la forma en que interactúan con las cuchillas.",translate:"Duplicar ingredientes no significa automáticamente duplicar tiempo, temperatura o velocidad."}
+};
+document.querySelectorAll(".inside-tab").forEach(btn=>btn.addEventListener("click",()=>{
+ document.querySelectorAll(".inside-tab").forEach(b=>b.classList.remove("active"));
+ btn.classList.add("active");
+ const d=insideData[btn.dataset.key];
+ document.getElementById("insideLabel").textContent=d.label;
+ document.getElementById("insideTitle").textContent=d.title;
+ document.getElementById("insideText").textContent=d.text;
+ document.getElementById("insideTranslate").textContent=d.translate;
+}));
 </script>
 </body></html>
