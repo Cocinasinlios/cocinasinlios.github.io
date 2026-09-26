@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://cocinasinlios.github.io/sitemap.xml
