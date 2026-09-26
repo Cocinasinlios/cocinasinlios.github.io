@@ -2,68 +2,69 @@
 <html lang="es">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>¿Qué ha salido mal? | Diagnóstico Thermomix Sin Líos</title>
-<meta name="description" content="Un solucionador práctico para revisar las causas más habituales cuando una receta con Thermomix queda líquida, se deshace, no liga, se pega o no cocina como esperabas.">
+<title>Rescate Sin Líos | ¿Qué ha pasado con mi receta?</title>
+<meta name="description" content="Elige qué ha pasado con tu receta y revisa de forma sencilla qué variables conviene mirar antes de corregirla a ciegas.">
 <link rel="canonical" href="https://cocinasinlios.github.io/diagnostico.html">
 <style>
-:root{--cream:#f7f2e9;--paper:#fffdf9;--ink:#22231f;--muted:#6d7068;--sage:#dfe8dc;--sage2:#eef3eb;--olive:#61705f;--dark:#26352c;--terr:#c56f4e;--line:#e5ded3}
-*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.55}a{color:inherit;text-decoration:none}.wrap{width:min(1080px,92vw);margin:auto}h1,h2,h3{font-family:Georgia,serif;line-height:1.05;font-weight:500}.eyebrow{font-size:12px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--olive)}
-header{position:sticky;top:0;background:rgba(247,242,233,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);z-index:20}.nav{height:72px;display:flex;align-items:center;gap:20px}.brand{font-family:Georgia,serif;font-size:24px;font-weight:700}.brand small{display:block;font-family:Inter,sans-serif;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted)}.back{margin-left:auto;font-size:13px;font-weight:800}
-.hero{padding:70px 0 35px}.hero h1{font-size:clamp(50px,6vw,76px);margin:8px 0 18px;letter-spacing:-2.2px;max-width:850px}.hero p{font-size:18px;color:var(--muted);max-width:750px}
-.tool{padding:20px 0 70px}.tool-grid{display:grid;grid-template-columns:.72fr 1.28fr;gap:22px;align-items:start}.problems{display:grid;gap:9px;position:sticky;top:92px}.problem{border:1px solid var(--line);background:white;border-radius:16px;padding:15px 16px;text-align:left;font-weight:800;cursor:pointer}.problem.active{background:var(--dark);color:white;border-color:var(--dark)}
-.result{background:var(--paper);border:1px solid var(--line);border-radius:28px;padding:34px;min-height:620px}.result h2{font-size:42px;margin:7px 0 12px}.result .intro{color:var(--muted);font-size:16px}.check{background:var(--sage2);border-radius:20px;padding:20px;margin:16px 0}.check h3{font-size:25px;margin:0 0 8px}.check ul{margin:0;padding-left:18px}.check li{margin:7px 0}.do{background:#efe1d5;border-radius:20px;padding:20px}.do b{display:block;margin-bottom:7px}.warning{font-size:12px;color:var(--muted);margin-top:16px}
-.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:23px}.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:13px 18px;font-weight:800;font-size:13px}.btn.primary{background:var(--dark);color:white}.btn.secondary{border:1px solid var(--dark)}
-footer{background:#1f2b24;color:#dbe4dd;padding:42px 0}footer p{font-size:13px;color:#aebbb3}
-@media(max-width:780px){.tool-grid{grid-template-columns:1fr}.problems{position:static;grid-template-columns:1fr 1fr}.result{min-height:0}.result h2{font-size:37px}}
-@media(max-width:520px){.problems{grid-template-columns:1fr}.hero h1{font-size:47px}.back{display:none}.result{padding:25px}}
+:root{--cream:#fbf6ee;--paper:#fffdfa;--ink:#25251f;--muted:#706f67;--dark:#2b3a30;--sage:#dce8d8;--mint:#eef5eb;--peach:#f1d8c6;--butter:#f2df9d;--terr:#d36f4b;--pink:#edd6d7;--line:#e8dfd2}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.55}a{color:inherit;text-decoration:none}.wrap{width:min(1080px,92vw);margin:auto}h1,h2,h3{font-family:Georgia,serif;line-height:1.04;font-weight:500}.eyebrow{font-size:11px;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;color:#687769}
+header{position:sticky;top:0;background:rgba(251,246,238,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);z-index:20}.nav{height:72px;display:flex;align-items:center;gap:20px}.brand{font-family:Georgia,serif;font-size:24px;font-weight:700;line-height:.95}.brand small{display:block;font-family:Inter,sans-serif;font-size:9px;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted);margin-top:6px}.back{margin-left:auto;font-size:13px;font-weight:800}
+.hero{padding:58px 0 25px}.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:end}.hero h1{font-size:clamp(52px,6vw,77px);margin:8px 0 14px;letter-spacing:-2.2px}.hero p{font-size:17px;color:var(--muted);max-width:720px}.hero-note{background:var(--butter);border-radius:25px;padding:24px;transform:rotate(1deg)}.hero-note b{display:block;font-family:Georgia,serif;font-size:26px;font-weight:500;margin-bottom:6px}.hero-note span{font-size:13px;color:#625c4c}
+.tool{padding:28px 0 75px}.tool-grid{display:grid;grid-template-columns:.78fr 1.22fr;gap:20px;align-items:start}.problems{display:grid;gap:9px;position:sticky;top:92px}.problem{border:0;background:white;border-radius:17px;padding:15px 16px;text-align:left;font-weight:850;cursor:pointer;box-shadow:0 6px 20px rgba(61,53,44,.05);transition:.2s}.problem:hover{transform:translateX(3px)}.problem.active{background:var(--dark);color:white}.problem:nth-child(2n){background:#fff8ec}.problem:nth-child(3n){background:#f4eee6}.problem.active{background:var(--dark)}
+.result{background:var(--paper);border:1px solid var(--line);border-radius:30px;padding:35px;min-height:590px;box-shadow:0 16px 50px rgba(57,51,43,.07)}.result h2{font-size:44px;margin:7px 0 12px}.result .intro{color:var(--muted);font-size:16px}.check{background:var(--mint);border-radius:22px;padding:22px;margin:18px 0}.check h3{font-size:27px;margin:0 0 10px}.check ul{margin:0;padding-left:18px}.check li{margin:8px 0}.do{background:var(--peach);border-radius:22px;padding:21px}.do b{display:block;margin-bottom:7px}.warning{font-size:11px;color:var(--muted);margin-top:15px}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:13px 18px;font-weight:900;font-size:13px}.btn.primary{background:var(--dark);color:white}.btn.secondary{border:1px solid var(--dark)}
+.bottom{background:#efe6da;padding:58px 0}.bottom-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.bottom-card{border-radius:25px;padding:28px}.bottom-card:first-child{background:var(--sage)}.bottom-card:last-child{background:var(--butter)}.bottom-card h3{font-size:34px;margin:7px 0 11px}.bottom-card p{color:#5f625b;margin:0}
+footer{background:#202b24;color:#dce5df;padding:42px 0}footer p{font-size:12px;color:#aebbb3}
+@media(max-width:800px){.hero-grid,.tool-grid{grid-template-columns:1fr}.problems{position:static;grid-template-columns:1fr 1fr}.bottom-grid{grid-template-columns:1fr}.result{min-height:0}}
+@media(max-width:530px){.hero h1{font-size:47px}.problems{grid-template-columns:1fr}.back{display:none}.result{padding:25px}.result h2{font-size:37px}}
 </style>
 </head>
 <body>
-<header><div class="wrap nav"><a class="brand" href="/">Cocina sin líos<small>con Macarena</small></a><a class="back" href="/">← Volver a la web</a></div></header>
+<header><div class="wrap nav"><a class="brand" href="/">Cocina sin líos<small>con Macarena</small></a><a class="back" href="/">← Volver</a></div></header>
 <main>
-<section class="hero"><div class="wrap"><div class="eyebrow">Solucionador Sin Líos</div><h1>¿Qué ha salido mal?</h1><p>Elige el resultado que te ha dado problemas. No sustituye una receta concreta ni el manual del fabricante: te ayuda a pensar qué variables conviene revisar antes de cambiar cosas al azar.</p></div></section>
+<section class="hero"><div class="wrap hero-grid"><div><div class="eyebrow">Rescate Sin Líos</div><h1>Vale. ¿Qué ha hecho ahora?</h1><p>Elige lo que ha pasado y vamos a revisar qué mirar primero. Sin dramatizar la cena y sin empezar a cambiar diez cosas a la vez.</p></div><div class="hero-note"><b>Primera regla del rescate:</b><span>antes de “arreglar” una receta, intenta entender qué variable ha cambiado.</span></div></div></section>
 <section class="tool"><div class="wrap tool-grid">
 <div class="problems">
-<button class="problem active" data-key="liquida">Me ha quedado líquido</button>
-<button class="problem" data-key="espesa">Me ha quedado demasiado espeso</button>
-<button class="problem" data-key="carne">La carne se ha deshecho</button>
-<button class="problem" data-key="picado">El picado es desigual</button>
-<button class="problem" data-key="emulsion">No ha ligado / se ha cortado</button>
-<button class="problem" data-key="vapor">El Varoma no ha cocinado uniforme</button>
-<button class="problem" data-key="pegado">Se ha pegado o tostado demasiado</button>
-<button class="problem" data-key="masa">La masa no tiene buena textura</button>
-<button class="problem" data-key="cantidad">He aumentado cantidades y ha cambiado todo</button>
+<button class="problem active" data-key="liquida">🥣 Me ha quedado líquido</button>
+<button class="problem" data-key="espesa">🧱 Está demasiado espeso</button>
+<button class="problem" data-key="carne">🥩 La carne se ha deshecho</button>
+<button class="problem" data-key="picado">🥕 El picado es desigual</button>
+<button class="problem" data-key="emulsion">🥄 No ha ligado / se ha cortado</button>
+<button class="problem" data-key="vapor">☁ El Varoma va por libre</button>
+<button class="problem" data-key="pegado">🔥 Se ha pegado demasiado</button>
+<button class="problem" data-key="masa">🍞 La masa está rara</button>
+<button class="problem" data-key="cantidad">⚖ He puesto más cantidad y todo ha cambiado</button>
 </div>
 <div class="result">
-<div class="eyebrow" id="label">Diagnóstico</div>
+<div class="eyebrow">Vamos por partes</div>
 <h2 id="title">Me ha quedado demasiado líquido.</h2>
 <p class="intro" id="intro">Antes de añadir espesantes o más tiempo, intenta averiguar de dónde viene ese exceso de líquido.</p>
-<div class="check"><h3>Qué revisaría primero</h3><ul id="checks"></ul></div>
+<div class="check"><h3>Yo miraría esto primero</h3><ul id="checks"></ul></div>
 <div class="do"><b>Macarena te lo traduce</b><span id="translate"></span></div>
-<div class="warning" id="warning">Comprueba siempre que cualquier ajuste respeta las cantidades máximas, accesorios, temperaturas y condiciones de seguridad indicadas para tu modelo.</div>
-<div class="actions"><a class="btn primary" id="wa" href="#" target="_blank" rel="noopener">Preguntárselo a Macarena</a><a class="btn secondary" href="/academia.html">Aprender el porqué</a></div>
-</div>
-</div></section>
+<div class="warning">Comprueba siempre que cualquier ajuste respeta las cantidades máximas, accesorios, temperaturas y condiciones de seguridad indicadas para tu modelo.</div>
+<div class="actions"><a class="btn primary" id="wa" href="#" target="_blank" rel="noopener">Macarena, te cuento exactamente qué hice</a><a class="btn secondary" href="/academia.html">Quiero entender el porqué</a></div>
+</div></div></section>
+
+<section class="bottom"><div class="wrap bottom-grid"><div class="bottom-card"><div class="eyebrow">Para la próxima</div><h3>Convierte el fallo en una pista.</h3><p>Una salsa líquida, una carne deshecha o una masa rara te cuentan algo sobre tiempo, cantidad, calor o movimiento.</p></div><div class="bottom-card"><div class="eyebrow">Y si no sabes por dónde empezar</div><h3>Escríbeme con la receta y lo que cambiaste.</h3><p>Cuanto más concreto sea el problema, mejor se puede razonar qué ha pasado.</p></div></div></section>
 </main>
-<footer><div class="wrap"><b>Cocina sin líos con Macarena</b><p>Herramienta educativa general. Thermomix® es una marca de Vorwerk. Ante avisos de seguridad, errores del equipo o dudas sobre uso seguro, consulta siempre el manual y el soporte oficial.</p></div></footer>
+<footer><div class="wrap"><b>Cocina sin líos con Macarena</b><p>Herramienta educativa general. Thermomix® es una marca de Vorwerk. Ante avisos del equipo o dudas de seguridad, consulta el manual y el soporte oficial.</p></div></footer>
 <script>
 const data={
 liquida:{title:"Me ha quedado demasiado líquido.",intro:"Antes de añadir espesantes o más tiempo, intenta averiguar de dónde viene ese exceso de líquido.",checks:["¿La cantidad de líquido añadida coincide con la receta?","¿El ingrediente principal soltó más agua de la habitual?","¿La preparación necesitaba más evaporación o una fase final diferente?","¿Has aumentado cantidades sin revisar tiempos y superficie de evaporación?"],translate:"No corrijas a ciegas. Primero identifica si sobra líquido, falta cocción o el ingrediente ha aportado más agua de la esperada."},
-espesa:{title:"Me ha quedado demasiado espeso.",intro:"Una textura excesivamente densa puede venir de proporciones, evaporación o absorción.",checks:["¿Has usado menos líquido del previsto?","¿El ingrediente espesante era más absorbente?","¿Ha pasado más tiempo o temperatura de la necesaria?","¿La preparación reposó y siguió espesando?"],translate:"Antes de añadir líquido sin medida, piensa si necesitas corregir ahora o si la textura cambia al reposar o enfriar."},
-carne:{title:"La carne se ha deshecho.",intro:"Aquí suelen importar mucho la acción mecánica, el tiempo y el tamaño de los trozos.",checks:["¿La velocidad era adecuada para conservar estructura?","¿Se usó giro inverso cuando correspondía?","¿La carne estuvo demasiado tiempo sometida al movimiento?","¿Los trozos eran muy pequeños o especialmente tiernos?"],translate:"Giro inverso ayuda, pero no compensa cualquier combinación de velocidad, tiempo y tamaño de corte."},
-picado:{title:"El picado ha quedado desigual.",intro:"Cuando hay trozos grandes y otros muy pequeños, piensa en cómo se mueve el alimento dentro del vaso.",checks:["¿Había demasiada o muy poca cantidad?","¿Los trozos iniciales eran muy diferentes entre sí?","¿El ingrediente estaba muy húmedo, blando o irregular?","¿Era mejor hacer pulsos cortos y revisar entre ellos?"],translate:"Un buen picado empieza antes de pulsar: tamaño inicial parecido, cantidad razonable y parar a mirar."},
-emulsion:{title:"No ha ligado o se ha cortado.",intro:"Las emulsiones dependen de proporciones, incorporación y condiciones de los ingredientes.",checks:["¿Los ingredientes estaban en condiciones similares a las de la receta?","¿La incorporación del componente graso fue demasiado rápida?","¿La cantidad era adecuada para que la mezcla circulase?","¿Se cambió algún ingrediente que altere agua, grasa o acidez?"],translate:"Cuando una emulsión falla, no siempre falta velocidad. A veces el problema está en la proporción o en cómo se incorporan los ingredientes."},
-vapor:{title:"El Varoma no ha cocinado de forma uniforme.",intro:"El vapor necesita llegar y circular alrededor de los alimentos.",checks:["¿Había paso suficiente para el vapor?","¿Los alimentos estaban muy amontonados o cubrían demasiadas ranuras?","¿Las piezas tenían tamaños muy diferentes?","¿La cantidad y el tiempo eran adecuados para lo que estabas cocinando?"],translate:"No pienses solo en cuánto cabe. Piensa en por dónde tiene que pasar el vapor."},
-pegado:{title:"Se ha pegado o tostado demasiado.",intro:"Aquí conviene revisar calor, tiempo, composición y cantidad.",checks:["¿La preparación tenía suficiente líquido o grasa para ese proceso?","¿Se prolongó la cocción más de lo necesario?","¿Había azúcares, almidones o sólidos que favorecen que se adhiera?","¿Se modificaron cantidades o sustituciones respecto a la receta?"],translate:"Más temperatura o más tiempo no siempre mejoran una receta; a veces solo concentran y pegan más."},
-masa:{title:"La masa no tiene la textura esperada.",intro:"Las masas responden a hidratación, harina, temperatura y amasado.",checks:["¿La harina utilizada absorbe igual que la de la receta?","¿Pesaste líquidos y harina con precisión?","¿La temperatura ambiente o de los ingredientes era muy distinta?","¿La masa necesita reposo antes de juzgar su textura final?"],translate:"En masas, pequeños cambios de harina o hidratación pueden notarse mucho. Corrige poco a poco."},
-cantidad:{title:"He aumentado cantidades y ha cambiado todo.",intro:"Escalar ingredientes no escala automáticamente el comportamiento de la máquina.",checks:["¿Sigue habiendo espacio para que los ingredientes se muevan correctamente?","¿El calentamiento necesita más tiempo por haber más masa dentro?","¿La superficie de evaporación es la misma aunque haya más líquido?","¿El accesorio o nivel de llenado sigue dentro de lo permitido?"],translate:"Duplicar ingredientes no significa duplicar todos los parámetros. Cantidad, movimiento y calentamiento cambian a la vez."}
+espesa:{title:"Está demasiado espeso.",intro:"Una textura muy densa puede venir de proporciones, evaporación o absorción.",checks:["¿Usaste menos líquido del previsto?","¿El ingrediente espesante absorbe más?","¿Hubo más tiempo o temperatura de la necesaria?","¿Ha espesado después de reposar?"],translate:"Antes de añadir líquido sin medida, piensa si la textura todavía va a cambiar al reposar o enfriar."},
+carne:{title:"La carne se ha deshecho.",intro:"Aquí suelen importar mucho la acción mecánica, el tiempo y el tamaño de los trozos.",checks:["¿La velocidad era adecuada para conservar estructura?","¿Se usó giro inverso cuando correspondía?","¿Estuvo demasiado tiempo sometida al movimiento?","¿Los trozos eran muy pequeños o especialmente tiernos?"],translate:"Giro inverso ayuda, pero no compensa cualquier combinación de velocidad, tiempo y tamaño de corte."},
+picado:{title:"El picado ha quedado desigual.",intro:"Si hay trozos grandes y otros minúsculos, piensa en cómo se movía el alimento dentro del vaso.",checks:["¿Había demasiada o muy poca cantidad?","¿Los trozos iniciales eran muy diferentes?","¿El ingrediente estaba muy húmedo o blando?","¿Era mejor hacer pulsos cortos y mirar entre ellos?"],translate:"Un buen picado empieza antes de pulsar: tamaño inicial parecido, cantidad razonable y parar a mirar."},
+emulsion:{title:"No ha ligado o se ha cortado.",intro:"Las emulsiones dependen de proporciones, incorporación y condiciones de los ingredientes.",checks:["¿Los ingredientes estaban en condiciones similares a las de la receta?","¿La incorporación del componente graso fue demasiado rápida?","¿La cantidad permitía que la mezcla circulase?","¿Cambiaste un ingrediente que modifica agua, grasa o acidez?"],translate:"Cuando una emulsión falla, no siempre falta velocidad. A veces el problema está en la proporción o en cómo se incorporan los ingredientes."},
+vapor:{title:"El Varoma no ha cocinado de forma uniforme.",intro:"El vapor necesita llegar y circular alrededor de los alimentos.",checks:["¿Había paso suficiente para el vapor?","¿Los alimentos estaban demasiado amontonados?","¿Las piezas tenían tamaños muy diferentes?","¿La cantidad y el tiempo eran adecuados?"],translate:"No pienses solo en cuánto cabe. Piensa en por dónde tiene que pasar el vapor."},
+pegado:{title:"Se ha pegado o tostado demasiado.",intro:"Aquí conviene revisar calor, tiempo, composición y cantidad.",checks:["¿Había suficiente líquido o grasa para ese proceso?","¿Se alargó la cocción?","¿Había azúcares, almidones o sólidos que favorecen la adherencia?","¿Cambiaste cantidades o ingredientes?"],translate:"Más temperatura o más tiempo no siempre mejoran una receta; a veces solo concentran y pegan más."},
+masa:{title:"La masa no tiene la textura esperada.",intro:"Las masas responden a hidratación, harina, temperatura y amasado.",checks:["¿La harina absorbe igual que la de la receta?","¿Pesaste líquidos y harina con precisión?","¿La temperatura ambiente era muy distinta?","¿Necesita reposar antes de juzgarla?"],translate:"En masas, pequeños cambios de harina o hidratación se notan mucho. Corrige poco a poco."},
+cantidad:{title:"He aumentado cantidades y ha cambiado todo.",intro:"Escalar ingredientes no escala automáticamente el comportamiento de la máquina.",checks:["¿Sigue habiendo espacio para que los ingredientes se muevan?","¿El calentamiento necesita más tiempo?","¿La superficie de evaporación es la misma aunque haya más líquido?","¿El nivel de llenado sigue dentro de lo permitido?"],translate:"Duplicar ingredientes no significa duplicar todos los parámetros. Cantidad, movimiento y calentamiento cambian a la vez."}
 };
 function render(key){
  document.querySelectorAll(".problem").forEach(b=>b.classList.toggle("active",b.dataset.key===key));
- const d=data[key]; document.getElementById("title").textContent=d.title;document.getElementById("intro").textContent=d.intro;
+ const d=data[key];document.getElementById("title").textContent=d.title;document.getElementById("intro").textContent=d.intro;
  const ul=document.getElementById("checks");ul.innerHTML="";d.checks.forEach(x=>{const li=document.createElement("li");li.textContent=x;ul.appendChild(li)});
  document.getElementById("translate").textContent=d.translate;
- document.getElementById("wa").href="https://wa.me/34640761605?text="+encodeURIComponent("Hola Macarena, estoy usando tu solucionador y tengo este problema: "+d.title);
+ document.getElementById("wa").href="https://wa.me/34640761605?text="+encodeURIComponent("Hola Macarena, estoy en Rescate Sin Líos y me ha pasado esto: "+d.title+" Te cuento exactamente qué hice: ");
 }
 document.querySelectorAll(".problem").forEach(b=>b.addEventListener("click",()=>render(b.dataset.key)));render("liquida");
 </script>
