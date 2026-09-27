@@ -17,6 +17,9 @@ header{position:sticky;top:0;z-index:30;background:rgba(251,246,238,.95);backdro
 footer{background:#202b24;color:#dce5df;padding:40px 0}footer p{color:#aebbb3;font-size:12px}
 @media(max-width:820px){.hero-grid,.recipe-grid,.inside-grid,.bottom-box{grid-template-columns:1fr}.ingredients{position:static}.hero-photo{min-height:430px}}
 @media(max-width:540px){.hero h1{font-size:46px}.hero-photo{min-height:350px}.method h2,.inside-card h2{font-size:36px}.ingredients,.inside-card{padding:24px}.back{display:none}}
+
+.global-dock{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);z-index:120;background:rgba(34,43,37,.96);color:white;border-radius:22px;padding:7px;display:flex;gap:4px;box-shadow:0 14px 40px rgba(0,0,0,.22);backdrop-filter:blur(12px)}.global-dock a{min-width:74px;text-align:center;padding:7px 9px;border-radius:16px;font-size:10px;font-weight:850}.global-dock a span{display:block;font-size:17px;margin-bottom:2px}.global-dock a:hover{background:rgba(255,255,255,.13)}
+@media(max-width:580px){body{padding-bottom:76px}.global-dock{left:10px;right:10px;transform:none;justify-content:space-between}.global-dock a{min-width:0;flex:1;padding:7px 3px}}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Recipe","name":"Hummus cremoso","description":"Un básico rápido para picoteo, cenas y meriendas, y una receta perfecta para entender cómo cambian la textura la cantidad de líquido, el tiempo y la velocidad.","recipeYield":"4 raciones","totalTime":"PT15M","recipeIngredient":["400 g de garbanzos cocidos y escurridos","40 g de tahini","30 g de zumo de limón","1 diente de ajo pequeño","30 g de aceite de oliva virgen extra","50–80 g de agua fría, según textura","½ cucharadita de comino","Sal al gusto"],"recipeInstructions":[{"@type":"HowToStep","text":"Pon en el vaso los garbanzos, tahini, limón, ajo, aceite, comino, sal y 50 g de agua."},{"@type":"HowToStep","text":"Tritura 40 segundos / velocidad 5–8 progresiva. Empieza más bajo para mover la mezcla y termina más alto para afinar la textura."},{"@type":"HowToStep","text":"Baja lo de las paredes. Observa antes de seguir: si está muy denso, añade 10–20 g de agua."},{"@type":"HowToStep","text":"Tritura 20–30 segundos / velocidad 8. Para cuando la textura sea la que buscas; no necesitas seguir por sistema."},{"@type":"HowToStep","text":"Prueba y ajusta limón, sal o agua. Sirve con un hilo de aceite y lo que te apetezca."}],"author":{"@type":"Person","name":"Macarena"}}</script>
 </head>
@@ -40,4 +43,10 @@ footer{background:#202b24;color:#dce5df;padding:40px 0}footer p{color:#aebbb3;fo
 <section class="bottom"><div class="wrap bottom-box"><div><div class="eyebrow">¿Te ha quedado diferente?</div><h2>Eso también enseña.</h2><p>Cuéntame exactamente qué ingrediente cambiaste, qué cantidad usaste y qué resultado obtuviste.</p></div><div><a class="btn" href="https://wa.me/34640761605?text=Hola%20Macarena%2C%20he%20hecho%20Hummus%20cremoso%20y%20me%20ha%20quedado%20as%C3%AD%3A%20" target="_blank" rel="noopener">Macarena, te cuento</a></div></div><div class="note">Thermomix® es una marca de Vorwerk. Respeta siempre las indicaciones de seguridad, capacidad y uso de tu modelo.</div></section>
 </main>
 <footer><div class="wrap"><b>Cocina sin líos con Macarena</b><p>Receta de cocina doméstica con explicación didáctica para ayudarte a ganar criterio.</p></div></footer>
-</body></html>
+<div class="global-dock">
+<a href="/explora.html"><span>✦</span>Explora</a>
+<a href="/que-cocino.html"><span>🎲</span>Qué cocino</a>
+<a href="/recetas.html"><span>🍝</span>Recetas</a>
+<a href="/diagnostico.html"><span>🧩</span>Rescate</a>
+<a href="/con-macarena.html"><span>👋</span>Macarena</a>
+</div></body></html>
