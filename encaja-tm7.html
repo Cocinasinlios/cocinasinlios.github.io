@@ -80,8 +80,8 @@ document.getElementById("go").addEventListener("click",()=>{
  document.getElementById("signals").innerHTML=s.map(x=>'<div class="signal"><b>'+x[0]+'</b><span>'+x[1]+'</span></div>').join("");
  document.getElementById("rMac").textContent="Yo no decidiría por una lista de funciones. Miraría qué cocinas ahora, qué te gustaría cambiar y si la máquina tendría un lugar claro en tu semana.";
  const summary=Object.entries(state).map(([k,v])=>labels[k]?.[v]||v).join("; ");
- document.getElementById("wa").href="https://wa.me/34640761605?text="+encodeURIComponent("Hola Macarena. He hecho el cuestionario de tu web para pensar si la TM7 encaja conmigo. Mi situación: "+summary+". Quiero comentarte mi caso y aclarar mis dudas.");
- document.getElementById("demo").href="https://wa.me/34640761605?text="+encodeURIComponent("Hola Macarena. He hecho el cuestionario de tu web y me gustaría una demostración enfocada a mi situación. Mi contexto: "+summary+". Me gustaría ver especialmente cómo podría ayudarme en mi día a día.");
+ document.getElementById("wa").href="/hablamos.html?motivo=valoro&contexto="+encodeURIComponent(summary);
+ document.getElementById("demo").href="/hablamos.html?motivo=valoro&accion=demo&contexto="+encodeURIComponent(summary);
  const result=document.getElementById("result");result.classList.add("show");result.scrollIntoView({behavior:"smooth",block:"start"});setTimeout(()=>document.getElementById("rTitle").focus({preventScroll:true}),350);
 });
 </script><script src="/assets/site.js" defer></script>
