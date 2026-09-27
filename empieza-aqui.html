@@ -94,7 +94,7 @@ function render(key,{move=true}={}){
  const box=document.getElementById("route");box.classList.add("show");
  if(move){box.scrollIntoView({behavior:reduceMotion?"auto":"smooth",block:"start"});setTimeout(()=>document.getElementById("routeTitle").focus({preventScroll:true}),reduceMotion?0:350)}
 }
-choices.forEach(b=>b.addEventListener("click",()=>render(b.dataset.route)));
+choices.forEach(b=>b.addEventListener("click",()=>{window.CSLTrack?.("route_choose",{route:b.dataset.route});render(b.dataset.route)}));
 document.getElementById("reset").addEventListener("click",()=>{clearRoute();choices.forEach(b=>b.setAttribute("aria-pressed","false"));document.getElementById("route").classList.remove("show");document.querySelector(".choose").scrollIntoView({behavior:reduceMotion?"auto":"smooth"})});
 const saved=readRoute();if(saved&&routes[saved])render(saved,{move:false});
 </script><script src="/assets/site.js" defer></script>
