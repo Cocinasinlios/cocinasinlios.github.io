@@ -6,6 +6,10 @@ style.textContent=`
 .mag-photo,.card .photo,.day-photo,.hero-photo{position:relative}
 .mag-photo:after,.card .photo:after,.day-photo:after,.hero-photo:after{content:"Cocina sin líos · @thermomixsinlios";position:absolute;right:9px;bottom:8px;z-index:4;background:rgba(20,25,21,.50);color:#fff;padding:4px 7px;border-radius:999px;font:700 8px/1.1 Inter,system-ui,sans-serif;letter-spacing:.25px;pointer-events:none}
 .global-dock a.active,.dock a.active{background:rgba(255,255,255,.16)!important}
+.csl-author-strip{background:#fffdfa;border-bottom:1px solid #e8dfd2;color:#485249}
+.csl-author-inner{width:min(1120px,92vw);margin:auto;min-height:38px;display:flex;align-items:center;gap:9px;font:800 10px/1.2 Inter,system-ui,sans-serif;letter-spacing:.2px}
+.csl-author-mark{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:#f2df9d;color:#2b3a30;font:italic 500 13px/1 Georgia,serif}
+.csl-author-inner a{text-decoration:none;color:#2b3a30;border-bottom:1px solid rgba(43,58,48,.35)}
 .csl-search-btn,.csl-save-btn{position:fixed;bottom:92px;z-index:121;width:48px;height:48px;border:0;border-radius:50%;background:#fffdfa;color:#26352c;box-shadow:0 12px 35px rgba(40,40,34,.18);font-size:20px;cursor:pointer;border:1px solid #e8dfd2}.csl-search-btn{right:18px}.csl-save-btn{right:74px}.csl-save-btn.saved{background:#f2df9d}.csl-search-btn:focus-visible,.csl-save-btn:focus-visible,.csl-search-close:focus-visible,.csl-search-results a:focus-visible,.csl-x:focus-visible{outline:3px solid #7f9a82;outline-offset:3px}
 .csl-search{position:fixed;inset:0;z-index:200;background:rgba(24,28,24,.62);display:none;align-items:flex-start;justify-content:center;padding:9vh 18px 18px}
 .csl-search.open{display:flex}.csl-search-box{width:min(720px,96vw);background:#fffdfa;border-radius:28px;padding:22px;box-shadow:0 25px 80px rgba(0,0,0,.28)}
@@ -47,6 +51,31 @@ style.textContent=`
 }
 `;
 document.head.appendChild(style);
+
+const authorStripPages={
+ recipe:"Receta explicada por Macarena · qué observar, qué aprender y qué mirar si cambia",
+ learn:"Método Sin Líos · explicado por Macarena en lenguaje normal",
+ useful:"Selección de Macarena · cocina real, práctica y sin complicarla",
+ decide:"Con Macarena al otro lado · primero tu cocina, después la decisión"
+};
+const recipeAuthorPages=Object.keys({
+ "/receta-hummus.html":1,"/receta-pasta-pesto.html":1,"/receta-tortitas.html":1,"/receta-gazpacho.html":1,
+ "/receta-merluza-varoma.html":1,"/receta-masa-pizza.html":1,"/receta-bizcocho-yogur.html":1,"/receta-pisto-manchego.html":1
+});
+const learnAuthorPages=["/academia.html","/aprende-cocinando.html","/mapa-sin-lios.html","/glosario.html","/diagnostico.html","/dudas-rapidas.html"];
+const usefulAuthorPages=["/explora.html","/que-cocino.html","/recetas.html","/menu-semana.html","/empieza-aqui.html"];
+const decideAuthorPages=["/encaja-tm7.html"];
+let authorStripText=null;
+if(recipeAuthorPages.includes(path))authorStripText=authorStripPages.recipe;
+else if(learnAuthorPages.includes(path))authorStripText=authorStripPages.learn;
+else if(usefulAuthorPages.includes(path))authorStripText=authorStripPages.useful;
+else if(decideAuthorPages.includes(path))authorStripText=authorStripPages.decide;
+if(authorStripText){
+ const strip=document.createElement("div");strip.className="csl-author-strip";
+ strip.innerHTML='<div class="csl-author-inner"><span class="csl-author-mark" aria-hidden="true">M</span><span>'+authorStripText+'</span><a href="/con-macarena.html">Quién está detrás</a></div>';
+ const header=document.querySelector("header");
+ if(header)header.insertAdjacentElement("afterend",strip);
+}
 
 const standardDock=[
  ["/explora.html","✦","Explora"],
