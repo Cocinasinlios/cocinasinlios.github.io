@@ -57,7 +57,7 @@ bar.style.width=(done/lessons.length*100)+"%";track.setAttribute("aria-valuenow"
 const nextLesson=lessons.find(x=>!seen.includes(x.dataset.path));
 if(nextLesson){
  const title=nextLesson.querySelector("h3").textContent,learning=nextLesson.querySelector(".learn").textContent.replace("Aprendes: ","");
- continueBox.innerHTML='<div class="continue-card"><div><small>Continúa por aquí</small><b>'+title+'</b><span>'+learning+'</span></div><a href="'+nextLesson.dataset.path+'">Abrir siguiente receta →</a></div>';
+ continueBox.innerHTML='<div class="continue-card"><div><small>Yo seguiría por aquí</small><b>'+title+'</b><span>'+learning+'</span></div><a href="'+nextLesson.dataset.path+'">Seguir con esta receta →</a></div>';
 }else{
  continueBox.innerHTML='<div class="continue-card"><div><small>Has recorrido las ocho</small><b>Ahora mezcla lo aprendido.</b><span>Vuelve al glosario o entra en Rescate cuando una receta real te plantee una duda.</span></div><a href="/glosario.html">Abrir glosario →</a></div>';
 }
