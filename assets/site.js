@@ -80,7 +80,8 @@ const generic={
  "/receta-gazpacho.html":["/glosario.html","/recetas.html","/diagnostico.html"],
  "/receta-merluza-varoma.html":["/diagnostico.html","/glosario.html","/menu-semana.html"],
  "/receta-masa-pizza.html":["/glosario.html","/recetas.html","/menu-semana.html"],
- "/receta-bizcocho-yogur.html":["/glosario.html","/recetas.html","/diagnostico.html"]
+ "/receta-bizcocho-yogur.html":["/glosario.html","/recetas.html","/diagnostico.html"],
+ "/receta-pisto-manchego.html":["/glosario.html","/menu-semana.html","/recetas.html"]
 };
 
 const journeys={
@@ -129,7 +130,8 @@ const searchData=[
 ["🍅","Gazpacho andaluz","Receta completa para aprender trituración y textura.","/receta-gazpacho.html","gazpacho tomate verano triturar velocidad"],
 ["🐟","Merluza al vapor","Receta completa para aprender circulación de vapor.","/receta-merluza-varoma.html","merluza pescado varoma vapor verduras"],
 ["🍕","Masa de pizza","Receta completa para aprender amasado y fermentación.","/receta-masa-pizza.html","pizza masa harina levadura amasar fermentar"],
-["🍰","Bizcocho de yogur","Receta completa para aprender aireado y mezcla sin sobrebatir.","/receta-bizcocho-yogur.html","bizcocho yogur dulce postre merienda airear mezclar hornear"]
+["🍰","Bizcocho de yogur","Receta completa para aprender aireado y mezcla sin sobrebatir.","/receta-bizcocho-yogur.html","bizcocho yogur dulce postre merienda airear mezclar hornear"],
+["🍅","Pisto manchego","Receta completa para aprender troceado, giro inverso y concentración.","/receta-pisto-manchego.html","pisto manchego verduras tomate calabacin pimiento giro inverso batch cooking"]
 ];
 
 const saveable=!["/mi-rincon.html","/uso-y-propiedad.html","/404.html"].includes(path);
