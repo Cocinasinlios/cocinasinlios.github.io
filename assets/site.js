@@ -7,6 +7,7 @@ function track(name,params={}){
  window.dataLayer.push(safe);
  try{window.dispatchEvent(new CustomEvent("csl:track",{detail:safe}))}catch(e){}
 }
+window.CSLTrack=track;
 if(!document.querySelector('link[rel="icon"]')){const l=document.createElement("link");l.rel="icon";l.href="/assets/favicon.svg";l.type="image/svg+xml";document.head.appendChild(l)}
 if(!document.querySelector('link[rel="manifest"]')){const m=document.createElement("link");m.rel="manifest";m.href="/site.webmanifest";document.head.appendChild(m)}
 
