@@ -6,7 +6,7 @@ style.textContent=`
 .mag-photo,.card .photo,.day-photo,.hero-photo{position:relative}
 .mag-photo:after,.card .photo:after,.day-photo:after,.hero-photo:after{content:"Cocina sin líos · @thermomixsinlios";position:absolute;right:9px;bottom:8px;z-index:4;background:rgba(20,25,21,.50);color:#fff;padding:4px 7px;border-radius:999px;font:700 8px/1.1 Inter,system-ui,sans-serif;letter-spacing:.25px;pointer-events:none}
 .global-dock a.active,.dock a.active{background:rgba(255,255,255,.16)!important}
-.csl-search-btn,.csl-save-btn{position:fixed;bottom:92px;z-index:121;width:48px;height:48px;border:0;border-radius:50%;background:#fffdfa;color:#26352c;box-shadow:0 12px 35px rgba(40,40,34,.18);font-size:20px;cursor:pointer;border:1px solid #e8dfd2}.csl-search-btn{right:18px}.csl-save-btn{right:74px}.csl-save-btn.saved{background:#f2df9d}
+.csl-search-btn,.csl-save-btn{position:fixed;bottom:92px;z-index:121;width:48px;height:48px;border:0;border-radius:50%;background:#fffdfa;color:#26352c;box-shadow:0 12px 35px rgba(40,40,34,.18);font-size:20px;cursor:pointer;border:1px solid #e8dfd2}.csl-search-btn{right:18px}.csl-save-btn{right:74px}.csl-save-btn.saved{background:#f2df9d}.csl-search-btn:focus-visible,.csl-save-btn:focus-visible,.csl-search-close:focus-visible,.csl-search-results a:focus-visible,.csl-x:focus-visible{outline:3px solid #7f9a82;outline-offset:3px}
 .csl-search{position:fixed;inset:0;z-index:200;background:rgba(24,28,24,.62);display:none;align-items:flex-start;justify-content:center;padding:9vh 18px 18px}
 .csl-search.open{display:flex}.csl-search-box{width:min(720px,96vw);background:#fffdfa;border-radius:28px;padding:22px;box-shadow:0 25px 80px rgba(0,0,0,.28)}
 .csl-search-top{display:flex;gap:10px}.csl-search input{width:100%;border:1px solid #e8dfd2;border-radius:999px;padding:14px 17px;font:inherit;outline:none}.csl-search-close{border:0;background:#f0e9df;border-radius:50%;width:46px;min-width:46px;font-size:20px;cursor:pointer}
@@ -115,13 +115,13 @@ const saveable=!["/mi-rincon.html","/uso-y-propiedad.html","/404.html"].includes
 if(saveable){
  const save=document.createElement("button");save.className="csl-save-btn";save.setAttribute("aria-label","Guardar en Mi rincón");save.textContent="♡";
  let favs=[];try{favs=JSON.parse(localStorage.getItem("csl_favs")||"[]")}catch(e){}
- if(favs.includes(path)){save.classList.add("saved");save.textContent="♥"}
- save.addEventListener("click",()=>{let x=[];try{x=JSON.parse(localStorage.getItem("csl_favs")||"[]")}catch(e){};if(x.includes(path)){x=x.filter(p=>p!==path);save.classList.remove("saved");save.textContent="♡"}else{x.push(path);save.classList.add("saved");save.textContent="♥"}localStorage.setItem("csl_favs",JSON.stringify(x.slice(-40)))});
+ if(favs.includes(path)){save.classList.add("saved");save.textContent="♥";save.setAttribute("aria-pressed","true")}else{save.setAttribute("aria-pressed","false")}
+ save.addEventListener("click",()=>{let x=[];try{x=JSON.parse(localStorage.getItem("csl_favs")||"[]")}catch(e){};if(x.includes(path)){x=x.filter(p=>p!==path);save.classList.remove("saved");save.textContent="♡";save.setAttribute("aria-pressed","false")}else{x.push(path);save.classList.add("saved");save.textContent="♥";save.setAttribute("aria-pressed","true")}try{localStorage.setItem("csl_favs",JSON.stringify(x.slice(-40)))}catch(e){}});
  document.body.appendChild(save);
 }
 const sb=document.createElement("button");sb.className="csl-search-btn";sb.setAttribute("aria-label","Buscar en Cocina sin líos");sb.textContent="⌕";document.body.appendChild(sb);
-const modal=document.createElement("div");modal.className="csl-search";modal.setAttribute("aria-hidden","true");
-modal.innerHTML='<div class="csl-search-box"><div class="csl-search-top"><input type="search" placeholder="Busca: masa, TM7, cena, Varoma, Macarena..."><button class="csl-search-close" aria-label="Cerrar">×</button></div><div class="csl-search-results"></div></div>';
+const modal=document.createElement("div");modal.className="csl-search";modal.setAttribute("aria-hidden","true");modal.setAttribute("role","dialog");modal.setAttribute("aria-modal","true");modal.setAttribute("aria-labelledby","csl-search-title");
+modal.innerHTML='<div class="csl-search-box"><div id="csl-search-title" style="font-family:Georgia,serif;font-size:24px;margin:0 0 12px">Buscar en Cocina sin líos</div><div class="csl-search-top"><input type="search" aria-label="Buscar en Cocina sin líos" placeholder="Busca: masa, TM7, cena, Varoma, Macarena..."><button class="csl-search-close" aria-label="Cerrar">×</button></div><div class="csl-search-results" aria-live="polite"></div></div>';
 document.body.appendChild(modal);
 const input=modal.querySelector("input"),results=modal.querySelector(".csl-search-results");
 function draw(q=""){
@@ -129,8 +129,19 @@ function draw(q=""){
  const rows=searchData.filter(x=>!v||(x[1]+" "+x[2]+" "+x[4]).toLowerCase().includes(v)).slice(0,8);
  results.innerHTML=rows.map(x=>'<a href="'+x[3]+'"><span style="font-size:21px">'+x[0]+'</span><span><b>'+x[1]+'</b><small>'+x[2]+'</small></span><em>→</em></a>').join("")||'<div style="padding:18px;color:#706f67">No encuentro eso todavía. Prueba otra palabra.</div>';
 }
-function openSearch(){modal.classList.add("open");modal.setAttribute("aria-hidden","false");draw(input.value);setTimeout(()=>input.focus(),40)}
-function closeSearch(){modal.classList.remove("open");modal.setAttribute("aria-hidden","true")}
+let searchReturnFocus=null;
+function openSearch(){if(modal.classList.contains("open"))return;searchReturnFocus=document.activeElement;modal.classList.add("open");modal.setAttribute("aria-hidden","false");document.body.style.overflow="hidden";draw(input.value);setTimeout(()=>input.focus(),40)}
+function closeSearch(){if(!modal.classList.contains("open"))return;modal.classList.remove("open");modal.setAttribute("aria-hidden","true");document.body.style.overflow="";if(searchReturnFocus&&typeof searchReturnFocus.focus==="function")searchReturnFocus.focus()}
 sb.addEventListener("click",openSearch);modal.querySelector(".csl-search-close").addEventListener("click",closeSearch);modal.addEventListener("click",e=>{if(e.target===modal)closeSearch()});input.addEventListener("input",()=>draw(input.value));
-document.addEventListener("keydown",e=>{if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==="k"){e.preventDefault();openSearch()}if(e.key==="Escape")closeSearch()});
+document.addEventListener("keydown",e=>{
+ if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==="k"){e.preventDefault();openSearch()}
+ if(e.key==="Escape"&&modal.classList.contains("open")){e.preventDefault();closeSearch()}
+ if(e.key==="Tab"&&modal.classList.contains("open")){
+  const items=[...modal.querySelectorAll('input,button,a[href]')].filter(x=>!x.disabled&&x.offsetParent!==null);
+  if(!items.length)return;
+  const first=items[0],last=items[items.length-1];
+  if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}
+  else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}
+ }
+});
 })();
