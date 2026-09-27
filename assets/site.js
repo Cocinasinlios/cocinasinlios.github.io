@@ -58,7 +58,10 @@ const generic={
  "/con-macarena.html":["/empieza-aqui.html","/explora.html","/recetas.html"],
  "/receta-hummus.html":["/academia.html","/glosario.html","/diagnostico.html"],
  "/receta-pasta-pesto.html":["/academia.html","/menu-semana.html","/glosario.html"],
- "/receta-tortitas.html":["/recetas.html","/academia.html","/que-cocino.html"]
+ "/receta-tortitas.html":["/recetas.html","/academia.html","/que-cocino.html"],
+ "/receta-gazpacho.html":["/glosario.html","/recetas.html","/diagnostico.html"],
+ "/receta-merluza-varoma.html":["/diagnostico.html","/glosario.html","/menu-semana.html"],
+ "/receta-masa-pizza.html":["/glosario.html","/recetas.html","/menu-semana.html"]
 };
 
 const journeys={
@@ -100,9 +103,12 @@ const searchData=[
 ["✨","¿La TM7 encaja contigo?","Recorrido para valorar tu caso.","/encaja-tm7.html","tm7 comprar decidir encaja demo"],
 ["👋","Con Macarena","Mi forma de acompañarte antes y después.","/con-macarena.html","macarena agente acompañamiento ayuda whatsapp"],
 ["♡","Mi rincón","Tus favoritos y páginas recientes.","/mi-rincon.html","favoritos guardados historial recientes"],
-["🥣","Hummus cremoso","Receta completa explicada.","/receta-hummus.html","hummus garbanzo picoteo triturar"],
+["🥣","Hummus exprés","Receta completa explicada.","/receta-hummus.html","hummus garbanzo picoteo triturar"],
 ["🌿","Pasta al pesto","Receta completa explicada.","/receta-pasta-pesto.html","pasta pesto cena salsa emulsión"],
-["🥞","Tortitas","Receta completa explicada.","/receta-tortitas.html","tortitas desayuno dulce masa"]
+["🥞","Tortitas","Receta completa explicada.","/receta-tortitas.html","tortitas desayuno dulce masa"],
+["🍅","Gazpacho andaluz","Receta completa para aprender trituración y textura.","/receta-gazpacho.html","gazpacho tomate verano triturar velocidad"],
+["🐟","Merluza al vapor","Receta completa para aprender circulación de vapor.","/receta-merluza-varoma.html","merluza pescado varoma vapor verduras"],
+["🍕","Masa de pizza","Receta completa para aprender amasado y fermentación.","/receta-masa-pizza.html","pizza masa harina levadura amasar fermentar"]
 ];
 
 const saveable=!["/mi-rincon.html","/uso-y-propiedad.html","/404.html"].includes(path);
