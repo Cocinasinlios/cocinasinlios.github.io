@@ -40,6 +40,7 @@ nav{margin-left:auto;display:flex;gap:22px;font-size:13px;font-weight:700}nav a:
 .sticker strong{font-weight:500}
 
 .personal-strip{padding:10px 0 62px}.personal-card{display:grid;grid-template-columns:150px 1fr auto;gap:22px;align-items:center;background:white;border:1px solid var(--line);border-radius:26px;padding:18px 22px;box-shadow:0 10px 32px rgba(58,51,42,.06)}.personal-photo{width:150px;height:130px;border-radius:20px;background-image:url("assets/sprite.webp");background-repeat:no-repeat;background-size:300% 200%;background-position:0 0}.personal-copy h3{font-size:28px;margin:4px 0 7px}.personal-copy p{margin:0;color:var(--muted);font-size:14px}.personal-card .btn{white-space:nowrap}
+.today-pick{padding:0 0 62px}.today-box{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:center;background:var(--dark);color:white;border-radius:30px;padding:34px}.today-box h2{font-size:42px;line-height:1.03;margin:7px 0 12px}.today-box p{color:#dce5df;margin:0}.today-card{background:white;color:var(--ink);border-radius:23px;padding:23px}.today-card small{font-size:10px;text-transform:uppercase;letter-spacing:1.2px;font-weight:900;color:#6b7a6b}.today-card h3{font-size:29px;margin:7px 0}.today-card p{color:var(--muted);font-size:13px}.today-card .btn{margin-top:12px}
 .explore{padding:34px 0 42px}.explore h2{font-size:32px;margin:0 0 18px}.chips{display:flex;flex-wrap:wrap;gap:10px}
 .chip{padding:11px 15px;border-radius:999px;background:white;border:1px solid var(--line);font-weight:800;font-size:13px;transition:.2s}.chip:hover{transform:translateY(-2px);background:var(--sage2)}
 
@@ -66,7 +67,7 @@ nav{margin-left:auto;display:flex;gap:22px;font-size:13px;font-weight:700}nav a:
 footer{background:#202b24;color:#dce5df;padding:47px 0}.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:35px}footer p{color:#aebbb3;font-size:13px}footer a:hover{color:white}
 .wa-float{position:fixed;right:18px;bottom:18px;z-index:80;width:57px;height:57px;border-radius:50%;background:#1f6c4b;color:white;display:grid;place-items:center;font-weight:900;box-shadow:0 12px 30px rgba(24,70,48,.27)}
 .fade{opacity:0;transform:translateY(15px);transition:.55s ease}.fade.in{opacity:1;transform:none}
-@media(max-width:900px){nav{display:none}.mobile-nav{display:block;margin-left:auto}.navcta{display:none}.hero-grid,.signature-grid,.week-grid,.tm7-grid,.about-grid,.guide-box{grid-template-columns:1fr}.personal-card{grid-template-columns:120px 1fr}.personal-card .btn{grid-column:1/-1}.why-grid{grid-template-columns:1fr 1fr}.hero-copy{order:2}.hero-collage{order:1}.hero-collage{grid-template-rows:220px 220px}.mag-grid{grid-template-columns:1fr 1fr}.mag-card.big{grid-column:1/-1;grid-row:auto;min-height:380px}.week-photo{min-height:420px}.footer-grid{grid-template-columns:1fr}}
+@media(max-width:900px){nav{display:none}.mobile-nav{display:block;margin-left:auto}.navcta{display:none}.hero-grid,.signature-grid,.week-grid,.tm7-grid,.about-grid,.guide-box,.today-box{grid-template-columns:1fr}.personal-card{grid-template-columns:120px 1fr}.personal-card .btn{grid-column:1/-1}.why-grid{grid-template-columns:1fr 1fr}.hero-copy{order:2}.hero-collage{order:1}.hero-collage{grid-template-rows:220px 220px}.mag-grid{grid-template-columns:1fr 1fr}.mag-card.big{grid-column:1/-1;grid-row:auto;min-height:380px}.week-photo{min-height:420px}.footer-grid{grid-template-columns:1fr}}
 @media(max-width:600px){.wrap{width:min(94vw,1180px)}.hero{padding-top:28px}.hero h1{font-size:47px;letter-spacing:-2px}.hero-collage{grid-template-columns:1fr 1fr;grid-template-rows:220px 160px}.tile.one{grid-column:1/-1;grid-row:auto}.section-head{display:block}.section-head p{margin-top:14px}.mag-grid{grid-template-columns:1fr;grid-auto-rows:270px}.mag-card.big{grid-column:auto;min-height:360px}.signature,.week,.tm7,.about{padding:62px 0}.sig-card{padding:27px;min-height:380px}.sig-card h2,.week-copy h2,.tm7-copy h2,.about h2{font-size:40px}.week-copy,.tm7-copy{padding:27px}.week-tags{grid-template-columns:1fr}.guide-box{padding:28px}.guide-box h2{font-size:37px}.actions,.sig-actions{flex-direction:column}.btn{width:100%}.sticker{font-size:14px}.about-img{min-height:430px}.personal-card{grid-template-columns:1fr}.personal-photo{width:100%;height:240px}.why-grid{grid-template-columns:1fr}}
 
 .global-dock{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);z-index:120;background:rgba(34,43,37,.96);color:white;border-radius:22px;padding:7px;display:flex;gap:4px;box-shadow:0 14px 40px rgba(0,0,0,.22);backdrop-filter:blur(12px)}.global-dock a{min-width:74px;text-align:center;padding:7px 9px;border-radius:16px;font-size:10px;font-weight:850}.global-dock a span{display:block;font-size:17px;margin-bottom:2px}.global-dock a:hover{background:rgba(255,255,255,.13)}
@@ -118,6 +119,11 @@ footer{background:#202b24;color:#dce5df;padding:47px 0}.footer-grid{display:grid
   </div>
  </div>
 </section>
+
+<section class="today-pick"><div class="wrap"><div class="today-box fade">
+<div><div class="eyebrow" style="color:#b9c9bc">Hoy, yo empezaría por aquí</div><h2>Una recomendación de Macarena, no de un algoritmo.</h2><p>No hace falta verlo todo. Cada día te dejo una puerta de entrada distinta para que la web se sienta viva y te resulte fácil decidir por dónde seguir.</p></div>
+<div class="today-card"><small id="todayKicker">Macarena elige</small><h3 id="todayTitle">Una idea para hoy</h3><p id="todayText">Estoy preparando tu recomendación.</p><a id="todayLink" class="btn primary" href="/explora.html">Ir a verla</a></div>
+</div></div></section>
 
 <section class="personal-strip"><div class="wrap"><div class="personal-card fade">
 <div class="personal-photo" role="img" aria-label="Macarena"></div>
@@ -226,6 +232,18 @@ footer{background:#202b24;color:#dce5df;padding:47px 0}.footer-grid{display:grid
 </div></footer>
 <a class="wa-float" href="https://wa.me/34640761605?text=Hola%20Macarena%2C%20he%20llegado%20desde%20tu%20web." target="_blank" rel="noopener" aria-label="WhatsApp">W</a>
 <script>
+const picks=[
+["Lunes sin pensar demasiado","Pasta pesto para repetir","Empieza la semana con una cena fácil y aprende además cómo ligar una salsa.","/receta-pasta-pesto.html"],
+["Martes de resolver","¿Qué cocino hoy?","Dime tiempo y antojo y te doy tres ideas para salir del bloqueo.","/que-cocino.html"],
+["Miércoles de rescate","Rescate Sin Líos","Mitad de semana: si algo te salió raro, vamos a entender qué variable mirar.","/diagnostico.html"],
+["Jueves de aprender algo","Thermomix por dentro","Una curiosidad útil hoy puede ahorrarte errores en muchas recetas mañana.","/academia.html"],
+["Viernes que apetezca","Tortitas de domingo... aunque sea viernes","Porque no todo en la web tiene que ser organización y eficiencia.","/receta-tortitas.html"],
+["Sábado para curiosear","Explora sin orden","Hoy no te voy a mandar estudiar nada. Entra donde te llame la atención.","/explora.html"],
+["Domingo que ayuda al lunes","Menú de la semana","Diez minutos hoy pueden ahorrarte cinco '¿qué cenamos?' esta semana.","/menu-semana.html"]
+];
+const d=new Date().getDay(),idx=d===0?6:d-1,p=picks[idx];
+const tk=document.getElementById("todayKicker"),tt=document.getElementById("todayTitle"),tx=document.getElementById("todayText"),tl=document.getElementById("todayLink");
+if(tk&&tt&&tx&&tl){tk.textContent=p[0];tt.textContent=p[1];tx.textContent=p[2];tl.href=p[3]}
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add("in")}),{threshold:.08});
 document.querySelectorAll(".fade").forEach(el=>io.observe(el));
 </script>
