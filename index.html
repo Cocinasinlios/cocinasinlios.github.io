@@ -28,7 +28,19 @@ header{position:sticky;top:0;z-index:60;background:rgba(251,246,238,.94);backdro
 .nav{height:74px;display:flex;align-items:center;gap:26px}.brand{font-size:26px;line-height:.95;font-weight:700;letter-spacing:-.8px}.brand small{display:block;font-family:Inter,sans-serif;font-size:9px;text-transform:uppercase;letter-spacing:2px;color:var(--muted);margin-top:7px}
 nav{margin-left:auto;display:flex;gap:22px;font-size:13px;font-weight:700}nav a:hover{color:var(--terr)}
 .navcta,.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;font-weight:900;transition:.2s}.navcta{background:var(--dark);color:white;padding:11px 17px;font-size:13px}.btn{padding:13px 19px;font-size:13px;border:1px solid var(--dark)}.btn.primary{background:var(--dark);color:white}.btn.light{background:white;border-color:white}.btn.ghost{background:transparent}
-.mobile-nav{display:none!important}
+.mobile-nav{display:none;border:0;background:white;border:1px solid var(--line);width:44px;height:44px;border-radius:50%;font-size:21px;cursor:pointer;color:var(--dark)}
+.mobile-menu{display:none}
+.mobile-menu.open{display:block}
+.mobile-menu-backdrop{position:fixed;inset:0;background:rgba(24,28,24,.48);z-index:140}
+.mobile-menu-panel{position:fixed;top:0;right:0;bottom:0;width:min(390px,90vw);z-index:141;background:var(--paper);padding:22px;box-shadow:-22px 0 60px rgba(0,0,0,.18);overflow:auto}
+.mobile-menu-head{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-bottom:18px;border-bottom:1px solid var(--line)}
+.mobile-menu-head b{font-family:Georgia,serif;font-size:26px;font-weight:500}
+.mobile-menu-close{border:0;background:#f0e9df;width:42px;height:42px;border-radius:50%;font-size:21px;cursor:pointer}
+.mobile-menu-links{display:grid;gap:7px;padding:18px 0}
+.mobile-menu-links a{display:flex;justify-content:space-between;align-items:center;padding:13px 14px;border-radius:15px;background:#f8f4ee;font-weight:850;font-size:14px}
+.mobile-menu-links a:after{content:"→";color:var(--terr)}
+.mobile-menu-actions{display:grid;gap:9px;margin-top:12px}.mobile-menu-actions .btn{width:100%}
+body.menu-open{overflow:hidden}
 
 .hero{padding:50px 0 30px}.hero-grid{display:grid;grid-template-columns:.88fr 1.12fr;gap:44px;align-items:center}
 .hero-copy{padding:14px 0}.hero h1{font-size:clamp(50px,6.4vw,86px);line-height:.94;letter-spacing:-3.4px;margin:10px 0 21px}.hero p{font-size:18px;color:var(--muted);max-width:620px;margin:0}
@@ -71,7 +83,7 @@ footer{background:#202b24;color:#dce5df;padding:47px 0}.footer-grid{display:grid
 @media(max-width:600px){.wrap{width:min(94vw,1180px)}.hero{padding-top:28px}.hero h1{font-size:47px;letter-spacing:-2px}.hero-collage{grid-template-columns:1fr 1fr;grid-template-rows:220px 160px}.tile.one{grid-column:1/-1;grid-row:auto}.section-head{display:block}.section-head p{margin-top:14px}.mag-grid{grid-template-columns:1fr;grid-auto-rows:270px}.mag-card.big{grid-column:auto;min-height:360px}.signature,.week,.tm7,.about{padding:62px 0}.sig-card{padding:27px;min-height:380px}.sig-card h2,.week-copy h2,.tm7-copy h2,.about h2{font-size:40px}.week-copy,.tm7-copy{padding:27px}.week-tags{grid-template-columns:1fr}.guide-box{padding:28px}.guide-box h2{font-size:37px}.actions,.sig-actions{flex-direction:column}.btn{width:100%}.sticker{font-size:14px}.about-img{min-height:430px}.personal-card{grid-template-columns:1fr}.personal-photo{width:100%;height:240px}.why-grid{grid-template-columns:1fr}}
 
 .global-dock{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);z-index:120;background:rgba(34,43,37,.96);color:white;border-radius:22px;padding:7px;display:flex;gap:4px;box-shadow:0 14px 40px rgba(0,0,0,.22);backdrop-filter:blur(12px)}.global-dock a{min-width:74px;text-align:center;padding:7px 9px;border-radius:16px;font-size:10px;font-weight:850}.global-dock a span{display:block;font-size:17px;margin-bottom:2px}.global-dock a:hover{background:rgba(255,255,255,.13)}
-@media(max-width:580px){body{padding-bottom:76px}.global-dock{left:10px;right:10px;transform:none;justify-content:space-between}.global-dock a{min-width:0;flex:1;padding:7px 3px}}
+@media(max-width:580px){body{padding-bottom:76px}.wa-float{right:12px;bottom:148px}.global-dock{left:10px;right:10px;transform:none;justify-content:space-between}.global-dock a{min-width:0;flex:1;padding:7px 3px}}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebSite","name":"Cocina sin líos con Macarena","url":"https://cocinasinlios.github.io/","description":"Recetas, menús y aprendizaje práctico para entender Thermomix y cocinar con menos líos.","author":{"@type":"Person","name":"Macarena"},"publisher":{"@type":"Person","name":"Macarena"}}
@@ -81,12 +93,35 @@ footer{background:#202b24;color:#dce5df;padding:47px 0}.footer-grid{display:grid
 <div class="topbar">Recetas que apetecen · ideas que solucionan · Thermomix explicada sin rollos</div>
 <header>
  <div class="wrap nav">
-  <a class="brand" href="#">Cocina sin líos<small>con Macarena</small></a>
-  <nav><a href="/empieza-aqui.html">Empieza aquí</a><a href="/explora.html">Explora</a><a href="/que-cocino.html">Qué cocino</a><a href="/recetas.html">Recetas</a><a href="/menu-semana.html">Menús</a><a href="/academia.html">Por dentro</a><a href="/diagnostico.html">Rescate</a><a href="/encaja-tm7.html">TM7</a><a href="/con-macarena.html">Con Macarena</a><a href="/mi-rincon.html">Mi rincón</a></nav>
-  <div class="mobile-nav">☰</div>
+  <a class="brand" href="/">Cocina sin líos<small>con Macarena</small></a>
+  <nav><a href="/empieza-aqui.html">Empieza aquí</a><a href="/explora.html">Explora</a><a href="/recetas.html">Recetas</a><a href="/academia.html">Por dentro</a><a href="/diagnostico.html">Rescate</a><a href="/encaja-tm7.html">TM7</a><a href="/con-macarena.html">Macarena</a></nav>
+  <button class="mobile-nav" type="button" aria-label="Abrir menú" aria-controls="mobile-menu" aria-expanded="false">☰</button>
   <a class="navcta" href="https://wa.me/34640761605?text=Hola%20Macarena%2C%20he%20llegado%20desde%20tu%20web." target="_blank" rel="noopener">Habla conmigo</a>
  </div>
 </header>
+<div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+  <div class="mobile-menu-backdrop" data-close-menu></div>
+  <aside class="mobile-menu-panel" aria-label="Menú principal">
+    <div class="mobile-menu-head"><b>Cocina sin líos</b><button class="mobile-menu-close" type="button" aria-label="Cerrar menú" data-close-menu>×</button></div>
+    <div class="mobile-menu-links">
+      <a href="/empieza-aqui.html">Empieza aquí</a>
+      <a href="/explora.html">Explora</a>
+      <a href="/que-cocino.html">Qué cocino</a>
+      <a href="/recetas.html">Recetas</a>
+      <a href="/menu-semana.html">Menús</a>
+      <a href="/academia.html">Thermomix por dentro</a>
+      <a href="/glosario.html">Glosario Sin Líos</a>
+      <a href="/diagnostico.html">Rescate</a>
+      <a href="/dudas-rapidas.html">Dudas rápidas</a>
+      <a href="/encaja-tm7.html">¿La TM7 encaja conmigo?</a>
+      <a href="/con-macarena.html">Con Macarena</a>
+      <a href="/mi-rincon.html">Mi rincón</a>
+    </div>
+    <div class="mobile-menu-actions">
+      <a class="btn primary" href="https://wa.me/34640761605?text=Hola%20Macarena%2C%20he%20llegado%20desde%20tu%20web." target="_blank" rel="noopener">Hablar con Macarena</a>
+    </div>
+  </aside>
+</div>
 
 <main>
 <section class="hero">
@@ -135,9 +170,9 @@ footer{background:#202b24;color:#dce5df;padding:47px 0}.footer-grid{display:grid
  <div class="wrap">
   <div class="section-head fade"><div><div class="eyebrow">Para abrir apetito</div><h2>Empieza por algo que te apetezca.</h2></div><p>No hace falta “estudiar” la web. Entra por una receta, una idea o un antojo. La parte de aprender aparece mientras cocinas.</p></div>
   <div class="mag-grid">
-   <a class="mag-card big fade" href="/receta-pasta-pesto.html"><div class="mag-photo mag1"></div><div class="shade"></div><div class="mag-copy"><span>Favorito sin líos</span><h3>Pasta cremosa para una noche de “no sé qué hacer”</h3><p>Rápida, agradecida y con truco para entender la textura.</p></div></a>
-   <a class="mag-card fade" href="/receta-hummus.html"><div class="mag-photo mag2"></div><div class="shade"></div><div class="mag-copy"><span>Picoteo</span><h3>Hummus que repetirás</h3></div></a>
-   <a class="mag-card fade" href="/recetas.html?f=cena"><div class="mag-photo mag3"></div><div class="shade"></div><div class="mag-copy"><span>Cena</span><h3>Pizza fácil de verdad</h3></div></a>
+   <a class="mag-card big fade" href="/receta-pasta-pesto.html"><div class="mag-photo mag1"></div><div class="shade"></div><div class="mag-copy"><span>Favorito sin líos</span><h3>Pasta al pesto para una noche de “no sé qué hacer”</h3><p>Rápida, agradecida y con truco para entender la textura.</p></div></a>
+   <a class="mag-card fade" href="/receta-hummus.html"><div class="mag-photo mag2"></div><div class="shade"></div><div class="mag-copy"><span>Picoteo</span><h3>Hummus exprés que repetirás</h3></div></a>
+   <a class="mag-card fade" href="/receta-masa-pizza.html"><div class="mag-photo mag3"></div><div class="shade"></div><div class="mag-copy"><span>Masa</span><h3>Pizza fácil de verdad</h3></div></a>
    <a class="mag-card fade" href="/receta-tortitas.html"><div class="mag-photo mag4"></div><div class="shade"></div><div class="mag-copy"><span>Desayuno</span><h3>Domingo en un plato</h3></div></a>
    <a class="mag-card fade" href="/recetas.html"><div class="mag-photo mag5"></div><div class="shade"></div><div class="mag-copy"><span>Organización</span><h3>Dejar cosas hechas sin perder el domingo</h3></div></a>
   </div>
@@ -246,6 +281,13 @@ const tk=document.getElementById("todayKicker"),tt=document.getElementById("toda
 if(tk&&tt&&tx&&tl){tk.textContent=p[0];tt.textContent=p[1];tx.textContent=p[2];tl.href=p[3]}
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add("in")}),{threshold:.08});
 document.querySelectorAll(".fade").forEach(el=>io.observe(el));
+const menuBtn=document.querySelector(".mobile-nav"),mobileMenu=document.getElementById("mobile-menu"),menuPanel=mobileMenu?.querySelector(".mobile-menu-panel"),menuClose=mobileMenu?.querySelector(".mobile-menu-close");
+function openMenu(){if(!mobileMenu)return;mobileMenu.classList.add("open");mobileMenu.setAttribute("aria-hidden","false");menuBtn?.setAttribute("aria-expanded","true");document.body.classList.add("menu-open");setTimeout(()=>menuClose?.focus(),30)}
+function closeMenu(){if(!mobileMenu)return;mobileMenu.classList.remove("open");mobileMenu.setAttribute("aria-hidden","true");menuBtn?.setAttribute("aria-expanded","false");document.body.classList.remove("menu-open");menuBtn?.focus()}
+menuBtn?.addEventListener("click",openMenu);
+mobileMenu?.querySelectorAll("[data-close-menu]").forEach(x=>x.addEventListener("click",closeMenu));
+mobileMenu?.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{mobileMenu.classList.remove("open");document.body.classList.remove("menu-open")}));
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&mobileMenu?.classList.contains("open"))closeMenu();if(e.key==="Tab"&&mobileMenu?.classList.contains("open")){const items=[...menuPanel.querySelectorAll("a,button")].filter(x=>!x.disabled);if(!items.length)return;const first=items[0],last=items[items.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}}});
 </script>
 <div class="global-dock">
 <a href="/explora.html"><span>✦</span>Explora</a>
