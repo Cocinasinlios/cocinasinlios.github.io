@@ -1,5 +1,7 @@
 (()=>{
 const path=location.pathname.replace(/\/$/,"")||"/";
+if(!document.querySelector('link[rel="icon"]')){const l=document.createElement("link");l.rel="icon";l.href="/assets/favicon.svg";l.type="image/svg+xml";document.head.appendChild(l)}
+if(!document.querySelector('link[rel="manifest"]')){const m=document.createElement("link");m.rel="manifest";m.href="/site.webmanifest";document.head.appendChild(m)}
 
 const style=document.createElement("style");
 style.textContent=`
