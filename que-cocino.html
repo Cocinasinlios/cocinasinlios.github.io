@@ -81,7 +81,7 @@ function render(){
  const g=document.getElementById("grid");g.innerHTML=pool.map(x=>'<article class="card"><div class="photo '+x.photo+'"></div><div class="body"><small>Macarena te propone · '+x.time+' min · aprendes '+x.learn+'</small><h3>'+x.title+'</h3><p>'+x.desc+'</p><a class="btn" href="'+x.url+'">'+(x.url.startsWith("/receta-")?"Ver receta":"Ver idea")+'</a></div></article>').join("");
  const results=document.getElementById("results");results.classList.add("show");results.scrollIntoView({behavior:"smooth",block:"start"});setTimeout(()=>document.getElementById("resultsTitle").focus({preventScroll:true}),350);
 }
-document.getElementById("go").addEventListener("click",render);document.getElementById("again").addEventListener("click",render);
+document.getElementById("go").addEventListener("click",()=>{window.CSLTrack?.("meal_picker_generate");render()});document.getElementById("again").addEventListener("click",render);
 </script>
 <div class="global-dock">
 <a href="/explora.html"><span>✦</span>Explora</a>
