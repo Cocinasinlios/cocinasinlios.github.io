@@ -43,6 +43,7 @@ const meta={
 "/menu-semana.html":["Menú de la semana","Cenas, preparación y lista de compra."],
 "/diagnostico.html":["Rescate Sin Líos","Qué revisar cuando algo falla."],
 "/academia.html":["Thermomix por dentro","Aprende qué ocurre mientras cocinas."],
+"/aprende-cocinando.html":["Aprende cocinando","Ocho recetas para entender ocho ideas reutilizables."],
 "/glosario.html":["Glosario Sin Líos","Conceptos explicados fácil."],
 "/dudas-rapidas.html":["Dudas rápidas","Respuestas claras a preguntas habituales."],
 "/encaja-tm7.html":["¿La TM7 encaja contigo?","Piensa en tu cocina real antes de decidir."],
@@ -63,7 +64,7 @@ const routes={
  uso:{title:"De usarla a aprovecharla",steps:["/que-cocino.html","/recetas.html","/academia.html","/glosario.html"]},
  fallo:{title:"Del fallo a la pista",steps:["/diagnostico.html","/academia.html","/glosario.html","/con-macarena.html"]},
  orden:{title:"Menos decisiones durante la semana",steps:["/menu-semana.html","/que-cocino.html","/recetas.html"]},
- aprender:{title:"Cocinar con criterio",steps:["/academia.html","/glosario.html","/diagnostico.html","/recetas.html"]}
+ aprender:{title:"Cocinar con criterio",steps:["/academia.html","/aprende-cocinando.html","/glosario.html","/diagnostico.html","/recetas.html"]}
 };
 function safeGet(k,fallback){try{return JSON.parse(localStorage.getItem(k)||JSON.stringify(fallback))}catch(e){return fallback}}
 function card(path,removable){
