@@ -24,6 +24,8 @@ style.textContent=`
 .csl-related-card:hover{transform:translateY(-3px);background:#eef5eb}.csl-related-card:focus-visible{outline:3px solid #7f9a82;outline-offset:3px}
 .csl-related-icon{font-size:30px;min-width:38px;text-align:center}
 .csl-related-card b{display:block;font:500 21px/1.05 Georgia,serif}.csl-related-card span:last-child{display:block;margin-top:5px;color:#706f67;font:11px/1.35 Inter,system-ui,sans-serif}
+.csl-toast{position:fixed;left:50%;bottom:156px;transform:translate(-50%,12px);z-index:260;background:#2b3a30;color:white;border-radius:999px;padding:10px 15px;font:800 12px/1.2 Inter,system-ui,sans-serif;box-shadow:0 14px 40px rgba(0,0,0,.2);opacity:0;pointer-events:none;transition:.22s;white-space:nowrap}.csl-toast.show{opacity:1;transform:translate(-50%,0)}
+.csl-search-empty{padding:18px;color:#706f67}.csl-search-empty p{margin:0 0 12px}.csl-search-empty-links{display:flex;gap:8px;flex-wrap:wrap}.csl-search-empty a{display:inline-flex;border-radius:999px;background:#eef5eb;color:#2b3a30;padding:8px 11px;font-weight:900;text-decoration:none}
 @media(max-width:580px){
  .csl-continue{bottom:148px;left:12px;width:calc(100vw - 24px)}
  .csl-search-btn{bottom:91px;right:12px}
@@ -177,12 +179,15 @@ if(relatedRecipes[path]){
  else document.body.appendChild(section);
 }
 
-const saveable=!["/mi-rincon.html","/uso-y-propiedad.html","/404.html"].includes(path);
+const toast=document.createElement("div");toast.className="csl-toast";toast.setAttribute("role","status");toast.setAttribute("aria-live","polite");document.body.appendChild(toast);let toastTimer=null;
+function announce(message){toast.textContent=message;toast.classList.add("show");clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove("show"),1800)}
+
+const saveable=!["/mi-rincon.html","/uso-y-propiedad.html","/404.html","/hablamos.html"].includes(path);
 if(saveable){
  const save=document.createElement("button");save.className="csl-save-btn";save.setAttribute("aria-label","Guardar en Mi rincón");save.textContent="♡";
  let favs=[];try{favs=JSON.parse(localStorage.getItem("csl_favs")||"[]")}catch(e){}
  if(favs.includes(path)){save.classList.add("saved");save.textContent="♥";save.setAttribute("aria-pressed","true")}else{save.setAttribute("aria-pressed","false")}
- save.addEventListener("click",()=>{let x=[];try{x=JSON.parse(localStorage.getItem("csl_favs")||"[]")}catch(e){};if(x.includes(path)){x=x.filter(p=>p!==path);save.classList.remove("saved");save.textContent="♡";save.setAttribute("aria-pressed","false")}else{x.push(path);save.classList.add("saved");save.textContent="♥";save.setAttribute("aria-pressed","true")}try{localStorage.setItem("csl_favs",JSON.stringify(x.slice(-40)))}catch(e){}});
+ save.addEventListener("click",()=>{let x=[];try{x=JSON.parse(localStorage.getItem("csl_favs")||"[]")}catch(e){};if(x.includes(path)){x=x.filter(p=>p!==path);save.classList.remove("saved");save.textContent="♡";save.setAttribute("aria-pressed","false");announce("Quitado de Mi rincón")}else{x.push(path);save.classList.add("saved");save.textContent="♥";save.setAttribute("aria-pressed","true");announce("Guardado en Mi rincón")}try{localStorage.setItem("csl_favs",JSON.stringify(x.slice(-40)))}catch(e){}});
  document.body.appendChild(save);
 }
 const sb=document.createElement("button");sb.className="csl-search-btn";sb.setAttribute("aria-label","Buscar en Cocina sin líos");sb.textContent="⌕";document.body.appendChild(sb);
@@ -193,7 +198,7 @@ const input=modal.querySelector("input"),results=modal.querySelector(".csl-searc
 function draw(q=""){
  const v=q.trim().toLowerCase();
  const rows=searchData.filter(x=>!v||(x[1]+" "+x[2]+" "+x[4]).toLowerCase().includes(v)).slice(0,8);
- results.innerHTML=rows.map(x=>'<a href="'+x[3]+'"><span style="font-size:21px">'+x[0]+'</span><span><b>'+x[1]+'</b><small>'+x[2]+'</small></span><em>→</em></a>').join("")||'<div style="padding:18px;color:#706f67">No encuentro eso todavía. Prueba otra palabra.</div>';
+ results.innerHTML=rows.map(x=>'<a href="'+x[3]+'"><span style="font-size:21px">'+x[0]+'</span><span><b>'+x[1]+'</b><small>'+x[2]+'</small></span><em>→</em></a>').join("")||'<div class="csl-search-empty"><p>No encuentro eso todavía. Puedes probar otra palabra o ir directamente a una duda.</p><div class="csl-search-empty-links"><a href="/dudas-rapidas.html">Ver dudas rápidas</a><a href="/hablamos.html?motivo=duda">Preguntar a Macarena</a></div></div>';
 }
 let searchReturnFocus=null;
 function openSearch(){if(modal.classList.contains("open"))return;searchReturnFocus=document.activeElement;modal.classList.add("open");modal.setAttribute("aria-hidden","false");document.body.style.overflow="hidden";draw(input.value);setTimeout(()=>input.focus(),40)}
