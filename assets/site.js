@@ -73,7 +73,7 @@ const recipeAuthorPages=Object.keys({
  "/receta-merluza-varoma.html":1,"/receta-masa-pizza.html":1,"/receta-bizcocho-yogur.html":1,"/receta-pisto-manchego.html":1
 });
 const learnAuthorPages=["/academia.html","/aprende-cocinando.html","/mapa-sin-lios.html","/adapta-sin-lios.html","/glosario.html","/diagnostico.html","/dudas-rapidas.html"];
-const usefulAuthorPages=["/explora.html","/que-cocino.html","/recetas.html","/menu-semana.html","/organiza-sin-lios.html","/empieza-aqui.html"];
+const usefulAuthorPages=["/explora.html","/que-cocino.html","/recetas.html","/cenas-faciles-thermomix.html","/menu-semana.html","/organiza-sin-lios.html","/empieza-aqui.html"];
 const decideAuthorPages=["/encaja-tm7.html"];
 let authorStripText=null;
 if(recipeAuthorPages.includes(path))authorStripText=authorStripPages.recipe;
