@@ -15,7 +15,7 @@ Estado de trabajo (27-09-2026): dominio comprado en DonDominio y todavía pendie
 5. Activar Enforce HTTPS en GitHub Pages cuando esté disponible.
 6. Solo después:
    - añadir/confirmar `CNAME` con `cocinasinlios.com`;
-   - sustituir canonicals, og:url, sitemap y robots de `https://cocinasinlios.github.io` por `https://cocinasinlios.com`;
+   - sustituir canonicals, og:url, sitemap y robots de `https://cocinasinlios.com` por `https://cocinasinlios.com`;
    - comprobar redirección de la URL antigua;
    - crear propiedad de dominio en Google Search Console y verificarla por DNS;
    - enviar `https://cocinasinlios.com/sitemap.xml`.
