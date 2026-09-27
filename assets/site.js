@@ -79,7 +79,8 @@ const generic={
  "/receta-tortitas.html":["/recetas.html","/academia.html","/que-cocino.html"],
  "/receta-gazpacho.html":["/glosario.html","/recetas.html","/diagnostico.html"],
  "/receta-merluza-varoma.html":["/diagnostico.html","/glosario.html","/menu-semana.html"],
- "/receta-masa-pizza.html":["/glosario.html","/recetas.html","/menu-semana.html"]
+ "/receta-masa-pizza.html":["/glosario.html","/recetas.html","/menu-semana.html"],
+ "/receta-bizcocho-yogur.html":["/glosario.html","/recetas.html","/diagnostico.html"]
 };
 
 const journeys={
@@ -127,7 +128,8 @@ const searchData=[
 ["🥞","Tortitas","Receta completa explicada.","/receta-tortitas.html","tortitas desayuno dulce masa"],
 ["🍅","Gazpacho andaluz","Receta completa para aprender trituración y textura.","/receta-gazpacho.html","gazpacho tomate verano triturar velocidad"],
 ["🐟","Merluza al vapor","Receta completa para aprender circulación de vapor.","/receta-merluza-varoma.html","merluza pescado varoma vapor verduras"],
-["🍕","Masa de pizza","Receta completa para aprender amasado y fermentación.","/receta-masa-pizza.html","pizza masa harina levadura amasar fermentar"]
+["🍕","Masa de pizza","Receta completa para aprender amasado y fermentación.","/receta-masa-pizza.html","pizza masa harina levadura amasar fermentar"],
+["🍰","Bizcocho de yogur","Receta completa para aprender aireado y mezcla sin sobrebatir.","/receta-bizcocho-yogur.html","bizcocho yogur dulce postre merienda airear mezclar hornear"]
 ];
 
 const saveable=!["/mi-rincon.html","/uso-y-propiedad.html","/404.html"].includes(path);
