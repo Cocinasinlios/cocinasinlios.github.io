@@ -5,19 +5,26 @@
 <title>Empieza aquí | Cocina sin líos con Macarena</title>
 <meta name="description" content="Elige tu situación y sigue una ruta sencilla por Cocina sin líos: empezar con Thermomix, valorar TM7, cocinar más, resolver errores u organizar la semana.">
 <link rel="canonical" href="https://cocinasinlios.github.io/empieza-aqui.html">
+<meta property="og:title" content="Empieza aquí | Cocina sin líos con Macarena">
+<meta property="og:description" content="Elige tu situación y sigue una ruta corta por recetas, aprendizaje, organización o ayuda con Thermomix.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cocinasinlios.github.io/empieza-aqui.html">
+<meta property="og:image" content="https://cocinasinlios.github.io/assets/hero-tm.webp">
 <meta name="author" content="Macarena · Cocina sin líos"><meta name="copyright" content="© 2026 Cocina sin líos con Macarena">
 <style>
 :root{--cream:#fbf6ee;--paper:#fffdfa;--ink:#25251f;--muted:#706f67;--dark:#2b3a30;--sage:#dce8d8;--mint:#eef5eb;--peach:#f1d8c6;--butter:#f2df9d;--terr:#d36f4b;--pink:#edd6d7;--line:#e8dfd2;--shadow:0 18px 55px rgba(58,51,42,.10)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.55;padding-bottom:76px}a{color:inherit;text-decoration:none}.wrap{width:min(1100px,92vw);margin:auto}h1,h2,h3{font-family:Georgia,serif;font-weight:500;line-height:1.04}.eyebrow{font-size:11px;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;color:#687769}
 header{position:sticky;top:0;z-index:30;background:rgba(251,246,238,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.nav{height:70px;display:flex;align-items:center;gap:20px}.brand{font-family:Georgia,serif;font-size:23px;font-weight:700;line-height:.95}.brand small{display:block;font-family:Inter,sans-serif;font-size:9px;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted);margin-top:6px}.back{margin-left:auto;font-size:13px;font-weight:850}
 .hero{padding:58px 0 26px}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:end}.hero h1{font-size:clamp(52px,6vw,78px);letter-spacing:-2.5px;margin:8px 0 15px}.hero p{color:var(--muted);font-size:17px;max-width:720px}.hero-note{background:var(--butter);border-radius:27px;padding:25px;transform:rotate(1deg)}.hero-note b{display:block;font-family:Georgia,serif;font-size:28px;font-weight:500;margin-bottom:7px}.hero-note span{font-size:13px;color:#625c4c}
-.choose{padding:28px 0 72px}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.choice{border:0;text-align:left;border-radius:25px;padding:25px;min-height:235px;cursor:pointer;color:var(--ink);transition:.22s}.choice:hover{transform:translateY(-4px);box-shadow:var(--shadow)}.choice:nth-child(1){background:var(--sage)}.choice:nth-child(2){background:var(--peach)}.choice:nth-child(3){background:var(--butter)}.choice:nth-child(4){background:var(--mint)}.choice:nth-child(5){background:var(--pink)}.choice:nth-child(6){background:#eee7dc}.choice span{font-size:27px}.choice small{display:block;margin-top:20px;font-size:10px;text-transform:uppercase;letter-spacing:1.2px;font-weight:900;color:#667166}.choice h3{font-size:29px;margin:6px 0 9px}.choice p{font-size:13px;color:#5d625c;margin:0}
+.choose{padding:28px 0 72px}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.choice{border:0;text-align:left;border-radius:25px;padding:25px;min-height:235px;cursor:pointer;color:var(--ink);transition:.22s}.choice:hover{transform:translateY(-4px);box-shadow:var(--shadow)}.choice:focus-visible,.reset:focus-visible,.btn:focus-visible{outline:3px solid #7f9a82;outline-offset:3px}.choice[aria-pressed="true"]{box-shadow:0 0 0 3px #2b3a30 inset}.choice:nth-child(1){background:var(--sage)}.choice:nth-child(2){background:var(--peach)}.choice:nth-child(3){background:var(--butter)}.choice:nth-child(4){background:var(--mint)}.choice:nth-child(5){background:var(--pink)}.choice:nth-child(6){background:#eee7dc}.choice span{font-size:27px}.choice small{display:block;margin-top:20px;font-size:10px;text-transform:uppercase;letter-spacing:1.2px;font-weight:900;color:#667166}.choice h3{font-size:29px;margin:6px 0 9px}.choice p{font-size:13px;color:#5d625c;margin:0}
 .route{display:none;padding:0 0 76px}.route.show{display:block}.route-box{background:var(--paper);border:1px solid var(--line);border-radius:30px;padding:34px;box-shadow:var(--shadow)}.route-head{display:flex;justify-content:space-between;gap:24px;align-items:end;margin-bottom:24px}.route-head h2{font-size:43px;margin:7px 0 0}.route-head p{max-width:430px;color:var(--muted);margin:0}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.step{border-radius:23px;padding:24px;min-height:245px;display:flex;flex-direction:column;justify-content:space-between}.step:nth-child(1){background:var(--sage)}.step:nth-child(2){background:var(--butter)}.step:nth-child(3){background:var(--peach)}.num{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--dark);color:white;font-weight:900}.step h3{font-size:27px;margin:12px 0 8px}.step p{font-size:13px;color:#5d625c;margin:0}.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;background:var(--dark);color:white;padding:11px 15px;font-size:12px;font-weight:900;margin-top:14px}.reset{border:1px solid var(--dark);background:transparent;color:var(--dark);border-radius:999px;padding:10px 13px;font-weight:900;cursor:pointer}
 footer{background:#202b24;color:#dce5df;padding:40px 0}footer p{color:#aebbb3;font-size:12px}
 .global-dock{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);z-index:120;background:rgba(34,43,37,.96);color:white;border-radius:22px;padding:7px;display:flex;gap:4px;box-shadow:0 14px 40px rgba(0,0,0,.22);backdrop-filter:blur(12px)}.global-dock a{min-width:74px;text-align:center;padding:7px 9px;border-radius:16px;font-size:10px;font-weight:850}.global-dock a span{display:block;font-size:17px;margin-bottom:2px}
 @media(max-width:850px){.hero-grid{grid-template-columns:1fr}.cards,.steps{grid-template-columns:1fr 1fr}.route-head{display:block}.route-head p{margin-top:12px}}
 @media(max-width:580px){.hero h1{font-size:47px}.cards,.steps{grid-template-columns:1fr}.back{display:none}.route-box{padding:24px}.global-dock{left:10px;right:10px;transform:none;justify-content:space-between}.global-dock a{min-width:0;flex:1;padding:7px 3px}}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}.choice{transition:none}}
 </style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://cocinasinlios.github.io/"},{"@type":"ListItem","position":2,"name":"Empieza aquí","item":"https://cocinasinlios.github.io/empieza-aqui.html"}]}</script>
 </head>
 <body>
 <header><div class="wrap nav"><a class="brand" href="/">Cocina sin líos<small>con Macarena</small></a><a class="back" href="/">← Volver</a></div></header>
@@ -33,7 +40,7 @@ footer{background:#202b24;color:#dce5df;padding:40px 0}footer p{color:#aebbb3;fo
 <button class="choice" data-route="aprender"><span>🧠</span><small>Quiero ir más allá</small><h3>Quiero entender mi Thermomix de verdad.</h3><p>No solo seguir recetas: quiero ganar criterio.</p></button>
 </div></div></section>
 
-<section id="route" class="route"><div class="wrap route-box"><div class="route-head"><div><div class="eyebrow">Tu ruta Sin Líos</div><h2 id="routeTitle"></h2></div><div><p id="routeText"></p><button id="reset" class="reset">Cambiar mi ruta</button></div></div><div id="steps" class="steps"></div></div></section>
+<section id="route" class="route" aria-live="polite" aria-labelledby="routeTitle"><div class="wrap route-box"><div class="route-head"><div><div class="eyebrow">Tu ruta Sin Líos</div><h2 id="routeTitle" tabindex="-1"></h2></div><div><p id="routeText"></p><button id="reset" class="reset">Cambiar mi ruta</button></div></div><div id="steps" class="steps"></div></div></section>
 </main>
 
 <div class="global-dock">
@@ -71,14 +78,22 @@ aprender:{title:"De seguir pasos a cocinar con criterio.",text:"Entiende concept
 ["/glosario.html","Consulta conceptos","Un mapa rápido para volver cuando algo no entiendas."],
 ["/diagnostico.html","Ponlo a prueba","Los fallos son una buena forma de aprender variables reales."]]}
 };
-function render(key){
- const r=routes[key];if(!r)return;localStorage.setItem("csl_route",key);
+const reduceMotion=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const choices=[...document.querySelectorAll(".choice")];
+choices.forEach(b=>b.setAttribute("aria-pressed","false"));
+function saveRoute(key){try{localStorage.setItem("csl_route",key)}catch(e){}}
+function clearRoute(){try{localStorage.removeItem("csl_route")}catch(e){}}
+function readRoute(){try{return localStorage.getItem("csl_route")}catch(e){return null}}
+function render(key,{move=true}={}){
+ const r=routes[key];if(!r)return;saveRoute(key);
+ choices.forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.route===key)));
  document.getElementById("routeTitle").textContent=r.title;document.getElementById("routeText").textContent=r.text;
  document.getElementById("steps").innerHTML=r.steps.map((s,i)=>'<article class="step"><div><span class="num">'+(i+1)+'</span><h3>'+s[1]+'</h3><p>'+s[2]+'</p></div><a class="btn" href="'+s[0]+'">Ir al paso '+(i+1)+'</a></article>').join("");
- const box=document.getElementById("route");box.classList.add("show");box.scrollIntoView({behavior:"smooth",block:"start"});
+ const box=document.getElementById("route");box.classList.add("show");
+ if(move){box.scrollIntoView({behavior:reduceMotion?"auto":"smooth",block:"start"});setTimeout(()=>document.getElementById("routeTitle").focus({preventScroll:true}),reduceMotion?0:350)}
 }
-document.querySelectorAll(".choice").forEach(b=>b.addEventListener("click",()=>render(b.dataset.route)));
-document.getElementById("reset").addEventListener("click",()=>{localStorage.removeItem("csl_route");document.getElementById("route").classList.remove("show");document.querySelector(".choose").scrollIntoView({behavior:"smooth"})});
-const saved=localStorage.getItem("csl_route");if(saved)setTimeout(()=>render(saved),150);
+choices.forEach(b=>b.addEventListener("click",()=>render(b.dataset.route)));
+document.getElementById("reset").addEventListener("click",()=>{clearRoute();choices.forEach(b=>b.setAttribute("aria-pressed","false"));document.getElementById("route").classList.remove("show");document.querySelector(".choose").scrollIntoView({behavior:reduceMotion?"auto":"smooth"})});
+const saved=readRoute();if(saved&&routes[saved])render(saved,{move:false});
 </script><script src="/assets/site.js" defer></script>
 </body></html>
