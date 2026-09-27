@@ -152,7 +152,8 @@ const labels={
  "/receta-merluza-varoma.html":["🐟","Merluza al vapor","Vapor, circulación y grosor."],
  "/receta-masa-pizza.html":["🍕","Masa de pizza","Amasado, reposo y fermentación."],
  "/receta-bizcocho-yogur.html":["🍰","Bizcocho de yogur","Aireado y mezcla sin sobrebatir."],
- "/receta-pisto-manchego.html":["🍅","Pisto manchego","Troceado, giro inverso y concentración."]
+ "/receta-pisto-manchego.html":["🍅","Pisto manchego","Troceado, giro inverso y concentración."],
+ "/receta-salsa-tomate.html":["🍅","Salsa de tomate","Troceado, sofrito y concentración."]
 };
 
 const generic={
@@ -179,7 +180,8 @@ const generic={
  "/receta-merluza-varoma.html":["/diagnostico.html","/glosario.html","/menu-semana.html"],
  "/receta-masa-pizza.html":["/glosario.html","/recetas.html","/menu-semana.html"],
  "/receta-bizcocho-yogur.html":["/glosario.html","/recetas.html","/diagnostico.html"],
- "/receta-pisto-manchego.html":["/glosario.html","/menu-semana.html","/recetas.html"]
+ "/receta-pisto-manchego.html":["/glosario.html","/menu-semana.html","/recetas.html"],
+ "/receta-salsa-tomate.html":["/organiza-sin-lios.html","/textura-liquida-espesa-thermomix.html","/glosario.html","/recetas.html"]
 };
 
 const journeys={
@@ -230,7 +232,8 @@ const searchData=[
 ["🐟","Merluza al vapor","Receta completa para aprender circulación de vapor.","/receta-merluza-varoma.html","merluza pescado varoma vapor verduras"],
 ["🍕","Masa de pizza","Receta completa para aprender amasado y fermentación.","/receta-masa-pizza.html","pizza masa harina levadura amasar fermentar"],
 ["🍰","Bizcocho de yogur","Receta completa para aprender aireado y mezcla sin sobrebatir.","/receta-bizcocho-yogur.html","bizcocho yogur dulce postre merienda airear mezclar hornear"],
-["🍅","Pisto manchego","Receta completa para aprender troceado, giro inverso y concentración.","/receta-pisto-manchego.html","pisto manchego verduras tomate calabacin pimiento giro inverso batch cooking"]
+["🍅","Pisto manchego","Receta completa para aprender troceado, giro inverso y concentración.","/receta-pisto-manchego.html","pisto manchego verduras tomate calabacin pimiento giro inverso batch cooking"],
+["🍅","Salsa de tomate casera","Receta base para aprender troceado, sofrito y concentración.","/receta-salsa-tomate.html","salsa tomate thermomix sofrito basico organizar pasta pizza concentrar"]
 ];
 
 const recipeLearning={
@@ -241,7 +244,8 @@ const recipeLearning={
  "/receta-merluza-varoma.html":{concept:["Vapor y circulación","/glosario.html?q=vapor","El vapor necesita camino para llegar a todas las piezas."],rescue:["Varoma desigual","/diagnostico.html?problema=vapor","Mira colocación, tamaño y paso del vapor antes de añadir tiempo."]},
  "/receta-masa-pizza.html":{concept:["Amasar y fermentar","/glosario.html?q=amasar","La máquina trabaja la masa; el tiempo hace otra parte."],rescue:["La masa está rara","/diagnostico.html?problema=masa","Revisa harina, hidratación, temperatura y reposo."]},
  "/receta-bizcocho-yogur.html":{concept:["Mezclar sin sobrebatir","/glosario.html?q=mezclar","Cuando entra la harina, más movimiento no siempre ayuda."],rescue:["Bizcocho compacto o hundido","/diagnostico.html?problema=masa","Aísla mezcla, estructura y cocción antes de cambiar varias cosas."]},
- "/receta-pisto-manchego.html":{concept:["Giro inverso y troceado","/glosario.html?q=giro%20inverso","Conservar trozos depende de más de una variable."],rescue:["Trozos demasiado deshechos","/diagnostico.html?problema=picado","Mira tamaño inicial, movimiento y tiempo."]}
+ "/receta-pisto-manchego.html":{concept:["Giro inverso y troceado","/glosario.html?q=giro%20inverso","Conservar trozos depende de más de una variable."],rescue:["Trozos demasiado deshechos","/diagnostico.html?problema=picado","Mira tamaño inicial, movimiento y tiempo."]},
+ "/receta-salsa-tomate.html":{concept:["Evaporación y concentración","/glosario.html?q=evaporacion","Una base cambia cuando el agua sale y el sabor se concentra."],rescue:["Ha quedado demasiado líquida","/diagnostico.html?problema=liquida","Mira agua, cantidad y concentración antes de corregir."]}
 };
 if(recipeLearning[path]){
  const x=recipeLearning[path],loop=document.createElement("section");loop.className="csl-loop";loop.setAttribute("aria-labelledby","csl-loop-title");
@@ -259,7 +263,8 @@ const recipeVoice={
  "/receta-merluza-varoma.html":{kicker:"Mi consejo en esta receta",title:"En el Varoma, antes de añadir tiempo, mira el camino del vapor.",text:"Colocación, grosor y espacio importan muchísimo. Quiero que pienses en por dónde tiene que circular el vapor antes de asumir que la solución es cocinar más.",motivo:"duda"},
  "/receta-masa-pizza.html":{kicker:"Mi consejo en esta receta",title:"La máquina amasa. El tiempo termina parte del trabajo.",text:"Una masa no se juzga solo al salir del vaso. Quiero que observes hidratación, reposo y fermentación antes de decidir que algo ha salido mal.",motivo:"duda"},
  "/receta-bizcocho-yogur.html":{kicker:"Mi consejo en esta receta",title:"Cuando entra la harina, más movimiento no significa mejor mezcla.",text:"Primero buscamos aire; después queremos conservarlo. Esa diferencia es pequeña, pero cambia la forma de entender muchos bizcochos.",motivo:"duda"},
- "/receta-pisto-manchego.html":{kicker:"Mi consejo en esta receta",title:"El giro inverso ayuda, pero no trabaja solo.",text:"Tamaño de los trozos, tiempo y movimiento siguen contando. Quiero que el pisto te enseñe a mirar el conjunto y no a confiar en un único ajuste.",motivo:"duda"}
+ "/receta-pisto-manchego.html":{kicker:"Mi consejo en esta receta",title:"El giro inverso ayuda, pero no trabaja solo.",text:"Tamaño de los trozos, tiempo y movimiento siguen contando. Quiero que el pisto te enseñe a mirar el conjunto y no a confiar en un único ajuste.",motivo:"duda"},
+ "/receta-salsa-tomate.html":{kicker:"Mi consejo en esta receta",title:"Una buena base te enseña a cocinar por fases.",text:"Primero cortas, después desarrollas sabor y luego dejas que el conjunto se concentre. Quiero que empieces a reconocer esa lógica en muchas otras recetas.",motivo:"duda"}
 };
 const macarenaVoice={
  learn:{kicker:"Así trabajo yo",title:"No quiero que memorices botones.",text:"Prefiero ayudarte a entender qué mirar, qué cambia una textura y por qué una receta puede comportarse distinto. Para mí, acompañarte es enseñarte criterio, no darte una colección de órdenes.",motivo:"duda"},
@@ -292,7 +297,8 @@ const relatedRecipes={
  "/receta-merluza-varoma.html":["/receta-pisto-manchego.html","/receta-gazpacho.html","/receta-pasta-pesto.html"],
  "/receta-masa-pizza.html":["/receta-pasta-pesto.html","/receta-pisto-manchego.html","/receta-hummus.html"],
  "/receta-bizcocho-yogur.html":["/receta-tortitas.html","/receta-masa-pizza.html","/receta-pisto-manchego.html"],
- "/receta-pisto-manchego.html":["/receta-merluza-varoma.html","/receta-gazpacho.html","/receta-masa-pizza.html"]
+ "/receta-pisto-manchego.html":["/receta-salsa-tomate.html","/receta-merluza-varoma.html","/receta-gazpacho.html"],
+ "/receta-salsa-tomate.html":["/receta-pisto-manchego.html","/receta-pasta-pesto.html","/receta-masa-pizza.html"]
 };
 if(relatedRecipes[path]){
  const ordered=[...relatedRecipes[path]].sort((a,b)=>Number(seen.includes(a))-Number(seen.includes(b)));
