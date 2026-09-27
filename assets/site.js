@@ -64,6 +64,7 @@ style.textContent=`
 }
 `;
 document.head.appendChild(style);
+document.querySelectorAll(".personal-photo,.portrait,.about-img").forEach(el=>el.classList.add("csl-real-macarena"));
 if(document.querySelector("main")){if(!document.querySelector("main").id)document.querySelector("main").id="contenido";const skip=document.createElement("a");skip.className="csl-skip";skip.href="#contenido";skip.textContent="Saltar al contenido";document.body.prepend(skip)}
 
 const authorStripPages={
