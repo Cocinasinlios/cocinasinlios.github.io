@@ -2,7 +2,7 @@
 
 Sitio editorial y de acompañamiento publicado actualmente en GitHub Pages.
 
-- Producción actual: https://cocinasinlios.github.io/
+- Producción actual: https://cocinasinlios.com/
 - Dominio objetivo: https://cocinasinlios.com/
 - Marca: Cocina sin líos con Macarena
 - Método propio: Entiende → Cocina → Corrige → Adapta → Organiza
