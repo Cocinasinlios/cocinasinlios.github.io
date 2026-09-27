@@ -77,7 +77,7 @@ let active=null;try{active=localStorage.getItem("csl_route")}catch(e){}
 const activeBox=document.getElementById("activeRoute");
 if(activeBox&&active&&routeNames[active])activeBox.innerHTML='<div class="active-route"><div><small>Tu ruta activa</small><b>'+routeNames[active]+'</b></div><a href="/mi-rincon.html">Continuar mi ruta →</a></div>';
 const destinations=[
- "/empieza-aqui.html","/que-cocino.html","/recetas.html","/diagnostico.html","/academia.html","/menu-semana.html","/encaja-tm7.html","/con-macarena.html","/glosario.html","/dudas-rapidas.html",
+ "/empieza-aqui.html","/que-cocino.html","/recetas.html","/diagnostico.html","/academia.html","/aprende-cocinando.html","/mapa-sin-lios.html","/menu-semana.html","/encaja-tm7.html","/con-macarena.html","/glosario.html","/dudas-rapidas.html",
  "/hablamos.html","/receta-hummus.html","/receta-pasta-pesto.html","/receta-tortitas.html","/receta-gazpacho.html","/receta-merluza-varoma.html","/receta-masa-pizza.html","/receta-bizcocho-yogur.html","/receta-pisto-manchego.html"
 ];
 document.getElementById("surprise").addEventListener("click",()=>{
