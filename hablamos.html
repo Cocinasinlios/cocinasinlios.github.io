@@ -93,6 +93,12 @@ if(contexto&&data.valoro){
  data.valoro.next=accion==="demo"?"Dime qué te gustaría ver resuelto en una demostración realista para tu día a día.":"Dime qué parte del resultado te genera más duda o qué te gustaría contrastar conmigo.";
  data.valoro.msg=(accion==="demo"?"Hola Macarena. He hecho tu cuestionario y me gustaría una demostración enfocada a mi situación. ":"Hola Macarena. He hecho tu cuestionario y quiero comentar contigo el resultado. ")+"Mi contexto es: "+contexto+". Lo que más me gustaría aclarar es ___.";
 }
+if(origin==="que-cocino"&&data.uso){
+ data.uso.title="Las tres ideas no me han terminado de encajar.";
+ data.uso.text="Perfecto: entonces el filtro automático ya ha hecho su parte. Ahora sí merece la pena que me cuentes un poco más y lo pensemos con tu cocina real delante.";
+ data.uso.next="Dime qué tienes que gastar, para cuántos cocinas y si hay algo que hoy no te apetece nada.";
+ data.uso.msg="Hola Macarena. He probado tu ¿Qué cocino? con este contexto: "+(contexto||"___")+". Ninguna de las tres ideas me ha terminado de encajar. Tengo en casa ___. Somos ___. Hoy me apetece / no me apetece ___.";
+}
 if(data[preset])select(preset,false);
 </script>
 <script src="/assets/site.js" defer></script>
