@@ -82,7 +82,7 @@ body.menu-open{overflow:hidden}
 footer{background:#202b24;color:#dce5df;padding:47px 0}.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:35px}footer p{color:#aebbb3;font-size:13px}footer a:hover{color:white}
 .wa-float{position:fixed;right:18px;bottom:18px;z-index:80;width:57px;height:57px;border-radius:50%;background:#1f6c4b;color:white;display:grid;place-items:center;font-weight:900;box-shadow:0 12px 30px rgba(24,70,48,.27)}
 .fade{opacity:0;transform:translateY(15px);transition:.55s ease}.fade.in{opacity:1;transform:none}
-@media(max-width:900px){nav{display:none}.mobile-nav{display:block;margin-left:auto}.navcta{display:none}.hero-grid,.signature-grid,.week-grid,.tm7-grid,.about-grid,.guide-box,.today-box{grid-template-columns:1fr}.personal-card{grid-template-columns:120px 1fr}.personal-card .btn{grid-column:1/-1}.why-grid{grid-template-columns:1fr 1fr}.hero-copy{order:2}.hero-collage{order:1}.hero-collage{grid-template-rows:220px 220px}.mag-grid{grid-template-columns:1fr 1fr}.mag-card.big{grid-column:1/-1;grid-row:auto;min-height:380px}.week-photo{min-height:420px}.footer-grid{grid-template-columns:1fr}}
+@media(max-width:900px){.method-head{grid-template-columns:1fr}.method-flow{grid-template-columns:1fr 1fr}.method-step:last-child{grid-column:1/-1}nav{display:none}.mobile-nav{display:block;margin-left:auto}.navcta{display:none}.hero-grid,.signature-grid,.week-grid,.tm7-grid,.about-grid,.guide-box,.today-box{grid-template-columns:1fr}.personal-card{grid-template-columns:120px 1fr}.personal-card .btn{grid-column:1/-1}.why-grid{grid-template-columns:1fr 1fr}.hero-copy{order:2}.hero-collage{order:1}.hero-collage{grid-template-rows:220px 220px}.mag-grid{grid-template-columns:1fr 1fr}.mag-card.big{grid-column:1/-1;grid-row:auto;min-height:380px}.week-photo{min-height:420px}.footer-grid{grid-template-columns:1fr}}
 @media(max-width:600px){.wrap{width:min(94vw,1180px)}.hero{padding-top:28px}.hero h1{font-size:47px;letter-spacing:-2px}.hero-collage{grid-template-columns:1fr 1fr;grid-template-rows:220px 160px}.tile.one{grid-column:1/-1;grid-row:auto}.section-head{display:block}.section-head p{margin-top:14px}.mag-grid{grid-template-columns:1fr;grid-auto-rows:270px}.mag-card.big{grid-column:auto;min-height:360px}.signature,.week,.tm7,.about{padding:62px 0}.sig-card{padding:27px;min-height:380px}.sig-card h2,.week-copy h2,.tm7-copy h2,.about h2{font-size:40px}.week-copy,.tm7-copy{padding:27px}.week-tags{grid-template-columns:1fr}.guide-box{padding:28px}.guide-box h2{font-size:37px}.actions,.sig-actions{flex-direction:column}.btn{width:100%}.sticker{font-size:14px}.about-img{min-height:430px}.personal-card{grid-template-columns:1fr}.personal-photo{width:100%;height:240px}.why-grid{grid-template-columns:1fr}}
 
 .global-dock{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);z-index:120;background:rgba(34,43,37,.96);color:white;border-radius:22px;padding:7px;display:flex;gap:4px;box-shadow:0 14px 40px rgba(0,0,0,.22);backdrop-filter:blur(12px)}.global-dock a{min-width:74px;text-align:center;padding:7px 9px;border-radius:16px;font-size:10px;font-weight:850}.global-dock a span{display:block;font-size:17px;margin-bottom:2px}.global-dock a:hover{background:rgba(255,255,255,.13)}
@@ -207,6 +207,23 @@ footer{background:#202b24;color:#dce5df;padding:47px 0}.footer-grid{display:grid
  </div>
 </section>
 
+<section id="metodo" class="method">
+ <div class="wrap">
+  <div class="method-head fade">
+   <div><div class="eyebrow" style="color:#b9c9bc">Mi Método Sin Líos</div><h2>No quiero que sigas recetas toda la vida sin entenderlas.</h2></div>
+   <p>Esta es la lógica que hay detrás de la web y de cómo te acompaño yo: primero entender, después cocinar, corregir con criterio, adaptar sin tocar diez cosas a la vez y terminar organizando lo aprendido para que te sirva en tu vida real.</p>
+  </div>
+  <div class="method-flow">
+   <div class="method-step fade"><small>1</small><b>Entiende</b><span>Qué variable está actuando y qué efecto buscas realmente.</span></div>
+   <div class="method-step fade"><small>2</small><b>Cocina</b><span>Llévalo a una receta real y observa qué ocurre en el vaso y en el plato.</span></div>
+   <div class="method-step fade"><small>3</small><b>Corrige</b><span>Si algo cambia, busca primero la causa probable antes de tocar ajustes al azar.</span></div>
+   <div class="method-step fade"><small>4</small><b>Adapta</b><span>Cambia una cosa cada vez y aprende qué efecto tuvo de verdad.</span></div>
+   <div class="method-step fade"><small>5</small><b>Organiza</b><span>Convierte lo aprendido en menos decisiones, más repertorio y una cocina más fácil.</span></div>
+  </div>
+  <div class="method-note fade"><strong>Eso es lo que quiero vender de mí sin venderme todo el rato:</strong> criterio, acompañamiento y una forma propia de enseñarte.</div>
+ </div>
+</section>
+
 <section id="menus" class="week">
  <div class="wrap week-grid">
   <div class="week-copy fade">
@@ -267,7 +284,7 @@ footer{background:#202b24;color:#dce5df;padding:47px 0}.footer-grid{display:grid
 
 <footer><div class="wrap footer-grid">
  <div><div class="brand" style="color:white">Cocina sin líos<small style="color:#9faaa2">con Macarena</small></div><p>Recetas que apetecen, organización que ayuda y Thermomix explicada para que cada vez dependas menos de seguir instrucciones.</p></div>
- <div><b>Explora</b><p><a href="/recetas.html">Recetas</a><br><a href="/menu-semana.html">Menús</a><br><a href="/academia.html">Thermomix por dentro</a><br><a href="/mapa-sin-lios.html">Mapa Sin Líos</a><br><a href="/glosario.html">Glosario Sin Líos</a><br><a href="/dudas-rapidas.html">Dudas rápidas</a><br><a href="/diagnostico.html">Rescate</a></p></div>
+ <div><b>Explora</b><p><a href="/recetas.html">Recetas</a><br><a href="/menu-semana.html">Menús</a><br><a href="/#metodo">Método Sin Líos</a><br><a href="/academia.html">Thermomix por dentro</a><br><a href="/mapa-sin-lios.html">Mapa Sin Líos</a><br><a href="/glosario.html">Glosario Sin Líos</a><br><a href="/dudas-rapidas.html">Dudas rápidas</a><br><a href="/diagnostico.html">Rescate</a></p></div>
  <div><b>Contacto</b><p><a href="/hablamos.html">Hablar conmigo</a><br><a href="https://instagram.com/thermomixsinlios" target="_blank" rel="noopener">Instagram</a><br><a href="/encaja-tm7.html">¿Encaja TM7 contigo?</a><br><a href="/con-macarena.html">Con Macarena</a><br><a href="/uso-y-propiedad.html">Uso y propiedad</a></p></div>
 </div></footer>
 <a class="wa-float" href="/hablamos.html" aria-label="Hablar con Macarena">W</a>
