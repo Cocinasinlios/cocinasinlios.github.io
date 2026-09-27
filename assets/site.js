@@ -62,7 +62,7 @@ const recipeAuthorPages=Object.keys({
  "/receta-hummus.html":1,"/receta-pasta-pesto.html":1,"/receta-tortitas.html":1,"/receta-gazpacho.html":1,
  "/receta-merluza-varoma.html":1,"/receta-masa-pizza.html":1,"/receta-bizcocho-yogur.html":1,"/receta-pisto-manchego.html":1
 });
-const learnAuthorPages=["/academia.html","/aprende-cocinando.html","/mapa-sin-lios.html","/glosario.html","/diagnostico.html","/dudas-rapidas.html"];
+const learnAuthorPages=["/academia.html","/aprende-cocinando.html","/mapa-sin-lios.html","/adapta-sin-lios.html","/glosario.html","/diagnostico.html","/dudas-rapidas.html"];
 const usefulAuthorPages=["/explora.html","/que-cocino.html","/recetas.html","/menu-semana.html","/empieza-aqui.html"];
 const decideAuthorPages=["/encaja-tm7.html"];
 let authorStripText=null;
@@ -108,6 +108,7 @@ const labels={
  "/academia.html":["🧠","Thermomix por dentro","Entiende el porqué mientras cocinas."],
  "/aprende-cocinando.html":["🍳","Aprende cocinando","Ocho recetas para entender ocho ideas reutilizables."],
  "/mapa-sin-lios.html":["🧭","Mapa Sin Líos","Entra por un síntoma o por lo que quieres conseguir."],
+ "/adapta-sin-lios.html":["🔧","Adapta Sin Líos","Cambia una receta con una variable cada vez y observa el efecto."],
  "/glosario.html":["📖","Glosario Sin Líos","Vuelve aquí cuando una palabra o concepto no te cuadre."],
  "/dudas-rapidas.html":["❓","Dudas rápidas","Respuestas claras a preguntas habituales."],
  "/menu-semana.html":["🗓","Menú de la semana","Cuando lo que necesitas es dejar de improvisar."],
@@ -134,7 +135,8 @@ const generic={
  "/diagnostico.html":["/mapa-sin-lios.html","/academia.html","/glosario.html","/con-macarena.html"],
  "/academia.html":["/aprende-cocinando.html","/glosario.html","/diagnostico.html","/recetas.html"],
  "/aprende-cocinando.html":["/mapa-sin-lios.html","/recetas.html","/academia.html","/glosario.html","/diagnostico.html"],
- "/mapa-sin-lios.html":["/diagnostico.html","/aprende-cocinando.html","/glosario.html","/recetas.html"],
+ "/mapa-sin-lios.html":["/diagnostico.html","/adapta-sin-lios.html","/aprende-cocinando.html","/glosario.html","/recetas.html"],
+ "/adapta-sin-lios.html":["/mapa-sin-lios.html","/diagnostico.html","/glosario.html","/menu-semana.html"],
  "/glosario.html":["/dudas-rapidas.html","/academia.html","/diagnostico.html","/recetas.html"],
  "/dudas-rapidas.html":["/glosario.html","/encaja-tm7.html","/con-macarena.html"],
  "/menu-semana.html":["/recetas.html","/que-cocino.html","/explora.html"],
