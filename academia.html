@@ -19,6 +19,9 @@ section{padding:72px 0}.section-head{display:flex;align-items:end;justify-conten
 footer{background:#202b24;color:#dce5df;padding:42px 0}footer p{color:#aebbb3;font-size:12px}
 @media(max-width:850px){.hero-grid,.story-grid,.try-grid{grid-template-columns:1fr}.hero-stack{grid-template-rows:220px 220px}.cards{grid-template-columns:1fr 1fr}.section-head{display:block}.section-head p{margin-top:13px}.more-grid{grid-template-columns:1fr}}
 @media(max-width:560px){.hero h1{font-size:47px}.hero-stack{grid-template-columns:1fr 1fr;grid-template-rows:240px 150px}.hero-photo.main{grid-column:1/-1;grid-row:auto}.cards{grid-template-columns:1fr}.story-photo{min-height:380px}.story-copy{padding:27px}.story-copy h2,.try h2{font-size:39px}.back{display:none}}
+
+.global-dock{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);z-index:120;background:rgba(34,43,37,.96);color:white;border-radius:22px;padding:7px;display:flex;gap:4px;box-shadow:0 14px 40px rgba(0,0,0,.22);backdrop-filter:blur(12px)}.global-dock a{min-width:74px;text-align:center;padding:7px 9px;border-radius:16px;font-size:10px;font-weight:850}.global-dock a span{display:block;font-size:17px;margin-bottom:2px}.global-dock a:hover{background:rgba(255,255,255,.13)}
+@media(max-width:580px){body{padding-bottom:76px}.global-dock{left:10px;right:10px;transform:none;justify-content:space-between}.global-dock a{min-width:0;flex:1;padding:7px 3px}}
 </style>
 </head>
 <body>
@@ -54,4 +57,10 @@ footer{background:#202b24;color:#dce5df;padding:42px 0}footer p{color:#aebbb3;fo
 <section class="more"><div class="wrap more-grid"><div class="more-card rescue"><div class="eyebrow">Cuando algo falla</div><h3>¿Y si ya te ha salido mal?</h3><p>Entra en Rescate Sin Líos y empieza por el problema: líquido, carne deshecha, emulsión cortada, masa rara, Varoma desigual...</p><a class="btn" href="/diagnostico.html">Abrir Rescate Sin Líos</a></div><div class="more-card guide"><div class="eyebrow">Si acabas de empezar</div><h3>Los primeros días sin sentirte perdida.</h3><p>Pídeme la guía de inicio y úsala junto a esta sección para aprender mientras cocinas.</p><a class="btn" href="https://wa.me/34640761605?text=Hola%20Macarena%2C%20quiero%20tu%20gu%C3%ADa%20para%20empezar%20con%20la%20TM7." target="_blank" rel="noopener">Pedir la guía</a></div></div></section>
 </main>
 <footer><div class="wrap"><b>Cocina sin líos con Macarena</b><p>Contenido educativo independiente. Thermomix® es una marca de Vorwerk. Para seguridad, límites de capacidad y uso del equipo prevalecen siempre las indicaciones oficiales.</p></div></footer>
-</body></html>
+<div class="global-dock">
+<a href="/explora.html"><span>✦</span>Explora</a>
+<a href="/que-cocino.html"><span>🎲</span>Qué cocino</a>
+<a href="/recetas.html"><span>🍝</span>Recetas</a>
+<a href="/diagnostico.html"><span>🧩</span>Rescate</a>
+<a href="/con-macarena.html"><span>👋</span>Macarena</a>
+</div></body></html>
