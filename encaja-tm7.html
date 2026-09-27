@@ -79,6 +79,7 @@ document.getElementById("go").addEventListener("click",()=>{
  document.getElementById("rTitle").textContent=title;document.getElementById("rText").textContent=text;
  document.getElementById("signals").innerHTML=s.map(x=>'<div class="signal"><b>'+x[0]+'</b><span>'+x[1]+'</span></div>').join("");
  document.getElementById("rMac").textContent="Yo no decidiría por una lista de funciones. Miraría qué cocinas ahora, qué te gustaría cambiar y si la máquina tendría un lugar claro en tu semana.";
+ window.CSLTrack?.("tm7_test_complete");
  const summary=Object.entries(state).map(([k,v])=>labels[k]?.[v]||v).join("; ");
  document.getElementById("wa").href="/hablamos.html?motivo=valoro&contexto="+encodeURIComponent(summary);
  document.getElementById("demo").href="/hablamos.html?motivo=valoro&accion=demo&contexto="+encodeURIComponent(summary);
