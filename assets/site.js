@@ -140,7 +140,7 @@ let dismissed=false;try{dismissed=sessionStorage.getItem("csl_continue_dismissed
 if(!dismissed&&next){
  const meta=labels[next]||["→","Sigue explorando","Hay más caminos desde aquí."];
  const box=document.createElement("aside");box.className="csl-continue";
- box.innerHTML='<button type="button" class="csl-x" aria-label="Cerrar">×</button><a href="'+next+'"><span class="csl-icon">'+meta[0]+'</span><div><small>'+(route?"Siguiente paso de tu ruta":"Sigue por aquí")+'</small><b>'+meta[1]+'</b><p>'+meta[2]+'</p></div><span class="csl-arrow">→</span></a>';
+ box.innerHTML='<button type="button" class="csl-x" aria-label="Cerrar">×</button><a href="'+next+'"><span class="csl-icon">'+meta[0]+'</span><div><small>'+(route?"El siguiente paso que te propongo":"Yo seguiría por aquí")+'</small><b>'+meta[1]+'</b><p>'+meta[2]+'</p></div><span class="csl-arrow">→</span></a>';
  document.body.appendChild(box);
  const show=()=>box.classList.add("show");
  setTimeout(show,8500);
@@ -190,24 +190,34 @@ if(recipeLearning[path]){
  else document.body.appendChild(loop);
 }
 
+const recipeVoice={
+ "/receta-hummus.html":{kicker:"Mi consejo en esta receta",title:"No persigas la textura solo subiendo velocidad.",text:"En una mezcla espesa yo miraría antes la proporción, la humedad y cómo está circulando. Quiero que el hummus te enseñe a observar, no solo a obedecer un número.",motivo:"duda"},
+ "/receta-pasta-pesto.html":{kicker:"Mi consejo en esta receta",title:"Una salsa ligada no se arregla a fuerza de velocidad.",text:"Aquí quiero que te fijes en cómo se encuentran agua, grasa y movimiento. Cuando entiendes eso, el pesto deja de ser una receta aislada y se convierte en una idea que reutilizas.",motivo:"duda"},
+ "/receta-tortitas.html":{kicker:"Mi consejo en esta receta",title:"A veces cocinar bien consiste en saber cuándo parar.",text:"Con las tortitas quiero que veas que mezclar más no siempre mejora nada. El reposo también trabaja, aunque tú no estés tocando ningún botón.",motivo:"duda"},
+ "/receta-gazpacho.html":{kicker:"Mi consejo en esta receta",title:"Una textura fina no depende solo de ir más rápido.",text:"Yo aquí quiero que mires también agua, cantidad y tiempo. Si aprendes a leer esas tres cosas, entiendes mucho mejor por qué dos gazpachos pueden comportarse distinto.",motivo:"duda"},
+ "/receta-merluza-varoma.html":{kicker:"Mi consejo en esta receta",title:"En el Varoma, antes de añadir tiempo, mira el camino del vapor.",text:"Colocación, grosor y espacio importan muchísimo. Quiero que pienses en por dónde tiene que circular el vapor antes de asumir que la solución es cocinar más.",motivo:"duda"},
+ "/receta-masa-pizza.html":{kicker:"Mi consejo en esta receta",title:"La máquina amasa. El tiempo termina parte del trabajo.",text:"Una masa no se juzga solo al salir del vaso. Quiero que observes hidratación, reposo y fermentación antes de decidir que algo ha salido mal.",motivo:"duda"},
+ "/receta-bizcocho-yogur.html":{kicker:"Mi consejo en esta receta",title:"Cuando entra la harina, más movimiento no significa mejor mezcla.",text:"Primero buscamos aire; después queremos conservarlo. Esa diferencia es pequeña, pero cambia la forma de entender muchos bizcochos.",motivo:"duda"},
+ "/receta-pisto-manchego.html":{kicker:"Mi consejo en esta receta",title:"El giro inverso ayuda, pero no trabaja solo.",text:"Tamaño de los trozos, tiempo y movimiento siguen contando. Quiero que el pisto te enseñe a mirar el conjunto y no a confiar en un único ajuste.",motivo:"duda"}
+};
 const macarenaVoice={
- recipe:{kicker:"Una cosa que quiero que te lleves",title:"Yo no quiero darte solo una receta.",text:"Si cocinas conmigo, quiero que cada plato te enseñe algo que puedas usar la próxima vez. Que entiendas un poco más tu Thermomix y dependas un poco menos de seguir instrucciones sin saber por qué."},
- learn:{kicker:"Así trabajo yo",title:"No quiero que memorices botones.",text:"Prefiero ayudarte a entender qué mirar, qué cambia una textura y por qué una receta puede comportarse distinto. Para mí, acompañarte es enseñarte criterio, no darte una colección de órdenes."},
- useful:{kicker:"Esto también soy yo",title:"Quiero quitarte ruido, no darte más deberes.",text:"Me gusta la cocina práctica, apetecible y realista. Si esta web te ahorra una decisión, te da una idea o consigue que abras la nevera con menos pereza, ya está haciendo parte de mi trabajo."},
- decide:{kicker:"Antes de hablar de comprar",title:"Primero quiero entender tu cocina.",text:"Cuántos sois, qué cocinas, qué te cuesta y qué esperas resolver. Prefiero que la conversación empiece por ti y no por una máquina."}
+ learn:{kicker:"Así trabajo yo",title:"No quiero que memorices botones.",text:"Prefiero ayudarte a entender qué mirar, qué cambia una textura y por qué una receta puede comportarse distinto. Para mí, acompañarte es enseñarte criterio, no darte una colección de órdenes.",motivo:"duda"},
+ useful:{kicker:"Esto también soy yo",title:"Quiero quitarte ruido, no darte más deberes.",text:"Me gusta la cocina práctica, apetecible y realista. Si esta web te ahorra una decisión, te da una idea o consigue que abras la nevera con menos pereza, ya está haciendo parte de mi trabajo.",motivo:"uso"},
+ decide:{kicker:"Antes de hablar de comprar",title:"Primero quiero entender tu cocina.",text:"Cuántos sois, qué cocinas, qué te cuesta y qué esperas resolver. Prefiero que la conversación empiece por ti y no por una máquina.",motivo:"valoro"}
 };
 const recipePages=Object.keys(recipeLearning);
 const learnPages=["/academia.html","/aprende-cocinando.html","/mapa-sin-lios.html","/glosario.html","/diagnostico.html","/dudas-rapidas.html"];
 const usefulPages=["/explora.html","/que-cocino.html","/recetas.html","/menu-semana.html","/empieza-aqui.html"];
 const decidePages=["/encaja-tm7.html"];
 let voice=null;
-if(recipePages.includes(path))voice=macarenaVoice.recipe;
+if(recipePages.includes(path))voice=recipeVoice[path];
 else if(learnPages.includes(path))voice=macarenaVoice.learn;
 else if(usefulPages.includes(path))voice=macarenaVoice.useful;
 else if(decidePages.includes(path))voice=macarenaVoice.decide;
 if(voice){
+ const contactHref="/hablamos.html?motivo="+encodeURIComponent(voice.motivo||"duda")+(recipePages.includes(path)?"&origen="+encodeURIComponent(labels[path]?.[1]||"una receta"):"");
  const section=document.createElement("section");section.className="csl-macarena";section.setAttribute("aria-labelledby","csl-macarena-title");
- section.innerHTML='<div class="csl-macarena-inner"><div class="csl-macarena-mark" aria-hidden="true">M</div><div class="csl-macarena-copy"><small>'+voice.kicker+'</small><h2 id="csl-macarena-title">'+voice.title+'</h2><p>'+voice.text+'</p><span class="csl-macarena-sign">Macarena · Cocina sin líos</span></div><div class="csl-macarena-actions"><a href="/con-macarena.html">Cómo te acompañaría</a><a href="/hablamos.html">Cuéntame tu caso</a></div></div>';
+ section.innerHTML='<div class="csl-macarena-inner"><div class="csl-macarena-mark" aria-hidden="true">M</div><div class="csl-macarena-copy"><small>'+voice.kicker+'</small><h2 id="csl-macarena-title">'+voice.title+'</h2><p>'+voice.text+'</p><span class="csl-macarena-sign">Macarena · Cocina sin líos</span></div><div class="csl-macarena-actions"><a href="/con-macarena.html">Cómo te acompañaría</a><a href="'+contactHref+'">'+(voice.motivo==="valoro"?"Te cuento mi caso":"Te cuento lo que me pasa")+'</a></div></div>';
  const footer=document.querySelector("footer");
  if(footer)footer.parentNode.insertBefore(section,footer);
  else document.body.appendChild(section);
