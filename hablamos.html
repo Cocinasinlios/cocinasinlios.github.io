@@ -61,7 +61,7 @@ const data={
 const buttons=[...document.querySelectorAll(".choice")],box=document.getElementById("result"),title=document.getElementById("resultTitle"),txt=document.getElementById("resultText"),next=document.getElementById("resultNext"),wa=document.getElementById("wa");
 function select(key,move=true){const d=data[key];if(!d)return;buttons.forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.key===key)));title.textContent=d.title;txt.textContent=d.text;next.textContent=d.next;wa.href="https://wa.me/34640761605?text="+encodeURIComponent(d.msg);box.classList.add("show");if(move){box.scrollIntoView({behavior:"smooth",block:"center"});setTimeout(()=>title.focus({preventScroll:true}),350)}}
 buttons.forEach(b=>b.addEventListener("click",()=>select(b.dataset.key)));
-const params=new URLSearchParams(location.search),preset=params.get("motivo"),origin=params.get("origen");
+const params=new URLSearchParams(location.search),preset=params.get("motivo"),origin=params.get("origen"),contexto=params.get("contexto"),accion=params.get("accion");
 if(origin&&data.duda&&origin!=="guia"){
  data.duda.title="Tengo una duda con "+origin+".";
  data.duda.text="Ya sé de qué vienes hablando. Cuéntame qué hiciste, qué cambiaste y cómo quedó; así partimos de un caso concreto.";
@@ -80,6 +80,18 @@ if(origin&&origin.startsWith("idea:")){
  data.uso.text="Perfecto. Ya sé qué te ha llamado la atención. Podemos partir de esa receta y ver si te encaja, cómo la harías o si merece la pena que la convierta en receta completa.";
  data.uso.next="Cuéntame para cuántos cocinas y qué te ha gustado de esa idea.";
  data.uso.msg="Hola Macarena. He visto en tu web la idea “"+idea+"” y me ha apetecido. Cocino para ___. Lo que me gustaría es ___.";
+}
+if(origin==="nevera"){
+ data.uso.title="Tengo ingredientes, pero no sé qué hacer con ellos.";
+ data.uso.text="Perfecto. Dime qué tienes, cuánto tiempo quieres dedicar y para cuántos cocinas. Yo te ayudo a reducir opciones.";
+ data.uso.next="Escríbeme los ingredientes principales que quieres aprovechar y si hay algo que no os guste en casa.";
+ data.uso.msg="Hola Macarena. Tengo esto en casa: ___. Cocino para ___. Tengo unos ___ minutos y me gustaría hacer algo ___.";
+}
+if(contexto&&data.valoro){
+ data.valoro.title=accion==="demo"?"Quiero una demostración pensada para mi caso.":"Quiero comentar contigo lo que me ha salido en el test.";
+ data.valoro.text="Ya traes trabajo hecho: he conservado el contexto de tu cuestionario para que no tengas que volver a explicarlo desde cero.";
+ data.valoro.next=accion==="demo"?"Dime qué te gustaría ver resuelto en una demostración realista para tu día a día.":"Dime qué parte del resultado te genera más duda o qué te gustaría contrastar conmigo.";
+ data.valoro.msg=(accion==="demo"?"Hola Macarena. He hecho tu cuestionario y me gustaría una demostración enfocada a mi situación. ":"Hola Macarena. He hecho tu cuestionario y quiero comentar contigo el resultado. ")+"Mi contexto es: "+contexto+". Lo que más me gustaría aclarar es ___.";
 }
 if(data[preset])select(preset,false);
 </script>
