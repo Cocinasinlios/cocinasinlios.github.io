@@ -74,6 +74,13 @@ if(origin==="guia"){
  data.estreno.next="Cuéntame si acabas de recibir tu TM7 o si ya llevas unos días con ella.";
  data.estreno.msg="Hola Macarena. He visto tu guía para los primeros días con TM7 y me gustaría que me la pases. La recibí ___. Ahora mismo lo que más me gustaría aprender es ___.";
 }
+if(origin&&origin.startsWith("idea:")){
+ const idea=origin.slice(5);
+ data.uso.title="He visto “"+idea+"” y quiero que me ayudes con esa idea.";
+ data.uso.text="Perfecto. Ya sé qué te ha llamado la atención. Podemos partir de esa receta y ver si te encaja, cómo la harías o si merece la pena que la convierta en receta completa.";
+ data.uso.next="Cuéntame para cuántos cocinas y qué te ha gustado de esa idea.";
+ data.uso.msg="Hola Macarena. He visto en tu web la idea “"+idea+"” y me ha apetecido. Cocino para ___. Lo que me gustaría es ___.";
+}
 if(data[preset])select(preset,false);
 </script>
 <script src="/assets/site.js" defer></script>
