@@ -45,7 +45,10 @@ const meta={
 "/con-macarena.html":["Con Macarena","Mi forma de acompañarte."],
 "/receta-hummus.html":["Hummus cremoso","Receta completa explicada."],
 "/receta-pasta-pesto.html":["Pasta al pesto","Receta completa explicada."],
-"/receta-tortitas.html":["Tortitas","Receta completa explicada."]
+"/receta-tortitas.html":["Tortitas","Receta completa explicada."],
+"/receta-gazpacho.html":["Gazpacho andaluz","Trituración y textura explicadas."],
+"/receta-merluza-varoma.html":["Merluza al vapor con verduras","Vapor y circulación explicados."],
+"/receta-masa-pizza.html":["Masa de pizza fácil","Amasado, reposo y fermentación."]
 };
 function card(path,removable){
  const m=meta[path]||[path,""];return '<article class="card"><div><small>'+ (path.includes("receta-")?"Receta":"Cocina sin líos") +'</small><h3>'+m[0]+'</h3><p>'+m[1]+'</p></div><div class="actions"><a class="btn" href="'+path+'">Abrir</a>'+(removable?'<button class="btn alt remove" data-path="'+path+'">Quitar</button>':'')+'</div></article>';
