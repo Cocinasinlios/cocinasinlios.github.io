@@ -56,6 +56,7 @@ const labels={
  "/menu-semana.html":["🗓","Menú de la semana","Cuando lo que necesitas es dejar de improvisar."],
  "/encaja-tm7.html":["✨","¿La TM7 encaja contigo?","Piensa en tu cocina real antes de decidir."],
  "/con-macarena.html":["👋","Con Macarena","Conoce cómo te acompañaría de verdad."],
+ "/hablamos.html":["💬","Habla con Macarena","Empieza por tu situación y abre una conversación concreta."],
  "/mi-rincon.html":["♡","Mi rincón","Tus favoritos y lo que has visto recientemente."]
 };
 
@@ -71,7 +72,8 @@ const generic={
  "/dudas-rapidas.html":["/glosario.html","/encaja-tm7.html","/con-macarena.html"],
  "/menu-semana.html":["/recetas.html","/que-cocino.html","/explora.html"],
  "/encaja-tm7.html":["/con-macarena.html","/empieza-aqui.html","/explora.html"],
- "/con-macarena.html":["/empieza-aqui.html","/explora.html","/recetas.html"],
+ "/con-macarena.html":["/hablamos.html","/empieza-aqui.html","/explora.html","/recetas.html"],
+ "/hablamos.html":["/con-macarena.html","/encaja-tm7.html","/recetas.html"],
  "/receta-hummus.html":["/academia.html","/glosario.html","/diagnostico.html"],
  "/receta-pasta-pesto.html":["/academia.html","/menu-semana.html","/glosario.html"],
  "/receta-tortitas.html":["/recetas.html","/academia.html","/que-cocino.html"],
@@ -82,9 +84,9 @@ const generic={
 
 const journeys={
  estreno:["/con-macarena.html","/recetas.html","/dudas-rapidas.html","/academia.html","/glosario.html","/diagnostico.html"],
- valoro:["/encaja-tm7.html","/dudas-rapidas.html","/con-macarena.html","/empieza-aqui.html"],
+ valoro:["/encaja-tm7.html","/dudas-rapidas.html","/con-macarena.html","/hablamos.html"],
  uso:["/que-cocino.html","/recetas.html","/academia.html","/glosario.html"],
- fallo:["/diagnostico.html","/academia.html","/glosario.html","/con-macarena.html"],
+ fallo:["/diagnostico.html","/academia.html","/glosario.html","/con-macarena.html","/hablamos.html"],
  orden:["/menu-semana.html","/que-cocino.html","/recetas.html","/explora.html"],
  aprender:["/academia.html","/glosario.html","/diagnostico.html","/recetas.html"]
 };
@@ -117,7 +119,8 @@ const searchData=[
 ["📖","Glosario Sin Líos","Conceptos explicados en lenguaje normal.","/glosario.html","glosario velocidad tiempo temperatura giro inverso varoma emulsión amasar"],
 ["❓","Dudas rápidas","Respuestas claras a preguntas habituales sobre TM7, Cookidoo y uso diario.","/dudas-rapidas.html","dudas preguntas cookidoo tm7 manual agente cantidades varoma"],
 ["✨","¿La TM7 encaja contigo?","Recorrido para valorar tu caso.","/encaja-tm7.html","tm7 comprar decidir encaja demo"],
-["👋","Con Macarena","Mi forma de acompañarte antes y después.","/con-macarena.html","macarena agente acompañamiento ayuda whatsapp"],
+["👋","Con Macarena","Mi forma de acompañarte antes y después.","/con-macarena.html","macarena agente acompañamiento ayuda"],
+["💬","Habla con Macarena","Elige tu situación y abre una conversación concreta.","/hablamos.html","contacto whatsapp demo valorar tm7 empezar duda macarena"],
 ["♡","Mi rincón","Tus favoritos y páginas recientes.","/mi-rincon.html","favoritos guardados historial recientes"],
 ["🥣","Hummus exprés","Receta completa explicada.","/receta-hummus.html","hummus garbanzo picoteo triturar"],
 ["🌿","Pasta al pesto","Receta completa explicada.","/receta-pasta-pesto.html","pasta pesto cena salsa emulsión"],
