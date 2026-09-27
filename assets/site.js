@@ -36,6 +36,7 @@ const labels={
  "/diagnostico.html":["🧩","Rescate Sin Líos","Si algo falla, mira qué variable revisar."],
  "/academia.html":["🧠","Thermomix por dentro","Entiende el porqué mientras cocinas."],
  "/glosario.html":["📖","Glosario Sin Líos","Vuelve aquí cuando una palabra o concepto no te cuadre."],
+ "/dudas-rapidas.html":["❓","Dudas rápidas","Respuestas claras a preguntas habituales."],
  "/menu-semana.html":["🗓","Menú de la semana","Cuando lo que necesitas es dejar de improvisar."],
  "/encaja-tm7.html":["✨","¿La TM7 encaja contigo?","Piensa en tu cocina real antes de decidir."],
  "/con-macarena.html":["👋","Con Macarena","Conoce cómo te acompañaría de verdad."],
@@ -50,7 +51,8 @@ const generic={
  "/recetas.html":["/que-cocino.html","/academia.html","/glosario.html"],
  "/diagnostico.html":["/academia.html","/glosario.html","/con-macarena.html"],
  "/academia.html":["/glosario.html","/diagnostico.html","/recetas.html"],
- "/glosario.html":["/academia.html","/diagnostico.html","/recetas.html"],
+ "/glosario.html":["/dudas-rapidas.html","/academia.html","/diagnostico.html","/recetas.html"],
+ "/dudas-rapidas.html":["/glosario.html","/encaja-tm7.html","/con-macarena.html"],
  "/menu-semana.html":["/recetas.html","/que-cocino.html","/explora.html"],
  "/encaja-tm7.html":["/con-macarena.html","/empieza-aqui.html","/explora.html"],
  "/con-macarena.html":["/empieza-aqui.html","/explora.html","/recetas.html"],
@@ -60,8 +62,8 @@ const generic={
 };
 
 const journeys={
- estreno:["/con-macarena.html","/recetas.html","/academia.html","/glosario.html","/diagnostico.html"],
- valoro:["/encaja-tm7.html","/con-macarena.html","/empieza-aqui.html"],
+ estreno:["/con-macarena.html","/recetas.html","/dudas-rapidas.html","/academia.html","/glosario.html","/diagnostico.html"],
+ valoro:["/encaja-tm7.html","/dudas-rapidas.html","/con-macarena.html","/empieza-aqui.html"],
  uso:["/que-cocino.html","/recetas.html","/academia.html","/glosario.html"],
  fallo:["/diagnostico.html","/academia.html","/glosario.html","/con-macarena.html"],
  orden:["/menu-semana.html","/que-cocino.html","/recetas.html","/explora.html"],
@@ -94,6 +96,7 @@ const searchData=[
 ["🧩","Rescate Sin Líos","Diagnostica qué revisar cuando algo falla.","/diagnostico.html","fallo liquido espeso carne masa varoma emulsión"],
 ["🧠","Thermomix por dentro","Aprende qué ocurre mientras cocinas.","/academia.html","velocidad temperatura cantidad vapor aprender"],
 ["📖","Glosario Sin Líos","Conceptos explicados en lenguaje normal.","/glosario.html","glosario velocidad tiempo temperatura giro inverso varoma emulsión amasar"],
+["❓","Dudas rápidas","Respuestas claras a preguntas habituales sobre TM7, Cookidoo y uso diario.","/dudas-rapidas.html","dudas preguntas cookidoo tm7 manual agente cantidades varoma"],
 ["✨","¿La TM7 encaja contigo?","Recorrido para valorar tu caso.","/encaja-tm7.html","tm7 comprar decidir encaja demo"],
 ["👋","Con Macarena","Mi forma de acompañarte antes y después.","/con-macarena.html","macarena agente acompañamiento ayuda whatsapp"],
 ["♡","Mi rincón","Tus favoritos y páginas recientes.","/mi-rincon.html","favoritos guardados historial recientes"],
