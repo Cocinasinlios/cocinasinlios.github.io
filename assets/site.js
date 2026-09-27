@@ -65,6 +65,7 @@ const labels={
  "/recetas.html":["🍝","Sigue curioseando recetas","Entra por hambre, no por teoría."],
  "/diagnostico.html":["🧩","Rescate Sin Líos","Si algo falla, mira qué variable revisar."],
  "/academia.html":["🧠","Thermomix por dentro","Entiende el porqué mientras cocinas."],
+ "/aprende-cocinando.html":["🍳","Aprende cocinando","Ocho recetas para entender ocho ideas reutilizables."],
  "/glosario.html":["📖","Glosario Sin Líos","Vuelve aquí cuando una palabra o concepto no te cuadre."],
  "/dudas-rapidas.html":["❓","Dudas rápidas","Respuestas claras a preguntas habituales."],
  "/menu-semana.html":["🗓","Menú de la semana","Cuando lo que necesitas es dejar de improvisar."],
@@ -89,7 +90,8 @@ const generic={
  "/que-cocino.html":["/recetas.html","/menu-semana.html","/academia.html"],
  "/recetas.html":["/que-cocino.html","/academia.html","/glosario.html"],
  "/diagnostico.html":["/academia.html","/glosario.html","/con-macarena.html"],
- "/academia.html":["/glosario.html","/diagnostico.html","/recetas.html"],
+ "/academia.html":["/aprende-cocinando.html","/glosario.html","/diagnostico.html","/recetas.html"],
+ "/aprende-cocinando.html":["/recetas.html","/academia.html","/glosario.html","/diagnostico.html"],
  "/glosario.html":["/dudas-rapidas.html","/academia.html","/diagnostico.html","/recetas.html"],
  "/dudas-rapidas.html":["/glosario.html","/encaja-tm7.html","/con-macarena.html"],
  "/menu-semana.html":["/recetas.html","/que-cocino.html","/explora.html"],
@@ -112,7 +114,7 @@ const journeys={
  uso:["/que-cocino.html","/recetas.html","/academia.html","/glosario.html"],
  fallo:["/diagnostico.html","/academia.html","/glosario.html","/con-macarena.html","/hablamos.html"],
  orden:["/menu-semana.html","/que-cocino.html","/recetas.html","/explora.html"],
- aprender:["/academia.html","/glosario.html","/diagnostico.html","/recetas.html"]
+ aprender:["/academia.html","/aprende-cocinando.html","/glosario.html","/diagnostico.html","/recetas.html"]
 };
 
 let route=null;try{route=localStorage.getItem("csl_route")}catch(e){}
