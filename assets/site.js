@@ -187,7 +187,7 @@ const searchData=[
 ["🗓","Menú de la semana","Cenas, preparación y lista de compra.","/menu-semana.html","menu semana compra organizar cenas"],
 ["🧩","Rescate Sin Líos","Diagnostica qué revisar cuando algo falla.","/diagnostico.html","fallo liquido espeso carne masa varoma emulsión"],
 ["🧠","Thermomix por dentro","Aprende qué ocurre mientras cocinas.","/academia.html","velocidad temperatura cantidad vapor aprender"],
-["🧩","Método Sin Líos","La forma de Macarena de entender, cocinar, corregir, adaptar y organizar.","/#metodo","metodo sin lios entiende cocina corrige adapta organiza macarena criterio"],
+["🧩","Método Sin Líos","La forma de Macarena de entender, cocinar, corregir, adaptar y organizar.","/metodo-sin-lios.html","metodo sin lios entiende cocina corrige adapta organiza macarena criterio"],
 ["📖","Glosario Sin Líos","Conceptos explicados en lenguaje normal.","/glosario.html","glosario velocidad tiempo temperatura giro inverso varoma emulsión amasar"],
 ["❓","Dudas rápidas","Respuestas claras a preguntas habituales sobre TM7, Cookidoo y uso diario.","/dudas-rapidas.html","dudas preguntas cookidoo tm7 manual agente cantidades varoma"],
 ["✨","¿La TM7 encaja contigo?","Recorrido para valorar tu caso.","/encaja-tm7.html","tm7 comprar decidir encaja demo"],
