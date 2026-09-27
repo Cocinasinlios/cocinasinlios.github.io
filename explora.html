@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Explora | Cocina sin líos con Macarena</title>
+<meta name="description" content="Elige por dónde entrar hoy: recetas, qué cocino, rescate, Thermomix por dentro, menú semanal o Macarena.">
+<link rel="canonical" href="https://cocinasinlios.github.io/explora.html">
+<style>
+:root{--cream:#fbf6ee;--paper:#fffdfa;--ink:#25251f;--muted:#706f67;--dark:#2b3a30;--sage:#dce8d8;--mint:#eef5eb;--peach:#f1d8c6;--butter:#f2df9d;--terr:#d36f4b;--pink:#edd6d7;--line:#e8dfd2;--shadow:0 18px 55px rgba(58,51,42,.11)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.55;padding-bottom:76px}a{color:inherit;text-decoration:none}.wrap{width:min(1160px,92vw);margin:auto}h1,h2,h3{font-family:Georgia,serif;font-weight:500;line-height:1.03}.eyebrow{font-size:11px;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;color:#687769}
+header{position:sticky;top:0;z-index:40;background:rgba(251,246,238,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.nav{height:70px;display:flex;align-items:center;gap:20px}.brand{font-family:Georgia,serif;font-size:23px;font-weight:700;line-height:.95}.brand small{display:block;font-family:Inter,sans-serif;font-size:9px;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted);margin-top:6px}.back{margin-left:auto;font-size:13px;font-weight:850}
+.hero{padding:56px 0 24px}.hero-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:30px;align-items:end}.hero h1{font-size:clamp(52px,6vw,78px);letter-spacing:-2.5px;margin:8px 0 15px}.hero p{color:var(--muted);font-size:17px;max-width:700px}.surprise{background:var(--butter);border-radius:27px;padding:26px;transform:rotate(1deg)}.surprise b{display:block;font-family:Georgia,serif;font-size:29px;font-weight:500;margin-bottom:7px}.surprise button{margin-top:14px;border:0;border-radius:999px;background:var(--dark);color:white;padding:12px 17px;font-weight:900;cursor:pointer}
+.routes{padding:34px 0 72px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.route{position:relative;border-radius:28px;overflow:hidden;min-height:360px;box-shadow:var(--shadow);transition:.25s}.route:hover{transform:translateY(-5px)}.photo{position:absolute;inset:0;background-size:cover;background-position:center}.r1 .photo{background-image:url("assets/pasta.webp")}.r2 .photo{background-image:url("assets/hummus.webp")}.r3{background:var(--peach)}.r4{background:var(--sage)}.r5{background:var(--butter)}.r6{background:var(--dark);color:white}.shade{position:absolute;inset:0;background:linear-gradient(to top,rgba(25,27,23,.74),rgba(25,27,23,.03) 62%)}.copy{position:absolute;left:23px;right:23px;bottom:22px;color:white}.copy small,.flat small{font-size:10px;text-transform:uppercase;letter-spacing:1.2px;font-weight:900}.copy h3,.flat h3{font-size:32px;margin:7px 0 9px}.copy p{color:#f3efe8;font-size:13px;margin:0}.flat{padding:26px;display:flex;flex-direction:column;justify-content:space-between}.flat p{font-size:14px;color:#5d625c}.r6 .flat p{color:#d9e2dc}.arrow{font-size:26px}
+.keep{padding:70px 0;background:var(--paper)}.keep-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:20px}.keep-main{background:#efe4d7;border-radius:29px;padding:34px}.keep-main h2{font-size:45px;margin:7px 0 14px}.keep-main p{color:var(--muted)}.keep-side{display:grid;gap:14px}.mini{border-radius:23px;padding:24px}.mini:first-child{background:var(--pink)}.mini:last-child{background:var(--mint)}.mini h3{font-size:29px;margin:6px 0 8px}.mini p{color:#5e625c;font-size:13px}.btn{display:inline-flex;border-radius:999px;background:var(--dark);color:white;padding:12px 16px;font-weight:900;font-size:12px}
+.dock{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);z-index:100;background:rgba(34,43,37,.96);color:white;border-radius:22px;padding:7px;display:flex;gap:4px;box-shadow:0 14px 40px rgba(0,0,0,.22);backdrop-filter:blur(12px)}.dock a{min-width:74px;text-align:center;padding:7px 9px;border-radius:16px;font-size:10px;font-weight:850}.dock a span{display:block;font-size:17px;margin-bottom:2px}.dock a.active,.dock a:hover{background:rgba(255,255,255,.13)}
+footer{background:#202b24;color:#dce5df;padding:42px 0}footer p{color:#aebbb3;font-size:12px}
+@media(max-width:850px){.hero-grid,.keep-grid{grid-template-columns:1fr}.grid{grid-template-columns:1fr 1fr}}
+@media(max-width:580px){.hero h1{font-size:47px}.grid{grid-template-columns:1fr}.route{min-height:310px}.dock{left:10px;right:10px;transform:none;justify-content:space-between}.dock a{min-width:0;flex:1;padding:7px 3px}.back{display:none}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav"><a class="brand" href="/">Cocina sin líos<small>con Macarena</small></a><a class="back" href="/">← Volver a inicio</a></div></header>
+<main>
+<section class="hero"><div class="wrap hero-grid">
+<div><div class="eyebrow">Explora sin orden</div><h1>Entra por donde te apetezca hoy.</h1><p>No hace falta recorrer la web de arriba abajo. Elige una necesidad, una curiosidad o un antojo y deja que una cosa te lleve a la siguiente.</p></div>
+<div class="surprise"><b>¿No quieres elegir?</b><span>Te mando a una sección al azar. Puede ser una receta, una herramienta o algo para entender mejor tu Thermomix.</span><br><button id="surprise">🎲 Llévame a algún sitio</button></div>
+</div></section>
+
+<section class="routes"><div class="wrap grid">
+<a class="route r1" href="/que-cocino.html"><div class="photo"></div><div class="shade"></div><div class="copy"><small>Ahora mismo</small><h3>No sé qué cocinar.</h3><p>Dime tiempo y antojo y te doy tres ideas.</p></div></a>
+<a class="route r2" href="/recetas.html"><div class="photo"></div><div class="shade"></div><div class="copy"><small>Quiero curiosear</small><h3>Enséñame cosas ricas.</h3><p>Recetas e ideas para entrar por hambre, no por teoría.</p></div></a>
+<a class="route r3 flat" href="/diagnostico.html"><div><small>Houston...</small><h3>Algo me ha salido fatal.</h3><p>Rescate Sin Líos: líquido, carne deshecha, masa rara, emulsión cortada...</p></div><div class="arrow">↗</div></a>
+<a class="route r4 flat" href="/academia.html"><div><small>Curiosidad</small><h3>Quiero saber qué está pasando dentro.</h3><p>Velocidad, vapor, cantidad, calor y texturas explicadas con cocina real.</p></div><div class="arrow">↗</div></a>
+<a class="route r5 flat" href="/menu-semana.html"><div><small>Necesito orden</small><h3>Resuélveme la semana.</h3><p>Cenas, preparaciones que adelantan trabajo y lista de compra interactiva.</p></div><div class="arrow">↗</div></a>
+<a class="route r6 flat" href="/con-macarena.html"><div><small>La persona detrás</small><h3>¿Y tú quién eres, Macarena?</h3><p>Qué puedes esperar de mí antes, durante y después de tener tu Thermomix.</p></div><div class="arrow">↗</div></a>
+</div></section>
+
+<section class="keep"><div class="wrap keep-grid">
+<div class="keep-main"><div class="eyebrow">Una cosa lleva a otra</div><h2>La web está pensada para que nunca acabes en un callejón sin salida.</h2><p>Una receta te lleva a una técnica. Una técnica a una duda. Una duda a Rescate. Un menú a otra receta. Y cuando necesites una persona real, llegas a mí.</p><a class="btn" href="/recetas.html">Empieza por una receta</a></div>
+<div class="keep-side"><div class="mini"><div class="eyebrow">Si tienes 15 minutos</div><h3>Ve directo a algo rápido.</h3><p>Filtra ideas pensadas para días con poco margen.</p><a class="btn" href="/recetas.html?f=rapido">Ver ideas rápidas</a></div><div class="mini"><div class="eyebrow">Si acabas de llegar</div><h3>Conoce primero mi forma de acompañarte.</h3><p>Así entiendes por qué esta web no es solo otro recetario.</p><a class="btn" href="/con-macarena.html">Con Macarena</a></div></div>
+</div></section>
+</main>
+
+<div class="dock">
+<a class="active" href="/explora.html"><span>✦</span>Explora</a>
+<a href="/que-cocino.html"><span>🎲</span>Qué cocino</a>
+<a href="/recetas.html"><span>🍝</span>Recetas</a>
+<a href="/diagnostico.html"><span>🧩</span>Rescate</a>
+<a href="/con-macarena.html"><span>👋</span>Macarena</a>
+</div>
+
+<footer><div class="wrap"><b>Cocina sin líos con Macarena</b><p>Recetas, herramientas y acompañamiento para cocinar con más criterio y menos complicación.</p></div></footer>
+<script>
+const routes=["/que-cocino.html","/recetas.html","/diagnostico.html","/academia.html","/menu-semana.html","/con-macarena.html","/receta-hummus.html","/receta-pasta-pesto.html","/receta-tortitas.html"];
+document.getElementById("surprise").addEventListener("click",()=>location.href=routes[Math.floor(Math.random()*routes.length)]);
+</script>
+</body></html>
