@@ -62,11 +62,33 @@ const buttons=[...document.querySelectorAll(".choice")],box=document.getElementB
 function select(key,move=true){const d=data[key];if(!d)return;buttons.forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.key===key)));title.textContent=d.title;txt.textContent=d.text;next.textContent=d.next;wa.href="https://wa.me/34640761605?text="+encodeURIComponent(d.msg);box.classList.add("show");if(move){box.scrollIntoView({behavior:"smooth",block:"center"});setTimeout(()=>title.focus({preventScroll:true}),350)}}
 buttons.forEach(b=>b.addEventListener("click",()=>select(b.dataset.key)));
 const params=new URLSearchParams(location.search),preset=params.get("motivo"),origin=params.get("origen"),contexto=params.get("contexto"),accion=params.get("accion");
-if(origin&&data.duda&&origin!=="guia"){
+const specialOrigin=origin==="guia"||origin==="nevera"||origin==="que-cocino"||(origin&&origin.startsWith("idea:"))||(origin&&origin.startsWith("Rescate Sin Líos:"))||(origin&&origin.startsWith("Adapta Sin Líos:"))||(origin&&origin.startsWith("Organiza Sin Líos:"));
+if(origin&&data.duda&&!specialOrigin){
  data.duda.title="Tengo una duda con "+origin+".";
- data.duda.text="Ya sé de qué vienes hablando. Cuéntame qué hiciste, qué cambiaste y cómo quedó; así partimos de un caso concreto.";
+ data.duda.text="Ya sé de qué receta vienes. Cuéntame qué hiciste, qué cambiaste y cómo quedó; así partimos de un caso concreto.";
  data.duda.next="Si puedes, dime cantidades, tiempos, cualquier cambio respecto a la receta y el resultado final.";
  data.duda.msg="Hola Macarena. Vengo de tu receta de "+origin+". Tengo una duda concreta: ___. Hice ___. Cambié ___. El resultado fue ___. Quiero entender qué pudo pasar y qué debería mirar la próxima vez.";
+}
+if(origin&&origin.startsWith("Rescate Sin Líos:")&&data.duda){
+ const issue=origin.replace("Rescate Sin Líos:","").trim();
+ data.duda.title="Vengo de Rescate Sin Líos: "+issue+".";
+ data.duda.text="Ya has identificado el síntoma. Ahora cuéntame la receta, qué hiciste y qué cambió para poder razonar el caso con contexto.";
+ data.duda.next="Dime receta, cantidades, pasos distintos y cómo quedó exactamente.";
+ data.duda.msg="Hola Macarena. He usado Rescate Sin Líos porque "+issue+". La receta era ___. Hice ___. Cambié ___. El resultado fue ___.";
+}
+if(origin&&origin.startsWith("Adapta Sin Líos:")&&data.duda){
+ const change=origin.replace("Adapta Sin Líos:","").trim();
+ data.duda.title="Quiero adaptar una receta con criterio.";
+ data.duda.text="Ya sé qué tipo de cambio estás pensando: "+change+" Cuéntame la receta original y qué quieres modificar.";
+ data.duda.next="Dime qué receta es, qué quieres conservar y cuál sería el único cambio que probarías primero.";
+ data.duda.msg="Hola Macarena. Vengo de Adapta Sin Líos. "+change+" La receta es ___. Quiero cambiar ___. Lo que necesito conservar es ___.";
+}
+if(origin&&origin.startsWith("Organiza Sin Líos:")&&data.uso){
+ const need=origin.replace("Organiza Sin Líos:","").trim();
+ data.uso.title="Quiero organizar mejor esta parte de mi cocina.";
+ data.uso.text="Ya sé por dónde vienes: "+need+" No hace falta organizarlo todo; podemos centrarnos justo en ese punto.";
+ data.uso.next="Cuéntame qué pasa normalmente en tu semana y qué sería una mejora realista para ti.";
+ data.uso.msg="Hola Macarena. Vengo de Organiza Sin Líos porque "+need+" En mi semana suele pasar ___. Lo que más me gustaría resolver es ___.";
 }
 if(origin==="guia"){
  data.estreno.title="Quiero tu guía para empezar con buen pie.";
