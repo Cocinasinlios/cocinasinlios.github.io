@@ -18,6 +18,9 @@ header{position:sticky;top:0;z-index:30;background:rgba(251,246,238,.95);backdro
 footer{background:#202b24;color:#dce5df;padding:40px 0}footer p{color:#aebbb3;font-size:12px}
 @media(max-width:900px){.day-grid{grid-template-columns:1fr 1fr 1fr}.hero-grid,.plan-grid{grid-template-columns:1fr}.shop-groups{grid-template-columns:1fr}.extra-grid{grid-template-columns:1fr}}
 @media(max-width:560px){.hero h1{font-size:47px}.day-grid{grid-template-columns:1fr}.day-photo{height:220px}.back{display:none}.prep,.shopping{padding:24px}.prep h2,.shopping h2{font-size:36px}}
+
+.global-dock{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);z-index:120;background:rgba(34,43,37,.96);color:white;border-radius:22px;padding:7px;display:flex;gap:4px;box-shadow:0 14px 40px rgba(0,0,0,.22);backdrop-filter:blur(12px)}.global-dock a{min-width:74px;text-align:center;padding:7px 9px;border-radius:16px;font-size:10px;font-weight:850}.global-dock a span{display:block;font-size:17px;margin-bottom:2px}.global-dock a:hover{background:rgba(255,255,255,.13)}
+@media(max-width:580px){body{padding-bottom:76px}.global-dock{left:10px;right:10px;transform:none;justify-content:space-between}.global-dock a{min-width:0;flex:1;padding:7px 3px}}
 </style>
 </head>
 <body>
@@ -70,4 +73,10 @@ const boxes=[...document.querySelectorAll('.shop-item input')];
 boxes.forEach((b,i)=>{const key='menu-shop-'+i;b.checked=localStorage.getItem(key)==='1';b.addEventListener('change',()=>localStorage.setItem(key,b.checked?'1':'0'))});
 document.getElementById('reset').addEventListener('click',()=>{boxes.forEach((b,i)=>{b.checked=false;localStorage.removeItem('menu-shop-'+i)})});
 </script>
-</body></html>
+<div class="global-dock">
+<a href="/explora.html"><span>✦</span>Explora</a>
+<a href="/que-cocino.html"><span>🎲</span>Qué cocino</a>
+<a href="/recetas.html"><span>🍝</span>Recetas</a>
+<a href="/diagnostico.html"><span>🧩</span>Rescate</a>
+<a href="/con-macarena.html"><span>👋</span>Macarena</a>
+</div></body></html>
