@@ -15,6 +15,7 @@ const style=document.createElement("style");
 style.textContent=`
 .mag-photo,.card .photo,.day-photo,.hero-photo{position:relative}
 .mag-photo:after,.card .photo:after,.day-photo:after,.hero-photo:after{content:"Cocina sin líos · @thermomixsinlios";position:absolute;right:9px;bottom:8px;z-index:4;background:rgba(20,25,21,.50);color:#fff;padding:4px 7px;border-radius:999px;font:700 8px/1.1 Inter,system-ui,sans-serif;letter-spacing:.25px;pointer-events:none}
+.global-dock,.dock{bottom:calc(14px + env(safe-area-inset-bottom))!important}.csl-search-btn,.csl-save-btn,.csl-continue{margin-bottom:env(safe-area-inset-bottom)}
 .global-dock a.active,.dock a.active{background:rgba(255,255,255,.16)!important}
 .csl-skip{position:fixed;left:12px;top:10px;z-index:500;transform:translateY(-150%);background:#2b3a30;color:white;padding:10px 14px;border-radius:999px;font:900 12px/1 Inter,system-ui,sans-serif;text-decoration:none}.csl-skip:focus{transform:none;outline:3px solid #f2df9d;outline-offset:2px}
 .csl-author-strip{background:#fffdfa;border-bottom:1px solid #e8dfd2;color:#485249}
@@ -54,7 +55,7 @@ style.textContent=`
 .csl-toast{position:fixed;left:50%;bottom:156px;transform:translate(-50%,12px);z-index:260;background:#2b3a30;color:white;border-radius:999px;padding:10px 15px;font:800 12px/1.2 Inter,system-ui,sans-serif;box-shadow:0 14px 40px rgba(0,0,0,.2);opacity:0;pointer-events:none;transition:.22s;white-space:nowrap}.csl-toast.show{opacity:1;transform:translate(-50%,0)}
 .csl-search-empty{padding:18px;color:#706f67}.csl-search-empty p{margin:0 0 12px}.csl-search-empty-links{display:flex;gap:8px;flex-wrap:wrap}.csl-search-empty a{display:inline-flex;border-radius:999px;background:#eef5eb;color:#2b3a30;padding:8px 11px;font-weight:900;text-decoration:none}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}.csl-continue,.csl-toast,.csl-related-card{transition:none!important}}
-@media(max-width:580px){
+@media(max-width:580px){body{padding-bottom:calc(82px + env(safe-area-inset-bottom))!important}
  .csl-continue{bottom:148px;left:12px;width:calc(100vw - 24px)}
  .csl-search-btn{bottom:91px;right:12px}
  .csl-save-btn{bottom:91px;right:68px}
