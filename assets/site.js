@@ -13,6 +13,13 @@ style.textContent=`
 .csl-search-results{display:grid;gap:8px;margin-top:14px;max-height:55vh;overflow:auto}.csl-search-results a{display:grid;grid-template-columns:36px 1fr auto;gap:10px;align-items:center;padding:12px;border-radius:16px;text-decoration:none;color:#25251f}.csl-search-results a:hover{background:#eef5eb}.csl-search-results b{display:block}.csl-search-results small{color:#706f67}.csl-search-results em{font-style:normal;color:#8a8a82}
 .csl-continue{position:fixed;left:18px;bottom:92px;z-index:110;width:min(370px,calc(100vw - 36px));background:rgba(255,253,250,.97);border:1px solid #e8dfd2;border-radius:21px;box-shadow:0 16px 48px rgba(40,40,34,.16);padding:7px;opacity:0;transform:translateY(12px);pointer-events:none;transition:.28s}
 .csl-continue.show{opacity:1;transform:none;pointer-events:auto}.csl-continue a{display:grid;grid-template-columns:42px 1fr 20px;gap:10px;align-items:center;padding:9px 12px;color:#25251f;text-decoration:none}.csl-continue small{display:block;font-size:9px;text-transform:uppercase;letter-spacing:1.2px;color:#6d7068;font-weight:900}.csl-continue b{display:block;font-family:Georgia,serif;font-size:18px;line-height:1.05;margin:2px 0}.csl-continue p{font:11px/1.35 Inter,system-ui,sans-serif;color:#6d7068;margin:0}.csl-icon{font-size:23px}.csl-arrow{font-size:20px}.csl-x{position:absolute;right:6px;top:5px;border:0;background:transparent;font-size:18px;color:#777;cursor:pointer;z-index:2}
+.csl-macarena{background:#2b3a30;color:white;padding:54px 0;border-top:1px solid rgba(255,255,255,.08)}
+.csl-macarena-inner{width:min(1080px,92vw);margin:auto;display:grid;grid-template-columns:88px 1fr auto;gap:22px;align-items:center}
+.csl-macarena-mark{width:76px;height:76px;border-radius:50%;display:grid;place-items:center;background:#f2df9d;color:#2b3a30;font:italic 500 38px/1 Georgia,serif;box-shadow:inset 0 0 0 7px rgba(255,255,255,.35)}
+.csl-macarena-copy small{display:block;font:900 10px/1.2 Inter,system-ui,sans-serif;letter-spacing:1.4px;text-transform:uppercase;color:#b9c9bc}
+.csl-macarena-copy h2{font:500 34px/1.04 Georgia,serif;margin:6px 0 9px;color:white}.csl-macarena-copy p{margin:0;color:#dce5df;font:14px/1.55 Inter,system-ui,sans-serif;max-width:760px}
+.csl-macarena-sign{display:block;margin-top:10px;color:#f2df9d;font:italic 500 18px/1.2 Georgia,serif}
+.csl-macarena-actions{display:flex;gap:8px;flex-direction:column;min-width:190px}.csl-macarena-actions a{display:inline-flex;justify-content:center;border-radius:999px;padding:10px 13px;font:900 11px/1.2 Inter,system-ui,sans-serif;text-decoration:none}.csl-macarena-actions a:first-child{background:white;color:#2b3a30}.csl-macarena-actions a:last-child{border:1px solid rgba(255,255,255,.3);color:white}.csl-macarena-actions a:focus-visible{outline:3px solid #f2df9d;outline-offset:3px}
 .csl-loop{background:#efe5d8;padding:48px 0;border-top:1px solid #e8dfd2}
 .csl-loop-inner{width:min(1080px,92vw);margin:auto}
 .csl-loop-head{margin-bottom:17px}.csl-loop-head small{display:block;font:900 10px/1.2 Inter,system-ui,sans-serif;letter-spacing:1.4px;text-transform:uppercase;color:#687769}.csl-loop-head h2{font:500 36px/1.05 Georgia,serif;margin:6px 0 8px;color:#25251f}.csl-loop-head p{max-width:720px;margin:0;color:#706f67;font:13px/1.5 Inter,system-ui,sans-serif}
@@ -36,7 +43,7 @@ style.textContent=`
  .csl-search-btn{bottom:91px;right:12px}
  .csl-save-btn{bottom:91px;right:68px}
  .wa-float{display:none!important}
- .csl-related-head{display:block}.csl-related-head p{margin-top:8px}.csl-related-grid{grid-template-columns:1fr}.csl-loop-grid{grid-template-columns:1fr}
+ .csl-related-head{display:block}.csl-related-head p{margin-top:8px}.csl-related-grid{grid-template-columns:1fr}.csl-loop-grid{grid-template-columns:1fr}.csl-macarena-inner{grid-template-columns:1fr;text-align:left}.csl-macarena-actions{min-width:0;flex-direction:row;flex-wrap:wrap}
 }
 `;
 document.head.appendChild(style);
@@ -183,6 +190,29 @@ if(recipeLearning[path]){
  else document.body.appendChild(loop);
 }
 
+const macarenaVoice={
+ recipe:{kicker:"Una cosa que quiero que te lleves",title:"Yo no quiero darte solo una receta.",text:"Si cocinas conmigo, quiero que cada plato te enseñe algo que puedas usar la próxima vez. Que entiendas un poco más tu Thermomix y dependas un poco menos de seguir instrucciones sin saber por qué."},
+ learn:{kicker:"Así trabajo yo",title:"No quiero que memorices botones.",text:"Prefiero ayudarte a entender qué mirar, qué cambia una textura y por qué una receta puede comportarse distinto. Para mí, acompañarte es enseñarte criterio, no darte una colección de órdenes."},
+ useful:{kicker:"Esto también soy yo",title:"Quiero quitarte ruido, no darte más deberes.",text:"Me gusta la cocina práctica, apetecible y realista. Si esta web te ahorra una decisión, te da una idea o consigue que abras la nevera con menos pereza, ya está haciendo parte de mi trabajo."},
+ decide:{kicker:"Antes de hablar de comprar",title:"Primero quiero entender tu cocina.",text:"Cuántos sois, qué cocinas, qué te cuesta y qué esperas resolver. Prefiero que la conversación empiece por ti y no por una máquina."}
+};
+const recipePages=Object.keys(recipeLearning);
+const learnPages=["/academia.html","/aprende-cocinando.html","/mapa-sin-lios.html","/glosario.html","/diagnostico.html","/dudas-rapidas.html"];
+const usefulPages=["/explora.html","/que-cocino.html","/recetas.html","/menu-semana.html","/empieza-aqui.html"];
+const decidePages=["/encaja-tm7.html"];
+let voice=null;
+if(recipePages.includes(path))voice=macarenaVoice.recipe;
+else if(learnPages.includes(path))voice=macarenaVoice.learn;
+else if(usefulPages.includes(path))voice=macarenaVoice.useful;
+else if(decidePages.includes(path))voice=macarenaVoice.decide;
+if(voice){
+ const section=document.createElement("section");section.className="csl-macarena";section.setAttribute("aria-labelledby","csl-macarena-title");
+ section.innerHTML='<div class="csl-macarena-inner"><div class="csl-macarena-mark" aria-hidden="true">M</div><div class="csl-macarena-copy"><small>'+voice.kicker+'</small><h2 id="csl-macarena-title">'+voice.title+'</h2><p>'+voice.text+'</p><span class="csl-macarena-sign">Macarena · Cocina sin líos</span></div><div class="csl-macarena-actions"><a href="/con-macarena.html">Cómo te acompañaría</a><a href="/hablamos.html">Cuéntame tu caso</a></div></div>';
+ const footer=document.querySelector("footer");
+ if(footer)footer.parentNode.insertBefore(section,footer);
+ else document.body.appendChild(section);
+}
+
 const relatedRecipes={
  "/receta-hummus.html":["/receta-pisto-manchego.html","/receta-gazpacho.html","/receta-pasta-pesto.html"],
  "/receta-pasta-pesto.html":["/receta-hummus.html","/receta-pisto-manchego.html","/receta-masa-pizza.html"],
@@ -219,7 +249,7 @@ if(saveable){
 }
 const sb=document.createElement("button");sb.type="button";sb.className="csl-search-btn";sb.setAttribute("aria-label","Buscar en Cocina sin líos");sb.textContent="⌕";document.body.appendChild(sb);
 const modal=document.createElement("div");modal.className="csl-search";modal.setAttribute("aria-hidden","true");modal.setAttribute("role","dialog");modal.setAttribute("aria-modal","true");modal.setAttribute("aria-labelledby","csl-search-title");
-modal.innerHTML='<div class="csl-search-box"><div id="csl-search-title" style="font-family:Georgia,serif;font-size:24px;margin:0 0 12px">Buscar en Cocina sin líos</div><div class="csl-search-top"><input type="search" aria-label="Buscar en Cocina sin líos" placeholder="Busca: masa, TM7, cena, Varoma, Macarena..."><button type="button" class="csl-search-close" aria-label="Cerrar">×</button></div><div class="csl-search-results" aria-live="polite"></div></div>';
+modal.innerHTML='<div class="csl-search-box"><div id="csl-search-title" style="font-family:Georgia,serif;font-size:24px;margin:0 0 12px">¿Qué estás buscando? Yo te llevo.</div><div class="csl-search-top"><input type="search" aria-label="Buscar en Cocina sin líos" placeholder="Busca: masa, TM7, cena, Varoma, Macarena..."><button type="button" class="csl-search-close" aria-label="Cerrar">×</button></div><div class="csl-search-results" aria-live="polite"></div></div>';
 document.body.appendChild(modal);
 const input=modal.querySelector("input"),results=modal.querySelector(".csl-search-results");
 function draw(q=""){
