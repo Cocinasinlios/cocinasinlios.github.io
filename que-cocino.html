@@ -41,7 +41,7 @@ footer{background:#202b24;color:#dce5df;padding:40px 0}footer p{color:#aebbb3;fo
 <div class="question"><h2 id="q-mood">2. ¿Qué te apetece?</h2><div class="choices" data-group="mood" role="group" aria-labelledby="q-mood"><button class="choice active" data-value="salado">Algo salado</button><button class="choice" data-value="ligero">Algo ligero</button><button class="choice" data-value="comfort">Comida de abrazo</button><button class="choice" data-value="dulce">Dame dulce</button><button class="choice" data-value="daigual">Sorpréndeme</button></div></div>
 <div class="question"><h2 id="q-goal">3. ¿Qué quieres conseguir?</h2><div class="choices" data-group="goal" role="group" aria-labelledby="q-goal"><button class="choice active" data-value="rapido">Resolver hoy</button><button class="choice" data-value="aprovechar">Aprovechar lo que tengo</button><button class="choice" data-value="aprender">Aprender algo con Thermomix</button></div></div>
 <button id="go" class="go">Macarena, dame tres ideas ✦</button>
-<div id="results" class="results" aria-live="polite"><div class="results-head"><h2 id="resultsTitle" tabindex="-1">Esto haría yo hoy.</h2><button id="again" class="again">🎲 Dame otras tres</button></div><div id="grid" class="grid"></div><div class="note">No tienes que elegir “la receta perfecta”. El objetivo es pasar de <b>“no sé qué hacer”</b> a tener tres opciones razonables en diez segundos.</div></div>
+<div id="results" class="results" aria-live="polite"><div class="results-head"><h2 id="resultsTitle" tabindex="-1">Esto haría yo hoy.</h2><button id="again" class="again">🎲 Dame otras tres</button></div><div id="whyChoice" class="why-pick"></div><div id="grid" class="grid"></div><div class="note">No tienes que elegir “la receta perfecta”. El objetivo es pasar de <b>“no sé qué hacer”</b> a tener tres opciones razonables en diez segundos.</div><div class="human-help"><span>¿Ninguna te encaja? Entonces ya no te doy más tarjetas: me cuentas qué tienes y lo pensamos contigo.</span><a id="humanHelp" href="/hablamos.html?motivo=uso&amp;origen=que-cocino">Macarena, te cuento</a></div></div>
 </div></section>
 </main>
 <footer><div class="wrap"><b>Cocina sin líos con Macarena</b><p>Ideas de cocina doméstica. Las recetas completas publicadas incluyen explicación y recomendaciones específicas.</p></div></footer>
@@ -69,6 +69,11 @@ document.querySelectorAll(".choices").forEach(group=>group.querySelectorAll(".ch
  });
 }));
 function render(){
+ const labels={time:{"15":"15 minutos","30":"media hora","60":"hasta una hora"},mood:{salado:"algo salado",ligero:"algo ligero",comfort:"comida de abrazo",dulce:"algo dulce",daigual:"que te sorprenda"},goal:{rapido:"resolver hoy",aprovechar:"aprovechar lo que tienes",aprender:"aprender algo mientras cocinas"}};
+ const context=labels.time[state.time]+" · "+labels.mood[state.mood]+" · "+labels.goal[state.goal];
+ const why=document.getElementById("whyChoice");
+ if(why)why.innerHTML="<b>Por qué te propongo estas tres.</b>He priorizado "+context+". No busco la receta perfecta: busco tres opciones suficientemente buenas para que puedas decidir sin seguir dando vueltas.";
+ const human=document.getElementById("humanHelp");if(human)human.href="/hablamos.html?motivo=uso&origen=que-cocino&contexto="+encodeURIComponent(context);
  let pool=data.filter(x=>x.time<=Number(state.time)&& (state.mood==="daigual"||x.mood.includes(state.mood)) && x.goal.includes(state.goal));
  if(pool.length<3) pool=data.filter(x=>x.time<=Math.max(Number(state.time),30) && (state.mood==="daigual"||x.mood.includes(state.mood)));
  if(pool.length<3) pool=data.filter(x=>x.time<=60);
