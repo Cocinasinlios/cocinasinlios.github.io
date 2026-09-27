@@ -6,14 +6,14 @@ style.textContent=`
 .mag-photo,.card .photo,.day-photo,.hero-photo{position:relative}
 .mag-photo:after,.card .photo:after,.day-photo:after,.hero-photo:after{content:"Cocina sin líos · @thermomixsinlios";position:absolute;right:9px;bottom:8px;z-index:4;background:rgba(20,25,21,.50);color:#fff;padding:4px 7px;border-radius:999px;font:700 8px/1.1 Inter,system-ui,sans-serif;letter-spacing:.25px;pointer-events:none}
 .global-dock a.active,.dock a.active{background:rgba(255,255,255,.16)!important}
-.csl-search-btn{position:fixed;right:18px;bottom:92px;z-index:121;width:48px;height:48px;border:0;border-radius:50%;background:#fffdfa;color:#26352c;box-shadow:0 12px 35px rgba(40,40,34,.18);font-size:20px;cursor:pointer;border:1px solid #e8dfd2}
+.csl-search-btn,.csl-save-btn{position:fixed;bottom:92px;z-index:121;width:48px;height:48px;border:0;border-radius:50%;background:#fffdfa;color:#26352c;box-shadow:0 12px 35px rgba(40,40,34,.18);font-size:20px;cursor:pointer;border:1px solid #e8dfd2}.csl-search-btn{right:18px}.csl-save-btn{right:74px}.csl-save-btn.saved{background:#f2df9d}
 .csl-search{position:fixed;inset:0;z-index:200;background:rgba(24,28,24,.62);display:none;align-items:flex-start;justify-content:center;padding:9vh 18px 18px}
 .csl-search.open{display:flex}.csl-search-box{width:min(720px,96vw);background:#fffdfa;border-radius:28px;padding:22px;box-shadow:0 25px 80px rgba(0,0,0,.28)}
 .csl-search-top{display:flex;gap:10px}.csl-search input{width:100%;border:1px solid #e8dfd2;border-radius:999px;padding:14px 17px;font:inherit;outline:none}.csl-search-close{border:0;background:#f0e9df;border-radius:50%;width:46px;min-width:46px;font-size:20px;cursor:pointer}
 .csl-search-results{display:grid;gap:8px;margin-top:14px;max-height:55vh;overflow:auto}.csl-search-results a{display:grid;grid-template-columns:36px 1fr auto;gap:10px;align-items:center;padding:12px;border-radius:16px;text-decoration:none;color:#25251f}.csl-search-results a:hover{background:#eef5eb}.csl-search-results b{display:block}.csl-search-results small{color:#706f67}.csl-search-results em{font-style:normal;color:#8a8a82}
 .csl-continue{position:fixed;left:18px;bottom:92px;z-index:110;width:min(370px,calc(100vw - 36px));background:rgba(255,253,250,.97);border:1px solid #e8dfd2;border-radius:21px;box-shadow:0 16px 48px rgba(40,40,34,.16);padding:7px;opacity:0;transform:translateY(12px);pointer-events:none;transition:.28s}
 .csl-continue.show{opacity:1;transform:none;pointer-events:auto}.csl-continue a{display:grid;grid-template-columns:42px 1fr 20px;gap:10px;align-items:center;padding:9px 12px;color:#25251f;text-decoration:none}.csl-continue small{display:block;font-size:9px;text-transform:uppercase;letter-spacing:1.2px;color:#6d7068;font-weight:900}.csl-continue b{display:block;font-family:Georgia,serif;font-size:18px;line-height:1.05;margin:2px 0}.csl-continue p{font:11px/1.35 Inter,system-ui,sans-serif;color:#6d7068;margin:0}.csl-icon{font-size:23px}.csl-arrow{font-size:20px}.csl-x{position:absolute;right:6px;top:5px;border:0;background:transparent;font-size:18px;color:#777;cursor:pointer;z-index:2}
-@media(max-width:580px){.csl-continue{bottom:88px}.csl-search-btn{bottom:91px;right:12px}}
+@media(max-width:580px){.csl-continue{bottom:88px}.csl-search-btn{bottom:91px;right:12px}.csl-save-btn{bottom:91px;right:68px}}
 `;
 document.head.appendChild(style);
 
@@ -38,7 +38,8 @@ const labels={
  "/glosario.html":["📖","Glosario Sin Líos","Vuelve aquí cuando una palabra o concepto no te cuadre."],
  "/menu-semana.html":["🗓","Menú de la semana","Cuando lo que necesitas es dejar de improvisar."],
  "/encaja-tm7.html":["✨","¿La TM7 encaja contigo?","Piensa en tu cocina real antes de decidir."],
- "/con-macarena.html":["👋","Con Macarena","Conoce cómo te acompañaría de verdad."]
+ "/con-macarena.html":["👋","Con Macarena","Conoce cómo te acompañaría de verdad."],
+ "/mi-rincon.html":["♡","Mi rincón","Tus favoritos y lo que has visto recientemente."]
 };
 
 const generic={
@@ -95,11 +96,20 @@ const searchData=[
 ["📖","Glosario Sin Líos","Conceptos explicados en lenguaje normal.","/glosario.html","glosario velocidad tiempo temperatura giro inverso varoma emulsión amasar"],
 ["✨","¿La TM7 encaja contigo?","Recorrido para valorar tu caso.","/encaja-tm7.html","tm7 comprar decidir encaja demo"],
 ["👋","Con Macarena","Mi forma de acompañarte antes y después.","/con-macarena.html","macarena agente acompañamiento ayuda whatsapp"],
+["♡","Mi rincón","Tus favoritos y páginas recientes.","/mi-rincon.html","favoritos guardados historial recientes"],
 ["🥣","Hummus cremoso","Receta completa explicada.","/receta-hummus.html","hummus garbanzo picoteo triturar"],
 ["🌿","Pasta al pesto","Receta completa explicada.","/receta-pasta-pesto.html","pasta pesto cena salsa emulsión"],
 ["🥞","Tortitas","Receta completa explicada.","/receta-tortitas.html","tortitas desayuno dulce masa"]
 ];
 
+const saveable=!["/mi-rincon.html","/uso-y-propiedad.html","/404.html"].includes(path);
+if(saveable){
+ const save=document.createElement("button");save.className="csl-save-btn";save.setAttribute("aria-label","Guardar en Mi rincón");save.textContent="♡";
+ let favs=[];try{favs=JSON.parse(localStorage.getItem("csl_favs")||"[]")}catch(e){}
+ if(favs.includes(path)){save.classList.add("saved");save.textContent="♥"}
+ save.addEventListener("click",()=>{let x=[];try{x=JSON.parse(localStorage.getItem("csl_favs")||"[]")}catch(e){};if(x.includes(path)){x=x.filter(p=>p!==path);save.classList.remove("saved");save.textContent="♡"}else{x.push(path);save.classList.add("saved");save.textContent="♥"}localStorage.setItem("csl_favs",JSON.stringify(x.slice(-40)))});
+ document.body.appendChild(save);
+}
 const sb=document.createElement("button");sb.className="csl-search-btn";sb.setAttribute("aria-label","Buscar en Cocina sin líos");sb.textContent="⌕";document.body.appendChild(sb);
 const modal=document.createElement("div");modal.className="csl-search";modal.setAttribute("aria-hidden","true");
 modal.innerHTML='<div class="csl-search-box"><div class="csl-search-top"><input type="search" placeholder="Busca: masa, TM7, cena, Varoma, Macarena..."><button class="csl-search-close" aria-label="Cerrar">×</button></div><div class="csl-search-results"></div></div>';
