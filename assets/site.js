@@ -26,6 +26,7 @@ style.textContent=`
 .csl-related-card b{display:block;font:500 21px/1.05 Georgia,serif}.csl-related-card span:last-child{display:block;margin-top:5px;color:#706f67;font:11px/1.35 Inter,system-ui,sans-serif}
 .csl-toast{position:fixed;left:50%;bottom:156px;transform:translate(-50%,12px);z-index:260;background:#2b3a30;color:white;border-radius:999px;padding:10px 15px;font:800 12px/1.2 Inter,system-ui,sans-serif;box-shadow:0 14px 40px rgba(0,0,0,.2);opacity:0;pointer-events:none;transition:.22s;white-space:nowrap}.csl-toast.show{opacity:1;transform:translate(-50%,0)}
 .csl-search-empty{padding:18px;color:#706f67}.csl-search-empty p{margin:0 0 12px}.csl-search-empty-links{display:flex;gap:8px;flex-wrap:wrap}.csl-search-empty a{display:inline-flex;border-radius:999px;background:#eef5eb;color:#2b3a30;padding:8px 11px;font-weight:900;text-decoration:none}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}.csl-continue,.csl-toast,.csl-related-card{transition:none!important}}
 @media(max-width:580px){
  .csl-continue{bottom:148px;left:12px;width:calc(100vw - 24px)}
  .csl-search-btn{bottom:91px;right:12px}
@@ -126,7 +127,7 @@ let dismissed=false;try{dismissed=sessionStorage.getItem("csl_continue_dismissed
 if(!dismissed&&next){
  const meta=labels[next]||["→","Sigue explorando","Hay más caminos desde aquí."];
  const box=document.createElement("aside");box.className="csl-continue";
- box.innerHTML='<button class="csl-x" aria-label="Cerrar">×</button><a href="'+next+'"><span class="csl-icon">'+meta[0]+'</span><div><small>'+(route?"Siguiente paso de tu ruta":"Sigue por aquí")+'</small><b>'+meta[1]+'</b><p>'+meta[2]+'</p></div><span class="csl-arrow">→</span></a>';
+ box.innerHTML='<button type="button" class="csl-x" aria-label="Cerrar">×</button><a href="'+next+'"><span class="csl-icon">'+meta[0]+'</span><div><small>'+(route?"Siguiente paso de tu ruta":"Sigue por aquí")+'</small><b>'+meta[1]+'</b><p>'+meta[2]+'</p></div><span class="csl-arrow">→</span></a>';
  document.body.appendChild(box);
  const show=()=>box.classList.add("show");
  setTimeout(show,8500);
@@ -174,8 +175,8 @@ if(relatedRecipes[path]){
   const m=labels[p]||["→","Otra receta","Sigue cocinando"];
   return '<a class="csl-related-card" href="'+p+'"><span class="csl-related-icon">'+m[0]+'</span><span><b>'+m[1]+'</b><span>'+m[2]+'</span></span></a>';
  }).join("");
- const section=document.createElement("section");section.className="csl-related";
- section.innerHTML='<div class="csl-related-inner"><div class="csl-related-head"><div><small>Sigue cocinando</small><h2>De esta receta puedes saltar a otra idea.</h2></div><p>Te enseño primero recetas relacionadas que todavía no hayas visitado, para que cada página te abra un camino nuevo.</p></div><div class="csl-related-grid">'+cards+'</div></div>';
+ const section=document.createElement("section");section.className="csl-related";section.setAttribute("aria-labelledby","csl-related-title");
+ section.innerHTML='<div class="csl-related-inner"><div class="csl-related-head"><div><small>Sigue cocinando</small><h2 id="csl-related-title">De esta receta puedes saltar a otra idea.</h2></div><p>Te enseño primero recetas relacionadas que todavía no hayas visitado, para que cada página te abra un camino nuevo.</p></div><div class="csl-related-grid">'+cards+'</div></div>';
  const footer=document.querySelector("footer");
  if(footer)footer.parentNode.insertBefore(section,footer);
  else document.body.appendChild(section);
@@ -186,21 +187,21 @@ function announce(message){toast.textContent=message;toast.classList.add("show")
 
 const saveable=!["/mi-rincon.html","/uso-y-propiedad.html","/404.html","/hablamos.html"].includes(path);
 if(saveable){
- const save=document.createElement("button");save.className="csl-save-btn";save.setAttribute("aria-label","Guardar en Mi rincón");save.textContent="♡";
+ const save=document.createElement("button");save.type="button";save.className="csl-save-btn";save.setAttribute("aria-label","Guardar en Mi rincón");save.textContent="♡";
  let favs=[];try{favs=JSON.parse(localStorage.getItem("csl_favs")||"[]")}catch(e){}
  if(favs.includes(path)){save.classList.add("saved");save.textContent="♥";save.setAttribute("aria-pressed","true")}else{save.setAttribute("aria-pressed","false")}
- save.addEventListener("click",()=>{let x=[];try{x=JSON.parse(localStorage.getItem("csl_favs")||"[]")}catch(e){};if(x.includes(path)){x=x.filter(p=>p!==path);save.classList.remove("saved");save.textContent="♡";save.setAttribute("aria-pressed","false");announce("Quitado de Mi rincón")}else{x.push(path);save.classList.add("saved");save.textContent="♥";save.setAttribute("aria-pressed","true");announce("Guardado en Mi rincón")}try{localStorage.setItem("csl_favs",JSON.stringify(x.slice(-40)))}catch(e){}});
+ save.addEventListener("click",()=>{let x=[];try{x=JSON.parse(localStorage.getItem("csl_favs")||"[]")}catch(e){};if(x.includes(path)){x=x.filter(p=>p!==path);save.classList.remove("saved");save.textContent="♡";save.setAttribute("aria-pressed","false");announce("Quitado de Mi rincón")}else{x.push(path);save.classList.add("saved");save.textContent="♥";save.setAttribute("aria-pressed","true");announce("Guardado en Mi rincón")}try{localStorage.setItem("csl_favs",JSON.stringify(x.slice(-40)))}catch(e){announce("No he podido guardar este cambio en el navegador")}});
  document.body.appendChild(save);
 }
-const sb=document.createElement("button");sb.className="csl-search-btn";sb.setAttribute("aria-label","Buscar en Cocina sin líos");sb.textContent="⌕";document.body.appendChild(sb);
+const sb=document.createElement("button");sb.type="button";sb.className="csl-search-btn";sb.setAttribute("aria-label","Buscar en Cocina sin líos");sb.textContent="⌕";document.body.appendChild(sb);
 const modal=document.createElement("div");modal.className="csl-search";modal.setAttribute("aria-hidden","true");modal.setAttribute("role","dialog");modal.setAttribute("aria-modal","true");modal.setAttribute("aria-labelledby","csl-search-title");
-modal.innerHTML='<div class="csl-search-box"><div id="csl-search-title" style="font-family:Georgia,serif;font-size:24px;margin:0 0 12px">Buscar en Cocina sin líos</div><div class="csl-search-top"><input type="search" aria-label="Buscar en Cocina sin líos" placeholder="Busca: masa, TM7, cena, Varoma, Macarena..."><button class="csl-search-close" aria-label="Cerrar">×</button></div><div class="csl-search-results" aria-live="polite"></div></div>';
+modal.innerHTML='<div class="csl-search-box"><div id="csl-search-title" style="font-family:Georgia,serif;font-size:24px;margin:0 0 12px">Buscar en Cocina sin líos</div><div class="csl-search-top"><input type="search" aria-label="Buscar en Cocina sin líos" placeholder="Busca: masa, TM7, cena, Varoma, Macarena..."><button type="button" class="csl-search-close" aria-label="Cerrar">×</button></div><div class="csl-search-results" aria-live="polite"></div></div>';
 document.body.appendChild(modal);
 const input=modal.querySelector("input"),results=modal.querySelector(".csl-search-results");
 function draw(q=""){
  const v=q.trim().toLowerCase();
  const rows=searchData.filter(x=>!v||(x[1]+" "+x[2]+" "+x[4]).toLowerCase().includes(v)).slice(0,8);
- results.innerHTML=rows.map(x=>'<a href="'+x[3]+'"><span style="font-size:21px">'+x[0]+'</span><span><b>'+x[1]+'</b><small>'+x[2]+'</small></span><em>→</em></a>').join("")||'<div class="csl-search-empty"><p>No encuentro eso todavía. Puedes probar otra palabra o ir directamente a una duda.</p><div class="csl-search-empty-links"><a href="/dudas-rapidas.html">Ver dudas rápidas</a><a href="/hablamos.html?motivo=duda">Preguntar a Macarena</a></div></div>';
+ results.innerHTML=(rows.length?'<div style="padding:4px 12px 2px;color:#706f67;font-size:11px;font-weight:800">'+rows.length+' '+(rows.length===1?'resultado':'resultados')+'</div>':'')+rows.map(x=>'<a href="'+x[3]+'"><span style="font-size:21px">'+x[0]+'</span><span><b>'+x[1]+'</b><small>'+x[2]+'</small></span><em>→</em></a>').join("")||'<div class="csl-search-empty"><p>No encuentro eso todavía. Puedes probar otra palabra o ir directamente a una duda.</p><div class="csl-search-empty-links"><a href="/dudas-rapidas.html">Ver dudas rápidas</a><a href="/hablamos.html?motivo=duda">Preguntar a Macarena</a></div></div>';
 }
 let searchReturnFocus=null;
 function openSearch(){if(modal.classList.contains("open"))return;searchReturnFocus=document.activeElement;modal.classList.add("open");modal.setAttribute("aria-hidden","false");document.body.style.overflow="hidden";draw(input.value);setTimeout(()=>input.focus(),40)}
