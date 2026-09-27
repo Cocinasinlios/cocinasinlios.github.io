@@ -13,10 +13,26 @@ style.textContent=`
 .csl-search-results{display:grid;gap:8px;margin-top:14px;max-height:55vh;overflow:auto}.csl-search-results a{display:grid;grid-template-columns:36px 1fr auto;gap:10px;align-items:center;padding:12px;border-radius:16px;text-decoration:none;color:#25251f}.csl-search-results a:hover{background:#eef5eb}.csl-search-results b{display:block}.csl-search-results small{color:#706f67}.csl-search-results em{font-style:normal;color:#8a8a82}
 .csl-continue{position:fixed;left:18px;bottom:92px;z-index:110;width:min(370px,calc(100vw - 36px));background:rgba(255,253,250,.97);border:1px solid #e8dfd2;border-radius:21px;box-shadow:0 16px 48px rgba(40,40,34,.16);padding:7px;opacity:0;transform:translateY(12px);pointer-events:none;transition:.28s}
 .csl-continue.show{opacity:1;transform:none;pointer-events:auto}.csl-continue a{display:grid;grid-template-columns:42px 1fr 20px;gap:10px;align-items:center;padding:9px 12px;color:#25251f;text-decoration:none}.csl-continue small{display:block;font-size:9px;text-transform:uppercase;letter-spacing:1.2px;color:#6d7068;font-weight:900}.csl-continue b{display:block;font-family:Georgia,serif;font-size:18px;line-height:1.05;margin:2px 0}.csl-continue p{font:11px/1.35 Inter,system-ui,sans-serif;color:#6d7068;margin:0}.csl-icon{font-size:23px}.csl-arrow{font-size:20px}.csl-x{position:absolute;right:6px;top:5px;border:0;background:transparent;font-size:18px;color:#777;cursor:pointer;z-index:2}
-@media(max-width:580px){.csl-continue{bottom:88px}.csl-search-btn{bottom:91px;right:12px}.csl-save-btn{bottom:91px;right:68px}}
+@media(max-width:580px){
+ .csl-continue{bottom:148px;left:12px;width:calc(100vw - 24px)}
+ .csl-search-btn{bottom:91px;right:12px}
+ .csl-save-btn{bottom:91px;right:68px}
+ .wa-float{display:none!important}
+}
 `;
 document.head.appendChild(style);
 
+const standardDock=[
+ ["/explora.html","✦","Explora"],
+ ["/que-cocino.html","🎲","Qué cocino"],
+ ["/recetas.html","🍝","Recetas"],
+ ["/diagnostico.html","🧩","Rescate"],
+ ["/mi-rincon.html","♡","Mi rincón"]
+];
+document.querySelectorAll(".global-dock,.dock").forEach(d=>{
+ d.setAttribute("aria-label","Navegación rápida");
+ d.innerHTML=standardDock.map(x=>'<a href="'+x[0]+'"><span>'+x[1]+'</span>'+x[2]+'</a>').join("");
+});
 document.querySelectorAll(".global-dock a,.dock a").forEach(a=>{
  const p=new URL(a.href,location.origin).pathname.replace(/\/$/,"")||"/";
  if(p===path){a.classList.add("active");a.setAttribute("aria-current","page")}
