@@ -1,5 +1,12 @@
 (()=>{
 const path=location.pathname.replace(/\/$/,"")||"/";
+window.dataLayer=window.dataLayer||[];
+function track(name,params={}){
+ const safe={event:"csl_"+name,page_path:path};
+ Object.entries(params||{}).forEach(([k,v])=>{if(v!==undefined&&v!==null&&String(v).length<180)safe[k]=String(v)});
+ window.dataLayer.push(safe);
+ try{window.dispatchEvent(new CustomEvent("csl:track",{detail:safe}))}catch(e){}
+}
 if(!document.querySelector('link[rel="icon"]')){const l=document.createElement("link");l.rel="icon";l.href="/assets/favicon.svg";l.type="image/svg+xml";document.head.appendChild(l)}
 if(!document.querySelector('link[rel="manifest"]')){const m=document.createElement("link");m.rel="manifest";m.href="/site.webmanifest";document.head.appendChild(m)}
 
@@ -12,6 +19,7 @@ style.textContent=`
 .csl-author-inner{width:min(1120px,92vw);margin:auto;min-height:38px;display:flex;align-items:center;gap:9px;font:800 10px/1.2 Inter,system-ui,sans-serif;letter-spacing:.2px}
 .csl-author-mark{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:#f2df9d;color:#2b3a30;font:italic 500 13px/1 Georgia,serif}
 .csl-author-inner a{text-decoration:none;color:#2b3a30;border-bottom:1px solid rgba(43,58,48,.35)}
+.csl-legal-links{width:min(1120px,92vw);margin:18px auto 0;padding-top:14px;border-top:1px solid rgba(255,255,255,.14);display:flex;flex-wrap:wrap;gap:12px;font:700 10px/1.3 Inter,system-ui,sans-serif;color:#aebbb3}.csl-legal-links a{color:#dce5df;text-decoration:none}.csl-legal-links a:hover{text-decoration:underline}
 .csl-search-btn,.csl-save-btn{position:fixed;bottom:92px;z-index:121;width:48px;height:48px;border:0;border-radius:50%;background:#fffdfa;color:#26352c;box-shadow:0 12px 35px rgba(40,40,34,.18);font-size:20px;cursor:pointer;border:1px solid #e8dfd2}.csl-search-btn{right:18px}.csl-save-btn{right:74px}.csl-save-btn.saved{background:#f2df9d}.csl-search-btn:focus-visible,.csl-save-btn:focus-visible,.csl-search-close:focus-visible,.csl-search-results a:focus-visible,.csl-x:focus-visible{outline:3px solid #7f9a82;outline-offset:3px}
 .csl-search{position:fixed;inset:0;z-index:200;background:rgba(24,28,24,.62);display:none;align-items:flex-start;justify-content:center;padding:9vh 18px 18px}
 .csl-search.open{display:flex}.csl-search-box{width:min(720px,96vw);background:#fffdfa;border-radius:28px;padding:22px;box-shadow:0 25px 80px rgba(0,0,0,.28)}
@@ -78,6 +86,21 @@ if(authorStripText){
  const header=document.querySelector("header");
  if(header)header.insertAdjacentElement("afterend",strip);
 }
+
+if(document.querySelector("footer")&&!["/privacidad.html","/cookies.html"].includes(path)){
+ const legal=document.createElement("div");legal.className="csl-legal-links";legal.dataset.cslLegalInjected="1";
+ legal.innerHTML='<a href="/privacidad.html">Privacidad</a><a href="/cookies.html">Cookies</a><a href="/uso-y-propiedad.html">Uso y propiedad</a>';
+ document.querySelector("footer").appendChild(legal);
+}
+document.addEventListener("click",e=>{
+ const a=e.target.closest("a[href]");if(!a)return;
+ const href=a.getAttribute("href")||"";
+ if(href.startsWith("/hablamos.html"))track("contact_start",{source:path,target:"hablamos"});
+ else if(href.startsWith("/receta-"))track("recipe_open",{target:href.split("?")[0]});
+ else if(href.startsWith("/metodo-sin-lios.html")||href.startsWith("/adapta-sin-lios.html")||href.startsWith("/organiza-sin-lios.html")||href.startsWith("/mapa-sin-lios.html"))track("method_step",{target:href.split("?")[0]});
+ else if(href.startsWith("https://wa.me/"))track("whatsapp_open",{source:path});
+});
+const csl_legal_injected=true;
 
 const standardDock=[
  ["/explora.html","✦","Explora"],
@@ -288,7 +311,7 @@ if(saveable){
  const save=document.createElement("button");save.type="button";save.className="csl-save-btn";save.setAttribute("aria-label","Guardar en Mi rincón");save.textContent="♡";
  let favs=[];try{favs=JSON.parse(localStorage.getItem("csl_favs")||"[]")}catch(e){}
  if(favs.includes(path)){save.classList.add("saved");save.textContent="♥";save.setAttribute("aria-pressed","true")}else{save.setAttribute("aria-pressed","false")}
- save.addEventListener("click",()=>{let x=[];try{x=JSON.parse(localStorage.getItem("csl_favs")||"[]")}catch(e){};if(x.includes(path)){x=x.filter(p=>p!==path);save.classList.remove("saved");save.textContent="♡";save.setAttribute("aria-pressed","false");announce("Quitado de Mi rincón")}else{x.push(path);save.classList.add("saved");save.textContent="♥";save.setAttribute("aria-pressed","true");announce("Guardado en Mi rincón")}try{localStorage.setItem("csl_favs",JSON.stringify(x.slice(-40)))}catch(e){announce("No he podido guardar este cambio en el navegador")}});
+ save.addEventListener("click",()=>{let x=[];try{x=JSON.parse(localStorage.getItem("csl_favs")||"[]")}catch(e){};if(x.includes(path)){x=x.filter(p=>p!==path);save.classList.remove("saved");save.textContent="♡";save.setAttribute("aria-pressed","false");announce("Quitado de Mi rincón");track("favorite_remove",{content:path})}else{x.push(path);save.classList.add("saved");save.textContent="♥";save.setAttribute("aria-pressed","true");announce("Guardado en Mi rincón");track("favorite_add",{content:path})}try{localStorage.setItem("csl_favs",JSON.stringify(x.slice(-40)))}catch(e){announce("No he podido guardar este cambio en el navegador")}});
  document.body.appendChild(save);
 }
 const sb=document.createElement("button");sb.type="button";sb.className="csl-search-btn";sb.setAttribute("aria-label","Buscar en Cocina sin líos");sb.textContent="⌕";document.body.appendChild(sb);
