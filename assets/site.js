@@ -13,6 +13,10 @@ style.textContent=`
 .csl-search-results{display:grid;gap:8px;margin-top:14px;max-height:55vh;overflow:auto}.csl-search-results a{display:grid;grid-template-columns:36px 1fr auto;gap:10px;align-items:center;padding:12px;border-radius:16px;text-decoration:none;color:#25251f}.csl-search-results a:hover{background:#eef5eb}.csl-search-results b{display:block}.csl-search-results small{color:#706f67}.csl-search-results em{font-style:normal;color:#8a8a82}
 .csl-continue{position:fixed;left:18px;bottom:92px;z-index:110;width:min(370px,calc(100vw - 36px));background:rgba(255,253,250,.97);border:1px solid #e8dfd2;border-radius:21px;box-shadow:0 16px 48px rgba(40,40,34,.16);padding:7px;opacity:0;transform:translateY(12px);pointer-events:none;transition:.28s}
 .csl-continue.show{opacity:1;transform:none;pointer-events:auto}.csl-continue a{display:grid;grid-template-columns:42px 1fr 20px;gap:10px;align-items:center;padding:9px 12px;color:#25251f;text-decoration:none}.csl-continue small{display:block;font-size:9px;text-transform:uppercase;letter-spacing:1.2px;color:#6d7068;font-weight:900}.csl-continue b{display:block;font-family:Georgia,serif;font-size:18px;line-height:1.05;margin:2px 0}.csl-continue p{font:11px/1.35 Inter,system-ui,sans-serif;color:#6d7068;margin:0}.csl-icon{font-size:23px}.csl-arrow{font-size:20px}.csl-x{position:absolute;right:6px;top:5px;border:0;background:transparent;font-size:18px;color:#777;cursor:pointer;z-index:2}
+.csl-loop{background:#efe5d8;padding:48px 0;border-top:1px solid #e8dfd2}
+.csl-loop-inner{width:min(1080px,92vw);margin:auto}
+.csl-loop-head{margin-bottom:17px}.csl-loop-head small{display:block;font:900 10px/1.2 Inter,system-ui,sans-serif;letter-spacing:1.4px;text-transform:uppercase;color:#687769}.csl-loop-head h2{font:500 36px/1.05 Georgia,serif;margin:6px 0 8px;color:#25251f}.csl-loop-head p{max-width:720px;margin:0;color:#706f67;font:13px/1.5 Inter,system-ui,sans-serif}
+.csl-loop-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:11px}.csl-loop-card{display:block;background:#fffdfa;border:1px solid #e8dfd2;border-radius:20px;padding:18px;color:#25251f;text-decoration:none}.csl-loop-card:hover{background:#eef5eb}.csl-loop-card:focus-visible{outline:3px solid #7f9a82;outline-offset:3px}.csl-loop-card small{display:block;font:900 9px/1.2 Inter,system-ui,sans-serif;text-transform:uppercase;letter-spacing:1.1px;color:#687769}.csl-loop-card b{display:block;font:500 22px/1.05 Georgia,serif;margin:5px 0}.csl-loop-card span{font:11px/1.35 Inter,system-ui,sans-serif;color:#706f67}
 .csl-related{background:#fffdfa;padding:56px 0 72px;border-top:1px solid #e8dfd2}
 .csl-related-inner{width:min(1080px,92vw);margin:auto}
 .csl-related-head{display:flex;justify-content:space-between;gap:24px;align-items:end;margin-bottom:20px}
@@ -32,7 +36,7 @@ style.textContent=`
  .csl-search-btn{bottom:91px;right:12px}
  .csl-save-btn{bottom:91px;right:68px}
  .wa-float{display:none!important}
- .csl-related-head{display:block}.csl-related-head p{margin-top:8px}.csl-related-grid{grid-template-columns:1fr}
+ .csl-related-head{display:block}.csl-related-head p{margin-top:8px}.csl-related-grid{grid-template-columns:1fr}.csl-loop-grid{grid-template-columns:1fr}
 }
 `;
 document.head.appendChild(style);
@@ -160,6 +164,24 @@ const searchData=[
 ["🍰","Bizcocho de yogur","Receta completa para aprender aireado y mezcla sin sobrebatir.","/receta-bizcocho-yogur.html","bizcocho yogur dulce postre merienda airear mezclar hornear"],
 ["🍅","Pisto manchego","Receta completa para aprender troceado, giro inverso y concentración.","/receta-pisto-manchego.html","pisto manchego verduras tomate calabacin pimiento giro inverso batch cooking"]
 ];
+
+const recipeLearning={
+ "/receta-hummus.html":{concept:["Viscosidad y triturado","/glosario.html?q=viscosidad","Entiende por qué una mezcla espesa circula distinto."],rescue:["Está demasiado espeso","/diagnostico.html?problema=espesa","Si la textura se bloquea, empieza por proporción y circulación."]},
+ "/receta-pasta-pesto.html":{concept:["Emulsionar","/glosario.html?q=emulsionar","Agua, grasa y movimiento tienen que encontrar equilibrio."],rescue:["No ha ligado","/diagnostico.html?problema=emulsion","Separa primero proporción, incorporación y movimiento."]},
+ "/receta-tortitas.html":{concept:["Mezclar y reposar","/glosario.html?q=mezclar","Parar también forma parte de la receta."],rescue:["La masa está rara","/diagnostico.html?problema=masa","Harina, hidratación y reposo pueden cambiar el resultado."]},
+ "/receta-gazpacho.html":{concept:["Triturar y viscosidad","/glosario.html?q=triturar","Textura fina no depende solo de subir velocidad."],rescue:["Ha quedado líquido","/diagnostico.html?problema=liquida","Antes de corregir, identifica de dónde viene el agua."]},
+ "/receta-merluza-varoma.html":{concept:["Vapor y circulación","/glosario.html?q=vapor","El vapor necesita camino para llegar a todas las piezas."],rescue:["Varoma desigual","/diagnostico.html?problema=vapor","Mira colocación, tamaño y paso del vapor antes de añadir tiempo."]},
+ "/receta-masa-pizza.html":{concept:["Amasar y fermentar","/glosario.html?q=amasar","La máquina trabaja la masa; el tiempo hace otra parte."],rescue:["La masa está rara","/diagnostico.html?problema=masa","Revisa harina, hidratación, temperatura y reposo."]},
+ "/receta-bizcocho-yogur.html":{concept:["Mezclar sin sobrebatir","/glosario.html?q=mezclar","Cuando entra la harina, más movimiento no siempre ayuda."],rescue:["Bizcocho compacto o hundido","/diagnostico.html?problema=masa","Aísla mezcla, estructura y cocción antes de cambiar varias cosas."]},
+ "/receta-pisto-manchego.html":{concept:["Giro inverso y troceado","/glosario.html?q=giro%20inverso","Conservar trozos depende de más de una variable."],rescue:["Trozos demasiado deshechos","/diagnostico.html?problema=picado","Mira tamaño inicial, movimiento y tiempo."]}
+};
+if(recipeLearning[path]){
+ const x=recipeLearning[path],loop=document.createElement("section");loop.className="csl-loop";loop.setAttribute("aria-labelledby","csl-loop-title");
+ loop.innerHTML='<div class="csl-loop-inner"><div class="csl-loop-head"><small>La receta no termina en el plato</small><h2 id="csl-loop-title">Entiende → corrige → reutiliza lo aprendido.</h2><p>Este es el recorrido Sin Líos: cocinar algo concreto, entender una variable y saber dónde mirar si el resultado cambia.</p></div><div class="csl-loop-grid"><a class="csl-loop-card" href="'+x.concept[1]+'"><small>1 · Entiende</small><b>'+x.concept[0]+'</b><span>'+x.concept[2]+'</span></a><a class="csl-loop-card" href="'+x.rescue[1]+'"><small>2 · Corrige</small><b>'+x.rescue[0]+'</b><span>'+x.rescue[2]+'</span></a><a class="csl-loop-card" href="/mapa-sin-lios.html"><small>3 · Reutiliza</small><b>Mapa Sin Líos</b><span>Parte de un síntoma u objetivo y aplica la misma lógica en otra preparación.</span></a></div></div>';
+ const footer=document.querySelector("footer");
+ if(footer)footer.parentNode.insertBefore(loop,footer);
+ else document.body.appendChild(loop);
+}
 
 const relatedRecipes={
  "/receta-hummus.html":["/receta-pisto-manchego.html","/receta-gazpacho.html","/receta-pasta-pesto.html"],
