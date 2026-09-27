@@ -62,11 +62,17 @@ const buttons=[...document.querySelectorAll(".choice")],box=document.getElementB
 function select(key,move=true){const d=data[key];if(!d)return;buttons.forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.key===key)));title.textContent=d.title;txt.textContent=d.text;next.textContent=d.next;wa.href="https://wa.me/34640761605?text="+encodeURIComponent(d.msg);box.classList.add("show");if(move){box.scrollIntoView({behavior:"smooth",block:"center"});setTimeout(()=>title.focus({preventScroll:true}),350)}}
 buttons.forEach(b=>b.addEventListener("click",()=>select(b.dataset.key)));
 const params=new URLSearchParams(location.search),preset=params.get("motivo"),origin=params.get("origen");
-if(origin&&data.duda){
+if(origin&&data.duda&&origin!=="guia"){
  data.duda.title="Tengo una duda con "+origin+".";
  data.duda.text="Ya sé de qué vienes hablando. Cuéntame qué hiciste, qué cambiaste y cómo quedó; así partimos de un caso concreto.";
  data.duda.next="Si puedes, dime cantidades, tiempos, cualquier cambio respecto a la receta y el resultado final.";
  data.duda.msg="Hola Macarena. Vengo de tu receta de "+origin+". Tengo una duda concreta: ___. Hice ___. Cambié ___. El resultado fue ___. Quiero entender qué pudo pasar y qué debería mirar la próxima vez.";
+}
+if(origin==="guia"){
+ data.estreno.title="Quiero tu guía para empezar con buen pie.";
+ data.estreno.text="La guía está pensada para ordenar los primeros días: qué mirar, qué probar y qué merece la pena entender antes de querer hacerlo todo.";
+ data.estreno.next="Cuéntame si acabas de recibir tu TM7 o si ya llevas unos días con ella.";
+ data.estreno.msg="Hola Macarena. He visto tu guía para los primeros días con TM7 y me gustaría que me la pases. La recibí ___. Ahora mismo lo que más me gustaría aprender es ___.";
 }
 if(data[preset])select(preset,false);
 </script>
