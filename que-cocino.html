@@ -18,6 +18,9 @@ header{position:sticky;top:0;z-index:30;background:rgba(251,246,238,.95);backdro
 footer{background:#202b24;color:#dce5df;padding:40px 0}footer p{color:#aebbb3;font-size:12px}
 @media(max-width:760px){.grid{grid-template-columns:1fr}.photo{height:280px}.panel{padding:25px}.results-head{display:block}.again{margin-top:10px}}
 @media(max-width:520px){.hero h1{font-size:47px}.back{display:none}.question h2{font-size:27px}}
+
+.global-dock{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);z-index:120;background:rgba(34,43,37,.96);color:white;border-radius:22px;padding:7px;display:flex;gap:4px;box-shadow:0 14px 40px rgba(0,0,0,.22);backdrop-filter:blur(12px)}.global-dock a{min-width:74px;text-align:center;padding:7px 9px;border-radius:16px;font-size:10px;font-weight:850}.global-dock a span{display:block;font-size:17px;margin-bottom:2px}.global-dock a:hover{background:rgba(255,255,255,.13)}
+@media(max-width:580px){body{padding-bottom:76px}.global-dock{left:10px;right:10px;transform:none;justify-content:space-between}.global-dock a{min-width:0;flex:1;padding:7px 3px}}
 </style>
 </head>
 <body>
@@ -57,4 +60,10 @@ function render(){
 }
 document.getElementById("go").addEventListener("click",render);document.getElementById("again").addEventListener("click",render);
 </script>
-</body></html>
+<div class="global-dock">
+<a href="/explora.html"><span>✦</span>Explora</a>
+<a href="/que-cocino.html"><span>🎲</span>Qué cocino</a>
+<a href="/recetas.html"><span>🍝</span>Recetas</a>
+<a href="/diagnostico.html"><span>🧩</span>Rescate</a>
+<a href="/con-macarena.html"><span>👋</span>Macarena</a>
+</div></body></html>
