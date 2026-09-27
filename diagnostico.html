@@ -81,6 +81,7 @@ masa:{title:"La masa no tiene la textura esperada.",term:"amasar / hidratación"
 cantidad:{title:"He aumentado cantidades y ha cambiado todo.",term:"cantidad",q:"cantidad",intro:"Escalar ingredientes no escala automáticamente el comportamiento de la máquina.",checks:["¿Sigue habiendo espacio para que los ingredientes se muevan?","¿El calentamiento necesita más tiempo?","¿La superficie de evaporación es la misma aunque haya más líquido?","¿El nivel de llenado sigue dentro de lo permitido?"],translate:"Duplicar ingredientes no significa duplicar todos los parámetros. Cantidad, movimiento y calentamiento cambian a la vez.",test:"Primero comprueba que la receta funciona en su cantidad original. Para una cantidad mayor, busca una versión probada o adapta una sola variable cada vez sin superar los límites del equipo."}
 };
 function render(key){
+ window.CSLTrack?.("rescue_choose",{type:key});
  document.querySelectorAll(".problem").forEach(b=>b.classList.toggle("active",b.dataset.key===key));
  const d=data[key];document.getElementById("title").textContent=d.title;document.getElementById("intro").textContent=d.intro;
  const ul=document.getElementById("checks");ul.innerHTML="";d.checks.forEach(x=>{const li=document.createElement("li");li.textContent=x;ul.appendChild(li)});
