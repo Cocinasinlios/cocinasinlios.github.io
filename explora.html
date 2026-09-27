@@ -72,7 +72,7 @@ const activeBox=document.getElementById("activeRoute");
 if(activeBox&&active&&routeNames[active])activeBox.innerHTML='<div class="active-route"><div><small>Tu ruta activa</small><b>'+routeNames[active]+'</b></div><a href="/mi-rincon.html">Continuar mi ruta →</a></div>';
 const destinations=[
  "/empieza-aqui.html","/que-cocino.html","/recetas.html","/diagnostico.html","/academia.html","/menu-semana.html","/encaja-tm7.html","/con-macarena.html","/glosario.html","/dudas-rapidas.html",
- "/receta-hummus.html","/receta-pasta-pesto.html","/receta-tortitas.html","/receta-gazpacho.html","/receta-merluza-varoma.html","/receta-masa-pizza.html"
+ "/hablamos.html","/receta-hummus.html","/receta-pasta-pesto.html","/receta-tortitas.html","/receta-gazpacho.html","/receta-merluza-varoma.html","/receta-masa-pizza.html"
 ];
 document.getElementById("surprise").addEventListener("click",()=>{
  const unseen=destinations.filter(p=>!seen.includes(p));
