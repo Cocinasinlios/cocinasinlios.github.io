@@ -13,11 +13,23 @@ style.textContent=`
 .csl-search-results{display:grid;gap:8px;margin-top:14px;max-height:55vh;overflow:auto}.csl-search-results a{display:grid;grid-template-columns:36px 1fr auto;gap:10px;align-items:center;padding:12px;border-radius:16px;text-decoration:none;color:#25251f}.csl-search-results a:hover{background:#eef5eb}.csl-search-results b{display:block}.csl-search-results small{color:#706f67}.csl-search-results em{font-style:normal;color:#8a8a82}
 .csl-continue{position:fixed;left:18px;bottom:92px;z-index:110;width:min(370px,calc(100vw - 36px));background:rgba(255,253,250,.97);border:1px solid #e8dfd2;border-radius:21px;box-shadow:0 16px 48px rgba(40,40,34,.16);padding:7px;opacity:0;transform:translateY(12px);pointer-events:none;transition:.28s}
 .csl-continue.show{opacity:1;transform:none;pointer-events:auto}.csl-continue a{display:grid;grid-template-columns:42px 1fr 20px;gap:10px;align-items:center;padding:9px 12px;color:#25251f;text-decoration:none}.csl-continue small{display:block;font-size:9px;text-transform:uppercase;letter-spacing:1.2px;color:#6d7068;font-weight:900}.csl-continue b{display:block;font-family:Georgia,serif;font-size:18px;line-height:1.05;margin:2px 0}.csl-continue p{font:11px/1.35 Inter,system-ui,sans-serif;color:#6d7068;margin:0}.csl-icon{font-size:23px}.csl-arrow{font-size:20px}.csl-x{position:absolute;right:6px;top:5px;border:0;background:transparent;font-size:18px;color:#777;cursor:pointer;z-index:2}
+.csl-related{background:#fffdfa;padding:56px 0 72px;border-top:1px solid #e8dfd2}
+.csl-related-inner{width:min(1080px,92vw);margin:auto}
+.csl-related-head{display:flex;justify-content:space-between;gap:24px;align-items:end;margin-bottom:20px}
+.csl-related-head small{display:block;font:900 10px/1.2 Inter,system-ui,sans-serif;letter-spacing:1.4px;text-transform:uppercase;color:#687769}
+.csl-related-head h2{font:500 38px/1.05 Georgia,serif;margin:6px 0 0;color:#25251f}
+.csl-related-head p{max-width:460px;margin:0;color:#706f67;font:13px/1.5 Inter,system-ui,sans-serif}
+.csl-related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.csl-related-card{display:flex;gap:14px;align-items:center;border:1px solid #e8dfd2;background:#fbf6ee;border-radius:21px;padding:17px;color:#25251f;text-decoration:none;transition:.2s}
+.csl-related-card:hover{transform:translateY(-3px);background:#eef5eb}.csl-related-card:focus-visible{outline:3px solid #7f9a82;outline-offset:3px}
+.csl-related-icon{font-size:30px;min-width:38px;text-align:center}
+.csl-related-card b{display:block;font:500 21px/1.05 Georgia,serif}.csl-related-card span:last-child{display:block;margin-top:5px;color:#706f67;font:11px/1.35 Inter,system-ui,sans-serif}
 @media(max-width:580px){
  .csl-continue{bottom:148px;left:12px;width:calc(100vw - 24px)}
  .csl-search-btn{bottom:91px;right:12px}
  .csl-save-btn{bottom:91px;right:68px}
  .wa-float{display:none!important}
+ .csl-related-head{display:block}.csl-related-head p{margin-top:8px}.csl-related-grid{grid-template-columns:1fr}
 }
 `;
 document.head.appendChild(style);
@@ -57,7 +69,15 @@ const labels={
  "/encaja-tm7.html":["✨","¿La TM7 encaja contigo?","Piensa en tu cocina real antes de decidir."],
  "/con-macarena.html":["👋","Con Macarena","Conoce cómo te acompañaría de verdad."],
  "/hablamos.html":["💬","Habla con Macarena","Empieza por tu situación y abre una conversación concreta."],
- "/mi-rincon.html":["♡","Mi rincón","Tus favoritos y lo que has visto recientemente."]
+ "/mi-rincon.html":["♡","Mi rincón","Tus favoritos y lo que has visto recientemente."],
+ "/receta-hummus.html":["🥣","Hummus exprés","Textura, cantidad y triturado."],
+ "/receta-pasta-pesto.html":["🌿","Pasta al pesto","Emulsión y textura de salsa."],
+ "/receta-tortitas.html":["🥞","Tortitas","Mezcla y reposo."],
+ "/receta-gazpacho.html":["🍅","Gazpacho andaluz","Trituración, agua y textura."],
+ "/receta-merluza-varoma.html":["🐟","Merluza al vapor","Vapor, circulación y grosor."],
+ "/receta-masa-pizza.html":["🍕","Masa de pizza","Amasado, reposo y fermentación."],
+ "/receta-bizcocho-yogur.html":["🍰","Bizcocho de yogur","Aireado y mezcla sin sobrebatir."],
+ "/receta-pisto-manchego.html":["🍅","Pisto manchego","Troceado, giro inverso y concentración."]
 };
 
 const generic={
@@ -133,6 +153,29 @@ const searchData=[
 ["🍰","Bizcocho de yogur","Receta completa para aprender aireado y mezcla sin sobrebatir.","/receta-bizcocho-yogur.html","bizcocho yogur dulce postre merienda airear mezclar hornear"],
 ["🍅","Pisto manchego","Receta completa para aprender troceado, giro inverso y concentración.","/receta-pisto-manchego.html","pisto manchego verduras tomate calabacin pimiento giro inverso batch cooking"]
 ];
+
+const relatedRecipes={
+ "/receta-hummus.html":["/receta-pisto-manchego.html","/receta-gazpacho.html","/receta-pasta-pesto.html"],
+ "/receta-pasta-pesto.html":["/receta-hummus.html","/receta-pisto-manchego.html","/receta-masa-pizza.html"],
+ "/receta-tortitas.html":["/receta-bizcocho-yogur.html","/receta-masa-pizza.html","/receta-hummus.html"],
+ "/receta-gazpacho.html":["/receta-pisto-manchego.html","/receta-hummus.html","/receta-merluza-varoma.html"],
+ "/receta-merluza-varoma.html":["/receta-pisto-manchego.html","/receta-gazpacho.html","/receta-pasta-pesto.html"],
+ "/receta-masa-pizza.html":["/receta-pasta-pesto.html","/receta-pisto-manchego.html","/receta-hummus.html"],
+ "/receta-bizcocho-yogur.html":["/receta-tortitas.html","/receta-masa-pizza.html","/receta-pisto-manchego.html"],
+ "/receta-pisto-manchego.html":["/receta-merluza-varoma.html","/receta-gazpacho.html","/receta-masa-pizza.html"]
+};
+if(relatedRecipes[path]){
+ const ordered=[...relatedRecipes[path]].sort((a,b)=>Number(seen.includes(a))-Number(seen.includes(b)));
+ const cards=ordered.slice(0,3).map(p=>{
+  const m=labels[p]||["→","Otra receta","Sigue cocinando"];
+  return '<a class="csl-related-card" href="'+p+'"><span class="csl-related-icon">'+m[0]+'</span><span><b>'+m[1]+'</b><span>'+m[2]+'</span></span></a>';
+ }).join("");
+ const section=document.createElement("section");section.className="csl-related";
+ section.innerHTML='<div class="csl-related-inner"><div class="csl-related-head"><div><small>Sigue cocinando</small><h2>De esta receta puedes saltar a otra idea.</h2></div><p>Te enseño primero recetas relacionadas que todavía no hayas visitado, para que cada página te abra un camino nuevo.</p></div><div class="csl-related-grid">'+cards+'</div></div>';
+ const footer=document.querySelector("footer");
+ if(footer)footer.parentNode.insertBefore(section,footer);
+ else document.body.appendChild(section);
+}
 
 const saveable=!["/mi-rincon.html","/uso-y-propiedad.html","/404.html"].includes(path);
 if(saveable){
