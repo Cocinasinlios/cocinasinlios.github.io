@@ -17,6 +17,9 @@ header{position:sticky;top:0;z-index:30;background:rgba(251,246,238,.95);backdro
 footer{background:#202b24;color:#dce5df;padding:40px 0}footer p{color:#aebbb3;font-size:12px}
 @media(max-width:820px){.hero-grid,.recipe-grid,.inside-grid,.bottom-box{grid-template-columns:1fr}.ingredients{position:static}.hero-photo{min-height:430px}}
 @media(max-width:540px){.hero h1{font-size:46px}.hero-photo{min-height:350px}.method h2,.inside-card h2{font-size:36px}.ingredients,.inside-card{padding:24px}.back{display:none}}
+
+.global-dock{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);z-index:120;background:rgba(34,43,37,.96);color:white;border-radius:22px;padding:7px;display:flex;gap:4px;box-shadow:0 14px 40px rgba(0,0,0,.22);backdrop-filter:blur(12px)}.global-dock a{min-width:74px;text-align:center;padding:7px 9px;border-radius:16px;font-size:10px;font-weight:850}.global-dock a span{display:block;font-size:17px;margin-bottom:2px}.global-dock a:hover{background:rgba(255,255,255,.13)}
+@media(max-width:580px){body{padding-bottom:76px}.global-dock{left:10px;right:10px;transform:none;justify-content:space-between}.global-dock a{min-width:0;flex:1;padding:7px 3px}}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Recipe","name":"Pasta al pesto para repetir","description":"Una cena rápida donde la Thermomix hace el pesto y tú aprendes por qué una salsa emulsiona mejor cuando controlas la cantidad de aceite y la trituración.","recipeYield":"4 raciones","totalTime":"PT25M","recipeIngredient":["320 g de pasta seca","40 g de hojas de albahaca","40 g de queso curado tipo parmesano","30 g de piñones o almendras","1 diente de ajo pequeño","80 g de aceite de oliva virgen extra","Sal","2–4 cucharadas de agua de cocción de la pasta"],"recipeInstructions":[{"@type":"HowToStep","text":"Cuece la pasta en una olla según el punto que te guste y reserva un poco de agua de cocción."},{"@type":"HowToStep","text":"Pon el queso en el vaso y tritura 10 segundos / velocidad 10."},{"@type":"HowToStep","text":"Añade albahaca, frutos secos y ajo. Tritura 10–15 segundos / velocidad 7. Baja lo de las paredes."},{"@type":"HowToStep","text":"Añade el aceite y mezcla 20 segundos / velocidad 4. Observa la textura antes de tocar nada más."},{"@type":"HowToStep","text":"Mezcla con la pasta. Añade agua de cocción cucharada a cucharada si necesitas una salsa más fluida y ligada."}],"author":{"@type":"Person","name":"Macarena"}}</script>
 </head>
@@ -40,4 +43,10 @@ footer{background:#202b24;color:#dce5df;padding:40px 0}footer p{color:#aebbb3;fo
 <section class="bottom"><div class="wrap bottom-box"><div><div class="eyebrow">¿Te ha quedado diferente?</div><h2>Eso también enseña.</h2><p>Cuéntame exactamente qué ingrediente cambiaste, qué cantidad usaste y qué resultado obtuviste.</p></div><div><a class="btn" href="https://wa.me/34640761605?text=Hola%20Macarena%2C%20he%20hecho%20Pasta%20al%20pesto%20para%20repetir%20y%20me%20ha%20quedado%20as%C3%AD%3A%20" target="_blank" rel="noopener">Macarena, te cuento</a></div></div><div class="note">Thermomix® es una marca de Vorwerk. Respeta siempre las indicaciones de seguridad, capacidad y uso de tu modelo.</div></section>
 </main>
 <footer><div class="wrap"><b>Cocina sin líos con Macarena</b><p>Receta de cocina doméstica con explicación didáctica para ayudarte a ganar criterio.</p></div></footer>
-</body></html>
+<div class="global-dock">
+<a href="/explora.html"><span>✦</span>Explora</a>
+<a href="/que-cocino.html"><span>🎲</span>Qué cocino</a>
+<a href="/recetas.html"><span>🍝</span>Recetas</a>
+<a href="/diagnostico.html"><span>🧩</span>Rescate</a>
+<a href="/con-macarena.html"><span>👋</span>Macarena</a>
+</div></body></html>
