@@ -67,7 +67,7 @@ function render(key){
  document.getElementById("talk").href="/hablamos.html?motivo=duda&origen="+encodeURIComponent("Adapta Sin Líos: "+d.title);
  box.classList.add("show");box.scrollIntoView({behavior:"smooth",block:"start"});setTimeout(()=>document.getElementById("rTitle").focus({preventScroll:true}),350);
 }
-buttons.forEach(b=>b.addEventListener("click",()=>render(b.dataset.key)));
+buttons.forEach(b=>b.addEventListener("click",()=>{window.CSLTrack?.("adapt_choose",{type:b.dataset.key});render(b.dataset.key)}));
 const initial=new URLSearchParams(location.search).get("tipo");if(data[initial])render(initial);
 </script>
 <script src="/assets/site.js" defer></script>
