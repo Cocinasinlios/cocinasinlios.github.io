@@ -1,0 +1,31 @@
+<!doctype html><html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,follow">
+<title>Cuéntame tu experiencia | Cocina sin líos con Macarena</title>
+<meta name="description" content="Página privada para compartir con Macarena cómo ha sido tu experiencia de acompañamiento.">
+<style>
+:root{--cream:#fbf6ee;--paper:#fffdfa;--ink:#25251f;--muted:#706f67;--dark:#2b3a30;--sage:#dce8d8;--butter:#f2df9d;--line:#e8dfd2}*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:Inter,system-ui,sans-serif;line-height:1.55}.wrap{width:min(780px,92vw);margin:auto}h1,h2{font-family:Georgia,serif;font-weight:500;line-height:1.05}.hero{padding:65px 0 25px}.hero h1{font-size:clamp(48px,7vw,72px);margin:8px 0 14px}.hero p{color:var(--muted);font-size:17px}.mark{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:var(--butter);font:italic 500 28px Georgia,serif}.form{background:var(--paper);border:1px solid var(--line);border-radius:28px;padding:30px;margin-bottom:65px}.field{margin-bottom:22px}.field label{display:block;font-weight:900;margin-bottom:8px}.field small{display:block;color:var(--muted);margin:5px 0 9px}.field textarea{width:100%;min-height:100px;resize:vertical;border:1px solid var(--line);border-radius:17px;padding:14px;font:inherit;background:white}.options{display:grid;gap:9px}.option{display:flex;gap:10px;align-items:flex-start;background:var(--cream);border-radius:15px;padding:12px}.option input{margin-top:4px}.note{background:var(--sage);border-radius:17px;padding:16px;color:#4d5a50;font-size:13px}.btn{border:0;border-radius:999px;background:var(--dark);color:white;padding:13px 18px;font-weight:900;cursor:pointer;margin-top:20px}.btn:focus-visible,textarea:focus-visible{outline:3px solid #7f9a82;outline-offset:3px}footer{background:#202b24;color:#dce5df;padding:35px 0;font-size:12px}
+</style></head><body>
+<main><section class="hero"><div class="wrap"><div class="mark">M</div><h1>Me ayuda mucho saber qué te ha servido de verdad.</h1><p>No busco que me escribas “algo bonito”. Prefiero saber cómo llegaste, qué te ayudó y qué harías diferente después. Si además me das permiso, quizá pueda utilizar una parte de tu experiencia para que otras personas entiendan cómo acompaño.</p></div></section>
+<section><div class="wrap form">
+<div class="field"><label for="antes">Antes de hablar conmigo, ¿qué duda o problema tenías?</label><small>Una frase es suficiente.</small><textarea id="antes"></textarea></div>
+<div class="field"><label for="ayuda">¿Qué parte de mi acompañamiento te resultó más útil?</label><textarea id="ayuda"></textarea></div>
+<div class="field"><label for="despues">¿Qué entiendes o haces ahora de otra manera?</label><small>No hace falta que haya un “gran resultado”; me interesa lo concreto.</small><textarea id="despues"></textarea></div>
+<div class="field"><label>¿Puedo compartir una parte de tu respuesta en Cocina sin líos?</label><div class="options">
+<label class="option"><input type="radio" name="permiso" value="Sí, con mi nombre de pila"><span>Sí, con mi nombre de pila.</span></label>
+<label class="option"><input type="radio" name="permiso" value="Sí, de forma anónima"><span>Sí, pero de forma anónima.</span></label>
+<label class="option"><input type="radio" name="permiso" value="No, solo es feedback privado" checked><span>No. Solo quiero que lo leas tú.</span></label>
+</div></div>
+<div class="note"><b>Tu respuesta no se publica automáticamente.</b> Este formulario no envía nada por sí solo. El botón prepara un mensaje en WhatsApp y tú decides si lo envías. Si autorizas publicación, revisaré contigo cualquier dato que pueda identificarte antes de utilizarlo.</div>
+<button class="btn" id="send" type="button">Enviar mi experiencia a Macarena</button>
+</div></section></main>
+<footer><div class="wrap">Cocina sin líos con Macarena · <a href="/privacidad.html">Privacidad</a></div></footer>
+<script>
+document.getElementById("send").addEventListener("click",()=>{
+ const a=document.getElementById("antes").value.trim(),b=document.getElementById("ayuda").value.trim(),d=document.getElementById("despues").value.trim(),p=document.querySelector('input[name="permiso"]:checked')?.value||"No, solo es feedback privado";
+ if(!a&&!b&&!d){document.getElementById("antes").focus();return}
+ const msg="Hola Macarena. Te dejo mi experiencia con tu acompañamiento.\n\nANTES / DUDA: "+(a||"—")+"\n\nLO QUE MÁS ME AYUDÓ: "+(b||"—")+"\n\nAHORA: "+(d||"—")+"\n\nPERMISO PARA COMPARTIR: "+p;
+ location.href="https://wa.me/34640761605?text="+encodeURIComponent(msg);
+});
+</script>
+</body></html>
