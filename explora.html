@@ -5,29 +5,37 @@
 <title>Explora | Cocina sin líos con Macarena</title>
 <meta name="description" content="Elige por dónde entrar hoy: recetas, qué cocino, rescate, Thermomix por dentro, menú semanal o Macarena.">
 <link rel="canonical" href="https://cocinasinlios.github.io/explora.html">
+<meta property="og:title" content="Explora | Cocina sin líos con Macarena">
+<meta property="og:description" content="Entra por una receta, una duda, una herramienta o una curiosidad y deja que la web te lleve al siguiente paso.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cocinasinlios.github.io/explora.html">
+<meta property="og:image" content="https://cocinasinlios.github.io/assets/pasta.webp">
 <style>
 :root{--cream:#fbf6ee;--paper:#fffdfa;--ink:#25251f;--muted:#706f67;--dark:#2b3a30;--sage:#dce8d8;--mint:#eef5eb;--peach:#f1d8c6;--butter:#f2df9d;--terr:#d36f4b;--pink:#edd6d7;--line:#e8dfd2;--shadow:0 18px 55px rgba(58,51,42,.11)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.55;padding-bottom:76px}a{color:inherit;text-decoration:none}.wrap{width:min(1160px,92vw);margin:auto}h1,h2,h3{font-family:Georgia,serif;font-weight:500;line-height:1.03}.eyebrow{font-size:11px;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;color:#687769}
 header{position:sticky;top:0;z-index:40;background:rgba(251,246,238,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.nav{height:70px;display:flex;align-items:center;gap:20px}.brand{font-family:Georgia,serif;font-size:23px;font-weight:700;line-height:.95}.brand small{display:block;font-family:Inter,sans-serif;font-size:9px;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted);margin-top:6px}.back{margin-left:auto;font-size:13px;font-weight:850}
 .hero{padding:56px 0 24px}.hero-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:30px;align-items:end}.hero h1{font-size:clamp(52px,6vw,78px);letter-spacing:-2.5px;margin:8px 0 15px}.hero p{color:var(--muted);font-size:17px;max-width:700px}.surprise{background:var(--butter);border-radius:27px;padding:26px;transform:rotate(1deg)}.surprise b{display:block;font-family:Georgia,serif;font-size:29px;font-weight:500;margin-bottom:7px}.surprise button{margin-top:14px;border:0;border-radius:999px;background:var(--dark);color:white;padding:12px 17px;font-weight:900;cursor:pointer}
 .progress{padding:8px 0 12px}.progress-box{background:white;border:1px solid var(--line);border-radius:22px;padding:16px 18px;display:flex;align-items:center;gap:14px}.bar{flex:1;height:8px;background:#eee7dc;border-radius:999px;overflow:hidden}.bar span{display:block;height:100%;width:0;background:var(--terr);border-radius:999px;transition:.35s}.progress-box b{white-space:nowrap;font-size:12px}.route.visited:after{content:"visto";position:absolute;top:13px;right:13px;z-index:6;background:rgba(255,255,255,.9);color:#2b3a30;border-radius:999px;padding:5px 8px;font-size:9px;font-weight:900;text-transform:uppercase;letter-spacing:.7px}
+.active-route{background:var(--dark);color:white;border-radius:22px;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:18px}.active-route div{min-width:0}.active-route small{display:block;text-transform:uppercase;letter-spacing:1.2px;font-size:9px;font-weight:900;color:#b9c9bc}.active-route b{font-family:Georgia,serif;font-size:23px;font-weight:500}.active-route a{white-space:nowrap;background:white;color:var(--dark);border-radius:999px;padding:9px 12px;font-size:11px;font-weight:900}.active-route a:focus-visible,.surprise button:focus-visible,.route:focus-visible{outline:3px solid #7f9a82;outline-offset:3px}
 .routes{padding:20px 0 72px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.route{position:relative;border-radius:28px;overflow:hidden;min-height:360px;box-shadow:var(--shadow);transition:.25s}.route:hover{transform:translateY(-5px)}.photo{position:absolute;inset:0;background-size:cover;background-position:center}.r1 .photo{background-image:url("assets/pasta.webp")}.r2 .photo{background-image:url("assets/hummus.webp")}.r3{background:var(--peach)}.r4{background:var(--sage)}.r5{background:var(--butter)}.r6{background:var(--dark);color:white}.shade{position:absolute;inset:0;background:linear-gradient(to top,rgba(25,27,23,.74),rgba(25,27,23,.03) 62%)}.copy{position:absolute;left:23px;right:23px;bottom:22px;color:white}.copy small,.flat small{font-size:10px;text-transform:uppercase;letter-spacing:1.2px;font-weight:900}.copy h3,.flat h3{font-size:32px;margin:7px 0 9px}.copy p{color:#f3efe8;font-size:13px;margin:0}.flat{padding:26px;display:flex;flex-direction:column;justify-content:space-between}.flat p{font-size:14px;color:#5d625c}.r6 .flat p{color:#d9e2dc}.arrow{font-size:26px}
 .keep{padding:70px 0;background:var(--paper)}.keep-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:20px}.keep-main{background:#efe4d7;border-radius:29px;padding:34px}.keep-main h2{font-size:45px;margin:7px 0 14px}.keep-main p{color:var(--muted)}.keep-side{display:grid;gap:14px}.mini{border-radius:23px;padding:24px}.mini:first-child{background:var(--pink)}.mini:last-child{background:var(--mint)}.mini h3{font-size:29px;margin:6px 0 8px}.mini p{color:#5e625c;font-size:13px}.btn{display:inline-flex;border-radius:999px;background:var(--dark);color:white;padding:12px 16px;font-weight:900;font-size:12px}
 .dock{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);z-index:100;background:rgba(34,43,37,.96);color:white;border-radius:22px;padding:7px;display:flex;gap:4px;box-shadow:0 14px 40px rgba(0,0,0,.22);backdrop-filter:blur(12px)}.dock a{min-width:74px;text-align:center;padding:7px 9px;border-radius:16px;font-size:10px;font-weight:850}.dock a span{display:block;font-size:17px;margin-bottom:2px}.dock a.active,.dock a:hover{background:rgba(255,255,255,.13)}
 footer{background:#202b24;color:#dce5df;padding:42px 0}footer p{color:#aebbb3;font-size:12px}
 @media(max-width:850px){.hero-grid,.keep-grid{grid-template-columns:1fr}.grid{grid-template-columns:1fr 1fr}}
-@media(max-width:580px){.hero h1{font-size:47px}.grid{grid-template-columns:1fr}.route{min-height:310px}.dock{left:10px;right:10px;transform:none;justify-content:space-between}.dock a{min-width:0;flex:1;padding:7px 3px}.back{display:none}}
+@media(max-width:580px){.active-route{align-items:flex-start;flex-direction:column}.hero h1{font-size:47px}.grid{grid-template-columns:1fr}.route{min-height:310px}.dock{left:10px;right:10px;transform:none;justify-content:space-between}.dock a{min-width:0;flex:1;padding:7px 3px}.back{display:none}}
 </style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://cocinasinlios.github.io/"},{"@type":"ListItem","position":2,"name":"Explora","item":"https://cocinasinlios.github.io/explora.html"}]}</script>
 </head>
 <body>
 <header><div class="wrap nav"><a class="brand" href="/">Cocina sin líos<small>con Macarena</small></a><a class="back" href="/">← Volver a inicio</a></div></header>
 <main>
 <section class="hero"><div class="wrap hero-grid">
 <div><div class="eyebrow">Explora sin orden</div><h1>Entra por donde te apetezca hoy.</h1><p>No hace falta recorrer la web de arriba abajo. Elige una necesidad, una curiosidad o un antojo y deja que una cosa te lleve a la siguiente.</p></div>
-<div class="surprise"><b>¿No quieres elegir?</b><span>Te mando a una sección al azar. Puede ser una receta, una herramienta o algo para entender mejor tu Thermomix.</span><br><button id="surprise">🎲 Llévame a algún sitio</button></div>
+<div class="surprise"><b>¿No quieres elegir?</b><span>Te llevo primero a algo que todavía no hayas visto, si queda algún camino nuevo. Puede ser una receta, una herramienta o una explicación.</span><br><button id="surprise">🎲 Llévame a algún sitio</button></div>
 </div></section>
 
-<section class="progress"><div class="wrap"><div class="progress-box"><b id="progressCount">Tu ruta Sin Líos</b><div class="bar"><span id="progressBar"></span></div></div></div></section>
+<section class="progress"><div class="wrap"><div class="progress-box"><b id="progressCount">Tu exploración</b><div class="bar" id="progressTrack" role="progressbar" aria-label="Caminos explorados" aria-valuemin="0" aria-valuemax="9" aria-valuenow="0"><span id="progressBar"></span></div></div></div></section>
+<section class="progress"><div class="wrap"><div id="activeRoute"></div></div></section>
 <section class="routes"><div class="wrap grid"><a class="route r3 flat" href="/empieza-aqui.html"><div><small>Si es tu primera visita</small><h3>No sé por dónde empezar.</h3><p>Elige tu situación y te preparo una ruta de tres pasos.</p></div><div class="arrow">↗</div></a>
 <a class="route r1" href="/que-cocino.html"><div class="photo"></div><div class="shade"></div><div class="copy"><small>Ahora mismo</small><h3>No sé qué cocinar.</h3><p>Dime tiempo y antojo y te doy tres ideas.</p></div></a>
 <a class="route r2" href="/recetas.html"><div class="photo"></div><div class="shade"></div><div class="copy"><small>Quiero curiosear</small><h3>Enséñame cosas ricas.</h3><p>Recetas e ideas para entrar por hambre, no por teoría.</p></div></a>
@@ -55,9 +63,21 @@ footer{background:#202b24;color:#dce5df;padding:42px 0}footer p{color:#aebbb3;fo
 <script>
 let seen=[];try{seen=JSON.parse(localStorage.getItem("csl_seen")||"[]")}catch(e){}
 const cards=[...document.querySelectorAll(".route")];let visited=0;
-cards.forEach(c=>{const p=new URL(c.href,location.origin).pathname;if(seen.includes(p)){c.classList.add("visited");visited++}});
-const pc=document.getElementById("progressCount"),pb=document.getElementById("progressBar");if(pc&&pb){pc.textContent="Has explorado "+visited+" de "+cards.length+" caminos";pb.style.width=(visited/cards.length*100)+"%"}
-const routes=["/que-cocino.html","/recetas.html","/diagnostico.html","/academia.html","/menu-semana.html","/con-macarena.html","/receta-hummus.html","/receta-pasta-pesto.html","/receta-tortitas.html"];
-document.getElementById("surprise").addEventListener("click",()=>location.href=routes[Math.floor(Math.random()*routes.length)]);
+cards.forEach(card=>{const p=new URL(card.href,location.origin).pathname;if(seen.includes(p)){card.classList.add("visited");visited++}});
+const pc=document.getElementById("progressCount"),pb=document.getElementById("progressBar"),pt=document.getElementById("progressTrack");
+if(pc&&pb&&pt){pc.textContent="Has explorado "+visited+" de "+cards.length+" caminos visibles";pb.style.width=(visited/cards.length*100)+"%";pt.setAttribute("aria-valuemax",String(cards.length));pt.setAttribute("aria-valuenow",String(visited))}
+const routeNames={estreno:"Primeros días con menos ruido",valoro:"Decidir con contexto",uso:"De usarla a aprovecharla",fallo:"Del fallo a la pista",orden:"Menos decisiones durante la semana",aprender:"Cocinar con criterio"};
+let active=null;try{active=localStorage.getItem("csl_route")}catch(e){}
+const activeBox=document.getElementById("activeRoute");
+if(activeBox&&active&&routeNames[active])activeBox.innerHTML='<div class="active-route"><div><small>Tu ruta activa</small><b>'+routeNames[active]+'</b></div><a href="/mi-rincon.html">Continuar mi ruta →</a></div>';
+const destinations=[
+ "/empieza-aqui.html","/que-cocino.html","/recetas.html","/diagnostico.html","/academia.html","/menu-semana.html","/encaja-tm7.html","/con-macarena.html","/glosario.html","/dudas-rapidas.html",
+ "/receta-hummus.html","/receta-pasta-pesto.html","/receta-tortitas.html","/receta-gazpacho.html","/receta-merluza-varoma.html","/receta-masa-pizza.html"
+];
+document.getElementById("surprise").addEventListener("click",()=>{
+ const unseen=destinations.filter(p=>!seen.includes(p));
+ const pool=unseen.length?unseen:destinations;
+ location.href=pool[Math.floor(Math.random()*pool.length)];
+});
 </script>
 <script src="/assets/site.js" defer></script>\n</body></html>
