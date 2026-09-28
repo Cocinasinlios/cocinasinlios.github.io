@@ -1,8 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 92" role="img" aria-labelledby="t d">
-<title id="t">Cocina sin líos con Macarena</title><desc id="d">Logotipo editorial de Cocina sin líos con Macarena.</desc>
-<g fill="#25251f"><text x="4" y="39" font-family="Georgia, 'Times New Roman', serif" font-size="35" font-weight="600">Cocina</text></g>
-<text x="117" y="42" font-family="'Segoe Script','Brush Script MT','Bradley Hand',cursive" font-size="38" font-style="italic" fill="#24513b">sin líos</text>
-<path d="M276 20c-9-12-28-3-22 11 5 11 22 20 22 20s18-9 23-20c6-14-13-23-23-11z" fill="none" stroke="#24513b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M4 56h292" stroke="#d9cdbd" stroke-width="1"/>
-<text x="5" y="77" font-family="Inter,Arial,sans-serif" font-size="10.5" font-weight="700" letter-spacing="3.1" fill="#6d7068">CON MACARENA</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 120" role="img" aria-labelledby="t d">
+<title id="t">Cocina sin líos con Macarena</title>
+<desc id="d">Logotipo editorial de Cocina sin líos con Macarena.</desc>
+<g>
+  <text x="10" y="58" font-family="Georgia, 'Times New Roman', serif" font-size="56" font-weight="600" fill="#203f31">Cocina</text>
+  <text x="192" y="82" font-family="'Segoe Script','Brush Script MT','Bradley Hand',cursive" font-size="48" font-style="italic" fill="#c97a58">sin líos</text>
+  <path d="M28 91 C110 107, 160 107, 224 96" fill="none" stroke="#c97a58" stroke-width="1.7" stroke-linecap="round"/>
+  <path d="M309 96 C344 90, 374 91, 402 96" fill="none" stroke="#c97a58" stroke-width="1.7" stroke-linecap="round"/>
+  <text x="226" y="108" font-family="Georgia, 'Times New Roman', serif" font-size="15" font-style="italic" fill="#203f31">con Macarena</text>
+</g>
 </svg>
