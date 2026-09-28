@@ -23,7 +23,7 @@ style.textContent=`
 .csl-author-mark{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:#f2df9d;color:#2b3a30;font:italic 500 13px/1 Georgia,serif}
 .csl-author-inner a{text-decoration:none;color:#2b3a30;border-bottom:1px solid rgba(43,58,48,.35)}
 .csl-legal-links{width:min(1120px,92vw);margin:18px auto 0;padding-top:14px;border-top:1px solid rgba(255,255,255,.14);display:flex;flex-wrap:wrap;gap:12px;font:700 10px/1.3 Inter,system-ui,sans-serif;color:#aebbb3}.csl-legal-links a{color:#dce5df;text-decoration:none}.csl-legal-links a:hover{text-decoration:underline}
-.csl-brand-logo{display:block;width:168px;max-height:54px;height:auto}.csl-brand-wordmark{display:flex!important;align-items:center!important;min-width:168px}.csl-brand-wordmark small{display:none!important}@media(max-width:560px){.csl-brand-logo{width:148px}.csl-brand-wordmark{min-width:148px}}
+.csl-brand-logo{display:block;width:188px;max-height:60px;height:auto}.csl-brand-wordmark{display:flex!important;align-items:center!important;min-width:188px}.csl-brand-wordmark small{display:none!important}@media(max-width:900px){.csl-brand-logo{width:172px}.csl-brand-wordmark{min-width:172px}}@media(max-width:560px){.csl-brand-logo{width:150px}.csl-brand-wordmark{min-width:150px}}
 .csl-search-btn,.csl-save-btn{position:fixed;bottom:92px;z-index:121;width:48px;height:48px;border:0;border-radius:50%;background:#fffdfa;color:#26352c;box-shadow:0 12px 35px rgba(40,40,34,.18);font-size:20px;cursor:pointer;border:1px solid #e8dfd2}.csl-search-btn{right:18px}.csl-save-btn{right:74px}.csl-save-btn.saved{background:#f2df9d}.csl-search-btn:focus-visible,.csl-save-btn:focus-visible,.csl-search-close:focus-visible,.csl-search-results a:focus-visible,.csl-x:focus-visible{outline:3px solid #7f9a82;outline-offset:3px}
 .csl-search{position:fixed;inset:0;z-index:200;background:rgba(24,28,24,.62);display:none;align-items:flex-start;justify-content:center;padding:9vh 18px 18px}
 .csl-search.open{display:flex}.csl-search-box{width:min(720px,96vw);background:#fffdfa;border-radius:28px;padding:22px;box-shadow:0 25px 80px rgba(0,0,0,.28)}
@@ -210,8 +210,8 @@ if(!dismissed&&next){
  box.innerHTML='<button type="button" class="csl-x" aria-label="Cerrar">×</button><a href="'+next+'"><span class="csl-icon">'+meta[0]+'</span><div><small>'+(route?"El siguiente paso que te propongo":"Yo seguiría por aquí")+'</small><b>'+meta[1]+'</b><p>'+meta[2]+'</p></div><span class="csl-arrow">→</span></a>';
  document.body.appendChild(box);
  const show=()=>box.classList.add("show");
- setTimeout(show,8500);
- window.addEventListener("scroll",()=>{if(scrollY>document.documentElement.scrollHeight*.24)show()},{passive:true,once:true});
+ setTimeout(show,18000);
+ window.addEventListener("scroll",()=>{if(scrollY>document.documentElement.scrollHeight*.38)show()},{passive:true,once:true});
  box.querySelector(".csl-x").addEventListener("click",()=>{box.remove();try{sessionStorage.setItem("csl_continue_dismissed","1")}catch(e){}});
 }
 
