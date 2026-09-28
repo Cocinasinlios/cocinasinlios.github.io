@@ -12,8 +12,7 @@ if(!document.querySelector('link[rel="icon"]')){const l=document.createElement("
 if(!document.querySelector('link[rel="manifest"]')){const m=document.createElement("link");m.rel="manifest";m.href="/site.webmanifest";document.head.appendChild(m)}
 
 const style=document.createElement("style");
-style.textContent=`:root{--csl-portrait:url("/assets/macarena-profesional.webp")}
-
+style.textContent=`
 .mag-photo,.card .photo,.day-photo,.hero-photo{position:relative}
 .mag-photo:after,.card .photo:after,.day-photo:after,.hero-photo:after{content:"Cocina sin líos · @thermomixsinlios";position:absolute;right:9px;bottom:8px;z-index:4;background:rgba(20,25,21,.50);color:#fff;padding:4px 7px;border-radius:999px;font:700 8px/1.1 Inter,system-ui,sans-serif;letter-spacing:.25px;pointer-events:none}
 .global-dock,.dock{bottom:calc(14px + env(safe-area-inset-bottom))!important}.csl-search-btn,.csl-save-btn,.csl-continue{margin-bottom:env(safe-area-inset-bottom)}
@@ -21,10 +20,10 @@ style.textContent=`:root{--csl-portrait:url("/assets/macarena-profesional.webp")
 .csl-skip{position:fixed;left:12px;top:10px;z-index:500;transform:translateY(-150%);background:#2b3a30;color:white;padding:10px 14px;border-radius:999px;font:900 12px/1 Inter,system-ui,sans-serif;text-decoration:none}.csl-skip:focus{transform:none;outline:3px solid #f2df9d;outline-offset:2px}
 .csl-author-strip{background:#fffdfa;border-bottom:1px solid #e8dfd2;color:#485249}
 .csl-author-inner{width:min(1120px,92vw);margin:auto;min-height:38px;display:flex;align-items:center;gap:9px;font:800 10px/1.2 Inter,system-ui,sans-serif;letter-spacing:.2px}
-.csl-author-mark{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:#f2df9d;color:#2b3a30;font:italic 500 13px/1 Georgia,serif;background-image:var(--csl-portrait);background-size:cover;background-position:center 24%;font-size:0}.personal-photo.csl-real-macarena,.portrait.csl-real-macarena{background-image:url("/assets/macarena-profesional.webp")!important;background-size:cover!important;background-position:center 24%!important}.about-img.csl-real-macarena{background-image:linear-gradient(to top,rgba(28,35,30,.38),rgba(28,35,30,0) 42%),url("/assets/macarena-cocinando.webp")!important;background-size:cover!important;background-position:center 24%!important}
+.csl-author-mark{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:#f2df9d;color:#2b3a30;font:italic 500 13px/1 Georgia,serif}
 .csl-author-inner a{text-decoration:none;color:#2b3a30;border-bottom:1px solid rgba(43,58,48,.35)}
 .csl-legal-links{width:min(1120px,92vw);margin:18px auto 0;padding-top:14px;border-top:1px solid rgba(255,255,255,.14);display:flex;flex-wrap:wrap;gap:12px;font:700 10px/1.3 Inter,system-ui,sans-serif;color:#aebbb3}.csl-legal-links a{color:#dce5df;text-decoration:none}.csl-legal-links a:hover{text-decoration:underline}
-.portrait.csl-real-macarena,.about-img.csl-real-macarena,.personal-photo.csl-real-macarena{background-repeat:no-repeat!important;background-color:#2b3a30!important}.portrait.csl-real-macarena:before,.about-img.csl-real-macarena:before,.personal-photo.csl-real-macarena:before{display:none!important}.csl-brand-logo{display:block;width:168px;max-height:54px;height:auto}.csl-brand-wordmark{display:flex!important;align-items:center!important;min-width:168px}.csl-brand-wordmark small{display:none!important}@media(max-width:560px){.csl-brand-logo{width:148px}.csl-brand-wordmark{min-width:148px}}
+.csl-brand-logo{display:block;width:168px;max-height:54px;height:auto}.csl-brand-wordmark{display:flex!important;align-items:center!important;min-width:168px}.csl-brand-wordmark small{display:none!important}@media(max-width:560px){.csl-brand-logo{width:148px}.csl-brand-wordmark{min-width:148px}}
 .csl-search-btn,.csl-save-btn{position:fixed;bottom:92px;z-index:121;width:48px;height:48px;border:0;border-radius:50%;background:#fffdfa;color:#26352c;box-shadow:0 12px 35px rgba(40,40,34,.18);font-size:20px;cursor:pointer;border:1px solid #e8dfd2}.csl-search-btn{right:18px}.csl-save-btn{right:74px}.csl-save-btn.saved{background:#f2df9d}.csl-search-btn:focus-visible,.csl-save-btn:focus-visible,.csl-search-close:focus-visible,.csl-search-results a:focus-visible,.csl-x:focus-visible{outline:3px solid #7f9a82;outline-offset:3px}
 .csl-search{position:fixed;inset:0;z-index:200;background:rgba(24,28,24,.62);display:none;align-items:flex-start;justify-content:center;padding:9vh 18px 18px}
 .csl-search.open{display:flex}.csl-search-box{width:min(720px,96vw);background:#fffdfa;border-radius:28px;padding:22px;box-shadow:0 25px 80px rgba(0,0,0,.28)}
@@ -67,7 +66,7 @@ style.textContent=`:root{--csl-portrait:url("/assets/macarena-profesional.webp")
 `;
 document.head.appendChild(style);
 document.querySelectorAll("header .brand").forEach(a=>{a.classList.add("csl-brand-wordmark");a.setAttribute("aria-label","Cocina sin líos con Macarena");a.innerHTML='<img class="csl-brand-logo" src="/assets/logo-cocina-sin-lios.svg" alt="Cocina sin líos con Macarena">'});
-document.querySelectorAll(".personal-photo,.portrait,.about-img").forEach(el=>el.classList.add("csl-real-macarena"));
+
 if(document.querySelector("main")){if(!document.querySelector("main").id)document.querySelector("main").id="contenido";const skip=document.createElement("a");skip.className="csl-skip";skip.href="#contenido";skip.textContent="Saltar al contenido";document.body.prepend(skip)}
 
 const authorStripPages={
