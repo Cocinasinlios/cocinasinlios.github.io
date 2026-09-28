@@ -12,7 +12,7 @@ if(!document.querySelector('link[rel="icon"]')){const l=document.createElement("
 if(!document.querySelector('link[rel="manifest"]')){const m=document.createElement("link");m.rel="manifest";m.href="/site.webmanifest";document.head.appendChild(m)}
 
 const style=document.createElement("style");
-style.textContent=`:root{--csl-portrait:url("data:image/webp;base64,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")}
+style.textContent=`:root{--csl-portrait:url("/assets/macarena-profesional.webp")}
 
 .mag-photo,.card .photo,.day-photo,.hero-photo{position:relative}
 .mag-photo:after,.card .photo:after,.day-photo:after,.hero-photo:after{content:"Cocina sin líos · @thermomixsinlios";position:absolute;right:9px;bottom:8px;z-index:4;background:rgba(20,25,21,.50);color:#fff;padding:4px 7px;border-radius:999px;font:700 8px/1.1 Inter,system-ui,sans-serif;letter-spacing:.25px;pointer-events:none}
@@ -21,10 +21,10 @@ style.textContent=`:root{--csl-portrait:url("data:image/webp;base64,UklGRo4JAABX
 .csl-skip{position:fixed;left:12px;top:10px;z-index:500;transform:translateY(-150%);background:#2b3a30;color:white;padding:10px 14px;border-radius:999px;font:900 12px/1 Inter,system-ui,sans-serif;text-decoration:none}.csl-skip:focus{transform:none;outline:3px solid #f2df9d;outline-offset:2px}
 .csl-author-strip{background:#fffdfa;border-bottom:1px solid #e8dfd2;color:#485249}
 .csl-author-inner{width:min(1120px,92vw);margin:auto;min-height:38px;display:flex;align-items:center;gap:9px;font:800 10px/1.2 Inter,system-ui,sans-serif;letter-spacing:.2px}
-.csl-author-mark{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:#f2df9d;color:#2b3a30;font:italic 500 13px/1 Georgia,serif;background-image:var(--csl-portrait);background-size:cover;background-position:center;font-size:0}.csl-real-macarena{background-image:var(--csl-portrait)!important;background-size:cover!important;background-position:center!important}
+.csl-author-mark{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:#f2df9d;color:#2b3a30;font:italic 500 13px/1 Georgia,serif;background-image:var(--csl-portrait);background-size:cover;background-position:center 24%;font-size:0}.personal-photo.csl-real-macarena,.portrait.csl-real-macarena{background-image:url("/assets/macarena-profesional.webp")!important;background-size:cover!important;background-position:center 24%!important}.about-img.csl-real-macarena{background-image:linear-gradient(to top,rgba(28,35,30,.38),rgba(28,35,30,0) 42%),url("/assets/macarena-cocinando.webp")!important;background-size:cover!important;background-position:center 24%!important}
 .csl-author-inner a{text-decoration:none;color:#2b3a30;border-bottom:1px solid rgba(43,58,48,.35)}
 .csl-legal-links{width:min(1120px,92vw);margin:18px auto 0;padding-top:14px;border-top:1px solid rgba(255,255,255,.14);display:flex;flex-wrap:wrap;gap:12px;font:700 10px/1.3 Inter,system-ui,sans-serif;color:#aebbb3}.csl-legal-links a{color:#dce5df;text-decoration:none}.csl-legal-links a:hover{text-decoration:underline}
-.portrait.csl-real-macarena,.about-img.csl-real-macarena{background-size:240px auto!important;background-repeat:no-repeat!important;background-color:#2b3a30!important;background-position:center 42%!important}.portrait.csl-real-macarena:before,.about-img.csl-real-macarena:before,.personal-photo.csl-real-macarena:before{display:none!important}
+.portrait.csl-real-macarena,.about-img.csl-real-macarena,.personal-photo.csl-real-macarena{background-repeat:no-repeat!important;background-color:#2b3a30!important}.portrait.csl-real-macarena:before,.about-img.csl-real-macarena:before,.personal-photo.csl-real-macarena:before{display:none!important}.csl-brand-logo{display:block;width:168px;max-height:54px;height:auto}.csl-brand-wordmark{display:flex!important;align-items:center!important;min-width:168px}.csl-brand-wordmark small{display:none!important}@media(max-width:560px){.csl-brand-logo{width:148px}.csl-brand-wordmark{min-width:148px}}
 .csl-search-btn,.csl-save-btn{position:fixed;bottom:92px;z-index:121;width:48px;height:48px;border:0;border-radius:50%;background:#fffdfa;color:#26352c;box-shadow:0 12px 35px rgba(40,40,34,.18);font-size:20px;cursor:pointer;border:1px solid #e8dfd2}.csl-search-btn{right:18px}.csl-save-btn{right:74px}.csl-save-btn.saved{background:#f2df9d}.csl-search-btn:focus-visible,.csl-save-btn:focus-visible,.csl-search-close:focus-visible,.csl-search-results a:focus-visible,.csl-x:focus-visible{outline:3px solid #7f9a82;outline-offset:3px}
 .csl-search{position:fixed;inset:0;z-index:200;background:rgba(24,28,24,.62);display:none;align-items:flex-start;justify-content:center;padding:9vh 18px 18px}
 .csl-search.open{display:flex}.csl-search-box{width:min(720px,96vw);background:#fffdfa;border-radius:28px;padding:22px;box-shadow:0 25px 80px rgba(0,0,0,.28)}
@@ -66,6 +66,7 @@ style.textContent=`:root{--csl-portrait:url("data:image/webp;base64,UklGRo4JAABX
 }
 `;
 document.head.appendChild(style);
+document.querySelectorAll("header .brand").forEach(a=>{a.classList.add("csl-brand-wordmark");a.setAttribute("aria-label","Cocina sin líos con Macarena");a.innerHTML='<img class="csl-brand-logo" src="/assets/logo-cocina-sin-lios.svg" alt="Cocina sin líos con Macarena">'});
 document.querySelectorAll(".personal-photo,.portrait,.about-img").forEach(el=>el.classList.add("csl-real-macarena"));
 if(document.querySelector("main")){if(!document.querySelector("main").id)document.querySelector("main").id="contenido";const skip=document.createElement("a");skip.className="csl-skip";skip.href="#contenido";skip.textContent="Saltar al contenido";document.body.prepend(skip)}
 
@@ -80,7 +81,7 @@ const recipeAuthorPages=Object.keys({
  "/receta-merluza-varoma.html":1,"/receta-masa-pizza.html":1,"/receta-bizcocho-yogur.html":1,"/receta-pisto-manchego.html":1
 });
 const learnAuthorPages=["/academia.html","/aprende-cocinando.html","/mapa-sin-lios.html","/adapta-sin-lios.html","/glosario.html","/diagnostico.html","/dudas-rapidas.html"];
-const usefulAuthorPages=["/explora.html","/que-cocino.html","/recetas.html","/cenas-faciles-thermomix.html","/menu-semana.html","/organiza-sin-lios.html","/primeros-dias-tm7.html","/empieza-aqui.html"];
+const usefulAuthorPages=["/explora.html","/que-cocino.html","/recetas.html","/cenas-faciles-thermomix.html","/menu-semana.html","/organiza-sin-lios.html","/despensa-sin-lios.html","/primeros-dias-tm7.html","/empieza-aqui.html"];
 const decideAuthorPages=["/encaja-tm7.html"];
 let authorStripText=null;
 if(recipeAuthorPages.includes(path))authorStripText=authorStripPages.recipe;
@@ -104,7 +105,7 @@ document.addEventListener("click",e=>{
  const href=a.getAttribute("href")||"";
  if(href.startsWith("/hablamos.html"))track("contact_start",{source:path,target:"hablamos"});
  else if(href.startsWith("/receta-"))track("recipe_open",{target:href.split("?")[0]});
- else if(href.startsWith("/metodo-sin-lios.html")||href.startsWith("/adapta-sin-lios.html")||href.startsWith("/organiza-sin-lios.html")||href.startsWith("/mapa-sin-lios.html"))track("method_step",{target:href.split("?")[0]});
+ else if(href.startsWith("/metodo-sin-lios.html")||href.startsWith("/adapta-sin-lios.html")||href.startsWith("/organiza-sin-lios.html")||href.startsWith("/despensa-sin-lios.html")||href.startsWith("/mapa-sin-lios.html"))track("method_step",{target:href.split("?")[0]});
  else if(href.startsWith("https://wa.me/"))track("whatsapp_open",{source:path});
 });
 const csl_legal_injected=true;
@@ -113,7 +114,7 @@ const standardDock=[
  ["/explora.html","✦","Explora"],
  ["/que-cocino.html","🎲","Qué cocino"],
  ["/recetas.html","🍝","Recetas"],
- ["/diagnostico.html","🧩","Rescate"],
+ ["/despensa-sin-lios.html","🥫","Despensa"],
  ["/mi-rincon.html","♡","Mi rincón"]
 ];
 document.querySelectorAll(".global-dock,.dock").forEach(d=>{
@@ -144,6 +145,7 @@ const labels={
  "/glosario.html":["📖","Glosario Sin Líos","Vuelve aquí cuando una palabra o concepto no te cuadre."],
  "/dudas-rapidas.html":["❓","Dudas rápidas","Respuestas claras a preguntas habituales."],
  "/menu-semana.html":["🗓","Menú de la semana","Cuando lo que necesitas es dejar de improvisar."],
+ "/despensa-sin-lios.html":["🥫","Despensa Sin Líos","Una base corta, congelador y tarros que te ahorran decisiones."],
  "/encaja-tm7.html":["✨","¿La TM7 encaja contigo?","Piensa en tu cocina real antes de decidir."],
  "/con-macarena.html":["👋","Con Macarena","Conoce cómo te acompañaría de verdad."],
  "/hablamos.html":["💬","Habla con Macarena","Empieza por tu situación y abre una conversación concreta."],
@@ -172,7 +174,8 @@ const generic={
  "/adapta-sin-lios.html":["/mapa-sin-lios.html","/diagnostico.html","/glosario.html","/menu-semana.html"],
  "/glosario.html":["/dudas-rapidas.html","/academia.html","/diagnostico.html","/recetas.html"],
  "/dudas-rapidas.html":["/glosario.html","/encaja-tm7.html","/con-macarena.html"],
- "/menu-semana.html":["/recetas.html","/que-cocino.html","/explora.html"],
+ "/menu-semana.html":["/recetas.html","/despensa-sin-lios.html","/que-cocino.html","/explora.html"],
+ "/despensa-sin-lios.html":["/que-cocino.html","/organiza-sin-lios.html","/menu-semana.html","/con-macarena.html"],
  "/encaja-tm7.html":["/con-macarena.html","/empieza-aqui.html","/explora.html"],
  "/con-macarena.html":["/hablamos.html","/empieza-aqui.html","/explora.html","/recetas.html"],
  "/hablamos.html":["/con-macarena.html","/encaja-tm7.html","/recetas.html"],
@@ -219,6 +222,7 @@ const searchData=[
 ["🎲","Qué cocino hoy","Tres ideas según tiempo y ganas.","/que-cocino.html","cena comida hoy ideas rápido tiempo"],
 ["🍝","Recetas e ideas","Biblioteca visual de cocina real.","/recetas.html","recetas pasta hummus tortitas cena dulce"],
 ["🗓","Menú de la semana","Cenas, preparación y lista de compra.","/menu-semana.html","menu semana compra organizar cenas"],
+["🥫","Despensa Sin Líos","Checklist, congelador y tarros que te ayudan a resolver comidas.","/despensa-sin-lios.html","despensa ingredientes básicos congelador tarros especias ajo cebolla setas fondo cocina"],
 ["🧩","Rescate Sin Líos","Diagnostica qué revisar cuando algo falla.","/diagnostico.html","fallo liquido espeso carne masa varoma emulsión"],
 ["🧠","Thermomix por dentro","Aprende qué ocurre mientras cocinas.","/academia.html","velocidad temperatura cantidad vapor aprender"],
 ["🧩","Método Sin Líos","La forma de Macarena de entender, cocinar, corregir, adaptar y organizar.","/metodo-sin-lios.html","metodo sin lios entiende cocina corrige adapta organiza macarena criterio"],
