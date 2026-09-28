@@ -1,23 +1,22 @@
-# Dominio objetivo: cocinasinlios.com
+# Dominio de producción: cocinasinlios.com
 
-Estado de trabajo (27-09-2026): dominio comprado en DonDominio y todavía pendiente de activación/validación. **No crear el CNAME de producción ni cambiar canonicals hasta que el dominio esté activo y el DNS pueda editarse.**
+Estado actualizado (28-09-2026): **cocinasinlios.com está en producción** y es el dominio principal de Cocina sin líos con Macarena.
 
-## Corte a dominio propio — orden seguro
+## Estado actual
 
-1. En GitHub > Settings > Pages, añadir `cocinasinlios.com` como Custom domain.
-2. En DonDominio, para el dominio raíz `@`, crear los cuatro registros A de GitHub Pages:
-   - 185.199.108.153
-   - 185.199.109.153
-   - 185.199.110.153
-   - 185.199.111.153
-3. Crear `www` como CNAME apuntando a `cocinasinlios.github.io`.
-4. Esperar propagación y comprobar que raíz y www resuelven correctamente.
-5. Activar Enforce HTTPS en GitHub Pages cuando esté disponible.
-6. Solo después:
-   - añadir/confirmar `CNAME` con `cocinasinlios.com`;
-   - sustituir canonicals, og:url, sitemap y robots de `https://cocinasinlios.com` por `https://cocinasinlios.com`;
-   - comprobar redirección de la URL antigua;
-   - crear propiedad de dominio en Google Search Console y verificarla por DNS;
-   - enviar `https://cocinasinlios.com/sitemap.xml`.
+- Dominio principal: https://cocinasinlios.com/
+- La web se publica desde el repositorio GitHub y se sirve en el dominio propio.
+- Los canonicals, Open Graph, sitemap y enlaces internos deben apuntar al dominio `.com`.
+- No cambiar registros DNS salvo que exista una incidencia concreta y comprobada.
+- Mantener HTTPS activo.
+- `www` debe redirigir al dominio principal o resolver de forma coherente hacia la misma web.
 
-No usar registros DNS comodín.
+## Si algún día se toca DNS
+
+1. Documentar los registros actuales antes de modificar nada.
+2. Cambiar una sola cosa cada vez.
+3. Comprobar raíz, www y HTTPS.
+4. Verificar que no se rompe el dominio de producción.
+5. Comprobar Search Console y sitemap tras cambios importantes.
+
+No usar registros DNS comodín sin una necesidad técnica concreta.
