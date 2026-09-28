@@ -1,4 +1,6 @@
 (()=>{
+const CSL_HQ_PRO=[/*PRO_CHUNK_NEXT*/];
+const CSL_HQ_COOK=[/*COOK_CHUNK_NEXT*/];
 const path=location.pathname.replace(/\/$/,"")||"/";
 window.dataLayer=window.dataLayer||[];
 function track(name,params={}){
