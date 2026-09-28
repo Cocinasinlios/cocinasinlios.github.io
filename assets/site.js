@@ -66,7 +66,42 @@ style.textContent=`
  .csl-related-head{display:block}.csl-related-head p{margin-top:8px}.csl-related-grid{grid-template-columns:1fr}.csl-loop-grid{grid-template-columns:1fr}.csl-macarena-inner{grid-template-columns:1fr;text-align:left}.csl-macarena-actions{min-width:0;flex-direction:row;flex-wrap:wrap}
 }
 `;
+
 document.head.appendChild(style);
+
+const CSL_HQ_PRO_URI="data:image/webp;base64,"+CSL_HQ_PRO.join("");
+const CSL_HQ_COOK_URI="data:image/webp;base64,"+CSL_HQ_COOK.join("");
+function applyHqMacarenaPhotos(){
+ document.querySelectorAll(".personal-photo").forEach(el=>{
+  el.style.backgroundImage='url("'+CSL_HQ_PRO_URI+'")';
+  el.style.backgroundColor="#e9dfd2";
+  el.style.backgroundSize="cover";
+  el.style.backgroundPosition="center 24%";
+  el.style.backgroundRepeat="no-repeat";
+ });
+ document.querySelectorAll(".portrait").forEach(el=>{
+  el.style.backgroundImage='linear-gradient(to top,rgba(28,35,30,.18),rgba(28,35,30,0) 42%),url("'+CSL_HQ_PRO_URI+'")';
+  el.style.backgroundColor="#e9dfd2";
+  el.style.backgroundSize="cover";
+  el.style.backgroundPosition="center 22%";
+  el.style.backgroundRepeat="no-repeat";
+ });
+ document.querySelectorAll(".tile.one").forEach(el=>{
+  el.style.backgroundImage='url("'+CSL_HQ_COOK_URI+'")';
+  el.style.backgroundColor="#e9dfd2";
+  el.style.backgroundSize="cover";
+  el.style.backgroundPosition="center 24%";
+  el.style.backgroundRepeat="no-repeat";
+ });
+ document.querySelectorAll(".about-img").forEach(el=>{
+  el.style.backgroundImage='linear-gradient(to top,rgba(28,35,30,.30),rgba(28,35,30,0) 46%),url("'+CSL_HQ_COOK_URI+'")';
+  el.style.backgroundColor="#e9dfd2";
+  el.style.backgroundSize="cover";
+  el.style.backgroundPosition="center 24%";
+  el.style.backgroundRepeat="no-repeat";
+ });
+}
+applyHqMacarenaPhotos();
 document.querySelectorAll("header .brand").forEach(a=>{a.classList.add("csl-brand-wordmark");a.setAttribute("aria-label","Cocina sin líos con Macarena");a.innerHTML='<img class="csl-brand-logo" src="/assets/logo-cocina-sin-lios.svg" alt="Cocina sin líos con Macarena">'});
 
 if(document.querySelector("main")){if(!document.querySelector("main").id)document.querySelector("main").id="contenido";const skip=document.createElement("a");skip.className="csl-skip";skip.href="#contenido";skip.textContent="Saltar al contenido";document.body.prepend(skip)}
