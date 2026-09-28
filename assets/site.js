@@ -265,6 +265,7 @@ const searchData=[
 ["📖","Glosario Sin Líos","Conceptos explicados en lenguaje normal.","/glosario.html","glosario velocidad tiempo temperatura giro inverso varoma emulsión amasar"],
 ["❓","Dudas rápidas","Respuestas claras a preguntas habituales sobre TM7, Cookidoo y uso diario.","/dudas-rapidas.html","dudas preguntas cookidoo tm7 manual agente cantidades varoma"],
 ["✨","¿La TM7 encaja contigo?","Recorrido para valorar tu caso.","/encaja-tm7.html","tm7 comprar decidir encaja demo"],
+["🤝","Comprar conmigo","Si ya lo tienes claro, hablamos del pedido y de lo que necesitas saber antes de hacerlo.","/hablamos.html?motivo=compra","comprar compra pedido precio financiacion financiación cuotas promo promocion promoción thermomix tm7 agente macarena"],
 ["👋","Con Macarena","Mi forma de acompañarte antes y después.","/con-macarena.html","macarena agente acompañamiento ayuda"],
 ["💬","Habla con Macarena","Elige tu situación y abre una conversación concreta.","/hablamos.html","contacto whatsapp demo valorar tm7 empezar duda macarena"],
 ["♡","Mi rincón","Tus favoritos y páginas recientes.","/mi-rincon.html","favoritos guardados historial recientes"],
