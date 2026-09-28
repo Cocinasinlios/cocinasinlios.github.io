@@ -10,7 +10,7 @@
 <meta name="theme-color" content="#fbf6ee">
 <link rel="canonical" href="https://cocinasinlios.com/despensa-sin-lios.html">
 <meta property="og:title" content="Despensa Sin Líos | Los imprescindibles de Macarena">
-<meta property="og:description" content="No necesitas tener de todo. Necesitas una base que combine bien y te permita resolver comidas reales.">
+<meta property="og:description" content="Una base de despensa que combine bien y te permita resolver comidas reales con menos decisiones.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://cocinasinlios.com/despensa-sin-lios.html">
 <meta property="og:image" content="https://cocinasinlios.com/assets/pasta.webp">
@@ -40,11 +40,11 @@ footer{background:#202b24;color:#dce5df;padding:40px 0}footer p{color:#aebbb3;fo
 <div>
 <div class="eyebrow">Fondo de cocina · menos decisiones</div>
 <h1>Una despensa que te saque de apuros.</h1>
-<p>No necesitas tener ochenta ingredientes. Necesitas una base corta que combine bien, algo de congelador y unos cuantos atajos que hagan que una cena normal empiece con media decisión ya tomada.</p>
+<p>Una base corta que combine bien, algo de congelador y unos cuantos atajos pueden hacer que una cena normal empiece con media decisión ya tomada.</p>
 <div class="actions"><a class="btn primary" href="#checklist">Revisar mi despensa</a><a class="btn ghost" href="#tarros">Ver mis tarros imprescindibles</a></div>
 </div>
 <div class="hero-card">
-<div><div class="eyebrow" style="color:#cbd9ce">La idea</div><div class="big">Preparas una vez. Utilizas muchas.</div><p>La despensa no está para coleccionar tarros. Está para darte opciones cuando vas tarde, no has planificado o simplemente no quieres pensar demasiado.</p></div>
+<div><div class="eyebrow" style="color:#cbd9ce">La idea</div><div class="big">Preparas una vez. Utilizas muchas.</div><p>La despensa trabaja a tu favor cuando vas tarde, no has planificado o simplemente quieres resolver sin pensar demasiado.</p></div>
 <div class="jar-row"><div class="jar">ajo</div><div class="jar">tomate</div><div class="jar">setas</div><div class="jar">hierbas</div></div>
 </div>
 </div></section>
@@ -144,7 +144,7 @@ footer{background:#202b24;color:#dce5df;padding:40px 0}footer p{color:#aebbb3;fo
    const n=boxes.filter(b=>b.checked).length,total=boxes.length,p=Math.round(n/total*100);
    document.getElementById('count').textContent=n+' de '+total;
    document.getElementById('bar').style.width=p+'%';
-   document.getElementById('message').textContent=n===0?'Empieza por lo que de verdad usas.':n<8?'Ya tienes una base. No hace falta comprarlo todo de golpe.':n<17?'Tu fondo empieza a darte bastantes combinaciones.':'Tienes una despensa muy resolutiva.';
+   document.getElementById('message').textContent=n===0?'Empieza por lo que de verdad usas.':n<8?'Ya tienes una base. Complétala poco a poco con lo que de verdad uses.':n<17?'Tu fondo empieza a darte bastantes combinaciones.':'Tienes una despensa muy resolutiva.';
  }
  document.getElementById('reset').addEventListener('click',()=>{boxes.forEach(b=>b.checked=false);save()});
  update();
