@@ -141,7 +141,7 @@ if(path==="/"){
   }
   if(recent.length){
     const last=typeof recent[0]==="string"?recent[0]:recent[0]?.slug;
-    cards.push('<a class="resume-card" href="'+(last?'/receta.html?r='+encodeURIComponent(last):'/recetas.html')+'"><small>RECIENTE</small><b>'+recent.length+' receta'+(recent.length===1?'':'s')+' vista'+(recent.length===1?'':'s')+'</b><span>Retomar la última →</span></a>');
+    cards.push('<a class="resume-card" href="'+(last?'/recetas/'+encodeURIComponent(last)+'/':'/recetas.html')+'"><small>RECIENTE</small><b>'+recent.length+' receta'+(recent.length===1?'':'s')+' vista'+(recent.length===1?'':'s')+'</b><span>Retomar la última →</span></a>');
   }
   const section=document.getElementById("csl-resume");
   const grid=document.getElementById("csl-resume-grid");

@@ -29,7 +29,7 @@ if(w&&Array.isArray(w.meals)&&w.meals.length){
  const detail=document.getElementById("weekDetail");
  const weekDays=document.getElementById("weekDays");
  detail.style.display="block";
- weekDays.innerHTML=w.meals.map((name,i)=>{const item=Array.isArray(w.items)?w.items[i]:null;const safe=String(name).replace(/[<>&]/g,"");const title=item&&item.slug?'<a href="/receta.html?r='+encodeURIComponent(item.slug)+'">'+safe+'</a>':safe;return '<div class="week-day"><small>'+days[i]+'</small><b>'+title+'</b></div>'}).join("");
+ weekDays.innerHTML=w.meals.map((name,i)=>{const item=Array.isArray(w.items)?w.items[i]:null;const safe=String(name).replace(/[<>&]/g,"");const title=item&&item.slug?'<a href="/recetas/'+encodeURIComponent(item.slug)+'/'">'+safe+'</a>':safe;return '<div class="week-day"><small>'+days[i]+'</small><b>'+title+'</b></div>'}).join("");
  const meta=document.getElementById("weekMeta");
  if(w.savedAt){const d=new Date(w.savedAt);if(!isNaN(d))meta.textContent="Guardada el "+d.toLocaleDateString("es-ES",{day:"numeric",month:"long"})+" · puedes generar otra semana cuando quieras."}
 }
@@ -53,7 +53,7 @@ if(f.length){
  document.getElementById("favSub").textContent=(resolved.length?resolved.slice(0,3).map(x=>x.title):f.slice(0,3)).join(" · ")+(f.length>3?"…":"");
  if(resolved.length){
    document.getElementById("favDetail").style.display="block";
-   document.getElementById("favList").innerHTML=resolved.map(r=>'<a class="fav-item" href="/receta.html?r='+encodeURIComponent(r.slug)+'"><b>'+r.title+'</b><span>'+r.category+' · '+r.time+' →</span></a>').join("");
+   document.getElementById("favList").innerHTML=resolved.map(r=>'<a class="fav-item" href="/recetas/'+encodeURIComponent(r.slug)+'/'"><b>'+r.title+'</b><span>'+r.category+' · '+r.time+' →</span></a>').join("");
  }
 }
 let recent=[];try{recent=JSON.parse(localStorage.getItem("csl-recent-recipes-v1")||"[]")}catch(e){}
@@ -61,7 +61,7 @@ recent=recent.map(x=>typeof x==="string"?{slug:x}:x).filter(x=>x&&x.slug);
 const recentResolved=recent.map(x=>recipes.find(r=>r.slug===x.slug)).filter(Boolean).slice(0,6);
 if(recentResolved.length){
  document.getElementById("recentDetail").style.display="block";
- document.getElementById("recentList").innerHTML=recentResolved.map(r=>'<a class="recent-item" href="/receta.html?r='+encodeURIComponent(r.slug)+'"><b>'+r.title+'</b><span>'+r.category+' · '+r.time+' →</span></a>').join("");
+ document.getElementById("recentList").innerHTML=recentResolved.map(r=>'<a class="recent-item" href="/recetas/'+encodeURIComponent(r.slug)+'/'"><b>'+r.title+'</b><span>'+r.category+' · '+r.time+' →</span></a>').join("");
 }
 const input=document.getElementById("useSoon");try{input.value=localStorage.getItem("csl-gastar-pronto-v1")||""}catch(e){}
 document.getElementById("useSoonGo").addEventListener("click",()=>{const v=input.value.trim();try{if(v)localStorage.setItem("csl-gastar-pronto-v1",v);else localStorage.removeItem("csl-gastar-pronto-v1")}catch(e){}location.href="/que-cocino.html"+(v?"?gastar="+encodeURIComponent(v):"")});
