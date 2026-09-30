@@ -52,6 +52,15 @@ document.querySelectorAll("header .navlinks a,.global-dock a,.dock a").forEach(a
   }
 });
 
+// Keep secondary destinations available without overloading the primary navigation.
+if(document.querySelector("footer")&&!document.querySelector("footer .csl-secondary-nav")){
+  const s=document.createElement("div");
+  s.className="csl-secondary-nav";
+  s.innerHTML='<a href="/explora.html">Explora</a> · <a href="/despensa-sin-lios.html">Despensa</a> · <a href="/con-macarena.html">Macarena</a>';
+  s.style.cssText="font-size:11px;margin-top:14px;opacity:.88";
+  document.querySelector("footer .wrap,footer")?.appendChild(s);
+}
+
 // Avoid duplicating legal links on pages that already render them.
 if(document.querySelector("footer") &&
    !document.querySelector("footer .footerlinks") &&
