@@ -21,7 +21,7 @@ header{position:sticky;top:0;z-index:40;background:rgba(251,246,238,.95);backdro
 .panel{background:var(--paper);border:1px solid var(--line);border-radius:30px;padding:30px;box-shadow:var(--shadow);margin-bottom:28px}.question{margin:0 0 26px}.question h2{font-size:30px;margin:0 0 12px}.choices{display:flex;flex-wrap:wrap;gap:9px}.choice{border:1px solid var(--line);background:white;border-radius:999px;padding:11px 15px;font-weight:850;cursor:pointer}.choice.active{background:var(--dark);color:#fff;border-color:var(--dark)}
 .pantry{background:var(--sage);border-radius:20px;padding:16px 18px;margin:20px 0}.pantry b{font-family:Georgia,serif;font-size:23px;font-weight:500}.pantry span{display:block;color:#536056;font-size:12px;margin-top:4px}
 .go{width:100%;border:0;background:var(--terr);color:#fff;border-radius:18px;padding:16px;font-weight:900;font-size:15px;cursor:pointer}
-.results{display:none;padding:34px 0 70px}.results.show{display:block}.week{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.day{background:white;border:1px solid var(--line);border-radius:22px;padding:18px;min-height:230px}.day:nth-child(2n){background:var(--mint)}.day:nth-child(3n){background:var(--peach)}.day small{font-size:9px;letter-spacing:1.2px;text-transform:uppercase;font-weight:900;color:#6d786e}.day h3{font-size:24px;margin:8px 0}.day p{font-size:12px;color:var(--muted)}.day b{font-size:11px}
+.results{display:none;padding:34px 0 70px}.results.show{display:block}.week{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.day{background:white;border:1px solid var(--line);border-radius:22px;padding:18px;min-height:230px}.day:nth-child(2n){background:var(--mint)}.day:nth-child(3n){background:var(--peach)}.day small{font-size:9px;letter-spacing:1.2px;text-transform:uppercase;font-weight:900;color:#6d786e}.day h3{font-size:24px;margin:8px 0}.day h3 a{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}.day p{font-size:12px;color:var(--muted)}.day b{font-size:11px}.recipe-link{display:inline-block;margin-top:10px;font-size:11px;font-weight:900;text-decoration:underline}
 .actions{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}.btn{display:inline-flex;border-radius:999px;padding:12px 16px;border:1px solid var(--dark);font-weight:900;font-size:12px}.btn.primary{background:var(--dark);color:white}
 .shopping{background:var(--butter);border-radius:26px;padding:26px;margin-top:24px}.shopping h2{font-size:35px;margin:5px 0 12px}.shopping ul{columns:2;padding-left:20px}.shopping li{margin:7px 0}
 .global-dock{position:fixed;left:50%;bottom:12px;transform:translateX(-50%);z-index:120;background:rgba(34,43,37,.95);color:#fff;border-radius:18px;padding:5px;display:flex;gap:2px;box-shadow:0 14px 40px rgba(0,0,0,.18)}.global-dock a{min-width:68px;text-align:center;padding:7px 8px;border-radius:13px;font-size:9px;font-weight:850}.global-dock a span{display:block;font-size:15px}
@@ -48,21 +48,21 @@ footer{background:#202b24;color:#dce5df;padding:40px 0}footer p{font-size:12px;c
 <div class="global-dock"></div>
 <script>
 const meals=[
-{n:"Pasta con pesto y tomate",t:"rapida",s:["variada","comfort","aprovecha"],need:["pasta","tomate","frutos secos","hierbas"],uses:["pasta","tomate","frutos","hierbascong"]},
-{n:"Hummus + crudités + pan",t:"rapida",s:["ligera","aprovecha","variada"],need:["garbanzos","zanahoria o pepino","pan","limón"],uses:["legumbres","pan","limon","ajo","comino"]},
-{n:"Huevos al plato con verduras",t:"rapida",s:["variada","comfort","aprovecha"],need:["huevos","verduras","tomate"],uses:["huevos","verdurascong","tomate"]},
-{n:"Arroz salteado de aprovechamiento",t:"rapida",s:["aprovecha","variada"],need:["arroz","verduras","huevo o proteína"],uses:["arroz","verdurascong","huevos","protecong"]},
-{n:"Crema de verduras + topping crujiente",t:"rapida",s:["ligera","aprovecha"],need:["verduras","caldo","frutos secos"],uses:["verdurascong","caldo","frutos"]},
-{n:"Merluza al vapor + verduras",t:"mixta",s:["ligera","variada"],need:["pescado","verduras","limón"],uses:["protecong","verdurascong","limon"]},
-{n:"Albóndigas con tomate",t:"mixta",s:["comfort","variada"],need:["carne picada","tomate","cebolla"],uses:["tomate","cebolla","ajo","oregano"]},
-{n:"Curry de garbanzos y verduras",t:"mixta",s:["variada","ligera","aprovecha"],need:["garbanzos","verduras","curry"],uses:["legumbres","verdurascong","curry","cebolla"]},
-{n:"Tortilla + ensalada completa",t:"rapida",s:["ligera","variada"],need:["huevos","patata o verdura","ensalada"],uses:["huevos","cebolla"]},
-{n:"Pizza casera con restos de verduras",t:"tranquila",s:["comfort","aprovecha","variada"],need:["harina","levadura","tomate","mozzarella"],uses:["tomate","oregano"]},
-{n:"Pollo al horno con limón y especias",t:"tranquila",s:["variada","comfort"],need:["pollo","patata","limón"],uses:["protecong","limon","pimenton"]},
-{n:"Lentejas rápidas con verduras",t:"mixta",s:["comfort","ligera","aprovecha"],need:["lentejas","verduras","tomate"],uses:["legumbres","tomate","cebolla","pimenton"]},
-{n:"Bol de arroz, verduras y salsa de yogur",t:"rapida",s:["ligera","variada","aprovecha"],need:["arroz","verduras","yogur"],uses:["arroz","verdurascong","limon"]},
-{n:"Pescado en papillote + patata",t:"mixta",s:["ligera","variada"],need:["pescado","patata","hierbas"],uses:["protecong","hierbascong","limon"]},
-{n:"Pisto + huevo",t:"mixta",s:["ligera","aprovecha","variada"],need:["calabacín","pimiento","tomate","huevos"],uses:["tomate","huevos","cebolla","ajo"]}
+{n:"Pasta con pesto y tomate",slug:"pasta-pesto-tomate",t:"rapida",s:["variada","comfort","aprovecha"],need:["pasta","tomate","frutos secos","hierbas"],uses:["pasta","tomate","frutos","hierbascong"]},
+{n:"Hummus + crudités + pan",slug:"hummus-cremoso",t:"rapida",s:["ligera","aprovecha","variada"],need:["garbanzos","zanahoria o pepino","pan","limón"],uses:["legumbres","pan","limon","ajo","comino"]},
+{n:"Huevos al plato con verduras",slug:"huevos-verduras-pan",t:"rapida",s:["variada","comfort","aprovecha"],need:["huevos","verduras","tomate"],uses:["huevos","verdurascong","tomate"]},
+{n:"Arroz salteado de aprovechamiento",slug:"bol-arroz-aprovechamiento",t:"rapida",s:["aprovecha","variada"],need:["arroz","verduras","huevo o proteína"],uses:["arroz","verdurascong","huevos","protecong"]},
+{n:"Crema de verduras + topping crujiente",slug:"crema-verduras",t:"rapida",s:["ligera","aprovecha"],need:["verduras","caldo","frutos secos"],uses:["verdurascong","caldo","frutos"]},
+{n:"Merluza al vapor + verduras",slug:"merluza-vapor-verduras",t:"mixta",s:["ligera","variada"],need:["pescado","verduras","limón"],uses:["protecong","verdurascong","limon"]},
+{n:"Albóndigas con tomate",slug:"albondigas-tomate",t:"mixta",s:["comfort","variada"],need:["carne picada","tomate","cebolla"],uses:["tomate","cebolla","ajo","oregano"]},
+{n:"Curry de garbanzos y verduras",slug:"curry-garbanzos-verduras",t:"mixta",s:["variada","ligera","aprovecha"],need:["garbanzos","verduras","curry"],uses:["legumbres","verdurascong","curry","cebolla"]},
+{n:"Tortilla + ensalada completa",slug:"tortilla-ensalada",t:"rapida",s:["ligera","variada"],need:["huevos","patata o verdura","ensalada"],uses:["huevos","cebolla"]},
+{n:"Pizza casera con restos de verduras",slug:"pizza-verduras",t:"tranquila",s:["comfort","aprovecha","variada"],need:["harina","levadura","tomate","mozzarella"],uses:["tomate","oregano"]},
+{n:"Pollo al horno con limón y especias",slug:"pollo-horno-limon",t:"tranquila",s:["variada","comfort"],need:["pollo","patata","limón"],uses:["protecong","limon","pimenton"]},
+{n:"Lentejas rápidas con verduras",slug:"lentejas-rapidas",t:"mixta",s:["comfort","ligera","aprovecha"],need:["lentejas","verduras","tomate"],uses:["legumbres","tomate","cebolla","pimenton"]},
+{n:"Bol de arroz, verduras y salsa de yogur",slug:"bol-arroz-aprovechamiento",t:"rapida",s:["ligera","variada","aprovecha"],need:["arroz","verduras","yogur"],uses:["arroz","verdurascong","limon"]},
+{n:"Pescado en papillote + patata",slug:"pescado-papillote",t:"mixta",s:["ligera","variada"],need:["pescado","patata","hierbas"],uses:["protecong","hierbascong","limon"]},
+{n:"Pisto + huevo",slug:"pisto-huevo",t:"mixta",s:["ligera","aprovecha","variada"],need:["calabacín","pimiento","tomate","huevos"],uses:["tomate","huevos","cebolla","ajo"]}
 ];
 let state={time:"rapida",style:"variada",people:"2"},current=[];
 let incoming=null;
@@ -105,7 +105,7 @@ function build(){
  const days=["Lunes","Martes","Miércoles","Jueves","Viernes"];
  const peopleLabel=state.people==="1"?"1 persona":state.people==="2"?"2 personas":state.people==="4"?"3–4 personas":"5 o más personas";
  document.getElementById("peopleNote").textContent="Propuesta pensada para "+peopleLabel+". Ajusta cantidades a vuestro apetito y edades.";
- document.getElementById("week").innerHTML=current.map((m,i)=>'<article class="day"><small>'+days[i]+'</small><h3>'+m.n+'</h3><p>'+(i===0&&incoming?"La idea que elegiste hoy se queda aquí.":m.t==="rapida"?"Pensada para un día con poco margen.":m.t==="mixta"?"Necesita algo de cocina, sin complicar la tarde.":"Para el día en que sí te apetece cocinar.")+'</p><b>'+((m.s||[]).includes("aprovecha")?"Buena para aprovechar":"Cambio de registro")+'</b></article>').join("");
+ document.getElementById("week").innerHTML=current.map((m,i)=>'<article class="day"><small>'+days[i]+'</small><h3>'+(m.slug?'<a href="/receta.html?r='+encodeURIComponent(m.slug)+'">'+m.n+'</a>':m.n)+'</h3><p>'+(i===0&&incoming?"La idea que elegiste hoy se queda aquí.":m.t==="rapida"?"Pensada para un día con poco margen.":m.t==="mixta"?"Necesita algo de cocina, sin complicar la tarde.":"Para el día en que sí te apetece cocinar.")+'</p><b>'+((m.s||[]).includes("aprovecha")?"Buena para aprovechar":"Cambio de registro")+'</b>'+(m.slug?'<a class="recipe-link" href="/receta.html?r='+encodeURIComponent(m.slug)+'">Ver receta completa →</a>':'')+'</article>').join("");
  const shop=shoppingFor(current);
  document.getElementById("shopping").innerHTML=shop.needed.length?shop.needed.map(x=>"<li>"+x+"</li>").join(""):"<li>Con lo que tienes marcado, no detecto básicos pendientes. Revisa sólo frescos y cantidades.</li>";
  const covered=document.getElementById("coveredByPantry");
