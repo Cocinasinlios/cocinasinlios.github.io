@@ -63,31 +63,33 @@ if(document.querySelector("footer") &&
 }
 
 // Minimal cookieless product instrumentation.
-// Events are aggregated locally on this device. If a same-origin endpoint is configured
-// later with <meta name="csl-analytics-endpoint" content="...">, the same anonymous
-// event payload can be delivered with sendBeacon without changing page code.
+// Locally, only aggregate counters are stored on this device: no event history,
+// user identifier, referrer URL or per-visit timeline is persisted.
+// A same-origin endpoint can be configured later; none is configured by default.
 const usageKey="csl-usage-v1";
 function cleanValue(v){return String(v??"").slice(0,120).replace(/[<>]/g,"")}
 function track(name,detail={}){
-  const event={
-    event:cleanValue(name),
-    path,
-    target:cleanValue(detail.target||""),
-    source:document.referrer?(new URL(document.referrer,location.href).origin===location.origin?"internal":"external"):"direct",
-    viewport:innerWidth<600?"mobile":innerWidth<950?"tablet":"desktop",
-    ts:Date.now()
-  };
+  const eventName=cleanValue(name);
+  const target=cleanValue(detail.target||"");
   try{
-    const usage=JSON.parse(localStorage.getItem(usageKey)||'{"counts":{},"recent":[]}');
+    const usage=JSON.parse(localStorage.getItem(usageKey)||'{"counts":{}}');
     usage.counts=usage.counts||{};
-    const key=event.event+"|"+event.path+(event.target?"|"+event.target:"");
+    const key=eventName+"|"+path+(target?"|"+target:"");
     usage.counts[key]=(usage.counts[key]||0)+1;
-    usage.recent=[event,...(usage.recent||[])].slice(0,80);
+    usage.updatedAt=Date.now();
     localStorage.setItem(usageKey,JSON.stringify(usage));
   }catch(e){}
   const endpoint=document.querySelector('meta[name="csl-analytics-endpoint"]')?.content;
   if(endpoint&&endpoint.startsWith("/")&&navigator.sendBeacon){
-    try{navigator.sendBeacon(endpoint,new Blob([JSON.stringify(event)],{type:"application/json"}))}catch(e){}
+    const payload={
+      event:eventName,
+      path,
+      target,
+      source:document.referrer?(new URL(document.referrer,location.href).origin===location.origin?"internal":"external"):"direct",
+      viewport:innerWidth<600?"mobile":innerWidth<950?"tablet":"desktop",
+      ts:Date.now()
+    };
+    try{navigator.sendBeacon(endpoint,new Blob([JSON.stringify(payload)],{type:"application/json"}))}catch(e){}
   }
 }
 window.CSLTrack=track;
