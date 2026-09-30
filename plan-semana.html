@@ -32,7 +32,7 @@ footer{background:#202b24;color:#dce5df;padding:40px 0}footer p{font-size:12px;c
 <button id="go" class="go">Crear mi semana ✦</button>
 </div></section>
 <section id="results" class="results"><div class="wrap"><div class="eyebrow">Tu propuesta</div><h2 style="font-size:44px;margin:7px 0 20px">Esta semana empezaría por aquí.</h2><div id="week" class="week"></div>
-<div class="actions"><button id="save" class="btn primary">Guardar esta semana</button><button id="again" class="btn">Dame otra combinación</button><a class="btn" href="/despensa-sin-lios.html">Revisar despensa</a></div>
+<div class="actions"><button id="save" class="btn primary">Guardar esta semana</button><button id="share" class="btn">Compartir resumen</button><button id="again" class="btn">Dame otra combinación</button><a class="btn" href="/despensa-sin-lios.html">Revisar despensa</a></div>
 <div class="shopping"><div class="eyebrow">Compra corta</div><h2>Lo que probablemente tendrás que completar.</h2><ul id="shopping"></ul><p style="font-size:12px;color:#6b624e">La lista es orientativa. Revisa siempre lo que ya tienes, las cantidades de tu casa y cualquier alergia o restricción alimentaria.</p></div>
 </div></section>
 </main><footer><div class="wrap"><b>Cocina sin líos con Macarena</b><p>Planificador doméstico orientativo. La semana se guarda sólo cuando pulsas “Guardar esta semana” y permanece en este dispositivo.</p></div></footer>
@@ -79,5 +79,6 @@ function build(){
 document.getElementById("go").addEventListener("click",build);
 document.getElementById("again").addEventListener("click",build);
 document.getElementById("save").addEventListener("click",()=>{if(!current.length)return;try{localStorage.setItem("csl-plan-semana-v1",JSON.stringify({savedAt:new Date().toISOString(),state,meals:current.map(x=>x.n)}));document.getElementById("save").textContent="Semana guardada ✓"}catch(e){}});
+document.getElementById("share").addEventListener("click",async()=>{if(!current.length)return;const days=["Lunes","Martes","Miércoles","Jueves","Viernes"];const text="Mi semana Sin Líos ✦\n\n"+current.map((m,i)=>days[i]+": "+m.n).join("\n")+"\n\nPlanificado en cocinasinlios.com";try{if(navigator.share){await navigator.share({title:"Mi semana Sin Líos",text,url:"https://cocinasinlios.com/plan-semana.html"})}else{await navigator.clipboard.writeText(text);document.getElementById("share").textContent="Resumen copiado ✓"}}catch(e){}});
 </script><script src="/assets/site.js" defer></script>
 </body></html>
