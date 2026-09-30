@@ -11,7 +11,7 @@ Proyecto editorial propio de cocina doméstica y organización, publicado desde 
 - Organiza Sin Líos: decisiones y rutinas sencillas.
 
 ## Límites
-La web se mantiene separada de cualquier actividad de promoción o venta de productos de terceros. No incorpora analítica publicitaria, identificadores de usuario ni envío de datos de uso a terceros. Las preferencias funcionales y unos contadores agregados de uso se guardan localmente en el navegador.
+La web se mantiene separada de cualquier actividad de promoción o venta de productos de terceros. No incorpora publicidad comportamental ni identificadores de usuario. Las preferencias funcionales se guardan localmente en el navegador; los eventos técnicos agregados se envían al propio dominio y se registran en Cloudflare Workers Analytics Engine sin incluir el contenido de la despensa, preferencias, favoritos o plan semanal.
 
 ## Producción
 - Dominio: https://cocinasinlios.com/
