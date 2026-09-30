@@ -3,119 +3,107 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Planifica mi semana | Cocina sin líos con Macarena</title>
-<meta name="description" content="Crea una semana de cinco cenas según tu tiempo, tu estilo y tu despensa. Un planificador sencillo de Cocina sin líos.">
-<meta name="theme-color" content="#274034">
-<meta name="robots" content="index,follow"><link rel="canonical" href="https://cocinasinlios.com/plan-semana.html">
-<meta property="og:title" content="Planifica mi semana | Cocina sin líos con Macarena">
-<meta property="og:description" content="Crea cinco cenas según tu tiempo, tu estilo y tu despensa, guarda la semana y comparte la lista.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://cocinasinlios.com/plan-semana.html">
-<meta property="og:site_name" content="Cocina sin líos con Macarena">
-<meta property="og:image" content="https://cocinasinlios.com/assets/sprite.webp">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="Crea cinco cenas variadas teniendo en cuenta tiempo, despensa, semanas anteriores y una compra más corta. Cambia solo el día que no te convenza.">
+<meta name="theme-color" content="#274034"><meta name="robots" content="index,follow"><link rel="canonical" href="https://cocinasinlios.com/plan-semana.html">
+<meta property="og:title" content="Planifica mi semana | Cocina sin líos"><meta property="og:description" content="Cinco cenas, menos repeticiones y una compra que descuenta lo que ya tienes."><meta property="og:type" content="website"><meta property="og:url" content="https://cocinasinlios.com/plan-semana.html"><meta property="og:site_name" content="Cocina sin líos con Macarena"><meta property="og:image" content="https://cocinasinlios.com/assets/sprite.webp"><meta name="twitter:card" content="summary_large_image">
 <style>
 :root{--cream:#fbf6ee;--paper:#fffdfa;--ink:#25251f;--muted:#706f67;--dark:#274034;--sage:#dce8d8;--mint:#eef5eb;--peach:#f1d8c6;--butter:#f2df9d;--terr:#c97a58;--line:#e8dfd2;--shadow:0 18px 55px rgba(58,51,42,.10)}
-*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.5;padding-bottom:78px}a{color:inherit;text-decoration:none}.wrap{width:min(1080px,92vw);margin:auto}h1,h2,h3{font-family:Georgia,serif;font-weight:500;line-height:1.04}.eyebrow{font-size:11px;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;color:#687769}
-header{position:sticky;top:0;z-index:40;background:rgba(251,246,238,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.nav{height:76px;display:flex;align-items:center}.brand img{width:185px}.back{margin-left:auto;font-size:13px;font-weight:850}
-.hero{padding:62px 0 30px}.hero h1{font-size:clamp(50px,7vw,82px);letter-spacing:-2.5px;margin:8px 0 15px;max-width:850px}.hero p{font-size:18px;color:var(--muted);max-width:720px}
-.panel{background:var(--paper);border:1px solid var(--line);border-radius:30px;padding:30px;box-shadow:var(--shadow);margin-bottom:28px}.question{margin:0 0 26px}.question h2{font-size:30px;margin:0 0 12px}.choices{display:flex;flex-wrap:wrap;gap:9px}.choice{border:1px solid var(--line);background:white;border-radius:999px;padding:11px 15px;font-weight:850;cursor:pointer}.choice.active{background:var(--dark);color:#fff;border-color:var(--dark)}
-.pantry{background:var(--sage);border-radius:20px;padding:16px 18px;margin:20px 0}.pantry b{font-family:Georgia,serif;font-size:23px;font-weight:500}.pantry span{display:block;color:#536056;font-size:12px;margin-top:4px}
-.go{width:100%;border:0;background:var(--terr);color:#fff;border-radius:18px;padding:16px;font-weight:900;font-size:15px;cursor:pointer}
-.results{display:none;padding:34px 0 70px}.results.show{display:block}.week{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.day{background:white;border:1px solid var(--line);border-radius:22px;padding:18px;min-height:230px}.day:nth-child(2n){background:var(--mint)}.day:nth-child(3n){background:var(--peach)}.day small{font-size:9px;letter-spacing:1.2px;text-transform:uppercase;font-weight:900;color:#6d786e}.day h3{font-size:24px;margin:8px 0}.day h3 a{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}.day p{font-size:12px;color:var(--muted)}.day b{font-size:11px}.recipe-link{display:inline-block;margin-top:10px;font-size:11px;font-weight:900;text-decoration:underline}
-.actions{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}.btn{display:inline-flex;border-radius:999px;padding:12px 16px;border:1px solid var(--dark);font-weight:900;font-size:12px}.btn.primary{background:var(--dark);color:white}
-.shopping{background:var(--butter);border-radius:26px;padding:26px;margin-top:24px}.shopping h2{font-size:35px;margin:5px 0 12px}.shopping ul{columns:2;padding-left:20px}.shopping li{margin:7px 0}
-.global-dock{position:fixed;left:50%;bottom:12px;transform:translateX(-50%);z-index:120;background:rgba(34,43,37,.95);color:#fff;border-radius:18px;padding:5px;display:flex;gap:2px;box-shadow:0 14px 40px rgba(0,0,0,.18)}.global-dock a{min-width:68px;text-align:center;padding:7px 8px;border-radius:13px;font-size:9px;font-weight:850}.global-dock a span{display:block;font-size:15px}
-footer{background:#202b24;color:#dce5df;padding:40px 0}footer p{font-size:12px;color:#aebbb3}
-@media(max-width:880px){.week{grid-template-columns:1fr 1fr}.brand img{width:165px}}@media(max-width:560px){.week{grid-template-columns:1fr}.panel{padding:22px}.shopping ul{columns:1}.global-dock{left:10px;right:10px;transform:none}.global-dock a{min-width:0;flex:1;padding:6px 3px}}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.52;padding-bottom:78px}a{color:inherit;text-decoration:none}.wrap{width:min(1120px,92vw);margin:auto}h1,h2,h3{font-family:Georgia,serif;font-weight:500;line-height:1.04}.eyebrow{font-size:10px;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;color:#687769}
+header{position:sticky;top:0;z-index:40;background:rgba(251,246,238,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.nav{height:76px;display:flex;align-items:center;gap:22px}.brand img{width:185px}.navlinks{margin-left:auto;display:flex;gap:18px;font-size:13px;font-weight:800}
+.hero{padding:58px 0 30px}.hero h1{font-size:clamp(50px,7vw,82px);letter-spacing:-2.5px;margin:8px 0 14px;max-width:880px}.hero p{font-size:18px;color:var(--muted);max-width:750px}.panel{background:var(--paper);border:1px solid var(--line);border-radius:30px;padding:28px;box-shadow:var(--shadow);margin-bottom:28px}.questions{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.question{background:white;border:1px solid var(--line);border-radius:20px;padding:17px}.question h2{font-size:25px;margin:0 0 11px}.choices{display:flex;gap:7px;flex-wrap:wrap}.choice{border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:9px 12px;font-size:11px;font-weight:850;cursor:pointer}.choice.active{background:var(--dark);color:white;border-color:var(--dark)}.context{background:var(--sage);border-radius:18px;padding:14px 16px;margin-top:14px;font-size:12px;color:#536056}.context b{display:block;color:var(--ink);font-family:Georgia,serif;font-size:21px;font-weight:500}.go{width:100%;border:0;background:var(--terr);color:white;border-radius:18px;padding:16px;font-weight:900;font-size:15px;cursor:pointer;margin-top:16px}
+.results{display:none;padding:34px 0 70px}.results.show{display:block}.introline{display:flex;justify-content:space-between;align-items:end;gap:20px}.introline h2{font-size:44px;margin:6px 0}.why{background:var(--sage);border-radius:18px;padding:13px 16px;font-size:12px;color:#536056;margin:12px 0 20px}.week{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.day{background:white;border:1px solid var(--line);border-radius:22px;padding:17px;min-height:250px;display:flex;flex-direction:column}.day:nth-child(2n){background:var(--mint)}.day:nth-child(3n){background:var(--peach)}.day small{font-size:9px;letter-spacing:1px;text-transform:uppercase;font-weight:900;color:#6d786e}.day h3{font-size:23px;margin:8px 0}.day h3 a{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}.day p{font-size:12px;color:var(--muted);margin:0 0 10px}.day .tag{font-size:10px;font-weight:850;margin-top:auto}.swap{border:0;background:transparent;text-decoration:underline;text-align:left;padding:8px 0 0;font-size:10px;font-weight:900;cursor:pointer}.fixed{font-size:10px;font-weight:900;margin-top:8px}.actions{display:flex;gap:9px;flex-wrap:wrap;margin:20px 0}.btn{display:inline-flex;border-radius:999px;padding:11px 15px;border:1px solid var(--dark);font-weight:900;font-size:11px;background:transparent;color:var(--dark);cursor:pointer}.btn.primary{background:var(--dark);color:white}
+.shopping{display:grid;grid-template-columns:1.2fr .8fr;gap:16px}.box{border-radius:24px;padding:23px}.buy{background:var(--butter)}.covered{background:var(--sage)}.box h2{font-size:32px;margin:4px 0 10px}.box ul{columns:2;padding-left:18px}.box li{margin:6px 0;font-size:13px}.covered ul{columns:1}.small{font-size:11px;color:#675f50}.global-dock{position:fixed;left:50%;bottom:12px;transform:translateX(-50%);z-index:120;background:rgba(34,43,37,.95);color:#fff;border-radius:18px;padding:5px;display:flex;gap:2px;box-shadow:0 14px 40px rgba(0,0,0,.18)}.global-dock a{min-width:68px;text-align:center;padding:7px 8px;border-radius:13px;font-size:9px;font-weight:850}.global-dock a span{display:block;font-size:15px}footer{background:#202b24;color:#dce5df;padding:40px 0}footer p{font-size:12px;color:#aebbb3}
+@media(max-width:900px){.questions{grid-template-columns:1fr}.week{grid-template-columns:1fr 1fr}.shopping{grid-template-columns:1fr}.navlinks{display:none}.brand img{width:165px}}@media(max-width:600px){.hero{padding:40px 0 22px}.hero h1{font-size:47px}.panel{padding:20px}.week{grid-template-columns:1fr}.introline{display:block}.box ul{columns:1}.global-dock{left:10px;right:10px;transform:none}.global-dock a{min-width:0;flex:1;padding:6px 3px}}
 </style>
-</head><body>
-<header><div class="wrap nav"><a class="brand" href="/"><img src="/assets/logo-cocina-sin-lios.svg" alt="Cocina sin líos con Macarena"></a><a class="back" href="/explora.html">← Explora</a></div></header>
+</head>
+<body>
+<header><div class="wrap nav"><a class="brand" href="/"><img src="/assets/logo-cocina-sin-lios.svg" alt="Cocina sin líos con Macarena"></a><nav class="navlinks"></nav></div></header>
 <main>
-<section class="hero"><div class="wrap"><div class="eyebrow">Planificador Sin Líos</div><h1>Cinco cenas. Ni una operación militar.</h1><p>Dime cómo viene tu semana y te propongo cinco cenas razonables. Si ya has marcado tu Despensa Sin Líos, la tendré en cuenta para aprovechar mejor lo que hay en casa.</p></div></section>
-<section><div class="wrap panel">
-<div class="question"><h2>1. ¿Cómo vas de tiempo entre semana?</h2><div class="choices" data-group="time"><button class="choice active" data-value="rapida">Voy justa</button><button class="choice" data-value="mixta">Un poco de todo</button><button class="choice" data-value="tranquila">Puedo cocinar</button></div></div>
-<div class="question"><h2>2. ¿Qué quieres priorizar?</h2><div class="choices" data-group="style"><button class="choice active" data-value="variada">Variar</button><button class="choice" data-value="ligera">Ligero</button><button class="choice" data-value="comfort">Comida de abrazo</button><button class="choice" data-value="aprovecha">Aprovechar</button></div></div>
-<div class="question"><h2>3. ¿Para cuántas personas?</h2><div class="choices" data-group="people"><button class="choice" data-value="1">1</button><button class="choice active" data-value="2">2</button><button class="choice" data-value="4">3–4</button><button class="choice" data-value="5">5+</button></div></div>
-<div id="incomingIdea" class="pantry" style="display:none"></div>
-<div id="pantryInfo" class="pantry"><b>Tu despensa puede ayudar.</b><span>Si antes marcas lo que tienes en Despensa Sin Líos, priorizaré ideas que reutilicen esa base.</span></div>
-<button id="go" class="go">Crear mi semana ✦</button>
+<section class="hero"><div class="wrap"><div class="eyebrow">Planificador Sin Líos</div><h1>Cinco cenas. Sin empezar de cero cada tarde.</h1><p>Combino variedad, tiempo, lo que ya tienes y lo que hiciste la semana anterior. Si un día no te convence, cambias solo ese día.</p></div></section>
+<section><div class="wrap panel"><div class="questions">
+<div class="question"><h2>1. Tiempo</h2><div class="choices" data-group="time"><button class="choice active" data-value="rapida">Voy justa</button><button class="choice" data-value="mixta">Un poco de todo</button><button class="choice" data-value="tranquila">Puedo cocinar</button></div></div>
+<div class="question"><h2>2. Prioridad</h2><div class="choices" data-group="style"><button class="choice active" data-value="variada">Variar</button><button class="choice" data-value="ligera">Ligero</button><button class="choice" data-value="comfort">De abrazo</button><button class="choice" data-value="aprovecha">Aprovechar</button></div></div>
+<div class="question"><h2>3. Personas</h2><div class="choices" data-group="people"><button class="choice" data-value="1">1</button><button class="choice active" data-value="2">2</button><button class="choice" data-value="4">3–4</button><button class="choice" data-value="5">5+</button></div></div>
+</div><div id="context" class="context"></div><button id="go" class="go" type="button">Crear una semana que tenga sentido ✦</button></div></section>
+<section id="results" class="results"><div class="wrap"><div class="introline"><div><div class="eyebrow">Tu propuesta</div><h2>Esta semana empezaría por aquí.</h2></div><button id="again" class="btn" type="button">Otra semana completa</button></div><div id="why" class="why"></div><div id="week" class="week"></div>
+<div class="actions"><button id="save" class="btn primary" type="button">Guardar esta semana</button><button id="share" class="btn" type="button">Compartir resumen</button><a id="openKitchen" class="btn" href="/mi-rincon.html" style="display:none">Abrir Mi cocina →</a><a class="btn" href="/despensa-sin-lios.html">Revisar despensa</a></div>
+<div class="shopping"><div class="box buy"><div class="eyebrow">Compra corta</div><h2>Lo que te falta.</h2><ul id="shopping"></ul><p class="small">Lista orientativa: revisa cantidades, frescos, alergias y lo que tengas fuera de la despensa marcada.</p></div><div class="box covered"><div class="eyebrow">Ya está en casa</div><h2>Lo que no vuelvo a añadir.</h2><ul id="covered"></ul></div></div>
 </div></section>
-<section id="results" class="results"><div class="wrap"><div class="eyebrow">Tu propuesta</div><h2 style="font-size:44px;margin:7px 0 6px">Esta semana empezaría por aquí.</h2><p id="peopleNote" style="color:var(--muted);margin:0 0 20px"></p><div id="week" class="week"></div>
-<div class="actions"><button id="save" class="btn primary">Guardar esta semana</button><button id="share" class="btn">Compartir resumen</button><button id="again" class="btn">Dame otra combinación</button><a class="btn" href="/despensa-sin-lios.html">Revisar despensa</a><a id="openKitchen" class="btn" href="/mi-rincon.html" style="display:none">Abrir Mi cocina →</a></div>
-<div class="shopping"><div class="eyebrow">Compra corta</div><h2>Lo que probablemente tendrás que completar.</h2><ul id="shopping"></ul><p id="coveredByPantry" style="font-size:12px;color:#536056;font-weight:800"></p><p style="font-size:12px;color:#6b624e">La lista es orientativa. Revisa siempre lo que ya tienes, las cantidades de tu casa y cualquier alergia o restricción alimentaria.</p></div>
-</div></section>
-</main><footer><div class="wrap"><b>Cocina sin líos con Macarena</b><p>Planificador doméstico orientativo. La semana se guarda sólo cuando pulsas “Guardar esta semana” y permanece en este dispositivo.</p></div></footer>
+</main>
+<footer><div class="wrap"><b>Cocina sin líos con Macarena</b><p>El plan se calcula en este dispositivo. Solo se guarda cuando pulsas “Guardar esta semana”.</p></div></footer>
 <div class="global-dock"></div>
+<script src="/assets/recipes-data.js"></script>
 <script>
-const meals=[
-{n:"Pasta con pesto y tomate",slug:"pasta-pesto-tomate",t:"rapida",s:["variada","comfort","aprovecha"],need:["pasta","tomate","frutos secos","hierbas"],uses:["pasta","tomate","frutos","hierbascong"]},
-{n:"Hummus + crudités + pan",slug:"hummus-cremoso",t:"rapida",s:["ligera","aprovecha","variada"],need:["garbanzos","zanahoria o pepino","pan","limón"],uses:["legumbres","pan","limon","ajo","comino"]},
-{n:"Huevos al plato con verduras",slug:"huevos-verduras-pan",t:"rapida",s:["variada","comfort","aprovecha"],need:["huevos","verduras","tomate"],uses:["huevos","verdurascong","tomate"]},
-{n:"Arroz salteado de aprovechamiento",slug:"bol-arroz-aprovechamiento",t:"rapida",s:["aprovecha","variada"],need:["arroz","verduras","huevo o proteína"],uses:["arroz","verdurascong","huevos","protecong"]},
-{n:"Crema de verduras + topping crujiente",slug:"crema-verduras",t:"rapida",s:["ligera","aprovecha"],need:["verduras","caldo","frutos secos"],uses:["verdurascong","caldo","frutos"]},
-{n:"Merluza al vapor + verduras",slug:"merluza-vapor-verduras",t:"mixta",s:["ligera","variada"],need:["pescado","verduras","limón"],uses:["protecong","verdurascong","limon"]},
-{n:"Albóndigas con tomate",slug:"albondigas-tomate",t:"mixta",s:["comfort","variada"],need:["carne picada","tomate","cebolla"],uses:["tomate","cebolla","ajo","oregano"]},
-{n:"Curry de garbanzos y verduras",slug:"curry-garbanzos-verduras",t:"mixta",s:["variada","ligera","aprovecha"],need:["garbanzos","verduras","curry"],uses:["legumbres","verdurascong","curry","cebolla"]},
-{n:"Tortilla + ensalada completa",slug:"tortilla-ensalada",t:"rapida",s:["ligera","variada"],need:["huevos","patata o verdura","ensalada"],uses:["huevos","cebolla"]},
-{n:"Pizza casera con restos de verduras",slug:"pizza-verduras",t:"tranquila",s:["comfort","aprovecha","variada"],need:["harina","levadura","tomate","mozzarella"],uses:["tomate","oregano"]},
-{n:"Pollo al horno con limón y especias",slug:"pollo-horno-limon",t:"tranquila",s:["variada","comfort"],need:["pollo","patata","limón"],uses:["protecong","limon","pimenton"]},
-{n:"Lentejas rápidas con verduras",slug:"lentejas-rapidas",t:"mixta",s:["comfort","ligera","aprovecha"],need:["lentejas","verduras","tomate"],uses:["legumbres","tomate","cebolla","pimenton"]},
-{n:"Bol de arroz, verduras y salsa de yogur",slug:"bol-arroz-aprovechamiento",t:"rapida",s:["ligera","variada","aprovecha"],need:["arroz","verduras","yogur"],uses:["arroz","verdurascong","limon"]},
-{n:"Pescado en papillote + patata",slug:"pescado-papillote",t:"mixta",s:["ligera","variada"],need:["pescado","patata","hierbas"],uses:["protecong","hierbascong","limon"]},
-{n:"Pisto + huevo",slug:"pisto-huevo",t:"mixta",s:["ligera","aprovecha","variada"],need:["calabacín","pimiento","tomate","huevos"],uses:["tomate","huevos","cebolla","ajo"]}
-];
-let state={time:"rapida",style:"variada",people:"2"},current=[];
-let incoming=null;
-try{incoming=JSON.parse(localStorage.getItem("csl-idea-semana-v1")||"null")}catch(e){}
-if(incoming&&incoming.n){
- const box=document.getElementById("incomingIdea");
- box.style.display="block";
- box.innerHTML="<b>Ya traes una idea para esta semana.</b><span><strong>"+String(incoming.n).replace(/[<>&]/g,"")+"</strong> se queda fija y completaré alrededor de ella las otras cuatro cenas.</span>";
-}
-document.querySelectorAll(".choices").forEach(g=>g.querySelectorAll(".choice").forEach(b=>b.addEventListener("click",()=>{g.querySelectorAll(".choice").forEach(x=>x.classList.remove("active"));b.classList.add("active");state[g.dataset.group]=b.dataset.value})));
-let pantry={};try{pantry=JSON.parse(localStorage.getItem("csl-despensa-v1")||"{}")}catch(e){}
-const pantryKeys=Object.keys(pantry).filter(k=>pantry[k]);
-const needKey={
- "pasta":"pasta","tomate":"tomate","frutos secos":"frutos","hierbas":"hierbascong",
- "garbanzos":"legumbres","pan":"pan","limón":"limon","huevos":"huevos","verduras":"verdurascong",
- "arroz":"arroz","caldo":"caldo","pescado":"protecong","cebolla":"cebolla","curry":"curry",
- "lentejas":"legumbres","aceite de oliva":"aove","ajo":"ajo","comino":"comino","orégano":"oregano"
-};
-function shoppingFor(items){
- const raw=[...new Set(items.flatMap(m=>m.need||[]))];
- const covered=[],needed=[];
- raw.forEach(x=>{
-   const k=needKey[String(x).toLowerCase()];
-   if(k&&pantry[k])covered.push(x); else needed.push(x);
- });
- return {needed,covered};
-}
-if(pantryKeys.length){document.getElementById("pantryInfo").innerHTML="<b>Tengo en cuenta "+pantryKeys.length+" cosas de tu despensa.</b><span>Voy a favorecer propuestas que reutilicen esa base antes de añadir más compra.</span>"}
-function score(m){
- let v=m.s.includes(state.style)?4:0;
- if(state.time==="rapida")v+=m.t==="rapida"?4:m.t==="mixta"?1:-1;
- if(state.time==="mixta")v+=m.t==="rapida"||m.t==="mixta"?3:1;
- if(state.time==="tranquila")v+=2;
- v+=(m.uses||[]).filter(k=>pantry[k]).length*2;
- return v+Math.random()*1.8;
-}
-function build(){
- const base=[...meals].filter(m=>!incoming||m.n!==incoming.n).sort((a,b)=>score(b)-score(a));
- current=incoming?[incoming,...base.slice(0,4)]:base.slice(0,5);
- const days=["Lunes","Martes","Miércoles","Jueves","Viernes"];
- const peopleLabel=state.people==="1"?"1 persona":state.people==="2"?"2 personas":state.people==="4"?"3–4 personas":"5 o más personas";
- document.getElementById("peopleNote").textContent="Propuesta pensada para "+peopleLabel+". Ajusta cantidades a vuestro apetito y edades.";
- document.getElementById("week").innerHTML=current.map((m,i)=>'<article class="day"><small>'+days[i]+'</small><h3>'+(m.slug?'<a href="/receta.html?r='+encodeURIComponent(m.slug)+'">'+m.n+'</a>':m.n)+'</h3><p>'+(i===0&&incoming?"La idea que elegiste hoy se queda aquí.":m.t==="rapida"?"Pensada para un día con poco margen.":m.t==="mixta"?"Necesita algo de cocina, sin complicar la tarde.":"Para el día en que sí te apetece cocinar.")+'</p><b>'+((m.s||[]).includes("aprovecha")?"Buena para aprovechar":"Cambio de registro")+'</b>'+(m.slug?'<a class="recipe-link" href="/receta.html?r='+encodeURIComponent(m.slug)+'">Ver receta completa →</a>':'')+'</article>').join("");
- const shop=shoppingFor(current);
- document.getElementById("shopping").innerHTML=shop.needed.length?shop.needed.map(x=>"<li>"+x+"</li>").join(""):"<li>Con lo que tienes marcado, no detecto básicos pendientes. Revisa sólo frescos y cantidades.</li>";
- const covered=document.getElementById("coveredByPantry");
- covered.textContent=shop.covered.length?"Ya tienes marcado en tu despensa: "+shop.covered.join(", ")+". No lo añado a la compra.":"";
- document.getElementById("results").classList.add("show");
- document.getElementById("results").scrollIntoView({behavior:"smooth",block:"start"});
-}
-document.getElementById("go").addEventListener("click",build);
-document.getElementById("again").addEventListener("click",build);
-document.getElementById("save").addEventListener("click",()=>{if(!current.length)return;try{const shop=shoppingFor(current);localStorage.setItem("csl-plan-semana-v1",JSON.stringify({savedAt:new Date().toISOString(),state,meals:current.map(x=>x.n),items:current,shopping:shop.needed,covered:shop.covered}));localStorage.removeItem("csl-idea-semana-v1");document.getElementById("save").textContent="Semana guardada ✓";document.getElementById("openKitchen").style.display="inline-flex"}catch(e){}});
-document.getElementById("share").addEventListener("click",async()=>{if(!current.length)return;const days=["Lunes","Martes","Miércoles","Jueves","Viernes"];const peopleLabel=state.people==="1"?"1 persona":state.people==="2"?"2 personas":state.people==="4"?"3–4 personas":"5 o más personas";const text="Mi semana Sin Líos ✦ · "+peopleLabel+"\n\n"+current.map((m,i)=>days[i]+": "+m.n).join("\n")+"\n\nPlanificado en cocinasinlios.com";try{if(navigator.share){await navigator.share({title:"Mi semana Sin Líos",text,url:"https://cocinasinlios.com/plan-semana.html"})}else{await navigator.clipboard.writeText(text);document.getElementById("share").textContent="Resumen copiado ✓"}}catch(e){}});
-</script><script src="/assets/site.js" defer></script>
+(()=>{
+ const recipes=(window.CSL_RECIPES||[]).filter(r=>r.tags.includes("cena")&&r.plan);
+ let state={time:"rapida",style:"variada",people:"2"},current=[];
+ let pantry={};try{pantry=JSON.parse(localStorage.getItem("csl-despensa-v1")||"{}")}catch(e){}
+ const pantryKeys=Object.keys(pantry).filter(k=>pantry[k]);
+ let previous=null;try{previous=JSON.parse(localStorage.getItem("csl-plan-semana-v1")||"null")}catch(e){}
+ const previousSlugs=new Set((previous?.items||[]).map(x=>x.slug).filter(Boolean));
+ let incoming=null;try{incoming=JSON.parse(localStorage.getItem("csl-idea-semana-v1")||"null")}catch(e){}
+ const needKey={"pasta":"pasta","tomate":"tomate","frutos secos":"frutos","hierbas":"hierbascong","garbanzos":"legumbres","pan":"pan","limón":"limon","huevos":"huevos","verduras":"verdurascong","arroz":"arroz","caldo":"caldo","pescado":"protecong","cebolla":"cebolla","curry":"curry","lentejas":"legumbres","aceite de oliva":"aove","ajo":"ajo","comino":"comino","orégano":"oregano","pollo":"protecong"};
+ const context=document.getElementById("context");
+ const bits=[];
+ if(incoming?.n)bits.push("Traes fija: "+incoming.n);
+ if(pantryKeys.length)bits.push("Tengo en cuenta "+pantryKeys.length+" básicos de tu despensa");
+ if(previousSlugs.size)bits.push("Intentaré no repetir tu última semana");
+ context.innerHTML="<b>"+(bits.length?"Ya tengo contexto.":"Puedes empezar desde cero.")+"</b><span>"+(bits.length?bits.join(" · "):"Si marcas tu despensa, la próxima semana podré recortar mejor la compra.")+"</span>";
+ document.querySelectorAll(".choices").forEach(g=>g.querySelectorAll(".choice").forEach(b=>b.addEventListener("click",()=>{g.querySelectorAll(".choice").forEach(x=>x.classList.remove("active"));b.classList.add("active");state[g.dataset.group]=b.dataset.value})));
+ function shoppingFor(items){
+   const raw=[...new Set(items.flatMap(r=>r.plan?.need||[]))],covered=[],needed=[];
+   raw.forEach(x=>{const k=needKey[String(x).toLowerCase()];if(k&&pantry[k])covered.push(x);else needed.push(x)});
+   return {needed,covered};
+ }
+ function score(r,selected=[]){
+   let s=0,p=r.plan;
+   if(p.s.includes(state.style))s+=5;
+   if(state.time==="rapida")s+=p.t==="rapida"?7:p.t==="mixta"?1:-4;
+   if(state.time==="mixta")s+=p.t==="rapida"?4:p.t==="mixta"?5:1;
+   if(state.time==="tranquila")s+=p.t==="tranquila"?4:3;
+   s+=(p.uses||[]).filter(k=>pantry[k]).length*2;
+   if(previousSlugs.has(r.slug))s-=5;
+   const cats=new Set(selected.map(x=>x.category)),tagCounts={};
+   selected.forEach(x=>(x.tags||[]).forEach(t=>tagCounts[t]=(tagCounts[t]||0)+1));
+   if(cats.has(r.category))s-=2.5;
+   if(r.tags.includes("comfort")&&(tagCounts.comfort||0)>=2)s-=3;
+   if(r.tags.includes("ligera")&&(tagCounts.ligera||0)>=3)s-=2;
+   return s+Math.random()*1.5;
+ }
+ function resolveIncoming(){
+   if(!incoming?.n)return null;
+   return recipes.find(r=>r.slug===incoming.slug)||{title:incoming.n,slug:incoming.slug||"",category:"Tu elección",tags:incoming.s||["cena"],time:incoming.t==="rapida"?"rápida":incoming.t==="mixta"?"media":"con calma",minutes:30,plan:{t:incoming.t||"mixta",s:incoming.s||["variada"],need:incoming.need||[],uses:incoming.uses||[]}};
+ }
+ function makePlan(){
+   const fixed=resolveIncoming(),selected=fixed?[fixed]:[];
+   const candidates=recipes.filter(r=>!fixed||r.slug!==fixed.slug);
+   while(selected.length<5){
+     const remaining=candidates.filter(r=>!selected.some(x=>x.slug===r.slug)).sort((a,b)=>score(b,selected)-score(a,selected));
+     if(!remaining.length)break;selected.push(remaining[0]);
+   }
+   return selected;
+ }
+ function render(){
+   const days=["Lunes","Martes","Miércoles","Jueves","Viernes"];
+   document.getElementById("week").innerHTML=current.map((r,i)=>'<article class="day"><small>'+days[i]+'</small><h3>'+(r.slug?'<a href="/receta.html?r='+encodeURIComponent(r.slug)+'">'+r.title+'</a>':r.title)+'</h3><p>'+(i===0&&incoming?"Tu elección se queda fija.":r.plan.t==="rapida"?"Día de poco margen.":r.plan.t==="mixta"?"Algo de cocina, sin secuestrar la tarde.":"Aquí sí merece la pena cocinar con calma.")+'</p><span class="tag">'+(r.tags.includes("aprovechar")?"Aprovechamiento":r.tags.includes("ligera")?"Más ligera":r.tags.includes("comfort")?"Comida de abrazo":"Cambio de registro")+'</span>'+(i===0&&incoming?'<span class="fixed">✓ Fija</span>':'<button class="swap" type="button" data-swap="'+i+'">Cambiar solo este día</button>')+'</article>').join("");
+   document.querySelectorAll("[data-swap]").forEach(b=>b.addEventListener("click",()=>swapDay(Number(b.dataset.swap))));
+   const shop=shoppingFor(current);
+   document.getElementById("shopping").innerHTML=shop.needed.length?shop.needed.map(x=>"<li>"+x+"</li>").join(""):"<li>Con lo marcado, no detecto básicos pendientes.</li>";
+   document.getElementById("covered").innerHTML=shop.covered.length?shop.covered.map(x=>"<li>"+x+"</li>").join(""):"<li>Aún no hay coincidencias con tu despensa marcada.</li>";
+   const rapid=current.filter(r=>r.plan.t==="rapida").length,light=current.filter(r=>r.tags.includes("ligera")).length,pantryUse=[...new Set(current.flatMap(r=>(r.plan.uses||[]).filter(k=>pantry[k])))].length;
+   document.getElementById("why").innerHTML="<b>Cómo está construida.</b>"+rapid+" cenas rápidas · "+light+" opciones ligeras · "+pantryUse+" básicos de tu despensa reutilizados"+(previousSlugs.size?" · penalizo repeticiones respecto a la última semana":"")+".";
+   document.getElementById("results").classList.add("show");document.getElementById("results").scrollIntoView({behavior:"smooth",block:"start"});
+ }
+ function build(){current=makePlan();render()}
+ function swapDay(i){
+   const selectedSlugs=new Set(current.map(x=>x.slug));
+   const options=recipes.filter(r=>!selectedSlugs.has(r.slug)).sort((a,b)=>score(b,current.filter((_,j)=>j!==i))-score(a,current.filter((_,j)=>j!==i)));
+   if(options[0]){current[i]=options[0];render()}
+ }
+ document.getElementById("go").addEventListener("click",build);document.getElementById("again").addEventListener("click",build);
+ document.getElementById("save").addEventListener("click",()=>{if(!current.length)return;try{const shop=shoppingFor(current);localStorage.setItem("csl-plan-semana-v1",JSON.stringify({savedAt:new Date().toISOString(),state,meals:current.map(x=>x.title),items:current.map(r=>({title:r.title,n:r.title,slug:r.slug,category:r.category,tags:r.tags,plan:r.plan})),shopping:shop.needed,covered:shop.covered}));localStorage.removeItem("csl-idea-semana-v1");incoming=null;document.getElementById("save").textContent="Semana guardada ✓";document.getElementById("openKitchen").style.display="inline-flex"}catch(e){}});
+ document.getElementById("share").addEventListener("click",async e=>{if(!current.length)return;const days=["Lunes","Martes","Miércoles","Jueves","Viernes"],people=state.people==="1"?"1 persona":state.people==="2"?"2 personas":state.people==="4"?"3–4 personas":"5 o más";const txt="Mi semana Sin Líos ✦ · "+people+"\n\n"+current.map((r,i)=>days[i]+": "+r.title).join("\n")+"\n\nhttps://cocinasinlios.com/plan-semana.html";try{if(navigator.share)await navigator.share({title:"Mi semana Sin Líos",text:txt});else{await navigator.clipboard.writeText(txt);e.currentTarget.textContent="Resumen copiado ✓"}}catch(err){}});
+})();
+</script>
+<script src="/assets/site.js" defer></script>
 </body></html>
