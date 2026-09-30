@@ -61,7 +61,7 @@ footer{background:#202b24;color:#dce5df;padding:40px 0}footer p{font-size:12px;c
  const exclusionLabels={pescado:"pescado",carne:"carne",huevo:"huevo",lacteos:"lácteos"};
  const recipeHay=r=>norm(r.title+" "+(r.ingredients||[]).join(" ")+" "+r.category);
  const freeAvoid=()=>norm(exclusions.text).split(/[,;]+/).map(x=>x.trim()).filter(x=>x.length>2);
- const isExcluded=r=>{const hay=recipeHay(r);return exclusions.groups.some(g=>(avoidMap[g]||[]).some(k=>hay.includes(k)))||freeAvoid().some(k=>hay.includes(k))};
+ const isExcluded=r=>{const hay=recipeHay(r);return exclusions.groups.some(g=>r.contains&&typeof r.contains[g]==="boolean"?r.contains[g]:(avoidMap[g]||[]).some(k=>hay.includes(k)))||freeAvoid().some(k=>hay.includes(k))};
  const saveExclusions=()=>{try{localStorage.setItem("csl-exclusions-v1",JSON.stringify(exclusions))}catch(e){}};
  const rId=r=>r.id||r.slug;
  const isFav=r=>favs.includes(rId(r))||favs.includes(r.slug);
