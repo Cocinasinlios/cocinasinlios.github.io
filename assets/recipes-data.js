@@ -197,7 +197,7 @@ window.CSL_RECIPES=[
    },
    {
     "t": "Cocina sin aplastar",
-    "x": "Vierte porciones en sartén caliente. Da la vuelta cuando aparezcan burbujas y el borde pierda brillo."
+    "x": "Vierte porciones en sartén ligeramente engrasada a fuego medio. Cocina 1–2 minutos, hasta que aparezcan burbujas y el borde pierda brillo; da la vuelta y cocina 30–60 segundos más."
    }
   ],
   "substitutions": [
@@ -233,6 +233,11 @@ window.CSL_RECIPES=[
     "huevos",
     "frutos"
    ]
+  },
+  "cook": {
+   "heat": "Sartén a fuego medio",
+   "time": "1–2 min por la primera cara y 30–60 s por la segunda",
+   "cue": "Da la vuelta cuando aparezcan burbujas y el borde deje de verse brillante."
   }
  },
  {
@@ -344,7 +349,7 @@ window.CSL_RECIPES=[
    },
    {
     "t": "Cuece con poco líquido",
-    "x": "Añade verduras, patata y líquido justo hasta casi cubrir. Cocina hasta que todo esté tierno."
+    "x": "Añade verduras, patata y líquido justo hasta casi cubrir. Lleva a hervor suave y cocina 18–25 minutos, hasta que todo esté completamente tierno."
    },
    {
     "t": "Tritura y corrige",
@@ -385,6 +390,11 @@ window.CSL_RECIPES=[
     "caldo",
     "frutos"
    ]
+  },
+  "cook": {
+   "heat": "Cazuela a hervor suave",
+   "time": "18–25 min después de añadir el líquido",
+   "cue": "Las verduras deben poder atravesarse fácilmente con un cuchillo antes de triturar."
   }
  },
  {
@@ -418,7 +428,7 @@ window.CSL_RECIPES=[
    },
    {
     "t": "Añade el huevo",
-    "x": "Haz huecos y cocina los huevos tapados, o retira las verduras y prepara huevos a la plancha/revueltos."
+    "x": "Haz huecos entre las verduras y cocina los huevos tapados 4–6 minutos a fuego medio-bajo, o retira las verduras y prepara los huevos aparte al punto que prefieras."
    },
    {
     "t": "Completa",
@@ -460,6 +470,11 @@ window.CSL_RECIPES=[
     "verdurascong",
     "tomate"
    ]
+  },
+  "cook": {
+   "heat": "Sartén media-alta para verduras; media-baja para los huevos",
+   "time": "8–12 min de verduras + 4–6 min de huevo tapado",
+   "cue": "La verdura debe perder el agua visible; la clara del huevo debe estar cuajada."
   }
  },
  {
@@ -489,7 +504,7 @@ window.CSL_RECIPES=[
    },
    {
     "t": "Cuece las verduras",
-    "x": "Empieza por las verduras más firmes. Cuando estén a medio hacer, incorpora el pescado."
+    "x": "Empieza por las verduras más firmes. Cuando estén a medio hacer, incorpora la merluza y cocina al vapor unos 6–10 minutos, según el grosor."
    },
    {
     "t": "Termina con frescura",
@@ -531,7 +546,12 @@ window.CSL_RECIPES=[
     "limon"
    ]
   },
-  "intro": "Una cena ligera que sale bien cuando respetas los tiempos: verduras tiernas y pescado jugoso, sin esconderlos bajo una salsa pesada."
+  "intro": "Una cena ligera que sale bien cuando respetas los tiempos: verduras tiernas y pescado jugoso, sin esconderlos bajo una salsa pesada.",
+  "cook": {
+   "heat": "Vapor continuo pero moderado",
+   "time": "6–10 min de pescado, según grosor",
+   "cue": "La merluza pasa de translúcida a opaca y se separa en lascas sin resecarse."
+  }
  },
  {
   "slug": "gazpacho-andaluz",
@@ -644,7 +664,7 @@ window.CSL_RECIPES=[
    },
    {
     "t": "Termina en salsa",
-    "x": "Añade tomate y orégano. Cocina 10 minutos, incorpora las albóndigas y termina hasta que estén hechas."
+    "x": "Añade tomate y orégano. Cocina la salsa 10 minutos, incorpora las albóndigas y termina 8–12 minutos a fuego suave, hasta que estén hechas por dentro."
    }
   ],
   "substitutions": [
@@ -683,7 +703,12 @@ window.CSL_RECIPES=[
     "oregano"
    ]
   },
-  "intro": "Una receta para cocinar una vez y agradecerla dos días. El secreto está en dorar bien la carne y dejar que termine de hacerse dentro de la salsa."
+  "intro": "Una receta para cocinar una vez y agradecerla dos días. El secreto está en dorar bien la carne y dejar que termine de hacerse dentro de la salsa.",
+  "cook": {
+   "heat": "Sartén/cazuela a fuego medio",
+   "time": "6–8 min para dorar + 8–12 min dentro de la salsa",
+   "cue": "El centro debe quedar completamente cocinado, sin zonas crudas."
+  }
  },
  {
   "slug": "curry-garbanzos-verduras",
@@ -717,7 +742,7 @@ window.CSL_RECIPES=[
    },
    {
     "t": "Cocina la verdura",
-    "x": "Añade verduras y tomate o leche de coco. Cocina hasta que estén tiernas."
+    "x": "Añade verduras y tomate o leche de coco. Cocina a fuego medio 10–15 minutos, hasta que estén tiernas sin deshacerse."
    },
    {
     "t": "Incorpora los garbanzos",
@@ -761,7 +786,12 @@ window.CSL_RECIPES=[
     "cebolla"
    ]
   },
-  "intro": "Legumbre, verduras y especias en una sola cazuela. Una forma rápida de hacer una cena completa con ingredientes de despensa y lo que haya en la nevera."
+  "intro": "Legumbre, verduras y especias en una sola cazuela. Una forma rápida de hacer una cena completa con ingredientes de despensa y lo que haya en la nevera.",
+  "cook": {
+   "heat": "Cazuela a fuego medio",
+   "time": "10–15 min para las verduras después de añadir el líquido",
+   "cue": "La verdura debe quedar tierna pero conservar forma; el garbanzo solo necesita calentarse al final."
+  }
  },
  {
   "slug": "tortilla-ensalada",
@@ -792,7 +822,7 @@ window.CSL_RECIPES=[
    },
    {
     "t": "Une y cuaja",
-    "x": "Mezcla con huevo batido y sal. Cuaja a fuego medio, moviendo al principio para repartir el calor."
+    "x": "Mezcla con huevo batido y sal. Cuaja a fuego medio 3–4 minutos por la primera cara; gira y termina 2–3 minutos más, ajustando el tiempo al punto que prefieras."
    },
    {
     "t": "Completa con ensalada",
@@ -833,7 +863,12 @@ window.CSL_RECIPES=[
     "cebolla"
    ]
   },
-  "intro": "Una cena de siempre bien resuelta: una tortilla jugosa y una ensalada con contraste. Sencilla, flexible y muy fácil de adaptar."
+  "intro": "Una cena de siempre bien resuelta: una tortilla jugosa y una ensalada con contraste. Sencilla, flexible y muy fácil de adaptar.",
+  "cook": {
+   "heat": "Sartén a fuego medio",
+   "time": "3–4 min por la primera cara y 2–3 min por la segunda, orientativo",
+   "cue": "El centro debe estar cuajado al punto que te guste, sin quemar el exterior."
+  }
  },
  {
   "slug": "pizza-verduras",
@@ -871,7 +906,7 @@ window.CSL_RECIPES=[
    },
    {
     "t": "Hornea fuerte",
-    "x": "Pon poco tomate, reparte toppings sin sobrecargar y hornea en horno muy caliente hasta que la base esté dorada."
+    "x": "Precalienta el horno a 240–250 °C con la bandeja dentro si puedes. Pon poco tomate, reparte los toppings sin sobrecargar y hornea 10–15 minutos, hasta que la base esté dorada."
    }
   ],
   "substitutions": [
@@ -910,7 +945,12 @@ window.CSL_RECIPES=[
     "oregano"
    ]
   },
-  "intro": "Una pizza casera que sirve tanto para disfrutar de la masa como para aprovechar verduras ya cocinadas. Poco topping y horno fuerte hacen más que complicarla."
+  "intro": "Una pizza casera que sirve tanto para disfrutar de la masa como para aprovechar verduras ya cocinadas. Poco topping y horno fuerte hacen más que complicarla.",
+  "cook": {
+   "heat": "Horno muy caliente, 240–250 °C",
+   "time": "10–15 min, según horno y grosor de la masa",
+   "cue": "La base debe estar dorada y firme por debajo y los bordes bien coloreados."
+  }
  },
  {
   "slug": "pollo-horno-limon",
@@ -945,7 +985,7 @@ window.CSL_RECIPES=[
    },
    {
     "t": "Hornea hasta dorar",
-    "x": "Hornea hasta que el pollo esté bien hecho y la patata tierna. Deja reposar 5 minutos antes de servir."
+    "x": "Hornea a 200 °C unos 35–45 minutos, hasta que la patata esté tierna y la pieza más gruesa de pollo alcance 74 °C en el centro. Deja reposar 5 minutos."
    }
   ],
   "substitutions": [
@@ -983,7 +1023,12 @@ window.CSL_RECIPES=[
     "pimenton"
    ]
   },
-  "intro": "Una bandeja de horno que prácticamente se organiza sola. Limón, especias y un buen corte de las patatas permiten que todo llegue a punto a la vez."
+  "intro": "Una bandeja de horno que prácticamente se organiza sola. Limón, especias y un buen corte de las patatas permiten que todo llegue a punto a la vez.",
+  "cook": {
+   "heat": "Horno a 200 °C",
+   "time": "35–45 min para el pollo, después de la ventaja inicial de la patata",
+   "cue": "La patata debe estar tierna y el centro de la pieza más gruesa de pollo alcanzar 74 °C."
+  }
  },
  {
   "slug": "lentejas-rapidas",
@@ -1095,7 +1140,7 @@ window.CSL_RECIPES=[
    },
    {
     "t": "Hornea y abre al final",
-    "x": "Hornea hasta que el pescado esté justo hecho. Abre con cuidado del vapor y ajusta sal y limón."
+    "x": "Hornea a 200 °C durante 12–18 minutos, según el grosor. Abre con cuidado del vapor y comprueba que el pescado esté opaco y se separe en lascas."
    }
   ],
   "substitutions": [
@@ -1133,7 +1178,12 @@ window.CSL_RECIPES=[
     "limon"
    ]
   },
-  "intro": "Una forma limpia y agradecida de cocinar pescado sin secarlo. El paquete conserva humedad y concentra los aromas del limón y las hierbas."
+  "intro": "Una forma limpia y agradecida de cocinar pescado sin secarlo. El paquete conserva humedad y concentra los aromas del limón y las hierbas.",
+  "cook": {
+   "heat": "Horno a 200 °C",
+   "time": "12–18 min, según grosor",
+   "cue": "El pescado debe verse opaco y separarse en lascas; evita prolongar la cocción cuando ya esté hecho."
+  }
  },
  {
   "slug": "pisto-huevo",
@@ -1166,7 +1216,7 @@ window.CSL_RECIPES=[
    },
    {
     "t": "Concentra el tomate",
-    "x": "Añade tomate y cocina sin prisas hasta que pierda agua y el conjunto quede meloso."
+    "x": "Añade tomate y cocina a fuego medio-bajo 20–25 minutos, removiendo de vez en cuando, hasta que pierda el agua suelta y el conjunto quede meloso."
    },
    {
     "t": "Añade el huevo",
@@ -1211,7 +1261,12 @@ window.CSL_RECIPES=[
     "ajo"
    ]
   },
-  "intro": "Verduras cocinadas con calma y un huevo para convertirlas en cena. El pisto es además uno de los mejores fondos de nevera para reutilizar después."
+  "intro": "Verduras cocinadas con calma y un huevo para convertirlas en cena. El pisto es además uno de los mejores fondos de nevera para reutilizar después.",
+  "cook": {
+   "heat": "Fuego medio-bajo",
+   "time": "20–25 min después de añadir el tomate",
+   "cue": "El pisto está listo cuando ha perdido el agua suelta y queda meloso, no caldoso."
+  }
  },
  {
   "slug": "avena-frutos-rojos",
@@ -1317,7 +1372,7 @@ window.CSL_RECIPES=[
    },
    {
     "t": "Hornea",
-    "x": "Vierte en molde preparado y hornea a 175–180 °C hasta que el centro esté hecho. Deja templar antes de desmoldar."
+    "x": "Vierte en el molde y hornea a 175–180 °C durante 35–45 minutos. Comprueba el centro con una brocheta y deja templar 10 minutos antes de desmoldar."
    }
   ],
   "substitutions": [
@@ -1353,7 +1408,12 @@ window.CSL_RECIPES=[
     "huevos"
    ]
   },
-  "intro": "Un bizcocho básico para entender qué hace que una masa quede ligera y tierna. Fácil de recordar, adaptar y preparar sin técnicas complicadas."
+  "intro": "Un bizcocho básico para entender qué hace que una masa quede ligera y tierna. Fácil de recordar, adaptar y preparar sin técnicas complicadas.",
+  "cook": {
+   "heat": "Horno a 175–180 °C",
+   "time": "35–45 min, según molde y horno",
+   "cue": "Una brocheta en el centro debe salir sin masa cruda; puede llevar alguna miga húmeda."
+  }
  },
  {
   "slug": "quiche-verduras",
@@ -1388,7 +1448,7 @@ window.CSL_RECIPES=[
    },
    {
     "t": "Hornea hasta cuajar",
-    "x": "Vierte la mezcla y hornea a 180 °C hasta que el centro esté cuajado pero aún jugoso. Deja reposar 10 minutos antes de cortar."
+    "x": "Vierte la mezcla y hornea a 180 °C unos 30–35 minutos, hasta que los bordes estén firmes y el centro apenas tiemble. Reposa 10 minutos antes de cortar."
    }
   ],
   "substitutions": [
@@ -1427,7 +1487,12 @@ window.CSL_RECIPES=[
     "cebolla"
    ]
   },
-  "intro": "Una de las mejores salidas para verduras ya cocinadas. El truco no está en añadir más huevo, sino en controlar el agua del relleno antes de hornear."
+  "intro": "Una de las mejores salidas para verduras ya cocinadas. El truco no está en añadir más huevo, sino en controlar el agua del relleno antes de hornear.",
+  "cook": {
+   "heat": "Horno a 180 °C",
+   "time": "30–35 min aproximadamente",
+   "cue": "Los bordes estarán firmes y el centro apenas temblará al mover el molde."
+  }
  },
  {
   "slug": "ensalada-garbanzos-mediterranea",
@@ -1778,7 +1843,7 @@ window.CSL_RECIPES=[
    },
    {
     "t": "Suelta el arroz",
-    "x": "Añade arroz frío y salsa de soja. Saltea hasta que los granos estén separados y calientes."
+    "x": "Añade arroz frío y salsa de soja. Saltea a fuego alto 4–6 minutos, moviendo lo justo, hasta que los granos estén separados y bien calientes."
    }
   ],
   "substitutions": [
@@ -1816,7 +1881,12 @@ window.CSL_RECIPES=[
     "verdurascong"
    ]
   },
-  "intro": "La salida perfecta para arroz cocido del día anterior. Sartén caliente, ingredientes secos y poco movimiento convierten restos en una cena distinta."
+  "intro": "La salida perfecta para arroz cocido del día anterior. Sartén caliente, ingredientes secos y poco movimiento convierten restos en una cena distinta.",
+  "cook": {
+   "heat": "Sartén amplia a fuego alto",
+   "time": "4–6 min de salteado final",
+   "cue": "El arroz debe quedar caliente, suelto y sin acumular humedad en el fondo."
+  }
  },
  {
   "slug": "arroz-tomate-huevo",
@@ -2003,7 +2073,7 @@ window.CSL_RECIPES=[
    },
    {
     "t": "Dora por tandas",
-    "x": "Saltea primero el pollo y luego verduras a fuego fuerte."
+    "x": "Saltea el pollo por tandas 5–7 minutos, hasta que esté bien cocinado, y retíralo. Cocina después las verduras 5–7 minutos a fuego fuerte."
    },
    {
     "t": "Reúne y termina",
@@ -2047,7 +2117,12 @@ window.CSL_RECIPES=[
     "limon"
    ]
   },
-  "intro": "Pollo, verduras y tortillas calientes para una cena que se monta en la mesa. El corte uniforme y una sartén bien caliente son casi toda la técnica."
+  "intro": "Pollo, verduras y tortillas calientes para una cena que se monta en la mesa. El corte uniforme y una sartén bien caliente son casi toda la técnica.",
+  "cook": {
+   "heat": "Sartén muy caliente",
+   "time": "5–7 min de pollo + 5–7 min de verduras",
+   "cue": "El pollo debe estar completamente cocinado y la verdura aún conservar algo de mordida."
+  }
  },
  {
   "slug": "quesadillas-frijoles-maiz",
@@ -2085,7 +2160,7 @@ window.CSL_RECIPES=[
    },
    {
     "t": "Tuesta por ambos lados",
-    "x": "Cocina en sartén a fuego medio hasta que la tortilla esté crujiente."
+    "x": "Cocina en sartén a fuego medio 2–3 minutos por cada cara, hasta que la tortilla esté dorada y el relleno caliente."
    }
   ],
   "substitutions": [
@@ -2124,7 +2199,12 @@ window.CSL_RECIPES=[
     "tomate"
    ]
   },
-  "intro": "Crujientes por fuera y cremosas por dentro, con un relleno de despensa que se prepara en minutos. Una cena muy útil para días sin ganas de cocinar."
+  "intro": "Crujientes por fuera y cremosas por dentro, con un relleno de despensa que se prepara en minutos. Una cena muy útil para días sin ganas de cocinar.",
+  "cook": {
+   "heat": "Sartén a fuego medio",
+   "time": "2–3 min por cada cara",
+   "cue": "La tortilla debe quedar dorada y crujiente y el interior caliente."
+  }
  },
  {
   "slug": "shakshuka-rapida",
@@ -2162,7 +2242,7 @@ window.CSL_RECIPES=[
    },
    {
     "t": "Cuaja tapado",
-    "x": "Tapa y cocina a fuego suave hasta que la clara esté hecha y la yema a tu gusto."
+    "x": "Tapa y cocina a fuego suave 5–8 minutos, hasta que la clara esté cuajada. Retira antes si prefieres la yema más fluida."
    }
   ],
   "substitutions": [
@@ -2203,7 +2283,12 @@ window.CSL_RECIPES=[
     "pimenton"
    ]
   },
-  "intro": "Huevos cocinados directamente en una salsa de tomate especiada. Una sartén, pocos ingredientes y suficiente pan para no dejar nada en el plato."
+  "intro": "Huevos cocinados directamente en una salsa de tomate especiada. Una sartén, pocos ingredientes y suficiente pan para no dejar nada en el plato.",
+  "cook": {
+   "heat": "Fuego medio para la salsa; suave con los huevos",
+   "time": "8–10 min de salsa + 5–8 min de huevos tapados",
+   "cue": "La clara debe estar cuajada; ajusta el tiempo según cómo quieras la yema."
+  }
  },
  {
   "slug": "tortilla-calabacin",
@@ -2230,7 +2315,7 @@ window.CSL_RECIPES=[
   "steps": [
    {
     "t": "Evapora el agua",
-    "x": "Cocina calabacín y cebolla a fuego medio-alto hasta que estén tiernos y hayan perdido humedad."
+    "x": "Cocina calabacín y cebolla a fuego medio-alto 10–12 minutos, hasta que estén tiernos y hayan perdido la humedad visible."
    },
    {
     "t": "Mezcla con huevo",
@@ -2275,7 +2360,12 @@ window.CSL_RECIPES=[
     "cebolla"
    ]
   },
-  "intro": "Una tortilla más ligera y jugosa que la clásica de patata. Cocinar bien el calabacín antes del huevo evita que termine aguada."
+  "intro": "Una tortilla más ligera y jugosa que la clásica de patata. Cocinar bien el calabacín antes del huevo evita que termine aguada.",
+  "cook": {
+   "heat": "Fuego medio-alto para el calabacín; medio para cuajar",
+   "time": "10–12 min de verdura + 3–4 min por cara, orientativo",
+   "cue": "Antes del huevo, el calabacín debe haber perdido la humedad visible."
+  }
  },
  {
   "slug": "pollo-limon-sarten",
@@ -2303,7 +2393,7 @@ window.CSL_RECIPES=[
   "steps": [
    {
     "t": "Dora el pollo",
-    "x": "Corta en piezas parecidas, seca bien y dora por tandas."
+    "x": "Corta el pollo en piezas parecidas, sécalo bien y dóralo por tandas a fuego medio-alto. Cocina hasta que la pieza más gruesa alcance 74 °C en el centro."
    },
    {
     "t": "Desglasa",
@@ -2349,7 +2439,12 @@ window.CSL_RECIPES=[
     "hierbascong"
    ]
   },
-  "intro": "Una cena de sartén rápida con una salsa corta de limón que aprovecha los jugos del pollo. Dorar primero y añadir el ácido después marca la diferencia."
+  "intro": "Una cena de sartén rápida con una salsa corta de limón que aprovecha los jugos del pollo. Dorar primero y añadir el ácido después marca la diferencia.",
+  "cook": {
+   "heat": "Sartén a fuego medio-alto",
+   "time": "8–12 min en total, según tamaño de las piezas",
+   "cue": "El pollo debe quedar dorado y alcanzar 74 °C en el centro de la pieza más gruesa."
+  }
  },
  {
   "slug": "pollo-curry-expres",
@@ -2385,7 +2480,7 @@ window.CSL_RECIPES=[
    },
    {
     "t": "Reduce y reúne",
-    "x": "Devuelve el pollo y cocina hasta que la salsa espese ligeramente."
+    "x": "Devuelve el pollo y cocina a fuego medio 8–10 minutos, hasta que esté completamente hecho y la salsa espese ligeramente."
    }
   ],
   "substitutions": [
@@ -2424,7 +2519,12 @@ window.CSL_RECIPES=[
     "limon"
    ]
   },
-  "intro": "Pollo tierno y una salsa especiada lista en media hora. Pensada para días de diario, con suficiente sabor sin una lista interminable de ingredientes."
+  "intro": "Pollo tierno y una salsa especiada lista en media hora. Pensada para días de diario, con suficiente sabor sin una lista interminable de ingredientes.",
+  "cook": {
+   "heat": "Sartén/cazuela a fuego medio-alto y después medio",
+   "time": "5–7 min para dorar + 8–10 min en la salsa",
+   "cue": "El pollo debe quedar completamente cocinado y la salsa ligeramente ligada."
+  }
  },
  {
   "slug": "salmon-mostaza-horno",
@@ -2455,7 +2555,7 @@ window.CSL_RECIPES=[
    },
    {
     "t": "Hornea justo",
-    "x": "Hornea a temperatura alta hasta que el centro siga jugoso."
+    "x": "Hornea a 200 °C durante 10–14 minutos para lomos medianos. Retira en cuanto se separe en lascas con facilidad y el centro siga jugoso."
    },
    {
     "t": "Reposo corto",
@@ -2497,7 +2597,12 @@ window.CSL_RECIPES=[
     "limon"
    ]
   },
-  "intro": "Salmón al horno con una cobertura sencilla que protege el pescado y aporta contraste. Pocos minutos de más cambian el resultado, así que aquí manda el punto."
+  "intro": "Salmón al horno con una cobertura sencilla que protege el pescado y aporta contraste. Pocos minutos de más cambian el resultado, así que aquí manda el punto.",
+  "cook": {
+   "heat": "Horno a 200 °C",
+   "time": "10–14 min para lomos medianos",
+   "cue": "El salmón debe separarse en lascas con facilidad y conservar jugosidad en el centro."
+  }
  },
  {
   "slug": "bacalao-tomate",
@@ -2533,7 +2638,7 @@ window.CSL_RECIPES=[
    },
    {
     "t": "Termina en salsa",
-    "x": "Introduce el pescado en el tomate y cocina pocos minutos hasta que se separe en lascas."
+    "x": "Introduce el bacalao en el tomate y cocina a fuego medio-bajo 4–7 minutos, según grosor, hasta que se separe en lascas."
    }
   ],
   "substitutions": [
@@ -2573,7 +2678,12 @@ window.CSL_RECIPES=[
     "ajo"
    ]
   },
-  "intro": "Un plato muy de casa donde el pescado termina de cocinarse dentro de una salsa de tomate concentrada. Sabroso, sencillo y perfecto para acompañar con pan."
+  "intro": "Un plato muy de casa donde el pescado termina de cocinarse dentro de una salsa de tomate concentrada. Sabroso, sencillo y perfecto para acompañar con pan.",
+  "cook": {
+   "heat": "Cazuela a fuego medio-bajo",
+   "time": "4–7 min de pescado dentro de la salsa",
+   "cue": "El bacalao está listo cuando se abre en lascas al presionarlo suavemente."
+  }
  },
  {
   "slug": "tacos-pescado",
@@ -2601,7 +2711,7 @@ window.CSL_RECIPES=[
   "steps": [
    {
     "t": "Sazona y cocina",
-    "x": "Corta el pescado en tiras, sazona y dóralo rápidamente."
+    "x": "Corta el pescado en tiras, sazona y dóralo a fuego medio-alto unos 2–3 minutos por cada cara, según grosor, hasta que esté opaco."
    },
    {
     "t": "Da contraste a la col",
@@ -2647,7 +2757,12 @@ window.CSL_RECIPES=[
     "limon"
    ]
   },
-  "intro": "Pescado caliente, algo crujiente y un punto ácido dentro de una tortilla. La gracia está en el contraste, no en llenar el taco de ingredientes."
+  "intro": "Pescado caliente, algo crujiente y un punto ácido dentro de una tortilla. La gracia está en el contraste, no en llenar el taco de ingredientes.",
+  "cook": {
+   "heat": "Sartén a fuego medio-alto",
+   "time": "2–3 min por cada cara de las tiras gruesas",
+   "cue": "El pescado debe quedar opaco y firme, pero no seco."
+  }
  },
  {
   "slug": "berenjenas-rellenas",
@@ -2675,7 +2790,7 @@ window.CSL_RECIPES=[
   "steps": [
    {
     "t": "Asa la berenjena",
-    "x": "Ábrela, haz cortes en la pulpa y ásala hasta que esté tierna."
+    "x": "Ábrela, haz cortes en la pulpa y ásala a 200 °C durante 25–30 minutos, hasta que esté tierna."
    },
    {
     "t": "Haz el relleno",
@@ -2723,7 +2838,12 @@ window.CSL_RECIPES=[
     "oregano"
    ]
   },
-  "intro": "Una receta de horno que convierte berenjena, carne y verduras en un plato completo. Cocinar bien la berenjena antes de rellenarla evita centros duros y secos."
+  "intro": "Una receta de horno que convierte berenjena, carne y verduras en un plato completo. Cocinar bien la berenjena antes de rellenarla evita centros duros y secos.",
+  "cook": {
+   "heat": "Horno a 200 °C",
+   "time": "25–30 min para ablandar la berenjena + 5–8 min de gratinado",
+   "cue": "La pulpa debe poder retirarse con cuchara sin resistencia."
+  }
  },
  {
   "slug": "calabacines-rellenos",
@@ -2759,7 +2879,7 @@ window.CSL_RECIPES=[
    },
    {
     "t": "Rellena y hornea",
-    "x": "Rellena y hornea hasta que el calabacín esté tierno."
+    "x": "Rellena y hornea a 200 °C durante 20–25 minutos, hasta que el calabacín esté tierno pero aún mantenga la forma."
    }
   ],
   "substitutions": [
@@ -2798,7 +2918,12 @@ window.CSL_RECIPES=[
     "cebolla"
    ]
   },
-  "intro": "Calabacín, atún y tomate en una cena sencilla que aprovecha muy bien ingredientes de despensa. El reto es conservar el calabacín tierno sin que suelte agua de más."
+  "intro": "Calabacín, atún y tomate en una cena sencilla que aprovecha muy bien ingredientes de despensa. El reto es conservar el calabacín tierno sin que suelte agua de más.",
+  "cook": {
+   "heat": "Horno a 200 °C",
+   "time": "20–25 min después de rellenar",
+   "cue": "El calabacín debe quedar tierno al pincharlo, pero mantener la forma."
+  }
  },
  {
   "slug": "verduras-asadas-yogur",
@@ -2831,7 +2956,7 @@ window.CSL_RECIPES=[
    },
    {
     "t": "Asa con espacio",
-    "x": "Extiende en una capa y hornea fuerte hasta dorar."
+    "x": "Extiende las verduras en una sola capa y hornea a 220 °C durante 25–35 minutos, removiendo una vez, hasta que estén doradas y tiernas."
    },
    {
     "t": "Añade salsa fría",
@@ -2874,7 +2999,12 @@ window.CSL_RECIPES=[
     "comino"
    ]
   },
-  "intro": "Verduras doradas, salsa fresca y un remate ácido. Una fórmula muy simple que funciona como cena, guarnición o base para aprovechar otras preparaciones."
+  "intro": "Verduras doradas, salsa fresca y un remate ácido. Una fórmula muy simple que funciona como cena, guarnición o base para aprovechar otras preparaciones.",
+  "cook": {
+   "heat": "Horno a 220 °C",
+   "time": "25–35 min, removiendo una vez",
+   "cue": "Los bordes deben estar dorados y el interior tierno."
+  }
  },
  {
   "slug": "sopa-tomate-alubias",
@@ -2990,7 +3120,7 @@ window.CSL_RECIPES=[
    },
    {
     "t": "Termina con alubias",
-    "x": "Añade verduras y alubias y cocina hasta que el caldo tome cuerpo."
+    "x": "Añade verduras y alubias y cocina a hervor suave 15–20 minutos, hasta que las verduras estén tiernas y el caldo tome cuerpo."
    }
   ],
   "substitutions": [
@@ -3031,7 +3161,12 @@ window.CSL_RECIPES=[
     "pimenton"
    ]
   },
-  "intro": "Un guiso de legumbre para cuando quieres cuchara sin pasar horas en la cocina. La base aromática hace que unas alubias cocidas sepan a plato terminado."
+  "intro": "Un guiso de legumbre para cuando quieres cuchara sin pasar horas en la cocina. La base aromática hace que unas alubias cocidas sepan a plato terminado.",
+  "cook": {
+   "heat": "Hervor suave",
+   "time": "15–20 min después de añadir caldo, verduras y alubias",
+   "cue": "El caldo debe tomar cuerpo sin que la legumbre se rompa en exceso."
+  }
  },
  {
   "slug": "sopa-ajo-huevo",
@@ -3068,7 +3203,7 @@ window.CSL_RECIPES=[
    },
    {
     "t": "Cuaja el huevo",
-    "x": "Cuando hierva suave, añade los huevos y cocina hasta el punto deseado."
+    "x": "Cuando hierva suavemente, añade los huevos y cocina 3–5 minutos, hasta que la clara esté cuajada."
    }
   ],
   "substitutions": [
@@ -3109,7 +3244,12 @@ window.CSL_RECIPES=[
     "pimenton"
    ]
   },
-  "intro": "Pan, ajo, caldo y huevo: cocina humilde en el mejor sentido. Una receta perfecta para aprender cómo pocos ingredientes ganan profundidad con el orden adecuado."
+  "intro": "Pan, ajo, caldo y huevo: cocina humilde en el mejor sentido. Una receta perfecta para aprender cómo pocos ingredientes ganan profundidad con el orden adecuado.",
+  "cook": {
+   "heat": "Hervor muy suave",
+   "time": "3–5 min después de añadir los huevos",
+   "cue": "La clara debe quedar cuajada; la yema puede quedar más o menos hecha según preferencia."
+  }
  },
  {
   "slug": "crema-calabaza-zanahoria",
@@ -3142,7 +3282,7 @@ window.CSL_RECIPES=[
    },
    {
     "t": "Cuece con líquido justo",
-    "x": "Añade calabaza, zanahoria y líquido sin cubrir en exceso."
+    "x": "Añade calabaza, zanahoria y líquido sin cubrir en exceso. Cocina a hervor suave 20–25 minutos, hasta que estén muy tiernas."
    },
    {
     "t": "Tritura y ajusta",
@@ -3185,7 +3325,12 @@ window.CSL_RECIPES=[
     "curry"
    ]
   },
-  "intro": "Dulce, suave y muy agradecida para preparar en cantidad. La clave está en no ahogarla en líquido y equilibrar el dulzor con un remate ácido o especiado."
+  "intro": "Dulce, suave y muy agradecida para preparar en cantidad. La clave está en no ahogarla en líquido y equilibrar el dulzor con un remate ácido o especiado.",
+  "cook": {
+   "heat": "Hervor suave",
+   "time": "20–25 min después de añadir el líquido",
+   "cue": "Calabaza y zanahoria deben romperse con facilidad al presionarlas."
+  }
  },
  {
   "slug": "ensalada-pasta-verano",
@@ -3291,7 +3436,7 @@ window.CSL_RECIPES=[
   "steps": [
    {
     "t": "Asa las patatas",
-    "x": "Pincha y hornea hasta que estén completamente tiernas."
+    "x": "Pincha las patatas y hornéalas a 200 °C durante 45–60 minutos, hasta que estén completamente tiernas al atravesarlas con un cuchillo."
    },
    {
     "t": "Vacía y mezcla",
@@ -3338,7 +3483,12 @@ window.CSL_RECIPES=[
     "verdurascong"
    ]
   },
-  "intro": "Patata crujiente por fuera, interior cremoso y un relleno que puedes adaptar a lo que tengas. Una receta ideal para convertir sobras pequeñas en una cena."
+  "intro": "Patata crujiente por fuera, interior cremoso y un relleno que puedes adaptar a lo que tengas. Una receta ideal para convertir sobras pequeñas en una cena.",
+  "cook": {
+   "heat": "Horno a 200 °C",
+   "time": "45–60 min para la patata + 8–10 min después de rellenar",
+   "cue": "La patata debe ceder completamente al pincharla antes de vaciar."
+  }
  },
  {
   "slug": "croquetas-pollo-aprovechamiento",
@@ -3375,7 +3525,7 @@ window.CSL_RECIPES=[
    },
    {
     "t": "Enfría, forma y cocina",
-    "x": "Enfría completamente, forma, empana y fríe u hornea."
+    "x": "Enfría la masa por completo, forma y empana. Fríe a 175–180 °C durante 1½–2 minutos por tanda, o hornea a 220 °C unos 12–15 minutos, hasta dorar."
    }
   ],
   "substitutions": [
@@ -3415,7 +3565,12 @@ window.CSL_RECIPES=[
     "cebolla"
    ]
   },
-  "intro": "Una receta de aprovechamiento que merece tiempo y frío. El objetivo es una masa cremosa pero manejable y unas croquetas que sepan realmente al pollo que estás recuperando."
+  "intro": "Una receta de aprovechamiento que merece tiempo y frío. El objetivo es una masa cremosa pero manejable y unas croquetas que sepan realmente al pollo que estás recuperando.",
+  "cook": {
+   "heat": "Fritura a 175–180 °C o horno a 220 °C",
+   "time": "1½–2 min por tanda fritas; 12–15 min al horno, orientativo",
+   "cue": "Deben quedar doradas por fuera y calientes en el centro; la masa debe estar bien fría antes de formar."
+  }
  },
  {
   "slug": "guacamole",
@@ -3519,7 +3674,7 @@ window.CSL_RECIPES=[
    },
    {
     "t": "Reduce el tomate",
-    "x": "Añade tomate y cocina destapado hasta que espese."
+    "x": "Añade tomate y cocina destapado a fuego medio-bajo 30–40 minutos, removiendo de vez en cuando, hasta que espese y concentre sabor."
    },
    {
     "t": "Ajusta al final",
@@ -3561,7 +3716,12 @@ window.CSL_RECIPES=[
     "oregano"
    ]
   },
-  "intro": "Una salsa de fondo para tener media cocina resuelta. Cocinar el tomate hasta concentrarlo crea una base que después sirve para pasta, arroz, huevos, pescado o verduras."
+  "intro": "Una salsa de fondo para tener media cocina resuelta. Cocinar el tomate hasta concentrarlo crea una base que después sirve para pasta, arroz, huevos, pescado o verduras.",
+  "cook": {
+   "heat": "Fuego medio-bajo, destapado",
+   "time": "30–40 min de reducción",
+   "cue": "Al pasar la cuchara por el fondo, la salsa tarda un instante en volver a cubrir el surco."
+  }
  },
  {
   "slug": "vinagreta-mostaza-limon",
@@ -3669,7 +3829,7 @@ window.CSL_RECIPES=[
    },
    {
     "t": "Hornea",
-    "x": "Reparte en moldes y hornea hasta que estén hechos en el centro."
+    "x": "Reparte en moldes y hornea a 180 °C durante 18–22 minutos, hasta que el centro esté hecho. Enfría antes de guardar."
    }
   ],
   "substitutions": [
@@ -3706,7 +3866,12 @@ window.CSL_RECIPES=[
     "frutos"
    ]
   },
-  "intro": "Plátano maduro y avena para una merienda tierna y fácil de preparar. Una buena forma de aprovechar fruta que ya nadie quiere comer tal cual."
+  "intro": "Plátano maduro y avena para una merienda tierna y fácil de preparar. Una buena forma de aprovechar fruta que ya nadie quiere comer tal cual.",
+  "cook": {
+   "heat": "Horno a 180 °C",
+   "time": "18–22 min",
+   "cue": "El centro debe recuperar ligeramente la forma al tocarlo y una brocheta salir sin masa cruda."
+  }
  },
  {
   "slug": "crumble-manzana",
@@ -3741,7 +3906,7 @@ window.CSL_RECIPES=[
    },
    {
     "t": "Hornea",
-    "x": "Cubre la fruta con las migas y hornea hasta que burbujee y se dore."
+    "x": "Cubre la fruta con las migas y hornea a 190 °C durante 30–35 minutos, hasta que la fruta burbujee y la cobertura esté dorada."
    }
   ],
   "substitutions": [
@@ -3778,6 +3943,11 @@ window.CSL_RECIPES=[
     "limon"
    ]
   },
-  "intro": "Fruta caliente y jugosa bajo una cobertura crujiente e irregular. Un postre sencillo que además sirve para rescatar manzanas que empiezan a quedarse atrás."
+  "intro": "Fruta caliente y jugosa bajo una cobertura crujiente e irregular. Un postre sencillo que además sirve para rescatar manzanas que empiezan a quedarse atrás.",
+  "cook": {
+   "heat": "Horno a 190 °C",
+   "time": "30–35 min",
+   "cue": "La fruta debe burbujear por los bordes y la cobertura estar dorada."
+  }
  }
 ];
