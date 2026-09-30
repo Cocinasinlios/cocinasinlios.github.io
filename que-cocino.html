@@ -2,136 +2,125 @@
 <html lang="es">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="author" content="Macarena · Cocina sin líos">
-<meta name="copyright" content="© 2026 Cocina sin líos con Macarena">
-<meta name="referrer" content="strict-origin-when-cross-origin">
 <title>¿Qué cocino hoy? | Cocina sin líos con Macarena</title>
-<meta name="description" content="Elige tiempo y antojo y deja que Cocina sin líos te proponga ideas para cocinar hoy.">
-<meta name="theme-color" content="#274034">
-<meta name="robots" content="index,follow">
-<link rel="canonical" href="https://cocinasinlios.com/que-cocino.html">
-<link rel="alternate" hreflang="es-ES" href="https://cocinasinlios.com/que-cocino.html">
-<meta property="og:title" content="¿Qué cocino hoy? | Cocina sin líos con Macarena">
-<meta property="og:description" content="Elige tiempo, antojo y objetivo y recibe tres ideas para cocinar hoy.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://cocinasinlios.com/que-cocino.html">
-<meta property="og:site_name" content="Cocina sin líos con Macarena">
-<meta property="og:image" content="https://cocinasinlios.com/assets/sprite.webp">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="Dime tiempo, antojo y objetivo. Cocina sin líos cruza tus preferencias con tu despensa, semana y recetas recientes para proponerte tres ideas razonables.">
+<meta name="theme-color" content="#274034"><meta name="robots" content="index,follow"><link rel="canonical" href="https://cocinasinlios.com/que-cocino.html">
+<meta property="og:title" content="¿Qué cocino hoy? | Cocina sin líos con Macarena"><meta property="og:description" content="Tres ideas teniendo en cuenta tiempo, antojo, despensa y lo que ya has cocinado."><meta property="og:type" content="website"><meta property="og:url" content="https://cocinasinlios.com/que-cocino.html"><meta property="og:site_name" content="Cocina sin líos con Macarena"><meta property="og:image" content="https://cocinasinlios.com/assets/sprite.webp"><meta name="twitter:card" content="summary_large_image">
 <style>
-:root{--cream:#fbf6ee;--paper:#fffdfa;--ink:#25251f;--muted:#706f67;--dark:#2b3a30;--sage:#dce8d8;--peach:#f1d8c6;--butter:#f2df9d;--pink:#edd6d7;--terr:#d36f4b;--line:#e8dfd2}
-*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.5}a{color:inherit;text-decoration:none}.wrap{width:min(1060px,92vw);margin:auto}h1,h2,h3{font-family:Georgia,serif;font-weight:500;line-height:1.03}.eyebrow{font-size:11px;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;color:#687769}
-header{position:sticky;top:0;z-index:30;background:rgba(251,246,238,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.nav{height:70px;display:flex;align-items:center;gap:20px}.brand{font-family:Georgia,serif;font-size:23px;font-weight:700;line-height:.95}.brand small{display:block;font-family:Inter,sans-serif;font-size:9px;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted);margin-top:6px}.back{margin-left:auto;font-weight:850;font-size:13px}
-.hero{padding:58px 0 26px;text-align:center}.hero h1{font-size:clamp(52px,7vw,82px);letter-spacing:-2.8px;margin:8px auto 15px;max-width:850px}.hero p{color:var(--muted);font-size:17px;max-width:700px;margin:auto}
-.game{padding:24px 0 70px}.panel{background:var(--paper);border:1px solid var(--line);border-radius:32px;padding:34px;box-shadow:0 18px 55px rgba(58,51,42,.08)}.pantry-context{display:none;background:var(--sage);border-radius:20px;padding:16px 18px;margin-bottom:24px;color:#465249}.pantry-context.show{display:block}.pantry-context b{display:block;font-family:Georgia,serif;font-size:24px;font-weight:500;margin-bottom:4px}.pantry-context span{font-size:12px}.question{margin-bottom:28px}.question h2{font-size:32px;margin:0 0 13px}.choices{display:flex;flex-wrap:wrap;gap:9px}.choice{border:1px solid var(--line);background:white;border-radius:999px;padding:11px 15px;font-weight:850;cursor:pointer}.choice.active{background:var(--dark);color:white;border-color:var(--dark)}.choice:focus-visible,.go:focus-visible,.again:focus-visible,.btn:focus-visible{outline:3px solid #7f9a82;outline-offset:3px}
-.go{width:100%;border:0;background:var(--terr);color:white;border-radius:18px;padding:16px;font-weight:900;font-size:15px;cursor:pointer;margin-top:10px}.go:hover{filter:brightness(.96)}
-.results{display:none;margin-top:38px}.results.show{display:block}.results-head{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:18px}.results h2{font-size:39px;margin:0}.again{border:0;background:var(--butter);border-radius:999px;padding:9px 13px;font-weight:900;cursor:pointer}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.card{background:white;border-radius:25px;overflow:hidden;border:1px solid var(--line);box-shadow:0 8px 25px rgba(57,51,43,.05)}.photo{height:220px;background-color:#f2eee7;background-image:url("assets/sprite.webp");background-repeat:no-repeat;background-size:300% 200%}.body{padding:19px}.body small{font-size:10px;text-transform:uppercase;letter-spacing:1.2px;font-weight:900;color:#718071}.body h3{font-size:27px;margin:7px 0 8px}.body p{font-size:13px;color:var(--muted);margin:0 0 13px}.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;background:var(--dark);color:white;padding:11px 15px;font-size:12px;font-weight:900}.card-actions{display:flex;gap:7px;flex-wrap:wrap}.week-add{border:1px solid var(--dark);background:transparent;color:var(--dark);border-radius:999px;padding:10px 13px;font-size:11px;font-weight:900;cursor:pointer}.week-add.saved{background:var(--sage);border-color:var(--sage)}.p1{background-position:50% 0}.p2{background-position:100% 0}.p3{background-position:0 100%}.p4{background-position:50% 100%}.p5{background-position:100% 100%}.p6{background-position:0 0}.real-hummus{background-image:url("assets/hummus.webp");background-size:auto 220px;background-position:center;background-repeat:no-repeat}.real-pasta{background-image:url("assets/pasta.webp");background-size:auto 220px;background-position:center;background-repeat:no-repeat}.real-tortitas{background-image:url("assets/tortitas.webp");background-size:auto 220px;background-position:center;background-repeat:no-repeat}
-.note{margin-top:22px;background:var(--sage);border-radius:20px;padding:18px;font-size:13px;color:#566158}
-footer{background:#202b24;color:#dce5df;padding:40px 0}footer p{color:#aebbb3;font-size:12px}
-@media(max-width:760px){.grid{grid-template-columns:1fr}.photo{height:220px}.panel{padding:25px}.results-head{display:block}.again{margin-top:10px}}
-@media(max-width:520px){.hero h1{font-size:47px}.back{display:none}.question h2{font-size:27px}}
-
-.global-dock{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);z-index:120;background:rgba(34,43,37,.96);color:white;border-radius:22px;padding:7px;display:flex;gap:4px;box-shadow:0 14px 40px rgba(0,0,0,.22);backdrop-filter:blur(12px)}.global-dock a{min-width:74px;text-align:center;padding:7px 9px;border-radius:16px;font-size:10px;font-weight:850}.global-dock a span{display:block;font-size:17px;margin-bottom:2px}.global-dock a:hover{background:rgba(255,255,255,.13)}
-@media(max-width:580px){body{padding-bottom:76px}.global-dock{left:10px;right:10px;transform:none;justify-content:space-between}.global-dock a{min-width:0;flex:1;padding:7px 3px}}
+:root{--cream:#fbf6ee;--paper:#fffdfa;--ink:#25251f;--muted:#706f67;--dark:#274034;--sage:#dce8d8;--mint:#eef5eb;--peach:#f1d8c6;--butter:#f2df9d;--terr:#c97a58;--line:#e8dfd2;--shadow:0 18px 55px rgba(58,51,42,.10)}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.52;padding-bottom:78px}a{color:inherit;text-decoration:none}.wrap{width:min(1080px,92vw);margin:auto}h1,h2,h3{font-family:Georgia,serif;font-weight:500;line-height:1.04}.eyebrow{font-size:10px;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;color:#687769}
+header{position:sticky;top:0;z-index:40;background:rgba(251,246,238,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.nav{height:76px;display:flex;align-items:center;gap:22px}.brand img{width:185px}.navlinks{margin-left:auto;display:flex;gap:18px;font-size:13px;font-weight:800}
+.hero{padding:58px 0 30px;text-align:center}.hero h1{font-size:clamp(50px,7vw,82px);letter-spacing:-2.5px;margin:8px auto 14px;max-width:850px}.hero p{font-size:18px;color:var(--muted);max-width:720px;margin:auto}.memory{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:18px}.memory span{background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:8px 11px;font-size:11px;font-weight:850}
+.game{padding:14px 0 70px}.panel{background:var(--paper);border:1px solid var(--line);border-radius:32px;padding:32px;box-shadow:var(--shadow)}.context{display:none;background:var(--sage);border-radius:20px;padding:16px 18px;margin-bottom:22px}.context.show{display:block}.context b{display:block;font-family:Georgia,serif;font-size:23px;font-weight:500}.context span{display:block;color:#536056;font-size:12px;margin-top:4px}.questions{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.question{border:1px solid var(--line);border-radius:22px;padding:18px;background:white}.question h2{font-size:26px;margin:0 0 12px}.choices{display:flex;flex-wrap:wrap;gap:7px}.choice{border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:9px 12px;font-size:11px;font-weight:850;cursor:pointer}.choice.active{background:var(--dark);color:white;border-color:var(--dark)}.go{width:100%;border:0;background:var(--terr);color:white;border-radius:18px;padding:16px;font-weight:900;font-size:15px;cursor:pointer;margin-top:18px}
+.results{display:none;margin-top:34px}.results.show{display:block}.results-head{display:flex;justify-content:space-between;gap:16px;align-items:end}.results h2{font-size:40px;margin:5px 0}.again{border:0;background:var(--butter);border-radius:999px;padding:10px 14px;font-weight:900;cursor:pointer}.why{background:var(--sage);border-radius:18px;padding:13px 16px;font-size:12px;color:#536056;margin:12px 0 18px}.why b{display:block;color:var(--ink);margin-bottom:2px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{background:white;border:1px solid var(--line);border-radius:25px;overflow:hidden;display:flex;flex-direction:column}.photo{height:210px;background:#eee url('/assets/sprite.webp') no-repeat;background-size:300% 200%}.body{padding:19px;display:flex;flex-direction:column;flex:1}.body small{font-size:9px;letter-spacing:1px;text-transform:uppercase;font-weight:900;color:#687769}.body h3{font-size:28px;margin:7px 0}.body p{font-size:13px;color:var(--muted);margin:0 0 14px}.fit{font-size:11px;background:var(--mint);border-radius:12px;padding:8px 10px;margin-bottom:13px}.actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:auto}.btn,.week-add{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--dark);border-radius:999px;padding:10px 13px;font-size:11px;font-weight:900}.btn{background:var(--dark);color:#fff}.week-add{background:transparent;color:var(--dark);cursor:pointer}.week-add.saved{background:var(--sage);border-color:var(--sage)}.after{display:flex;justify-content:space-between;gap:14px;align-items:center;margin-top:18px;background:var(--butter);border-radius:20px;padding:16px;font-size:12px}.after .again{background:white}.human{font-size:12px;color:#635c4c}.human a{text-decoration:underline;font-weight:900}
+footer{background:#202b24;color:#dce5df;padding:40px 0}footer p{font-size:12px;color:#aebbb3}.global-dock{position:fixed;left:50%;bottom:12px;transform:translateX(-50%);z-index:120;background:rgba(34,43,37,.95);color:#fff;border-radius:18px;padding:5px;display:flex;gap:2px;box-shadow:0 14px 40px rgba(0,0,0,.18)}.global-dock a{min-width:68px;text-align:center;padding:7px 8px;border-radius:13px;font-size:9px;font-weight:850}.global-dock a span{display:block;font-size:15px}
+@media(max-width:850px){.questions{grid-template-columns:1fr}.grid{grid-template-columns:1fr 1fr}.navlinks{display:none}.brand img{width:165px}}@media(max-width:600px){.hero{padding:40px 0 22px}.hero h1{font-size:47px}.panel{padding:20px}.grid{grid-template-columns:1fr}.results-head,.after{display:block}.again{margin-top:9px}.photo{height:230px}.global-dock{left:10px;right:10px;transform:none}.global-dock a{min-width:0;flex:1;padding:6px 3px}}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://cocinasinlios.com/"},{"@type":"ListItem","position":2,"name":"¿Qué cocino hoy?","item":"https://cocinasinlios.com/que-cocino.html"}]}</script>
 </head>
 <body>
-<header><div class="wrap nav"><a class="brand" href="/">Cocina sin líos<small>con Macarena</small></a><a class="back" href="/">← Volver</a></div></header>
+<header><div class="wrap nav"><a class="brand" href="/"><img src="/assets/logo-cocina-sin-lios.svg" alt="Cocina sin líos con Macarena"></a><nav class="navlinks"></nav></div></header>
 <main>
-<section class="hero"><div class="wrap"><div class="eyebrow">Macarena te saca del “no sé qué hacer”</div><h1>Vale, ¿qué cocinamos hoy?</h1><p>Dime cuánto tiempo tienes y qué te pide el cuerpo. Yo te doy tres ideas razonables para hoy, sin convertir la cena en otro problema más.</p></div></section>
-<section class="game"><div class="wrap panel">
-<div id="pantryContext" class="pantry-context"></div>
-<div class="question"><h2 id="q-time">1. ¿Cuánto tiempo tienes?</h2><div class="choices" data-group="time" role="group" aria-labelledby="q-time"><button class="choice active" data-value="15">Voy tarde · 15 min</button><button class="choice" data-value="30">Tengo media hora</button><button class="choice" data-value="60">Hoy puedo cocinar</button></div></div>
-<div class="question"><h2 id="q-mood">2. ¿Qué te apetece?</h2><div class="choices" data-group="mood" role="group" aria-labelledby="q-mood"><button class="choice active" data-value="salado">Algo salado</button><button class="choice" data-value="ligero">Algo ligero</button><button class="choice" data-value="comfort">Comida de abrazo</button><button class="choice" data-value="dulce">Dame dulce</button><button class="choice" data-value="daigual">Sorpréndeme</button></div></div>
-<div class="question"><h2 id="q-goal">3. ¿Qué quieres conseguir?</h2><div class="choices" data-group="goal" role="group" aria-labelledby="q-goal"><button class="choice active" data-value="rapido">Resolver hoy</button><button class="choice" data-value="aprovechar">Aprovechar lo que tengo</button><button class="choice" data-value="aprender">Aprender una técnica</button></div></div>
-<button id="go" class="go">Macarena, dame tres ideas ✦</button>
-<div id="results" class="results" aria-live="polite"><div class="results-head"><h2 id="resultsTitle" tabindex="-1">Esto haría yo hoy.</h2><button id="again" class="again">🎲 Dame otras tres</button></div><div id="whyChoice" class="why-pick"></div><div id="grid" class="grid"></div><div class="note">No tienes que elegir “la receta perfecta”. El objetivo es pasar de <b>“no sé qué hacer”</b> a tener tres opciones razonables en diez segundos.</div><div style="margin-top:14px"><button id="shareIdeas" class="again" type="button">Compartir estas tres ideas</button></div><div class="human-help"><span>¿Ninguna te encaja? Entonces ya no te doy más tarjetas: me cuentas qué tienes y lo pensamos contigo.</span><a id="humanHelp" href="/hablamos.html">Macarena, te cuento</a></div></div>
+<section class="hero"><div class="wrap"><div class="eyebrow">Decide sin dar veinte vueltas</div><h1>Vale, ¿qué cocinamos hoy?</h1><p>Te propongo tres opciones cruzando lo que te apetece con el tiempo que tienes, tu despensa y lo que ya has visto o guardado.</p><div id="memory" class="memory"></div></div></section>
+<section class="game"><div class="wrap panel"><div id="context" class="context"></div>
+<div class="questions">
+<div class="question"><h2>1. Tiempo</h2><div class="choices" data-group="time"><button class="choice active" data-value="15">15 min</button><button class="choice" data-value="30">30 min</button><button class="choice" data-value="60">Puedo cocinar</button></div></div>
+<div class="question"><h2>2. Antojo</h2><div class="choices" data-group="mood"><button class="choice active" data-value="salado">Salado</button><button class="choice" data-value="ligera">Ligero</button><button class="choice" data-value="comfort">De abrazo</button><button class="choice" data-value="dulce">Dulce</button><button class="choice" data-value="daigual">Sorpréndeme</button></div></div>
+<div class="question"><h2>3. Objetivo</h2><div class="choices" data-group="goal"><button class="choice active" data-value="resolver">Resolver hoy</button><button class="choice" data-value="aprovechar">Aprovechar</button><button class="choice" data-value="aprender">Aprender algo</button></div></div>
+</div>
+<button id="go" class="go" type="button">Dame tres ideas que tengan sentido ✦</button>
+<div id="results" class="results" aria-live="polite"><div class="results-head"><div><div class="eyebrow">Mi propuesta</div><h2 id="resultTitle" tabindex="-1">Esto haría yo hoy.</h2></div><button id="again" class="again" type="button">🎲 Cambia las tres</button></div><div id="why" class="why"></div><div id="grid" class="grid"></div><div class="after"><div class="human">¿Ninguna encaja? <a id="humanHelp" href="/hablamos.html">Cuéntame qué tienes y qué te bloquea.</a></div><button id="share" class="again" type="button">Compartir ideas</button></div></div>
 </div></section>
 </main>
-<footer><div class="wrap"><b>Cocina sin líos con Macarena</b><p>Ideas de cocina doméstica. Las recetas completas publicadas incluyen explicación y recomendaciones específicas.</p></div></footer>
+<footer><div class="wrap"><b>Cocina sin líos con Macarena</b><p>Las propuestas se calculan localmente con los datos que hayas guardado en este dispositivo. No necesitas cuenta.</p></div></footer>
+<div class="global-dock"></div>
+<script src="/assets/recipes-data.js"></script>
 <script>
-const data=[
-{title:"Hummus exprés",slug:"hummus-cremoso",time:10,mood:["salado","ligero"],goal:["rapido","aprender","aprovechar"],ingredients:["legumbres","ajo","limon","comino","aove"],desc:"Con garbanzos cocidos y poco más montas una cena o picoteo.",url:"/receta.html?r=hummus-cremoso",photo:"real-hummus",learn:"textura y triturado"},
-{title:"Pasta pesto para repetir",slug:"pasta-pesto-tomate",time:30,mood:["salado","comfort"],goal:["rapido","aprender","aprovechar"],ingredients:["pasta","ajo","frutos","aove"],desc:"Una cena agradecida y una buena excusa para entender una salsa.",url:"/receta.html?r=pasta-pesto-tomate",photo:"real-pasta",learn:"emulsión y textura"},
-{title:"Tortitas de domingo",slug:"tortitas-fruta",time:30,mood:["dulce","comfort"],goal:["rapido","aprender"],ingredients:["huevos"],desc:"Desayuno, merienda o merienda de martes.",url:"/receta.html?r=tortitas-fruta",photo:"real-tortitas",learn:"mezcla y reposo"},
-{title:"Merluza al vapor con verduras",slug:"merluza-vapor-verduras",time:30,mood:["salado","ligero"],goal:["rapido","aprender","aprovechar"],ingredients:["protecong","limon","aove","hierbascong"],desc:"Una cena sencilla para aprender a dejar circular el vapor.",url:"/receta.html?r=merluza-vapor-verduras",photo:"p4",learn:"vapor y circulación"},
-{title:"Gazpacho andaluz",slug:"gazpacho-andaluz",time:15,mood:["salado","ligero"],goal:["rapido","aprender","aprovechar"],ingredients:["ajo","aove","vinagre"],desc:"Fresco, rápido y perfecto para practicar textura y ajuste.",url:"/receta.html?r=gazpacho-andaluz",photo:"p1",learn:"trituración y viscosidad"},
-{title:"Albóndigas con tomate",slug:"albondigas-tomate",time:60,mood:["salado","comfort"],goal:["aprender","aprovechar"],ingredients:["tomate","ajo","cebolla","oregano"],desc:"Para cocinar una vez y agradecerlo dos días.",url:"/receta.html?r=albondigas-tomate",photo:"p5",learn:"carne y movimiento"},
-{title:"Crema de verduras",slug:"crema-verduras",time:30,mood:["salado","ligero","comfort"],goal:["aprovechar","aprender"],ingredients:["verdurascong","caldo","cebolla","aove"],desc:"Perfecta para aprovechar verduras y practicar texturas.",url:"/receta.html?r=crema-verduras",photo:"p1",learn:"triturado y cantidad"},
-{title:"Masa de pizza fácil",slug:"pizza-verduras",time:60,mood:["salado","comfort"],goal:["aprender","aprovechar"],ingredients:["tomate","oregano","aove"],desc:"Para una noche de pizza y para entender por qué el reposo también cocina.",url:"/receta.html?r=pizza-verduras",photo:"p2",learn:"amasado y fermentación"},
-{title:"Avena con frutos rojos",slug:"avena-frutos-rojos",time:15,mood:["dulce","ligero"],goal:["rapido","aprovechar"],ingredients:["frutos"],desc:"Desayuno que se deja preparado antes de que empiece el caos.",url:"/receta.html?r=avena-frutos-rojos",photo:"p3",learn:"proporción y reposo"},
-{title:"Quiche de verduras",slug:"quiche-verduras",time:60,mood:["salado","comfort"],goal:["aprovechar","aprender"],ingredients:["huevos","verdurascong","cebolla"],desc:"Buenísima para convertir restos de verduras en una cena decente.",url:"/receta.html?r=quiche-verduras",photo:"p6",learn:"cuajado y aprovechamiento"},
-{title:"Bizcocho de yogur",slug:"bizcocho-yogur",time:60,mood:["dulce","comfort"],goal:["aprender"],ingredients:["huevos"],desc:"Un clásico sencillo para entender aireado y mezcla sin sobrebatir.",url:"/receta.html?r=bizcocho-yogur",photo:"p3",learn:"aireado y mezcla"},
-{title:"Pisto manchego",slug:"pisto-huevo",time:60,mood:["salado","ligero"],goal:["aprovechar","aprender"],ingredients:["tomate","cebolla","ajo","aove"],desc:"Un fondo de armario que sirve de guarnición, relleno o base para otra comida.",url:"/receta.html?r=pisto-huevo",photo:"p1",learn:"giro inverso y concentración"}
-];
-let state={time:"15",mood:"salado",goal:"rapido"};
-const params=new URLSearchParams(location.search),fromPantry=params.get("origen")==="despensa",pantryKeys=(params.get("ingredientes")||"").split(",").filter(Boolean),useSoon=(params.get("gastar")||"").trim();
-const pantryLabels={aove:"aceite de oliva",ajo:"ajo",cebolla:"cebolla",tomate:"tomate",sal:"sal y pimienta",limon:"limón",huevos:"huevos",legumbres:"legumbres",conserva:"conservas",arroz:"arroz",pasta:"pasta",frutos:"frutos secos",pimenton:"pimentón",comino:"comino",oregano:"orégano",curry:"curry",vinagre:"vinagre",mostaza:"mostaza",verdurascong:"verduras congeladas",protecong:"proteína congelada",pan:"pan",caldo:"caldo",sofrito:"sofrito",hierbascong:"hierbas"};
-function toWeekMeal(x){
- return {
-  n:x.title,
-  slug:x.slug||"",
-  t:x.time<=15?"rapida":x.time<=30?"mixta":"tranquila",
-  s:[...new Set([...(x.mood||[]),...(x.goal||[]).includes("aprovechar")?["aprovecha"]:[],"variada"])],
-  need:(x.ingredients||[]).map(k=>pantryLabels[k]||k),
-  uses:x.ingredients||[]
- };
-}
-if(useSoon){
- const box=document.getElementById("pantryContext");if(box){box.classList.add("show");box.innerHTML="<b>Primero quiero gastar esto.</b><span>"+useSoon.replace(/</g,"&lt;").replace(/>/g,"&gt;")+". Voy a intentar priorizar ideas que puedan encajar con esos ingredientes.</span>"}
-}
-if(fromPantry){
- state.goal="aprovechar";
- document.querySelectorAll('[data-group="goal"] .choice').forEach(b=>{const on=b.dataset.value==="aprovechar";b.classList.toggle("active",on);b.setAttribute("aria-pressed",String(on))});
- const box=document.getElementById("pantryContext");
- if(box){const names=pantryKeys.slice(0,8).map(k=>pantryLabels[k]||k);box.classList.add("show");box.innerHTML="<b>Vienes de tu Despensa Sin Líos.</b><span>"+(names.length?"Has marcado: "+names.join(", ")+(pantryKeys.length>8?"…":"")+". ":"")+"Voy a priorizar ideas que aprovechen mejor esa base. Puede que alguna necesite además un ingrediente fresco.</span>";}
-}
-document.querySelectorAll(".choices").forEach(group=>group.querySelectorAll(".choice").forEach(btn=>{
- btn.setAttribute("aria-pressed",String(btn.classList.contains("active")));
- btn.addEventListener("click",()=>{
-  group.querySelectorAll(".choice").forEach(x=>{x.classList.remove("active");x.setAttribute("aria-pressed","false")});
-  btn.classList.add("active");btn.setAttribute("aria-pressed","true");state[group.dataset.group]=btn.dataset.value;
- });
-}));
-function render(){
- const labels={time:{"15":"15 minutos","30":"media hora","60":"hasta una hora"},mood:{salado:"algo salado",ligero:"algo ligero",comfort:"comida de abrazo",dulce:"algo dulce",daigual:"que te sorprenda"},goal:{rapido:"resolver hoy",aprovechar:"aprovechar lo que tienes",aprender:"aprender algo mientras cocinas"}};
- const context=labels.time[state.time]+" · "+labels.mood[state.mood]+" · "+labels.goal[state.goal];
- const why=document.getElementById("whyChoice");
- if(why)why.innerHTML="<b>Por qué te propongo estas tres.</b>He priorizado "+context+(fromPantry&&pantryKeys.length?" y, dentro de esas opciones, las que aprovechan mejor lo que has marcado en tu despensa.":".")+" Busco tres opciones razonables para que puedas decidir sin seguir dando vueltas.";
- const human=document.getElementById("humanHelp");if(human)human.href="/hablamos.html?motivo=uso&origen=que-cocino&contexto="+encodeURIComponent(context);
- let pool=data.filter(x=>x.time<=Number(state.time)&& (state.mood==="daigual"||x.mood.includes(state.mood)) && x.goal.includes(state.goal));
- if(pool.length<3) pool=data.filter(x=>x.time<=Math.max(Number(state.time),30) && (state.mood==="daigual"||x.mood.includes(state.mood)));
- if(pool.length<3) pool=data.filter(x=>x.time<=60);
- if(fromPantry&&pantryKeys.length){
-   pool=[...pool].map(x=>({x,score:(x.ingredients||[]).filter(k=>pantryKeys.includes(k)).length,r:Math.random()})).sort((a,b)=>b.score-a.score||a.r-b.r).map(o=>o.x);
- }else{
-   pool=[...pool].sort(()=>Math.random()-.5);
+(()=>{
+ const recipes=window.CSL_RECIPES||[];
+ const params=new URLSearchParams(location.search);
+ let state={time:"15",mood:"salado",goal:"resolver"},generated=[];
+ let pantry={};try{pantry=JSON.parse(localStorage.getItem("csl-despensa-v1")||"{}")}catch(e){}
+ const paramPantry=(params.get("ingredientes")||"").split(",").filter(Boolean);
+ if(paramPantry.length)paramPantry.forEach(k=>pantry[k]=true);
+ const pantryKeys=Object.keys(pantry).filter(k=>pantry[k]);
+ let favs=[];try{favs=JSON.parse(localStorage.getItem("csl-favoritos-v1")||"[]")}catch(e){}
+ let recent=[];try{recent=JSON.parse(localStorage.getItem("csl-recent-recipes-v1")||"[]")}catch(e){}
+ recent=recent.map(x=>typeof x==="string"?x:x.slug).filter(Boolean);
+ let week=null;try{week=JSON.parse(localStorage.getItem("csl-plan-semana-v1")||"null")}catch(e){}
+ const weekSlugs=new Set((week?.items||[]).map(x=>x.slug).filter(Boolean));
+ let useSoon=(params.get("gastar")||"").trim();if(!useSoon)try{useSoon=(localStorage.getItem("csl-gastar-pronto-v1")||"").trim()}catch(e){}
+ const labels={aove:"aceite de oliva",ajo:"ajo",cebolla:"cebolla",tomate:"tomate",sal:"sal",limon:"limón",huevos:"huevos",legumbres:"legumbres",conserva:"conserva",arroz:"arroz",pasta:"pasta",frutos:"frutos secos",pimenton:"pimentón",comino:"comino",oregano:"orégano",curry:"curry",vinagre:"vinagre",mostaza:"mostaza",verdurascong:"verduras",protecong:"pescado o proteína",pan:"pan",caldo:"caldo",sofrito:"sofrito",hierbascong:"hierbas"};
+ const norm=s=>String(s||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
+ const rId=r=>r.id||r.slug;
+ const isFav=r=>favs.includes(rId(r))||favs.includes(r.slug);
+ const useText=norm(useSoon).split(/[,;]+|\sy\s/).map(x=>x.trim()).filter(x=>x.length>2);
+ const mem=document.getElementById("memory"),chips=[];
+ if(pantryKeys.length)chips.push("🥫 "+pantryKeys.length+" básicos en tu despensa");
+ if(weekSlugs.size)chips.push("🗓 Evito repetir tu semana");
+ if(recent.length)chips.push("↻ Tengo en cuenta lo que ya has visto");
+ if(favs.length)chips.push("♡ "+favs.length+" guardada"+(favs.length===1?"":"s"));
+ mem.innerHTML=chips.map(x=>"<span>"+x+"</span>").join("");
+ const context=document.getElementById("context");
+ if(useSoon){context.classList.add("show");context.innerHTML="<b>Primero quiero gastar esto.</b><span>"+useSoon.replace(/[<>&]/g,"")+" · Lo priorizo cuando encaje con una receta de verdad.</span>"}
+ else if(paramPantry.length){context.classList.add("show");context.innerHTML="<b>Vienes de tu despensa.</b><span>Voy a favorecer recetas que aprovechen lo que ya has marcado y a evitar compra innecesaria.</span>"}
+ document.querySelectorAll(".choices").forEach(g=>g.querySelectorAll(".choice").forEach(b=>b.addEventListener("click",()=>{g.querySelectorAll(".choice").forEach(x=>x.classList.remove("active"));b.classList.add("active");state[g.dataset.group]=b.dataset.value})));
+ function moodOK(r){
+   if(state.mood==="daigual")return true;
+   if(state.mood==="dulce")return r.tags.includes("dulce");
+   if(state.mood==="ligera")return r.tags.includes("ligera");
+   if(state.mood==="comfort")return r.tags.includes("comfort");
+   return !r.tags.includes("dulce");
  }
- pool=pool.slice(0,3);
- const g=document.getElementById("grid");
- g.innerHTML=pool.map((x,i)=>'<article class="card"><div class="photo '+x.photo+'"></div><div class="body"><small>Macarena te propone · '+x.time+' min · aprendes '+x.learn+'</small><h3>'+x.title+'</h3><p>'+x.desc+'</p><div class="card-actions"><a class="btn" href="'+x.url+'">'+(x.url.startsWith("/receta-")?"Ver receta":"Ver idea")+'</a><button class="week-add" type="button" data-week-index="'+i+'">Llévala a mi semana</button></div></div></article>').join("");
- g.querySelectorAll("[data-week-index]").forEach(b=>b.addEventListener("click",()=>{
-   const x=pool[Number(b.dataset.weekIndex)];
-   if(!x)return;
-   try{
-     localStorage.setItem("csl-idea-semana-v1",JSON.stringify(toWeekMeal(x)));
-     b.textContent="Añadida a tu semana ✓";
-     b.classList.add("saved");
-     setTimeout(()=>{location.href="/plan-semana.html?idea=1"},260);
-   }catch(e){location.href="/plan-semana.html"}
- }));
- const results=document.getElementById("results");results.classList.add("show");results.scrollIntoView({behavior:"smooth",block:"start"});setTimeout(()=>document.getElementById("resultsTitle").focus({preventScroll:true}),350);
-}
-document.getElementById("go").addEventListener("click",()=>{window.CSLTrack?.("meal_picker_generate");render()});document.getElementById("again").addEventListener("click",render);
-document.getElementById("shareIdeas").addEventListener("click",async()=>{const titles=[...document.querySelectorAll("#grid .body h3")].map(x=>x.textContent.trim());if(!titles.length)return;const text="Tres ideas Sin Líos para hoy ✦\n\n"+titles.map(x=>"• "+x).join("\n")+"\n\nhttps://cocinasinlios.com/que-cocino.html";try{if(navigator.share){await navigator.share({title:"Qué cocino hoy",text})}else{await navigator.clipboard.writeText(text);document.getElementById("shareIdeas").textContent="Ideas copiadas ✓"}}catch(e){}});
+ function score(r){
+   let s=0;
+   const limit=Number(state.time);
+   if(r.minutes<=limit)s+=8;else if(r.minutes<=limit+15)s+=2;else s-=5;
+   if(moodOK(r))s+=5;
+   if(state.goal==="aprovechar"&&r.tags.includes("aprovechar"))s+=5;
+   if(state.goal==="resolver"&&r.minutes<=30)s+=3;
+   if(state.goal==="aprender"&&r.learn?.x)s+=3;
+   const uses=r.plan?.uses||[],covered=uses.filter(k=>pantry[k]);
+   s+=covered.length*1.8;
+   if(uses.length&&covered.length===uses.length)s+=2;
+   if(useText.length){const hay=norm(r.title+" "+r.ingredients.join(" ")+" "+(r.plan?.need||[]).join(" "));s+=useText.filter(t=>hay.includes(t)).length*6}
+   if(isFav(r))s+=1.2;
+   if(weekSlugs.has(r.slug))s-=6;
+   const ri=recent.indexOf(r.slug);if(ri===0)s-=7;else if(ri>0&&ri<4)s-=4;else if(ri>=4)s-=1;
+   if(generated.includes(r.slug))s-=5;
+   return s+Math.random()*1.4;
+ }
+ function fitText(r){
+   const bits=[];
+   const covered=(r.plan?.uses||[]).filter(k=>pantry[k]);
+   if(covered.length)bits.push("aprovecha "+covered.slice(0,2).map(k=>labels[k]||k).join(" + "));
+   if(useText.length&&useText.some(t=>norm(r.title+" "+r.ingredients.join(" ")).includes(t)))bits.push("encaja con lo que quieres gastar");
+   if(r.minutes<=15)bits.push("muy rápida");else if(r.minutes<=30)bits.push("entre semana");
+   if(isFav(r))bits.push("ya la guardaste");
+   if(!bits.length)bits.push(r.learn?.t||"cambio de registro");
+   return bits.join(" · ");
+ }
+ function photoStyle(r){return r.image?"background-image:url('"+r.image+"');background-size:cover;background-position:center":"background-position:"+(r.sprite||"0 0")}
+ function render(){
+   let pool=recipes.filter(r=>moodOK(r)&&r.minutes<=Number(state.time)+15);
+   if(state.mood!=="dulce")pool=pool.filter(r=>r.tags.includes("cena")||r.tags.includes("rapida")||r.tags.includes("vegetal"));
+   if(pool.length<6)pool=recipes.filter(r=>state.mood==="dulce"?r.tags.includes("dulce"):!r.tags.includes("dulce"));
+   pool=[...pool].sort((a,b)=>score(b)-score(a));
+   const picked=[];for(const r of pool){if(!picked.some(x=>x.slug===r.slug))picked.push(r);if(picked.length===3)break}
+   generated.push(...picked.map(x=>x.slug));generated=[...new Set(generated)].slice(-9);
+   const whyBits=["tiempo y antojo"];
+   if(pantryKeys.length)whyBits.push("tu despensa");
+   if(useSoon)whyBits.push("lo que quieres gastar");
+   if(weekSlugs.size)whyBits.push("evitar repetir tu semana");
+   if(recent.length)whyBits.push("dar variedad respecto a lo reciente");
+   document.getElementById("why").innerHTML="<b>Por qué estas tres.</b>Estoy cruzando "+whyBits.join(", ")+". No busco una coincidencia perfecta: busco tres decisiones buenas y distintas.";
+   document.getElementById("grid").innerHTML=picked.map((r,i)=>'<article class="card"><div class="photo" style="'+photoStyle(r)+'"></div><div class="body"><small>'+r.category+' · '+r.time+'</small><h3>'+r.title+'</h3><p>'+r.intro+'</p><div class="fit">'+fitText(r)+'</div><div class="actions"><a class="btn" href="/receta.html?r='+encodeURIComponent(r.slug)+'">Ver receta</a><button class="week-add" data-i="'+i+'" type="button">A mi semana</button></div></div></article>').join("");
+   document.querySelectorAll("[data-i]").forEach(b=>b.addEventListener("click",()=>{const r=picked[Number(b.dataset.i)];try{localStorage.setItem("csl-idea-semana-v1",JSON.stringify({n:r.title,slug:r.slug,...r.plan}));b.textContent="Añadida ✓";b.classList.add("saved");setTimeout(()=>location.href="/plan-semana.html?idea=1",220)}catch(e){location.href="/plan-semana.html"}}));
+   document.getElementById("humanHelp").href="/hablamos.html?motivo=uso&origen=que-cocino&contexto="+encodeURIComponent(state.time+" min · "+state.mood+" · "+state.goal+(useSoon?" · gastar "+useSoon:""));
+   document.getElementById("results").classList.add("show");document.getElementById("results").scrollIntoView({behavior:"smooth",block:"start"});setTimeout(()=>document.getElementById("resultTitle").focus({preventScroll:true}),300);
+ }
+ document.getElementById("go").addEventListener("click",render);document.getElementById("again").addEventListener("click",render);
+ document.getElementById("share").addEventListener("click",async e=>{const titles=[...document.querySelectorAll("#grid h3")].map(x=>x.textContent);if(!titles.length)return;const txt="Tres ideas Sin Líos ✦\n\n"+titles.map(x=>"• "+x).join("\n")+"\n\nhttps://cocinasinlios.com/que-cocino.html";try{if(navigator.share)await navigator.share({title:"Qué cocino hoy",text:txt});else{await navigator.clipboard.writeText(txt);e.currentTarget.textContent="Ideas copiadas ✓"}}catch(err){}});
+})();
 </script>
-<div class="global-dock">
-<a href="/explora.html"><span>✦</span>Explora</a>
-<a href="/que-cocino.html"><span>🎲</span>Qué cocino</a>
-<a href="/recetas.html"><span>🍝</span>Recetas</a>
-<a href="/plan-semana.html"><span>🗓</span>Planifica</a>
-<a href="/con-macarena.html"><span>👋</span>Macarena</a>
-</div><script src="/assets/site.js" defer></script>
+<script src="/assets/site.js" defer></script>
 </body></html>
