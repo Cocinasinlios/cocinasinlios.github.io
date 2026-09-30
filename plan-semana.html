@@ -16,6 +16,8 @@ header{position:sticky;top:0;z-index:40;background:rgba(251,246,238,.95);backdro
 @media(max-width:900px){.questions{grid-template-columns:1fr}.week{grid-template-columns:1fr 1fr}.shopping{grid-template-columns:1fr}.navlinks{display:none}.brand img{width:165px}}@media(max-width:600px){.hero{padding:40px 0 22px}.hero h1{font-size:47px}.panel{padding:20px}.week{grid-template-columns:1fr}.introline{display:block}.box ul{columns:1}.global-dock{left:10px;right:10px;transform:none}.global-dock a{min-width:0;flex:1;padding:6px 3px}}
 
 .avoid-box{margin-top:14px;border:1px solid var(--line);border-radius:20px;padding:16px;background:#f8f4ed}.avoid-box h2{font-size:23px;margin:0 0 5px}.avoid-box p{margin:0 0 11px;color:var(--muted);font-size:12px}.avoid-chips{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:9px}.avoid-chip{border:1px solid var(--line);background:white;border-radius:999px;padding:10px 13px;font-weight:850;cursor:pointer}.avoid-chip[aria-pressed="true"]{background:var(--dark);border-color:var(--dark);color:white}.avoid-input{width:100%;border:1px solid var(--line);border-radius:15px;padding:11px 13px;background:white}.avoid-note{display:block;margin-top:6px;color:#665f57;font-size:11px}.scaled{margin-top:12px;border-top:1px solid var(--line);padding-top:9px}.scaled summary{cursor:pointer;font-size:11px;font-weight:900}.scaled ul{padding-left:17px;margin:8px 0 0}.scaled li{font-size:11px;color:var(--muted);margin:4px 0}.serving-note{display:block;font-size:10px;font-weight:850;color:#59675e;margin:3px 0 7px}
+
+.shop-group-title{list-style:none!important;margin:15px 0 6px!important;padding:8px 0 4px!important;border-bottom:1px solid var(--line);font-size:10px!important;font-weight:900!important;letter-spacing:1.1px;text-transform:uppercase;color:#536158}.shopping li small{font-size:10px;color:var(--muted)}
 </style>
 <link rel="stylesheet" href="/assets/premium.css">
 </head>
@@ -30,7 +32,7 @@ header{position:sticky;top:0;z-index:40;background:rgba(251,246,238,.95);backdro
 </div><div class="avoid-box"><h2>4. ¿Algo que no quieres?</h2><p>Uso las mismas preferencias de “Qué cocino” y las guardo solo en este dispositivo.</p><div class="avoid-chips" role="group" aria-label="Ingredientes que prefieres evitar"><button class="avoid-chip" type="button" data-avoid="pescado" aria-pressed="false">Sin pescado</button><button class="avoid-chip" type="button" data-avoid="carne" aria-pressed="false">Sin carne</button><button class="avoid-chip" type="button" data-avoid="huevo" aria-pressed="false">Sin huevo</button><button class="avoid-chip" type="button" data-avoid="lacteos" aria-pressed="false">Sin lácteos</button></div><input id="avoidText" class="avoid-input" type="text" maxlength="160" aria-label="Otros ingredientes que prefieres evitar" placeholder="Otros: champiñones, pimiento, picante"><small class="avoid-note">Preferencia de filtrado; no sustituye la revisión de alérgenos o etiquetado.</small></div><div id="context" class="context"></div><button id="go" class="go" type="button">Crear una semana que tenga sentido ✦</button></div></section>
 <section id="results" class="results" aria-live="polite"><div class="wrap"><div class="introline"><div><div class="eyebrow">Tu propuesta</div><h2 id="resultTitle" tabindex="-1">Esta semana empezaría por aquí.</h2></div><button id="again" class="btn" type="button">Otra semana completa</button></div><div id="why" class="why"></div><div id="week" class="week"></div>
 <div class="actions"><button id="save" class="btn primary" type="button">Guardar esta semana</button><button id="share" class="btn" type="button">Compartir resumen</button><a id="openKitchen" class="btn" href="/mi-rincon.html" style="display:none">Abrir Mi cocina →</a><a class="btn" href="/despensa-sin-lios.html">Revisar despensa</a></div>
-<div class="shopping"><div class="box buy"><div class="eyebrow">Compra corta</div><h2>Lo que te falta.</h2><ul id="shopping"></ul><p class="small">Lista orientativa de básicos: las cantidades ajustadas a tus raciones están dentro de cada cena. Revisa frescos, alérgenos y lo que tengas fuera de la despensa marcada.</p></div><div class="box covered"><div class="eyebrow">Ya está en casa</div><h2>Lo que no vuelvo a añadir.</h2><ul id="covered"></ul></div></div>
+<div class="shopping"><div class="box buy"><div class="eyebrow">Compra consolidada</div><h2>Lo que necesitas para los cinco días.</h2><ul id="shopping"></ul><p class="small">Sumo cantidades equivalentes y mantengo separadas las alternativas. Ajusta siempre envases, apetito y cantidades que ya tengas abiertas.</p></div><div class="box covered"><div class="eyebrow">Despensa marcada</div><h2>Comprueba que tengas suficiente.</h2><ul id="covered"></ul><p class="small">Marcar un básico significa “lo tengo”, no “tengo toda la cantidad necesaria”. Por eso aquí te enseño también el total semanal.</p></div></div>
 </div></section>
 </main>
 <footer><div class="wrap"><b>Cocina sin líos con Macarena</b><p>El plan se calcula en este dispositivo. Solo se guarda cuando pulsas “Guardar esta semana”.</p></div></footer>
@@ -45,7 +47,7 @@ header{position:sticky;top:0;z-index:40;background:rgba(251,246,238,.95);backdro
  const avoidMap={pescado:["pescado","merluza","salmon","bacalao","atun","bonito","sardina"],carne:["pollo","carne","albondig","jamon"],huevo:["huevo"],lacteos:["leche","yogur","queso","mozzarella","mantequilla","nata"]};
  const exclusionLabels={pescado:"pescado",carne:"carne",huevo:"huevo",lacteos:"lácteos"};
  const freeAvoid=()=>norm(exclusions.text).split(/[,;]+/).map(x=>x.trim()).filter(x=>x.length>2);
- const isExcluded=r=>{const hay=norm((r.title||"")+" "+(r.ingredients||[]).join(" ")+" "+(r.category||""));return exclusions.groups.some(g=>(avoidMap[g]||[]).some(k=>hay.includes(k)))||freeAvoid().some(k=>hay.includes(k))};
+ const isExcluded=r=>{const hay=norm((r.title||"")+" "+(r.ingredients||[]).join(" ")+" "+(r.category||""));return exclusions.groups.some(g=>r.contains&&typeof r.contains[g]==="boolean"?r.contains[g]:(avoidMap[g]||[]).some(k=>hay.includes(k)))||freeAvoid().some(k=>hay.includes(k))};
  const eligibleRecipes=()=>recipes.filter(r=>!isExcluded(r));
  const saveExclusions=()=>{try{localStorage.setItem("csl-exclusions-v1",JSON.stringify(exclusions))}catch(e){}};
  let pantry={};try{pantry=JSON.parse(localStorage.getItem("csl-despensa-v1")||"{}")}catch(e){}
@@ -66,23 +68,76 @@ header{position:sticky;top:0;z-index:40;background:rgba(251,246,238,.95);backdro
  document.querySelectorAll("[data-avoid]").forEach(b=>{b.setAttribute("aria-pressed",String(exclusions.groups.includes(b.dataset.avoid)));b.addEventListener("click",()=>{const k=b.dataset.avoid,on=exclusions.groups.includes(k);exclusions.groups=on?exclusions.groups.filter(x=>x!==k):[...exclusions.groups,k];b.setAttribute("aria-pressed",String(!on));saveExclusions()})});
  avoidText.addEventListener("change",()=>{exclusions.text=avoidText.value.trim();saveExclusions()});;
  function targetPeople(){return Number(state.people)||2}
- function basePeople(r){const s=String(r.servings||"");if(!/(persona|racion|porci)/i.test(s))return 4;const m=s.match(/(\d+)/);return m?Number(m[1]):4}
- function numberFmt(n,step=.25){const v=Math.max(step,Math.round(n/step)*step);if(Math.abs(v-Math.round(v))<.01)return String(Math.round(v));const whole=Math.floor(v),frac=Math.round((v-whole)*4);const f=frac===1?"¼":frac===2?"½":frac===3?"¾":"";return (whole?String(whole):"")+f}
- function parseQty(q){if(/^\d+\/\d+$/.test(q)){const [a,b]=q.split("/").map(Number);return a/b}return Number(q.replace(",","."))}
- function scaledNumber(q,rest,factor){const n=parseQty(q);if(!Number.isFinite(n))return q;const r=rest.toLowerCase();
-   if(/^\s*(kg|g|mg|ml|cl|l\b|cucharadas?\b|cucharaditas?\b|tazas?\b)/i.test(r))return numberFmt(n*factor,.25);
-   if(/^\s*(huevos?|latas?|tortillas?|filetes?|lomos?|muslos?|yogures?|piezas?)\b/i.test(r))return String(Math.max(1,Math.round(n*factor)));
-   if(/^\s*(dientes? de ajo|cebollas?|puerros?|limones?|calabacines?|berenjenas?|patatas?|tomates?|manzanas?|pl[aá]tanos?)\b/i.test(r))return numberFmt(n*factor,.5);
-   return numberFmt(n*factor,.5);
+ function basePeople(r){return Number(r.baseServings)||(()=>{const m=String(r.servings||"").match(/(\d+)/);return m?Number(m[1]):4})()}
+ function roundTo(n,step){return Math.max(step,Math.round(n/step)*step)}
+ function humanNum(n){if(Math.abs(n-Math.round(n))<.01)return String(Math.round(n));const q=Math.round(n*4)/4,whole=Math.floor(q),frac=Math.round((q-whole)*4),f=frac===1?"¼":frac===2?"½":frac===3?"¾":"";return (whole?String(whole):"")+f}
+ function scaledQty(ing,r){if(ing?.qty==null)return null;const factor=targetPeople()/basePeople(r),step=Number(ing.round)||.25;return roundTo(Number(ing.qty)*factor,step)}
+ function scaledMax(ing,r){if(ing?.maxQty==null)return null;const factor=targetPeople()/basePeople(r),step=Number(ing.round)||.25;return roundTo(Number(ing.maxQty)*factor,step)}
+ const countNames={"huevos":["huevo","huevos"],"cebolla":["cebolla","cebollas"],"puerro":["puerro","puerros"],"ajo":["diente de ajo","dientes de ajo"],"limón":["limón","limones"],"calabacín":["calabacín","calabacines"],"berenjena":["berenjena","berenjenas"],"patata":["patata","patatas"],"tomate":["tomate","tomates"],"tomate cherry":["tomate cherry","tomates cherry"],"manzana":["manzana","manzanas"],"plátano":["plátano","plátanos"],"tortillas":["tortilla","tortillas"],"yogur":["yogur","yogures"]};
+ function formatMeasure(a,b,unit,key){
+   if(a==null)return "";
+   const range=b!=null&&Math.abs(b-a)>.001;
+   const fmt=v=>{
+     if(unit==="g"&&v>=1000)return (Math.round(v/100)/10).toLocaleString("es-ES")+" kg";
+     if(unit==="ml"&&v>=1000)return (Math.round(v/100)/10).toLocaleString("es-ES")+" l";
+     if(unit==="g")return humanNum(v)+" g";
+     if(unit==="ml")return humanNum(v)+" ml";
+     if(unit==="mg")return humanNum(v)+" mg";
+     if(unit==="cda")return humanNum(v)+" cucharada"+(v===1?"":"s");
+     if(unit==="cdta")return humanNum(v)+" cucharadita"+(v===1?"":"s");
+     if(unit==="taza")return humanNum(v)+" taza"+(v===1?"":"s");
+     if(unit==="vaso")return humanNum(v)+" vaso"+(v===1?"":"s");
+     if(unit==="ud"){const n=countNames[key]||[key,key];return humanNum(v)+" "+(Math.abs(v-1)<.01?n[0]:n[1])}
+     return humanNum(v)+" "+unit;
+   };
+   return range?fmt(a)+"–"+fmt(b).replace(/^\d+[¼½¾]?\s*/,""):fmt(a);
  }
- function scaleIngredient(text,r){const factor=targetPeople()/basePeople(r);if(Math.abs(factor-1)<.01)return text;const s=String(text);const m=s.match(/^(\d+(?:[.,]\d+)?(?:\/\d+)?)(\s*[–-]\s*(\d+(?:[.,]\d+)?))?/);if(!m)return s;const rest=s.slice(m[0].length);if(m[3])return scaledNumber(m[1],rest,factor)+"–"+scaledNumber(m[3],rest,factor)+rest;return scaledNumber(m[1],rest,factor)+rest}
- function servingLabel(){const n=targetPeople();return n===1?"1 persona":n===2?"2 personas":n===4?"3–4 personas":"5–6 personas"}
- function scaledIngredients(r){return (r.ingredients||[]).map(x=>scaleIngredient(x,r))}
+ function scaledIngredient(r,ing){
+   if(!ing||ing.qty==null||!ing.aggregate)return ing?.text||"";
+   const a=scaledQty(ing,r),b=scaledMax(ing,r),amount=formatMeasure(a,b,ing.unit,ing.key);
+   return amount+(amount?" de ":"")+ing.key+(ing.optional?" · opcional":"");
+ }
+ function scaledIngredients(r){return (r.ingredientData||[]).length?r.ingredientData.map(x=>scaledIngredient(r,x)):(r.ingredients||[])}
+ function entryLabel(x){
+   if(x.kind==="choice")return x.label;
+   const amount=formatMeasure(x.qty,x.maxQty,x.unit,x.key);
+   return (amount?amount+" de ":"")+x.key+(x.optional?" · opcional":"");
+ }
  function shoppingFor(items){
-   const raw=[...new Set(items.flatMap(r=>r.plan?.need||[]))],covered=[],needed=[];
-   raw.forEach(x=>{const k=needKey[String(x).toLowerCase()];if(k&&pantry[k])covered.push(x);else needed.push(x)});
+   const sums=new Map(),choices=new Map(),plain=new Map();
+   items.forEach(r=>{
+     const data=(r.ingredientData||[]);
+     if(!data.length){(r.plan?.need||[]).forEach(x=>plain.set(norm(x),{kind:"plain",key:norm(x),label:x,group:"Despensa",pantryKey:needKey[norm(x)]||null}));return}
+     data.forEach(ing=>{
+       if(!ing||!ing.key)return;
+       if(ing.qty!=null&&ing.aggregate){
+         const id=ing.key+"|"+ing.unit;
+         const a=scaledQty(ing,r),b=scaledMax(ing,r);
+         if(!sums.has(id))sums.set(id,{kind:"sum",key:ing.key,unit:ing.unit,qty:0,maxQty:0,hasRange:false,group:ing.group||"Despensa",pantryKey:ing.pantryKey||null,optional:true});
+         const x=sums.get(id);x.qty+=a||0;x.maxQty+=(b==null?a:b)||0;if(b!=null)x.hasRange=true;x.optional=x.optional&&!!ing.optional;
+       }else if(ing.qty!=null&&!ing.aggregate){
+         const id=ing.key+"|choice";
+         if(!choices.has(id))choices.set(id,{kind:"choice",key:ing.key,label:ing.key.charAt(0).toUpperCase()+ing.key.slice(1)+" · elige según la receta",group:ing.group||"Despensa",pantryKey:ing.pantryKey||null,optional:!!ing.optional});
+       }else{
+         const k=ing.key;
+         if(/^(agua|sal y pimienta)$/.test(k))return;
+         if(!plain.has(k))plain.set(k,{kind:"plain",key:k,label:k.charAt(0).toUpperCase()+k.slice(1)+(ing.optional?" · opcional":""),group:ing.group||"Despensa",pantryKey:ing.pantryKey||null,optional:!!ing.optional});
+       }
+     });
+   });
+   const all=[...sums.values(),...choices.values(),...plain.values()].map(x=>{if(x.kind==="sum"){if(!x.hasRange)x.maxQty=null;x.label=entryLabel(x)}return x});
+   const order={"Fruta y verdura":0,"Proteína":1,"Frío":2,"Despensa":3};
+   all.sort((a,b)=>(order[a.group]??9)-(order[b.group]??9)||a.key.localeCompare(b.key,"es"));
+   const covered=[],needed=[];
+   all.forEach(x=>{x.display=x.label+(x.pantryKey&&pantry[x.pantryKey]?" · marcado en tu despensa":"");(x.pantryKey&&pantry[x.pantryKey]?covered:needed).push(x)});
    return {needed,covered};
  }
+ function renderShopList(items,covered=false){
+   if(!items.length)return covered?"<li>Aún no hay coincidencias con tu despensa marcada.</li>":"<li>No detecto ingredientes pendientes con estas cinco cenas.</li>";
+   let last="";
+   return items.map(x=>{let h="";if(x.group!==last){last=x.group;h='<li class="shop-group-title">'+last+'</li>'}return h+'<li>'+x.label+(covered?' <small>· comprueba que tengas suficiente</small>':'')+'</li>'}).join("");
+ }
+ function servingLabel(){const n=targetPeople();return n===1?"1 persona":n===2?"2 personas":n===4?"3–4 personas":"5–6 personas"}
  function score(r,selected=[]){
    let s=0,p=r.plan;
    if(p.s.includes(state.style))s+=5;
@@ -118,8 +173,8 @@ header{position:sticky;top:0;z-index:40;background:rgba(251,246,238,.95);backdro
    document.getElementById("week").innerHTML=current.map((r,i)=>'<article class="day"><small>'+days[i]+'</small><h3>'+(r.slug?'<a href="/recetas/'+encodeURIComponent(r.slug)+'/">'+r.title+'</a>':r.title)+'</h3><span class="serving-note">Cantidades ajustadas · '+servingLabel()+'</span><p>'+(i===0&&incoming?"Tu elección se queda fija.":r.plan.t==="rapida"?"Día de poco margen.":r.plan.t==="mixta"?"Algo de cocina, sin secuestrar la tarde.":"Aquí sí merece la pena cocinar con calma.")+'</p><span class="tag">'+(r.tags.includes("aprovechar")?"Aprovechamiento":r.tags.includes("ligera")?"Más ligera":r.tags.includes("comfort")?"Comida de abrazo":"Cambio de registro")+'</span>'+((r.ingredients||[]).length?'<details class="scaled"><summary>Ver cantidades</summary><ul>'+scaledIngredients(r).map(x=>"<li>"+x+"</li>").join("")+'</ul></details>':"")+(i===0&&incoming?'<span class="fixed">✓ Fija</span>':'<button class="swap" type="button" data-swap="'+i+'">Cambiar solo este día</button>')+'</article>').join("");
    document.querySelectorAll("[data-swap]").forEach(b=>b.addEventListener("click",()=>swapDay(Number(b.dataset.swap))));
    const shop=shoppingFor(current);
-   document.getElementById("shopping").innerHTML=shop.needed.length?shop.needed.map(x=>"<li>"+x+"</li>").join(""):"<li>Con lo marcado, no detecto básicos pendientes.</li>";
-   document.getElementById("covered").innerHTML=shop.covered.length?shop.covered.map(x=>"<li>"+x+"</li>").join(""):"<li>Aún no hay coincidencias con tu despensa marcada.</li>";
+   document.getElementById("shopping").innerHTML=renderShopList(shop.needed,false);
+   document.getElementById("covered").innerHTML=renderShopList(shop.covered,true);
    const rapid=current.filter(r=>r.plan.t==="rapida").length,light=current.filter(r=>r.tags.includes("ligera")).length,pantryUse=[...new Set(current.flatMap(r=>(r.plan.uses||[]).filter(k=>pantry[k])))].length;
    const allUses=current.map(r=>r.plan.uses||[]),sharedKeys=[...new Set(allUses.flatMap((u,i)=>u.filter(k=>allUses.some((v,j)=>j!==i&&v.includes(k)))))].length;
    document.getElementById("why").innerHTML=(current.length<5?"<b>He encontrado "+current.length+" de 5 cenas sin saltarme tus preferencias.</b> Quita alguna exclusión o amplía el margen si quieres completar los cinco días. ":"<b>Cómo está construida.</b>")+servingLabel()+" · "+rapid+" cenas rápidas · "+light+" opciones ligeras · "+pantryUse+" básicos de tu despensa reutilizados"+(sharedKeys?" · "+sharedKeys+" bases compartidas entre varios días para recortar compra":"")+(previousSlugs.size?" · penalizo repeticiones respecto a la última semana":"")+(exclusions.groups.length||freeAvoid().length?" · respeto tus ingredientes a evitar":"")+".";
@@ -132,7 +187,7 @@ header{position:sticky;top:0;z-index:40;background:rgba(251,246,238,.95);backdro
    if(options[0]){current[i]=options[0];render()}
  }
  document.getElementById("go").addEventListener("click",build);document.getElementById("again").addEventListener("click",build);
- document.getElementById("save").addEventListener("click",()=>{if(!current.length)return;try{const shop=shoppingFor(current);localStorage.setItem("csl-plan-semana-v1",JSON.stringify({savedAt:new Date().toISOString(),state,meals:current.map(x=>x.title),items:current.map(r=>({title:r.title,n:r.title,slug:r.slug,category:r.category,tags:r.tags,plan:r.plan,servingLabel:servingLabel(),scaledIngredients:scaledIngredients(r)})),shopping:shop.needed,covered:shop.covered}));localStorage.removeItem("csl-idea-semana-v1");incoming=null;document.getElementById("save").textContent="Semana guardada ✓";document.getElementById("openKitchen").style.display="inline-flex"}catch(e){}});
+ document.getElementById("save").addEventListener("click",()=>{if(!current.length)return;try{const shop=shoppingFor(current);localStorage.setItem("csl-plan-semana-v1",JSON.stringify({savedAt:new Date().toISOString(),state,meals:current.map(x=>x.title),items:current.map(r=>({title:r.title,n:r.title,slug:r.slug,category:r.category,tags:r.tags,plan:r.plan,servingLabel:servingLabel(),scaledIngredients:scaledIngredients(r)})),shopping:shop.needed.map(x=>x.label),covered:shop.covered.map(x=>x.label),shoppingStructured:shop.needed,coveredStructured:shop.covered}));localStorage.removeItem("csl-idea-semana-v1");incoming=null;document.getElementById("save").textContent="Semana guardada ✓";document.getElementById("openKitchen").style.display="inline-flex"}catch(e){}});
  document.getElementById("share").addEventListener("click",async e=>{if(!current.length)return;const days=["Lunes","Martes","Miércoles","Jueves","Viernes"],people=state.people==="1"?"1 persona":state.people==="2"?"2 personas":state.people==="4"?"3–4 personas":"5–6 personas";const txt="Mi semana Sin Líos ✦ · "+people+"\n\n"+current.map((r,i)=>days[i]+": "+r.title).join("\n")+"\n\nhttps://cocinasinlios.com/plan-semana.html";try{if(navigator.share)await navigator.share({title:"Mi semana Sin Líos",text:txt});else{await navigator.clipboard.writeText(txt);e.currentTarget.textContent="Resumen copiado ✓"}}catch(err){}});
 })();
 </script>
