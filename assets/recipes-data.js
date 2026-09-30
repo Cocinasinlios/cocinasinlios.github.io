@@ -78,6 +78,110 @@ window.CSL_RECIPES=[
     "ajo",
     "comino"
    ]
+  },
+  "baseServings": 4,
+  "ingredientData": [
+   {
+    "text": "400 g de garbanzos cocidos, escurridos",
+    "key": "garbanzos",
+    "qty": 400,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Despensa",
+    "pantryKey": "legumbres",
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "40 g de tahini o 30 g de sésamo tostado",
+    "key": "tahini o sésamo",
+    "qty": 40,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": false,
+    "round": 1
+   },
+   {
+    "text": "1/2 diente de ajo",
+    "key": "ajo",
+    "qty": 0.5,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": "ajo",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "30–40 ml de zumo de limón",
+    "key": "limón",
+    "qty": 30,
+    "maxQty": 40,
+    "unit": "ml",
+    "group": "Fruta y verdura",
+    "pantryKey": "limon",
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "35 ml de aceite de oliva virgen extra",
+    "key": "aceite de oliva",
+    "qty": 35,
+    "maxQty": null,
+    "unit": "ml",
+    "group": "Despensa",
+    "pantryKey": "aove",
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "1/2 cucharadita de comino",
+    "key": "comino",
+    "qty": 0.5,
+    "maxQty": null,
+    "unit": "cdta",
+    "group": "Despensa",
+    "pantryKey": "comino",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.25
+   },
+   {
+    "text": "3–6 cucharadas de agua muy fría",
+    "key": "agua muy fria",
+    "qty": 3,
+    "maxQty": 6,
+    "unit": "cda",
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 0.25
+   },
+   {
+    "text": "Sal al gusto",
+    "key": "sal y pimienta",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": "sal",
+    "optional": false,
+    "aggregate": false
+   }
+  ],
+  "contains": {
+   "pescado": false,
+   "carne": false,
+   "huevo": false,
+   "lacteos": false
   }
  },
  {
@@ -159,6 +263,121 @@ window.CSL_RECIPES=[
     "frutos",
     "hierbascong"
    ]
+  },
+  "baseServings": 2,
+  "ingredientData": [
+   {
+    "text": "180–200 g de pasta",
+    "key": "pasta",
+    "qty": 180,
+    "maxQty": 200,
+    "unit": "g",
+    "group": "Despensa",
+    "pantryKey": "pasta",
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "25 g de hojas verdes: albahaca, rúcula o perejil",
+    "key": "hojas verdes: albahaca",
+    "qty": 25,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": false,
+    "round": 1
+   },
+   {
+    "text": "25 g de frutos secos",
+    "key": "frutos secos",
+    "qty": 25,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Despensa",
+    "pantryKey": "frutos",
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "1/2 diente de ajo",
+    "key": "ajo",
+    "qty": 0.5,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": "ajo",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "35 ml de aceite de oliva virgen extra",
+    "key": "aceite de oliva",
+    "qty": 35,
+    "maxQty": null,
+    "unit": "ml",
+    "group": "Despensa",
+    "pantryKey": "aove",
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "25–30 g de queso curado rallado, opcional",
+    "key": "queso curado",
+    "qty": 25,
+    "maxQty": 30,
+    "unit": "g",
+    "group": "Frío",
+    "pantryKey": null,
+    "optional": true,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "150 g de tomates cherry o tomate troceado",
+    "key": "tomate cherry",
+    "qty": 150,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Fruta y verdura",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": false,
+    "round": 1
+   },
+   {
+    "text": "Sal",
+    "key": "sal y pimienta",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": "sal",
+    "optional": false,
+    "aggregate": false
+   },
+   {
+    "text": "Un poco del agua de cocción",
+    "key": "un poco del agua de coccion",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": false
+   }
+  ],
+  "contains": {
+   "pescado": false,
+   "carne": false,
+   "huevo": false,
+   "lacteos": true
   }
  },
  {
@@ -238,6 +457,109 @@ window.CSL_RECIPES=[
    "heat": "Sartén a fuego medio",
    "time": "1–2 min por la primera cara y 30–60 s por la segunda",
    "cue": "Da la vuelta cuando aparezcan burbujas y el borde deje de verse brillante."
+  },
+  "baseServings": 2,
+  "ingredientData": [
+   {
+    "text": "1 huevo",
+    "key": "huevos",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Proteína",
+    "pantryKey": "huevos",
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "120 g de harina",
+    "key": "harina",
+    "qty": 120,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "160 ml de bebida vegetal o leche",
+    "key": "leche o bebida vegetal",
+    "qty": 160,
+    "maxQty": null,
+    "unit": "ml",
+    "group": "Frío",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": false,
+    "round": 1
+   },
+   {
+    "text": "1 cucharadita de impulsor químico",
+    "key": "levadura o impulsor",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "cdta",
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 0.25
+   },
+   {
+    "text": "1 cucharadita de azúcar o miel, opcional",
+    "key": "azúcar o miel",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "cdta",
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": true,
+    "aggregate": false,
+    "round": 0.25
+   },
+   {
+    "text": "1 pizca de sal",
+    "key": "sal y pimienta",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Despensa",
+    "pantryKey": "sal",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "Fruta para servir",
+    "key": "fruta para servir",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": false
+   },
+   {
+    "text": "Yogur o frutos secos, opcionales",
+    "key": "yogur",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Frío",
+    "pantryKey": null,
+    "optional": true,
+    "aggregate": false
+   }
+  ],
+  "contains": {
+   "pescado": false,
+   "carne": false,
+   "huevo": true,
+   "lacteos": true
   }
  },
  {
@@ -314,6 +636,85 @@ window.CSL_RECIPES=[
     "huevos",
     "protecong"
    ]
+  },
+  "baseServings": 2,
+  "ingredientData": [
+   {
+    "text": "300 g de arroz cocido",
+    "key": "arroz",
+    "qty": 300,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Despensa",
+    "pantryKey": "arroz",
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "2 tazas de verduras cocinadas o crudas",
+    "key": "verduras",
+    "qty": 2,
+    "maxQty": null,
+    "unit": "taza",
+    "group": "Fruta y verdura",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": false,
+    "round": 0.25
+   },
+   {
+    "text": "2 huevos o 200 g de legumbre/pollo/pescado",
+    "key": "huevos",
+    "qty": 2,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Proteína",
+    "pantryKey": "huevos",
+    "optional": false,
+    "aggregate": false,
+    "round": 1
+   },
+   {
+    "text": "2 cucharadas de salsa: yogur, soja, hummus o vinagreta",
+    "key": "yogur",
+    "qty": 2,
+    "maxQty": null,
+    "unit": "cda",
+    "group": "Frío",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": false,
+    "round": 0.25
+   },
+   {
+    "text": "Algo crujiente: semillas o frutos secos",
+    "key": "frutos secos",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": "frutos",
+    "optional": false,
+    "aggregate": false
+   },
+   {
+    "text": "Limón o vinagre para terminar",
+    "key": "limón",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Fruta y verdura",
+    "pantryKey": "limon",
+    "optional": false,
+    "aggregate": false
+   }
+  ],
+  "contains": {
+   "pescado": true,
+   "carne": true,
+   "huevo": true,
+   "lacteos": true
   }
  },
  {
@@ -395,6 +796,97 @@ window.CSL_RECIPES=[
    "heat": "Cazuela a hervor suave",
    "time": "18–25 min después de añadir el líquido",
    "cue": "Las verduras deben poder atravesarse fácilmente con un cuchillo antes de triturar."
+  },
+  "baseServings": 4,
+  "ingredientData": [
+   {
+    "text": "700–800 g de verduras variadas",
+    "key": "verduras",
+    "qty": 700,
+    "maxQty": 800,
+    "unit": "g",
+    "group": "Fruta y verdura",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "1 cebolla o puerro",
+    "key": "cebolla",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": "cebolla",
+    "optional": false,
+    "aggregate": false,
+    "round": 0.5
+   },
+   {
+    "text": "1 patata pequeña o 100 g de legumbre cocida",
+    "key": "patata",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": false,
+    "round": 0.5
+   },
+   {
+    "text": "600–750 ml de caldo o agua",
+    "key": "caldo",
+    "qty": 600,
+    "maxQty": 750,
+    "unit": "ml",
+    "group": "Despensa",
+    "pantryKey": "caldo",
+    "optional": false,
+    "aggregate": false,
+    "round": 1
+   },
+   {
+    "text": "1 cucharada de aceite de oliva",
+    "key": "aceite de oliva",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "cda",
+    "group": "Despensa",
+    "pantryKey": "aove",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.25
+   },
+   {
+    "text": "Sal y pimienta",
+    "key": "sal y pimienta",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": "sal",
+    "optional": false,
+    "aggregate": false
+   },
+   {
+    "text": "Limón, yogur, semillas o frutos secos para terminar",
+    "key": "yogur",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Frío",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": false
+   }
+  ],
+  "contains": {
+   "pescado": false,
+   "carne": false,
+   "huevo": false,
+   "lacteos": true
   }
  },
  {
@@ -475,6 +967,85 @@ window.CSL_RECIPES=[
    "heat": "Sartén media-alta para verduras; media-baja para los huevos",
    "time": "8–12 min de verduras + 4–6 min de huevo tapado",
    "cue": "La verdura debe perder el agua visible; la clara del huevo debe estar cuajada."
+  },
+  "baseServings": 2,
+  "ingredientData": [
+   {
+    "text": "4 huevos",
+    "key": "huevos",
+    "qty": 4,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Proteína",
+    "pantryKey": "huevos",
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "350–400 g de verduras",
+    "key": "verduras",
+    "qty": 350,
+    "maxQty": 400,
+    "unit": "g",
+    "group": "Fruta y verdura",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "2 rebanadas grandes de pan",
+    "key": "pan",
+    "qty": 2,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Despensa",
+    "pantryKey": "pan",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "1 cucharada de aceite de oliva",
+    "key": "aceite de oliva",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "cda",
+    "group": "Despensa",
+    "pantryKey": "aove",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.25
+   },
+   {
+    "text": "Sal y pimienta",
+    "key": "sal y pimienta",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": "sal",
+    "optional": false,
+    "aggregate": false
+   },
+   {
+    "text": "Tomate, hierbas o especias al gusto",
+    "key": "tomate",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Fruta y verdura",
+    "pantryKey": "tomate",
+    "optional": false,
+    "aggregate": false
+   }
+  ],
+  "contains": {
+   "pescado": false,
+   "carne": false,
+   "huevo": true,
+   "lacteos": false
   }
  },
  {
@@ -551,6 +1122,74 @@ window.CSL_RECIPES=[
    "heat": "Vapor continuo pero moderado",
    "time": "6–10 min de pescado, según grosor",
    "cue": "La merluza pasa de translúcida a opaca y se separa en lascas sin resecarse."
+  },
+  "baseServings": 2,
+  "ingredientData": [
+   {
+    "text": "2 lomos de merluza",
+    "key": "merluza",
+    "qty": 2,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Proteína",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "350 g de verduras en tiras o floretes",
+    "key": "verduras",
+    "qty": 350,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Fruta y verdura",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": false,
+    "round": 1
+   },
+   {
+    "text": "1 limón",
+    "key": "limón",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": "limon",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "1 cucharada de aceite de oliva",
+    "key": "aceite de oliva",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "cda",
+    "group": "Despensa",
+    "pantryKey": "aove",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.25
+   },
+   {
+    "text": "Sal, pimienta y hierbas",
+    "key": "sal y pimienta",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": "sal",
+    "optional": false,
+    "aggregate": false
+   }
+  ],
+  "contains": {
+   "pescado": true,
+   "carne": false,
+   "huevo": false,
+   "lacteos": false
   }
  },
  {
@@ -628,7 +1267,122 @@ window.CSL_RECIPES=[
     "vinagre"
    ]
   },
-  "intro": "Un básico de verano que parece sencillo —y lo es—, pero mejora muchísimo cuando ajustas textura, acidez y aceite al final."
+  "intro": "Un básico de verano que parece sencillo —y lo es—, pero mejora muchísimo cuando ajustas textura, acidez y aceite al final.",
+  "baseServings": 4,
+  "ingredientData": [
+   {
+    "text": "1 kg de tomate maduro",
+    "key": "tomate",
+    "qty": 1000,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Fruta y verdura",
+    "pantryKey": "tomate",
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "1/2 pepino",
+    "key": "pepino",
+    "qty": 0.5,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "1/2 pimiento verde",
+    "key": "pimiento",
+    "qty": 0.5,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "1/4 de cebolla, opcional",
+    "key": "cebolla",
+    "qty": 0.25,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": "cebolla",
+    "optional": true,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "1/2 diente de ajo",
+    "key": "ajo",
+    "qty": 0.5,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": "ajo",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "30 ml de vinagre",
+    "key": "vinagre",
+    "qty": 30,
+    "maxQty": null,
+    "unit": "ml",
+    "group": "Despensa",
+    "pantryKey": "vinagre",
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "50 ml de aceite de oliva",
+    "key": "aceite de oliva",
+    "qty": 50,
+    "maxQty": null,
+    "unit": "ml",
+    "group": "Despensa",
+    "pantryKey": "aove",
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "Sal",
+    "key": "sal y pimienta",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": "sal",
+    "optional": false,
+    "aggregate": false
+   },
+   {
+    "text": "Agua fría solo si hace falta",
+    "key": "agua fria solo si hace falta",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": false
+   }
+  ],
+  "contains": {
+   "pescado": false,
+   "carne": false,
+   "huevo": false,
+   "lacteos": false
+  }
  },
  {
   "slug": "albondigas-tomate",
@@ -708,6 +1462,110 @@ window.CSL_RECIPES=[
    "heat": "Sartén/cazuela a fuego medio",
    "time": "6–8 min para dorar + 8–12 min dentro de la salsa",
    "cue": "El centro debe quedar completamente cocinado, sin zonas crudas."
+  },
+  "baseServings": 4,
+  "ingredientData": [
+   {
+    "text": "500 g de carne picada",
+    "key": "carne",
+    "qty": 500,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Proteína",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "1 huevo pequeño",
+    "key": "huevos",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Proteína",
+    "pantryKey": "huevos",
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "30 g de pan rallado",
+    "key": "pan rallado",
+    "qty": 30,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "1 cebolla",
+    "key": "cebolla",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": "cebolla",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "1 diente de ajo",
+    "key": "ajo",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": "ajo",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "500 g de tomate triturado",
+    "key": "tomate triturado",
+    "qty": 500,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Fruta y verdura",
+    "pantryKey": "tomate",
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "1 cucharadita de orégano",
+    "key": "orégano",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "cdta",
+    "group": "Despensa",
+    "pantryKey": "oregano",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.25
+   },
+   {
+    "text": "Aceite, sal y pimienta",
+    "key": "sal y pimienta",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": "sal",
+    "optional": false,
+    "aggregate": false
+   }
+  ],
+  "contains": {
+   "pescado": false,
+   "carne": true,
+   "huevo": true,
+   "lacteos": false
   }
  },
  {
@@ -791,6 +1649,109 @@ window.CSL_RECIPES=[
    "heat": "Cazuela a fuego medio",
    "time": "10–15 min para las verduras después de añadir el líquido",
    "cue": "La verdura debe quedar tierna pero conservar forma; el garbanzo solo necesita calentarse al final."
+  },
+  "baseServings": 4,
+  "ingredientData": [
+   {
+    "text": "400 g de garbanzos cocidos",
+    "key": "garbanzos",
+    "qty": 400,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Despensa",
+    "pantryKey": "legumbres",
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "500 g de verduras variadas",
+    "key": "verduras",
+    "qty": 500,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Fruta y verdura",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "1 cebolla",
+    "key": "cebolla",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": "cebolla",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "1 cucharada de curry",
+    "key": "curry",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "cda",
+    "group": "Despensa",
+    "pantryKey": "curry",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.25
+   },
+   {
+    "text": "400 g de tomate triturado o 250 ml de leche de coco",
+    "key": "tomate triturado",
+    "qty": 400,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Fruta y verdura",
+    "pantryKey": "tomate",
+    "optional": false,
+    "aggregate": false,
+    "round": 1
+   },
+   {
+    "text": "1 cucharada de aceite",
+    "key": "aceite",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "cda",
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 0.25
+   },
+   {
+    "text": "Sal",
+    "key": "sal y pimienta",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": "sal",
+    "optional": false,
+    "aggregate": false
+   },
+   {
+    "text": "Limón o lima",
+    "key": "limón",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Fruta y verdura",
+    "pantryKey": "limon",
+    "optional": false,
+    "aggregate": false
+   }
+  ],
+  "contains": {
+   "pescado": false,
+   "carne": false,
+   "huevo": false,
+   "lacteos": true
   }
  },
  {
@@ -868,6 +1829,84 @@ window.CSL_RECIPES=[
    "heat": "Sartén a fuego medio",
    "time": "3–4 min por la primera cara y 2–3 min por la segunda, orientativo",
    "cue": "El centro debe estar cuajado al punto que te guste, sin quemar el exterior."
+  },
+  "baseServings": 3,
+  "ingredientData": [
+   {
+    "text": "5 huevos",
+    "key": "huevos",
+    "qty": 5,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Proteína",
+    "pantryKey": "huevos",
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "450 g de patata o 350 g de verduras",
+    "key": "patata",
+    "qty": 450,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Fruta y verdura",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": false,
+    "round": 1
+   },
+   {
+    "text": "1/2 cebolla, opcional",
+    "key": "cebolla",
+    "qty": 0.5,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": "cebolla",
+    "optional": true,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "Aceite de oliva",
+    "key": "aceite de oliva",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": "aove",
+    "optional": false,
+    "aggregate": false
+   },
+   {
+    "text": "Sal",
+    "key": "sal y pimienta",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": "sal",
+    "optional": false,
+    "aggregate": false
+   },
+   {
+    "text": "Hojas verdes, tomate y algo crujiente para la ensalada",
+    "key": "tomate",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Fruta y verdura",
+    "pantryKey": "tomate",
+    "optional": false,
+    "aggregate": false
+   }
+  ],
+  "contains": {
+   "pescado": false,
+   "carne": false,
+   "huevo": true,
+   "lacteos": false
   }
  },
  {
@@ -950,6 +1989,121 @@ window.CSL_RECIPES=[
    "heat": "Horno muy caliente, 240–250 °C",
    "time": "10–15 min, según horno y grosor de la masa",
    "cue": "La base debe estar dorada y firme por debajo y los bordes bien coloreados."
+  },
+  "baseServings": 4,
+  "ingredientData": [
+   {
+    "text": "300 g de harina",
+    "key": "harina",
+    "qty": 300,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "190 ml de agua",
+    "key": "agua",
+    "qty": 190,
+    "maxQty": null,
+    "unit": "ml",
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "5 g de levadura seca de panadería",
+    "key": "levadura o impulsor",
+    "qty": 5,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "6 g de sal",
+    "key": "sal y pimienta",
+    "qty": 6,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Despensa",
+    "pantryKey": "sal",
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "1 cucharada de aceite",
+    "key": "aceite",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "cda",
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 0.25
+   },
+   {
+    "text": "150 g de tomate triturado",
+    "key": "tomate triturado",
+    "qty": 150,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Fruta y verdura",
+    "pantryKey": "tomate",
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "Verduras cocinadas o restos",
+    "key": "verduras",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Fruta y verdura",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": false
+   },
+   {
+    "text": "100–125 g de mozzarella, opcional",
+    "key": "mozzarella",
+    "qty": 100,
+    "maxQty": 125,
+    "unit": "g",
+    "group": "Frío",
+    "pantryKey": null,
+    "optional": true,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "Orégano",
+    "key": "orégano",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": "oregano",
+    "optional": false,
+    "aggregate": false
+   }
+  ],
+  "contains": {
+   "pescado": false,
+   "carne": false,
+   "huevo": false,
+   "lacteos": true
   }
  },
  {
@@ -1028,6 +2182,98 @@ window.CSL_RECIPES=[
    "heat": "Horno a 200 °C",
    "time": "35–45 min para el pollo, después de la ventaja inicial de la patata",
    "cue": "La patata debe estar tierna y el centro de la pieza más gruesa de pollo alcanzar 74 °C."
+  },
+  "baseServings": 4,
+  "ingredientData": [
+   {
+    "text": "700–800 g de pollo en piezas",
+    "key": "pollo",
+    "qty": 700,
+    "maxQty": 800,
+    "unit": "g",
+    "group": "Proteína",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "500 g de patata",
+    "key": "patata",
+    "qty": 500,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Fruta y verdura",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "1 limón",
+    "key": "limón",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": "limon",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "1 cucharadita de pimentón",
+    "key": "pimentón",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "cdta",
+    "group": "Despensa",
+    "pantryKey": "pimenton",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.25
+   },
+   {
+    "text": "1 cucharadita de hierbas secas",
+    "key": "hierbas secas",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "cdta",
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 0.25
+   },
+   {
+    "text": "2 cucharadas de aceite",
+    "key": "aceite",
+    "qty": 2,
+    "maxQty": null,
+    "unit": "cda",
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 0.25
+   },
+   {
+    "text": "Sal y pimienta",
+    "key": "sal y pimienta",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": "sal",
+    "optional": false,
+    "aggregate": false
+   }
+  ],
+  "contains": {
+   "pescado": false,
+   "carne": true,
+   "huevo": false,
+   "lacteos": false
   }
  },
  {
@@ -1105,7 +2351,99 @@ window.CSL_RECIPES=[
     "pimenton"
    ]
   },
-  "intro": "Lentejas de diario sin empezar desde cero. Una buena base de verduras convierte una legumbre ya cocida en un plato con sabor de guiso."
+  "intro": "Lentejas de diario sin empezar desde cero. Una buena base de verduras convierte una legumbre ya cocida en un plato con sabor de guiso.",
+  "baseServings": 4,
+  "ingredientData": [
+   {
+    "text": "500 g de lentejas cocidas",
+    "key": "lentejas",
+    "qty": 500,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Despensa",
+    "pantryKey": "legumbres",
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "1 cebolla",
+    "key": "cebolla",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": "cebolla",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "400–500 g de verduras",
+    "key": "verduras",
+    "qty": 400,
+    "maxQty": 500,
+    "unit": "g",
+    "group": "Fruta y verdura",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "250 g de tomate triturado",
+    "key": "tomate triturado",
+    "qty": 250,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Fruta y verdura",
+    "pantryKey": "tomate",
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "500 ml de caldo o agua",
+    "key": "caldo",
+    "qty": 500,
+    "maxQty": null,
+    "unit": "ml",
+    "group": "Despensa",
+    "pantryKey": "caldo",
+    "optional": false,
+    "aggregate": false,
+    "round": 1
+   },
+   {
+    "text": "1 cucharadita de pimentón",
+    "key": "pimentón",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "cdta",
+    "group": "Despensa",
+    "pantryKey": "pimenton",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.25
+   },
+   {
+    "text": "Aceite y sal",
+    "key": "sal y pimienta",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": "sal",
+    "optional": false,
+    "aggregate": false
+   }
+  ],
+  "contains": {
+   "pescado": false,
+   "carne": false,
+   "huevo": false,
+   "lacteos": false
+  }
  },
  {
   "slug": "pescado-papillote",
@@ -1183,6 +2521,97 @@ window.CSL_RECIPES=[
    "heat": "Horno a 200 °C",
    "time": "12–18 min, según grosor",
    "cue": "El pescado debe verse opaco y separarse en lascas; evita prolongar la cocción cuando ya esté hecho."
+  },
+  "baseServings": 2,
+  "ingredientData": [
+   {
+    "text": "2 filetes de pescado",
+    "key": "filetes de pescado",
+    "qty": 2,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "300 g de patata cocida o muy fina",
+    "key": "patata",
+    "qty": 300,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Fruta y verdura",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": false,
+    "round": 1
+   },
+   {
+    "text": "1/2 calabacín o verduras",
+    "key": "calabacín",
+    "qty": 0.5,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": false,
+    "round": 0.5
+   },
+   {
+    "text": "1 limón",
+    "key": "limón",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": "limon",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "Hierbas",
+    "key": "hierbas",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": false
+   },
+   {
+    "text": "1 cucharada de aceite",
+    "key": "aceite",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "cda",
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 0.25
+   },
+   {
+    "text": "Sal y pimienta",
+    "key": "sal y pimienta",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": "sal",
+    "optional": false,
+    "aggregate": false
+   }
+  ],
+  "contains": {
+   "pescado": true,
+   "carne": false,
+   "huevo": false,
+   "lacteos": false
   }
  },
  {
@@ -1266,6 +2695,98 @@ window.CSL_RECIPES=[
    "heat": "Fuego medio-bajo",
    "time": "20–25 min después de añadir el tomate",
    "cue": "El pisto está listo cuando ha perdido el agua suelta y queda meloso, no caldoso."
+  },
+  "baseServings": 4,
+  "ingredientData": [
+   {
+    "text": "1 cebolla",
+    "key": "cebolla",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": "cebolla",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "1 calabacín",
+    "key": "calabacín",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "1 pimiento",
+    "key": "pimiento",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "500 g de tomate triturado",
+    "key": "tomate triturado",
+    "qty": 500,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Fruta y verdura",
+    "pantryKey": "tomate",
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "4 huevos",
+    "key": "huevos",
+    "qty": 4,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Proteína",
+    "pantryKey": "huevos",
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "2 cucharadas de aceite",
+    "key": "aceite",
+    "qty": 2,
+    "maxQty": null,
+    "unit": "cda",
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 0.25
+   },
+   {
+    "text": "Sal",
+    "key": "sal y pimienta",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": "sal",
+    "optional": false,
+    "aggregate": false
+   }
+  ],
+  "contains": {
+   "pescado": false,
+   "carne": false,
+   "huevo": true,
+   "lacteos": false
   }
  },
  {
@@ -1337,7 +2858,87 @@ window.CSL_RECIPES=[
     "frutos"
    ]
   },
-  "intro": "Un desayuno que se prepara casi solo mientras reposa. La avena se hidrata, la fruta aporta frescura y tú solo ajustas la textura al servir."
+  "intro": "Un desayuno que se prepara casi solo mientras reposa. La avena se hidrata, la fruta aporta frescura y tú solo ajustas la textura al servir.",
+  "baseServings": 2,
+  "ingredientData": [
+   {
+    "text": "100 g de copos de avena",
+    "key": "avena",
+    "qty": 100,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "250 ml de bebida vegetal o leche",
+    "key": "leche o bebida vegetal",
+    "qty": 250,
+    "maxQty": null,
+    "unit": "ml",
+    "group": "Frío",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": false,
+    "round": 1
+   },
+   {
+    "text": "150 g de yogur, opcional",
+    "key": "yogur",
+    "qty": 150,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Frío",
+    "pantryKey": null,
+    "optional": true,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "150 g de frutos rojos",
+    "key": "frutos rojos",
+    "qty": 150,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "1 cucharada de semillas o frutos secos",
+    "key": "frutos secos",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "cda",
+    "group": "Despensa",
+    "pantryKey": "frutos",
+    "optional": false,
+    "aggregate": false,
+    "round": 0.25
+   },
+   {
+    "text": "Miel o fruta madura, opcional",
+    "key": "azúcar o miel",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": true,
+    "aggregate": false
+   }
+  ],
+  "contains": {
+   "pescado": false,
+   "carne": false,
+   "huevo": false,
+   "lacteos": true
+  }
  },
  {
   "slug": "bizcocho-yogur",
@@ -1413,6 +3014,110 @@ window.CSL_RECIPES=[
    "heat": "Horno a 175–180 °C",
    "time": "35–45 min, según molde y horno",
    "cue": "Una brocheta en el centro debe salir sin masa cruda; puede llevar alguna miga húmeda."
+  },
+  "baseServings": 8,
+  "ingredientData": [
+   {
+    "text": "3 huevos",
+    "key": "huevos",
+    "qty": 3,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Proteína",
+    "pantryKey": "huevos",
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "1 yogur natural de 125 g",
+    "key": "yogur",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Frío",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "180 g de azúcar",
+    "key": "azúcar o miel",
+    "qty": 180,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "220 g de harina",
+    "key": "harina",
+    "qty": 220,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "80 ml de aceite suave",
+    "key": "aceite suave",
+    "qty": 80,
+    "maxQty": null,
+    "unit": "ml",
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "12–15 g de impulsor químico",
+    "key": "levadura o impulsor",
+    "qty": 12,
+    "maxQty": 15,
+    "unit": "g",
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "Ralladura de limón, opcional",
+    "key": "limón",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Fruta y verdura",
+    "pantryKey": "limon",
+    "optional": true,
+    "aggregate": false
+   },
+   {
+    "text": "1 pizca de sal",
+    "key": "sal y pimienta",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Despensa",
+    "pantryKey": "sal",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   }
+  ],
+  "contains": {
+   "pescado": false,
+   "carne": false,
+   "huevo": true,
+   "lacteos": true
   }
  },
  {
@@ -1492,6 +3197,86 @@ window.CSL_RECIPES=[
    "heat": "Horno a 180 °C",
    "time": "30–35 min aproximadamente",
    "cue": "Los bordes estarán firmes y el centro apenas temblará al mover el molde."
+  },
+  "baseServings": 4,
+  "ingredientData": [
+   {
+    "text": "1 base de masa quebrada, opcional",
+    "key": "base de masa quebrada",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": true,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "4 huevos",
+    "key": "huevos",
+    "qty": 4,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Proteína",
+    "pantryKey": "huevos",
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "200 ml de leche evaporada o bebida de cocina",
+    "key": "leche o bebida vegetal",
+    "qty": 200,
+    "maxQty": null,
+    "unit": "ml",
+    "group": "Frío",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": false,
+    "round": 1
+   },
+   {
+    "text": "400 g de verduras ya cocinadas o salteadas",
+    "key": "verduras",
+    "qty": 400,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Fruta y verdura",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": false,
+    "round": 1
+   },
+   {
+    "text": "80 g de queso rallado, opcional",
+    "key": "queso rallado",
+    "qty": 80,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Frío",
+    "pantryKey": null,
+    "optional": true,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "Sal, pimienta y hierbas",
+    "key": "sal y pimienta",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": "sal",
+    "optional": false,
+    "aggregate": false
+   }
+  ],
+  "contains": {
+   "pescado": false,
+   "carne": false,
+   "huevo": true,
+   "lacteos": true
   }
  },
  {
@@ -1571,7 +3356,109 @@ window.CSL_RECIPES=[
     "limon"
    ]
   },
-  "intro": "Garbanzos, verduras frescas y un aliño vivo: una cena de quince minutos que demuestra que una legumbre fría puede ser cualquier cosa menos aburrida."
+  "intro": "Garbanzos, verduras frescas y un aliño vivo: una cena de quince minutos que demuestra que una legumbre fría puede ser cualquier cosa menos aburrida.",
+  "baseServings": 2,
+  "ingredientData": [
+   {
+    "text": "400 g de garbanzos cocidos",
+    "key": "garbanzos",
+    "qty": 400,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Despensa",
+    "pantryKey": "legumbres",
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "2 tomates",
+    "key": "tomate",
+    "qty": 2,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": "tomate",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "1/2 pepino",
+    "key": "pepino",
+    "qty": 0.5,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "1/4 de cebolla",
+    "key": "cebolla",
+    "qty": 0.25,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": "cebolla",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "Aceitunas, opcional",
+    "key": "aceitunas",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": true,
+    "aggregate": false
+   },
+   {
+    "text": "30 ml de aceite de oliva",
+    "key": "aceite de oliva",
+    "qty": 30,
+    "maxQty": null,
+    "unit": "ml",
+    "group": "Despensa",
+    "pantryKey": "aove",
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "Limón o vinagre",
+    "key": "limón",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Fruta y verdura",
+    "pantryKey": "limon",
+    "optional": false,
+    "aggregate": false
+   },
+   {
+    "text": "Sal y pimienta",
+    "key": "sal y pimienta",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": "sal",
+    "optional": false,
+    "aggregate": false
+   }
+  ],
+  "contains": {
+   "pescado": false,
+   "carne": false,
+   "huevo": false,
+   "lacteos": false
+  }
  },
  {
   "slug": "ensalada-lentejas-verduras",
@@ -1651,7 +3538,120 @@ window.CSL_RECIPES=[
     "limon"
    ]
   },
-  "intro": "Una ensalada completa que aguanta bien preparada con antelación. La clave es mezclar texturas y aliñar la lenteja cuando todavía puede absorber sabor."
+  "intro": "Una ensalada completa que aguanta bien preparada con antelación. La clave es mezclar texturas y aliñar la lenteja cuando todavía puede absorber sabor.",
+  "baseServings": 3,
+  "ingredientData": [
+   {
+    "text": "500 g de lentejas cocidas",
+    "key": "lentejas",
+    "qty": 500,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Despensa",
+    "pantryKey": "legumbres",
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "1 tomate grande",
+    "key": "tomate",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": "tomate",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "1 zanahoria",
+    "key": "zanahoria",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "1/2 pimiento",
+    "key": "pimiento",
+    "qty": 0.5,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "1/4 de cebolla",
+    "key": "cebolla",
+    "qty": 0.25,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": "cebolla",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "Perejil",
+    "key": "perejil",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": false
+   },
+   {
+    "text": "Aceite de oliva",
+    "key": "aceite de oliva",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": "aove",
+    "optional": false,
+    "aggregate": false
+   },
+   {
+    "text": "Vinagre o limón",
+    "key": "limón",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Fruta y verdura",
+    "pantryKey": "limon",
+    "optional": false,
+    "aggregate": false
+   },
+   {
+    "text": "Sal",
+    "key": "sal y pimienta",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": "sal",
+    "optional": false,
+    "aggregate": false
+   }
+  ],
+  "contains": {
+   "pescado": false,
+   "carne": false,
+   "huevo": false,
+   "lacteos": false
+  }
  },
  {
   "slug": "pasta-calabacin-limon",
@@ -1728,7 +3728,109 @@ window.CSL_RECIPES=[
     "limon"
    ]
   },
-  "intro": "Pasta ligera, calabacín y limón en una salsa que se forma con muy poco. Ideal para aprender a usar el agua de cocción en lugar de añadir salsas pesadas."
+  "intro": "Pasta ligera, calabacín y limón en una salsa que se forma con muy poco. Ideal para aprender a usar el agua de cocción en lugar de añadir salsas pesadas.",
+  "baseServings": 2,
+  "ingredientData": [
+   {
+    "text": "180 g de pasta",
+    "key": "pasta",
+    "qty": 180,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Despensa",
+    "pantryKey": "pasta",
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "1 calabacín",
+    "key": "calabacín",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "1/2 limón",
+    "key": "limón",
+    "qty": 0.5,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": "limon",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "1 diente de ajo",
+    "key": "ajo",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": "ajo",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "30 ml de aceite de oliva",
+    "key": "aceite de oliva",
+    "qty": 30,
+    "maxQty": null,
+    "unit": "ml",
+    "group": "Despensa",
+    "pantryKey": "aove",
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "Pimienta",
+    "key": "pimienta",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": false
+   },
+   {
+    "text": "Queso rallado, opcional",
+    "key": "queso rallado",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Frío",
+    "pantryKey": null,
+    "optional": true,
+    "aggregate": false
+   },
+   {
+    "text": "Sal",
+    "key": "sal y pimienta",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": "sal",
+    "optional": false,
+    "aggregate": false
+   }
+  ],
+  "contains": {
+   "pescado": false,
+   "carne": false,
+   "huevo": false,
+   "lacteos": true
+  }
  },
  {
   "slug": "pasta-tomate-atun",
@@ -1808,7 +3910,109 @@ window.CSL_RECIPES=[
     "oregano"
    ]
   },
-  "intro": "Una cena de despensa que funciona porque cada ingrediente cumple una función clara: tomate para la salsa, atún para completar y pasta para reunirlo todo."
+  "intro": "Una cena de despensa que funciona porque cada ingrediente cumple una función clara: tomate para la salsa, atún para completar y pasta para reunirlo todo.",
+  "baseServings": 3,
+  "ingredientData": [
+   {
+    "text": "250 g de pasta",
+    "key": "pasta",
+    "qty": 250,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Despensa",
+    "pantryKey": "pasta",
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "300 g de tomate triturado",
+    "key": "tomate triturado",
+    "qty": 300,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Fruta y verdura",
+    "pantryKey": "tomate",
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "2 latas de atún",
+    "key": "conserva de pescado",
+    "qty": 2,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Proteína",
+    "pantryKey": "conserva",
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "1/2 cebolla",
+    "key": "cebolla",
+    "qty": 0.5,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": "cebolla",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "1 diente de ajo",
+    "key": "ajo",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": "ajo",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "Orégano",
+    "key": "orégano",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": "oregano",
+    "optional": false,
+    "aggregate": false
+   },
+   {
+    "text": "Aceite de oliva",
+    "key": "aceite de oliva",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": "aove",
+    "optional": false,
+    "aggregate": false
+   },
+   {
+    "text": "Sal",
+    "key": "sal y pimienta",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": "sal",
+    "optional": false,
+    "aggregate": false
+   }
+  ],
+  "contains": {
+   "pescado": true,
+   "carne": false,
+   "huevo": false,
+   "lacteos": false
+  }
  },
  {
   "slug": "arroz-salteado-huevo-verduras",
@@ -1886,6 +4090,86 @@ window.CSL_RECIPES=[
    "heat": "Sartén amplia a fuego alto",
    "time": "4–6 min de salteado final",
    "cue": "El arroz debe quedar caliente, suelto y sin acumular humedad en el fondo."
+  },
+  "baseServings": 2,
+  "ingredientData": [
+   {
+    "text": "300 g de arroz cocido frío",
+    "key": "arroz",
+    "qty": 300,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Despensa",
+    "pantryKey": "arroz",
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "2 huevos",
+    "key": "huevos",
+    "qty": 2,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Proteína",
+    "pantryKey": "huevos",
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "300 g de verduras",
+    "key": "verduras",
+    "qty": 300,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Fruta y verdura",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "2 cucharadas de salsa de soja",
+    "key": "salsa de soja",
+    "qty": 2,
+    "maxQty": null,
+    "unit": "cda",
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 0.25
+   },
+   {
+    "text": "1 cucharadita de aceite",
+    "key": "aceite",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "cdta",
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 0.25
+   },
+   {
+    "text": "Cebollino o semillas, opcional",
+    "key": "cebollino o semillas",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": true,
+    "aggregate": false
+   }
+  ],
+  "contains": {
+   "pescado": false,
+   "carne": false,
+   "huevo": true,
+   "lacteos": false
   }
  },
  {
@@ -1961,7 +4245,97 @@ window.CSL_RECIPES=[
     "cebolla"
    ]
   },
-  "intro": "Tres básicos que juntos resuelven una comida completa. Con una salsa de tomate sabrosa y el huevo en su punto, no hace falta mucho más."
+  "intro": "Tres básicos que juntos resuelven una comida completa. Con una salsa de tomate sabrosa y el huevo en su punto, no hace falta mucho más.",
+  "baseServings": 2,
+  "ingredientData": [
+   {
+    "text": "300 g de arroz cocido",
+    "key": "arroz",
+    "qty": 300,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Despensa",
+    "pantryKey": "arroz",
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "250 g de tomate triturado",
+    "key": "tomate triturado",
+    "qty": 250,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Fruta y verdura",
+    "pantryKey": "tomate",
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "2–4 huevos",
+    "key": "huevos",
+    "qty": 2,
+    "maxQty": 4,
+    "unit": "ud",
+    "group": "Proteína",
+    "pantryKey": "huevos",
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "1/2 cebolla",
+    "key": "cebolla",
+    "qty": 0.5,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": "cebolla",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "Aceite de oliva",
+    "key": "aceite de oliva",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": "aove",
+    "optional": false,
+    "aggregate": false
+   },
+   {
+    "text": "Sal",
+    "key": "sal y pimienta",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": "sal",
+    "optional": false,
+    "aggregate": false
+   },
+   {
+    "text": "Orégano o pimentón",
+    "key": "orégano",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": "oregano",
+    "optional": false,
+    "aggregate": false
+   }
+  ],
+  "contains": {
+   "pescado": false,
+   "carne": false,
+   "huevo": true,
+   "lacteos": false
+  }
  },
  {
   "slug": "cuscus-garbanzos-verduras",
@@ -2040,7 +4414,109 @@ window.CSL_RECIPES=[
     "limon"
    ]
   },
-  "intro": "Una cena rápida que no necesita apenas cocción. El cuscús se hidrata mientras preparas el resto y los garbanzos aportan cuerpo sin complicar nada."
+  "intro": "Una cena rápida que no necesita apenas cocción. El cuscús se hidrata mientras preparas el resto y los garbanzos aportan cuerpo sin complicar nada.",
+  "baseServings": 3,
+  "ingredientData": [
+   {
+    "text": "200 g de cuscús",
+    "key": "cuscús",
+    "qty": 200,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "400 g de garbanzos cocidos",
+    "key": "garbanzos",
+    "qty": 400,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Despensa",
+    "pantryKey": "legumbres",
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "350 g de verduras",
+    "key": "verduras",
+    "qty": 350,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Fruta y verdura",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "250 ml de caldo o agua",
+    "key": "caldo",
+    "qty": 250,
+    "maxQty": null,
+    "unit": "ml",
+    "group": "Despensa",
+    "pantryKey": "caldo",
+    "optional": false,
+    "aggregate": false,
+    "round": 1
+   },
+   {
+    "text": "1 cucharadita de curry o comino",
+    "key": "comino",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "cdta",
+    "group": "Despensa",
+    "pantryKey": "comino",
+    "optional": false,
+    "aggregate": false,
+    "round": 0.25
+   },
+   {
+    "text": "Aceite de oliva",
+    "key": "aceite de oliva",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": "aove",
+    "optional": false,
+    "aggregate": false
+   },
+   {
+    "text": "Limón",
+    "key": "limón",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Fruta y verdura",
+    "pantryKey": "limon",
+    "optional": false,
+    "aggregate": false
+   },
+   {
+    "text": "Sal",
+    "key": "sal y pimienta",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": "sal",
+    "optional": false,
+    "aggregate": false
+   }
+  ],
+  "contains": {
+   "pescado": false,
+   "carne": false,
+   "huevo": false,
+   "lacteos": false
+  }
  },
  {
   "slug": "fajitas-pollo-verduras",
@@ -2122,6 +4598,109 @@ window.CSL_RECIPES=[
    "heat": "Sartén muy caliente",
    "time": "5–7 min de pollo + 5–7 min de verduras",
    "cue": "El pollo debe estar completamente cocinado y la verdura aún conservar algo de mordida."
+  },
+  "baseServings": 4,
+  "ingredientData": [
+   {
+    "text": "500 g de pollo en tiras",
+    "key": "pollo",
+    "qty": 500,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Proteína",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "1 pimiento",
+    "key": "pimiento",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "1 cebolla",
+    "key": "cebolla",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": "cebolla",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "8 tortillas",
+    "key": "tortillas",
+    "qty": 8,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "1 cucharadita de pimentón",
+    "key": "pimentón",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "cdta",
+    "group": "Despensa",
+    "pantryKey": "pimenton",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.25
+   },
+   {
+    "text": "1/2 cucharadita de comino",
+    "key": "comino",
+    "qty": 0.5,
+    "maxQty": null,
+    "unit": "cdta",
+    "group": "Despensa",
+    "pantryKey": "comino",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.25
+   },
+   {
+    "text": "Lima o limón",
+    "key": "limón",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Fruta y verdura",
+    "pantryKey": "limon",
+    "optional": false,
+    "aggregate": false
+   },
+   {
+    "text": "Aceite y sal",
+    "key": "sal y pimienta",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": "sal",
+    "optional": false,
+    "aggregate": false
+   }
+  ],
+  "contains": {
+   "pescado": false,
+   "carne": true,
+   "huevo": false,
+   "lacteos": false
   }
  },
  {
@@ -2204,6 +4783,96 @@ window.CSL_RECIPES=[
    "heat": "Sartén a fuego medio",
    "time": "2–3 min por cada cara",
    "cue": "La tortilla debe quedar dorada y crujiente y el interior caliente."
+  },
+  "baseServings": 2,
+  "ingredientData": [
+   {
+    "text": "4 tortillas",
+    "key": "tortillas",
+    "qty": 4,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "250 g de frijoles o alubias cocidas",
+    "key": "alubias",
+    "qty": 250,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Despensa",
+    "pantryKey": "legumbres",
+    "optional": false,
+    "aggregate": false,
+    "round": 1
+   },
+   {
+    "text": "100 g de maíz",
+    "key": "maíz",
+    "qty": 100,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "80 g de queso, opcional",
+    "key": "queso",
+    "qty": 80,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Frío",
+    "pantryKey": null,
+    "optional": true,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "Tomate o salsa",
+    "key": "tomate",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Fruta y verdura",
+    "pantryKey": "tomate",
+    "optional": false,
+    "aggregate": false
+   },
+   {
+    "text": "Comino",
+    "key": "comino",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": "comino",
+    "optional": false,
+    "aggregate": false
+   },
+   {
+    "text": "Aceite",
+    "key": "aceite",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": false
+   }
+  ],
+  "contains": {
+   "pescado": false,
+   "carne": false,
+   "huevo": false,
+   "lacteos": true
   }
  },
  {
@@ -2288,6 +4957,109 @@ window.CSL_RECIPES=[
    "heat": "Fuego medio para la salsa; suave con los huevos",
    "time": "8–10 min de salsa + 5–8 min de huevos tapados",
    "cue": "La clara debe estar cuajada; ajusta el tiempo según cómo quieras la yema."
+  },
+  "baseServings": 2,
+  "ingredientData": [
+   {
+    "text": "4 huevos",
+    "key": "huevos",
+    "qty": 4,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Proteína",
+    "pantryKey": "huevos",
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "400 g de tomate triturado",
+    "key": "tomate triturado",
+    "qty": 400,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Fruta y verdura",
+    "pantryKey": "tomate",
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "1/2 cebolla",
+    "key": "cebolla",
+    "qty": 0.5,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": "cebolla",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "1/2 pimiento",
+    "key": "pimiento",
+    "qty": 0.5,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "1 diente de ajo",
+    "key": "ajo",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": "ajo",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "1/2 cucharadita de comino",
+    "key": "comino",
+    "qty": 0.5,
+    "maxQty": null,
+    "unit": "cdta",
+    "group": "Despensa",
+    "pantryKey": "comino",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.25
+   },
+   {
+    "text": "Pimentón",
+    "key": "pimentón",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": "pimenton",
+    "optional": false,
+    "aggregate": false
+   },
+   {
+    "text": "Aceite y sal",
+    "key": "sal y pimienta",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": "sal",
+    "optional": false,
+    "aggregate": false
+   }
+  ],
+  "contains": {
+   "pescado": false,
+   "carne": false,
+   "huevo": true,
+   "lacteos": false
   }
  },
  {
@@ -2365,6 +5137,74 @@ window.CSL_RECIPES=[
    "heat": "Fuego medio-alto para el calabacín; medio para cuajar",
    "time": "10–12 min de verdura + 3–4 min por cara, orientativo",
    "cue": "Antes del huevo, el calabacín debe haber perdido la humedad visible."
+  },
+  "baseServings": 3,
+  "ingredientData": [
+   {
+    "text": "5 huevos",
+    "key": "huevos",
+    "qty": 5,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Proteína",
+    "pantryKey": "huevos",
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "2 calabacines medianos",
+    "key": "calabacín",
+    "qty": 2,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "1/2 cebolla",
+    "key": "cebolla",
+    "qty": 0.5,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": "cebolla",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "1 cucharada de aceite",
+    "key": "aceite",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "cda",
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 0.25
+   },
+   {
+    "text": "Sal y pimienta",
+    "key": "sal y pimienta",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": "sal",
+    "optional": false,
+    "aggregate": false
+   }
+  ],
+  "contains": {
+   "pescado": false,
+   "carne": false,
+   "huevo": true,
+   "lacteos": false
   }
  },
  {
@@ -2444,6 +5284,98 @@ window.CSL_RECIPES=[
    "heat": "Sartén a fuego medio-alto",
    "time": "8–12 min en total, según tamaño de las piezas",
    "cue": "El pollo debe quedar dorado y alcanzar 74 °C en el centro de la pieza más gruesa."
+  },
+  "baseServings": 3,
+  "ingredientData": [
+   {
+    "text": "500 g de pechuga o contramuslo deshuesado",
+    "key": "pechuga o contramuslo deshuesado",
+    "qty": 500,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": false,
+    "round": 1
+   },
+   {
+    "text": "1 limón",
+    "key": "limón",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": "limon",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "1 diente de ajo",
+    "key": "ajo",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": "ajo",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "1 cucharadita de hierbas secas",
+    "key": "hierbas secas",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "cdta",
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 0.25
+   },
+   {
+    "text": "1 cucharada de aceite",
+    "key": "aceite",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "cda",
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 0.25
+   },
+   {
+    "text": "Sal y pimienta",
+    "key": "sal y pimienta",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": "sal",
+    "optional": false,
+    "aggregate": false
+   },
+   {
+    "text": "100 ml de agua o caldo",
+    "key": "caldo",
+    "qty": 100,
+    "maxQty": null,
+    "unit": "ml",
+    "group": "Despensa",
+    "pantryKey": "caldo",
+    "optional": false,
+    "aggregate": false,
+    "round": 1
+   }
+  ],
+  "contains": {
+   "pescado": false,
+   "carne": true,
+   "huevo": false,
+   "lacteos": false
   }
  },
  {
@@ -2524,6 +5456,97 @@ window.CSL_RECIPES=[
    "heat": "Sartén/cazuela a fuego medio-alto y después medio",
    "time": "5–7 min para dorar + 8–10 min en la salsa",
    "cue": "El pollo debe quedar completamente cocinado y la salsa ligeramente ligada."
+  },
+  "baseServings": 4,
+  "ingredientData": [
+   {
+    "text": "600 g de pollo",
+    "key": "pollo",
+    "qty": 600,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Proteína",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "1 cebolla",
+    "key": "cebolla",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": "cebolla",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "1 cucharada de curry",
+    "key": "curry",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "cda",
+    "group": "Despensa",
+    "pantryKey": "curry",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.25
+   },
+   {
+    "text": "300 ml de leche de coco o caldo",
+    "key": "leche o bebida vegetal",
+    "qty": 300,
+    "maxQty": null,
+    "unit": "ml",
+    "group": "Frío",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": false,
+    "round": 1
+   },
+   {
+    "text": "1 cucharada de aceite",
+    "key": "aceite",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "cda",
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 0.25
+   },
+   {
+    "text": "Sal",
+    "key": "sal y pimienta",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": "sal",
+    "optional": false,
+    "aggregate": false
+   },
+   {
+    "text": "Limón o lima",
+    "key": "limón",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Fruta y verdura",
+    "pantryKey": "limon",
+    "optional": false,
+    "aggregate": false
+   }
+  ],
+  "contains": {
+   "pescado": false,
+   "carne": true,
+   "huevo": false,
+   "lacteos": true
   }
  },
  {
@@ -2602,6 +5625,97 @@ window.CSL_RECIPES=[
    "heat": "Horno a 200 °C",
    "time": "10–14 min para lomos medianos",
    "cue": "El salmón debe separarse en lascas con facilidad y conservar jugosidad en el centro."
+  },
+  "baseServings": 4,
+  "ingredientData": [
+   {
+    "text": "4 lomos de salmón",
+    "key": "salmón",
+    "qty": 4,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Proteína",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "1 cucharada de mostaza",
+    "key": "mostaza",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "cda",
+    "group": "Despensa",
+    "pantryKey": "mostaza",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.25
+   },
+   {
+    "text": "1 cucharada de miel, opcional",
+    "key": "azúcar o miel",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "cda",
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": true,
+    "aggregate": true,
+    "round": 0.25
+   },
+   {
+    "text": "1 limón",
+    "key": "limón",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": "limon",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "1 cucharada de aceite",
+    "key": "aceite",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "cda",
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 0.25
+   },
+   {
+    "text": "Pimienta",
+    "key": "pimienta",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": false
+   },
+   {
+    "text": "Verduras para acompañar",
+    "key": "verduras",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Fruta y verdura",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": false
+   }
+  ],
+  "contains": {
+   "pescado": true,
+   "carne": false,
+   "huevo": false,
+   "lacteos": false
   }
  },
  {
@@ -2683,6 +5797,97 @@ window.CSL_RECIPES=[
    "heat": "Cazuela a fuego medio-bajo",
    "time": "4–7 min de pescado dentro de la salsa",
    "cue": "El bacalao está listo cuando se abre en lascas al presionarlo suavemente."
+  },
+  "baseServings": 4,
+  "ingredientData": [
+   {
+    "text": "4 lomos de bacalao",
+    "key": "bacalao",
+    "qty": 4,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Proteína",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "500 g de tomate triturado",
+    "key": "tomate triturado",
+    "qty": 500,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Fruta y verdura",
+    "pantryKey": "tomate",
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "1 cebolla",
+    "key": "cebolla",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": "cebolla",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "1 pimiento",
+    "key": "pimiento",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "1 diente de ajo",
+    "key": "ajo",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": "ajo",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "Aceite de oliva",
+    "key": "aceite de oliva",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": "aove",
+    "optional": false,
+    "aggregate": false
+   },
+   {
+    "text": "Sal y pimienta",
+    "key": "sal y pimienta",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": "sal",
+    "optional": false,
+    "aggregate": false
+   }
+  ],
+  "contains": {
+   "pescado": true,
+   "carne": false,
+   "huevo": false,
+   "lacteos": false
   }
  },
  {
@@ -2762,6 +5967,97 @@ window.CSL_RECIPES=[
    "heat": "Sartén a fuego medio-alto",
    "time": "2–3 min por cada cara de las tiras gruesas",
    "cue": "El pescado debe quedar opaco y firme, pero no seco."
+  },
+  "baseServings": 4,
+  "ingredientData": [
+   {
+    "text": "500 g de pescado blanco",
+    "key": "pescado blanco",
+    "qty": 500,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "8 tortillas",
+    "key": "tortillas",
+    "qty": 8,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "2 tazas de col o lechuga",
+    "key": "col o lechuga",
+    "qty": 2,
+    "maxQty": null,
+    "unit": "taza",
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": false,
+    "round": 0.25
+   },
+   {
+    "text": "1 lima o limón",
+    "key": "limón",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": "limon",
+    "optional": false,
+    "aggregate": false,
+    "round": 0.5
+   },
+   {
+    "text": "1 cucharadita de pimentón",
+    "key": "pimentón",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "cdta",
+    "group": "Despensa",
+    "pantryKey": "pimenton",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.25
+   },
+   {
+    "text": "Yogur o salsa ligera",
+    "key": "yogur",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Frío",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": false
+   },
+   {
+    "text": "Aceite y sal",
+    "key": "sal y pimienta",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": "sal",
+    "optional": false,
+    "aggregate": false
+   }
+  ],
+  "contains": {
+   "pescado": true,
+   "carne": false,
+   "huevo": false,
+   "lacteos": true
   }
  },
  {
@@ -2843,6 +6139,97 @@ window.CSL_RECIPES=[
    "heat": "Horno a 200 °C",
    "time": "25–30 min para ablandar la berenjena + 5–8 min de gratinado",
    "cue": "La pulpa debe poder retirarse con cuchara sin resistencia."
+  },
+  "baseServings": 4,
+  "ingredientData": [
+   {
+    "text": "2 berenjenas grandes",
+    "key": "berenjena",
+    "qty": 2,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "400 g de carne picada",
+    "key": "carne",
+    "qty": 400,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Proteína",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "1 cebolla",
+    "key": "cebolla",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": "cebolla",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "300 g de tomate triturado",
+    "key": "tomate triturado",
+    "qty": 300,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Fruta y verdura",
+    "pantryKey": "tomate",
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "1 diente de ajo",
+    "key": "ajo",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": "ajo",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "Queso rallado, opcional",
+    "key": "queso rallado",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Frío",
+    "pantryKey": null,
+    "optional": true,
+    "aggregate": false
+   },
+   {
+    "text": "Aceite, sal y orégano",
+    "key": "orégano",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": "oregano",
+    "optional": false,
+    "aggregate": false
+   }
+  ],
+  "contains": {
+   "pescado": false,
+   "carne": true,
+   "huevo": false,
+   "lacteos": true
   }
  },
  {
@@ -2923,6 +6310,96 @@ window.CSL_RECIPES=[
    "heat": "Horno a 200 °C",
    "time": "20–25 min después de rellenar",
    "cue": "El calabacín debe quedar tierno al pincharlo, pero mantener la forma."
+  },
+  "baseServings": 4,
+  "ingredientData": [
+   {
+    "text": "2 calabacines grandes",
+    "key": "calabacín",
+    "qty": 2,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "2 latas de atún",
+    "key": "conserva de pescado",
+    "qty": 2,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Proteína",
+    "pantryKey": "conserva",
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "250 g de tomate",
+    "key": "tomate",
+    "qty": 250,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Fruta y verdura",
+    "pantryKey": "tomate",
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "1/2 cebolla",
+    "key": "cebolla",
+    "qty": 0.5,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": "cebolla",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "Pan rallado o queso, opcional",
+    "key": "pan rallado",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": true,
+    "aggregate": false
+   },
+   {
+    "text": "Aceite",
+    "key": "aceite",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": false
+   },
+   {
+    "text": "Sal y pimienta",
+    "key": "sal y pimienta",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": "sal",
+    "optional": false,
+    "aggregate": false
+   }
+  ],
+  "contains": {
+   "pescado": true,
+   "carne": false,
+   "huevo": false,
+   "lacteos": true
   }
  },
  {
@@ -3004,6 +6481,97 @@ window.CSL_RECIPES=[
    "heat": "Horno a 220 °C",
    "time": "25–35 min, removiendo una vez",
    "cue": "Los bordes deben estar dorados y el interior tierno."
+  },
+  "baseServings": 4,
+  "ingredientData": [
+   {
+    "text": "800 g de verduras variadas",
+    "key": "verduras",
+    "qty": 800,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Fruta y verdura",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "2 cucharadas de aceite",
+    "key": "aceite",
+    "qty": 2,
+    "maxQty": null,
+    "unit": "cda",
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 0.25
+   },
+   {
+    "text": "1 yogur natural",
+    "key": "yogur",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Frío",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "1/2 limón",
+    "key": "limón",
+    "qty": 0.5,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": "limon",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "1 diente de ajo pequeño",
+    "key": "ajo",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": "ajo",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "Comino o hierbas",
+    "key": "comino",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": "comino",
+    "optional": false,
+    "aggregate": false
+   },
+   {
+    "text": "Sal",
+    "key": "sal y pimienta",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": "sal",
+    "optional": false,
+    "aggregate": false
+   }
+  ],
+  "contains": {
+   "pescado": false,
+   "carne": false,
+   "huevo": false,
+   "lacteos": true
   }
  },
  {
@@ -3083,7 +6651,98 @@ window.CSL_RECIPES=[
     "oregano"
    ]
   },
-  "intro": "Tomate y alubias convierten una sopa sencilla en una cena completa. Triturar solo una pequeña parte da cuerpo sin añadir nata ni harinas."
+  "intro": "Tomate y alubias convierten una sopa sencilla en una cena completa. Triturar solo una pequeña parte da cuerpo sin añadir nata ni harinas.",
+  "baseServings": 4,
+  "ingredientData": [
+   {
+    "text": "400 g de alubias cocidas",
+    "key": "alubias",
+    "qty": 400,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Despensa",
+    "pantryKey": "legumbres",
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "500 g de tomate triturado",
+    "key": "tomate triturado",
+    "qty": 500,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Fruta y verdura",
+    "pantryKey": "tomate",
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "500 ml de caldo",
+    "key": "caldo",
+    "qty": 500,
+    "maxQty": null,
+    "unit": "ml",
+    "group": "Despensa",
+    "pantryKey": "caldo",
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "1 cebolla",
+    "key": "cebolla",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": "cebolla",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "1 diente de ajo",
+    "key": "ajo",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": "ajo",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "Orégano",
+    "key": "orégano",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": "oregano",
+    "optional": false,
+    "aggregate": false
+   },
+   {
+    "text": "Aceite y sal",
+    "key": "sal y pimienta",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": "sal",
+    "optional": false,
+    "aggregate": false
+   }
+  ],
+  "contains": {
+   "pescado": false,
+   "carne": false,
+   "huevo": false,
+   "lacteos": false
+  }
  },
  {
   "slug": "potaje-alubias-rapido",
@@ -3166,6 +6825,98 @@ window.CSL_RECIPES=[
    "heat": "Hervor suave",
    "time": "15–20 min después de añadir caldo, verduras y alubias",
    "cue": "El caldo debe tomar cuerpo sin que la legumbre se rompa en exceso."
+  },
+  "baseServings": 4,
+  "ingredientData": [
+   {
+    "text": "500 g de alubias cocidas",
+    "key": "alubias",
+    "qty": 500,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Despensa",
+    "pantryKey": "legumbres",
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "1 cebolla",
+    "key": "cebolla",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": "cebolla",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "1 zanahoria",
+    "key": "zanahoria",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "300 g de verduras",
+    "key": "verduras",
+    "qty": 300,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Fruta y verdura",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "1 cucharadita de pimentón",
+    "key": "pimentón",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "cdta",
+    "group": "Despensa",
+    "pantryKey": "pimenton",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.25
+   },
+   {
+    "text": "700 ml de caldo",
+    "key": "caldo",
+    "qty": 700,
+    "maxQty": null,
+    "unit": "ml",
+    "group": "Despensa",
+    "pantryKey": "caldo",
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "Aceite y sal",
+    "key": "sal y pimienta",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": "sal",
+    "optional": false,
+    "aggregate": false
+   }
+  ],
+  "contains": {
+   "pescado": false,
+   "carne": false,
+   "huevo": false,
+   "lacteos": false
   }
  },
  {
@@ -3249,6 +7000,98 @@ window.CSL_RECIPES=[
    "heat": "Hervor muy suave",
    "time": "3–5 min después de añadir los huevos",
    "cue": "La clara debe quedar cuajada; la yema puede quedar más o menos hecha según preferencia."
+  },
+  "baseServings": 4,
+  "ingredientData": [
+   {
+    "text": "150 g de pan del día anterior",
+    "key": "pan",
+    "qty": 150,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Despensa",
+    "pantryKey": "pan",
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "4 dientes de ajo",
+    "key": "ajo",
+    "qty": 4,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": "ajo",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "1 cucharadita de pimentón",
+    "key": "pimentón",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "cdta",
+    "group": "Despensa",
+    "pantryKey": "pimenton",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.25
+   },
+   {
+    "text": "1 l de caldo",
+    "key": "caldo",
+    "qty": 1000,
+    "maxQty": null,
+    "unit": "ml",
+    "group": "Despensa",
+    "pantryKey": "caldo",
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "4 huevos",
+    "key": "huevos",
+    "qty": 4,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Proteína",
+    "pantryKey": "huevos",
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "2 cucharadas de aceite",
+    "key": "aceite",
+    "qty": 2,
+    "maxQty": null,
+    "unit": "cda",
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 0.25
+   },
+   {
+    "text": "Sal",
+    "key": "sal y pimienta",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": "sal",
+    "optional": false,
+    "aggregate": false
+   }
+  ],
+  "contains": {
+   "pescado": false,
+   "carne": false,
+   "huevo": true,
+   "lacteos": false
   }
  },
  {
@@ -3330,6 +7173,97 @@ window.CSL_RECIPES=[
    "heat": "Hervor suave",
    "time": "20–25 min después de añadir el líquido",
    "cue": "Calabaza y zanahoria deben romperse con facilidad al presionarlas."
+  },
+  "baseServings": 4,
+  "ingredientData": [
+   {
+    "text": "600 g de calabaza",
+    "key": "calabaza",
+    "qty": 600,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Fruta y verdura",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "3 zanahorias",
+    "key": "zanahoria",
+    "qty": 3,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "1 cebolla",
+    "key": "cebolla",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": "cebolla",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "650 ml de caldo o agua",
+    "key": "caldo",
+    "qty": 650,
+    "maxQty": null,
+    "unit": "ml",
+    "group": "Despensa",
+    "pantryKey": "caldo",
+    "optional": false,
+    "aggregate": false,
+    "round": 1
+   },
+   {
+    "text": "1 cucharada de aceite",
+    "key": "aceite",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "cda",
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 0.25
+   },
+   {
+    "text": "Sal",
+    "key": "sal y pimienta",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": "sal",
+    "optional": false,
+    "aggregate": false
+   },
+   {
+    "text": "Pimienta o curry",
+    "key": "curry",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": "curry",
+    "optional": false,
+    "aggregate": false
+   }
+  ],
+  "contains": {
+   "pescado": false,
+   "carne": false,
+   "huevo": false,
+   "lacteos": false
   }
  },
  {
@@ -3409,7 +7343,109 @@ window.CSL_RECIPES=[
     "aove"
    ]
   },
-  "intro": "Una ensalada de pasta pensada para comer fría sin que termine seca o pesada. Aliñar bien y combinar ingredientes jugosos cambia completamente el resultado."
+  "intro": "Una ensalada de pasta pensada para comer fría sin que termine seca o pesada. Aliñar bien y combinar ingredientes jugosos cambia completamente el resultado.",
+  "baseServings": 4,
+  "ingredientData": [
+   {
+    "text": "300 g de pasta corta",
+    "key": "pasta",
+    "qty": 300,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Despensa",
+    "pantryKey": "pasta",
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "2 tomates",
+    "key": "tomate",
+    "qty": 2,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": "tomate",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "1 pepino",
+    "key": "pepino",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "1 lata de maíz",
+    "key": "maíz",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "2 latas de atún, opcional",
+    "key": "conserva de pescado",
+    "qty": 2,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Proteína",
+    "pantryKey": "conserva",
+    "optional": true,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "Aceite de oliva",
+    "key": "aceite de oliva",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": "aove",
+    "optional": false,
+    "aggregate": false
+   },
+   {
+    "text": "Vinagre o limón",
+    "key": "limón",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Fruta y verdura",
+    "pantryKey": "limon",
+    "optional": false,
+    "aggregate": false
+   },
+   {
+    "text": "Sal",
+    "key": "sal y pimienta",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": "sal",
+    "optional": false,
+    "aggregate": false
+   }
+  ],
+  "contains": {
+   "pescado": true,
+   "carne": false,
+   "huevo": false,
+   "lacteos": false
+  }
  },
  {
   "slug": "patatas-asadas-rellenas",
@@ -3488,6 +7524,84 @@ window.CSL_RECIPES=[
    "heat": "Horno a 200 °C",
    "time": "45–60 min para la patata + 8–10 min después de rellenar",
    "cue": "La patata debe ceder completamente al pincharla antes de vaciar."
+  },
+  "baseServings": 4,
+  "ingredientData": [
+   {
+    "text": "4 patatas grandes",
+    "key": "patata",
+    "qty": 4,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "250 g de relleno: pollo, atún o legumbre",
+    "key": "pollo",
+    "qty": 250,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Proteína",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": false,
+    "round": 1
+   },
+   {
+    "text": "4 cucharadas de yogur o salsa",
+    "key": "yogur",
+    "qty": 4,
+    "maxQty": null,
+    "unit": "cda",
+    "group": "Frío",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": false,
+    "round": 0.25
+   },
+   {
+    "text": "Verduras picadas",
+    "key": "verduras",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Fruta y verdura",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": false
+   },
+   {
+    "text": "Aceite",
+    "key": "aceite",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": false
+   },
+   {
+    "text": "Sal y pimienta",
+    "key": "sal y pimienta",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": "sal",
+    "optional": false,
+    "aggregate": false
+   }
+  ],
+  "contains": {
+   "pescado": true,
+   "carne": true,
+   "huevo": false,
+   "lacteos": true
   }
  },
  {
@@ -3570,6 +7684,108 @@ window.CSL_RECIPES=[
    "heat": "Fritura a 175–180 °C o horno a 220 °C",
    "time": "1½–2 min por tanda fritas; 12–15 min al horno, orientativo",
    "cue": "Deben quedar doradas por fuera y calientes en el centro; la masa debe estar bien fría antes de formar."
+  },
+  "baseServings": 24,
+  "ingredientData": [
+   {
+    "text": "250 g de pollo cocinado",
+    "key": "pollo",
+    "qty": 250,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Proteína",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "60 g de harina",
+    "key": "harina",
+    "qty": 60,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "60 ml de aceite o mantequilla",
+    "key": "aceite o mantequilla",
+    "qty": 60,
+    "maxQty": null,
+    "unit": "ml",
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": false,
+    "round": 1
+   },
+   {
+    "text": "600 ml de leche o bebida sin azúcar",
+    "key": "leche o bebida vegetal",
+    "qty": 600,
+    "maxQty": null,
+    "unit": "ml",
+    "group": "Frío",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": false,
+    "round": 1
+   },
+   {
+    "text": "1/2 cebolla",
+    "key": "cebolla",
+    "qty": 0.5,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": "cebolla",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "Nuez moscada, opcional",
+    "key": "nuez moscada",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": true,
+    "aggregate": false
+   },
+   {
+    "text": "Huevo y pan rallado",
+    "key": "pan rallado",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": false
+   },
+   {
+    "text": "Sal",
+    "key": "sal y pimienta",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": "sal",
+    "optional": false,
+    "aggregate": false
+   }
+  ],
+  "contains": {
+   "pescado": false,
+   "carne": true,
+   "huevo": true,
+   "lacteos": true
   }
  },
  {
@@ -3642,7 +7858,86 @@ window.CSL_RECIPES=[
     "cebolla"
    ]
   },
-  "intro": "Aguacate, lima, sal y muy poco más. Un guacamole bueno depende sobre todo del punto del aguacate y de ajustar acidez y sal justo antes de servir."
+  "intro": "Aguacate, lima, sal y muy poco más. Un guacamole bueno depende sobre todo del punto del aguacate y de ajustar acidez y sal justo antes de servir.",
+  "baseServings": 4,
+  "ingredientData": [
+   {
+    "text": "2 aguacates maduros",
+    "key": "aguacate",
+    "qty": 2,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "1/2 lima o limón",
+    "key": "limón",
+    "qty": 0.5,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": "limon",
+    "optional": false,
+    "aggregate": false,
+    "round": 0.5
+   },
+   {
+    "text": "1 tomate pequeño, opcional",
+    "key": "tomate",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": "tomate",
+    "optional": true,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "2 cucharadas de cebolla picada",
+    "key": "cebolla",
+    "qty": 2,
+    "maxQty": null,
+    "unit": "cda",
+    "group": "Fruta y verdura",
+    "pantryKey": "cebolla",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.25
+   },
+   {
+    "text": "Cilantro, opcional",
+    "key": "cilantro",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": true,
+    "aggregate": false
+   },
+   {
+    "text": "Sal",
+    "key": "sal y pimienta",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": "sal",
+    "optional": false,
+    "aggregate": false
+   }
+  ],
+  "contains": {
+   "pescado": false,
+   "carne": false,
+   "huevo": false,
+   "lacteos": false
+  }
  },
  {
   "slug": "salsa-tomate-casera",
@@ -3721,6 +8016,97 @@ window.CSL_RECIPES=[
    "heat": "Fuego medio-bajo, destapado",
    "time": "30–40 min de reducción",
    "cue": "Al pasar la cuchara por el fondo, la salsa tarda un instante en volver a cubrir el surco."
+  },
+  "baseServings": 1,
+  "ingredientData": [
+   {
+    "text": "800 g de tomate triturado",
+    "key": "tomate triturado",
+    "qty": 800,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Fruta y verdura",
+    "pantryKey": "tomate",
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "1 cebolla",
+    "key": "cebolla",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": "cebolla",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "1 diente de ajo",
+    "key": "ajo",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": "ajo",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "2 cucharadas de aceite",
+    "key": "aceite",
+    "qty": 2,
+    "maxQty": null,
+    "unit": "cda",
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 0.25
+   },
+   {
+    "text": "Orégano o albahaca",
+    "key": "orégano",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": "oregano",
+    "optional": false,
+    "aggregate": false
+   },
+   {
+    "text": "Sal",
+    "key": "sal y pimienta",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": "sal",
+    "optional": false,
+    "aggregate": false
+   },
+   {
+    "text": "1 zanahoria pequeña, opcional",
+    "key": "zanahoria",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": null,
+    "optional": true,
+    "aggregate": true,
+    "round": 0.5
+   }
+  ],
+  "contains": {
+   "pescado": false,
+   "carne": false,
+   "huevo": false,
+   "lacteos": false
   }
  },
  {
@@ -3793,7 +8179,75 @@ window.CSL_RECIPES=[
     "mostaza"
    ]
   },
-  "intro": "Una salsa de cinco minutos que enseña una idea muy útil: equilibrar grasa, ácido y sal. Funciona en ensaladas, verduras, legumbres y platos fríos."
+  "intro": "Una salsa de cinco minutos que enseña una idea muy útil: equilibrar grasa, ácido y sal. Funciona en ensaladas, verduras, legumbres y platos fríos.",
+  "baseServings": 6,
+  "ingredientData": [
+   {
+    "text": "3 cucharadas de aceite de oliva",
+    "key": "aceite de oliva",
+    "qty": 3,
+    "maxQty": null,
+    "unit": "cda",
+    "group": "Despensa",
+    "pantryKey": "aove",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.25
+   },
+   {
+    "text": "1 cucharada de limón o vinagre",
+    "key": "limón",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "cda",
+    "group": "Fruta y verdura",
+    "pantryKey": "limon",
+    "optional": false,
+    "aggregate": false,
+    "round": 0.25
+   },
+   {
+    "text": "1 cucharadita de mostaza",
+    "key": "mostaza",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "cdta",
+    "group": "Despensa",
+    "pantryKey": "mostaza",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.25
+   },
+   {
+    "text": "1/2 cucharadita de miel, opcional",
+    "key": "azúcar o miel",
+    "qty": 0.5,
+    "maxQty": null,
+    "unit": "cdta",
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": true,
+    "aggregate": true,
+    "round": 0.25
+   },
+   {
+    "text": "Sal y pimienta",
+    "key": "sal y pimienta",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": "sal",
+    "optional": false,
+    "aggregate": false
+   }
+  ],
+  "contains": {
+   "pescado": false,
+   "carne": false,
+   "huevo": false,
+   "lacteos": false
+  }
  },
  {
   "slug": "muffins-platano-avena",
@@ -3871,6 +8325,99 @@ window.CSL_RECIPES=[
    "heat": "Horno a 180 °C",
    "time": "18–22 min",
    "cue": "El centro debe recuperar ligeramente la forma al tocarlo y una brocheta salir sin masa cruda."
+  },
+  "baseServings": 10,
+  "ingredientData": [
+   {
+    "text": "2 plátanos muy maduros",
+    "key": "plátano",
+    "qty": 2,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "2 huevos",
+    "key": "huevos",
+    "qty": 2,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Proteína",
+    "pantryKey": "huevos",
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "150 g de avena molida",
+    "key": "avena",
+    "qty": 150,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "80 ml de bebida vegetal o leche",
+    "key": "leche o bebida vegetal",
+    "qty": 80,
+    "maxQty": null,
+    "unit": "ml",
+    "group": "Frío",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": false,
+    "round": 1
+   },
+   {
+    "text": "1 cucharadita de impulsor",
+    "key": "levadura o impulsor",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "cdta",
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 0.25
+   },
+   {
+    "text": "30 g de frutos secos, opcional",
+    "key": "frutos secos",
+    "qty": 30,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Despensa",
+    "pantryKey": "frutos",
+    "optional": true,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "1 pizca de sal",
+    "key": "sal y pimienta",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Despensa",
+    "pantryKey": "sal",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   }
+  ],
+  "contains": {
+   "pescado": false,
+   "carne": false,
+   "huevo": true,
+   "lacteos": true
   }
  },
  {
@@ -3948,6 +8495,98 @@ window.CSL_RECIPES=[
    "heat": "Horno a 190 °C",
    "time": "30–35 min",
    "cue": "La fruta debe burbujear por los bordes y la cobertura estar dorada."
+  },
+  "baseServings": 6,
+  "ingredientData": [
+   {
+    "text": "5 manzanas",
+    "key": "manzana",
+    "qty": 5,
+    "maxQty": null,
+    "unit": "ud",
+    "group": "Fruta y verdura",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 0.5
+   },
+   {
+    "text": "100 g de avena",
+    "key": "avena",
+    "qty": 100,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "80 g de harina",
+    "key": "harina",
+    "qty": 80,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "70 g de azúcar",
+    "key": "azúcar o miel",
+    "qty": 70,
+    "maxQty": null,
+    "unit": "g",
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": true,
+    "round": 1
+   },
+   {
+    "text": "70 ml de aceite suave o mantequilla",
+    "key": "aceite suave o mantequilla",
+    "qty": 70,
+    "maxQty": null,
+    "unit": "ml",
+    "group": "Despensa",
+    "pantryKey": null,
+    "optional": false,
+    "aggregate": false,
+    "round": 1
+   },
+   {
+    "text": "1 cucharada de limón",
+    "key": "limón",
+    "qty": 1,
+    "maxQty": null,
+    "unit": "cda",
+    "group": "Fruta y verdura",
+    "pantryKey": "limon",
+    "optional": false,
+    "aggregate": true,
+    "round": 0.25
+   },
+   {
+    "text": "Frutos secos, opcional",
+    "key": "frutos secos",
+    "qty": null,
+    "maxQty": null,
+    "unit": null,
+    "group": "Despensa",
+    "pantryKey": "frutos",
+    "optional": true,
+    "aggregate": false
+   }
+  ],
+  "contains": {
+   "pescado": false,
+   "carne": false,
+   "huevo": false,
+   "lacteos": true
   }
  }
 ];
