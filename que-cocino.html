@@ -65,8 +65,11 @@ const data=[
 {title:"Pisto manchego",time:60,mood:["salado","ligero"],goal:["aprovechar","aprender"],ingredients:["tomate","cebolla","ajo","aove"],desc:"Un fondo de armario que sirve de guarnición, relleno o base para otra comida.",url:"/recetas.html",photo:"p1",learn:"giro inverso y concentración"}
 ];
 let state={time:"15",mood:"salado",goal:"rapido"};
-const params=new URLSearchParams(location.search),fromPantry=params.get("origen")==="despensa",pantryKeys=(params.get("ingredientes")||"").split(",").filter(Boolean);
+const params=new URLSearchParams(location.search),fromPantry=params.get("origen")==="despensa",pantryKeys=(params.get("ingredientes")||"").split(",").filter(Boolean),useSoon=(params.get("gastar")||"").trim();
 const pantryLabels={aove:"aceite de oliva",ajo:"ajo",cebolla:"cebolla",tomate:"tomate",sal:"sal y pimienta",limon:"limón",huevos:"huevos",legumbres:"legumbres",conserva:"conservas",arroz:"arroz",pasta:"pasta",frutos:"frutos secos",pimenton:"pimentón",comino:"comino",oregano:"orégano",curry:"curry",vinagre:"vinagre",mostaza:"mostaza",verdurascong:"verduras congeladas",protecong:"proteína congelada",pan:"pan",caldo:"caldo",sofrito:"sofrito",hierbascong:"hierbas"};
+if(useSoon){
+ const box=document.getElementById("pantryContext");if(box){box.classList.add("show");box.innerHTML="<b>Primero quiero gastar esto.</b><span>"+useSoon.replace(/</g,"&lt;").replace(/>/g,"&gt;")+". Voy a intentar priorizar ideas que puedan encajar con esos ingredientes.</span>"}
+}
 if(fromPantry){
  state.goal="aprovechar";
  document.querySelectorAll('[data-group="goal"] .choice').forEach(b=>{const on=b.dataset.value==="aprovechar";b.classList.toggle("active",on);b.setAttribute("aria-pressed",String(on))});
