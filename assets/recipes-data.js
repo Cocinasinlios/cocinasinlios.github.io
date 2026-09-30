@@ -292,5 +292,21 @@ window.CSL_RECIPES=[
  learn:{t:"Aprendes a proteger el aireado",x:"Una vez añadida la harina, mezclar de más puede endurecer. El trabajo importante de incorporar aire ocurre antes, con huevos y azúcar."},
  tips:["No abras el horno durante la primera mitad de la cocción.","Comprueba el centro, no solo los bordes."],
  plan:{t:"tranquila",s:["comfort","variada"],need:["huevos","yogur","harina"],uses:["huevos"]}
+},
+{
+ slug:"quiche-verduras",title:"Quiche de verduras",category:"Aprovechamiento",
+ tags:["cena","aprovechar","comfort"],time:"50 min",minutes:50,servings:"4–6 porciones",difficulty:"Fácil",
+ sprite:"100% 0",
+ ingredients:["1 base de masa quebrada, opcional","4 huevos","200 ml de leche evaporada o bebida de cocina","400 g de verduras ya cocinadas o salteadas","80 g de queso rallado, opcional","Sal, pimienta y hierbas"],
+ steps:[
+  {t:"Quita agua al relleno",x:"Saltea o escurre bien las verduras. Un relleno húmedo impide que el centro cuaje correctamente."},
+  {t:"Prepara la mezcla",x:"Bate huevos con la leche, sal, pimienta y queso si lo usas. Reparte las verduras en el molde."},
+  {t:"Hornea hasta cuajar",x:"Vierte la mezcla y hornea a 180 °C hasta que el centro esté cuajado pero aún jugoso. Deja reposar 10 minutos antes de cortar."}
+ ],
+ substitutions:["Sin masa: hazla directamente en un molde bien engrasado como frittata alta.","Leche evaporada por leche normal o una alternativa vegetal apta para cocinar.","Cualquier verdura cocinada funciona si está bien escurrida."],
+ reuse:["Perfecta para aprovechar verduras asadas o salteadas.","Se come bien fría o templada al día siguiente.","Corta en porciones y congela ya horneada."],
+ learn:{t:"Aprendes a controlar el agua del relleno",x:"En preparaciones con huevo, la humedad extra compite con el cuajado. Escurrir y saltear antes suele marcar más diferencia que añadir más tiempo de horno."},
+ tips:["No cortes recién salida del horno: el reposo termina de estabilizar el centro.","Si usas masa, pincha la base y prehornea 8–10 minutos para un fondo más crujiente."],
+ plan:{t:"tranquila",s:["comfort","aprovecha","variada"],need:["huevos","verduras","masa quebrada"],uses:["huevos","verdurascong","cebolla"]}
 }
 ];
