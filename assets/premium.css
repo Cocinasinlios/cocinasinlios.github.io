@@ -161,3 +161,7 @@ header .navlinks{font-size:13px!important}
 @media(min-width:768px){
  .hero-proof span,.feature-copy small,.feature-copy span,.flow-card small,.resume-card small,.day small,.related-body small,.photo .cover-copy small,.photo .cover-copy span,.stat,.memory span{font-size:11px!important}
 }
+
+/* Contrast accessibility pass: small editorial labels stay in palette but meet normal-text contrast. */
+.eyebrow,.csl-kicker{color:#59685c!important}
+.dashboard-page .use-soon small{color:#655d49!important}
