@@ -155,3 +155,9 @@ header .navlinks{font-size:13px!important}
 }
 
 .csl-skip-link{position:fixed;left:14px;top:10px;z-index:9999;background:#263e33;color:#fff;padding:10px 14px;border-radius:999px;font-weight:800;transform:translateY(-160%);transition:transform .15s ease}.csl-skip-link:focus{transform:none}
+
+/* Readable microcopy pass */
+.eyebrow,.csl-kicker{font-size:11px!important}
+@media(min-width:768px){
+ .hero-proof span,.feature-copy small,.feature-copy span,.flow-card small,.resume-card small,.day small,.related-body small,.photo .cover-copy small,.photo .cover-copy span,.stat,.memory span{font-size:11px!important}
+}
