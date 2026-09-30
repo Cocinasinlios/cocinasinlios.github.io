@@ -39,7 +39,13 @@ footer{background:#202b24;color:#dce5df;padding:40px 0;margin-top:25px}footer p{
    app.innerHTML='<section class="empty"><div class="wrap"><div class="eyebrow">Recetas</div><h1>No encuentro esa receta.</h1><p><a class="btn primary" href="/recetas.html">Volver a la biblioteca</a></p></div></section>';
    return;
  }
- document.title=r.title+" | Cocina sin líos con Macarena";
+ try{
+   let recent=JSON.parse(localStorage.getItem("csl-recent-recipes-v1")||"[]");
+   recent=recent.map(x=>typeof x==="string"?{slug:x,ts:0}:x).filter(x=>x&&x.slug!==r.slug);
+   recent.unshift({slug:r.slug,ts:Date.now()});
+   localStorage.setItem("csl-recent-recipes-v1",JSON.stringify(recent.slice(0,8)));
+ }catch(e){}
+  document.title=r.title+" | Cocina sin líos con Macarena";
  const desc=r.intro.slice(0,155);
  document.querySelector('meta[name="description"]').setAttribute("content",desc);
  const canonical="https://cocinasinlios.com/receta.html?r="+encodeURIComponent(r.slug);
