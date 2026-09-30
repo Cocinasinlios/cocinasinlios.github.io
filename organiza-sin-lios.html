@@ -59,7 +59,7 @@ const data={
 };
 const buttons=[...document.querySelectorAll(".choice")],box=document.getElementById("result");
 function render(key){const d=data[key];if(!d)return;buttons.forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.key===key)));document.getElementById("title").textContent=d.title;document.getElementById("intro").textContent=d.intro;document.getElementById("steps").innerHTML=d.steps.map(x=>"<li>"+x+"</li>").join("");document.getElementById("nextTitle").textContent=d.nextTitle;document.getElementById("nextText").textContent=d.nextText;document.getElementById("primary").href=d.url;document.getElementById("talk").href="/hablamos.html?motivo=uso&origen="+encodeURIComponent("Organiza Sin Líos: "+d.title);box.classList.add("show");box.scrollIntoView({behavior:"smooth",block:"start"});setTimeout(()=>document.getElementById("title").focus({preventScroll:true}),350)}
-buttons.forEach(b=>b.addEventListener("click",()=>{window.CSLTrack?.("organize_choose",{type:b.dataset.key});render(b.dataset.key)}));
+buttons.forEach(b=>b.addEventListener("click",()=>{render(b.dataset.key)}));
 </script>
 <script src="/assets/site.js" defer></script>
 </body></html>

@@ -31,7 +31,7 @@ footer{background:#202b24;color:#dce5df;padding:40px 0}footer p{font-size:12px;c
 <div id="pantryInfo" class="pantry"><b>Tu despensa puede ayudar.</b><span>Si antes marcas lo que tienes en Despensa Sin Líos, priorizaré ideas que reutilicen esa base.</span></div>
 <button id="go" class="go">Crear mi semana ✦</button>
 </div></section>
-<section id="results" class="results"><div class="wrap"><div class="eyebrow">Tu propuesta</div><h2 style="font-size:44px;margin:7px 0 20px">Esta semana empezaría por aquí.</h2><div id="week" class="week"></div>
+<section id="results" class="results"><div class="wrap"><div class="eyebrow">Tu propuesta</div><h2 style="font-size:44px;margin:7px 0 6px">Esta semana empezaría por aquí.</h2><p id="peopleNote" style="color:var(--muted);margin:0 0 20px"></p><div id="week" class="week"></div>
 <div class="actions"><button id="save" class="btn primary">Guardar esta semana</button><button id="share" class="btn">Compartir resumen</button><button id="again" class="btn">Dame otra combinación</button><a class="btn" href="/despensa-sin-lios.html">Revisar despensa</a></div>
 <div class="shopping"><div class="eyebrow">Compra corta</div><h2>Lo que probablemente tendrás que completar.</h2><ul id="shopping"></ul><p style="font-size:12px;color:#6b624e">La lista es orientativa. Revisa siempre lo que ya tienes, las cantidades de tu casa y cualquier alergia o restricción alimentaria.</p></div>
 </div></section>
@@ -70,7 +70,7 @@ function score(m){
 }
 function build(){
  current=[...meals].sort((a,b)=>score(b)-score(a)).slice(0,5);
- const days=["Lunes","Martes","Miércoles","Jueves","Viernes"];
+ const days=["Lunes","Martes","Miércoles","Jueves","Viernes"];const peopleLabel=state.people==="1"?"1 persona":state.people==="2"?"2 personas":state.people==="4"?"3–4 personas":"5 o más personas";document.getElementById("peopleNote").textContent="Propuesta pensada para "+peopleLabel+". Ajusta cantidades a vuestro apetito y edades.";
  document.getElementById("week").innerHTML=current.map((m,i)=>'<article class="day"><small>'+days[i]+'</small><h3>'+m.n+'</h3><p>'+(m.t==="rapida"?"Pensada para un día con poco margen.":m.t==="mixta"?"Necesita algo de cocina, sin complicar la tarde.":"Para el día en que sí te apetece cocinar.")+'</p><b>'+(m.s.includes("aprovecha")?"Buena para aprovechar":"Cambio de registro")+'</b></article>').join("");
  const needed=[...new Set(current.flatMap(m=>m.need))];
  document.getElementById("shopping").innerHTML=needed.map(x=>"<li>"+x+"</li>").join("");
@@ -79,6 +79,6 @@ function build(){
 document.getElementById("go").addEventListener("click",build);
 document.getElementById("again").addEventListener("click",build);
 document.getElementById("save").addEventListener("click",()=>{if(!current.length)return;try{localStorage.setItem("csl-plan-semana-v1",JSON.stringify({savedAt:new Date().toISOString(),state,meals:current.map(x=>x.n),shopping:[...new Set(current.flatMap(x=>x.need))]}));document.getElementById("save").textContent="Semana guardada ✓"}catch(e){}});
-document.getElementById("share").addEventListener("click",async()=>{if(!current.length)return;const days=["Lunes","Martes","Miércoles","Jueves","Viernes"];const text="Mi semana Sin Líos ✦\n\n"+current.map((m,i)=>days[i]+": "+m.n).join("\n")+"\n\nPlanificado en cocinasinlios.com";try{if(navigator.share){await navigator.share({title:"Mi semana Sin Líos",text,url:"https://cocinasinlios.com/plan-semana.html"})}else{await navigator.clipboard.writeText(text);document.getElementById("share").textContent="Resumen copiado ✓"}}catch(e){}});
+document.getElementById("share").addEventListener("click",async()=>{if(!current.length)return;const days=["Lunes","Martes","Miércoles","Jueves","Viernes"];const peopleLabel=state.people==="1"?"1 persona":state.people==="2"?"2 personas":state.people==="4"?"3–4 personas":"5 o más personas";const text="Mi semana Sin Líos ✦ · "+peopleLabel+"\n\n"+current.map((m,i)=>days[i]+": "+m.n).join("\n")+"\n\nPlanificado en cocinasinlios.com";try{if(navigator.share){await navigator.share({title:"Mi semana Sin Líos",text,url:"https://cocinasinlios.com/plan-semana.html"})}else{await navigator.clipboard.writeText(text);document.getElementById("share").textContent="Resumen copiado ✓"}}catch(e){}});
 </script><script src="/assets/site.js" defer></script>
 </body></html>

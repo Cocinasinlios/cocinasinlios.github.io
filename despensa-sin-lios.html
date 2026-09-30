@@ -93,7 +93,7 @@ footer{background:#202b24;color:#dce5df;padding:40px 0}footer p{color:#aebbb3;fo
 <label class="item"><input type="checkbox" data-key="hierbascong"><span><b>Hierbas o aromáticos</b><small>Perejil, cilantro, jengibre o lo que más uses.</small></span></label>
 </div>
 </div>
-<button class="reset" id="reset" type="button">Desmarcar todo</button>
+<div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center"><button class="reset" id="reset" type="button">Desmarcar todo</button><button class="btn ghost" id="sharePantry" type="button">Compartir mi despensa</button></div>
 </div></section>
 
 <section class="formulas"><div class="wrap">
@@ -151,6 +151,7 @@ footer{background:#202b24;color:#dce5df;padding:40px 0}footer p{color:#aebbb3;fo
    if(next){const keys=selected.map(b=>b.dataset.key);next.href='/que-cocino.html?origen=despensa'+(keys.length?'&ingredientes='+encodeURIComponent(keys.join(',')):'');next.textContent=keys.length?'Dame ideas con estos '+keys.length+' →':'Dame ideas con mi despensa →';}
  }
  document.getElementById('reset').addEventListener('click',()=>{boxes.forEach(b=>b.checked=false);save()});
+ document.getElementById('sharePantry').addEventListener('click',async()=>{const selected=boxes.filter(b=>b.checked).map(b=>b.closest('label')?.querySelector('b')?.textContent||b.dataset.key);const text="Mi Despensa Sin Líos ✦\n\n"+(selected.length?selected.map(x=>"• "+x).join("\n"):"Todavía no he marcado nada.")+"\n\nhttps://cocinasinlios.com/despensa-sin-lios.html";try{if(navigator.share){await navigator.share({title:"Mi Despensa Sin Líos",text})}else{await navigator.clipboard.writeText(text);document.getElementById('sharePantry').textContent="Despensa copiada ✓"}}catch(e){}});
  update();
 })();
 </script>
