@@ -1,17 +1,10 @@
 {
-  "name": "Cocina sin líos con Macarena",
-  "short_name": "Cocina sin líos",
-  "start_url": "/",
-  "display": "standalone",
-  "background_color": "#fbf6ee",
-  "theme_color": "#2b3a30",
-  "description": "Recetas, herramientas y Thermomix explicada con Macarena.",
-  "icons": [
-    {
-      "src": "/assets/favicon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "any"
-    }
-  ]
+  "name":"Cocina sin líos con Macarena",
+  "short_name":"Cocina sin líos",
+  "start_url":"/",
+  "display":"standalone",
+  "background_color":"#fbf6ee",
+  "theme_color":"#274034",
+  "description":"Recetas, ideas, menús y organización para una cocina real con menos decisiones.",
+  "icons":[{"src":"/assets/favicon.svg","sizes":"any","type":"image/svg+xml","purpose":"any"}]
 }
