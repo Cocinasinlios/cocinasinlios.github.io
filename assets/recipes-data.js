@@ -850,14 +850,14 @@ window.CSL_RECIPES=[
    {
     "text": "1 cucharada de aceite de oliva",
     "key": "aceite de oliva",
-    "qty": 1,
+    "qty": 15,
     "maxQty": null,
-    "unit": "cda",
+    "unit": "ml",
     "group": "Despensa",
     "pantryKey": "aove",
     "optional": false,
     "aggregate": true,
-    "round": 0.25
+    "round": 1
    },
    {
     "text": "Sal y pimienta",
@@ -1009,14 +1009,14 @@ window.CSL_RECIPES=[
    {
     "text": "1 cucharada de aceite de oliva",
     "key": "aceite de oliva",
-    "qty": 1,
+    "qty": 15,
     "maxQty": null,
-    "unit": "cda",
+    "unit": "ml",
     "group": "Despensa",
     "pantryKey": "aove",
     "optional": false,
     "aggregate": true,
-    "round": 0.25
+    "round": 1
    },
    {
     "text": "Sal y pimienta",
@@ -1146,7 +1146,7 @@ window.CSL_RECIPES=[
     "group": "Fruta y verdura",
     "pantryKey": null,
     "optional": false,
-    "aggregate": false,
+    "aggregate": true,
     "round": 1
    },
    {
@@ -1164,14 +1164,14 @@ window.CSL_RECIPES=[
    {
     "text": "1 cucharada de aceite de oliva",
     "key": "aceite de oliva",
-    "qty": 1,
+    "qty": 15,
     "maxQty": null,
-    "unit": "cda",
+    "unit": "ml",
     "group": "Despensa",
     "pantryKey": "aove",
     "optional": false,
     "aggregate": true,
-    "round": 0.25
+    "round": 1
    },
    {
     "text": "Sal, pimienta y hierbas",
@@ -1551,7 +1551,7 @@ window.CSL_RECIPES=[
    },
    {
     "text": "Aceite, sal y pimienta",
-    "key": "sal y pimienta",
+    "key": "condimentos básicos",
     "qty": null,
     "maxQty": null,
     "unit": null,
@@ -2428,7 +2428,7 @@ window.CSL_RECIPES=[
    },
    {
     "text": "Aceite y sal",
-    "key": "sal y pimienta",
+    "key": "condimentos básicos",
     "qty": null,
     "maxQty": null,
     "unit": null,
@@ -4686,7 +4686,7 @@ window.CSL_RECIPES=[
    },
    {
     "text": "Aceite y sal",
-    "key": "sal y pimienta",
+    "key": "condimentos básicos",
     "qty": null,
     "maxQty": null,
     "unit": null,
@@ -5045,7 +5045,7 @@ window.CSL_RECIPES=[
    },
    {
     "text": "Aceite y sal",
-    "key": "sal y pimienta",
+    "key": "condimentos básicos",
     "qty": null,
     "maxQty": null,
     "unit": null,
@@ -6043,7 +6043,7 @@ window.CSL_RECIPES=[
    },
    {
     "text": "Aceite y sal",
-    "key": "sal y pimienta",
+    "key": "condimentos básicos",
     "qty": null,
     "maxQty": null,
     "unit": null,
@@ -6215,7 +6215,7 @@ window.CSL_RECIPES=[
    },
    {
     "text": "Aceite, sal y orégano",
-    "key": "orégano",
+    "key": "condimentos básicos",
     "qty": null,
     "maxQty": null,
     "unit": null,
@@ -6727,7 +6727,7 @@ window.CSL_RECIPES=[
    },
    {
     "text": "Aceite y sal",
-    "key": "sal y pimienta",
+    "key": "condimentos básicos",
     "qty": null,
     "maxQty": null,
     "unit": null,
@@ -6902,7 +6902,7 @@ window.CSL_RECIPES=[
    },
    {
     "text": "Aceite y sal",
-    "key": "sal y pimienta",
+    "key": "condimentos básicos",
     "qty": null,
     "maxQty": null,
     "unit": null,
@@ -8185,14 +8185,14 @@ window.CSL_RECIPES=[
    {
     "text": "3 cucharadas de aceite de oliva",
     "key": "aceite de oliva",
-    "qty": 3,
+    "qty": 45,
     "maxQty": null,
-    "unit": "cda",
+    "unit": "ml",
     "group": "Despensa",
     "pantryKey": "aove",
     "optional": false,
     "aggregate": true,
-    "round": 0.25
+    "round": 1
    },
    {
     "text": "1 cucharada de limón o vinagre",
