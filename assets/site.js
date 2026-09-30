@@ -62,34 +62,29 @@ if(document.querySelector("footer") &&
   document.querySelector("footer .wrap,footer")?.appendChild(x);
 }
 
-// Minimal cookieless product instrumentation.
-// Locally, only aggregate counters are stored on this device: no event history,
-// user identifier, referrer URL or per-visit timeline is persisted.
-// A same-origin endpoint can be configured later; none is configured by default.
-const usageKey="csl-usage-v1";
+// Privacy-first product instrumentation.
+// Sends only anonymous aggregate event dimensions to our same-origin endpoint in production.
+// No cookie, user ID, IP address, form content, pantry contents or recipe preferences are included.
 function cleanValue(v){return String(v??"").slice(0,120).replace(/[<>]/g,"")}
 function track(name,detail={}){
-  const eventName=cleanValue(name);
-  const target=cleanValue(detail.target||"");
-  try{
-    const usage=JSON.parse(localStorage.getItem(usageKey)||'{"counts":{}}');
-    usage.counts=usage.counts||{};
-    const key=eventName+"|"+path+(target?"|"+target:"");
-    usage.counts[key]=(usage.counts[key]||0)+1;
-    usage.updatedAt=Date.now();
-    localStorage.setItem(usageKey,JSON.stringify(usage));
-  }catch(e){}
-  const endpoint=document.querySelector('meta[name="csl-analytics-endpoint"]')?.content;
-  if(endpoint&&endpoint.startsWith("/")&&navigator.sendBeacon){
-    const payload={
-      event:eventName,
-      path,
-      target,
-      source:document.referrer?(new URL(document.referrer,location.href).origin===location.origin?"internal":"external"):"direct",
-      viewport:innerWidth<600?"mobile":innerWidth<950?"tablet":"desktop",
-      ts:Date.now()
-    };
-    try{navigator.sendBeacon(endpoint,new Blob([JSON.stringify(payload)],{type:"application/json"}))}catch(e){}
+  const event={
+    event:cleanValue(name),
+    path,
+    target:cleanValue(detail.target||""),
+    source:document.referrer?(new URL(document.referrer,location.href).origin===location.origin?"internal":"external"):"direct",
+    viewport:innerWidth<600?"mobile":innerWidth<950?"tablet":"desktop"
+  };
+  const configured=document.querySelector('meta[name="csl-analytics-endpoint"]')?.content;
+  const endpoint=configured||(location.hostname==="cocinasinlios.com"?"/__csl/events":"");
+  if(endpoint&&endpoint.startsWith("/")){
+    const payload=JSON.stringify(event);
+    try{
+      if(navigator.sendBeacon){
+        navigator.sendBeacon(endpoint,new Blob([payload],{type:"application/json"}));
+      }else{
+        fetch(endpoint,{method:"POST",headers:{"content-type":"application/json"},body:payload,keepalive:true,credentials:"same-origin"}).catch(()=>{});
+      }
+    }catch(e){}
   }
 }
 window.CSLTrack=track;
@@ -112,7 +107,7 @@ document.addEventListener("click",e=>{
     const u=new URL(el.href,location.href);
     if(u.origin===location.origin){
       const target=u.pathname+(u.search||"");
-      if(u.pathname==="/receta.html")return track("recipe_open",{target});
+      if(/^\/recetas\/[^/]+\/?$/.test(u.pathname))return track("recipe_open",{target});
       if(["/que-cocino.html","/plan-semana.html","/despensa-sin-lios.html","/mi-rincon.html","/recetas.html"].includes(u.pathname))return track("tool_open",{target:u.pathname});
       return track("internal_nav",{target:u.pathname});
     }

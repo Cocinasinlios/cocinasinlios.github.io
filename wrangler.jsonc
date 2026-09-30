@@ -1,9 +1,18 @@
 {
   "name": "cocinasinlios-github-io",
-  "compatibility_date": "2026-09-27",
+  "compatibility_date": "2026-09-30",
+  "main": "worker.js",
   "assets": {
     "directory": ".",
+    "binding": "ASSETS",
+    "run_worker_first": ["/__csl/events"],
     "html_handling": "auto-trailing-slash",
     "not_found_handling": "404-page"
-  }
+  },
+  "analytics_engine_datasets": [
+    {
+      "binding": "ANALYTICS",
+      "dataset": "csl_product_events"
+    }
+  ]
 }
