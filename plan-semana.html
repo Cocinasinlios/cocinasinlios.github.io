@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Planifica mi semana | Cocina sin líos con Macarena</title>
+<meta name="description" content="Crea una semana de cinco cenas según tu tiempo, tu estilo y tu despensa. Un planificador sencillo de Cocina sin líos.">
+<meta name="robots" content="index,follow"><link rel="canonical" href="https://cocinasinlios.com/plan-semana.html">
+<style>
+:root{--cream:#fbf6ee;--paper:#fffdfa;--ink:#25251f;--muted:#706f67;--dark:#274034;--sage:#dce8d8;--mint:#eef5eb;--peach:#f1d8c6;--butter:#f2df9d;--terr:#c97a58;--line:#e8dfd2;--shadow:0 18px 55px rgba(58,51,42,.10)}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.5;padding-bottom:78px}a{color:inherit;text-decoration:none}.wrap{width:min(1080px,92vw);margin:auto}h1,h2,h3{font-family:Georgia,serif;font-weight:500;line-height:1.04}.eyebrow{font-size:11px;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;color:#687769}
+header{position:sticky;top:0;z-index:40;background:rgba(251,246,238,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.nav{height:76px;display:flex;align-items:center}.brand img{width:185px}.back{margin-left:auto;font-size:13px;font-weight:850}
+.hero{padding:62px 0 30px}.hero h1{font-size:clamp(50px,7vw,82px);letter-spacing:-2.5px;margin:8px 0 15px;max-width:850px}.hero p{font-size:18px;color:var(--muted);max-width:720px}
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:30px;padding:30px;box-shadow:var(--shadow);margin-bottom:28px}.question{margin:0 0 26px}.question h2{font-size:30px;margin:0 0 12px}.choices{display:flex;flex-wrap:wrap;gap:9px}.choice{border:1px solid var(--line);background:white;border-radius:999px;padding:11px 15px;font-weight:850;cursor:pointer}.choice.active{background:var(--dark);color:#fff;border-color:var(--dark)}
+.pantry{background:var(--sage);border-radius:20px;padding:16px 18px;margin:20px 0}.pantry b{font-family:Georgia,serif;font-size:23px;font-weight:500}.pantry span{display:block;color:#536056;font-size:12px;margin-top:4px}
+.go{width:100%;border:0;background:var(--terr);color:#fff;border-radius:18px;padding:16px;font-weight:900;font-size:15px;cursor:pointer}
+.results{display:none;padding:34px 0 70px}.results.show{display:block}.week{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.day{background:white;border:1px solid var(--line);border-radius:22px;padding:18px;min-height:230px}.day:nth-child(2n){background:var(--mint)}.day:nth-child(3n){background:var(--peach)}.day small{font-size:9px;letter-spacing:1.2px;text-transform:uppercase;font-weight:900;color:#6d786e}.day h3{font-size:24px;margin:8px 0}.day p{font-size:12px;color:var(--muted)}.day b{font-size:11px}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}.btn{display:inline-flex;border-radius:999px;padding:12px 16px;border:1px solid var(--dark);font-weight:900;font-size:12px}.btn.primary{background:var(--dark);color:white}
+.shopping{background:var(--butter);border-radius:26px;padding:26px;margin-top:24px}.shopping h2{font-size:35px;margin:5px 0 12px}.shopping ul{columns:2;padding-left:20px}.shopping li{margin:7px 0}
+.global-dock{position:fixed;left:50%;bottom:12px;transform:translateX(-50%);z-index:120;background:rgba(34,43,37,.95);color:#fff;border-radius:18px;padding:5px;display:flex;gap:2px;box-shadow:0 14px 40px rgba(0,0,0,.18)}.global-dock a{min-width:68px;text-align:center;padding:7px 8px;border-radius:13px;font-size:9px;font-weight:850}.global-dock a span{display:block;font-size:15px}
+footer{background:#202b24;color:#dce5df;padding:40px 0}footer p{font-size:12px;color:#aebbb3}
+@media(max-width:880px){.week{grid-template-columns:1fr 1fr}.brand img{width:165px}}@media(max-width:560px){.week{grid-template-columns:1fr}.panel{padding:22px}.shopping ul{columns:1}.global-dock{left:10px;right:10px;transform:none}.global-dock a{min-width:0;flex:1;padding:6px 3px}}
+</style>
+</head><body>
+<header><div class="wrap nav"><a class="brand" href="/"><img src="/assets/logo-cocina-sin-lios.svg" alt="Cocina sin líos con Macarena"></a><a class="back" href="/explora.html">← Explora</a></div></header>
+<main>
+<section class="hero"><div class="wrap"><div class="eyebrow">Planificador Sin Líos</div><h1>Cinco cenas. Ni una operación militar.</h1><p>Dime cómo viene tu semana y te propongo cinco cenas razonables. Si ya has marcado tu Despensa Sin Líos, la tendré en cuenta para aprovechar mejor lo que hay en casa.</p></div></section>
+<section><div class="wrap panel">
+<div class="question"><h2>1. ¿Cómo vas de tiempo entre semana?</h2><div class="choices" data-group="time"><button class="choice active" data-value="rapida">Voy justa</button><button class="choice" data-value="mixta">Un poco de todo</button><button class="choice" data-value="tranquila">Puedo cocinar</button></div></div>
+<div class="question"><h2>2. ¿Qué quieres priorizar?</h2><div class="choices" data-group="style"><button class="choice active" data-value="variada">Variar</button><button class="choice" data-value="ligera">Ligero</button><button class="choice" data-value="comfort">Comida de abrazo</button><button class="choice" data-value="aprovecha">Aprovechar</button></div></div>
+<div class="question"><h2>3. ¿Para cuántas personas?</h2><div class="choices" data-group="people"><button class="choice" data-value="1">1</button><button class="choice active" data-value="2">2</button><button class="choice" data-value="4">3–4</button><button class="choice" data-value="5">5+</button></div></div>
+<div id="pantryInfo" class="pantry"><b>Tu despensa puede ayudar.</b><span>Si antes marcas lo que tienes en Despensa Sin Líos, priorizaré ideas que reutilicen esa base.</span></div>
+<button id="go" class="go">Crear mi semana ✦</button>
+</div></section>
+<section id="results" class="results"><div class="wrap"><div class="eyebrow">Tu propuesta</div><h2 style="font-size:44px;margin:7px 0 20px">Esta semana empezaría por aquí.</h2><div id="week" class="week"></div>
+<div class="actions"><button id="save" class="btn primary">Guardar esta semana</button><button id="again" class="btn">Dame otra combinación</button><a class="btn" href="/despensa-sin-lios.html">Revisar despensa</a></div>
+<div class="shopping"><div class="eyebrow">Compra corta</div><h2>Lo que probablemente tendrás que completar.</h2><ul id="shopping"></ul><p style="font-size:12px;color:#6b624e">La lista es orientativa. Revisa siempre lo que ya tienes, las cantidades de tu casa y cualquier alergia o restricción alimentaria.</p></div>
+</div></section>
+</main><footer><div class="wrap"><b>Cocina sin líos con Macarena</b><p>Planificador doméstico orientativo. La semana se guarda sólo cuando pulsas “Guardar esta semana” y permanece en este dispositivo.</p></div></footer>
+<div class="global-dock"></div>
+<script>
+const meals=[
+{n:"Pasta con pesto y tomate",t:"rapida",s:["variada","comfort","aprovecha"],need:["pasta","tomate","frutos secos","hierbas"],uses:["pasta","tomate","frutos","hierbascong"]},
+{n:"Hummus + crudités + pan",t:"rapida",s:["ligera","aprovecha","variada"],need:["garbanzos","zanahoria o pepino","pan","limón"],uses:["legumbres","pan","limon","ajo","comino"]},
+{n:"Huevos al plato con verduras",t:"rapida",s:["variada","comfort","aprovecha"],need:["huevos","verduras","tomate"],uses:["huevos","verdurascong","tomate"]},
+{n:"Arroz salteado de aprovechamiento",t:"rapida",s:["aprovecha","variada"],need:["arroz","verduras","huevo o proteína"],uses:["arroz","verdurascong","huevos","protecong"]},
+{n:"Crema de verduras + topping crujiente",t:"rapida",s:["ligera","aprovecha"],need:["verduras","caldo","frutos secos"],uses:["verdurascong","caldo","frutos"]},
+{n:"Merluza al vapor + verduras",t:"mixta",s:["ligera","variada"],need:["pescado","verduras","limón"],uses:["protecong","verdurascong","limon"]},
+{n:"Albóndigas con tomate",t:"mixta",s:["comfort","variada"],need:["carne picada","tomate","cebolla"],uses:["tomate","cebolla","ajo","oregano"]},
+{n:"Curry de garbanzos y verduras",t:"mixta",s:["variada","ligera","aprovecha"],need:["garbanzos","verduras","curry"],uses:["legumbres","verdurascong","curry","cebolla"]},
+{n:"Tortilla + ensalada completa",t:"rapida",s:["ligera","variada"],need:["huevos","patata o verdura","ensalada"],uses:["huevos","cebolla"]},
+{n:"Pizza casera con restos de verduras",t:"tranquila",s:["comfort","aprovecha","variada"],need:["harina","levadura","tomate","mozzarella"],uses:["tomate","oregano"]},
+{n:"Pollo al horno con limón y especias",t:"tranquila",s:["variada","comfort"],need:["pollo","patata","limón"],uses:["protecong","limon","pimenton"]},
+{n:"Lentejas rápidas con verduras",t:"mixta",s:["comfort","ligera","aprovecha"],need:["lentejas","verduras","tomate"],uses:["legumbres","tomate","cebolla","pimenton"]},
+{n:"Bol de arroz, verduras y salsa de yogur",t:"rapida",s:["ligera","variada","aprovecha"],need:["arroz","verduras","yogur"],uses:["arroz","verdurascong","limon"]},
+{n:"Pescado en papillote + patata",t:"mixta",s:["ligera","variada"],need:["pescado","patata","hierbas"],uses:["protecong","hierbascong","limon"]},
+{n:"Pisto + huevo",t:"mixta",s:["ligera","aprovecha","variada"],need:["calabacín","pimiento","tomate","huevos"],uses:["tomate","huevos","cebolla","ajo"]}
+];
+let state={time:"rapida",style:"variada",people:"2"},current=[];
+document.querySelectorAll(".choices").forEach(g=>g.querySelectorAll(".choice").forEach(b=>b.addEventListener("click",()=>{g.querySelectorAll(".choice").forEach(x=>x.classList.remove("active"));b.classList.add("active");state[g.dataset.group]=b.dataset.value})));
+let pantry={};try{pantry=JSON.parse(localStorage.getItem("csl-despensa-v1")||"{}")}catch(e){}
+const pantryKeys=Object.keys(pantry).filter(k=>pantry[k]);
+if(pantryKeys.length){document.getElementById("pantryInfo").innerHTML="<b>Tengo en cuenta "+pantryKeys.length+" cosas de tu despensa.</b><span>Voy a favorecer propuestas que reutilicen esa base antes de añadir más compra.</span>"}
+function score(m){
+ let v=m.s.includes(state.style)?4:0;
+ if(state.time==="rapida")v+=m.t==="rapida"?4:m.t==="mixta"?1:-1;
+ if(state.time==="mixta")v+=m.t==="rapida"||m.t==="mixta"?3:1;
+ if(state.time==="tranquila")v+=2;
+ v+=(m.uses||[]).filter(k=>pantry[k]).length*2;
+ return v+Math.random()*1.8;
+}
+function build(){
+ current=[...meals].sort((a,b)=>score(b)-score(a)).slice(0,5);
+ const days=["Lunes","Martes","Miércoles","Jueves","Viernes"];
+ document.getElementById("week").innerHTML=current.map((m,i)=>'<article class="day"><small>'+days[i]+'</small><h3>'+m.n+'</h3><p>'+(m.t==="rapida"?"Pensada para un día con poco margen.":m.t==="mixta"?"Necesita algo de cocina, sin complicar la tarde.":"Para el día en que sí te apetece cocinar.")+'</p><b>'+(m.s.includes("aprovecha")?"Buena para aprovechar":"Cambio de registro")+'</b></article>').join("");
+ const needed=[...new Set(current.flatMap(m=>m.need))];
+ document.getElementById("shopping").innerHTML=needed.map(x=>"<li>"+x+"</li>").join("");
+ document.getElementById("results").classList.add("show");document.getElementById("results").scrollIntoView({behavior:"smooth",block:"start"});
+}
+document.getElementById("go").addEventListener("click",build);
+document.getElementById("again").addEventListener("click",build);
+document.getElementById("save").addEventListener("click",()=>{if(!current.length)return;try{localStorage.setItem("csl-plan-semana-v1",JSON.stringify({savedAt:new Date().toISOString(),state,meals:current.map(x=>x.n)}));document.getElementById("save").textContent="Semana guardada ✓"}catch(e){}});
+</script><script src="/assets/site.js" defer></script>
+</body></html>
