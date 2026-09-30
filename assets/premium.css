@@ -153,3 +153,5 @@ header .navlinks{font-size:13px!important}
   .organize-page .navlinks,.menu-page .navlinks{display:none!important}
   .organize-page .brand img,.menu-page .brand img{width:160px!important}
 }
+
+.csl-skip-link{position:fixed;left:14px;top:10px;z-index:9999;background:#263e33;color:#fff;padding:10px 14px;border-radius:999px;font-weight:800;transform:translateY(-160%);transition:transform .15s ease}.csl-skip-link:focus{transform:none}
