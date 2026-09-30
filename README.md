@@ -11,7 +11,7 @@ Proyecto editorial propio de cocina doméstica y organización, publicado desde 
 - Organiza Sin Líos: decisiones y rutinas sencillas.
 
 ## Límites
-La web se mantiene separada de cualquier actividad de promoción o venta de productos de terceros. No incorpora publicidad comportamental ni identificadores de usuario. Las preferencias funcionales se guardan localmente en el navegador; los eventos técnicos agregados se envían al propio dominio y se registran en Cloudflare Workers Analytics Engine sin incluir el contenido de la despensa, preferencias, favoritos o plan semanal.
+La web se mantiene separada de cualquier actividad de promoción o venta de productos de terceros. No incorpora publicidad comportamental ni identificadores de usuario. Las preferencias funcionales se guardan localmente en el navegador. La medición de producto está desactivada por defecto y no se envían actualmente eventos de uso a un servicio de analítica.
 
 ## Producción
 - Dominio: https://cocinasinlios.com/
@@ -19,7 +19,7 @@ La web se mantiene separada de cualquier actividad de promoción o venta de prod
 - Dominio de producción configurado; documentar cualquier cambio DNS antes de tocar registros.
 
 ## Medición
-- Instrumentación cookieless de eventos clave en `assets/site.js`.
-- En el navegador solo se persisten contadores agregados por evento/ruta; no se guarda historial de eventos.
-- No hay identificador de usuario, cookies de analítica ni envío actual a terceros.
-- Puede conectarse en el futuro un endpoint same-origin mediante `<meta name="csl-analytics-endpoint" content="/...">`, previa revisión de privacidad.
+- La instrumentación de eventos existe en `assets/site.js`, pero está desactivada por defecto.
+- Solo se activaría mediante un endpoint same-origin configurado expresamente con `csl-analytics-endpoint`.
+- No hay identificador de usuario, cookies de analítica ni envío actual de eventos de navegación.
+- Cualquier activación futura requiere revisar antes la información de privacidad.

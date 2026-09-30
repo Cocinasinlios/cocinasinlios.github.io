@@ -85,8 +85,8 @@ if(document.querySelector("footer") &&
 }
 
 // Privacy-first product instrumentation.
-// Sends only anonymous aggregate event dimensions to our same-origin endpoint in production.
-// No cookie, user ID, IP address, form content, pantry contents or recipe preferences are included.
+// Disabled unless a same-origin endpoint is explicitly configured with csl-analytics-endpoint.
+// No cookie, user ID, form content, pantry contents or recipe preferences are included.
 function cleanValue(v){return String(v??"").slice(0,120).replace(/[<>]/g,"")}
 function track(name,detail={}){
   const event={
@@ -96,8 +96,7 @@ function track(name,detail={}){
     source:document.referrer?(new URL(document.referrer,location.href).origin===location.origin?"internal":"external"):"direct",
     viewport:innerWidth<600?"mobile":innerWidth<950?"tablet":"desktop"
   };
-  const configured=document.querySelector('meta[name="csl-analytics-endpoint"]')?.content;
-  const endpoint=configured||(location.hostname==="cocinasinlios.com"?"/__csl/events":"");
+  const endpoint=document.querySelector('meta[name="csl-analytics-endpoint"]')?.content||"";
   if(endpoint&&endpoint.startsWith("/")){
     const payload=JSON.stringify(event);
     try{
