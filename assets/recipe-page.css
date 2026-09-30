@@ -15,3 +15,5 @@
 @media(max-width:820px){.hero-photo.no-photo{min-height:320px}.cover-copy strong{font-size:38px}}
 
 .cook-note{display:grid;grid-template-columns:1fr 1fr 1.25fr;gap:10px;margin-top:-16px;margin-bottom:42px}.cook-bit{border:1px solid var(--line);border-radius:20px;padding:16px;background:white}.cook-bit:nth-child(2){background:var(--mint)}.cook-bit:nth-child(3){background:var(--sage)}.cook-bit small{display:block;font-size:9px;font-weight:900;letter-spacing:1.1px;text-transform:uppercase;color:#536158;margin-bottom:6px}.cook-bit b{display:block;font-family:Georgia,serif;font-size:20px;font-weight:500;line-height:1.15}.cook-bit p{margin:0;color:var(--muted);font-size:12px}@media(max-width:700px){.cook-note{grid-template-columns:1fr;margin-top:0;margin-bottom:28px}}
+
+.recipe-byline{margin:-3px 0 16px;font-size:12px;color:#667068}.recipe-byline a{font-weight:850;color:var(--dark);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}.recipe-byline a:hover{opacity:.8}
