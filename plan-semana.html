@@ -17,6 +17,7 @@ header{position:sticky;top:0;z-index:40;background:rgba(251,246,238,.95);backdro
 
 .avoid-box{margin-top:14px;border:1px solid var(--line);border-radius:20px;padding:16px;background:#f8f4ed}.avoid-box h2{font-size:23px;margin:0 0 5px}.avoid-box p{margin:0 0 11px;color:var(--muted);font-size:12px}.avoid-chips{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:9px}.avoid-chip{border:1px solid var(--line);background:white;border-radius:999px;padding:10px 13px;font-weight:850;cursor:pointer}.avoid-chip[aria-pressed="true"]{background:var(--dark);border-color:var(--dark);color:white}.avoid-input{width:100%;border:1px solid var(--line);border-radius:15px;padding:11px 13px;background:white}.avoid-note{display:block;margin-top:6px;color:#665f57;font-size:11px}.scaled{margin-top:12px;border-top:1px solid var(--line);padding-top:9px}.scaled summary{cursor:pointer;font-size:11px;font-weight:900}.scaled ul{padding-left:17px;margin:8px 0 0}.scaled li{font-size:11px;color:var(--muted);margin:4px 0}.serving-note{display:block;font-size:10px;font-weight:850;color:#59675e;margin:3px 0 7px}
 </style>
+<link rel="stylesheet" href="/assets/premium.css">
 </head>
 <body class="planner-page">
 <header><div class="wrap nav"><a class="brand" href="/"><img src="/assets/logo-cocina-sin-lios.svg" alt="Cocina sin líos con Macarena"></a><nav class="navlinks"></nav></div></header>
@@ -66,9 +67,15 @@ header{position:sticky;top:0;z-index:40;background:rgba(251,246,238,.95);backdro
  avoidText.addEventListener("change",()=>{exclusions.text=avoidText.value.trim();saveExclusions()});;
  function targetPeople(){return Number(state.people)||2}
  function basePeople(r){const s=String(r.servings||"");if(!/(persona|racion|porci)/i.test(s))return 4;const m=s.match(/(\d+)/);return m?Number(m[1]):4}
- function numberFmt(n){if(Math.abs(n-Math.round(n))<.01)return String(Math.round(n));const v=Math.round(n*4)/4,whole=Math.floor(v),frac=Math.round((v-whole)*4);const f=frac===1?"¼":frac===2?"½":frac===3?"¾":"";return (whole?String(whole):"")+f}
+ function numberFmt(n,step=.25){const v=Math.max(step,Math.round(n/step)*step);if(Math.abs(v-Math.round(v))<.01)return String(Math.round(v));const whole=Math.floor(v),frac=Math.round((v-whole)*4);const f=frac===1?"¼":frac===2?"½":frac===3?"¾":"";return (whole?String(whole):"")+f}
  function parseQty(q){if(/^\d+\/\d+$/.test(q)){const [a,b]=q.split("/").map(Number);return a/b}return Number(q.replace(",","."))}
- function scaleIngredient(text,r){const factor=targetPeople()/basePeople(r);if(Math.abs(factor-1)<.01)return text;return String(text).replace(/\d+(?:[.,]\d+)?(?:\/\d+)?/g,m=>{const n=parseQty(m);return Number.isFinite(n)?numberFmt(n*factor):m})}
+ function scaledNumber(q,rest,factor){const n=parseQty(q);if(!Number.isFinite(n))return q;const r=rest.toLowerCase();
+   if(/^\s*(kg|g|mg|ml|cl|l\b|cucharadas?\b|cucharaditas?\b|tazas?\b)/i.test(r))return numberFmt(n*factor,.25);
+   if(/^\s*(huevos?|latas?|tortillas?|filetes?|lomos?|muslos?|yogures?|piezas?)\b/i.test(r))return String(Math.max(1,Math.round(n*factor)));
+   if(/^\s*(dientes? de ajo|cebollas?|puerros?|limones?|calabacines?|berenjenas?|patatas?|tomates?|manzanas?|pl[aá]tanos?)\b/i.test(r))return numberFmt(n*factor,.5);
+   return numberFmt(n*factor,.5);
+ }
+ function scaleIngredient(text,r){const factor=targetPeople()/basePeople(r);if(Math.abs(factor-1)<.01)return text;const s=String(text);const m=s.match(/^(\d+(?:[.,]\d+)?(?:\/\d+)?)(\s*[–-]\s*(\d+(?:[.,]\d+)?))?/);if(!m)return s;const rest=s.slice(m[0].length);if(m[3])return scaledNumber(m[1],rest,factor)+"–"+scaledNumber(m[3],rest,factor)+rest;return scaledNumber(m[1],rest,factor)+rest}
  function servingLabel(){const n=targetPeople();return n===1?"1 persona":n===2?"2 personas":n===4?"3–4 personas":"5–6 personas"}
  function scaledIngredients(r){return (r.ingredients||[]).map(x=>scaleIngredient(x,r))}
  function shoppingFor(items){
