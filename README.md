@@ -11,7 +11,7 @@ Proyecto editorial propio de cocina doméstica y organización, publicado desde 
 - Organiza Sin Líos: decisiones y rutinas sencillas.
 
 ## Límites
-La web se mantiene separada de cualquier actividad de promoción o venta de productos de terceros. No incorpora analítica publicitaria ni seguimiento automático del recorrido. Las preferencias se guardan localmente solo cuando el usuario activa una función.
+La web se mantiene separada de cualquier actividad de promoción o venta de productos de terceros. No incorpora analítica publicitaria, identificadores de usuario ni envío de datos de uso a terceros. Las preferencias funcionales y unos contadores agregados de uso se guardan localmente en el navegador.
 
 ## Producción
 - Dominio: https://cocinasinlios.com/
@@ -20,6 +20,6 @@ La web se mantiene separada de cualquier actividad de promoción o venta de prod
 
 ## Medición
 - Instrumentación cookieless de eventos clave en `assets/site.js`.
-- Los conteos se guardan localmente mientras no exista un endpoint de analítica configurado.
-- Puede conectarse un endpoint same-origin mediante `<meta name="csl-analytics-endpoint" content="/...">`.
-- No hay identificadores publicitarios ni cookies de seguimiento.
+- En el navegador solo se persisten contadores agregados por evento/ruta; no se guarda historial de eventos.
+- No hay identificador de usuario, cookies de analítica ni envío actual a terceros.
+- Puede conectarse en el futuro un endpoint same-origin mediante `<meta name="csl-analytics-endpoint" content="/...">`, previa revisión de privacidad.
