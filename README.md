@@ -1,11 +1,19 @@
 # Cocina sin líos con Macarena
 
-Sitio editorial y de acompañamiento de Macarena, publicado desde GitHub y servido en el dominio propio.
+Proyecto editorial propio de cocina doméstica y organización, publicado desde GitHub y servido en https://cocinasinlios.com/.
 
-- Producción actual: https://cocinasinlios.com/
-- Dominio propio: https://cocinasinlios.com/
+## Producto público
+- Qué cocino: tres ideas según tiempo, antojo y objetivo.
+- Despensa Sin Líos: checklist local de básicos.
+- Planifica: cinco cenas, compra orientativa y guardado voluntario en el dispositivo.
+- Mi cocina: panel local con despensa, semana, compra, favoritos y “gastar pronto”.
+- Recetas: biblioteca editorial con favoritos y compartir.
+- Organiza Sin Líos: decisiones y rutinas sencillas.
+
+## Límites
+La web se mantiene separada de cualquier actividad de promoción o venta de productos de terceros. No incorpora analítica publicitaria ni seguimiento automático del recorrido. Las preferencias se guardan localmente solo cuando el usuario activa una función.
+
+## Producción
+- Dominio: https://cocinasinlios.com/
 - Marca: Cocina sin líos con Macarena
-- Método propio: Entiende → Cocina → Corrige → Adapta → Organiza
-- Estado del dominio: configurado como dominio de producción; cualquier cambio DNS debe seguir documentándose antes de tocar registros.
-
-Ver `DOMAIN-CUTOVER.md` para el procedimiento de migración sin romper la web.
+- Dominio de producción configurado; documentar cualquier cambio DNS antes de tocar registros.
