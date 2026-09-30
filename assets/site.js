@@ -1,6 +1,12 @@
 (()=>{
 const path=location.pathname.replace(/\/$/,"")||"/";
 
+if(!document.querySelector('link[href="/assets/premium.css"]')){
+  const p=document.createElement("link");
+  p.rel="stylesheet"; p.href="/assets/premium.css";
+  document.head.appendChild(p);
+}
+
 if(!document.querySelector('link[rel="icon"]')){
   const l=document.createElement("link");
   l.rel="icon"; l.href="/assets/favicon.svg"; l.type="image/svg+xml";
@@ -147,4 +153,16 @@ if(path==="/"){
     section.hidden=false;
   }
 }
+
+// csl-scroll-polish
+const header=document.querySelector("header");
+const setHeader=()=>header?.classList.toggle("csl-scrolled",scrollY>12);
+setHeader();addEventListener("scroll",setHeader,{passive:true});
+
+const revealTargets=document.querySelectorAll(".card,.step,.learn-card,.principle,.route,.box,.info,.statusbox,.related-card,.resume-card,[data-reveal]");
+revealTargets.forEach((el,i)=>{el.classList.add("csl-reveal");el.dataset.delay=String(i%4)});
+if("IntersectionObserver" in window){
+ const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("csl-in");io.unobserve(e.target)}}),{threshold:.08,rootMargin:"0px 0px -35px"});
+ revealTargets.forEach(el=>io.observe(el));
+}else revealTargets.forEach(el=>el.classList.add("csl-in"));
 })();
