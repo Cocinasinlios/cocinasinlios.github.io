@@ -27,7 +27,7 @@ footer{background:#202b24;color:#dce5df;padding:40px 0;margin-top:25px}footer p{
 <main>
 <section class="hero"><div class="wrap"><div class="eyebrow">Biblioteca Sin Líos</div><h1>No solo qué hacer. También por qué funciona.</h1><p>Cada receta tiene una preparación clara, alternativas si te falta algo, ideas para aprovechar lo que sobra y una técnica que podrás reutilizar en otras comidas.</p><div class="hero-stats"><span class="stat"><b id="total">0</b> recetas completas</span><span class="stat">Filtros por necesidad</span><span class="stat">Guardables en Mi cocina</span></div></div></section>
 <section class="section paper"><div class="wrap">
-<div class="toolbar"><input id="search" class="search" type="search" placeholder="Buscar: garbanzos, cena, rápido, pescado..." aria-label="Buscar recetas"><div class="filters"><button class="filter active" type="button" data-filter="todas">Todas</button><button class="filter" type="button" data-filter="cena">Cenas</button><button class="filter" type="button" data-filter="rapida">Rápidas</button><button class="filter" type="button" data-filter="aprovechar">Aprovechar</button><button class="filter" type="button" data-filter="vegetal">Vegetales</button><button class="filter" type="button" data-filter="ligera">Ligeras</button><button class="filter" type="button" data-filter="dulce">Dulce</button></div></div>
+<div class="toolbar"><input id="search" class="search" type="search" placeholder="Buscar: garbanzos, cena, rápido, pescado..." aria-label="Buscar recetas"><div class="filters"><button class="filter active" type="button" data-filter="todas" aria-pressed="true">Todas</button><button class="filter" type="button" data-filter="cena" aria-pressed="false">Cenas</button><button class="filter" type="button" data-filter="rapida" aria-pressed="false">Rápidas</button><button class="filter" type="button" data-filter="aprovechar" aria-pressed="false">Aprovechar</button><button class="filter" type="button" data-filter="vegetal" aria-pressed="false">Vegetales</button><button class="filter" type="button" data-filter="ligera" aria-pressed="false">Ligeras</button><button class="filter" type="button" data-filter="dulce" aria-pressed="false">Dulce</button></div></div>
 <div class="summary"><span id="count"></span><div id="savedNote" class="saved-note"></div></div>
 <div id="grid" class="grid"></div><div id="empty" class="empty">No encuentro una receta con esos filtros. Prueba con otra palabra o vuelve a “Todas”.</div>
 </div></section>
@@ -64,7 +64,7 @@ footer{background:#202b24;color:#dce5df;padding:40px 0;margin-top:25px}footer p{
    ).join("");
    document.getElementById("count").textContent=shown.length+" receta"+(shown.length===1?"":"s")+" en esta vista";
    document.getElementById("empty").style.display=shown.length?"none":"block";
-   document.querySelectorAll("[data-filter]").forEach(b=>b.classList.toggle("active",b.dataset.filter===filter));
+   document.querySelectorAll("[data-filter]").forEach(b=>{const on=b.dataset.filter===filter;b.classList.toggle("active",on);b.setAttribute("aria-pressed",String(on))});
    document.querySelectorAll("[data-fav]").forEach(b=>b.addEventListener("click",()=>{
      const r=recipes.find(x=>x.slug===b.dataset.fav);if(!r)return;
      const candidates=[r.id||r.slug,r.slug,...Object.keys(legacy).filter(k=>legacy[k]===r.slug)];
