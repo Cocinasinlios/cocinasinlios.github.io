@@ -60,7 +60,7 @@ footer{background:#202b24;color:#dce5df;padding:40px 0;margin-top:25px}footer p{
      return byFilter&&(!q||hay.includes(q));
    });
    document.getElementById("grid").innerHTML=shown.map(r=>
-    '<article class="card"><div class="photo" style="'+photoStyle(r)+'"></div><div class="card-body"><div class="card-top"><span class="category">'+esc(r.category)+'</span><button class="fav" type="button" data-fav="'+esc(r.slug)+'" aria-pressed="'+String(isFav(r))+'" aria-label="Guardar '+esc(r.title)+'">'+(isFav(r)?"♥":"♡")+'</button></div><h3>'+esc(r.title)+'</h3><div class="card-meta">⏱ '+esc(r.time)+' · '+esc(r.difficulty)+'</div><p>'+esc(r.intro)+'</p><div class="actions"><a class="btn primary" href="/recetas/'+encodeURIComponent(r.slug)+'/'">Ver receta completa</a><button class="share" type="button" data-share="'+esc(r.slug)+'">Compartir</button></div></div></article>'
+    '<article class="card"><div class="photo" style="'+photoStyle(r)+'"></div><div class="card-body"><div class="card-top"><span class="category">'+esc(r.category)+'</span><button class="fav" type="button" data-fav="'+esc(r.slug)+'" aria-pressed="'+String(isFav(r))+'" aria-label="Guardar '+esc(r.title)+'">'+(isFav(r)?"♥":"♡")+'</button></div><h3>'+esc(r.title)+'</h3><div class="card-meta">⏱ '+esc(r.time)+' · '+esc(r.difficulty)+'</div><p>'+esc(r.intro)+'</p><div class="actions"><a class="btn primary" href="/recetas/'+encodeURIComponent(r.slug)+'/">Ver receta completa</a><button class="share" type="button" data-share="'+esc(r.slug)+'">Compartir</button></div></div></article>'
    ).join("");
    document.getElementById("count").textContent=shown.length+" receta"+(shown.length===1?"":"s")+" en esta vista";
    document.getElementById("empty").style.display=shown.length?"none":"block";
@@ -76,7 +76,7 @@ footer{background:#202b24;color:#dce5df;padding:40px 0;margin-top:25px}footer p{
    }));
    document.querySelectorAll("[data-share]").forEach(b=>b.addEventListener("click",async()=>{
      const r=recipes.find(x=>x.slug===b.dataset.share);if(!r)return;
-     const url="https://cocinasinlios.com/receta.html?r="+encodeURIComponent(r.slug);
+     const url="https://cocinasinlios.com/recetas/"+encodeURIComponent(r.slug)+"/";
      try{if(navigator.share)await navigator.share({title:r.title,text:r.intro,url});else{await navigator.clipboard.writeText(r.title+" · "+url);b.textContent="Copiado ✓"}}catch(e){}
    }));
  }
