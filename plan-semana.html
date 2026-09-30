@@ -68,7 +68,7 @@ header{position:sticky;top:0;z-index:40;background:rgba(251,246,238,.95);backdro
  function basePeople(r){const s=String(r.servings||"");if(!/(persona|racion|porci)/i.test(s))return 4;const m=s.match(/(\d+)/);return m?Number(m[1]):4}
  function numberFmt(n){if(Math.abs(n-Math.round(n))<.01)return String(Math.round(n));const v=Math.round(n*4)/4,whole=Math.floor(v),frac=Math.round((v-whole)*4);const f=frac===1?"¼":frac===2?"½":frac===3?"¾":"";return (whole?String(whole):"")+f}
  function parseQty(q){if(/^\d+\/\d+$/.test(q)){const [a,b]=q.split("/").map(Number);return a/b}return Number(q.replace(",","."))}
- function scaleIngredient(text,r){const factor=targetPeople()/basePeople(r);if(Math.abs(factor-1)<.01)return text;return String(text).replace(/^(\d+(?:[.,]\d+)?(?:\/\d+)?)(\s*[–-]\s*(\d+(?:[.,]\d+)?))?/,(_,a,range,b)=>{const x=parseQty(a);if(!Number.isFinite(x))return _;if(b){const y=parseQty(b);return numberFmt(x*factor)+"–"+numberFmt(y*factor)}return numberFmt(x*factor)})}
+ function scaleIngredient(text,r){const factor=targetPeople()/basePeople(r);if(Math.abs(factor-1)<.01)return text;return String(text).replace(/\d+(?:[.,]\d+)?(?:\/\d+)?/g,m=>{const n=parseQty(m);return Number.isFinite(n)?numberFmt(n*factor):m})}
  function servingLabel(){const n=targetPeople();return n===1?"1 persona":n===2?"2 personas":n===4?"3–4 personas":"5–6 personas"}
  function scaledIngredients(r){return (r.ingredients||[]).map(x=>scaleIngredient(x,r))}
  function shoppingFor(items){
