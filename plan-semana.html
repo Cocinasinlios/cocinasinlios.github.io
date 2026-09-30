@@ -73,35 +73,36 @@ header{position:sticky;top:0;z-index:40;background:rgba(251,246,238,.95);backdro
  function humanNum(n){if(Math.abs(n-Math.round(n))<.01)return String(Math.round(n));const q=Math.round(n*4)/4,whole=Math.floor(q),frac=Math.round((q-whole)*4),f=frac===1?"¼":frac===2?"½":frac===3?"¾":"";return (whole?String(whole):"")+f}
  function scaledQty(ing,r){if(ing?.qty==null)return null;const factor=targetPeople()/basePeople(r),step=Number(ing.round)||.25;return roundTo(Number(ing.qty)*factor,step)}
  function scaledMax(ing,r){if(ing?.maxQty==null)return null;const factor=targetPeople()/basePeople(r),step=Number(ing.round)||.25;return roundTo(Number(ing.maxQty)*factor,step)}
- const countNames={"huevos":["huevo","huevos"],"cebolla":["cebolla","cebollas"],"puerro":["puerro","puerros"],"ajo":["diente de ajo","dientes de ajo"],"limón":["limón","limones"],"calabacín":["calabacín","calabacines"],"berenjena":["berenjena","berenjenas"],"patata":["patata","patatas"],"tomate":["tomate","tomates"],"tomate cherry":["tomate cherry","tomates cherry"],"manzana":["manzana","manzanas"],"plátano":["plátano","plátanos"],"tortillas":["tortilla","tortillas"],"yogur":["yogur","yogures"]};
+ const countNames={"huevos":["huevo","huevos"],"cebolla":["cebolla","cebollas"],"puerro":["puerro","puerros"],"ajo":["diente de ajo","dientes de ajo"],"limón":["limón","limones"],"pepino":["pepino","pepinos"],"pimiento":["pimiento","pimientos"],"calabacín":["calabacín","calabacines"],"berenjena":["berenjena","berenjenas"],"patata":["patata","patatas"],"zanahoria":["zanahoria","zanahorias"],"tomate":["tomate","tomates"],"tomate cherry":["tomate cherry","tomates cherry"],"manzana":["manzana","manzanas"],"plátano":["plátano","plátanos"],"aguacate":["aguacate","aguacates"],"tortillas":["tortilla","tortillas"],"yogur":["yogur","yogures"],"merluza":["lomo de merluza","lomos de merluza"],"salmón":["lomo de salmón","lomos de salmón"],"bacalao":["lomo de bacalao","lomos de bacalao"],"filetes de pescado":["filete de pescado","filetes de pescado"],"conserva de pescado":["lata de pescado","latas de pescado"],"pan":["rebanada de pan","rebanadas de pan"],"maíz":["lata de maíz","latas de maíz"]};
  function formatMeasure(a,b,unit,key){
    if(a==null)return "";
-   const range=b!=null&&Math.abs(b-a)>.001;
-   const fmt=v=>{
-     if(unit==="g"&&v>=1000)return (Math.round(v/100)/10).toLocaleString("es-ES")+" kg";
-     if(unit==="ml"&&v>=1000)return (Math.round(v/100)/10).toLocaleString("es-ES")+" l";
-     if(unit==="g")return humanNum(v)+" g";
-     if(unit==="ml")return humanNum(v)+" ml";
-     if(unit==="mg")return humanNum(v)+" mg";
-     if(unit==="cda")return humanNum(v)+" cucharada"+(v===1?"":"s");
-     if(unit==="cdta")return humanNum(v)+" cucharadita"+(v===1?"":"s");
-     if(unit==="taza")return humanNum(v)+" taza"+(v===1?"":"s");
-     if(unit==="vaso")return humanNum(v)+" vaso"+(v===1?"":"s");
-     if(unit==="ud"){const n=countNames[key]||[key,key];return humanNum(v)+" "+(Math.abs(v-1)<.01?n[0]:n[1])}
-     return humanNum(v)+" "+unit;
-   };
-   return range?fmt(a)+"–"+fmt(b).replace(/^\d+[¼½¾]?\s*/,""):fmt(a);
+   const range=b!=null&&Math.abs(b-a)>.001,ha=humanNum(a),hb=humanNum(b);
+   if(unit==="g"){
+     if(!range&&a>=1000)return (Math.round(a/100)/10).toLocaleString("es-ES")+" kg";
+     if(range&&a>=1000&&b>=1000)return (Math.round(a/100)/10).toLocaleString("es-ES")+"–"+(Math.round(b/100)/10).toLocaleString("es-ES")+" kg";
+     return (range?ha+"–"+hb:ha)+" g";
+   }
+   if(unit==="ml"){
+     if(!range&&a>=1000)return (Math.round(a/100)/10).toLocaleString("es-ES")+" l";
+     if(range&&a>=1000&&b>=1000)return (Math.round(a/100)/10).toLocaleString("es-ES")+"–"+(Math.round(b/100)/10).toLocaleString("es-ES")+" l";
+     return (range?ha+"–"+hb:ha)+" ml";
+   }
+   if(unit==="mg")return (range?ha+"–"+hb:ha)+" mg";
+   const unitNames={cda:["cucharada","cucharadas"],cdta:["cucharadita","cucharaditas"],taza:["taza","tazas"],vaso:["vaso","vasos"]};
+   if(unitNames[unit]){const n=unitNames[unit];return (range?ha+"–"+hb:ha)+" "+(Math.abs((b??a)-1)<.01?n[0]:n[1])}
+   if(unit==="ud"){const n=countNames[key]||[key,key];return (range?ha+"–"+hb:ha)+" "+(Math.abs((b??a)-1)<.01?n[0]:n[1])}
+   return (range?ha+"–"+hb:ha)+(unit?" "+unit:"");
  }
  function scaledIngredient(r,ing){
    if(!ing||ing.qty==null||!ing.aggregate)return ing?.text||"";
    const a=scaledQty(ing,r),b=scaledMax(ing,r),amount=formatMeasure(a,b,ing.unit,ing.key);
-   return amount+(amount?" de ":"")+ing.key+(ing.optional?" · opcional":"");
+   return (ing.unit==="ud"?amount:amount+(amount?" de ":"")+ing.key)+(ing.optional?" · opcional":"");
  }
  function scaledIngredients(r){return (r.ingredientData||[]).length?r.ingredientData.map(x=>scaledIngredient(r,x)):(r.ingredients||[])}
  function entryLabel(x){
    if(x.kind==="choice")return x.label;
    const amount=formatMeasure(x.qty,x.maxQty,x.unit,x.key);
-   return (amount?amount+" de ":"")+x.key+(x.optional?" · opcional":"");
+   return (x.unit==="ud"?amount:(amount?amount+" de ":"")+x.key)+(x.optional?" · opcional":"");
  }
  function shoppingFor(items){
    const sums=new Map(),choices=new Map(),plain=new Map();
@@ -109,7 +110,7 @@ header{position:sticky;top:0;z-index:40;background:rgba(251,246,238,.95);backdro
      const data=(r.ingredientData||[]);
      if(!data.length){(r.plan?.need||[]).forEach(x=>plain.set(norm(x),{kind:"plain",key:norm(x),label:x,group:"Despensa",pantryKey:needKey[norm(x)]||null}));return}
      data.forEach(ing=>{
-       if(!ing||!ing.key)return;
+       if(!ing||!ing.key||ing.key==="sal y pimienta"||ing.key==="agua")return;
        if(ing.qty!=null&&ing.aggregate){
          const id=ing.key+"|"+ing.unit;
          const a=scaledQty(ing,r),b=scaledMax(ing,r);
