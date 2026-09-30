@@ -24,23 +24,19 @@ document.querySelectorAll("header .brand").forEach(a=>{
 });
 
 const desktopNav=[
-  ["/explora.html","Explora"],
   ["/que-cocino.html","Qué cocino"],
-  ["/recetas.html","Recetas"],
   ["/plan-semana.html","Planifica"],
-  ["/despensa-sin-lios.html","Despensa"],
-  ["/mi-rincon.html","Mi cocina"],
-  ["/con-macarena.html","Macarena"]
+  ["/recetas.html","Recetas"],
+  ["/mi-rincon.html","Mi cocina"]
 ];
 document.querySelectorAll("header .navlinks").forEach(n=>{
   n.innerHTML=desktopNav.map(x=>'<a href="'+x[0]+'">'+x[1]+'</a>').join("");
 });
 
 const dockNav=[
-  ["/explora.html","✦","Explora"],
-  ["/que-cocino.html","🎲","Qué cocino"],
-  ["/plan-semana.html","🗓","Planifica"],
-  ["/despensa-sin-lios.html","🥫","Despensa"],
+  ["/que-cocino.html","✦","Hoy"],
+  ["/plan-semana.html","🗓","Semana"],
+  ["/recetas.html","⌕","Recetas"],
   ["/mi-rincon.html","♡","Mi cocina"]
 ];
 document.querySelectorAll(".global-dock,.dock").forEach(d=>{
