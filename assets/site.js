@@ -7,6 +7,17 @@ if(!document.querySelector('link[href="/assets/premium.css"]')){
   document.head.appendChild(p);
 }
 
+const main=document.querySelector("main");
+if(main){
+  if(!main.id)main.id="main-content";
+  if(!document.querySelector(".csl-skip-link")){
+    const skip=document.createElement("a");
+    skip.className="csl-skip-link";skip.href="#"+main.id;skip.textContent="Saltar al contenido";
+    document.body.prepend(skip);
+  }
+}
+document.querySelectorAll("header .navlinks").forEach(n=>n.setAttribute("aria-label","Navegación principal"));
+
 if(!document.querySelector('link[rel="icon"]')){
   const l=document.createElement("link");
   l.rel="icon"; l.href="/assets/favicon.svg"; l.type="image/svg+xml";
