@@ -130,3 +130,26 @@ header .navlinks{font-size:13px!important}
  .home-page .section-head h2{font-size:40px!important}
  .dashboard-page .hero{padding:38px 0 20px!important}
 }
+
+/* Tablet portrait navigation: use the top menu instead of a floating bar. */
+@media(min-width:761px) and (max-width:980px){
+  header .navlinks{display:flex!important;gap:10px!important;font-size:11.5px!important}
+  .global-dock,.dock{display:none!important}
+  body{padding-bottom:0!important}
+  header .brand img{width:170px!important}
+}
+/* Bring older editorial utilities into the current visual system. */
+.organize-page .nav,.menu-page .nav{height:72px!important}
+.organize-page .brand img,.menu-page .brand img{width:205px!important}
+.organize-page .navlinks,.menu-page .navlinks{margin-left:auto;display:flex;gap:16px;font-size:13px;font-weight:800}
+.organize-page .choice{background:#fff!important}
+.organize-page .choice:nth-child(2){background:#eef5eb!important}
+.organize-page .choice:nth-child(4){background:#f3e4d8!important}
+.menu-page .shopping{background:#fff!important;border:1px solid var(--line)}
+.menu-page .prep{background:#eef5eb!important}
+.menu-page .extra{background:#fff!important;border:1px solid var(--line)}
+.menu-page .extra:nth-child(2){background:#f3df9e!important}
+@media(max-width:760px){
+  .organize-page .navlinks,.menu-page .navlinks{display:none!important}
+  .organize-page .brand img,.menu-page .brand img{width:160px!important}
+}
