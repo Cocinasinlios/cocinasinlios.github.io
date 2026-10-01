@@ -155,7 +155,7 @@ header{position:sticky;top:0;z-index:40;background:rgba(251,246,238,.95);backdro
    if(cats.has(r.category))s-=2.5;
    if(r.tags.includes("comfort")&&(tagCounts.comfort||0)>=2)s-=3;
    if(r.tags.includes("ligera")&&(tagCounts.ligera||0)>=3)s-=2;
-   return s+Math.random()*1.5;
+   return s;
  }
  function resolveIncoming(){
    if(!incoming?.n)return null;
