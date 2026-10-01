@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Estudio RRSS | Cocina sin líos</title>
+<meta name="description" content="Herramienta interna para convertir el contenido de Cocina sin líos en ideas para redes sociales.">
+<meta name="theme-color" content="#274034">
+<style>
+:root{--cream:#fbf6ee;--paper:#fffdfa;--ink:#25251f;--muted:#6f7068;--dark:#274034;--sage:#dce8d8;--mint:#eef5eb;--peach:#f1d8c6;--butter:#f2df9d;--terr:#c97a58;--line:#e8dfd2;--shadow:0 18px 55px rgba(58,51,42,.10)}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.5}a{color:inherit;text-decoration:none}.wrap{width:min(1120px,92vw);margin:auto}h1,h2,h3{font-family:Georgia,serif;font-weight:500;line-height:1.04}.eyebrow{font-size:10px;font-weight:900;letter-spacing:1.4px;text-transform:uppercase;color:#59685c}
+header{border-bottom:1px solid var(--line);background:rgba(251,246,238,.95);position:sticky;top:0;z-index:20;backdrop-filter:blur(12px)}.nav{height:74px;display:flex;align-items:center;gap:18px}.brand img{width:190px}.badge{margin-left:auto;background:var(--dark);color:white;border-radius:999px;padding:8px 12px;font-size:10px;font-weight:900}
+.hero{padding:58px 0 26px}.hero h1{font-size:clamp(48px,7vw,78px);letter-spacing:-2px;margin:7px 0 12px}.hero p{font-size:17px;color:var(--muted);max-width:760px}
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:28px;padding:26px;box-shadow:var(--shadow);margin:20px 0}.controls{display:grid;grid-template-columns:1fr 1fr auto;gap:12px;align-items:end}.field label{display:block;font-size:11px;font-weight:900;margin-bottom:7px}.field select{width:100%;border:1px solid var(--line);border-radius:14px;padding:12px 13px;background:white;font:inherit}.btn{border:1px solid var(--dark);background:var(--dark);color:white;border-radius:999px;padding:12px 16px;font-weight:900;cursor:pointer}.btn.alt{background:transparent;color:var(--dark)}.btn.small{padding:8px 11px;font-size:11px}
+.week{display:grid;grid-template-columns:repeat(2,1fr);gap:13px;margin:24px 0 52px}.piece{background:white;border:1px solid var(--line);border-radius:24px;padding:22px;position:relative;overflow:hidden}.piece:nth-child(2n){background:var(--mint)}.piece:nth-child(3n){background:var(--peach)}.piece:nth-child(5n){background:var(--butter)}.piece small{font-size:9px;letter-spacing:1.2px;font-weight:900;text-transform:uppercase;color:#647065}.piece h3{font-size:28px;margin:7px 0 10px}.piece p{font-size:13px;color:var(--muted);white-space:pre-line}.meta{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0}.pill{border:1px solid rgba(39,64,52,.18);border-radius:999px;padding:5px 8px;font-size:9px;font-weight:850}.copy{border:0;background:transparent;text-decoration:underline;font-weight:850;color:var(--dark);padding:0;cursor:pointer}
+.recipe-box{display:grid;grid-template-columns:.85fr 1.15fr;gap:16px}.recipe-side{background:var(--dark);color:white;border-radius:26px;padding:25px}.recipe-side h2{font-size:38px;margin:7px 0}.recipe-side p{color:#d7e1da}.recipe-form{background:white;border:1px solid var(--line);border-radius:26px;padding:25px}.recipe-form select{width:100%;padding:12px;border:1px solid var(--line);border-radius:14px;background:white}.output{margin-top:15px;background:var(--sage);border-radius:18px;padding:17px;white-space:pre-line;font-size:13px}
+.hooks{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:20px 0 60px}.hook{background:white;border:1px solid var(--line);border-radius:20px;padding:17px;font-family:Georgia,serif;font-size:20px}.footer{background:#202b24;color:#dce5df;padding:34px 0;margin-top:40px}.footer p{font-size:12px;color:#aebbb3}
+@media(max-width:800px){.controls,.recipe-box{grid-template-columns:1fr}.week{grid-template-columns:1fr}.hooks{grid-template-columns:1fr 1fr}}@media(max-width:520px){.hooks{grid-template-columns:1fr}.hero h1{font-size:46px}.badge{display:none}}
+button:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid rgba(201,122,88,.5);outline-offset:3px}
+</style>
+</head>
+<body>
+<header><div class="wrap nav"><a class="brand" href="/"><img src="/assets/logo-cocina-sin-lios.svg" alt="Cocina sin líos con Macarena"></a><span class="badge">HERRAMIENTA INTERNA · NOINDEX</span></div></header>
+<main>
+<section class="hero"><div class="wrap"><div class="eyebrow">Estudio Sin Líos · RRSS</div><h1>Una web. Muchas piezas de contenido.</h1><p>Genera ideas a partir del contenido editorial que ya existe. Prioriza manos, ingredientes, planos cenitales, pantalla y voz en off: no necesitas salir a cámara para que se note que hay una persona detrás.</p></div></section>
+<section><div class="wrap panel"><div class="controls">
+<div class="field"><label for="theme">Tema de la semana</label><select id="theme"><option value="rapida">Cenas rápidas</option><option value="aprovechar">Aprovechamiento</option><option value="ligera">Ligero</option><option value="dulce">Dulce</option><option value="despensa">Despensa</option><option value="plan">Planificación</option><option value="mix">Mezcla editorial</option></select></div>
+<div class="field"><label for="tone">Enfoque</label><select id="tone"><option value="practico">Práctico y directo</option><option value="cercano">Cercano</option><option value="educativo">Enseñar una idea</option><option value="guardable">Muy guardable</option></select></div>
+<button id="generate" class="btn" type="button">Crear 7 días</button>
+</div></div></section>
+<section><div class="wrap"><div class="eyebrow">Calendario generado</div><h2 style="font-size:44px;margin:7px 0 0">Siete piezas conectadas.</h2><div id="week" class="week"></div><div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:-30px;margin-bottom:60px"><button id="copyWeek" class="btn alt" type="button">Copiar semana completa</button><button id="shuffle" class="btn alt" type="button">Otra combinación</button></div></div></section>
+<section><div class="wrap recipe-box">
+<div class="recipe-side"><div class="eyebrow" style="color:#b8c8bd">Una receta → tres contenidos</div><h2>Exprime una ficha sin repetirla.</h2><p>El mismo plato puede darte un Reel, un carrusel y Stories si cada pieza responde a una pregunta distinta.</p></div>
+<div class="recipe-form"><label for="recipe" style="display:block;font-weight:900;margin-bottom:7px">Elige receta</label><select id="recipe"></select><button id="recipeGo" class="btn" style="margin-top:12px" type="button">Crear piezas</button><div id="recipeOutput" class="output">Elige una receta y te preparo tres ángulos.</div><button id="copyRecipe" class="copy" style="margin-top:12px" type="button">Copiar estas tres piezas</button></div>
+</div></section>
+<section style="padding:62px 0 10px"><div class="wrap"><div class="eyebrow">Hooks que encajan con la marca</div><h2 style="font-size:44px;margin:7px 0">Abrir sin gritar.</h2><div id="hooks" class="hooks"></div></div></section>
+</main>
+<footer class="footer"><div class="wrap"><b>Estudio RRSS · Cocina sin líos</b><p>Todo se genera en el navegador a partir del contenido editorial de la web. No envía textos ni elecciones a servicios externos.</p></div></footer>
+<script src="/assets/recipes-data.js"></script>
+<script>
+(()=>{const recipes=window.CSL_RECIPES||[];
+const theme=document.getElementById("theme"),tone=document.getElementById("tone"),week=document.getElementById("week"),recipe=document.getElementById("recipe"),recipeOutput=document.getElementById("recipeOutput");
+const esc=s=>String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
+const themeNames={rapida:"cenas rápidas",aprovechar:"aprovechamiento",ligera:"comidas ligeras",dulce:"algo dulce",despensa:"despensa útil",plan:"planificación semanal",mix:"cocina real"};
+const formats=["Stories","Reel","Carrusel","Reel","Stories","Carrusel","Stories"];
+const days=["Lunes","Martes","Miércoles","Jueves","Viernes","Sábado","Domingo"];
+function pool(){const t=theme.value;if(t==="despensa"||t==="plan"||t==="mix")return recipes;return recipes.filter(r=>(r.tags||[]).includes(t))}
+function choose(n){const p=[...pool()].sort(()=>Math.random()-.5);return Array.from({length:n},(_,i)=>p[i%Math.max(1,p.length)]||recipes[i%recipes.length])}
+function contentFor(r,i){const t=theme.value,tn=themeNames[t],learn=r?.learn?.t||"una idea útil",title=r?.title||"una receta sencilla",url=r?("https://cocinasinlios.com/recetas/"+r.slug+"/"):"https://cocinasinlios.com/";
+if(t==="despensa"){const hooks=["Lo que siempre merece un hueco en mi despensa","Una base + algo fresco + un remate","No necesitas 40 ingredientes para resolver una cena","Esto es lo que compro para tener salidas, no para acumular","Una despensa útil se parece a tu vida real","Tres básicos que evitan empezar desde cero","Antes de hacer otra compra, mira esto"];return {hook:hooks[i],body:"Enseña 3–5 básicos, para qué sirven y una salida concreta. Cierra con una pregunta: “¿Cuál te salva más a ti?”",shot:"Manos + tarros + ingredientes · plano cenital",cta:"CTA: Revisar Despensa Sin Líos · cocinasinlios.com/despensa-sin-lios.html"}}
+if(t==="plan"){const hooks=["Cinco cenas sin convertir el domingo en una fábrica de tuppers","La semana que te quita cinco decisiones","Planificar no es cocinarlo todo el domingo","Una compra más corta empieza antes de ir al súper","Si cada tarde decides desde cero, prueba esto","Mi regla: adelanta solo lo que te ahorre una decisión","Una semana razonable para gente con vida"];return {hook:hooks[i],body:"Muestra una semana realista y explica una sola lógica: variedad, tiempo o aprovechamiento. Evita enseñar un menú perfecto; enseña uno sostenible.",shot:"Captura del planificador + manos preparando 1 base",cta:"CTA: Crear mi semana · cocinasinlios.com/plan-semana.html"}}
+const hookSets={
+practico:["Hoy no necesitas otra receta: necesitas una decisión menos","Si vas tarde, empieza por aquí","Tres ingredientes y una salida razonable","Esto es lo que haría hoy con lo que hay","Una cena de diario que no parece castigo","Guárdate esta estructura para otro día","La pregunta no es “qué receta hago”, sino “qué quiero resolver”"],
+cercano:["Esto es para uno de esos martes","Si hoy no te da la vida, te entiendo","Una cena normal para una casa normal","No hace falta que hoy cocines espectacular","Esto me salva cuando no quiero pensar","La cocina real también cuenta los días cansados","Te dejo una idea para no darle más vueltas"],
+educativo:["El detalle que cambia esta receta","Aquí no importa memorizar: importa entender esto","Una técnica que te sirve en diez recetas más","Por qué esto funciona mejor así","Mira qué cambia cuando haces esto antes","La receta termina; la idea se queda","Una cosa pequeña que hace cocinar más fácil"],
+guardable:["Guárdate estas tres combinaciones","La fórmula que resuelve más de una cena","Tres versiones con la misma base","Esto merece vivir en tus guardados","Una estructura, cinco cenas posibles","Lista corta para días sin ideas","Guárdalo para la próxima nevera a medias"]};
+const hook=hookSets[tone.value][i];const body="Pieza basada en “"+title+"”. En lugar de contar toda la receta, céntrate en "+learn.toLowerCase()+". Muestra un antes/después o 3 pasos visuales y deja el resto en la ficha.";const shot=formats[i]==="Carrusel"?"Ingredientes + 3 diapositivas de proceso":formats[i]==="Stories"?"3 stories: pregunta → proceso → resultado":"Plano cenital/manos + voz en off";return {hook,body,shot,cta:"CTA: Ver receta · "+url}}
+function generate(){const picks=choose(7);week.innerHTML=picks.map((r,i)=>{const c=contentFor(r,i);return '<article class="piece" data-copy="'+i+'"><small>'+days[i]+' · '+formats[i]+'</small><h3>'+esc(c.hook)+'</h3><p>'+esc(c.body)+'</p><div class="meta"><span class="pill">'+esc(c.shot)+'</span></div><p><b>'+esc(c.cta)+'</b></p><button class="copy" type="button">Copiar pieza</button></article>'}).join("");week.querySelectorAll(".piece").forEach((el,i)=>el.querySelector(".copy").addEventListener("click",()=>copyPiece(el,i)))}
+function pieceText(el){return [el.querySelector("small").textContent,el.querySelector("h3").textContent,el.querySelector("p").textContent,el.querySelector(".pill").textContent,el.querySelectorAll("p")[1]?.textContent||""].join("\n\n")}
+async function cp(text,btn){try{await navigator.clipboard.writeText(text);if(btn){const old=btn.textContent;btn.textContent="Copiado ✓";setTimeout(()=>btn.textContent=old,1200)}}catch(e){}}
+function copyPiece(el){cp(pieceText(el),el.querySelector(".copy"))}
+document.getElementById("copyWeek").addEventListener("click",e=>cp([...week.querySelectorAll(".piece")].map(pieceText).join("\n\n———\n\n"),e.currentTarget));
+document.getElementById("shuffle").addEventListener("click",generate);document.getElementById("generate").addEventListener("click",generate);theme.addEventListener("change",generate);tone.addEventListener("change",generate);
+recipes.forEach(r=>{const o=document.createElement("option");o.value=r.slug;o.textContent=r.title;recipe.appendChild(o)});
+function recipePieces(){const r=recipes.find(x=>x.slug===recipe.value);if(!r)return;const learn=r.learn?.t||"la técnica principal";const url="https://cocinasinlios.com/recetas/"+r.slug+"/";recipeOutput.textContent=
+"REEL\nHook: “"+learn+": el detalle que cambia "+r.title.toLowerCase()+".”\nVisual: manos + 3 momentos del proceso + resultado.\nCTA: Receta completa → "+url+
+"\n\nCARRUSEL\nPortada: “"+r.title+": 3 cosas que importan más que memorizar la receta.”\nSlides: 1) qué buscar, 2) error típico, 3) cómo corregir, 4) resultado.\nCTA: Guárdalo y abre la ficha completa.\n\nSTORIES\n1) Pregunta: “¿Te ha pasado con esta receta?”\n2) Vídeo corto del punto clave.\n3) Resultado + enlace a "+url}
+document.getElementById("recipeGo").addEventListener("click",recipePieces);document.getElementById("copyRecipe").addEventListener("click",e=>cp(recipeOutput.textContent,e.currentTarget));
+const hookList=["Que abrir la nevera te dé ideas, no pereza.","No necesitas otra receta. Necesitas una decisión menos.","Una base + algo fresco + un remate.","Cocinar para dos días sin comer lo mismo dos días.","La compra empieza antes de ir al súper.","Guárdate esta fórmula para un martes cualquiera.","Si hoy vas tarde, esto sí te cabe.","Organiza solo lo que te ahorre una decisión.","Una receta que enseña vale por dos.","Lo que tienes ya puede ser la cena.","Tres salidas para una nevera a medias.","Menos “¿qué cenamos?”. Más tener una base."];
+document.getElementById("hooks").innerHTML=hookList.map(h=>'<div class="hook">'+esc(h)+'</div>').join("");
+generate();recipePieces();
+})();
+</script>
+</body></html>
