@@ -4,6 +4,7 @@ from pathlib import Path
 from urllib.parse import urlsplit
 import re
 import sys
+import json
 
 ROOT = Path(__file__).resolve().parents[1]
 PUBLIC_EXT = {".html", ".js", ".css", ".xml", ".json", ".jsonc"}
@@ -74,9 +75,39 @@ else:
 
 data = (ROOT / "assets" / "recipes-data.js").read_text(encoding="utf-8", errors="replace")
 recipe_count = len(re.findall(r'"slug"\s*:\s*"[^"]+"', data))
+try:
+    payload = re.sub(r"^\s*window\.CSL_RECIPES\s*=\s*", "", data)
+    payload = re.sub(r";\s*$", "", payload)
+    recipes = json.loads(payload)
+except Exception as exc:
+    recipes = []
+    problems.append(f"No se puede interpretar recipes-data.js: {exc}")
+
+for recipe in recipes:
+    slug = recipe.get("slug", "(sin slug)")
+    if not recipe.get("baseServings"):
+        problems.append(f"Receta sin raciones base: {slug}")
+    ingredients = recipe.get("ingredients") or []
+    ingredient_data = recipe.get("ingredientData") or []
+    if not ingredient_data or len(ingredients) != len(ingredient_data):
+        problems.append(f"Ingredientes no escalables o desalineados: {slug}")
+    contains = recipe.get("contains")
+    if not isinstance(contains, dict) or not all(k in contains for k in ("pescado","carne","huevo","lacteos")):
+        problems.append(f"Metadatos de exclusión incompletos: {slug}")
+    cook = recipe.get("cook")
+    if not isinstance(cook, dict) or not all(cook.get(k) for k in ("heat","time","cue")):
+        problems.append(f"Guía de cocción incompleta: {slug}")
+
 recipe_pages = list((ROOT / "recetas").glob("*/index.html"))
 if len(recipe_pages) != recipe_count:
     problems.append(f"Recetas: {recipe_count} en datos pero {len(recipe_pages)} páginas publicadas")
+
+for page in recipe_pages:
+    text = page.read_text(encoding="utf-8", errors="replace")
+    if 'data-scale="1"' not in text or "/assets/recipe-page.js" not in text:
+        problems.append(f"Ficha sin controles de cantidades: {page.relative_to(ROOT)}")
+    if 'rel="canonical"' not in text:
+        problems.append(f"Ficha sin canonical: {page.relative_to(ROOT)}")
 
 if sitemap.is_file():
     sm = sitemap.read_text(encoding="utf-8", errors="replace")
