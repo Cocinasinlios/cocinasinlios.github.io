@@ -1,10 +1,26 @@
 {
-  "name":"Cocina sin líos con Macarena",
-  "short_name":"Cocina sin líos",
-  "start_url":"/",
-  "display":"standalone",
-  "background_color":"#fbf6ee",
-  "theme_color":"#274034",
-  "description":"Recetas, ideas, menús y organización para una cocina real con menos decisiones.",
-  "icons":[{"src":"/assets/favicon.svg","sizes":"any","type":"image/svg+xml","purpose":"any"}]
+  "id": "/",
+  "name": "Cocina sin líos con Macarena",
+  "short_name": "Cocina sin líos",
+  "description": "Recetas, ideas, menús y organización para una cocina real con menos decisiones.",
+  "lang": "es-ES",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#fbf6ee",
+  "theme_color": "#274034",
+  "icons": [
+    {
+      "src": "/assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {"name": "Qué cocino hoy", "short_name": "Qué cocino", "url": "/que-cocino.html"},
+    {"name": "Planifica mi semana", "short_name": "Planifica", "url": "/plan-semana.html"},
+    {"name": "Mis recetas", "short_name": "Recetas", "url": "/recetas.html"},
+    {"name": "Mi cocina", "short_name": "Mi cocina", "url": "/mi-rincon.html"}
+  ]
 }
