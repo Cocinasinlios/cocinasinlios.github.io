@@ -2,6 +2,34 @@
 const CSL_PHOTO_SPRITE_MAP={"gazpacho-andaluz":{"x":0,"y":0},"pollo-horno-limon":{"x":33.3333,"y":0},"albondigas-tomate":{"x":66.6667,"y":0},"lentejas-rapidas":{"x":100,"y":0},"merluza-vapor-verduras":{"x":0,"y":50},"salmon-mostaza-horno":{"x":33.3333,"y":50},"curry-garbanzos-verduras":{"x":66.6667,"y":50},"crema-calabaza-zanahoria":{"x":100,"y":50},"tortilla-calabacin":{"x":0,"y":100},"ensalada-garbanzos-mediterranea":{"x":33.3333,"y":100},"verduras-asadas-yogur":{"x":66.6667,"y":100},"bizcocho-yogur":{"x":100,"y":100}};const CSL_PHOTO_SPRITE="/assets/recipe-sprite-12.webp";
 function applyRecipeSprite(el,pos){if(!el||!pos)return;el.classList.remove("no-photo","tone-sage","tone-mint","tone-peach","tone-butter","tone-clay","tone-paper");el.innerHTML="";el.style.backgroundImage="url('"+CSL_PHOTO_SPRITE+"')";el.style.backgroundSize="400% auto";el.style.backgroundPosition=pos.x+"% "+pos.y+"%";el.style.backgroundRepeat="no-repeat";el.style.backgroundColor="#f3efe7"}
 document.querySelectorAll(".related-card").forEach(a=>{const m=(a.getAttribute("href")||"").match(/\/recetas\/([^/]+)\//);if(!m)return;const pos=CSL_PHOTO_SPRITE_MAP[m[1]];if(pos)applyRecipeSprite(a.querySelector(".related-photo"),pos)});
+const dynamicCookGuides={
+"hummus-cremoso":{heat:"Sin cocción",time:"3–5 min de triturado; 20–30 min de reposo en frío es opcional",cue:"Debe quedar cremoso y uniforme, pero con cuerpo; corrige agua, limón y sal al final."},
+"pasta-pesto-tomate":{heat:"Pasta en agua hirviendo; acabado con fuego bajo o apagado",time:"Cuece según el envase y retira la pasta aproximadamente 1 min antes del punto final",cue:"La pasta debe quedar al dente y la salsa ligada con un poco de agua de cocción, no aceitosa ni seca."},
+"bol-arroz-aprovechamiento":{heat:"Sartén a fuego medio-alto",time:"5–8 min para calentar la base y saltear lo que lo necesite",cue:"El arroz debe quedar bien caliente y suelto; añade la salsa y los elementos crujientes al final."},
+"gazpacho-andaluz":{heat:"Sin cocción",time:"2–4 min de triturado; enfría antes de servir",cue:"Debe quedar fino y fresco, con acidez y sal equilibradas; añade agua solo después de triturar."},
+"lentejas-rapidas":{heat:"Sofrito a fuego medio; hervor suave al final",time:"10–15 min desde que añades caldo y lentejas",cue:"Las verduras deben estar tiernas y el caldo ligeramente ligado, sin reducirse en exceso."},
+"avena-frutos-rojos":{heat:"Sin cocción en la versión fría",time:"20 min como mínimo; mejor varias horas o toda la noche",cue:"La avena debe estar hidratada y cremosa; ajusta con un poco más de líquido antes de servir si se ha espesado."},
+"ensalada-garbanzos-mediterranea":{heat:"Sin cocción",time:"10 min de reposo tras aliñar, si puedes",cue:"El garbanzo debe estar bien escurrido y el aliño repartido; corrige acidez y sal después del reposo."},
+"ensalada-lentejas-verduras":{heat:"Sin cocción",time:"5–10 min de reposo tras aliñar",cue:"Las lentejas deben quedar sueltas, no aguadas; prueba de nuevo después del reposo y corrige el aliño."},
+"pasta-calabacin-limon":{heat:"Calabacín a fuego medio-alto; pasta en agua hirviendo",time:"Saltea el calabacín 5–7 min; cuece la pasta según el envase y retírala 1 min antes",cue:"El calabacín debe dorarse sin soltar demasiada agua y la pasta quedar ligada con limón, aceite y agua de cocción."},
+"pasta-tomate-atun":{heat:"Salsa a fuego medio; pasta en agua hirviendo",time:"Cocina la salsa de tomate unos 10 min; pasta según el envase",cue:"El tomate debe perder el sabor crudo; añade el atún al final para que no se reseque."},
+"arroz-tomate-huevo":{heat:"Sartén a fuego medio",time:"Tomate 10–15 min; arroz 3–5 min para calentarlo; huevo al punto que prefieras",cue:"La salsa debe estar concentrada, el arroz caliente y el huevo recién hecho al servir."},
+"cuscus-garbanzos-verduras":{heat:"Líquido recién hervido para el cuscús; sartén a fuego medio-alto para la verdura",time:"Cuscús según el envase, normalmente unos minutos; verduras 6–8 min",cue:"El cuscús debe soltarse con tenedor y las verduras quedar tiernas pero con textura."},
+"sopa-tomate-alubias":{heat:"Sofrito a fuego medio; hervor suave al final",time:"10 min de cocción desde que añades caldo y alubias",cue:"La sopa debe quedar sabrosa y ligeramente ligada; tritura solo una parte si quieres más cuerpo."},
+"ensalada-pasta-verano":{heat:"Pasta en agua hirviendo",time:"Cuece según el envase y deja al dente",cue:"La pasta debe enfriarse sin apelmazarse y el aliño quedar integrado sin exceso de líquido."},
+"guacamole":{heat:"Sin cocción",time:"5–10 min de preparación",cue:"El aguacate debe quedar cremoso pero con algo de textura; ajusta lima y sal justo antes de servir."},
+"vinagreta-mostaza-limon":{heat:"Sin cocción",time:"1–2 min de batido",cue:"Debe verse homogénea y ligeramente emulsionada; prueba el equilibrio de ácido, grasa y sal sobre un alimento."}
+};
+const cookGuide=r.cook||dynamicCookGuides[r.slug];
+if(cookGuide&&!document.querySelector(".cook-note")){
+ const heroSection=document.querySelector(".hero");
+ if(heroSection){
+   const box=document.createElement("div");
+   box.className="wrap cook-note";
+   box.innerHTML='<div class="cook-bit"><small>Calor</small><b>'+cookGuide.heat+'</b></div><div class="cook-bit"><small>Tiempo</small><b>'+cookGuide.time+'</b></div><div class="cook-bit"><small>La señal</small><p>'+cookGuide.cue+'</p></div>';
+   heroSection.insertAdjacentElement("afterend",box);
+ }
+}
 const intro=document.querySelector(".hero .intro");
 if(intro&&!document.querySelector(".recipe-byline")){
   const by=document.createElement("p");
