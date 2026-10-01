@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>¿Qué cocino hoy? | Cocina sin líos con Macarena</title>
-<meta name="description" content="Dime tiempo, antojo y objetivo. Cocina sin líos cruza tus preferencias con tu despensa, semana y recetas recientes para proponerte tres ideas razonables.">
+<meta name="description" content="Dime tiempo, antojo y objetivo. Cocina sin líos cruza tus preferencias con tu despensa y tu semana para proponerte tres ideas razonables.">
 <meta name="theme-color" content="#274034"><meta name="robots" content="index,follow"><link rel="canonical" href="https://cocinasinlios.com/que-cocino.html">
 <meta property="og:title" content="¿Qué cocino hoy? | Cocina sin líos con Macarena"><meta property="og:description" content="Tres ideas teniendo en cuenta tiempo, antojo, despensa y lo que ya has cocinado."><meta property="og:type" content="website"><meta property="og:url" content="https://cocinasinlios.com/que-cocino.html"><meta property="og:site_name" content="Cocina sin líos con Macarena"><meta property="og:image" content="https://cocinasinlios.com/assets/sprite.webp"><meta name="twitter:card" content="summary_large_image">
 <style>
@@ -50,8 +50,7 @@ footer{background:#202b24;color:#dce5df;padding:40px 0}footer p{font-size:12px;c
  if(paramPantry.length)paramPantry.forEach(k=>pantry[k]=true);
  const pantryKeys=Object.keys(pantry).filter(k=>pantry[k]);
  let favs=[];try{favs=JSON.parse(localStorage.getItem("csl-favoritos-v1")||"[]")}catch(e){}
- let recent=[];try{recent=JSON.parse(localStorage.getItem("csl-recent-recipes-v1")||"[]")}catch(e){}
- recent=recent.map(x=>typeof x==="string"?x:x.slug).filter(Boolean);
+ 
  let week=null;try{week=JSON.parse(localStorage.getItem("csl-plan-semana-v1")||"null")}catch(e){}
  const weekSlugs=new Set((week?.items||[]).map(x=>x.slug).filter(Boolean));
  let useSoon=(params.get("gastar")||"").trim();if(!useSoon)try{useSoon=(localStorage.getItem("csl-gastar-pronto-v1")||"").trim()}catch(e){}
