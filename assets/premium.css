@@ -64,7 +64,7 @@ input[type="search"]:focus,input[type="text"]:focus{border-color:rgba(39,64,52,.
 .eyebrow,.csl-kicker{color:#536158}
 .choice,.avoid-chip,.filter,.again,.week-add,.swap,.btn,.go,.global-dock a{min-height:44px}
 .choice,.filter,.again,.week-add,.swap,.btn{font-size:max(12px,1em)}
-.global-dock a{display:flex;flex-direction:column;justify-content:center;font-size:10px!important;min-width:78px}
+.global-dock a{display:flex;flex-direction:column;justify-content:center;font-size:11px!important;min-width:78px}
 input,button,a{-webkit-tap-highlight-color:rgba(201,122,88,.14)}
 @media(max-width:640px){
  .ticker{display:none!important}
@@ -165,9 +165,9 @@ header .navlinks{font-size:13px!important}
 .csl-skip-link{position:fixed;left:14px;top:10px;z-index:9999;background:#263e33;color:#fff;padding:10px 14px;border-radius:999px;font-weight:800;transform:translateY(-160%);transition:transform .15s ease}.csl-skip-link:focus{transform:none}
 
 /* Readable microcopy pass */
-.eyebrow,.csl-kicker{font-size:11px!important}
+.eyebrow,.csl-kicker{font-size:12px!important}
 @media(min-width:768px){
- .hero-proof span,.feature-copy small,.feature-copy span,.flow-card small,.resume-card small,.day small,.related-body small,.photo .cover-copy small,.photo .cover-copy span,.stat,.memory span{font-size:11px!important}
+ .hero-proof span,.feature-copy small,.feature-copy span,.flow-card small,.resume-card small,.day small,.related-body small,.photo .cover-copy small,.photo .cover-copy span,.stat,.memory span{font-size:12px!important}
 }
 
 /* Contrast accessibility pass: small editorial labels stay in palette but meet normal-text contrast. */
