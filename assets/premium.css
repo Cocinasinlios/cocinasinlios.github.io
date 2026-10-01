@@ -173,3 +173,7 @@ header .navlinks{font-size:13px!important}
 /* Contrast accessibility pass: small editorial labels stay in palette but meet normal-text contrast. */
 .eyebrow,.csl-kicker{color:#59685c!important}
 .dashboard-page .use-soon small{color:#655d49!important}
+
+.csl-install-tip{position:fixed;z-index:180;left:14px;right:14px;bottom:calc(82px + env(safe-area-inset-bottom));display:flex;align-items:center;justify-content:space-between;gap:14px;background:#fffdfa;border:1px solid rgba(39,64,52,.14);border-radius:20px;padding:14px 14px 14px 16px;box-shadow:0 18px 55px rgba(31,43,36,.2);color:#263e33}
+.csl-install-tip b{display:block;font-family:Georgia,serif;font-size:19px;font-weight:500}.csl-install-tip span{display:block;font-size:12px;color:#667068;margin-top:2px;line-height:1.35}.csl-install-actions{display:flex;gap:6px;align-items:center;flex:0 0 auto}.csl-install-actions button{border:0;border-radius:999px;min-height:40px;padding:8px 12px;background:#263e33;color:white;font-weight:850}.csl-install-actions [data-dismiss]{width:40px;padding:0;background:transparent;color:#526057;font-size:24px}
+@media(min-width:761px){.csl-install-tip{display:none!important}}
