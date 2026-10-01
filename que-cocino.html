@@ -46,6 +46,10 @@ footer{background:#202b24;color:#dce5df;padding:40px 0}footer p{font-size:12px;c
  const recipes=window.CSL_RECIPES||[];
  const params=new URLSearchParams(location.search);
  let state={time:"15",mood:"salado",goal:"resolver"},generated=[];
+ const presetTime=params.get("tiempo"),presetMood=params.get("antojo"),presetGoal=params.get("objetivo");
+ if(["15","30","60"].includes(presetTime))state.time=presetTime;
+ if(["salado","ligera","comfort","dulce","daigual"].includes(presetMood))state.mood=presetMood;
+ if(["resolver","aprovechar","aprender"].includes(presetGoal))state.goal=presetGoal;
  let pantry={};try{pantry=JSON.parse(localStorage.getItem("csl-despensa-v1")||"{}")}catch(e){}
  const paramPantry=(params.get("ingredientes")||"").split(",").filter(Boolean);
  if(paramPantry.length)paramPantry.forEach(k=>pantry[k]=true);
@@ -77,7 +81,13 @@ footer{background:#202b24;color:#dce5df;padding:40px 0}footer p{font-size:12px;c
  const context=document.getElementById("context");
  if(useSoon){context.classList.add("show");context.innerHTML="<b>Primero quiero gastar esto.</b><span>"+useSoon.replace(/[<>&]/g,"")+" · Lo priorizo cuando encaje con una receta de verdad.</span>"}
  else if(paramPantry.length){context.classList.add("show");context.innerHTML="<b>Vienes de tu despensa.</b><span>Voy a favorecer recetas que aprovechen lo que ya has marcado y a evitar compra innecesaria.</span>"}
- document.querySelectorAll(".choices").forEach(g=>g.querySelectorAll(".choice").forEach(b=>b.addEventListener("click",()=>{g.querySelectorAll(".choice").forEach(x=>{x.classList.remove("active");x.setAttribute("aria-pressed","false")});b.classList.add("active");b.setAttribute("aria-pressed","true");state[g.dataset.group]=b.dataset.value})));
+ document.querySelectorAll(".choices").forEach(g=>{
+   g.querySelectorAll(".choice").forEach(b=>{
+     const on=state[g.dataset.group]===b.dataset.value;
+     b.classList.toggle("active",on);b.setAttribute("aria-pressed",String(on));
+     b.addEventListener("click",()=>{g.querySelectorAll(".choice").forEach(x=>{x.classList.remove("active");x.setAttribute("aria-pressed","false")});b.classList.add("active");b.setAttribute("aria-pressed","true");state[g.dataset.group]=b.dataset.value});
+   });
+ });
  const haveText=document.getElementById("haveText");haveText.value=useSoon;
   const avoidText=document.getElementById("avoidText");avoidText.value=exclusions.text;
  document.querySelectorAll("[data-avoid]").forEach(b=>{b.setAttribute("aria-pressed",String(exclusions.groups.includes(b.dataset.avoid)));b.addEventListener("click",()=>{const k=b.dataset.avoid,on=exclusions.groups.includes(k);exclusions.groups=on?exclusions.groups.filter(x=>x!==k):[...exclusions.groups,k];b.setAttribute("aria-pressed",String(!on));saveExclusions()})});
