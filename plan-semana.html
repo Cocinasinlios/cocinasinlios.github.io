@@ -42,7 +42,7 @@ header{position:sticky;top:0;z-index:40;background:rgba(251,246,238,.95);backdro
 <script>
 (()=>{
  const recipes=(window.CSL_RECIPES||[]).filter(r=>r.tags.includes("cena")&&r.plan);
- let state={time:"rapida",style:"variada",people:"2"},current=[];
+ let state={time:"rapida",style:"variada",people:"2"},current=[],sessionSeen=new Set();
  let exclusions={groups:[],text:""};try{exclusions=JSON.parse(localStorage.getItem("csl-exclusions-v1")||'{"groups":[],"text":""}')}catch(e){};if(!Array.isArray(exclusions.groups))exclusions.groups=[];exclusions.text=String(exclusions.text||"");
  const norm=s=>String(s||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
  const avoidMap={pescado:["pescado","merluza","salmon","bacalao","atun","bonito","sardina"],carne:["pollo","carne","albondig","jamon"],huevo:["huevo"],lacteos:["leche","yogur","queso","mozzarella","mantequilla","nata"]};
@@ -150,6 +150,7 @@ header{position:sticky;top:0;z-index:40;background:rgba(251,246,238,.95);backdro
    const shared=(p.uses||[]).filter(k=>selected.some(x=>(x.plan?.uses||[]).includes(k))).length;
    s+=Math.min(shared,2)*1.25;
    if(previousSlugs.has(r.slug))s-=5;
+   if(sessionSeen.has(r.slug))s-=4;
    const cats=new Set(selected.map(x=>x.category)),tagCounts={};
    selected.forEach(x=>(x.tags||[]).forEach(t=>tagCounts[t]=(tagCounts[t]||0)+1));
    if(cats.has(r.category))s-=2.5;
@@ -182,7 +183,7 @@ header{position:sticky;top:0;z-index:40;background:rgba(251,246,238,.95);backdro
    document.getElementById("why").innerHTML=(current.length<5?"<b>He encontrado "+current.length+" de 5 cenas sin saltarme tus preferencias.</b> Quita alguna exclusión o amplía el margen si quieres completar los cinco días. ":"<b>Cómo está construida.</b>")+servingLabel()+" · "+rapid+" cenas rápidas · "+light+" opciones ligeras · "+pantryUse+" básicos de tu despensa reutilizados"+(sharedKeys?" · "+sharedKeys+" bases compartidas entre varios días para recortar compra":"")+(previousSlugs.size?" · penalizo repeticiones respecto a la última semana":"")+(exclusions.groups.length||freeAvoid().length?" · respeto tus ingredientes a evitar":"")+".";
    document.getElementById("results").classList.add("show");document.getElementById("results").scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});setTimeout(()=>document.getElementById("resultTitle").focus({preventScroll:true}),250);
  }
- function build(){exclusions.text=avoidText.value.trim();saveExclusions();current=makePlan();render()}
+ function build(){exclusions.text=avoidText.value.trim();saveExclusions();current.forEach(r=>r.slug&&sessionSeen.add(r.slug));current=makePlan();render()}
  function swapDay(i){
    const selectedSlugs=new Set(current.map(x=>x.slug));
    const options=eligibleRecipes().filter(r=>!selectedSlugs.has(r.slug)).sort((a,b)=>score(b,current.filter((_,j)=>j!==i))-score(a,current.filter((_,j)=>j!==i)));
