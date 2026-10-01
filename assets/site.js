@@ -126,4 +126,29 @@ if("IntersectionObserver" in window){
  const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("csl-in");io.unobserve(e.target)}}),{threshold:.08,rootMargin:"0px 0px -35px"});
  revealTargets.forEach(el=>io.observe(el));
 }else revealTargets.forEach(el=>el.classList.add("csl-in"));
+
+
+let deferredInstall=null;
+addEventListener("beforeinstallprompt",e=>{e.preventDefault();deferredInstall=e;});
+try{
+ const isStandalone=matchMedia("(display-mode: standalone)").matches||navigator.standalone===true;
+ const dismissed=localStorage.getItem("csl-install-dismissed-v1")==="1";
+ let visits=Number(localStorage.getItem("csl-visits-v1")||"0")+1;
+ localStorage.setItem("csl-visits-v1",String(Math.min(visits,99)));
+ const mobile=matchMedia("(max-width: 760px)").matches;
+ if(!isStandalone&&!dismissed&&mobile&&visits>=2&&!document.querySelector(".csl-install-tip")){
+   const tip=document.createElement("aside");
+   tip.className="csl-install-tip";
+   tip.setAttribute("aria-label","Acceso rápido a Cocina sin líos");
+   const isiOS=/iPad|iPhone|iPod/.test(navigator.userAgent);
+   tip.innerHTML='<div><b>Ten Cocina sin líos a mano</b><span>'+(isiOS?'En iPhone: Compartir → Añadir a pantalla de inicio.':'Puedes guardarla como app y abrirla con un toque.')+'</span></div><div class="csl-install-actions">'+(!isiOS?'<button type="button" data-install>Guardar</button>':'')+'<button type="button" data-dismiss aria-label="Cerrar">×</button></div>';
+   document.body.appendChild(tip);
+   tip.querySelector("[data-dismiss]")?.addEventListener("click",()=>{localStorage.setItem("csl-install-dismissed-v1","1");tip.remove()});
+   tip.querySelector("[data-install]")?.addEventListener("click",async()=>{
+     if(deferredInstall){deferredInstall.prompt();await deferredInstall.userChoice;deferredInstall=null;localStorage.setItem("csl-install-dismissed-v1","1");tip.remove();}
+     else{tip.querySelector("span").textContent="Abre el menú del navegador y elige “Añadir a pantalla de inicio”."; }
+   });
+ }
+}catch(e){}
+
 })();
