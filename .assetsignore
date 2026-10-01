@@ -1,8 +1,8 @@
 .git
 .github
-worker.js
+
 wrangler.jsonc
 README.md
 DOMAIN-CUTOVER.md
-ANALYTICS.md
+
 .assetsignore
