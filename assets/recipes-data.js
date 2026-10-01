@@ -1190,6 +1190,13 @@ window.CSL_RECIPES=[
    "carne": false,
    "huevo": false,
    "lacteos": false
+  },
+  "photoSprite": {
+   "src": "/assets/recipe-sprite-12.webp",
+   "x": 0,
+   "y": 50,
+   "cols": 4,
+   "rows": 3
   }
  },
  {
@@ -1382,6 +1389,13 @@ window.CSL_RECIPES=[
    "carne": false,
    "huevo": false,
    "lacteos": false
+  },
+  "photoSprite": {
+   "src": "/assets/recipe-sprite-12.webp",
+   "x": 0,
+   "y": 0,
+   "cols": 4,
+   "rows": 3
   }
  },
  {
@@ -1566,6 +1580,13 @@ window.CSL_RECIPES=[
    "carne": true,
    "huevo": true,
    "lacteos": false
+  },
+  "photoSprite": {
+   "src": "/assets/recipe-sprite-12.webp",
+   "x": 66.6667,
+   "y": 0,
+   "cols": 4,
+   "rows": 3
   }
  },
  {
@@ -1752,6 +1773,13 @@ window.CSL_RECIPES=[
    "carne": false,
    "huevo": false,
    "lacteos": true
+  },
+  "photoSprite": {
+   "src": "/assets/recipe-sprite-12.webp",
+   "x": 66.6667,
+   "y": 50,
+   "cols": 4,
+   "rows": 3
   }
  },
  {
@@ -2274,6 +2302,13 @@ window.CSL_RECIPES=[
    "carne": true,
    "huevo": false,
    "lacteos": false
+  },
+  "photoSprite": {
+   "src": "/assets/recipe-sprite-12.webp",
+   "x": 33.3333,
+   "y": 0,
+   "cols": 4,
+   "rows": 3
   }
  },
  {
@@ -2443,6 +2478,13 @@ window.CSL_RECIPES=[
    "carne": false,
    "huevo": false,
    "lacteos": false
+  },
+  "photoSprite": {
+   "src": "/assets/recipe-sprite-12.webp",
+   "x": 100,
+   "y": 0,
+   "cols": 4,
+   "rows": 3
   }
  },
  {
@@ -3118,6 +3160,13 @@ window.CSL_RECIPES=[
    "carne": false,
    "huevo": true,
    "lacteos": true
+  },
+  "photoSprite": {
+   "src": "/assets/recipe-sprite-12.webp",
+   "x": 100,
+   "y": 100,
+   "cols": 4,
+   "rows": 3
   }
  },
  {
@@ -3458,6 +3507,13 @@ window.CSL_RECIPES=[
    "carne": false,
    "huevo": false,
    "lacteos": false
+  },
+  "photoSprite": {
+   "src": "/assets/recipe-sprite-12.webp",
+   "x": 33.3333,
+   "y": 100,
+   "cols": 4,
+   "rows": 3
   }
  },
  {
@@ -5205,6 +5261,13 @@ window.CSL_RECIPES=[
    "carne": false,
    "huevo": true,
    "lacteos": false
+  },
+  "photoSprite": {
+   "src": "/assets/recipe-sprite-12.webp",
+   "x": 0,
+   "y": 100,
+   "cols": 4,
+   "rows": 3
   }
  },
  {
@@ -5716,6 +5779,13 @@ window.CSL_RECIPES=[
    "carne": false,
    "huevo": false,
    "lacteos": false
+  },
+  "photoSprite": {
+   "src": "/assets/recipe-sprite-12.webp",
+   "x": 33.3333,
+   "y": 50,
+   "cols": 4,
+   "rows": 3
   }
  },
  {
@@ -6572,6 +6642,13 @@ window.CSL_RECIPES=[
    "carne": false,
    "huevo": false,
    "lacteos": true
+  },
+  "photoSprite": {
+   "src": "/assets/recipe-sprite-12.webp",
+   "x": 66.6667,
+   "y": 100,
+   "cols": 4,
+   "rows": 3
   }
  },
  {
@@ -7264,6 +7341,13 @@ window.CSL_RECIPES=[
    "carne": false,
    "huevo": false,
    "lacteos": false
+  },
+  "photoSprite": {
+   "src": "/assets/recipe-sprite-12.webp",
+   "x": 100,
+   "y": 50,
+   "cols": 4,
+   "rows": 3
   }
  },
  {
