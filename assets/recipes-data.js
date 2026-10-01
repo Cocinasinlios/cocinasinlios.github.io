@@ -7685,7 +7685,7 @@ window.CSL_RECIPES=[
    "time": "1½–2 min por tanda fritas; 12–15 min al horno, orientativo",
    "cue": "Deben quedar doradas por fuera y calientes en el centro; la masa debe estar bien fría antes de formar."
   },
-  "baseServings": 24,
+  "baseServings": 4,
   "ingredientData": [
    {
     "text": "250 g de pollo cocinado",
