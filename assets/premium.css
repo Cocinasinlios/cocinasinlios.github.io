@@ -13,7 +13,7 @@ header{transition:box-shadow .3s ease,background .3s ease}
 header.csl-scrolled{box-shadow:0 10px 35px rgba(46,50,45,.07);background:rgba(251,246,238,.89)}
 header .navlinks a{position:relative;padding:8px 4px;transition:color .22s ease,transform .22s ease}
 header .navlinks a:after{content:"";position:absolute;left:50%;right:50%;bottom:1px;height:1px;background:#c97a58;transition:left .22s ease,right .22s ease}
-header .navlinks a:hover{color:#c97a58;transform:translateY(-1px)}
+header .navlinks a:hover{color:#9d563e;transform:translateY(-1px)}
 header .navlinks a:hover:after,header .navlinks a.active:after{left:3px;right:3px}
 .btn,.cta,.choice,.filter,.go,.again,.week-add,.share{transition:transform .2s ease,box-shadow .2s ease,background .2s ease,border-color .2s ease}
 .btn:hover,.cta:hover,.go:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(39,64,52,.14)}
