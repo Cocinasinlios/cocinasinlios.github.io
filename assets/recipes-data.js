@@ -1197,7 +1197,8 @@ window.CSL_RECIPES=[
    "y": 50,
    "cols": 4,
    "rows": 3
-  }
+  },
+  "image": "/assets/recipes/merluza-vapor-verduras.webp"
  },
  {
   "slug": "gazpacho-andaluz",
@@ -1396,7 +1397,8 @@ window.CSL_RECIPES=[
    "y": 0,
    "cols": 4,
    "rows": 3
-  }
+  },
+  "image": "/assets/recipes/gazpacho-andaluz.webp"
  },
  {
   "slug": "albondigas-tomate",
@@ -1587,7 +1589,8 @@ window.CSL_RECIPES=[
    "y": 0,
    "cols": 4,
    "rows": 3
-  }
+  },
+  "image": "/assets/recipes/albondigas-tomate.webp"
  },
  {
   "slug": "curry-garbanzos-verduras",
@@ -1780,7 +1783,8 @@ window.CSL_RECIPES=[
    "y": 50,
    "cols": 4,
    "rows": 3
-  }
+  },
+  "image": "/assets/recipes/curry-garbanzos-verduras.webp"
  },
  {
   "slug": "tortilla-ensalada",
@@ -2309,7 +2313,8 @@ window.CSL_RECIPES=[
    "y": 0,
    "cols": 4,
    "rows": 3
-  }
+  },
+  "image": "/assets/recipes/pollo-horno-limon.webp"
  },
  {
   "slug": "lentejas-rapidas",
@@ -2485,7 +2490,8 @@ window.CSL_RECIPES=[
    "y": 0,
    "cols": 4,
    "rows": 3
-  }
+  },
+  "image": "/assets/recipes/lentejas-rapidas.webp"
  },
  {
   "slug": "pescado-papillote",
@@ -3167,7 +3173,8 @@ window.CSL_RECIPES=[
    "y": 100,
    "cols": 4,
    "rows": 3
-  }
+  },
+  "image": "/assets/recipes/bizcocho-yogur.webp"
  },
  {
   "slug": "quiche-verduras",
@@ -3514,7 +3521,8 @@ window.CSL_RECIPES=[
    "y": 100,
    "cols": 4,
    "rows": 3
-  }
+  },
+  "image": "/assets/recipes/ensalada-garbanzos-mediterranea.webp"
  },
  {
   "slug": "ensalada-lentejas-verduras",
@@ -5268,7 +5276,8 @@ window.CSL_RECIPES=[
    "y": 100,
    "cols": 4,
    "rows": 3
-  }
+  },
+  "image": "/assets/recipes/tortilla-calabacin.webp"
  },
  {
   "slug": "pollo-limon-sarten",
@@ -5786,7 +5795,8 @@ window.CSL_RECIPES=[
    "y": 50,
    "cols": 4,
    "rows": 3
-  }
+  },
+  "image": "/assets/recipes/salmon-mostaza-horno.webp"
  },
  {
   "slug": "bacalao-tomate",
@@ -6649,7 +6659,8 @@ window.CSL_RECIPES=[
    "y": 100,
    "cols": 4,
    "rows": 3
-  }
+  },
+  "image": "/assets/recipes/verduras-asadas-yogur.webp"
  },
  {
   "slug": "sopa-tomate-alubias",
@@ -7348,7 +7359,8 @@ window.CSL_RECIPES=[
    "y": 50,
    "cols": 4,
    "rows": 3
-  }
+  },
+  "image": "/assets/recipes/crema-calabaza-zanahoria.webp"
  },
  {
   "slug": "ensalada-pasta-verano",
