@@ -52,7 +52,7 @@ function renderShopping(){
 }
 renderShopping();
 document.getElementById("clearShopping").addEventListener("click",()=>{checks={};try{localStorage.setItem("csl-compra-check-v1","{}")}catch(e){}renderShopping()});
-document.getElementById("shareShopping").addEventListener("click",async()=>{if(!w)return;const arr=Array.isArray(w.shoppingStructured)&&w.shoppingStructured.length?w.shoppingStructured.map(x=>x.label||x.display||x.key):(Array.isArray(w.shopping)?w.shopping:[]);if(!arr.length)return;const txt="Lista Sin Líos ✦\n\n"+arr.map(x=>"• "+x).join("\n")+"\n\nCreada en cocinasinlios.com";try{if(navigator.share){await navigator.share({title:"Lista Sin Líos",text:txt})}else{await navigator.clipboard.writeText(txt);document.getElementById("shareShopping").textContent="Lista copiada ✓"}}catch(e){}});
+document.getElementById("shareShopping").addEventListener("click",async()=>{if(!w)return;const arr=Array.isArray(w.shoppingStructured)&&w.shoppingStructured.length?w.shoppingStructured.map(x=>x.label||x.display||x.key):(Array.isArray(w.shopping)?w.shopping:[]);if(!arr.length)return;const txt="Lista Sin Líos ✦\n\n"+arr.map(x=>"• "+x).join("\n")+"\n\nCreada con Cocina sin líos · https://cocinasinlios.com/plan-semana.html";try{if(navigator.share){await navigator.share({title:"Lista Sin Líos",text:txt})}else{await navigator.clipboard.writeText(txt);document.getElementById("shareShopping").textContent="Lista copiada ✓"}}catch(e){}});
 let f=[];try{f=JSON.parse(localStorage.getItem("csl-favoritos-v1")||"[]")}catch(e){}
 const recipes=window.CSL_RECIPES||[],recipeBy={};
 recipes.forEach(r=>{recipeBy[r.slug]=r;if(r.id)recipeBy[r.id]=r});
