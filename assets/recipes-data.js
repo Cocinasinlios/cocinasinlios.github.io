@@ -182,6 +182,11 @@ window.CSL_RECIPES=[
    "carne": false,
    "huevo": false,
    "lacteos": false
+  },
+  "cook": {
+   "heat": "Sin cocción",
+   "time": "3–5 min de triturado; 20–30 min de reposo en frío es opcional",
+   "cue": "Debe quedar cremoso y uniforme, pero con cuerpo; corrige agua, limón y sal al final."
   }
  },
  {
@@ -378,6 +383,11 @@ window.CSL_RECIPES=[
    "carne": false,
    "huevo": false,
    "lacteos": true
+  },
+  "cook": {
+   "heat": "Pasta en agua hirviendo; acabado con fuego bajo o apagado",
+   "time": "Cuece según el envase y retira la pasta aproximadamente 1 min antes del punto final",
+   "cue": "La pasta debe quedar al dente y la salsa ligada con un poco de agua de cocción, no aceitosa ni seca."
   }
  },
  {
@@ -715,6 +725,11 @@ window.CSL_RECIPES=[
    "carne": true,
    "huevo": true,
    "lacteos": true
+  },
+  "cook": {
+   "heat": "Sartén a fuego medio-alto",
+   "time": "5–8 min para calentar la base y saltear lo que lo necesite",
+   "cue": "El arroz debe quedar bien caliente y suelto; añade la salsa y los elementos crujientes al final."
   }
  },
  {
@@ -1398,7 +1413,12 @@ window.CSL_RECIPES=[
    "cols": 4,
    "rows": 3
   },
-  "image": "/assets/recipes/gazpacho-andaluz.webp"
+  "image": "/assets/recipes/gazpacho-andaluz.webp",
+  "cook": {
+   "heat": "Sin cocción",
+   "time": "2–4 min de triturado; enfría antes de servir",
+   "cue": "Debe quedar fino y fresco, con acidez y sal equilibradas; añade agua solo después de triturar."
+  }
  },
  {
   "slug": "albondigas-tomate",
@@ -2491,7 +2511,12 @@ window.CSL_RECIPES=[
    "cols": 4,
    "rows": 3
   },
-  "image": "/assets/recipes/lentejas-rapidas.webp"
+  "image": "/assets/recipes/lentejas-rapidas.webp",
+  "cook": {
+   "heat": "Sofrito a fuego medio; hervor suave al final",
+   "time": "10–15 min desde que añades caldo y lentejas",
+   "cue": "Las verduras deben estar tiernas y el caldo ligeramente ligado, sin reducirse en exceso."
+  }
  },
  {
   "slug": "pescado-papillote",
@@ -2986,6 +3011,11 @@ window.CSL_RECIPES=[
    "carne": false,
    "huevo": false,
    "lacteos": true
+  },
+  "cook": {
+   "heat": "Sin cocción en la versión fría",
+   "time": "20 min como mínimo; mejor varias horas o toda la noche",
+   "cue": "La avena debe estar hidratada y cremosa; ajusta con un poco más de líquido antes de servir si se ha espesado."
   }
  },
  {
@@ -3522,7 +3552,12 @@ window.CSL_RECIPES=[
    "cols": 4,
    "rows": 3
   },
-  "image": "/assets/recipes/ensalada-garbanzos-mediterranea.webp"
+  "image": "/assets/recipes/ensalada-garbanzos-mediterranea.webp",
+  "cook": {
+   "heat": "Sin cocción",
+   "time": "10 min de reposo tras aliñar, si puedes",
+   "cue": "El garbanzo debe estar bien escurrido y el aliño repartido; corrige acidez y sal después del reposo."
+  }
  },
  {
   "slug": "ensalada-lentejas-verduras",
@@ -3715,6 +3750,11 @@ window.CSL_RECIPES=[
    "carne": false,
    "huevo": false,
    "lacteos": false
+  },
+  "cook": {
+   "heat": "Sin cocción",
+   "time": "5–10 min de reposo tras aliñar",
+   "cue": "Las lentejas deben quedar sueltas, no aguadas; prueba de nuevo después del reposo y corrige el aliño."
   }
  },
  {
@@ -3894,6 +3934,11 @@ window.CSL_RECIPES=[
    "carne": false,
    "huevo": false,
    "lacteos": true
+  },
+  "cook": {
+   "heat": "Calabacín a fuego medio-alto; pasta en agua hirviendo",
+   "time": "Saltea el calabacín 5–7 min; cuece la pasta según el envase y retírala 1 min antes",
+   "cue": "El calabacín debe dorarse sin soltar demasiada agua y la pasta quedar ligada con limón, aceite y agua de cocción."
   }
  },
  {
@@ -4076,6 +4121,11 @@ window.CSL_RECIPES=[
    "carne": false,
    "huevo": false,
    "lacteos": false
+  },
+  "cook": {
+   "heat": "Salsa a fuego medio; pasta en agua hirviendo",
+   "time": "Cocina la salsa de tomate unos 10 min; pasta según el envase",
+   "cue": "El tomate debe perder el sabor crudo; añade el atún al final para que no se reseque."
   }
  },
  {
@@ -4399,6 +4449,11 @@ window.CSL_RECIPES=[
    "carne": false,
    "huevo": true,
    "lacteos": false
+  },
+  "cook": {
+   "heat": "Sartén a fuego medio",
+   "time": "Tomate 10–15 min; arroz 3–5 min para calentarlo; huevo al punto que prefieras",
+   "cue": "La salsa debe estar concentrada, el arroz caliente y el huevo recién hecho al servir."
   }
  },
  {
@@ -4580,6 +4635,11 @@ window.CSL_RECIPES=[
    "carne": false,
    "huevo": false,
    "lacteos": false
+  },
+  "cook": {
+   "heat": "Líquido recién hervido para el cuscús; sartén a fuego medio-alto para la verdura",
+   "time": "Cuscús según el envase, normalmente unos minutos; verduras 6–8 min",
+   "cue": "El cuscús debe soltarse con tenedor y las verduras quedar tiernas pero con textura."
   }
  },
  {
@@ -6830,6 +6890,11 @@ window.CSL_RECIPES=[
    "carne": false,
    "huevo": false,
    "lacteos": false
+  },
+  "cook": {
+   "heat": "Sofrito a fuego medio; hervor suave al final",
+   "time": "10 min de cocción desde que añades caldo y alubias",
+   "cue": "La sopa debe quedar sabrosa y ligeramente ligada; tritura solo una parte si quieres más cuerpo."
   }
  },
  {
@@ -7541,6 +7606,11 @@ window.CSL_RECIPES=[
    "carne": false,
    "huevo": false,
    "lacteos": false
+  },
+  "cook": {
+   "heat": "Pasta en agua hirviendo",
+   "time": "Cuece según el envase y deja al dente",
+   "cue": "La pasta debe enfriarse sin apelmazarse y el aliño quedar integrado sin exceso de líquido."
   }
  },
  {
@@ -8033,6 +8103,11 @@ window.CSL_RECIPES=[
    "carne": false,
    "huevo": false,
    "lacteos": false
+  },
+  "cook": {
+   "heat": "Sin cocción",
+   "time": "5–10 min de preparación",
+   "cue": "El aguacate debe quedar cremoso pero con algo de textura; ajusta lima y sal justo antes de servir."
   }
  },
  {
@@ -8343,6 +8418,11 @@ window.CSL_RECIPES=[
    "carne": false,
    "huevo": false,
    "lacteos": false
+  },
+  "cook": {
+   "heat": "Sin cocción",
+   "time": "1–2 min de batido",
+   "cue": "Debe verse homogénea y ligeramente emulsionada; prueba el equilibrio de ácido, grasa y sal sobre un alimento."
   }
  },
  {
