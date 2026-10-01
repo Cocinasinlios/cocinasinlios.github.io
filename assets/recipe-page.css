@@ -18,3 +18,15 @@
 .cook-note{display:grid;grid-template-columns:1fr 1fr 1.25fr;gap:10px;margin-top:-16px;margin-bottom:42px}.cook-bit{border:1px solid var(--line);border-radius:20px;padding:16px;background:white}.cook-bit:nth-child(2){background:var(--mint)}.cook-bit:nth-child(3){background:var(--sage)}.cook-bit small{display:block;font-size:9px;font-weight:900;letter-spacing:1.1px;text-transform:uppercase;color:#536158;margin-bottom:6px}.cook-bit b{display:block;font-family:Georgia,serif;font-size:20px;font-weight:500;line-height:1.15}.cook-bit p{margin:0;color:var(--muted);font-size:12px}@media(max-width:700px){.cook-note{grid-template-columns:1fr;margin-top:0;margin-bottom:28px}}
 
 .recipe-byline{margin:-3px 0 16px;font-size:12px;color:#667068}.recipe-byline a{font-weight:850;color:var(--dark);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}.recipe-byline a:hover{opacity:.8}
+
+.scale-row{display:flex;align-items:center;justify-content:space-between;gap:14px;margin:0 0 16px;padding:12px 14px;border-radius:18px;background:var(--sage)}
+.scale-row>span{font-size:11px;font-weight:900}.scale-buttons{display:flex;gap:6px}.scale-buttons button{border:1px solid rgba(39,64,52,.18);background:white;color:var(--dark);min-width:48px;min-height:40px;border-radius:999px;font-weight:900;cursor:pointer}.scale-buttons button[aria-pressed="true"]{background:var(--dark);color:white}.scale-note{font-size:11px;color:var(--muted);margin:-5px 0 14px}
+@media(max-width:560px){.scale-row{align-items:flex-start;flex-direction:column}.scale-buttons{width:100%}.scale-buttons button{flex:1}}
+@media print{
+ body{background:#fff!important;padding:0!important;color:#111!important}
+ header,.global-dock,footer,.actions,.next,.related-grid,.back-recipes,.csl-secondary-nav,.csl-legal-links,#share,#fav,#week,#week2,#print{display:none!important}
+ .hero,.section{padding:18px 0!important}.hero-grid,.recipe-grid,.three{display:block!important}.hero-photo{display:none!important}
+ .box,.learn,.info{box-shadow:none!important;border:1px solid #ddd!important;background:#fff!important;break-inside:avoid;margin:0 0 12px!important}
+ .step{break-inside:avoid}.wrap{width:100%!important;max-width:none!important}.recipe-grid>.box{margin-bottom:14px!important}
+ a{text-decoration:none!important;color:#111!important}
+}
