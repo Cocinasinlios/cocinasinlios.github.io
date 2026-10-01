@@ -1,7 +1,7 @@
 (()=>{
 const path=location.pathname.replace(/\/$/,"")||"/";
 
-if(!document.querySelector('link[href="/assets/premium.css"]')){
+if(!path.startsWith("/recetas/")&&!document.querySelector('link[href="/assets/premium.css"]')){
   const p=document.createElement("link");
   p.rel="stylesheet"; p.href="/assets/premium.css";
   document.head.appendChild(p);
