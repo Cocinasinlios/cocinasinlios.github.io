@@ -84,57 +84,6 @@ if(document.querySelector("footer") &&
   document.querySelector("footer .wrap,footer")?.appendChild(x);
 }
 
-// Privacy-first product instrumentation.
-// Disabled unless a same-origin endpoint is explicitly configured with csl-analytics-endpoint.
-// No cookie, user ID, form content, pantry contents or recipe preferences are included.
-function cleanValue(v){return String(v??"").slice(0,120).replace(/[<>]/g,"")}
-function track(name,detail={}){
-  const event={
-    event:cleanValue(name),
-    path,
-    target:cleanValue(detail.target||""),
-    source:document.referrer?(new URL(document.referrer,location.href).origin===location.origin?"internal":"external"):"direct",
-    viewport:innerWidth<600?"mobile":innerWidth<950?"tablet":"desktop"
-  };
-  const endpoint=document.querySelector('meta[name="csl-analytics-endpoint"]')?.content||"";
-  if(endpoint&&endpoint.startsWith("/")){
-    const payload=JSON.stringify(event);
-    try{
-      if(navigator.sendBeacon){
-        navigator.sendBeacon(endpoint,new Blob([payload],{type:"application/json"}));
-      }else{
-        fetch(endpoint,{method:"POST",headers:{"content-type":"application/json"},body:payload,keepalive:true,credentials:"same-origin"}).catch(()=>{});
-      }
-    }catch(e){}
-  }
-}
-window.CSLTrack=track;
-track("page_view");
-
-document.addEventListener("click",e=>{
-  const el=e.target.closest("a,button");
-  if(!el)return;
-  if(el.matches("[data-fav],#fav"))return track("favorite_toggle");
-  if(el.matches("[data-swap]"))return track("plan_swap");
-  if(el.id==="save"&&path==="/plan-semana.html")return track("plan_save");
-  if(el.id==="go"&&path==="/plan-semana.html")return track("plan_generate");
-  if(el.id==="again"&&path==="/plan-semana.html")return track("plan_regenerate");
-  if(el.id==="go"&&path==="/que-cocino.html")return track("meal_picker_generate");
-  if(el.id==="again"&&path==="/que-cocino.html")return track("meal_picker_regenerate");
-  if(el.matches(".week-add,#week,#week2"))return track("add_to_week");
-  if(el.id==="share"||el.id==="shareIdeas"||el.id==="shareShopping")return track("share");
-  if(el.id==="useSoonGo")return track("use_soon");
-  if(el.tagName==="A"){
-    const u=new URL(el.href,location.href);
-    if(u.origin===location.origin){
-      const target=u.pathname+(u.search||"");
-      if(/^\/recetas\/[^/]+\/?$/.test(u.pathname))return track("recipe_open",{target});
-      if(["/que-cocino.html","/plan-semana.html","/despensa-sin-lios.html","/mi-rincon.html","/recetas.html"].includes(u.pathname))return track("tool_open",{target:u.pathname});
-      return track("internal_nav",{target:u.pathname});
-    }
-  }
-});
-
 // Homepage continuity: surface saved local progress only when there is something useful to resume.
 if(path==="/"){
   let pantry={},plan=null,favs=[],soon="",recent=[];
