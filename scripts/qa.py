@@ -26,6 +26,9 @@ CORE = [
     "privacidad.html",
     "cookies.html",
     "uso-y-propiedad.html",
+    "cenas-rapidas.html",
+    "recetas-aprovechamiento.html",
+    "cenas-ligeras.html",
 ]
 
 problems: list[str] = []
