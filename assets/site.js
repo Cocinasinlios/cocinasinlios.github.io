@@ -86,12 +86,12 @@ if(document.querySelector("footer") &&
 
 // Homepage continuity: surface saved local progress only when there is something useful to resume.
 if(path==="/"){
-  let pantry={},plan=null,favs=[],soon="",recent=[];
+  let pantry={},plan=null,favs=[],soon="";
   try{pantry=JSON.parse(localStorage.getItem("csl-despensa-v1")||"{}")}catch(e){}
   try{plan=JSON.parse(localStorage.getItem("csl-plan-semana-v1")||"null")}catch(e){}
   try{favs=JSON.parse(localStorage.getItem("csl-favoritos-v1")||"[]")}catch(e){}
   try{soon=localStorage.getItem("csl-gastar-pronto-v1")||""}catch(e){}
-  try{recent=JSON.parse(localStorage.getItem("csl-recent-recipes-v1")||"[]")}catch(e){}
+ 
   const pantryCount=Object.values(pantry).filter(Boolean).length;
   const cards=[];
   if(plan?.meals?.length){
