@@ -17,6 +17,19 @@ if(![...document.querySelectorAll('script[type="application/ld+json"]')].some(s=
 document.getElementById("print")?.addEventListener("click",()=>window.print());
 const scaleButtons=[...document.querySelectorAll("[data-scale]")];
 const ingEls=[...document.querySelectorAll("[data-ing-index]")];
+const baseServings=Number(r.baseServings)||(()=>{const m=String(r.servings||"").match(/(\d+(?:[.,]\d+)?)/);return m?Number(m[1].replace(",", ".")):null})();
+function servingsLabel(factor){
+ if(!baseServings)return factor===.5?"Media receta":factor===1?"Receta original":"Doble receta";
+ const n=baseServings*factor;
+ if(Math.abs(n-Math.round(n))<.001)return "Para "+Math.round(n);
+ if(Math.abs(n*2-Math.round(n*2))<.001)return "Para "+Math.floor(n)+"–"+Math.ceil(n);
+ return "Para "+humanNum(n);
+}
+scaleButtons.forEach(b=>{const factor=Number(b.dataset.scale);b.textContent=servingsLabel(factor);b.setAttribute("aria-label",servingsLabel(factor)+" personas")});
+const scaleGroup=document.querySelector(".scale-buttons");
+if(scaleGroup)scaleGroup.setAttribute("aria-label","Número orientativo de personas");
+const scaleHeading=document.querySelector(".scale-row > span");
+if(scaleHeading)scaleHeading.textContent="¿Para cuántas personas?";
 function roundTo(n,step){step=Number(step)||.25;return Math.round(n/step)*step}
 function humanNum(n){if(n==null||Number.isNaN(Number(n)))return "";n=Number(n);if(Math.abs(n-Math.round(n))<.001)return String(Math.round(n));const q=Math.round(n*4)/4,whole=Math.floor(q),frac=Math.round((q-whole)*4),f=frac===1?"¼":frac===2?"½":frac===3?"¾":"";return (whole?String(whole):"")+f}
 const countNames={"huevos":["huevo","huevos"],"cebolla":["cebolla","cebollas"],"puerro":["puerro","puerros"],"ajo":["diente de ajo","dientes de ajo"],"limón":["limón","limones"],"pepino":["pepino","pepinos"],"pimiento":["pimiento","pimientos"],"calabacín":["calabacín","calabacines"],"berenjena":["berenjena","berenjenas"],"patata":["patata","patatas"],"zanahoria":["zanahoria","zanahorias"],"tomate":["tomate","tomates"],"tomate cherry":["tomate cherry","tomates cherry"],"manzana":["manzana","manzanas"],"plátano":["plátano","plátanos"],"aguacate":["aguacate","aguacates"],"tortillas":["tortilla","tortillas"],"yogur":["yogur","yogures"],"merluza":["lomo de merluza","lomos de merluza"],"salmón":["lomo de salmón","lomos de salmón"],"bacalao":["lomo de bacalao","lomos de bacalao"],"filetes de pescado":["filete de pescado","filetes de pescado"],"conserva de pescado":["lata de pescado","latas de pescado"],"pan":["rebanada de pan","rebanadas de pan"],"maíz":["lata de maíz","latas de maíz"]};
@@ -31,7 +44,7 @@ function scaledIngredient(ing,factor){
 function applyScale(factor){
  scaleButtons.forEach(b=>b.setAttribute("aria-pressed",String(Number(b.dataset.scale)===factor)));
  ingEls.forEach((el,i)=>{const ing=r.ingredientData?.[i];if(ing)el.textContent=scaledIngredient(ing,factor)});
- const note=document.getElementById("scaleNote");if(note)note.textContent=factor===1?"Cantidades originales de la receta.":factor===.5?"Media cantidad · ajusta tiempos y tamaño de recipiente si hace falta.":"Doble cantidad · no dupliques tiempos automáticamente; vigila capacidad y cocción.";
+ const note=document.getElementById("scaleNote");if(note){const who=baseServings?servingsLabel(factor).toLowerCase()+" personas · ":"";note.textContent=who+(factor===1?"cantidades originales de la receta.":factor===.5?"cantidades ajustadas; revisa tiempos y tamaño de recipiente.":"cantidades ajustadas; no dupliques tiempos automáticamente y vigila capacidad y cocción.");}
 }
 scaleButtons.forEach(b=>b.addEventListener("click",()=>applyScale(Number(b.dataset.scale))));
 if(scaleButtons.length)applyScale(1);
