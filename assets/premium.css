@@ -41,6 +41,14 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid rgba(
  body:before{background:radial-gradient(circle at 20% 7%,rgba(242,223,157,.22),transparent 18rem),radial-gradient(circle at 90% 30%,rgba(220,232,216,.25),transparent 18rem)}
  .global-dock{bottom:8px!important;border-radius:20px!important}
 }
+@media(max-width:760px){
+ body{padding-bottom:calc(92px + env(safe-area-inset-bottom))!important}
+ .global-dock,.dock{bottom:calc(8px + env(safe-area-inset-bottom))!important}
+}
+@media(hover:none){
+ .card:hover,.step:hover,.learn-card:hover,.principle:hover,.route:hover,.related-card:hover,.resume-card:hover,
+ .btn:hover,.cta:hover,.go:hover,.choice:hover,.filter:hover,.again:hover,.week-add:hover{transform:none!important;box-shadow:none}
+}
 /* Functional pages: richer surfaces without sacrificing clarity */
 .panel{box-shadow:0 24px 70px rgba(52,47,40,.09)!important;border-color:rgba(39,64,52,.1)!important}
 .question{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}.question:hover{transform:translateY(-3px);box-shadow:0 14px 35px rgba(52,47,40,.07);border-color:rgba(39,64,52,.16)!important}
