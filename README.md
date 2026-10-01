@@ -26,3 +26,6 @@ La web se mantiene separada de cualquier actividad de promoción o venta de prod
 
 ## Herramienta interna
 - Estudio RRSS: /estudio-rrss.html (noindex). Genera ideas y copys a partir del contenido editorial de la web, sin enviar datos fuera del navegador.
+
+## Control de calidad
+Cada cambio en `main` ejecuta una comprobación automática de enlaces internos, sitemap, páginas de recetas y separación del proyecto editorial respecto de actividad comercial de terceros.
