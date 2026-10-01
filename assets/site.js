@@ -57,7 +57,7 @@ document.querySelectorAll(".global-dock,.dock").forEach(d=>{
 
 document.querySelectorAll("header .navlinks a,.global-dock a,.dock a").forEach(a=>{
   const p=new URL(a.href,location.origin).pathname.replace(/\/$/,"")||"/";
-  if(p===path){
+  if(p===path || (path.startsWith("/recetas/") && p==="/recetas.html")){
     a.classList.add("active");
     a.setAttribute("aria-current","page");
   }
