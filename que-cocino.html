@@ -103,7 +103,7 @@ footer{background:#202b24;color:#dce5df;padding:40px 0}footer p{font-size:12px;c
    if(weekSlugs.has(r.slug))s-=6;
   
    if(generated.includes(r.slug))s-=5;
-   return s+Math.random()*1.4;
+   return s;
  }
  function fitText(r){
    const bits=[];
@@ -119,7 +119,7 @@ footer{background:#202b24;color:#dce5df;padding:40px 0}footer p{font-size:12px;c
  function render(){
    exclusions.text=avoidText.value.trim();saveExclusions();
    const eligible=recipes.filter(r=>!isExcluded(r));
-   let pool=eligible.filter(r=>moodOK(r)&&r.minutes<=Number(state.time)+15);
+   let pool=eligible.filter(r=>moodOK(r)&&r.minutes<=Number(state.time));
    if(state.mood!=="dulce")pool=pool.filter(r=>r.tags.includes("cena")||r.tags.includes("rapida")||r.tags.includes("vegetal"));
    if(pool.length<3)pool=eligible.filter(r=>state.mood==="dulce"?r.tags.includes("dulce"):!r.tags.includes("dulce"));
    pool=[...pool].sort((a,b)=>score(b)-score(a));
