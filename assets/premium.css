@@ -182,3 +182,7 @@ header .navlinks{font-size:13px!important}
 /* Stronger CTA contrast */
 .go{background:#9f4f3a!important;color:#fff!important}
 @media(max-width:767px){.photo .cover-copy small,.photo .cover-copy span,.card-body small,.fit,.avoid-note{font-size:12px!important;line-height:1.4}}
+
+
+/* Cross-day batch cooking */
+.prep-chain{margin:14px 0 2px;padding:12px 13px;border-radius:16px;background:#eef5eb;border:1px solid rgba(39,64,52,.12);color:#405347;font-size:12px;line-height:1.45}.prep-chain b{display:block;color:#274034;margin-bottom:4px}.prep-chain span{display:block}.prep-chain span+span{margin-top:4px}
