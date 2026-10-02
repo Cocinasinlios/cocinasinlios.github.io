@@ -71,13 +71,14 @@ document.getElementById("shareShopping").addEventListener("click",async()=>{if(!
 let f=[];try{f=JSON.parse(localStorage.getItem("csl-favoritos-v1")||"[]")}catch(e){}
 const recipes=window.CSL_RECIPES||[],recipeBy={};
 recipes.forEach(r=>{recipeBy[r.slug]=r;if(r.id)recipeBy[r.id]=r});
+const cat=r=>r.family||r.category;
 if(f.length){
  const resolved=f.map(x=>recipeBy[x]).filter(Boolean);
  document.getElementById("favStatus").textContent=f.length+" receta"+(f.length>1?"s":"")+" guardada"+(f.length>1?"s":"");
  document.getElementById("favSub").textContent=(resolved.length?resolved.slice(0,3).map(x=>x.title):f.slice(0,3)).join(" · ")+(f.length>3?"…":"");
  if(resolved.length){
    document.getElementById("favDetail").style.display="block";
-   document.getElementById("favList").innerHTML=resolved.map(r=>'<a class="fav-item" href="/recetas/'+encodeURIComponent(r.slug)+'/"><b>'+r.title+'</b><span>'+r.category+' · '+r.time+' →</span></a>').join("");
+   document.getElementById("favList").innerHTML=resolved.map(r=>'<a class="fav-item" href="/recetas/'+encodeURIComponent(r.slug)+'/"><b>'+r.title+'</b><span>'+cat(r)+' · '+r.time+' →</span></a>').join("");
  }
 }
 let ex={groups:[],text:""};try{ex=JSON.parse(localStorage.getItem("csl-exclusions-v1")||'{"groups":[],"text":""}')}catch(e){}
