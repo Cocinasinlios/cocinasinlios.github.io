@@ -57,7 +57,8 @@ document.querySelectorAll(".global-dock,.dock").forEach(d=>{
 
 document.querySelectorAll("header .navlinks a,.global-dock a,.dock a").forEach(a=>{
   const p=new URL(a.href,location.origin).pathname.replace(/\/$/,"")||"/";
-  if(p===path || (path.startsWith("/recetas/") && p==="/recetas.html")){
+  const ingredientGuide=["/que-cocinar-con-huevos.html","/recetas-con-tomate.html","/recetas-con-calabacin.html","/recetas-con-pollo.html","/recetas-con-arroz.html"].includes(path);
+  if(p===path || ((path.startsWith("/recetas/")||ingredientGuide) && p==="/recetas.html")){
     a.classList.add("active");
     a.setAttribute("aria-current","page");
   }
@@ -67,7 +68,7 @@ document.querySelectorAll("header .navlinks a,.global-dock a,.dock a").forEach(a
 if(document.querySelector("footer")&&!document.querySelector("footer .csl-secondary-nav")){
   const s=document.createElement("div");
   s.className="csl-secondary-nav";
-  s.innerHTML='<a href="/explora.html">Explora</a> · <a href="/despensa-sin-lios.html">Despensa</a> · <a href="/con-macarena.html">Macarena</a>';
+  s.innerHTML='<a href="/explora.html">Explora por ingrediente</a> · <a href="/despensa-sin-lios.html">Despensa</a> · <a href="/con-macarena.html">Macarena</a>';
   s.style.cssText="font-size:11px;margin-top:14px;opacity:.88";
   document.querySelector("footer .wrap,footer")?.appendChild(s);
 }
