@@ -141,12 +141,33 @@ recipe_pages = list((ROOT / "recetas").glob("*/index.html"))
 if len(recipe_pages) != recipe_count:
     problems.append(f"Recetas: {recipe_count} en datos pero {len(recipe_pages)} páginas publicadas")
 
+recipe_by_slug = {r.get("slug"): r for r in recipes}
 for page in recipe_pages:
     text = page.read_text(encoding="utf-8", errors="replace")
     if 'data-scale="1"' not in text or "/assets/recipe-page.js" not in text:
         problems.append(f"Ficha sin controles de cantidades: {page.relative_to(ROOT)}")
     if 'rel="canonical"' not in text:
         problems.append(f"Ficha sin canonical: {page.relative_to(ROOT)}")
+    slug = page.parent.name
+    recipe = recipe_by_slug.get(slug, {})
+    ld_match = re.search(r'<script type="application/ld\+json">([\s\S]*?)</script>', text, flags=re.I)
+    if ld_match:
+        try:
+            ld = json.loads(ld_match.group(1))
+            image_value = ld.get("image")
+            image_text = " ".join(image_value) if isinstance(image_value, list) else str(image_value or "")
+            if "/assets/sprite.webp" in image_text:
+                problems.append(f"Schema Recipe usa imagen genérica en {page.relative_to(ROOT)}")
+            real_image = recipe.get("image")
+            if isinstance(real_image, str) and real_image.startswith("/assets/recipes/"):
+                expected = "https://cocinasinlios.com" + real_image
+                if expected not in image_text:
+                    problems.append(f"Foto real no conectada al Schema Recipe: {slug}")
+                og = re.search(r'<meta property=["\']og:image["\'] content=["\']([^"\']+)', text, flags=re.I)
+                if not og or expected not in og.group(1):
+                    problems.append(f"Foto real no conectada a og:image: {slug}")
+        except Exception as exc:
+            problems.append(f"JSON-LD inválido en {page.relative_to(ROOT)}: {exc}")
 
 if sitemap.is_file():
     sm = sitemap.read_text(encoding="utf-8", errors="replace")
