@@ -62,6 +62,8 @@ footer{background:#202b24;color:#dce5df;padding:40px 0}footer p{font-size:12px;c
  let exclusions={groups:[],text:""};try{exclusions=JSON.parse(localStorage.getItem("csl-exclusions-v1")||'{"groups":[],"text":""}')}catch(e){};if(!Array.isArray(exclusions.groups))exclusions.groups=[];exclusions.text=String(exclusions.text||"");
  const labels={aove:"aceite de oliva",ajo:"ajo",cebolla:"cebolla",tomate:"tomate",sal:"sal",limon:"limón",huevos:"huevos",legumbres:"legumbres",conserva:"conserva",arroz:"arroz",pasta:"pasta",frutos:"frutos secos",pimenton:"pimentón",comino:"comino",oregano:"orégano",curry:"curry",vinagre:"vinagre",mostaza:"mostaza",verdurascong:"verduras",protecong:"pescado o proteína",pan:"pan",caldo:"caldo",sofrito:"sofrito",hierbascong:"hierbas"};
  const norm=s=>String(s||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
+ const variants=t=>{t=norm(t).trim();const v=[t];if(t.endsWith("es")&&t.length>4)v.push(t.slice(0,-2));if(t.endsWith("s")&&t.length>3)v.push(t.slice(0,-1));return [...new Set(v)]};
+ const hasTerm=(hay,t)=>variants(t).some(v=>hay.includes(v));
  const avoidMap={pescado:["pescado","merluza","salmon","bacalao","atun","bonito","sardina"],carne:["pollo","carne","albondig","jamon"],huevo:["huevo"],lacteos:["leche","yogur","queso","mozzarella","mantequilla","nata"]};
  const exclusionLabels={pescado:"pescado",carne:"carne",huevo:"huevo",lacteos:"lácteos"};
  const recipeHay=r=>norm(r.title+" "+(r.ingredients||[]).join(" ")+" "+cat(r)+" "+r.category);
@@ -111,7 +113,7 @@ footer{background:#202b24;color:#dce5df;padding:40px 0}footer p{font-size:12px;c
    const uses=r.plan?.uses||[],covered=uses.filter(k=>pantry[k]);
    s+=covered.length*1.8;
    if(uses.length&&covered.length===uses.length)s+=2;
-   if(useText.length){const hay=norm(r.title+" "+r.ingredients.join(" ")+" "+(r.plan?.need||[]).join(" "));s+=useText.filter(t=>hay.includes(t)).length*6}
+   if(useText.length){const hay=norm(r.title+" "+r.ingredients.join(" ")+" "+(r.plan?.need||[]).join(" "));s+=useText.filter(t=>hasTerm(hay,t)).length*6}
    if(isFav(r))s+=1.2;
    if(weekSlugs.has(r.slug))s-=6;
   
@@ -122,7 +124,7 @@ footer{background:#202b24;color:#dce5df;padding:40px 0}footer p{font-size:12px;c
    const bits=[];
    const covered=(r.plan?.uses||[]).filter(k=>pantry[k]);
    if(covered.length)bits.push("aprovecha "+covered.slice(0,2).map(k=>labels[k]||k).join(" + "));
-   if(useText.length&&useText.some(t=>norm(r.title+" "+r.ingredients.join(" ")).includes(t)))bits.push("encaja con lo que quieres gastar");
+   if(useText.length&&useText.some(t=>hasTerm(norm(r.title+" "+r.ingredients.join(" ")),t)))bits.push("encaja con lo que quieres gastar");
    if(r.minutes<=15)bits.push("muy rápida");else if(r.minutes<=30)bits.push("entre semana");
    if(isFav(r))bits.push("ya la guardaste");
    if(!bits.length)bits.push(r.learn?.t||"cambio de registro");
