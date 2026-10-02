@@ -162,8 +162,13 @@ header{position:sticky;top:0;z-index:40;background:rgba(251,246,238,.95);backdro
        for(let j=i-1;j>=0;j--){const p=batchProduces(items[j]).find(x=>x.key===u.key);if(p){source=j;producer=p;break}}
        if(source>=0){
          const label=u.label||producer.label||u.key;
-         notes[source].push("Haz un poco más de "+label+": lo reutilizas el "+days[i]+".");
-         notes[i].push("Aprovecha "+label+" que ya dejaste listo el "+days[source]+".");
+         if(u.key==="arroz-cocido"){
+           notes[source].push("Haz un poco más de "+label+": enfríalo rápido, refrigéralo en cuanto se haya atemperado y no lo dejes más de 2 horas a temperatura ambiente.");
+           notes[i].push("Aprovecha "+label+" refrigerado del "+days[source]+". Recalienta bien y no uses arroz que haya quedado demasiado tiempo a temperatura ambiente.");
+         }else{
+           notes[source].push("Haz un poco más de "+label+": lo reutilizas el "+days[i]+".");
+           notes[i].push("Aprovecha "+label+" que ya dejaste listo el "+days[source]+".");
+         }
          links.push({key:u.key,label,from:source,to:i});
        }
      });
