@@ -23,6 +23,7 @@ CORE = [
     "despensa-sin-lios.html",
     "mi-rincon.html",
     "con-macarena.html",
+    "aviso-legal.html",
     "privacidad.html",
     "cookies.html",
     "uso-y-propiedad.html",
