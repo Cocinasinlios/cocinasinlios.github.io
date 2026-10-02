@@ -52,6 +52,7 @@ footer{background:#202b24;color:#dce5df;padding:40px 0}footer p{font-size:12px;c
  if(["resolver","aprovechar","aprender"].includes(presetGoal))state.goal=presetGoal;
  let pantry={};try{pantry=JSON.parse(localStorage.getItem("csl-despensa-v1")||"{}")}catch(e){}
  const paramIngredients=(params.get("ingredientes")||"").split(",").map(x=>x.trim()).filter(Boolean);
+ if(paramIngredients.length&&!presetTime)state.time="30";
  const pantryKeys=Object.keys(pantry).filter(k=>pantry[k]);
  let favs=[];try{favs=JSON.parse(localStorage.getItem("csl-favoritos-v1")||"[]")}catch(e){}
  
