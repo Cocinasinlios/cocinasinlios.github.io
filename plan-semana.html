@@ -180,8 +180,10 @@ header{position:sticky;top:0;z-index:40;background:rgba(251,246,238,.95);backdro
    const shared=(p.uses||[]).filter(k=>selected.some(x=>(x.plan?.uses||[]).includes(k))).length;
    s+=Math.min(shared,2)*1.25;
    const batch=batchMatches(r,selected);
-   if(batch.length)s+=Math.min(batch.length,2)*5.5;
-   if(!selected.length)s+=producerValue(r);
+   if(batch.length)s+=Math.min(batch.length,2)*(state.style==="aprovecha"?7:5.5);
+   const pv=producerValue(r);
+   if(!selected.length)s+=pv*(state.style==="aprovecha"?1.8:1);
+   else if(state.style==="aprovecha"&&pv)s+=Math.min(pv,2.2);
    if(previousSlugs.has(r.slug))s-=5;
    if(sessionSeen.has(r.slug))s-=4;
    const cats=new Set(selected.map(x=>cat(x))),tagCounts={};
