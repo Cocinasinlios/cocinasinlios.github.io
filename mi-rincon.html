@@ -30,7 +30,7 @@ if(w&&Array.isArray(w.meals)&&w.meals.length){
  const detail=document.getElementById("weekDetail");
  const weekDays=document.getElementById("weekDays");
  detail.style.display="block";
- weekDays.innerHTML=w.meals.map((name,i)=>{const item=Array.isArray(w.items)?w.items[i]:null;const safe=String(name).replace(/[<>&]/g,"");const title=item&&item.slug?'<a href="/recetas/'+encodeURIComponent(item.slug)+'/">'+safe+'</a>':safe;return '<div class="week-day"><small>'+days[i]+'</small><b>'+title+'</b>'+(item?.servingLabel?'<span>'+item.servingLabel+'</span>':'')+'</div>'}).join("");
+ weekDays.innerHTML=w.meals.map((name,i)=>{const item=Array.isArray(w.items)?w.items[i]:null;const safe=String(name).replace(/[<>&]/g,"");const title=item&&item.slug?'<a href="/recetas/'+encodeURIComponent(item.slug)+'/">'+safe+'</a>':safe;const notes=Array.isArray(w.batchNotes?.[i])?w.batchNotes[i]:[];return '<div class="week-day"><small>'+days[i]+'</small><b>'+title+'</b>'+(item?.servingLabel?'<span>'+item.servingLabel+'</span>':'')+(notes.length?'<div class="prep-saved">♻ '+notes.map(x=>String(x).replace(/[<>&]/g,"")).join(" ")+'</div>':'')+'</div>'}).join("");
  const meta=document.getElementById("weekMeta");
  if(w.savedAt){const d=new Date(w.savedAt);if(!isNaN(d))meta.textContent="Guardada el "+d.toLocaleDateString("es-ES",{day:"numeric",month:"long"})+" · puedes generar otra semana cuando quieras."}
 }
@@ -41,7 +41,8 @@ if(shareWeek)shareWeek.addEventListener("click",async()=>{
  const lines=w.meals.map((name,i)=>{
    const item=Array.isArray(w.items)?w.items[i]:null;
    const url=item?.slug?"https://cocinasinlios.com/recetas/"+encodeURIComponent(item.slug)+"/":"";
-   return days[i]+": "+name+(url?" · "+url:"");
+   const notes=Array.isArray(w.batchNotes?.[i])?w.batchNotes[i]:[];
+   return days[i]+": "+name+(url?" · "+url:"")+(notes.length?"\n  ↳ "+notes.join(" "):"");
  });
  const txt="Mi semana Sin Líos ✦\n\n"+lines.join("\n")+"\n\nAbre Cocina sin líos: https://cocinasinlios.com/mi-rincon.html";
  try{
