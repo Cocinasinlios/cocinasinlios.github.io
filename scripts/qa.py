@@ -30,6 +30,11 @@ CORE = [
     "cenas-rapidas.html",
     "recetas-aprovechamiento.html",
     "cenas-ligeras.html",
+    "que-cocinar-con-huevos.html",
+    "recetas-con-tomate.html",
+    "recetas-con-calabacin.html",
+    "recetas-con-pollo.html",
+    "recetas-con-arroz.html",
 ]
 
 problems: list[str] = []
