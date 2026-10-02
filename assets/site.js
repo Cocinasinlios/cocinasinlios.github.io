@@ -76,10 +76,10 @@ if(document.querySelector("footer")&&!document.querySelector("footer .csl-second
 if(document.querySelector("footer") &&
    !document.querySelector("footer .footerlinks") &&
    !document.querySelector("footer .csl-legal-links") &&
-   !["/privacidad.html","/cookies.html","/uso-y-propiedad.html"].includes(path)){
+   !["/aviso-legal.html","/privacidad.html","/cookies.html","/uso-y-propiedad.html"].includes(path)){
   const x=document.createElement("div");
   x.className="csl-legal-links";
-  x.innerHTML='<a href="/privacidad.html">Privacidad</a> · <a href="/cookies.html">Cookies</a> · <a href="/uso-y-propiedad.html">Uso y propiedad</a>';
+  x.innerHTML='<a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="/cookies.html">Cookies</a> · <a href="/uso-y-propiedad.html">Uso y propiedad</a>';
   x.style.cssText="font-size:11px;margin-top:18px;opacity:.8";
   document.querySelector("footer .wrap,footer")?.appendChild(x);
 }
