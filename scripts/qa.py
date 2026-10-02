@@ -33,6 +33,7 @@ CORE = [
 ]
 
 problems: list[str] = []
+warnings: list[str] = []
 
 def html_target(raw: str) -> Path | None:
     if not raw.startswith("/") or raw.startswith("//"):
@@ -102,6 +103,30 @@ for recipe in recipes:
     if not isinstance(cook, dict) or not all(cook.get(k) for k in ("heat","time","cue")):
         problems.append(f"Guía de cocción incompleta: {slug}")
 
+# Quality warnings: these do not block deployment yet, but make editorial debt visible.
+if recipes:
+    proper_images = [r for r in recipes if str(r.get("image") or "").startswith("/assets/recipes/")]
+    if len(proper_images) < len(recipes):
+        warnings.append(f"Fotografía de receta pendiente: {len(recipes)-len(proper_images)} de {len(recipes)} fichas no tienen imagen individual de alta resolución")
+    step_counts = {}
+    for r in recipes:
+        n = len(r.get("steps") or [])
+        step_counts[n] = step_counts.get(n, 0) + 1
+    dominant = max(step_counts.values()) if step_counts else 0
+    if dominant / max(len(recipes), 1) >= .90:
+        warnings.append("Más del 90 % de las recetas comparten exactamente el mismo número de pasos; revisar sensación de plantilla")
+
+# Stale privacy language must not contradict the live Cloudflare Web Analytics setup.
+stale_analytics = "actualmente la web no envía tus acciones a un servicio de analítica"
+for page in ROOT.glob("*.html"):
+    txt = page.read_text(encoding="utf-8", errors="replace")
+    if stale_analytics.casefold() in txt.casefold():
+        problems.append(f"Texto de analítica desactualizado en {page.name}")
+
+# An internal studio carrying noindex is still publicly reachable on a static site.
+if (ROOT / "estudio-rrss.html").is_file():
+    warnings.append("estudio-rrss.html sigue siendo accesible públicamente; noindex evita indexación, no acceso")
+
 recipe_pages = list((ROOT / "recetas").glob("*/index.html"))
 if len(recipe_pages) != recipe_count:
     problems.append(f"Recetas: {recipe_count} en datos pero {len(recipe_pages)} páginas publicadas")
@@ -123,6 +148,14 @@ if problems:
     print("\nSITE QA: ERROR\n")
     for p in problems:
         print(" -", p)
+    if warnings:
+        print("\nAvisos de calidad:")
+        for w in warnings:
+            print(" !", w)
     sys.exit(1)
 
 print(f"SITE QA: OK · {recipe_count} recetas · enlaces internos y separación editorial verificados")
+if warnings:
+    print("Avisos de calidad:")
+    for w in warnings:
+        print(" !", w)
