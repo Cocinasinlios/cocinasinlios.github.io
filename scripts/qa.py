@@ -102,9 +102,14 @@ for recipe in recipes:
     cook = recipe.get("cook")
     if not isinstance(cook, dict) or not all(cook.get(k) for k in ("heat","time","cue")):
         problems.append(f"Guía de cocción incompleta: {slug}")
+    if not recipe.get("family"):
+        problems.append(f"Receta sin familia editorial: {slug}")
 
 # Quality warnings: these do not block deployment yet, but make editorial debt visible.
 if recipes:
+    families = sorted({r.get("family") for r in recipes if r.get("family")})
+    if len(families) > 12:
+        warnings.append(f"Taxonomía dispersa: {len(families)} familias editoriales")
     proper_images = [r for r in recipes if str(r.get("image") or "").startswith("/assets/recipes/")]
     if len(proper_images) < len(recipes):
         warnings.append(f"Fotografía de receta pendiente: {len(recipes)-len(proper_images)} de {len(recipes)} fichas no tienen imagen individual de alta resolución")
