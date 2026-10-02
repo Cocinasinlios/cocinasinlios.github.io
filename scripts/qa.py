@@ -127,6 +127,11 @@ for page in ROOT.glob("*.html"):
 if (ROOT / "estudio-rrss.html").is_file():
     warnings.append("estudio-rrss.html sigue siendo accesible públicamente; noindex evita indexación, no acceso")
 
+home_text = (ROOT / "index.html").read_text(encoding="utf-8", errors="replace")
+home_count_match = re.search(r'<strong>(\d+)</strong><span>recetas completas</span>', home_text, flags=re.I)
+if home_count_match and int(home_count_match.group(1)) != recipe_count:
+    problems.append(f"Contador de portada: {home_count_match.group(1)} pero hay {recipe_count} recetas")
+
 recipe_pages = list((ROOT / "recetas").glob("*/index.html"))
 if len(recipe_pages) != recipe_count:
     problems.append(f"Recetas: {recipe_count} en datos pero {len(recipe_pages)} páginas publicadas")
