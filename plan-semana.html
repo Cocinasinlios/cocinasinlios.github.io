@@ -141,6 +141,35 @@ header{position:sticky;top:0;z-index:40;background:rgba(251,246,238,.95);backdro
    return items.map(x=>{let h="";if(x.group!==last){last=x.group;h='<li class="shop-group-title">'+last+'</li>'}return h+'<li>'+x.label+(covered?' <small>· comprueba que tengas suficiente</small>':'')+'</li>'}).join("");
  }
  function servingLabel(){const n=targetPeople();return n===1?"1 persona":n+" personas"}
+ const batchProduces=r=>Array.isArray(r?.batch?.produces)?r.batch.produces:[];
+ const batchUses=r=>Array.isArray(r?.batch?.uses)?r.batch.uses:[];
+ function batchMatches(r,selected=[]){
+   const producers=[];
+   selected.forEach((x,i)=>batchProduces(x).forEach(p=>producers.push({...p,sourceIndex:i,sourceTitle:x.title})));
+   return batchUses(r).map(u=>{const hit=[...producers].reverse().find(p=>p.key===u.key);return hit?{...u,...hit}:null}).filter(Boolean);
+ }
+ function producerValue(r){
+   const keys=new Set(batchProduces(r).map(x=>x.key));if(!keys.size)return 0;
+   const compatible=eligibleRecipes().filter(x=>x.slug!==r.slug&&batchUses(x).some(u=>keys.has(u.key))).length;
+   return Math.min(compatible,2)*1.35;
+ }
+ function buildBatchPlan(items){
+   const days=["lunes","martes","miércoles","jueves","viernes"];
+   const notes=items.map(()=>[]),links=[];
+   items.forEach((r,i)=>{
+     batchUses(r).forEach(u=>{
+       let source=-1,producer=null;
+       for(let j=i-1;j>=0;j--){const p=batchProduces(items[j]).find(x=>x.key===u.key);if(p){source=j;producer=p;break}}
+       if(source>=0){
+         const label=u.label||producer.label||u.key;
+         notes[source].push("Haz un poco más de "+label+": lo reutilizas el "+days[i]+".");
+         notes[i].push("Aprovecha "+label+" que ya dejaste listo el "+days[source]+".");
+         links.push({key:u.key,label,from:source,to:i});
+       }
+     });
+   });
+   return {notes:notes.map(x=>[...new Set(x)]),links};
+ }
  function score(r,selected=[]){
    let s=0,p=r.plan;
    if(p.s.includes(state.style))s+=5;
@@ -150,6 +179,9 @@ header{position:sticky;top:0;z-index:40;background:rgba(251,246,238,.95);backdro
    s+=(p.uses||[]).filter(k=>pantry[k]).length*2;
    const shared=(p.uses||[]).filter(k=>selected.some(x=>(x.plan?.uses||[]).includes(k))).length;
    s+=Math.min(shared,2)*1.25;
+   const batch=batchMatches(r,selected);
+   if(batch.length)s+=Math.min(batch.length,2)*5.5;
+   if(!selected.length)s+=producerValue(r);
    if(previousSlugs.has(r.slug))s-=5;
    if(sessionSeen.has(r.slug))s-=4;
    const cats=new Set(selected.map(x=>cat(x))),tagCounts={};
@@ -173,15 +205,15 @@ header{position:sticky;top:0;z-index:40;background:rgba(251,246,238,.95);backdro
    return selected;
  }
  function render(){
-   const days=["Lunes","Martes","Miércoles","Jueves","Viernes"];
-   document.getElementById("week").innerHTML=current.map((r,i)=>'<article class="day"><small>'+days[i]+'</small><h3>'+(r.slug?'<a href="/recetas/'+encodeURIComponent(r.slug)+'/">'+r.title+'</a>':r.title)+'</h3><span class="serving-note">Cantidades ajustadas · '+servingLabel()+'</span><p>'+(i===0&&incoming?"Tu elección se queda fija.":r.plan.t==="rapida"?"Día de poco margen.":r.plan.t==="mixta"?"Algo de cocina, sin secuestrar la tarde.":"Aquí sí merece la pena cocinar con calma.")+'</p><span class="tag">'+(r.tags.includes("aprovechar")?"Aprovechamiento":r.tags.includes("ligera")?"Más ligera":r.tags.includes("comfort")?"Comida de abrazo":"Cambio de registro")+'</span>'+((r.ingredients||[]).length?'<details class="scaled"><summary>Ver cantidades</summary><ul>'+scaledIngredients(r).map(x=>"<li>"+x+"</li>").join("")+'</ul></details>':"")+(i===0&&incoming?'<span class="fixed">✓ Fija</span>':'<button class="swap" type="button" data-swap="'+i+'">Cambiar solo este día</button>')+'</article>').join("");
+   const days=["Lunes","Martes","Miércoles","Jueves","Viernes"],batchPlan=buildBatchPlan(current);
+   document.getElementById("week").innerHTML=current.map((r,i)=>'<article class="day"><small>'+days[i]+'</small><h3>'+(r.slug?'<a href="/recetas/'+encodeURIComponent(r.slug)+'/">'+r.title+'</a>':r.title)+'</h3><span class="serving-note">Cantidades ajustadas · '+servingLabel()+'</span><p>'+(i===0&&incoming?"Tu elección se queda fija.":r.plan.t==="rapida"?"Día de poco margen.":r.plan.t==="mixta"?"Algo de cocina, sin secuestrar la tarde.":"Aquí sí merece la pena cocinar con calma.")+'</p><span class="tag">'+(r.tags.includes("aprovechar")?"Aprovechamiento":r.tags.includes("ligera")?"Más ligera":r.tags.includes("comfort")?"Comida de abrazo":"Cambio de registro")+'</span>'+(batchPlan.notes[i].length?'<div class="prep-chain"><b>♻ Aprovecha de verdad</b>'+batchPlan.notes[i].map(x=>'<span>'+x+'</span>').join("")+'</div>':"")+((r.ingredients||[]).length?'<details class="scaled"><summary>Ver cantidades</summary><ul>'+scaledIngredients(r).map(x=>"<li>"+x+"</li>").join("")+'</ul></details>':"")+(i===0&&incoming?'<span class="fixed">✓ Fija</span>':'<button class="swap" type="button" data-swap="'+i+'">Cambiar solo este día</button>')+'</article>').join("");
    document.querySelectorAll("[data-swap]").forEach(b=>b.addEventListener("click",()=>swapDay(Number(b.dataset.swap))));
    const shop=shoppingFor(current);
    document.getElementById("shopping").innerHTML=renderShopList(shop.needed,false);
    document.getElementById("covered").innerHTML=renderShopList(shop.covered,true);
    const rapid=current.filter(r=>r.plan.t==="rapida").length,light=current.filter(r=>r.tags.includes("ligera")).length,pantryUse=[...new Set(current.flatMap(r=>(r.plan.uses||[]).filter(k=>pantry[k])))].length;
    const allUses=current.map(r=>r.plan.uses||[]),sharedKeys=[...new Set(allUses.flatMap((u,i)=>u.filter(k=>allUses.some((v,j)=>j!==i&&v.includes(k)))))].length;
-   document.getElementById("why").innerHTML=(current.length<5?"<b>He encontrado "+current.length+" de 5 cenas sin saltarme tus preferencias.</b> Quita alguna exclusión o amplía el margen si quieres completar los cinco días. ":"<b>Cómo está construida.</b>")+servingLabel()+" · "+rapid+" cenas rápidas · "+light+" opciones ligeras · "+pantryUse+" básicos de tu despensa reutilizados"+(sharedKeys?" · "+sharedKeys+" bases compartidas entre varios días para recortar compra":"")+(previousSlugs.size?" · penalizo repeticiones respecto a la última semana":"")+(exclusions.groups.length||freeAvoid().length?" · respeto tus ingredientes a evitar":"")+".";
+   document.getElementById("why").innerHTML=(current.length<5?"<b>He encontrado "+current.length+" de 5 cenas sin saltarme tus preferencias.</b> Quita alguna exclusión o amplía el margen si quieres completar los cinco días. ":"<b>Cómo está construida.</b>")+servingLabel()+" · "+rapid+" cenas rápidas · "+light+" opciones ligeras · "+pantryUse+" básicos de tu despensa reutilizados"+(batchPlan.links.length?" · "+batchPlan.links.length+" aprovechamiento"+(batchPlan.links.length===1?" real":"s reales")+" entre días":"")+(sharedKeys?" · "+sharedKeys+" ingredientes compartidos para recortar compra":"")+(previousSlugs.size?" · penalizo repeticiones respecto a la última semana":"")+(exclusions.groups.length||freeAvoid().length?" · respeto tus ingredientes a evitar":"")+".";
    document.getElementById("results").classList.add("show");document.getElementById("results").scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});setTimeout(()=>document.getElementById("resultTitle").focus({preventScroll:true}),250);
  }
  function build(){exclusions.text=avoidText.value.trim();saveExclusions();current.forEach(r=>r.slug&&sessionSeen.add(r.slug));current=makePlan();render()}
@@ -191,8 +223,8 @@ header{position:sticky;top:0;z-index:40;background:rgba(251,246,238,.95);backdro
    if(options[0]){current[i]=options[0];render()}
  }
  document.getElementById("go").addEventListener("click",build);document.getElementById("again").addEventListener("click",build);
- document.getElementById("save").addEventListener("click",()=>{if(!current.length)return;try{const shop=shoppingFor(current);localStorage.setItem("csl-plan-semana-v1",JSON.stringify({savedAt:new Date().toISOString(),state,meals:current.map(x=>x.title),items:current.map(r=>({title:r.title,n:r.title,slug:r.slug,category:cat(r),tags:r.tags,plan:r.plan,servingLabel:servingLabel(),scaledIngredients:scaledIngredients(r)})),shopping:shop.needed.map(x=>x.label),covered:shop.covered.map(x=>x.label),shoppingStructured:shop.needed,coveredStructured:shop.covered}));localStorage.removeItem("csl-idea-semana-v1");incoming=null;document.getElementById("save").textContent="Semana guardada ✓";document.getElementById("openKitchen").style.display="inline-flex"}catch(e){}});
- document.getElementById("share").addEventListener("click",async e=>{if(!current.length)return;const days=["Lunes","Martes","Miércoles","Jueves","Viernes"],people=Number(state.people)===1?"1 persona":state.people+" personas";const txt="Mi semana Sin Líos ✦ · "+people+"\n\n"+current.map((r,i)=>days[i]+": "+r.title).join("\n")+"\n\nhttps://cocinasinlios.com/plan-semana.html";try{if(navigator.share)await navigator.share({title:"Mi semana Sin Líos",text:txt});else{await navigator.clipboard.writeText(txt);e.currentTarget.textContent="Resumen copiado ✓"}}catch(err){}});
+ document.getElementById("save").addEventListener("click",()=>{if(!current.length)return;try{const shop=shoppingFor(current),batchPlan=buildBatchPlan(current);localStorage.setItem("csl-plan-semana-v1",JSON.stringify({savedAt:new Date().toISOString(),state,meals:current.map(x=>x.title),items:current.map(r=>({title:r.title,n:r.title,slug:r.slug,category:cat(r),tags:r.tags,plan:r.plan,batch:r.batch||null,servingLabel:servingLabel(),scaledIngredients:scaledIngredients(r)})),batchNotes:batchPlan.notes,batchLinks:batchPlan.links,shopping:shop.needed.map(x=>x.label),covered:shop.covered.map(x=>x.label),shoppingStructured:shop.needed,coveredStructured:shop.covered}));localStorage.removeItem("csl-idea-semana-v1");incoming=null;document.getElementById("save").textContent="Semana guardada ✓";document.getElementById("openKitchen").style.display="inline-flex"}catch(e){}});
+ document.getElementById("share").addEventListener("click",async e=>{if(!current.length)return;const days=["Lunes","Martes","Miércoles","Jueves","Viernes"],people=Number(state.people)===1?"1 persona":state.people+" personas",batchPlan=buildBatchPlan(current);const txt="Mi semana Sin Líos ✦ · "+people+"\n\n"+current.map((r,i)=>days[i]+": "+r.title+(batchPlan.notes[i].length?"\n  ↳ "+batchPlan.notes[i].join(" "):"")).join("\n")+"\n\nhttps://cocinasinlios.com/plan-semana.html";try{if(navigator.share)await navigator.share({title:"Mi semana Sin Líos",text:txt});else{await navigator.clipboard.writeText(txt);e.currentTarget.textContent="Resumen copiado ✓"}}catch(err){}});
 })();
 </script>
 <script src="/assets/site.js" defer></script>
