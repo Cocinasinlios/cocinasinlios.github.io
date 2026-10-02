@@ -49,6 +49,7 @@ header{position:sticky;top:0;z-index:40;background:rgba(251,246,238,.95);backdro
  const exclusionLabels={pescado:"pescado",carne:"carne",huevo:"huevo",lacteos:"lácteos"};
  const freeAvoid=()=>norm(exclusions.text).split(/[,;]+/).map(x=>x.trim()).filter(x=>x.length>2);
  const isExcluded=r=>{const hay=norm((r.title||"")+" "+(r.ingredients||[]).join(" ")+" "+(r.category||""));return exclusions.groups.some(g=>r.contains&&typeof r.contains[g]==="boolean"?r.contains[g]:(avoidMap[g]||[]).some(k=>hay.includes(k)))||freeAvoid().some(k=>hay.includes(k))};
+ const cat=r=>r.family||r.category;
  const eligibleRecipes=()=>recipes.filter(r=>!isExcluded(r));
  const saveExclusions=()=>{try{localStorage.setItem("csl-exclusions-v1",JSON.stringify(exclusions))}catch(e){}};
  let pantry={};try{pantry=JSON.parse(localStorage.getItem("csl-despensa-v1")||"{}")}catch(e){}
@@ -151,9 +152,9 @@ header{position:sticky;top:0;z-index:40;background:rgba(251,246,238,.95);backdro
    s+=Math.min(shared,2)*1.25;
    if(previousSlugs.has(r.slug))s-=5;
    if(sessionSeen.has(r.slug))s-=4;
-   const cats=new Set(selected.map(x=>x.category)),tagCounts={};
+   const cats=new Set(selected.map(x=>cat(x))),tagCounts={};
    selected.forEach(x=>(x.tags||[]).forEach(t=>tagCounts[t]=(tagCounts[t]||0)+1));
-   if(cats.has(r.category))s-=2.5;
+   if(cats.has(cat(r)))s-=2.5;
    if(r.tags.includes("comfort")&&(tagCounts.comfort||0)>=2)s-=3;
    if(r.tags.includes("ligera")&&(tagCounts.ligera||0)>=3)s-=2;
    return s;
@@ -190,7 +191,7 @@ header{position:sticky;top:0;z-index:40;background:rgba(251,246,238,.95);backdro
    if(options[0]){current[i]=options[0];render()}
  }
  document.getElementById("go").addEventListener("click",build);document.getElementById("again").addEventListener("click",build);
- document.getElementById("save").addEventListener("click",()=>{if(!current.length)return;try{const shop=shoppingFor(current);localStorage.setItem("csl-plan-semana-v1",JSON.stringify({savedAt:new Date().toISOString(),state,meals:current.map(x=>x.title),items:current.map(r=>({title:r.title,n:r.title,slug:r.slug,category:r.category,tags:r.tags,plan:r.plan,servingLabel:servingLabel(),scaledIngredients:scaledIngredients(r)})),shopping:shop.needed.map(x=>x.label),covered:shop.covered.map(x=>x.label),shoppingStructured:shop.needed,coveredStructured:shop.covered}));localStorage.removeItem("csl-idea-semana-v1");incoming=null;document.getElementById("save").textContent="Semana guardada ✓";document.getElementById("openKitchen").style.display="inline-flex"}catch(e){}});
+ document.getElementById("save").addEventListener("click",()=>{if(!current.length)return;try{const shop=shoppingFor(current);localStorage.setItem("csl-plan-semana-v1",JSON.stringify({savedAt:new Date().toISOString(),state,meals:current.map(x=>x.title),items:current.map(r=>({title:r.title,n:r.title,slug:r.slug,category:cat(r),tags:r.tags,plan:r.plan,servingLabel:servingLabel(),scaledIngredients:scaledIngredients(r)})),shopping:shop.needed.map(x=>x.label),covered:shop.covered.map(x=>x.label),shoppingStructured:shop.needed,coveredStructured:shop.covered}));localStorage.removeItem("csl-idea-semana-v1");incoming=null;document.getElementById("save").textContent="Semana guardada ✓";document.getElementById("openKitchen").style.display="inline-flex"}catch(e){}});
  document.getElementById("share").addEventListener("click",async e=>{if(!current.length)return;const days=["Lunes","Martes","Miércoles","Jueves","Viernes"],people=Number(state.people)===1?"1 persona":state.people+" personas";const txt="Mi semana Sin Líos ✦ · "+people+"\n\n"+current.map((r,i)=>days[i]+": "+r.title).join("\n")+"\n\nhttps://cocinasinlios.com/plan-semana.html";try{if(navigator.share)await navigator.share({title:"Mi semana Sin Líos",text:txt});else{await navigator.clipboard.writeText(txt);e.currentTarget.textContent="Resumen copiado ✓"}}catch(err){}});
 })();
 </script>
