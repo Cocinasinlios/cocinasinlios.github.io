@@ -64,10 +64,11 @@ footer{background:#202b24;color:#dce5df;padding:40px 0}footer p{font-size:12px;c
  const norm=s=>String(s||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
  const avoidMap={pescado:["pescado","merluza","salmon","bacalao","atun","bonito","sardina"],carne:["pollo","carne","albondig","jamon"],huevo:["huevo"],lacteos:["leche","yogur","queso","mozzarella","mantequilla","nata"]};
  const exclusionLabels={pescado:"pescado",carne:"carne",huevo:"huevo",lacteos:"lácteos"};
- const recipeHay=r=>norm(r.title+" "+(r.ingredients||[]).join(" ")+" "+r.category);
+ const recipeHay=r=>norm(r.title+" "+(r.ingredients||[]).join(" ")+" "+cat(r)+" "+r.category);
  const freeAvoid=()=>norm(exclusions.text).split(/[,;]+/).map(x=>x.trim()).filter(x=>x.length>2);
  const isExcluded=r=>{const hay=recipeHay(r);return exclusions.groups.some(g=>r.contains&&typeof r.contains[g]==="boolean"?r.contains[g]:(avoidMap[g]||[]).some(k=>hay.includes(k)))||freeAvoid().some(k=>hay.includes(k))};
  const saveExclusions=()=>{try{localStorage.setItem("csl-exclusions-v1",JSON.stringify(exclusions))}catch(e){}};
+ const cat=r=>r.family||r.category;
  const rId=r=>r.id||r.slug;
  const isFav=r=>favs.includes(rId(r))||favs.includes(r.slug);
  let useText=norm(useSoon).split(/[,;]+|\sy\s/).map(x=>x.trim()).filter(x=>x.length>2);
@@ -127,7 +128,7 @@ footer{background:#202b24;color:#dce5df;padding:40px 0}footer p{font-size:12px;c
    if(!bits.length)bits.push(r.learn?.t||"cambio de registro");
    return bits.join(" · ");
  }
- function tone(r){const t=r.tags||[];return t.includes("dulce")?"tone-butter":t.includes("ligera")?"tone-sage":t.includes("comfort")?"tone-peach":t.includes("vegetal")?"tone-mint":t.includes("aprovechar")?"tone-clay":"tone-paper"} function visual(r){const highRes=r.image&&r.image.startsWith("/assets/recipes/");if(highRes)return '<div class="photo" style="background-image:url(\''+r.image+'\');background-size:cover;background-position:center"></div>';if(r.photoSprite)return '<div class="photo" style="background-image:url(\''+r.photoSprite.src+'\');background-size:'+(r.photoSprite.cols*100)+'% '+(r.photoSprite.rows*100)+'%;background-position:'+r.photoSprite.x+'% '+r.photoSprite.y+'%;background-repeat:no-repeat"></div>';return '<div class="photo editorial '+tone(r)+'"><div class="cover-copy"><small>'+esc(r.category)+'</small><strong>'+esc(r.title)+'</strong><span>'+esc(r.learn?.t||"Cocina con criterio")+'</span></div></div>'}
+ function tone(r){const t=r.tags||[];return t.includes("dulce")?"tone-butter":t.includes("ligera")?"tone-sage":t.includes("comfort")?"tone-peach":t.includes("vegetal")?"tone-mint":t.includes("aprovechar")?"tone-clay":"tone-paper"} function visual(r){const highRes=r.image&&r.image.startsWith("/assets/recipes/");if(highRes)return '<div class="photo" style="background-image:url(\''+r.image+'\');background-size:cover;background-position:center"></div>';if(r.photoSprite)return '<div class="photo" style="background-image:url(\''+r.photoSprite.src+'\');background-size:'+(r.photoSprite.cols*100)+'% '+(r.photoSprite.rows*100)+'%;background-position:'+r.photoSprite.x+'% '+r.photoSprite.y+'%;background-repeat:no-repeat"></div>';return '<div class="photo editorial '+tone(r)+'"><div class="cover-copy"><small>'+esc(cat(r))+'</small><strong>'+esc(r.title)+'</strong><span>'+esc(r.learn?.t||"Cocina con criterio")+'</span></div></div>'}
  function render(){
    exclusions.text=avoidText.value.trim();saveExclusions();
    useSoon=haveText.value.trim();
@@ -150,7 +151,7 @@ footer{background:#202b24;color:#dce5df;padding:40px 0}footer p{font-size:12px;c
    if(exclusions.groups.length||freeAvoid().length)whyBits.push("tus ingredientes a evitar");
    document.getElementById("why").innerHTML=(picked.length<3?"<b>He encontrado "+picked.length+" opción"+(picked.length===1?"":"es")+" sin saltarme tus preferencias.</b> ":"<b>Por qué estas tres.</b>")+"Estoy cruzando "+whyBits.join(", ")+". "+(picked.length<3?"Puedes quitar una exclusión o ampliar el tiempo para ver más.":"Busco tres decisiones buenas y distintas.");
    if(!picked.length){document.getElementById("grid").innerHTML='<div class="human">Con esas preferencias no encuentro una opción que pueda recomendarte con confianza. Prueba a quitar una exclusión o ampliar el tiempo.</div>';document.getElementById("results").classList.add("show");document.getElementById("resultTitle").focus();return}
-   document.getElementById("grid").innerHTML=picked.map((r,i)=>'<article class="card">'+visual(r)+'<div class="body"><small>'+r.category+' · '+r.time+'</small><h3>'+r.title+'</h3><p>'+r.intro+'</p><div class="fit">'+fitText(r)+'</div><div class="actions"><a class="btn" href="/recetas/'+encodeURIComponent(r.slug)+'/">Ver receta</a><button class="week-add" data-i="'+i+'" type="button">A mi semana</button></div></div></article>').join("");
+   document.getElementById("grid").innerHTML=picked.map((r,i)=>'<article class="card">'+visual(r)+'<div class="body"><small>'+cat(r)+' · '+r.time+'</small><h3>'+r.title+'</h3><p>'+r.intro+'</p><div class="fit">'+fitText(r)+'</div><div class="actions"><a class="btn" href="/recetas/'+encodeURIComponent(r.slug)+'/">Ver receta</a><button class="week-add" data-i="'+i+'" type="button">A mi semana</button></div></div></article>').join("");
    document.querySelectorAll("[data-i]").forEach(b=>b.addEventListener("click",()=>{const r=picked[Number(b.dataset.i)];try{localStorage.setItem("csl-idea-semana-v1",JSON.stringify({n:r.title,slug:r.slug,...r.plan}));b.textContent="Añadida ✓";b.classList.add("saved");setTimeout(()=>location.href="/plan-semana.html?idea=1",220)}catch(e){location.href="/plan-semana.html"}}));
    document.getElementById("humanHelp").href="/hablamos.html?motivo=uso&origen=que-cocino&contexto="+encodeURIComponent(state.time+" min · "+state.mood+" · "+state.goal+(useSoon?" · gastar "+useSoon:""));
    document.getElementById("results").classList.add("show");document.getElementById("results").scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});setTimeout(()=>document.getElementById("resultTitle").focus({preventScroll:true}),300);
