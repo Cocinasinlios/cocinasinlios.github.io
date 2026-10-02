@@ -51,8 +51,7 @@ footer{background:#202b24;color:#dce5df;padding:40px 0}footer p{font-size:12px;c
  if(["salado","ligera","comfort","dulce","daigual"].includes(presetMood))state.mood=presetMood;
  if(["resolver","aprovechar","aprender"].includes(presetGoal))state.goal=presetGoal;
  let pantry={};try{pantry=JSON.parse(localStorage.getItem("csl-despensa-v1")||"{}")}catch(e){}
- const paramPantry=(params.get("ingredientes")||"").split(",").filter(Boolean);
- if(paramPantry.length)paramPantry.forEach(k=>pantry[k]=true);
+ const paramIngredients=(params.get("ingredientes")||"").split(",").map(x=>x.trim()).filter(Boolean);
  const pantryKeys=Object.keys(pantry).filter(k=>pantry[k]);
  let favs=[];try{favs=JSON.parse(localStorage.getItem("csl-favoritos-v1")||"[]")}catch(e){}
  
@@ -71,7 +70,7 @@ footer{background:#202b24;color:#dce5df;padding:40px 0}footer p{font-size:12px;c
  const cat=r=>r.family||r.category;
  const rId=r=>r.id||r.slug;
  const isFav=r=>favs.includes(rId(r))||favs.includes(r.slug);
- let useText=norm(useSoon).split(/[,;]+|\sy\s/).map(x=>x.trim()).filter(x=>x.length>2);
+ let useText=norm([useSoon,...paramIngredients].filter(Boolean).join(", ")).split(/[,;]+|\sy\s/).map(x=>x.trim()).filter(x=>x.length>2);
  const mem=document.getElementById("memory"),chips=[];
  if(pantryKeys.length)chips.push("🥫 "+pantryKeys.length+" básicos en tu despensa");
  if(weekSlugs.size)chips.push("🗓 Evito repetir tu semana");
@@ -81,7 +80,7 @@ footer{background:#202b24;color:#dce5df;padding:40px 0}footer p{font-size:12px;c
  mem.innerHTML=chips.map(x=>"<span>"+x+"</span>").join("");
  const context=document.getElementById("context");
  if(useSoon){context.classList.add("show");context.innerHTML="<b>Primero quiero gastar esto.</b><span>"+useSoon.replace(/[<>&]/g,"")+" · Lo priorizo cuando encaje con una receta de verdad.</span>"}
- else if(paramPantry.length){context.classList.add("show");context.innerHTML="<b>Vienes de tu despensa.</b><span>Voy a favorecer recetas que aprovechen lo que ya has marcado y a evitar compra innecesaria.</span>"}
+ else if(paramIngredients.length){context.classList.add("show");context.innerHTML="<b>Partimos de "+paramIngredients.map(x=>x.replace(/[<>&]/g,"")).join(", ")+".</b><span>Lo priorizaré solo cuando aparezca de verdad en la receta.</span>"}
  document.querySelectorAll(".choices").forEach(g=>{
    g.querySelectorAll(".choice").forEach(b=>{
      const on=state[g.dataset.group]===b.dataset.value;
@@ -89,7 +88,7 @@ footer{background:#202b24;color:#dce5df;padding:40px 0}footer p{font-size:12px;c
      b.addEventListener("click",()=>{g.querySelectorAll(".choice").forEach(x=>{x.classList.remove("active");x.setAttribute("aria-pressed","false")});b.classList.add("active");b.setAttribute("aria-pressed","true");state[g.dataset.group]=b.dataset.value});
    });
  });
- const haveText=document.getElementById("haveText");haveText.value=useSoon;
+ const haveText=document.getElementById("haveText");haveText.value=useSoon||paramIngredients.join(", ");
   const avoidText=document.getElementById("avoidText");avoidText.value=exclusions.text;
  document.querySelectorAll("[data-avoid]").forEach(b=>{b.setAttribute("aria-pressed",String(exclusions.groups.includes(b.dataset.avoid)));b.addEventListener("click",()=>{const k=b.dataset.avoid,on=exclusions.groups.includes(k);exclusions.groups=on?exclusions.groups.filter(x=>x!==k):[...exclusions.groups,k];b.setAttribute("aria-pressed",String(!on));saveExclusions()})});
  avoidText.addEventListener("change",()=>{exclusions.text=avoidText.value.trim();saveExclusions()});
