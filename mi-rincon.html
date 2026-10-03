@@ -19,6 +19,8 @@
 <a class="card" href="/con-macarena.html"><b>DETRÁS</b><h3>Macarena.</h3><p>La filosofía y la persona detrás de Cocina sin líos.</p></a>
 </div></div></section></main><footer><div class="wrap"><b>Cocina sin líos con Macarena</b><p>Accesos rápidos del proyecto editorial.</p></div></footer><div class="global-dock"></div><script src="/assets/recipes-data.js"></script><script>
 (function(){
+const esc=s=>String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
+const safeLocalHref=v=>{const s=String(v||"");return /^\/[a-z0-9_\-./%]+$/i.test(s)?s:"#"};
 let p={};try{p=JSON.parse(localStorage.getItem("csl-despensa-v1")||"{}")}catch(e){}
 const n=Object.values(p).filter(Boolean).length;
 if(n){document.getElementById("pantryStatus").textContent=n+" básicos marcados";document.getElementById("pantrySub").textContent="Tu planificador puede aprovechar esta base."}
@@ -30,14 +32,14 @@ if(w&&Array.isArray(w.meals)&&w.meals.length){
  const detail=document.getElementById("weekDetail");
  const weekDays=document.getElementById("weekDays");
  detail.style.display="block";
- weekDays.innerHTML=w.meals.map((name,i)=>{const item=Array.isArray(w.items)?w.items[i]:null;const safe=String(name).replace(/[<>&]/g,"");const title=item&&item.slug?'<a href="/recetas/'+encodeURIComponent(item.slug)+'/">'+safe+'</a>':safe;const notes=Array.isArray(w.batchNotes?.[i])?w.batchNotes[i]:[];return '<div class="week-day"><small>'+days[i]+'</small><b>'+title+'</b>'+(item?.servingLabel?'<span>'+item.servingLabel+'</span>':'')+(notes.length?'<div class="prep-saved">♻ '+notes.map(x=>String(x).replace(/[<>&]/g,"")).join(" ")+'</div>':'')+'</div>'}).join("");
+ weekDays.innerHTML=w.meals.map((name,i)=>{const item=Array.isArray(w.items)?w.items[i]:null;const safe=esc(name);const title=item&&item.slug?'<a href="/recetas/'+encodeURIComponent(item.slug)+'/">'+safe+'</a>':safe;const notes=Array.isArray(w.batchNotes?.[i])?w.batchNotes[i]:[];return '<div class="week-day"><small>'+days[i]+'</small><b>'+title+'</b>'+(item?.servingLabel?'<span>'+esc(item.servingLabel)+'</span>':'')+(notes.length?'<div class="prep-saved">♻ '+notes.map(esc).join(" ")+'</div>':'')+'</div>'}).join("");
  const meta=document.getElementById("weekMeta");
  if(w.savedAt){const d=new Date(w.savedAt);if(!isNaN(d))meta.textContent="Guardada el "+d.toLocaleDateString("es-ES",{day:"numeric",month:"long"})+" · puedes generar otra semana cuando quieras."}
  const savedPrep=document.getElementById("savedPrep");
  if(savedPrep&&Array.isArray(w.smartPreps)&&w.smartPreps.length){
    const days=["lunes","martes","miércoles","jueves","viernes"];
    savedPrep.style.display="block";
-   savedPrep.innerHTML='<b>♻ Una preparación que te ahorra trabajo</b>'+w.smartPreps.map(p=>'<span><a href="'+p.recipe+'">'+p.title+'</a> · '+p.text+(Array.isArray(p.days)&&p.days.length?' La usarías '+p.days.map(i=>"el "+days[i]).join(" y ")+'.':'')+'</span>').join("");
+   savedPrep.innerHTML='<b>♻ '+(w.smartPreps.length===1?'Una preparación que te ahorra trabajo':'Preparaciones que te ahorran trabajo')+'</b>'+w.smartPreps.map(p=>'<span><a href="'+safeLocalHref(p.recipe)+'">'+esc(p.title)+'</a> · '+esc(p.text)+(Array.isArray(p.days)&&p.days.length?' La usarías '+p.days.filter(i=>Number.isInteger(i)&&i>=0&&i<5).map(i=>"el "+days[i]).join(" y ")+'.':'')+'</span>').join("");
  }
 }
 const shareWeek=document.getElementById("shareWeek");
@@ -50,7 +52,8 @@ if(shareWeek)shareWeek.addEventListener("click",async()=>{
    const notes=Array.isArray(w.batchNotes?.[i])?w.batchNotes[i]:[];
    return days[i]+": "+name+(url?" · "+url:"")+(notes.length?"\n  ↳ "+notes.join(" "):"");
  });
- const txt="Mi semana Sin Líos ✦\n\n"+lines.join("\n")+"\n\nAbre Cocina sin líos: https://cocinasinlios.com/mi-rincon.html";
+ const prepLines=Array.isArray(w.smartPreps)&&w.smartPreps.length?"\n\nPreparar una vez:\n"+w.smartPreps.map(p=>"• "+String(p.title||"")+" · "+String(p.text||"")).join("\n"):"";
+ const txt="Mi semana Sin Líos ✦\n\n"+lines.join("\n")+prepLines+"\n\nAbre Cocina sin líos: https://cocinasinlios.com/mi-rincon.html";
  try{
    if(navigator.share)await navigator.share({title:"Mi semana Sin Líos",text:txt});
    else{await navigator.clipboard.writeText(txt);shareWeek.textContent="Semana copiada ✓";}
@@ -66,7 +69,7 @@ function renderShopping(){
  tools.style.display="flex";
  if(structured){
    let last="";
-   list.innerHTML=structured.map((x,i)=>{let head="";if(x.group&&x.group!==last){last=x.group;head='<div class="shopping-group">'+last+'</div>'}const id=shopId(x,i),checked=checks[id]?'checked':'';return head+'<label class="shopping-item"><input type="checkbox" data-shop="'+id.replace(/"/g,"")+'" '+checked+'><span>'+String(x.label||x.display||x.key).replace(/[<>&]/g,"")+'</span></label>'}).join("");
+   list.innerHTML=structured.map((x,i)=>{let head="";if(x.group&&x.group!==last){last=x.group;head='<div class="shopping-group">'+esc(last)+'</div>'}const id=shopId(x,i),checked=checks[id]?'checked':'';return head+'<label class="shopping-item"><input type="checkbox" data-shop="'+id.replace(/"/g,"")+'" '+checked+'><span>'+String(x.label||x.display||x.key).replace(/[<>&]/g,"")+'</span></label>'}).join("");
  }else{
    list.innerHTML=legacy.map((x,i)=>{const id=shopId(x,i);return '<label class="shopping-item"><input type="checkbox" data-shop="'+id+'" '+(checks[id]||checks[i]?'checked':'')+'><span>'+String(x).replace(/[<>&]/g,"")+'</span></label>'}).join("");
  }
@@ -85,7 +88,7 @@ if(f.length){
  document.getElementById("favSub").textContent=(resolved.length?resolved.slice(0,3).map(x=>x.title):f.slice(0,3)).join(" · ")+(f.length>3?"…":"");
  if(resolved.length){
    document.getElementById("favDetail").style.display="block";
-   document.getElementById("favList").innerHTML=resolved.map(r=>'<a class="fav-item" href="/recetas/'+encodeURIComponent(r.slug)+'/"><b>'+r.title+'</b><span>'+cat(r)+' · '+r.time+' →</span></a>').join("");
+   document.getElementById("favList").innerHTML=resolved.map(r=>'<a class="fav-item" href="/recetas/'+encodeURIComponent(r.slug)+'/"><b>'+esc(r.title)+'</b><span>'+esc(cat(r))+' · '+esc(r.time)+' →</span></a>').join("");
  }
 }
 if((w&&Array.isArray(w.meals)&&w.meals.length)||f.length>=2){
