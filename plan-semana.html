@@ -26,7 +26,7 @@ header{position:sticky;top:0;z-index:40;background:rgba(251,246,238,.95);backdro
 <body class="planner-page">
 <header><div class="wrap nav"><a class="brand" href="/"><img src="/assets/logo-cocina-sin-lios.svg" alt="Cocina sin líos con Macarena"></a><nav class="navlinks"></nav></div></header>
 <main>
-<section class="hero"><div class="wrap"><div class="eyebrow">Tu semana</div><h1>Cinco cenas. Sin empezar de cero cada tarde.</h1><p>Elige el tiempo, el tipo de cenas y las raciones. Te propongo cinco días y puedes cambiar solo el que no te convenza.</p></div></section>
+<section class="hero"><div class="wrap"><div class="eyebrow">Tu semana</div><h1>Cinco cenas. Sin empezar de cero cada tarde.</h1><p>Elige el ritmo, el tipo de cenas y las personas. Te propongo cinco días, conecto aprovechamientos entre ellos y puedes apretar solo el día que se te complique.</p></div></section>
 <section><div class="wrap panel"><div class="questions">
 <div class="question"><h2>1. Tiempo</h2><div class="choices" data-group="time" role="group" aria-label="Tiempo disponible"><button type="button" class="choice active" data-value="rapida" aria-pressed="true">Voy justa</button><button type="button" class="choice" data-value="mixta" aria-pressed="false">Un poco de todo</button><button type="button" class="choice" data-value="tranquila" aria-pressed="false">Puedo cocinar</button></div></div>
 <div class="question"><h2>2. Prioridad</h2><div class="choices" data-group="style" role="group" aria-label="Prioridad del menú"><button type="button" class="choice active" data-value="variada" aria-pressed="true">Variar</button><button type="button" class="choice" data-value="ligera" aria-pressed="false">Ligero</button><button type="button" class="choice" data-value="comfort" aria-pressed="false">De abrazo</button><button type="button" class="choice" data-value="aprovecha" aria-pressed="false">Aprovechar</button></div></div>
@@ -53,6 +53,7 @@ header{position:sticky;top:0;z-index:40;background:rgba(251,246,238,.95);backdro
  const isExcluded=r=>{const hay=norm((r.title||"")+" "+(r.ingredients||[]).join(" ")+" "+(r.category||""));return exclusions.groups.some(g=>r.contains&&typeof r.contains[g]==="boolean"?r.contains[g]:(avoidMap[g]||[]).some(k=>hay.includes(k)))||freeAvoid().some(k=>hay.includes(k))};
  const cat=r=>r.family||r.category;
  const eligibleRecipes=()=>recipes.filter(r=>!isExcluded(r));
+ const eligibleForPlan=()=>eligibleRecipes().filter(r=>state.time!=="rapida"||(r.plan?.t==="rapida"&&Number(r.minutes||999)<=30));
  const saveExclusions=()=>{try{localStorage.setItem("csl-exclusions-v1",JSON.stringify(exclusions))}catch(e){}};
  let pantry={};try{pantry=JSON.parse(localStorage.getItem("csl-despensa-v1")||"{}")}catch(e){}
  const pantryKeys=Object.keys(pantry).filter(k=>pantry[k]);
@@ -192,9 +193,17 @@ header{position:sticky;top:0;z-index:40;background:rgba(251,246,238,.95);backdro
        key:"verduras",
        title:"Asa una bandeja extra de verduras",
        recipe:"/recetas/verduras-asadas-yogur/",
-       consumers:["pizza-verduras","quiche-verduras","bol-arroz-aprovechamiento","crema-verduras","tortilla-ensalada"],
+       consumers:["pizza-verduras","quiche-verduras","bol-arroz-aprovechamiento","crema-verduras","tortilla-ensalada","arroz-salteado-huevo-verduras","cuscus-garbanzos-verduras","ensalada-garbanzos-mediterranea"],
        min:2,
        text:n=>"Tienes "+n+" cenas donde unas verduras ya asadas te ahorran un paso. Guarda parte sin salsa para poder cambiarles el destino."
+     },
+     {
+       key:"arroz",
+       title:"Cuece el arroz para dos cenas de una vez",
+       recipe:"/recetas-con-arroz.html",
+       consumers:["arroz-tomate-huevo","arroz-salteado-huevo-verduras","bol-arroz-aprovechamiento"],
+       min:2,
+       text:n=>"Aparece en "+n+" cenas. Cuece la cantidad total, enfría rápido la parte que no uses y refrigérala en cuanto se haya atemperado; no la dejes más de 2 horas a temperatura ambiente."
      }
    ];
    const out=[];
@@ -242,7 +251,7 @@ header{position:sticky;top:0;z-index:40;background:rgba(251,246,238,.95);backdro
  }
  function makePlan(){
    const fixed=resolveIncoming(),selected=fixed?[fixed]:[];
-   const candidates=eligibleRecipes().filter(r=>!fixed||r.slug!==fixed.slug);
+   const candidates=eligibleForPlan().filter(r=>!fixed||r.slug!==fixed.slug);
    while(selected.length<5){
      const remaining=candidates.filter(r=>!selected.some(x=>x.slug===r.slug)).sort((a,b)=>score(b,selected)-score(a,selected));
      if(!remaining.length)break;selected.push(remaining[0]);
@@ -260,13 +269,13 @@ header{position:sticky;top:0;z-index:40;background:rgba(251,246,238,.95);backdro
    document.getElementById("covered").innerHTML=renderShopList(shop.covered,true);
    const rapid=current.filter(r=>r.plan.t==="rapida").length,light=current.filter(r=>r.tags.includes("ligera")).length,pantryUse=[...new Set(current.flatMap(r=>(r.plan.uses||[]).filter(k=>pantry[k])))].length;
    const allUses=current.map(r=>r.plan.uses||[]),sharedKeys=[...new Set(allUses.flatMap((u,i)=>u.filter(k=>allUses.some((v,j)=>j!==i&&v.includes(k)))))].length;
-   document.getElementById("why").innerHTML=(current.length<5?"<b>He encontrado "+current.length+" de 5 cenas sin saltarme tus preferencias.</b> Quita alguna exclusión o amplía el margen si quieres completar los cinco días. ":"<b>Cómo está construida.</b>")+servingLabel()+" · "+rapid+" cenas rápidas · "+light+" opciones ligeras · "+pantryUse+" básicos de tu despensa reutilizados"+(batchPlan.links.length?" · "+batchPlan.links.length+" aprovechamiento"+(batchPlan.links.length===1?" real":"s reales")+" entre días":"")+(strategicPreps(current).length?" · "+strategicPreps(current).length+" preparación estratégica":"")+(sharedKeys?" · "+sharedKeys+" ingredientes compartidos para recortar compra":"")+(previousSlugs.size?" · penalizo repeticiones respecto a la última semana":"")+(exclusions.groups.length||freeAvoid().length?" · respeto tus ingredientes a evitar":"")+".";
+   document.getElementById("why").innerHTML=(current.length<5?"<b>He encontrado "+current.length+" de 5 cenas sin saltarme tus preferencias.</b> Quita alguna exclusión o amplía el margen si quieres completar los cinco días. ":"<b>Cómo está construida.</b>")+servingLabel()+" · "+rapid+" cenas rápidas · "+light+" opciones ligeras · "+pantryUse+" básicos de tu despensa reutilizados"+(batchPlan.links.length?" · "+batchPlan.links.length+" aprovechamiento"+(batchPlan.links.length===1?" real":"s reales")+" entre días":"")+(strategicPreps(current).length?" · "+strategicPreps(current).length+" preparación"+(strategicPreps(current).length===1?" estratégica":"es estratégicas"):"")+(sharedKeys?" · "+sharedKeys+" ingredientes compartidos para recortar compra":"")+(previousSlugs.size?" · penalizo repeticiones respecto a la última semana":"")+(exclusions.groups.length||freeAvoid().length?" · respeto tus ingredientes a evitar":"")+".";
    document.getElementById("results").classList.add("show");document.getElementById("results").scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});setTimeout(()=>document.getElementById("resultTitle").focus({preventScroll:true}),250);
  }
  function build(){exclusions.text=avoidText.value.trim();saveExclusions();current.forEach(r=>r.slug&&sessionSeen.add(r.slug));current=makePlan();render()}
  function swapDay(i){
    const selectedSlugs=new Set(current.map(x=>x.slug));
-   const options=eligibleRecipes().filter(r=>!selectedSlugs.has(r.slug)).sort((a,b)=>score(b,current.filter((_,j)=>j!==i))-score(a,current.filter((_,j)=>j!==i)));
+   const options=eligibleForPlan().filter(r=>!selectedSlugs.has(r.slug)).sort((a,b)=>score(b,current.filter((_,j)=>j!==i))-score(a,current.filter((_,j)=>j!==i)));
    if(options[0]){current[i]=options[0];render()}
  }
  function makeDayFast(i){
@@ -277,7 +286,7 @@ header{position:sticky;top:0;z-index:40;background:rgba(251,246,238,.95);backdro
  }
  document.getElementById("go").addEventListener("click",build);document.getElementById("again").addEventListener("click",build);
  document.getElementById("save").addEventListener("click",()=>{if(!current.length)return;try{const shop=shoppingFor(current),batchPlan=buildBatchPlan(current);localStorage.setItem("csl-plan-semana-v1",JSON.stringify({savedAt:new Date().toISOString(),state,meals:current.map(x=>x.title),items:current.map(r=>({title:r.title,n:r.title,slug:r.slug,category:cat(r),tags:r.tags,plan:r.plan,batch:r.batch||null,servingLabel:servingLabel(),scaledIngredients:scaledIngredients(r)})),batchNotes:batchPlan.notes,batchLinks:batchPlan.links,smartPreps:strategicPreps(current).map(p=>({key:p.key,title:p.title,recipe:p.recipe,count:p.count,days:p.days,text:p.text(p.count)})),shopping:shop.needed.map(x=>x.label),covered:shop.covered.map(x=>x.label),shoppingStructured:shop.needed,coveredStructured:shop.covered}));localStorage.removeItem("csl-idea-semana-v1");incoming=null;document.getElementById("save").textContent="Semana guardada ✓";document.getElementById("openKitchen").style.display="inline-flex"}catch(e){}});
- document.getElementById("share").addEventListener("click",async e=>{if(!current.length)return;const days=["Lunes","Martes","Miércoles","Jueves","Viernes"],people=Number(state.people)===1?"1 persona":state.people+" personas",batchPlan=buildBatchPlan(current);const txt="Mi semana Sin Líos ✦ · "+people+"\n\n"+current.map((r,i)=>days[i]+": "+r.title+(batchPlan.notes[i].length?"\n  ↳ "+batchPlan.notes[i].join(" "):"")).join("\n")+"\n\nhttps://cocinasinlios.com/plan-semana.html";try{if(navigator.share)await navigator.share({title:"Mi semana Sin Líos",text:txt});else{await navigator.clipboard.writeText(txt);e.currentTarget.textContent="Resumen copiado ✓"}}catch(err){}});
+ document.getElementById("share").addEventListener("click",async e=>{if(!current.length)return;const days=["Lunes","Martes","Miércoles","Jueves","Viernes"],people=Number(state.people)===1?"1 persona":state.people+" personas",batchPlan=buildBatchPlan(current),preps=strategicPreps(current);const prepText=preps.length?"\n\nPreparar una vez:\n"+preps.map(p=>"• "+p.title+" · "+p.text(p.count)).join("\n"):"";const txt="Mi semana Sin Líos ✦ · "+people+"\n\n"+current.map((r,i)=>days[i]+": "+r.title+(batchPlan.notes[i].length?"\n  ↳ "+batchPlan.notes[i].join(" "):"")).join("\n")+prepText+"\n\nhttps://cocinasinlios.com/plan-semana.html";try{if(navigator.share)await navigator.share({title:"Mi semana Sin Líos",text:txt});else{await navigator.clipboard.writeText(txt);e.currentTarget.textContent="Resumen copiado ✓"}}catch(err){}});
 })();
 </script>
 <script src="/assets/site.js" defer></script>
