@@ -110,6 +110,36 @@ for recipe in recipes:
     if not recipe.get("family"):
         problems.append(f"Receta sin familia editorial: {slug}")
 
+# Weekly planning integrity.
+producer_keys = {
+    p.get("key")
+    for r in recipes
+    for p in ((r.get("batch") or {}).get("produces") or [])
+    if isinstance(p, dict) and p.get("key")
+}
+for recipe in recipes:
+    slug = recipe.get("slug", "(sin slug)")
+    batch = recipe.get("batch") or {}
+    for use in batch.get("uses") or []:
+        if not isinstance(use, dict) or not use.get("key"):
+            problems.append(f"Aprovechamiento inválido: {slug}")
+        elif use.get("key") not in producer_keys:
+            problems.append(f"Aprovechamiento sin receta productora: {slug} -> {use.get('key')}")
+
+planner = (ROOT / "plan-semana.html").read_text(encoding="utf-8", errors="replace")
+dashboard = (ROOT / "mi-rincon.html").read_text(encoding="utf-8", errors="replace")
+for marker, label in [
+    ("eligibleForPlan", "filtro estricto de tiempo"),
+    ("r.plan?.t===\"rapida\"", "límite rápido"),
+    ("makeDayFast", "ajuste de un día con poco margen"),
+    ("renderStrategicPreps", "preparaciones estratégicas"),
+    ("smartPreps:", "guardado de preparaciones estratégicas"),
+]:
+    if marker not in planner:
+        problems.append(f"Planifica ha perdido: {label}")
+if "w.smartPreps" not in dashboard or 'id="savedPrep"' not in dashboard:
+    problems.append("Mi cocina no conserva las preparaciones estratégicas del plan")
+
 # Quality warnings: these do not block deployment yet, but make editorial debt visible.
 if recipes:
     families = sorted({r.get("family") for r in recipes if r.get("family")})
