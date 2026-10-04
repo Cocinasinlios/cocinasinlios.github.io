@@ -284,6 +284,38 @@ if sitemap.is_file():
     if len(recipe_urls) != recipe_count:
         problems.append(f"Recetas: {recipe_count} en datos pero {len(recipe_urls)} URLs en sitemap")
 
+# PWA/installability integrity.
+manifest_path = ROOT / "site.webmanifest"
+if not manifest_path.is_file():
+    problems.append("PWA manifest ausente")
+else:
+    try:
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8", errors="replace"))
+        icons = manifest.get("icons") or []
+        icon_sizes = {i.get("sizes") for i in icons if isinstance(i, dict)}
+        if "192x192" not in icon_sizes or "512x512" not in icon_sizes:
+            problems.append("PWA manifest sin iconos 192x192 y 512x512")
+        for icon in icons:
+            if not isinstance(icon, dict) or not icon.get("src"):
+                continue
+            src = str(icon["src"])
+            if src.startswith("/"):
+                p = ROOT / src.lstrip("/")
+                if not p.is_file():
+                    problems.append(f"Icono PWA inexistente: {src}")
+        if not manifest.get("start_url") or not manifest.get("display"):
+            problems.append("PWA manifest incompleto: start_url/display")
+    except Exception as exc:
+        problems.append(f"PWA manifest inválido: {exc}")
+
+if not (ROOT / "sw.js").is_file():
+    problems.append("Service worker ausente")
+site_js = (ROOT / "assets" / "site.js").read_text(encoding="utf-8", errors="replace")
+if "site.webmanifest" not in site_js:
+    problems.append("El sitio no enlaza el manifiesto globalmente")
+if "serviceWorker.register" not in site_js:
+    problems.append("El sitio no registra el service worker")
+
 if problems:
     print("\nSITE QA: ERROR\n")
     for p in problems:
