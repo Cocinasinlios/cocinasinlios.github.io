@@ -67,6 +67,11 @@ for path in ROOT.rglob("*"):
             target = html_target(raw)
             if target is not None and not target.is_file():
                 problems.append(f"Enlace interno roto en {path.relative_to(ROOT)}: {raw}")
+        for block in re.findall(r'<script[^>]+type=["\']application/ld\+json["\'][^>]*>([\s\S]*?)</script>', text, flags=re.I):
+            try:
+                json.loads(block.strip())
+            except Exception as exc:
+                problems.append(f"JSON-LD inválido en página {path.relative_to(ROOT)}: {exc}")
 
 sitemap = ROOT / "sitemap.xml"
 if not sitemap.is_file():
@@ -161,6 +166,13 @@ if "w.smartPreps" not in dashboard or 'id="savedPrep"' not in dashboard:
     problems.append("Mi cocina no conserva las preparaciones estratégicas del plan")
 
 # Quality warnings: these do not block deployment yet, but make editorial debt visible.
+recipe_image_dir = ROOT / "assets" / "recipes"
+if recipe_image_dir.is_dir():
+    for image_path in recipe_image_dir.glob("*.webp"):
+        size_kb = image_path.stat().st_size / 1024
+        if size_kb > 350:
+            warnings.append(f"Foto WebP pesada: {image_path.name} · {size_kb:.0f} KB")
+
 if recipes:
     families = sorted({r.get("family") for r in recipes if r.get("family")})
     if len(families) > 12:
