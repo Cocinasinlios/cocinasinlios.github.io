@@ -188,3 +188,17 @@ header .navlinks{font-size:13px!important}
 .prep-chain{margin:14px 0 2px;padding:12px 13px;border-radius:16px;background:#eef5eb;border:1px solid rgba(39,64,52,.12);color:#405347;font-size:12px;line-height:1.45}.prep-chain b{display:block;color:#274034;margin-bottom:4px}.prep-chain span{display:block}.prep-chain span+span{margin-top:4px}
 
 .prep-saved{margin-top:8px;padding:8px 10px;border-radius:12px;background:#eef5eb;color:#405347;font-size:12px;line-height:1.4}
+
+
+/* Planner mobile readability 2026-10-04 */
+@media(max-width:640px){
+ .planner-page .day small,.planner-page .day .tag,.planner-page .swap,.planner-page .fixed,.planner-page .serving-note,.planner-page .scaled summary,.planner-page .scaled li,.planner-page .shop-group-title,.planner-page .shopping li small{font-size:12px!important;line-height:1.4!important}
+ .planner-page .tight-day{min-height:44px!important;font-size:12px!important;padding:9px 12px!important}
+ .planner-page .day{padding:18px!important;min-height:0!important}
+ .planner-page .day h3{font-size:26px!important}
+ .planner-page .day p{font-size:13px!important}
+ .planner-page .why,.planner-page .context,.planner-page .avoid-box p,.planner-page .small{font-size:12px!important;line-height:1.5!important}
+ .planner-page .smart-prep{padding:18px!important}
+ .planner-page .smart-prep h3{font-size:27px!important}
+ .planner-page .smart-prep-card span,.planner-page .smart-prep-card a{font-size:12px!important}
+}
