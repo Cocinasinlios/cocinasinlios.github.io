@@ -11,6 +11,18 @@
   "theme_color": "#274034",
   "icons": [
     {
+      "src": "/assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
       "src": "/assets/favicon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
@@ -18,9 +30,26 @@
     }
   ],
   "shortcuts": [
-    {"name": "Qué cocino hoy", "short_name": "Qué cocino", "url": "/que-cocino.html"},
-    {"name": "Planifica mi semana", "short_name": "Planifica", "url": "/plan-semana.html"},
-    {"name": "Mis recetas", "short_name": "Recetas", "url": "/recetas.html"},
-    {"name": "Mi cocina", "short_name": "Mi cocina", "url": "/mi-rincon.html"}
-  ]
+    {
+      "name": "Qué cocino hoy",
+      "short_name": "Qué cocino",
+      "url": "/que-cocino.html"
+    },
+    {
+      "name": "Planifica mi semana",
+      "short_name": "Planifica",
+      "url": "/plan-semana.html"
+    },
+    {
+      "name": "Mis recetas",
+      "short_name": "Recetas",
+      "url": "/recetas.html"
+    },
+    {
+      "name": "Mi cocina",
+      "short_name": "Mi cocina",
+      "url": "/mi-rincon.html"
+    }
+  ],
+  "prefer_related_applications": false
 }
