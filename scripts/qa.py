@@ -192,6 +192,13 @@ home_count_match = re.search(r'<strong>(\d+)</strong><span>recetas completas</sp
 if home_count_match and int(home_count_match.group(1)) != recipe_count:
     problems.append(f"Contador de portada: {home_count_match.group(1)} pero hay {recipe_count} recetas")
 
+recipes_index_text = (ROOT / "recetas.html").read_text(encoding="utf-8", errors="replace")
+collection_count_match = re.search(r'"numberOfItems"\s*:\s*(\d+)', recipes_index_text)
+if not collection_count_match:
+    problems.append("Schema del recetario sin numberOfItems")
+elif int(collection_count_match.group(1)) != recipe_count:
+    problems.append(f"Schema del recetario: {collection_count_match.group(1)} items pero hay {recipe_count} recetas")
+
 recipe_pages = list((ROOT / "recetas").glob("*/index.html"))
 if len(recipe_pages) != recipe_count:
     problems.append(f"Recetas: {recipe_count} en datos pero {len(recipe_pages)} páginas publicadas")
