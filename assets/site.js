@@ -143,13 +143,6 @@ addEventListener("beforeinstallprompt",e=>{e.preventDefault();deferredInstall=e;
 try{
  const isStandalone=matchMedia("(display-mode: standalone)").matches||navigator.standalone===true;
  const dismissed=localStorage.getItem("csl-install-dismissed-v1")==="1";
- const sessionKey="csl-session-active-v1";
- let visits=Number(localStorage.getItem("csl-visits-v1")||"0");
- if(sessionStorage.getItem(sessionKey)!=="1"){
-   sessionStorage.setItem(sessionKey,"1");
-   visits+=1;
-   localStorage.setItem("csl-visits-v1",String(Math.min(visits,99)));
- }
  let hasSavedValue=false;
  try{
    const pantry=JSON.parse(localStorage.getItem("csl-despensa-v1")||"{}");
@@ -157,7 +150,7 @@ try{
    hasSavedValue=Object.values(pantry).some(Boolean)||Array.isArray(favs)&&favs.length>0||!!localStorage.getItem("csl-plan-semana-v1")||!!(localStorage.getItem("csl-gastar-pronto-v1")||"").trim();
  }catch(e){}
  const mobile=matchMedia("(max-width: 760px)").matches;
- if(!isStandalone&&!dismissed&&mobile&&(visits>=2||hasSavedValue)&&!document.querySelector(".csl-install-tip")){
+ if(!isStandalone&&!dismissed&&mobile&&hasSavedValue&&!document.querySelector(".csl-install-tip")){
    const tip=document.createElement("aside");
    tip.className="csl-install-tip";
    tip.setAttribute("aria-label","Acceso rápido a Cocina sin líos");
