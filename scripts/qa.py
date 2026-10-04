@@ -55,6 +55,9 @@ for rel in CORE:
     if not (ROOT / rel).is_file():
         problems.append(f"Falta página esencial: {rel}")
 
+indexable_titles: dict[str, list[str]] = {}
+indexable_descriptions: dict[str, list[str]] = {}
+
 for path in ROOT.rglob("*"):
     if not path.is_file() or ".git" in path.parts or path.suffix.lower() not in PUBLIC_EXT:
         continue
@@ -63,6 +66,31 @@ for path in ROOT.rglob("*"):
         if token.casefold() in text.casefold():
             problems.append(f"Referencia comercial no permitida en {path.relative_to(ROOT)}: {token}")
     if path.suffix.lower() == ".html":
+        rel_name = str(path.relative_to(ROOT))
+        title_match = re.search(r"<title>([\s\S]*?)</title>", text, flags=re.I)
+        robots_match = re.search(r'<meta[^>]+name=["\']robots["\'][^>]+content=["\']([^"\']*)', text, flags=re.I)
+        noindex = bool(robots_match and "noindex" in robots_match.group(1).casefold())
+        if not title_match or not title_match.group(1).strip():
+            problems.append(f"Página sin title: {rel_name}")
+        if not re.search(r'<html[^>]+lang=["\']es', text, flags=re.I):
+            problems.append(f"Página sin lang=es: {rel_name}")
+        if not noindex:
+            desc_match = re.search(r'<meta[^>]+name=["\']description["\'][^>]+content=["\']([^"\']+)', text, flags=re.I)
+            if not desc_match:
+                desc_match = re.search(r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+name=["\']description["\']', text, flags=re.I)
+            if not desc_match or not desc_match.group(1).strip():
+                problems.append(f"Página indexable sin meta description: {rel_name}")
+            if not re.search(r'<link[^>]+rel=["\']canonical["\'][^>]+href=["\']', text, flags=re.I) and not re.search(r'<link[^>]+href=["\'][^"\']+["\'][^>]+rel=["\']canonical["\']', text, flags=re.I):
+                problems.append(f"Página indexable sin canonical: {rel_name}")
+            h1_count = len(re.findall(r"<h1\b", text, flags=re.I))
+            if h1_count != 1:
+                problems.append(f"Página indexable con {h1_count} H1: {rel_name}")
+            if title_match:
+                t = re.sub(r"\s+", " ", title_match.group(1)).strip()
+                indexable_titles.setdefault(t, []).append(rel_name)
+            if desc_match:
+                d = re.sub(r"\s+", " ", desc_match.group(1)).strip()
+                indexable_descriptions.setdefault(d, []).append(rel_name)
         for raw in re.findall(r'(?:href|src)=["\']([^"\']+)["\']', text, flags=re.I):
             target = html_target(raw)
             if target is not None and not target.is_file():
@@ -72,6 +100,13 @@ for path in ROOT.rglob("*"):
                 json.loads(block.strip())
             except Exception as exc:
                 problems.append(f"JSON-LD inválido en página {path.relative_to(ROOT)}: {exc}")
+
+for title, paths in indexable_titles.items():
+    if len(paths) > 1:
+        problems.append(f"Páginas indexables: título duplicado '{title}' -> {', '.join(paths)}")
+for desc, paths in indexable_descriptions.items():
+    if len(paths) > 1:
+        warnings.append(f"Meta description duplicada en páginas indexables -> {', '.join(paths)}")
 
 sitemap = ROOT / "sitemap.xml"
 if not sitemap.is_file():
