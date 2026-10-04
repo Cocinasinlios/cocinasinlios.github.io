@@ -31,3 +31,13 @@
  .step{break-inside:avoid}.wrap{width:100%!important;max-width:none!important}.recipe-grid>.box{margin-bottom:14px!important}
  a{text-decoration:none!important;color:#111!important}
 }
+
+
+/* Recipe mobile readability 2026-10-04 */
+@media(max-width:767px){
+ .eyebrow,.back-recipes,.pill,.related-body small,.related-body span,.cover-copy small,.cover-copy span,.cook-bit small,.scale-row>span,.scale-note{font-size:12px!important;line-height:1.4!important}
+ .btn,.scale-buttons button{min-height:44px!important;font-size:12px!important}
+ .related-body b{font-size:22px!important}
+ .cook-bit p,.cook-bit b{line-height:1.45!important}
+ .global-dock a{font-size:11px!important}
+}
