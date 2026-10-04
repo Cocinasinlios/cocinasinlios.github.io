@@ -109,6 +109,11 @@ for recipe in recipes:
         problems.append(f"Guía de cocción incompleta: {slug}")
     if not recipe.get("family"):
         problems.append(f"Receta sin familia editorial: {slug}")
+    image = recipe.get("image")
+    if image and isinstance(image, str) and image.startswith("/"):
+        image_path = ROOT / image.lstrip("/")
+        if not image_path.is_file():
+            problems.append(f"Imagen declarada pero inexistente: {slug} → {image}")
 
 # Weekly planning integrity.
 producer_keys = {
