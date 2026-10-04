@@ -313,7 +313,7 @@ if not (ROOT / "sw.js").is_file():
 site_js = (ROOT / "assets" / "site.js").read_text(encoding="utf-8", errors="replace")
 if "site.webmanifest" not in site_js:
     problems.append("El sitio no enlaza el manifiesto globalmente")
-if "serviceWorker.register" not in site_js:
+if "navigator.serviceWorker.register" not in site_js:
     problems.append("El sitio no registra el service worker")
 
 if problems:
