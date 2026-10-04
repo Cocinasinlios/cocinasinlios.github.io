@@ -95,6 +95,21 @@ except Exception as exc:
 
 for recipe in recipes:
     slug = recipe.get("slug", "(sin slug)")
+    image = str(recipe.get("image") or "")
+    if image.startswith("/assets/recipes/"):
+        image_path = ROOT / image.lstrip("/")
+        if not image_path.is_file():
+            problems.append(f"Foto declarada pero falta el archivo: {slug} -> {image}")
+        page_path = ROOT / "recetas" / slug / "index.html"
+        if page_path.is_file():
+            page_text = page_path.read_text(encoding="utf-8", errors="replace")
+            full_image = "https://cocinasinlios.com" + image
+            if image not in page_text:
+                problems.append(f"Foto no conectada al hero/ficha: {slug}")
+            if f'<meta property="og:image" content="{full_image}">' not in page_text:
+                problems.append(f"og:image no coincide con la foto: {slug}")
+            if full_image not in page_text or '"image"' not in page_text:
+                problems.append(f"Schema Recipe sin foto propia: {slug}")
     if not recipe.get("baseServings"):
         problems.append(f"Receta sin raciones base: {slug}")
     ingredients = recipe.get("ingredients") or []
