@@ -202,3 +202,11 @@ header .navlinks{font-size:13px!important}
  .planner-page .smart-prep h3{font-size:27px!important}
  .planner-page .smart-prep-card span,.planner-page .smart-prep-card a{font-size:12px!important}
 }
+
+
+/* Global mobile microcopy floor 2026-10-04 */
+@media(max-width:767px){
+ .eyebrow,.csl-kicker,.proof-item span,.shot span small,.resume-card small,.resume-card span,.flow-card small,.feature-copy small,.manifesto small,.tile .go-link,.route b,.route span,.category,.card-meta,.share,.route-link small,.week-day small,.week-day span,.fav-item span,.shopping-group,.item small,.formula b,.principle span,.start-card small,.start-card span,.footer-sub,.footerlinks{font-size:12px!important;line-height:1.4!important}
+ .btn,.choice,.filter,.again,.week-add,.go,.share,.route span,.tile .go-link{min-height:44px!important;font-size:12px!important}
+ .global-dock a{font-size:11px!important}
+}
