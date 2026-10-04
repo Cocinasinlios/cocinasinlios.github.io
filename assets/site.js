@@ -29,6 +29,15 @@ if(!document.querySelector('link[rel="manifest"]')){
   document.head.appendChild(m);
 }
 
+if(!document.querySelector('link[rel="apple-touch-icon"]')){
+  const touch=document.createElement("link");
+  touch.rel="apple-touch-icon"; touch.href="/assets/icon-192.png";
+  document.head.appendChild(touch);
+}
+if("serviceWorker" in navigator && location.protocol==="https:"){
+  addEventListener("load",()=>navigator.serviceWorker.register("/sw.js").catch(()=>{}),{once:true});
+}
+
 document.querySelectorAll("header .brand").forEach(a=>{
   a.setAttribute("aria-label","Cocina sin líos con Macarena");
   a.innerHTML='<img src="/assets/logo-cocina-sin-lios.svg" alt="Cocina sin líos con Macarena">';
