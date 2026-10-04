@@ -234,6 +234,11 @@ for page in ROOT.glob("*.html"):
 if (ROOT / "estudio-rrss.html").is_file():
     warnings.append("estudio-rrss.html sigue siendo accesible públicamente; noindex evita indexación, no acceso")
 
+recipes_page = (ROOT / "recetas.html").read_text(encoding="utf-8", errors="replace")
+collection_count_match = re.search(r'"numberOfItems":(\d+)', recipes_page)
+if collection_count_match and int(collection_count_match.group(1)) != recipe_count:
+    problems.append(f"numberOfItems del recetario: {collection_count_match.group(1)} pero hay {recipe_count} recetas")
+
 home_text = (ROOT / "index.html").read_text(encoding="utf-8", errors="replace")
 home_count_match = re.search(r'<strong>(\d+)</strong><span>recetas completas</span>', home_text, flags=re.I)
 if home_count_match and int(home_count_match.group(1)) != recipe_count:
