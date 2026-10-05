@@ -217,3 +217,9 @@ header .navlinks{font-size:13px!important}
   .global-dock,.dock{left:8px!important;right:8px!important;transform:none!important;width:auto!important}
   .global-dock a,.dock a{min-width:0!important;flex:1 1 0!important;padding-left:3px!important;padding-right:3px!important;font-size:10px!important}
 }
+
+
+/* One navigation mode at a time */
+@media(max-width:980px){
+  header .navlinks{display:none!important}
+}
