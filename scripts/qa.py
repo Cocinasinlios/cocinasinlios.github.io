@@ -65,6 +65,12 @@ for path in ROOT.rglob("*"):
     for token in FORBIDDEN:
         if token.casefold() in text.casefold():
             problems.append(f"Referencia comercial no permitida en {path.relative_to(ROOT)}: {token}")
+    # CSS URLs can live inside .css files or inline <style> blocks. Validate local assets too,
+    # because href/src-only checks miss broken background images.
+    for raw in re.findall(r"url\\(\\s*['\"]?(/[^)'\"\\s]+)", text, flags=re.I):
+        asset_path = ROOT / urlsplit(raw).path.lstrip("/")
+        if not asset_path.is_file():
+            problems.append(f"Asset CSS inexistente en {path.relative_to(ROOT)}: {raw}")
     if path.suffix.lower() == ".html":
         rel_name = str(path.relative_to(ROOT))
         title_match = re.search(r"<title>([\s\S]*?)</title>", text, flags=re.I)
@@ -140,6 +146,8 @@ for recipe in recipes:
         image_path = ROOT / image.lstrip("/")
         if not image_path.is_file():
             problems.append(f"Foto declarada pero falta el archivo: {slug} -> {image}")
+        elif image_path.stat().st_size < 1024:
+            problems.append(f"Foto de receta demasiado pequeña o placeholder: {slug} -> {image}")
         page_path = ROOT / "recetas" / slug / "index.html"
         if page_path.is_file():
             page_text = page_path.read_text(encoding="utf-8", errors="replace")
