@@ -44,7 +44,6 @@ footer{background:#202b24;color:#dce5df;padding:40px 0}footer p{font-size:12px;c
 <script>
 (()=>{
  const recipes=window.CSL_RECIPES||[];
- const missingPhotoSlugs=new Set(["bacalao-tomate","berenjenas-rellenas","calabacines-rellenos","croquetas-pollo-aprovechamiento","crumble-manzana","ensalada-pasta-verano","guacamole","hummus-cremoso","muffins-platano-avena","pasta-tomate-atun","pollo-curry-expres","potaje-alubias-rapido","salsa-tomate-casera","sopa-tomate-alubias","tacos-pescado","tortitas-fruta","vinagreta-mostaza-limon"]);
  const params=new URLSearchParams(location.search);
  let state={time:"15",mood:"salado",goal:"resolver"},generated=[];
  const presetTime=params.get("tiempo"),presetMood=params.get("antojo"),presetGoal=params.get("objetivo");
@@ -131,7 +130,7 @@ footer{background:#202b24;color:#dce5df;padding:40px 0}footer p{font-size:12px;c
    if(!bits.length)bits.push(r.learn?.t||"cambio de registro");
    return bits.join(" · ");
  }
- function tone(r){const t=r.tags||[];return t.includes("dulce")?"tone-butter":t.includes("ligera")?"tone-sage":t.includes("comfort")?"tone-peach":t.includes("vegetal")?"tone-mint":t.includes("aprovechar")?"tone-clay":"tone-paper"} function visual(r){const highRes=r.image&&r.image.startsWith("/assets/recipes/")&&!missingPhotoSlugs.has(r.slug);if(highRes)return '<div class="photo" style="background-image:url(\''+r.image+'\');background-size:cover;background-position:center"></div>';if(r.photoSprite)return '<div class="photo" style="background-image:url(\''+r.photoSprite.src+'\');background-size:'+(r.photoSprite.cols*100)+'% '+(r.photoSprite.rows*100)+'%;background-position:'+r.photoSprite.x+'% '+r.photoSprite.y+'%;background-repeat:no-repeat"></div>';return '<div class="photo editorial '+tone(r)+'"><div class="cover-copy"><small>'+esc(cat(r))+'</small><strong>'+esc(r.title)+'</strong><span>'+esc(r.learn?.t||"Cocina con criterio")+'</span></div></div>'}
+ function tone(r){const t=r.tags||[];return t.includes("dulce")?"tone-butter":t.includes("ligera")?"tone-sage":t.includes("comfort")?"tone-peach":t.includes("vegetal")?"tone-mint":t.includes("aprovechar")?"tone-clay":"tone-paper"} function visual(r){const highRes=r.image&&r.image.startsWith("/assets/recipes/");if(highRes)return '<div class="photo" style="background-image:url(\''+r.image+'\');background-size:cover;background-position:center"></div>';if(r.photoSprite)return '<div class="photo" style="background-image:url(\''+r.photoSprite.src+'\');background-size:'+(r.photoSprite.cols*100)+'% '+(r.photoSprite.rows*100)+'%;background-position:'+r.photoSprite.x+'% '+r.photoSprite.y+'%;background-repeat:no-repeat"></div>';return '<div class="photo editorial '+tone(r)+'"><div class="cover-copy"><small>'+esc(cat(r))+'</small><strong>'+esc(r.title)+'</strong><span>'+esc(r.learn?.t||"Cocina con criterio")+'</span></div></div>'}
  function render(){
    exclusions.text=avoidText.value.trim();saveExclusions();
    useSoon=haveText.value.trim();
