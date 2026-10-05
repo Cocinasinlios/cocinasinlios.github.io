@@ -204,7 +204,10 @@ if "w.smartPreps" not in dashboard or 'id="savedPrep"' not in dashboard:
 recipe_image_dir = ROOT / "assets" / "recipes"
 if recipe_image_dir.is_dir():
     for image_path in recipe_image_dir.glob("*.webp"):
-        size_kb = image_path.stat().st_size / 1024
+        size_bytes = image_path.stat().st_size
+        size_kb = size_bytes / 1024
+        if size_bytes < 5_000:
+            problems.append(f"Foto WebP sospechosamente pequeña o vacía: {image_path.name} · {size_bytes} bytes")
         if size_kb > 350:
             warnings.append(f"Foto WebP pesada: {image_path.name} · {size_kb:.0f} KB")
 
