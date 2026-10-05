@@ -75,7 +75,13 @@ footer{background:#202b24;color:#dce5df;padding:40px 0;margin-top:25px}footer p{
     '<article class="card">'+visual(r)+'<div class="card-body"><div class="card-top"><span class="category">'+esc(cat(r))+'</span><button class="fav" type="button" data-fav="'+esc(r.slug)+'" aria-pressed="'+String(isFav(r))+'" aria-label="Guardar '+esc(r.title)+'">'+(isFav(r)?"♥":"♡")+'</button></div><h3>'+esc(r.title)+'</h3><div class="card-meta">⏱ '+esc(r.time)+' · '+esc(r.difficulty)+'</div><p>'+esc(r.intro)+'</p><div class="actions"><a class="btn primary" href="/recetas/'+encodeURIComponent(r.slug)+'/">Ver receta completa</a><button class="share" type="button" data-share="'+esc(r.slug)+'">Compartir</button></div></div></article>'
    ).join("");
    document.getElementById("count").textContent=shown.length+" receta"+(shown.length===1?"":"s")+" en esta vista";
-   document.getElementById("empty").style.display=shown.length?"none":"block";
+   const empty=document.getElementById("empty");
+   if(empty){
+     empty.style.display=shown.length?"none":"block";
+     empty.innerHTML=filter==="guardadas"
+       ?'Todavía no has guardado recetas. Pulsa ♡ en las que quieras tener a mano y aparecerán aquí.'
+       :'No encuentro una receta con esos filtros. Prueba otra palabra, vuelve a “Todas” o <a href="/que-cocino.html"><u>dime qué tienes y te propongo tres ideas</u></a>.';
+   }
    document.querySelectorAll("[data-filter]").forEach(b=>{const on=b.dataset.filter===filter;b.classList.toggle("active",on);b.setAttribute("aria-pressed",String(on))});
    document.querySelectorAll("[data-fav]").forEach(b=>b.addEventListener("click",()=>{
      const r=recipes.find(x=>x.slug===b.dataset.fav);if(!r)return;
