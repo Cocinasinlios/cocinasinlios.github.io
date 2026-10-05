@@ -61,6 +61,8 @@ header{position:sticky;top:0;z-index:40;background:rgba(251,246,238,.95);backdro
  let previous=null;try{previous=JSON.parse(localStorage.getItem("csl-plan-semana-v1")||"null")}catch(e){}
  const previousSlugs=new Set((previous?.items||[]).map(x=>x.slug).filter(Boolean));
  let incoming=null;try{incoming=JSON.parse(localStorage.getItem("csl-idea-semana-v1")||"null")}catch(e){}
+ const incomingAtLoad=incoming?.slug?recipes.find(r=>r.slug===incoming.slug&&!isExcluded(r)):null;
+ if(incoming&&!incomingAtLoad){try{localStorage.removeItem("csl-idea-semana-v1")}catch(e){}incoming=null}
  const needKey={"pasta":"pasta","tomate":"tomate","frutos secos":"frutos","hierbas":"hierbascong","garbanzos":"legumbres","pan":"pan","limón":"limon","huevos":"huevos","verduras":"verdurascong","arroz":"arroz","caldo":"caldo","pescado":"protecong","cebolla":"cebolla","curry":"curry","lentejas":"legumbres","aceite de oliva":"aove","ajo":"ajo","comino":"comino","orégano":"oregano","pollo":"protecong"};
  const context=document.getElementById("context");
  const bits=[];
