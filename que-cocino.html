@@ -124,12 +124,14 @@ footer{background:#202b24;color:#dce5df;padding:40px 0}footer p{font-size:12px;c
  function fitText(r){
    const bits=[];
    const covered=(r.plan?.uses||[]).filter(k=>pantry[k]);
+   if(state.goal==="aprovechar"&&r.tags.includes("aprovechar"))bits.push("pensada para aprovechar");
+   if(state.goal==="aprender"&&r.learn?.t)bits.push(r.learn.t);
    if(covered.length)bits.push("aprovecha "+covered.slice(0,2).map(k=>labels[k]||k).join(" + "));
    if(useText.length&&useText.some(t=>hasTerm(norm(r.title+" "+r.ingredients.join(" ")),t)))bits.push("encaja con lo que quieres gastar");
-   if(r.minutes<=15)bits.push("muy rápida");else if(r.minutes<=30)bits.push("entre semana");
+   if(state.goal==="resolver"){if(r.minutes<=15)bits.push("muy rápida");else if(r.minutes<=30)bits.push("entre semana")}
    if(isFav(r))bits.push("ya la guardaste");
    if(!bits.length)bits.push(r.learn?.t||"cambio de registro");
-   return bits.join(" · ");
+   return bits.slice(0,3).join(" · ");
  }
  function tone(r){const t=r.tags||[];return t.includes("dulce")?"tone-butter":t.includes("ligera")?"tone-sage":t.includes("comfort")?"tone-peach":t.includes("vegetal")?"tone-mint":t.includes("aprovechar")?"tone-clay":"tone-paper"} function visual(r){const highRes=r.image&&r.image.startsWith("/assets/recipes/");if(highRes)return '<div class="photo" style="background-image:url(\''+r.image+'\');background-size:cover;background-position:center"></div>';if(r.photoSprite)return '<div class="photo" style="background-image:url(\''+r.photoSprite.src+'\');background-size:'+(r.photoSprite.cols*100)+'% '+(r.photoSprite.rows*100)+'%;background-position:'+r.photoSprite.x+'% '+r.photoSprite.y+'%;background-repeat:no-repeat"></div>';return '<div class="photo editorial '+tone(r)+'"><div class="cover-copy"><small>'+esc(cat(r))+'</small><strong>'+esc(r.title)+'</strong><span>'+esc(r.learn?.t||"Cocina con criterio")+'</span></div></div>'}
  function render(){
@@ -148,7 +150,8 @@ footer{background:#202b24;color:#dce5df;padding:40px 0}footer p{font-size:12px;c
    pool=[...pool].sort((a,b)=>score(b)-score(a));
    const picked=[];for(const r of pool){if(!picked.some(x=>x.slug===r.slug))picked.push(r);if(picked.length===3)break}
    generated.push(...picked.map(x=>x.slug));generated=[...new Set(generated)].slice(-9);
-   const whyBits=["tiempo y antojo"];
+   const goalLabel={resolver:"resolver hoy",aprovechar:"aprovechar mejor",aprender:"aprender algo"}[state.goal]||state.goal;
+   const whyBits=["tiempo","antojo",goalLabel];
    if(pantryKeys.length)whyBits.push("tu despensa");
    if(useSoon)whyBits.push("lo que quieres gastar");
    if(weekSlugs.size)whyBits.push("evitar repetir tu semana");
