@@ -34,15 +34,15 @@ jobs:
         run: python scripts/connect_recipe_images.py
       - name: Validate public site
         run: python scripts/qa.py
-      - name: Commit metadata updates
+      - name: Commit photo and metadata updates
         shell: bash
         run: |
-          if git diff --quiet; then
-            echo "No metadata changes needed."
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "No photo or metadata changes needed."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/recipes-data.js recetas sitemap.xml
-          git commit -m "Connect uploaded recipe photos [skip ci]"
+          git add assets/recipes assets/recipes-data.js recetas sitemap.xml
+          git commit -m "Connect uploaded recipe photos"
           git push
