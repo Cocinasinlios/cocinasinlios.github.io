@@ -47,6 +47,7 @@ footer{background:#202b24;color:#dce5df;padding:40px 0}footer p{font-size:12px;c
  const esc=s=>String(s??"").replace(/[&<>"\']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","\'":"&#39;"}[m]));
  const params=new URLSearchParams(location.search);
  let state={time:"15",mood:"salado",goal:"resolver"},generated=[];
+ const origin=params.get("origen")||"";
  const presetTime=params.get("tiempo"),presetMood=params.get("antojo"),presetGoal=params.get("objetivo");
  if(["15","30","60"].includes(presetTime))state.time=presetTime;
  if(["salado","ligera","comfort","dulce","daigual"].includes(presetMood))state.mood=presetMood;
@@ -85,6 +86,7 @@ footer{background:#202b24;color:#dce5df;padding:40px 0}footer p{font-size:12px;c
  const context=document.getElementById("context");
  if(useSoon){context.classList.add("show");context.innerHTML="<b>Primero quiero gastar esto.</b><span>"+esc(useSoon)+" · Lo priorizo cuando encaje con una receta de verdad.</span>"}
  else if(paramIngredients.length){context.classList.add("show");context.innerHTML="<b>Partimos de "+paramIngredients.map(esc).join(", ")+".</b><span>Lo priorizaré solo cuando aparezca de verdad en la receta.</span>"}
+ else if(origin==="despensa"&&pantryKeys.length){context.classList.add("show");context.innerHTML="<b>Vengo de tu despensa.</b><span>Tengo en cuenta los "+pantryKeys.length+" básicos que acabas de marcar.</span>"}
  document.querySelectorAll(".choices").forEach(g=>{
    g.querySelectorAll(".choice").forEach(b=>{
      const on=state[g.dataset.group]===b.dataset.value;
