@@ -299,6 +299,10 @@ for page in recipe_pages:
     text = page.read_text(encoding="utf-8", errors="replace")
     if 'data-scale="1"' not in text or "/assets/recipe-page.js" not in text:
         problems.append(f"Ficha sin controles de cantidades: {page.relative_to(ROOT)}")
+    ingredient_nodes = len(re.findall(r'<li\\b[^>]*data-ing-index=', text, flags=re.I))
+    expected_ingredients = len((recipe_by_slug.get(page.parent.name, {}) or {}).get("ingredients") or [])
+    if ingredient_nodes != expected_ingredients:
+        problems.append(f"Ingredientes visibles desalineados con maestro: {page.parent.name} ({ingredient_nodes}/{expected_ingredients})")
     if 'rel="canonical"' not in text:
         problems.append(f"Ficha sin canonical: {page.relative_to(ROOT)}")
     slug = page.parent.name
