@@ -111,7 +111,7 @@ if(path==="/"){
     cards.push('<a class="resume-card" href="/despensa-sin-lios.html#checklist"><small>DESPENSA</small><b>'+pantryCount+' básicos marcados</b><span>Seguir completando →</span></a>');
   }
   if(favs.length){
-    cards.push('<a class="resume-card" href="/mi-rincon.html"><small>FAVORITOS</small><b>'+favs.length+' idea'+(favs.length===1?'':'s')+' guardada'+(favs.length===1?'':'s')+'</b><span>Volver a ellas →</span></a>');
+    cards.push('<a class="resume-card" href="/recetas.html?f=guardadas"><small>FAVORITOS</small><b>'+favs.length+' receta'+(favs.length===1?'':'s')+' guardada'+(favs.length===1?'':'s')+'</b><span>Volver a ellas →</span></a>');
   }
   if(soon.trim()){
     cards.push('<a class="resume-card" href="/que-cocino.html?gastar='+encodeURIComponent(soon.trim())+'"><small>GASTAR PRONTO</small><b>'+soon.trim().replace(/[<>&"]/g,"")+'</b><span>Buscar una salida →</span></a>');
