@@ -146,7 +146,7 @@ footer{background:#202b24;color:#dce5df;padding:40px 0}footer p{color:#aebbb3;fo
    document.getElementById('bar').style.width=p+'%';
    document.getElementById('message').textContent=n===0?'Empieza por lo que de verdad usas.':n<8?'Ya tienes una base. Complétala poco a poco con lo que de verdad uses.':n<17?'Tu fondo empieza a darte bastantes combinaciones.':'Tienes una despensa muy resolutiva.';
    const next=document.getElementById('cookFromPantry');
-   if(next){const keys=selected.map(b=>b.dataset.key);next.href='/que-cocino.html?origen=despensa'+(keys.length?'&ingredientes='+encodeURIComponent(keys.join(',')):'');next.textContent=keys.length?'Dame ideas con estos '+keys.length+' →':'Dame ideas con mi despensa →';}
+   if(next){next.href='/que-cocino.html?origen=despensa';next.textContent=n?'Dame ideas con estos '+n+' básicos →':'Dame ideas con mi despensa →';}
  }
  document.getElementById('reset').addEventListener('click',()=>{boxes.forEach(b=>b.checked=false);save()});
  document.getElementById('sharePantry').addEventListener('click',async()=>{const selected=boxes.filter(b=>b.checked).map(b=>b.closest('label')?.querySelector('b')?.textContent||b.dataset.key);const text="Mi Despensa Sin Líos ✦\n\n"+(selected.length?selected.map(x=>"• "+x).join("\n"):"Todavía no he marcado nada.")+"\n\nhttps://cocinasinlios.com/despensa-sin-lios.html";try{if(navigator.share){await navigator.share({title:"Mi Despensa Sin Líos",text})}else{await navigator.clipboard.writeText(text);document.getElementById('sharePantry').textContent="Despensa copiada ✓"}}catch(e){}});
