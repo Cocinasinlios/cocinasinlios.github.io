@@ -188,6 +188,12 @@ for recipe in recipes:
 
 planner = (ROOT / "plan-semana.html").read_text(encoding="utf-8", errors="replace")
 dashboard = (ROOT / "mi-rincon.html").read_text(encoding="utf-8", errors="replace")
+picker = (ROOT / "que-cocino.html").read_text(encoding="utf-8", errors="replace")
+
+# Small runtime-contract checks for helpers used by dynamic renderers.
+for label, source in [("Qué cocino", picker), ("Planifica", planner)]:
+    if "esc(" in source and not re.search(r"(?:const|let|var)\s+esc\s*=|function\s+esc\s*\(", source):
+        problems.append(f"{label} usa esc() pero no define el helper de escape")
 for marker, label in [
     ("eligibleForPlan", "filtro estricto de tiempo"),
     ("r.plan?.t===\"rapida\"", "límite rápido"),
