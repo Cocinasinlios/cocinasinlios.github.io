@@ -101,6 +101,13 @@ for path in ROOT.rglob("*"):
             target = html_target(raw)
             if target is not None and not target.is_file():
                 problems.append(f"Enlace interno roto en {path.relative_to(ROOT)}: {raw}")
+        for tag in re.findall(r'<img\\b[^>]*>', text, flags=re.I):
+            if not re.search(r'\\balt\\s*=', tag, flags=re.I):
+                problems.append(f"Imagen HTML sin alt en {path.relative_to(ROOT)}")
+        for tag in re.findall(r'<a\\b[^>]*target=["\']_blank["\'][^>]*>', text, flags=re.I):
+            rel = re.search(r'\\brel=["\']([^"\']*)', tag, flags=re.I)
+            if not rel or "noopener" not in rel.group(1).casefold():
+                problems.append(f"Enlace target=_blank sin rel=noopener en {path.relative_to(ROOT)}")
         for block in re.findall(r'<script[^>]+type=["\']application/ld\+json["\'][^>]*>([\s\S]*?)</script>', text, flags=re.I):
             try:
                 json.loads(block.strip())
