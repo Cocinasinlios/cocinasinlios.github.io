@@ -114,6 +114,21 @@ for path in ROOT.rglob("*"):
             except Exception as exc:
                 problems.append(f"JSON-LD inválido en página {path.relative_to(ROOT)}: {exc}")
 
+ingredient_guides = [
+    "que-cocinar-con-huevos.html",
+    "recetas-con-tomate.html",
+    "recetas-con-calabacin.html",
+    "recetas-con-pollo.html",
+    "recetas-con-arroz.html",
+]
+for guide in ingredient_guides:
+    guide_path = ROOT / guide
+    if guide_path.is_file():
+        guide_text = guide_path.read_text(encoding="utf-8", errors="replace")
+        n_cross = guide_text.count('<section class="section ingredient-more">')
+        if n_cross != 1:
+            problems.append(f"Guía de ingrediente con {n_cross} bloques de navegación cruzada: {guide}")
+
 for title, paths in indexable_titles.items():
     if len(paths) > 1:
         problems.append(f"Páginas indexables: título duplicado '{title}' -> {', '.join(paths)}")
