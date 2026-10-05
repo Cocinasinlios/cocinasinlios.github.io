@@ -23,7 +23,7 @@ header .navlinks a:hover:after,header .navlinks a.active:after{left:3px;right:3p
 .card:hover,.step:hover,.learn-card:hover,.principle:hover,.route:hover,.related-card:hover,.resume-card:hover{
  transform:translateY(-5px);box-shadow:var(--csl-shadow-lift);border-color:rgba(39,64,52,.18)
 }
-a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid rgba(201,122,88,.55)!important;outline-offset:3px}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid rgba(201,122,88,.55)!important;outline-offset:3px}
 .global-dock{background:rgba(31,43,36,.88)!important;backdrop-filter:blur(18px) saturate(1.15);border:1px solid rgba(255,255,255,.12);box-shadow:0 18px 55px rgba(25,30,27,.24)!important}
 .global-dock a{transition:background .2s ease,transform .2s ease}
 .global-dock a:hover{background:rgba(255,255,255,.09);transform:translateY(-1px)}
@@ -209,4 +209,11 @@ header .navlinks{font-size:13px!important}
  .eyebrow,.csl-kicker,.proof-item span,.shot span small,.resume-card small,.resume-card span,.flow-card small,.feature-copy small,.manifesto small,.tile .go-link,.route b,.route span,.category,.card-meta,.share,.route-link small,.week-day small,.week-day span,.fav-item span,.shopping-group,.item small,.formula b,.principle span,.start-card small,.start-card span,.footer-sub,.footerlinks{font-size:12px!important;line-height:1.4!important}
  .btn,.choice,.filter,.again,.week-add,.go,.share,.route span,.tile .go-link{min-height:44px!important;font-size:12px!important}
  .global-dock a{font-size:11px!important}
+}
+
+
+/* Narrow-phone dock guard */
+@media(max-width:420px){
+  .global-dock,.dock{left:8px!important;right:8px!important;transform:none!important;width:auto!important}
+  .global-dock a,.dock a{min-width:0!important;flex:1 1 0!important;padding-left:3px!important;padding-right:3px!important;font-size:10px!important}
 }
