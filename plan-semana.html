@@ -44,6 +44,7 @@ header{position:sticky;top:0;z-index:40;background:rgba(251,246,238,.95);backdro
 <script>
 (()=>{
  const recipes=(window.CSL_RECIPES||[]).filter(r=>r.tags.includes("cena")&&r.plan);
+ const esc=s=>String(s??"").replace(/[&<>"\']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","\'":"&#39;"}[m]));
  let state={time:"rapida",style:"variada",people:"2"},current=[],sessionSeen=new Set();
  let exclusions={groups:[],text:""};try{exclusions=JSON.parse(localStorage.getItem("csl-exclusions-v1")||'{"groups":[],"text":""}')}catch(e){};if(!Array.isArray(exclusions.groups))exclusions.groups=[];exclusions.text=String(exclusions.text||"");
  const norm=s=>String(s||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
@@ -67,7 +68,7 @@ header{position:sticky;top:0;z-index:40;background:rgba(251,246,238,.95);backdro
  if(pantryKeys.length)bits.push("Tengo en cuenta "+pantryKeys.length+" básicos de tu despensa");
  if(previousSlugs.size)bits.push("Intentaré no repetir tu última semana");
  if(exclusions.groups.length||freeAvoid().length)bits.push("Evito "+[...exclusions.groups.map(x=>exclusionLabels[x]||x),...freeAvoid()].join(", "));
- context.innerHTML="<b>"+(bits.length?"Ya tengo contexto.":"Puedes empezar desde cero.")+"</b><span>"+(bits.length?bits.join(" · "):"Si marcas tu despensa, la próxima semana podré recortar mejor la compra.")+"</span>";
+ context.innerHTML="<b>"+(bits.length?"Ya tengo contexto.":"Puedes empezar desde cero.")+"</b><span>"+(bits.length?bits.map(esc).join(" · "):"Si marcas tu despensa, la próxima semana podré recortar mejor la compra.")+"</span>";
  document.querySelectorAll(".choices").forEach(g=>g.querySelectorAll(".choice").forEach(b=>b.addEventListener("click",()=>{g.querySelectorAll(".choice").forEach(x=>{x.classList.remove("active");x.setAttribute("aria-pressed","false")});b.classList.add("active");b.setAttribute("aria-pressed","true");state[g.dataset.group]=b.dataset.value})))
  const avoidText=document.getElementById("avoidText");avoidText.value=exclusions.text;
  document.querySelectorAll("[data-avoid]").forEach(b=>{b.setAttribute("aria-pressed",String(exclusions.groups.includes(b.dataset.avoid)));b.addEventListener("click",()=>{const k=b.dataset.avoid,on=exclusions.groups.includes(k);exclusions.groups=on?exclusions.groups.filter(x=>x!==k):[...exclusions.groups,k];b.setAttribute("aria-pressed",String(!on));saveExclusions()})});
@@ -141,7 +142,7 @@ header{position:sticky;top:0;z-index:40;background:rgba(251,246,238,.95);backdro
  function renderShopList(items,covered=false){
    if(!items.length)return covered?"<li>Aún no hay coincidencias con tu despensa marcada.</li>":"<li>No detecto ingredientes pendientes con estas cinco cenas.</li>";
    let last="";
-   return items.map(x=>{let h="";if(x.group!==last){last=x.group;h='<li class="shop-group-title">'+last+'</li>'}return h+'<li>'+x.label+(covered?' <small>· comprueba que tengas suficiente</small>':'')+'</li>'}).join("");
+   return items.map(x=>{let h="";if(x.group!==last){last=x.group;h='<li class="shop-group-title">'+esc(last)+'</li>'}return h+'<li>'+esc(x.label)+(covered?' <small>· comprueba que tengas suficiente</small>':'')+'</li>'}).join("");
  }
  function servingLabel(){const n=targetPeople();return n===1?"1 persona":n+" personas"}
  const batchProduces=r=>Array.isArray(r?.batch?.produces)?r.batch.produces:[];
@@ -219,7 +220,7 @@ header{position:sticky;top:0;z-index:40;background:rgba(251,246,238,.95);backdro
    const preps=strategicPreps(items),days=["lunes","martes","miércoles","jueves","viernes"];
    if(!preps.length){box.classList.remove("show");grid.innerHTML="";return}
    intro.textContent=preps.length===1?"Esta semana hay una base que sí compensa adelantar.":"Esta semana hay algunas bases que sí compensa adelantar.";
-   grid.innerHTML=preps.map(p=>'<div class="smart-prep-card"><b>'+p.title+'</b><span>'+p.text(p.count)+' La usarías '+p.days.map(i=>"el "+days[i]).join(" y ")+'.</span><a href="'+p.recipe+'">Ver la base →</a></div>').join("");
+   grid.innerHTML=preps.map(p=>'<div class="smart-prep-card"><b>'+esc(p.title)+'</b><span>'+esc(p.text(p.count)+' La usarías '+p.days.map(i=>"el "+days[i]).join(" y ")+'.')+'</span><a href="'+p.recipe+'">Ver la base →</a></div>').join("");
    box.classList.add("show");
  }
  function score(r,selected=[]){
@@ -246,8 +247,10 @@ header{position:sticky;top:0;z-index:40;background:rgba(251,246,238,.95);backdro
    return s;
  }
  function resolveIncoming(){
-   if(!incoming?.n)return null;
-   const found=recipes.find(r=>r.slug===incoming.slug);if(found&&isExcluded(found))return null;return found||{title:incoming.n,slug:incoming.slug||"",category:"Tu elección",tags:incoming.s||["cena"],time:incoming.t==="rapida"?"rápida":incoming.t==="mixta"?"media":"con calma",minutes:30,ingredients:[],plan:{t:incoming.t||"mixta",s:incoming.s||["variada"],need:incoming.need||[],uses:incoming.uses||[]}};
+   if(!incoming?.n||typeof incoming.slug!=="string")return null;
+   const found=recipes.find(r=>r.slug===incoming.slug);
+   if(!found||isExcluded(found))return null;
+   return found;
  }
  function makePlan(){
    const fixed=resolveIncoming(),selected=fixed?[fixed]:[];
@@ -260,7 +263,7 @@ header{position:sticky;top:0;z-index:40;background:rgba(251,246,238,.95);backdro
  }
  function render(){
    const days=["Lunes","Martes","Miércoles","Jueves","Viernes"],batchPlan=buildBatchPlan(current);
-   document.getElementById("week").innerHTML=current.map((r,i)=>'<article class="day"><small>'+days[i]+'</small><h3>'+(r.slug?'<a href="/recetas/'+encodeURIComponent(r.slug)+'/">'+r.title+'</a>':r.title)+'</h3><span class="serving-note">Cantidades ajustadas · '+servingLabel()+'</span><p>'+(i===0&&incoming?"Tu elección se queda fija.":r.plan.t==="rapida"?"Día de poco margen.":r.plan.t==="mixta"?"Algo de cocina, sin secuestrar la tarde.":"Aquí sí merece la pena cocinar con calma.")+'</p><span class="tag">'+(r.tags.includes("aprovechar")?"Aprovechamiento":r.tags.includes("ligera")?"Más ligera":r.tags.includes("comfort")?"Comida de abrazo":"Cambio de registro")+'</span>'+(batchPlan.notes[i].length?'<div class="prep-chain"><b>♻ Aprovecha de verdad</b>'+batchPlan.notes[i].map(x=>'<span>'+x+'</span>').join("")+'</div>':"")+((r.ingredients||[]).length?'<details class="scaled"><summary>Ver cantidades</summary><ul>'+scaledIngredients(r).map(x=>"<li>"+x+"</li>").join("")+'</ul></details>':"")+(i===0&&incoming?'<span class="fixed">✓ Fija</span>':'<button class="swap" type="button" data-swap="'+i+'">Cambiar solo este día</button>'+(r.plan.t!=="rapida"?'<button class="tight-day" type="button" data-tight="'+i+'">⏱ Ese día voy justa</button>':""))+'</article>').join("");
+   document.getElementById("week").innerHTML=current.map((r,i)=>'<article class="day"><small>'+days[i]+'</small><h3><a href="/recetas/'+encodeURIComponent(r.slug)+'/">'+esc(r.title)+'</a></h3><span class="serving-note">Cantidades ajustadas · '+esc(servingLabel())+'</span><p>'+(i===0&&incoming?"Tu elección se queda fija.":r.plan.t==="rapida"?"Día de poco margen.":r.plan.t==="mixta"?"Algo de cocina, sin secuestrar la tarde.":"Aquí sí merece la pena cocinar con calma.")+'</p><span class="tag">'+(r.tags.includes("aprovechar")?"Aprovechamiento":r.tags.includes("ligera")?"Más ligera":r.tags.includes("comfort")?"Comida de abrazo":"Cambio de registro")+'</span>'+(batchPlan.notes[i].length?'<div class="prep-chain"><b>♻ Aprovecha de verdad</b>'+batchPlan.notes[i].map(x=>'<span>'+esc(x)+'</span>').join("")+'</div>':"")+((r.ingredients||[]).length?'<details class="scaled"><summary>Ver cantidades</summary><ul>'+scaledIngredients(r).map(x=>"<li>"+esc(x)+"</li>").join("")+'</ul></details>':"")+(i===0&&incoming?'<span class="fixed">✓ Fija</span>':'<button class="swap" type="button" data-swap="'+i+'">Cambiar solo este día</button>'+(r.plan.t!=="rapida"?'<button class="tight-day" type="button" data-tight="'+i+'">⏱ Ese día voy justa</button>':""))+'</article>').join("");
    document.querySelectorAll("[data-swap]").forEach(b=>b.addEventListener("click",()=>swapDay(Number(b.dataset.swap))));
    document.querySelectorAll("[data-tight]").forEach(b=>b.addEventListener("click",()=>makeDayFast(Number(b.dataset.tight))));
    renderStrategicPreps(current);
