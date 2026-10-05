@@ -252,8 +252,21 @@ if recipes:
     if len(families) > 12:
         warnings.append(f"Taxonomía dispersa: {len(families)} familias editoriales")
     proper_images = [r for r in recipes if str(r.get("image") or "").startswith("/assets/recipes/")]
-    if len(proper_images) < len(recipes):
-        warnings.append(f"Fotografía de receta pendiente: {len(recipes)-len(proper_images)} de {len(recipes)} fichas no tienen imagen individual de alta resolución")
+    sprite_images = [r for r in recipes if isinstance(r.get("photoSprite"), dict) and r.get("photoSprite", {}).get("src")]
+    for recipe in sprite_images:
+        spec = recipe.get("photoSprite") or {}
+        src = str(spec.get("src") or "")
+        if not src.startswith("/") or not (ROOT / src.lstrip("/")).is_file():
+            problems.append(f"Sprite de receta inexistente: {recipe.get('slug')} -> {src}")
+        if not all(isinstance(spec.get(k), (int, float)) for k in ("cols","rows","x","y")):
+            problems.append(f"Coordenadas de sprite incompletas: {recipe.get('slug')}")
+    visual_slugs = {r.get("slug") for r in proper_images + sprite_images}
+    missing_visuals = [r.get("slug") for r in recipes if r.get("slug") not in visual_slugs]
+    if missing_visuals:
+        warnings.append(f"Fotografía visible pendiente: {len(missing_visuals)} de {len(recipes)} fichas siguen con portada editorial")
+    sprite_only = [r for r in sprite_images if r not in proper_images]
+    if sprite_only:
+        warnings.append(f"Foto social individual pendiente: {len(sprite_only)} fichas ya muestran foto mediante sprite, pero aún usan imagen genérica en Open Graph/Schema")
     step_counts = {}
     for r in recipes:
         n = len(r.get("steps") or [])
