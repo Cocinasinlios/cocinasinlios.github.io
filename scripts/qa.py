@@ -303,6 +303,16 @@ for page in recipe_pages:
         problems.append(f"Ficha sin canonical: {page.relative_to(ROOT)}")
     slug = page.parent.name
     recipe = recipe_by_slug.get(slug, {})
+    runtime_match = re.search(r'window\.CSL_RECIPE=(\{[\s\S]*?\});</script>', text)
+    if not runtime_match:
+        problems.append(f"Ficha sin datos runtime CSL_RECIPE: {slug}")
+    else:
+        try:
+            runtime_recipe = json.loads(runtime_match.group(1))
+            if runtime_recipe.get("ingredientData") != recipe.get("ingredientData"):
+                problems.append(f"IngredientData de ficha desincronizado con maestro: {slug}")
+        except Exception as exc:
+            problems.append(f"CSL_RECIPE inválido en {page.relative_to(ROOT)}: {exc}")
     ld_match = re.search(r'<script type="application/ld\+json">([\s\S]*?)</script>', text, flags=re.I)
     if ld_match:
         try:
