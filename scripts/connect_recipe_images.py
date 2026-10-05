@@ -72,6 +72,17 @@ for slug in PHOTO_SLUGS:
     page = replace_meta(page, "og:image", full_image)
     page = replace_name_meta(page, "twitter:image", full_image)
 
+    runtime_pattern = re.compile(r'(window\.CSL_RECIPE=)(\{[^<]*\})(;</script>)', re.S)
+    runtime_match = runtime_pattern.search(page)
+    if runtime_match:
+        runtime = json.loads(runtime_match.group(2))
+        runtime["image"] = rel_image
+        page = (
+            page[:runtime_match.start(2)]
+            + json.dumps(runtime, ensure_ascii=False, separators=(",", ":"))
+            + page[runtime_match.end(2):]
+        )
+
     ld_pattern = re.compile(
         r'(<script type="application/ld\+json">)(\{[^<]*"@type":"Recipe"[^<]*\})(</script>)',
         re.S,
