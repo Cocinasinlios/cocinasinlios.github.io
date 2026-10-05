@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - "assets/recipes/*.webp"
+      - "assets/recipe-photos-20.zip"
       - "scripts/connect_recipe_images.py"
       - ".github/workflows/connect-recipe-photos.yml"
 
@@ -22,6 +23,13 @@ jobs:
         uses: actions/setup-python@v7
         with:
           python-version: "3.12"
+      - name: Extract bundled recipe photos
+        shell: bash
+        run: |
+          if [ -f assets/recipe-photos-20.zip ]; then
+            mkdir -p assets/recipes
+            unzip -o assets/recipe-photos-20.zip -d assets/recipes
+          fi
       - name: Connect photos to recipe metadata
         run: python scripts/connect_recipe_images.py
       - name: Validate public site
