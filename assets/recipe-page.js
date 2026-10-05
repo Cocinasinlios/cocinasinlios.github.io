@@ -5,6 +5,12 @@ const CSL_FAMILY_TONE={"Básicos y salsas":"tone-sage","Pasta, arroz y cereales"
 const fallbackTone=CSL_FAMILY_TONE[family]||"tone-sage";
 if(family){
  const eyebrow=document.querySelector(".hero .eyebrow");if(eyebrow)eyebrow.textContent=family;
+ const editorialHero=document.querySelector(".hero-photo.no-photo");
+ if(editorialHero){
+   editorialHero.classList.remove("tone-sage","tone-mint","tone-peach","tone-butter","tone-clay","tone-paper");
+   editorialHero.classList.add(fallbackTone);
+   const label=editorialHero.querySelector(".cover-copy small");if(label)label.textContent=family;
+ }
  document.querySelectorAll(".related-card").forEach(a=>{const m=(a.getAttribute("href")||"").match(/\/recetas\/([^/]+)\//);const label=a.querySelector(".related-photo .cover-copy small");if(m&&label&&CSL_FAMILY_MAP[m[1]])label.textContent=CSL_FAMILY_MAP[m[1]]});
  const recipeLd=[...document.querySelectorAll('script[type="application/ld+json"]')].find(s=>s.textContent.includes('"@type":"Recipe"'));
  if(recipeLd){try{const j=JSON.parse(recipeLd.textContent);j.recipeCategory=family;recipeLd.textContent=JSON.stringify(j)}catch(e){}}
