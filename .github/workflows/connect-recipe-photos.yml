@@ -4,6 +4,8 @@ on:
   push:
     paths:
       - "assets/recipes/*.webp"
+      - "scripts/connect_recipe_images.py"
+      - ".github/workflows/connect-recipe-photos.yml"
 
 permissions:
   contents: write
