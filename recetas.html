@@ -46,6 +46,7 @@ footer{background:#202b24;color:#dce5df;padding:40px 0;margin-top:25px}footer p{
 <script>
 (()=>{
  const recipes=window.CSL_RECIPES||[];
+ const missingPhotoSlugs=new Set(["bacalao-tomate","berenjenas-rellenas","calabacines-rellenos","croquetas-pollo-aprovechamiento","crumble-manzana","ensalada-pasta-verano","guacamole","hummus-cremoso","muffins-platano-avena","pasta-tomate-atun","pollo-curry-expres","potaje-alubias-rapido","salsa-tomate-casera","sopa-tomate-alubias","tacos-pescado","tortitas-fruta","vinagreta-mostaza-limon"]);
  const legacy={hummus:"hummus-cremoso",pasta:"pasta-pesto-tomate",tortitas:"tortitas-fruta",bol:"bol-arroz-aprovechamiento",crema:"crema-verduras",huevos:"huevos-verduras-pan"};
  const favKey="csl-favoritos-v1";
  let favs=[];try{favs=JSON.parse(localStorage.getItem(favKey)||"[]")}catch(e){}
@@ -63,7 +64,7 @@ footer{background:#202b24;color:#dce5df;padding:40px 0;margin-top:25px}footer p{
  if(searchInput)searchInput.value=query;
  document.getElementById("total").textContent=recipes.length;
  function tone(r){const t=r.tags||[];return t.includes("dulce")?"tone-butter":t.includes("ligera")?"tone-sage":t.includes("comfort")?"tone-peach":t.includes("vegetal")?"tone-mint":t.includes("aprovechar")?"tone-clay":"tone-paper"} function spriteStyle(s){return "background-image:url('"+s.src+"');background-size:"+(s.cols*100)+"% "+(s.rows*100)+"%;background-position:"+s.x+"% "+s.y+"%;background-repeat:no-repeat;background-color:#f3efe7"}
- function visual(r){const highRes=r.image&&r.image.startsWith("/assets/recipes/");if(highRes)return '<div class="photo"><img src="'+esc(r.image)+'" alt="'+esc(r.title)+'" loading="lazy" decoding="async" width="1200" height="900"></div>';if(r.photoSprite)return '<div class="photo recipe-photo" style="'+spriteStyle(r.photoSprite)+'" role="img" aria-label="'+esc(r.title)+'"></div>';return '<div class="photo editorial '+tone(r)+'"><div class="cover-copy"><small>'+esc(cat(r))+'</small><strong>'+esc(r.title)+'</strong><span>'+esc(r.learn?.t||"Cocina con criterio")+'</span></div></div>'}
+ function visual(r){const highRes=r.image&&r.image.startsWith("/assets/recipes/")&&!missingPhotoSlugs.has(r.slug);if(highRes)return '<div class="photo"><img src="'+esc(r.image)+'" alt="'+esc(r.title)+'" loading="lazy" decoding="async" width="1200" height="900"></div>';if(r.photoSprite)return '<div class="photo recipe-photo" style="'+spriteStyle(r.photoSprite)+'" role="img" aria-label="'+esc(r.title)+'"></div>';return '<div class="photo editorial '+tone(r)+'"><div class="cover-copy"><small>'+esc(cat(r))+'</small><strong>'+esc(r.title)+'</strong><span>'+esc(r.learn?.t||"Cocina con criterio")+'</span></div></div>'}
  function render(){
    const q=norm(query.trim());
    const shown=recipes.filter(r=>{
