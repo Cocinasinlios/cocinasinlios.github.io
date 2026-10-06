@@ -1,0 +1,110 @@
+name: Production audit
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/production-audit.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait for production deploy
+        run: sleep 45
+
+      - name: Resolve production URLs
+        shell: bash
+        run: |
+          mkdir -p audit
+          {
+            echo "ROOT"
+            curl -sS -o /dev/null -w "status=%{http_code}\nfinal=%{url_effective}\ntime=%{time_total}\n" -L https://cocinasinlios.com/
+            echo
+            echo "WWW"
+            curl -sS -o /dev/null -w "status=%{http_code}\nfinal=%{url_effective}\ntime=%{time_total}\n" -L https://www.cocinasinlios.com/
+            echo
+            echo "ROBOTS"
+            curl -sS -o /dev/null -w "status=%{http_code}\n" https://cocinasinlios.com/robots.txt
+            echo "SITEMAP"
+            curl -sS -o /dev/null -w "status=%{http_code}\n" https://cocinasinlios.com/sitemap.xml
+          } | tee audit/urls.txt
+
+      - name: Find Chrome
+        id: chrome
+        shell: bash
+        run: |
+          CHROME="$(command -v google-chrome || command -v chromium || command -v chromium-browser || true)"
+          if [ -z "$CHROME" ]; then
+            echo "Chrome/Chromium not found" >&2
+            exit 1
+          fi
+          echo "path=$CHROME" >> "$GITHUB_OUTPUT"
+          "$CHROME" --version
+
+      - name: Mobile production screenshots
+        shell: bash
+        run: |
+          CHROME="${{ steps.chrome.outputs.path }}"
+          declare -A PAGES=(
+            [home]="https://cocinasinlios.com/"
+            [que-cocino]="https://cocinasinlios.com/que-cocino.html"
+            [recetas]="https://cocinasinlios.com/recetas.html"
+            [planifica]="https://cocinasinlios.com/plan-semana.html"
+            [mi-cocina]="https://cocinasinlios.com/mi-rincon.html"
+          )
+          for name in "${!PAGES[@]}"; do
+            "$CHROME" --headless=new --no-sandbox --disable-gpu --hide-scrollbars \
+              --window-size=390,844 --force-device-scale-factor=1 \
+              --virtual-time-budget=7000 \
+              --screenshot="audit/mobile-${name}.png" "${PAGES[$name]}"
+          done
+          "$CHROME" --headless=new --no-sandbox --disable-gpu --hide-scrollbars \
+            --window-size=1440,1000 --force-device-scale-factor=1 \
+            --virtual-time-budget=7000 \
+            --screenshot="audit/desktop-home.png" "https://cocinasinlios.com/"
+
+      - name: Lighthouse mobile
+        shell: bash
+        run: |
+          npm install --global lighthouse
+          lighthouse https://cocinasinlios.com/ \
+            --quiet --chrome-flags="--headless=new --no-sandbox" \
+            --only-categories=performance,accessibility,best-practices,seo \
+            --output=json --output-path=audit/lighthouse-home.json
+          lighthouse https://cocinasinlios.com/recetas.html \
+            --quiet --chrome-flags="--headless=new --no-sandbox" \
+            --only-categories=performance,accessibility,best-practices,seo \
+            --output=json --output-path=audit/lighthouse-recetas.json
+
+      - name: Summarize Lighthouse
+        shell: python
+        run: |
+          import json
+          from pathlib import Path
+          out=[]
+          for name in ("home","recetas"):
+              p=Path(f"audit/lighthouse-{name}.json")
+              data=json.loads(p.read_text())
+              cats=data["categories"]
+              out.append(name.upper())
+              for key in ("performance","accessibility","best-practices","seo"):
+                  out.append(f"{key}={round(cats[key]['score']*100)}")
+              audits=data.get("audits",{})
+              for key in ("first-contentful-paint","largest-contentful-paint","cumulative-layout-shift","total-blocking-time","speed-index"):
+                  if key in audits:
+                      out.append(f"{key}={audits[key].get('displayValue')}")
+              out.append("")
+          Path("audit/summary.txt").write_text("\n".join(out))
+          print("\n".join(out))
+
+      - name: Upload audit
+        uses: actions/upload-artifact@v4
+        with:
+          name: production-audit
+          path: audit/
+          retention-days: 7
