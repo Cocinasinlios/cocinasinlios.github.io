@@ -44,20 +44,20 @@ document.querySelectorAll("header .brand").forEach(a=>{
 });
 
 const desktopNav=[
-  ["/que-cocino.html","Qué cocino"],
-  ["/plan-semana.html","Planifica"],
-  ["/recetas.html","Recetas"],
-  ["/mi-rincon.html","Mi cocina"]
+  ["/que-cocino","Qué cocino"],
+  ["/plan-semana","Planifica"],
+  ["/recetas","Recetas"],
+  ["/mi-rincon","Mi cocina"]
 ];
 document.querySelectorAll("header .navlinks").forEach(n=>{
   n.innerHTML=desktopNav.map(x=>'<a href="'+x[0]+'">'+x[1]+'</a>').join("");
 });
 
 const dockNav=[
-  ["/que-cocino.html","✦","Hoy"],
-  ["/plan-semana.html","🗓","Semana"],
-  ["/recetas.html","⌕","Recetas"],
-  ["/mi-rincon.html","♡","Mi cocina"]
+  ["/que-cocino","✦","Hoy"],
+  ["/plan-semana","🗓","Semana"],
+  ["/recetas","⌕","Recetas"],
+  ["/mi-rincon","♡","Mi cocina"]
 ];
 document.querySelectorAll(".global-dock,.dock").forEach(d=>{
   d.setAttribute("aria-label","Navegación rápida");
@@ -66,8 +66,8 @@ document.querySelectorAll(".global-dock,.dock").forEach(d=>{
 
 document.querySelectorAll("header .navlinks a,.global-dock a,.dock a").forEach(a=>{
   const p=new URL(a.href,location.origin).pathname.replace(/\/$/,"")||"/";
-  const ingredientGuide=["/que-cocinar-con-huevos.html","/recetas-con-tomate.html","/recetas-con-calabacin.html","/recetas-con-pollo.html","/recetas-con-arroz.html"].includes(path);
-  if(p===path || ((path.startsWith("/recetas/")||ingredientGuide) && p==="/recetas.html")){
+  const ingredientGuide=["/que-cocinar-con-huevos","/recetas-con-tomate","/recetas-con-calabacin","/recetas-con-pollo","/recetas-con-arroz"].includes(path);
+  if(p===path || ((path.startsWith("/recetas/")||ingredientGuide) && p==="/recetas")){
     a.classList.add("active");
     a.setAttribute("aria-current","page");
   }
@@ -77,7 +77,7 @@ document.querySelectorAll("header .navlinks a,.global-dock a,.dock a").forEach(a
 if(document.querySelector("footer")&&!document.querySelector("footer .csl-secondary-nav")){
   const s=document.createElement("div");
   s.className="csl-secondary-nav";
-  s.innerHTML='<a href="/explora.html">Explora por ingrediente</a> · <a href="/despensa-sin-lios.html">Despensa</a> · <a href="/con-macarena.html">Con Macarena</a> · <a href="/hablamos.html">Contacto</a>';
+  s.innerHTML='<a href="/explora">Explora por ingrediente</a> · <a href="/despensa-sin-lios">Despensa</a> · <a href="/con-macarena">Con Macarena</a> · <a href="/hablamos">Contacto</a>';
   s.style.cssText="font-size:11px;margin-top:14px;opacity:.88";
   document.querySelector("footer .wrap,footer")?.appendChild(s);
 }
@@ -86,10 +86,10 @@ if(document.querySelector("footer")&&!document.querySelector("footer .csl-second
 if(document.querySelector("footer") &&
    !document.querySelector("footer .footerlinks") &&
    !document.querySelector("footer .csl-legal-links") &&
-   !["/aviso-legal.html","/privacidad.html","/cookies.html","/uso-y-propiedad.html"].includes(path)){
+   !["/aviso-legal","/privacidad","/cookies","/uso-y-propiedad"].includes(path)){
   const x=document.createElement("div");
   x.className="csl-legal-links";
-  x.innerHTML='<a href="/aviso-legal.html">Aviso legal</a> · <a href="/privacidad.html">Privacidad</a> · <a href="/cookies.html">Cookies</a> · <a href="/uso-y-propiedad.html">Uso y propiedad</a>';
+  x.innerHTML='<a href="/aviso-legal">Aviso legal</a> · <a href="/privacidad">Privacidad</a> · <a href="/cookies">Cookies</a> · <a href="/uso-y-propiedad">Uso y propiedad</a>';
   x.style.cssText="font-size:11px;margin-top:18px;opacity:.8";
   document.querySelector("footer .wrap,footer")?.appendChild(x);
 }
@@ -105,16 +105,16 @@ if(path==="/"){
   const pantryCount=Object.values(pantry).filter(Boolean).length;
   const cards=[];
   if(plan?.meals?.length){
-    cards.push('<a class="resume-card" href="/mi-rincon.html"><small>SEMANA</small><b>'+plan.meals.length+' cenas guardadas</b><span>Ver plan y lista de compra →</span></a>');
+    cards.push('<a class="resume-card" href="/mi-rincon"><small>SEMANA</small><b>'+plan.meals.length+' cenas guardadas</b><span>Ver plan y lista de compra →</span></a>');
   }
   if(pantryCount){
-    cards.push('<a class="resume-card" href="/despensa-sin-lios.html#checklist"><small>DESPENSA</small><b>'+pantryCount+' básicos marcados</b><span>Seguir completando →</span></a>');
+    cards.push('<a class="resume-card" href="/despensa-sin-lios#checklist"><small>DESPENSA</small><b>'+pantryCount+' básicos marcados</b><span>Seguir completando →</span></a>');
   }
   if(favs.length){
-    cards.push('<a class="resume-card" href="/recetas.html?f=guardadas"><small>FAVORITOS</small><b>'+favs.length+' receta'+(favs.length===1?'':'s')+' guardada'+(favs.length===1?'':'s')+'</b><span>Volver a ellas →</span></a>');
+    cards.push('<a class="resume-card" href="/recetas?f=guardadas"><small>FAVORITOS</small><b>'+favs.length+' receta'+(favs.length===1?'':'s')+' guardada'+(favs.length===1?'':'s')+'</b><span>Volver a ellas →</span></a>');
   }
   if(soon.trim()){
-    cards.push('<a class="resume-card" href="/que-cocino.html?gastar='+encodeURIComponent(soon.trim())+'"><small>GASTAR PRONTO</small><b>'+soon.trim().replace(/[<>&"]/g,"")+'</b><span>Buscar una salida →</span></a>');
+    cards.push('<a class="resume-card" href="/que-cocino?gastar='+encodeURIComponent(soon.trim())+'"><small>GASTAR PRONTO</small><b>'+soon.trim().replace(/[<>&"]/g,"")+'</b><span>Buscar una salida →</span></a>');
   }
   
   const section=document.getElementById("csl-resume");

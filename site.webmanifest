@@ -33,22 +33,22 @@
     {
       "name": "Qué cocino hoy",
       "short_name": "Qué cocino",
-      "url": "/que-cocino.html"
+      "url": "/que-cocino"
     },
     {
       "name": "Planifica mi semana",
       "short_name": "Planifica",
-      "url": "/plan-semana.html"
+      "url": "/plan-semana"
     },
     {
       "name": "Mis recetas",
       "short_name": "Recetas",
-      "url": "/recetas.html"
+      "url": "/recetas"
     },
     {
       "name": "Mi cocina",
       "short_name": "Mi cocina",
-      "url": "/mi-rincon.html"
+      "url": "/mi-rincon"
     }
   ],
   "prefer_related_applications": false
