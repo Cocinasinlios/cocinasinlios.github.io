@@ -40,7 +40,7 @@ if("serviceWorker" in navigator && location.protocol==="https:"){
 
 document.querySelectorAll("header .brand").forEach(a=>{
   a.setAttribute("aria-label","Cocina sin líos con Macarena");
-  a.innerHTML='<img src="/assets/logo-cocina-sin-lios.svg" alt="Cocina sin líos con Macarena">';
+  a.innerHTML='<img src="/assets/logo-cocina-sin-lios.svg" alt="Cocina sin líos con Macarena" width="420" height="120">';
 });
 
 const desktopNav=[
