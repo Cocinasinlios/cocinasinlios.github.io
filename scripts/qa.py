@@ -49,6 +49,10 @@ def html_target(raw: str) -> Path | None:
     candidate = ROOT / path.lstrip("/")
     if path.endswith("/"):
         candidate = candidate / "index.html"
+    elif not candidate.suffix and not candidate.is_file():
+        html_candidate = candidate.with_suffix(".html")
+        if html_candidate.is_file():
+            candidate = html_candidate
     return candidate
 
 for rel in CORE:
