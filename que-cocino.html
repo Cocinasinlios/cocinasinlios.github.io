@@ -57,6 +57,8 @@ footer{background:#202b24;color:#dce5df;padding:40px 0}footer p{font-size:12px;c
  if(paramIngredients.length&&!presetTime)state.time="30";
  const pantryKeys=Object.keys(pantry).filter(k=>pantry[k]);
  let favs=[];try{favs=JSON.parse(localStorage.getItem("csl-favoritos-v1")||"[]")}catch(e){}
+ let recent=[];try{recent=JSON.parse(localStorage.getItem("csl-recientes-v1")||"[]")}catch(e){};if(!Array.isArray(recent))recent=[];
+ const recentSlugs=new Set(recent.slice(0,6).map(x=>typeof x==="string"?x:x?.slug).filter(Boolean));
  
  let week=null;try{week=JSON.parse(localStorage.getItem("csl-plan-semana-v1")||"null")}catch(e){}
  const weekSlugs=new Set((week?.items||[]).map(x=>x.slug).filter(Boolean));
@@ -119,6 +121,7 @@ footer{background:#202b24;color:#dce5df;padding:40px 0}footer p{font-size:12px;c
    if(useText.length){const hay=norm(r.title+" "+r.ingredients.join(" ")+" "+(r.plan?.need||[]).join(" "));s+=useText.filter(t=>hasTerm(hay,t)).length*6}
    if(isFav(r))s+=1.2;
    if(weekSlugs.has(r.slug))s-=6;
+   if(recentSlugs.has(r.slug))s-=3;
   
    if(generated.includes(r.slug))s-=5;
    return s;
@@ -157,6 +160,7 @@ footer{background:#202b24;color:#dce5df;padding:40px 0}footer p{font-size:12px;c
    if(pantryKeys.length)whyBits.push("tu despensa");
    if(useSoon)whyBits.push("lo que quieres gastar");
    if(weekSlugs.size)whyBits.push("evitar repetir tu semana");
+   if(recentSlugs.size)whyBits.push("lo que has visto hace poco");
   
    if(exclusions.groups.length||freeAvoid().length)whyBits.push("tus ingredientes a evitar");
    const nextLimit=limit===15?30:limit===30?60:null;
