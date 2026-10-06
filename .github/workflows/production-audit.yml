@@ -95,8 +95,8 @@ jobs:
             await page.goto("https://cocinasinlios.com/que-cocino",{waitUntil:"networkidle2"});
             await page.click("#go");
             await page.waitForSelector("#results.show",{timeout:8000});
-            const cards=await page.$eval("#grid .card",els=>els.length);
-            if(cards<1)throw new Error("Qué cocino no generó resultados");
+            const cards=await page.evaluate(()=>document.querySelectorAll("#grid .card").length);
+            if(!Number.isInteger(cards)||cards<1)throw new Error("Qué cocino no generó resultados");
 
             await page.goto("https://cocinasinlios.com/recetas/pasta-tomate-atun/",{waitUntil:"networkidle2"});
             await page.waitForSelector(".csl-continue",{timeout:8000});
@@ -105,8 +105,8 @@ jobs:
 
             await page.goto("https://cocinasinlios.com/mi-rincon",{waitUntil:"networkidle2"});
             await page.waitForFunction(()=>getComputedStyle(document.querySelector("#recentDetail")).display!=="none",{timeout:8000});
-            const recentLinks=await page.$eval("#recentList .recent-item",els=>els.length);
-            if(recentLinks<1)throw new Error("Mi cocina no muestra recetas recientes");
+            const recentLinks=await page.evaluate(()=>document.querySelectorAll("#recentList .recent-item").length);
+            if(!Number.isInteger(recentLinks)||recentLinks<1)throw new Error("Mi cocina no muestra recetas recientes");
 
             if(errors.length)throw new Error("Errores JS en producción: "+errors.join(" | "));
             require("fs").writeFileSync("audit/smoke.txt","OK\nQué cocino: "+cards+" resultados\nReceta reciente: OK\nMi cocina recientes: "+recentLinks+"\n");
