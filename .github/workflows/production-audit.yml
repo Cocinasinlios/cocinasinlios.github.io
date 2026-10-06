@@ -25,13 +25,14 @@ jobs:
             for url in \
               "https://cocinasinlios.com/" \
               "https://www.cocinasinlios.com/" \
-              "https://cocinasinlios.com/que-cocino.html" \
-              "https://cocinasinlios.com/plan-semana.html" \
-              "https://cocinasinlios.com/recetas.html" \
-              "https://cocinasinlios.com/mi-rincon.html" \
-              "https://cocinasinlios.com/explora.html" \
-              "https://cocinasinlios.com/con-macarena.html" \
-              "https://cocinasinlios.com/despensa-sin-lios.html"; do
+              "https://cocinasinlios.com/que-cocino" \
+              "https://cocinasinlios.com/plan-semana" \
+              "https://cocinasinlios.com/recetas" \
+              "https://cocinasinlios.com/mi-rincon" \
+              "https://cocinasinlios.com/explora" \
+              "https://cocinasinlios.com/con-macarena" \
+              "https://cocinasinlios.com/despensa-sin-lios" \
+              "https://cocinasinlios.com/recetas.html"; do
               echo "$url"
               curl -sS -o /dev/null -w "status=%{http_code}\nfinal=%{url_effective}\ntime=%{time_total}\n" -L "$url"
               echo
@@ -60,10 +61,10 @@ jobs:
           CHROME="${{ steps.chrome.outputs.path }}"
           declare -A PAGES=(
             [home]="https://cocinasinlios.com/"
-            [que-cocino]="https://cocinasinlios.com/que-cocino.html"
-            [recetas]="https://cocinasinlios.com/recetas.html"
-            [planifica]="https://cocinasinlios.com/plan-semana.html"
-            [mi-cocina]="https://cocinasinlios.com/mi-rincon.html"
+            [que-cocino]="https://cocinasinlios.com/que-cocino"
+            [recetas]="https://cocinasinlios.com/recetas"
+            [planifica]="https://cocinasinlios.com/plan-semana"
+            [mi-cocina]="https://cocinasinlios.com/mi-rincon"
           )
           for name in "${!PAGES[@]}"; do
             "$CHROME" --headless=new --no-sandbox --disable-gpu --hide-scrollbars \
@@ -84,7 +85,7 @@ jobs:
             --quiet --chrome-flags="--headless=new --no-sandbox" \
             --only-categories=performance,accessibility,best-practices,seo \
             --output=json --output-path=audit/lighthouse-home.json
-          lighthouse https://cocinasinlios.com/recetas.html \
+          lighthouse https://cocinasinlios.com/recetas \
             --quiet --chrome-flags="--headless=new --no-sandbox" \
             --only-categories=performance,accessibility,best-practices,seo \
             --output=json --output-path=audit/lighthouse-recetas.json
