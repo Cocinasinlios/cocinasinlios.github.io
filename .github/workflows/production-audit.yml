@@ -22,12 +22,20 @@ jobs:
         run: |
           mkdir -p audit
           {
-            echo "ROOT"
-            curl -sS -o /dev/null -w "status=%{http_code}\nfinal=%{url_effective}\ntime=%{time_total}\n" -L https://cocinasinlios.com/
-            echo
-            echo "WWW"
-            curl -sS -o /dev/null -w "status=%{http_code}\nfinal=%{url_effective}\ntime=%{time_total}\n" -L https://www.cocinasinlios.com/
-            echo
+            for url in \
+              "https://cocinasinlios.com/" \
+              "https://www.cocinasinlios.com/" \
+              "https://cocinasinlios.com/que-cocino.html" \
+              "https://cocinasinlios.com/plan-semana.html" \
+              "https://cocinasinlios.com/recetas.html" \
+              "https://cocinasinlios.com/mi-rincon.html" \
+              "https://cocinasinlios.com/explora.html" \
+              "https://cocinasinlios.com/con-macarena.html" \
+              "https://cocinasinlios.com/despensa-sin-lios.html"; do
+              echo "$url"
+              curl -sS -o /dev/null -w "status=%{http_code}\nfinal=%{url_effective}\ntime=%{time_total}\n" -L "$url"
+              echo
+            done
             echo "ROBOTS"
             curl -sS -o /dev/null -w "status=%{http_code}\n" https://cocinasinlios.com/robots.txt
             echo "SITEMAP"
