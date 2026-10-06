@@ -62,8 +62,8 @@ footer{background:#202b24;color:#dce5df;padding:40px 0;margin-top:25px}footer p{
  const searchInput=document.getElementById("search");
  if(searchInput)searchInput.value=query;
  document.getElementById("total").textContent=recipes.length;
- function tone(r){const t=r.tags||[];return t.includes("dulce")?"tone-butter":t.includes("ligera")?"tone-sage":t.includes("comfort")?"tone-peach":t.includes("vegetal")?"tone-mint":t.includes("aprovechar")?"tone-clay":"tone-paper"} function spriteStyle(s){return "background-image:url('"+s.src+"');background-size:"+(s.cols*100)+"% "+(s.rows*100)+"%;background-position:"+s.x+"% "+s.y+"%;background-repeat:no-repeat;background-color:#f3efe7"}
- function visual(r){const highRes=r.image&&r.image.startsWith("/assets/recipes/");if(highRes)return '<div class="photo"><img src="'+esc(r.image)+'" alt="'+esc(r.title)+'" loading="lazy" decoding="async" width="1200" height="900"></div>';if(r.photoSprite)return '<div class="photo recipe-photo" style="'+spriteStyle(r.photoSprite)+'" role="img" aria-label="'+esc(r.title)+'"></div>';return '<div class="photo editorial '+tone(r)+'"><div class="cover-copy"><small>'+esc(cat(r))+'</small><strong>'+esc(r.title)+'</strong><span>'+esc(r.learn?.t||"Cocina con criterio")+'</span></div></div>'}
+ function tone(r){const t=r.tags||[];return t.includes("dulce")?"tone-butter":t.includes("ligera")?"tone-sage":t.includes("comfort")?"tone-peach":t.includes("vegetal")?"tone-mint":t.includes("aprovechar")?"tone-clay":"tone-paper"}
+ function visual(r,i){const highRes=r.image&&r.image.startsWith("/assets/recipes/");if(highRes){const eager=i<3;return '<div class="photo"><img src="'+esc(r.image)+'" alt="'+esc(r.title)+'" loading="'+(eager?"eager":"lazy")+'" decoding="async" '+(i===0?'fetchpriority="high" ':'')+'width="1200" height="900"></div>'}return '<div class="photo editorial '+tone(r)+'"><div class="cover-copy"><small>'+esc(cat(r))+'</small><strong>'+esc(r.title)+'</strong><span>'+esc(r.learn?.t||"Cocina con criterio")+'</span></div></div>'}
  function render(){
    const q=norm(query.trim());
    const shown=recipes.filter(r=>{
@@ -71,8 +71,8 @@ footer{background:#202b24;color:#dce5df;padding:40px 0;margin-top:25px}footer p{
      const hay=norm(r.title+" "+cat(r)+" "+r.category+" "+r.intro+" "+(r.ingredients||[]).join(" ")+" "+(r.tags||[]).join(" "));
      return byFilter&&(!q||hay.includes(q));
    });
-   document.getElementById("grid").innerHTML=shown.map(r=>
-    '<article class="card">'+visual(r)+'<div class="card-body"><div class="card-top"><span class="category">'+esc(cat(r))+'</span><button class="fav" type="button" data-fav="'+esc(r.slug)+'" aria-pressed="'+String(isFav(r))+'" aria-label="Guardar '+esc(r.title)+'">'+(isFav(r)?"♥":"♡")+'</button></div><h3>'+esc(r.title)+'</h3><div class="card-meta">⏱ '+esc(r.time)+' · '+esc(r.difficulty)+'</div><p>'+esc(r.intro)+'</p><div class="actions"><a class="btn primary" href="/recetas/'+encodeURIComponent(r.slug)+'/">Ver receta completa</a><button class="share" type="button" data-share="'+esc(r.slug)+'">Compartir</button></div></div></article>'
+   document.getElementById("grid").innerHTML=shown.map((r,i)=>
+    '<article class="card">'+visual(r,i)+'<div class="card-body"><div class="card-top"><span class="category">'+esc(cat(r))+'</span><button class="fav" type="button" data-fav="'+esc(r.slug)+'" aria-pressed="'+String(isFav(r))+'" aria-label="Guardar '+esc(r.title)+'">'+(isFav(r)?"♥":"♡")+'</button></div><h3>'+esc(r.title)+'</h3><div class="card-meta">⏱ '+esc(r.time)+' · '+esc(r.difficulty)+'</div><p>'+esc(r.intro)+'</p><div class="actions"><a class="btn primary" href="/recetas/'+encodeURIComponent(r.slug)+'/">Ver receta completa</a><button class="share" type="button" data-share="'+esc(r.slug)+'">Compartir</button></div></div></article>'
    ).join("");
    document.getElementById("count").textContent=shown.length+" receta"+(shown.length===1?"":"s")+" en esta vista";
    const empty=document.getElementById("empty");
