@@ -15,11 +15,20 @@ if(family){
  const recipeLd=[...document.querySelectorAll('script[type="application/ld+json"]')].find(s=>s.textContent.includes('"@type":"Recipe"'));
  if(recipeLd){try{const j=JSON.parse(recipeLd.textContent);j.recipeCategory=family;recipeLd.textContent=JSON.stringify(j)}catch(e){}}
 }
-const CSL_PHOTO_SPRITE_MAP={"gazpacho-andaluz":{"x":0,"y":0},"pollo-horno-limon":{"x":33.3333,"y":0},"albondigas-tomate":{"x":66.6667,"y":0},"lentejas-rapidas":{"x":100,"y":0},"merluza-vapor-verduras":{"x":0,"y":50},"salmon-mostaza-horno":{"x":33.3333,"y":50},"curry-garbanzos-verduras":{"x":66.6667,"y":50},"crema-calabaza-zanahoria":{"x":100,"y":50},"tortilla-calabacin":{"x":0,"y":100},"ensalada-garbanzos-mediterranea":{"x":33.3333,"y":100},"verduras-asadas-yogur":{"x":66.6667,"y":100},"bizcocho-yogur":{"x":100,"y":100}};const CSL_PHOTO_SPRITE="/assets/recipe-sprite-12.webp";
-const CSL_PHOTO_SPRITE_MAP_20={"bacalao-tomate":{"x":0,"y":0},"berenjenas-rellenas":{"x":25,"y":0},"calabacines-rellenos":{"x":50,"y":0},"croquetas-pollo-aprovechamiento":{"x":75,"y":0},"crumble-manzana":{"x":100,"y":0},"ensalada-lentejas-verduras":{"x":0,"y":33.3333},"ensalada-pasta-verano":{"x":25,"y":33.3333},"guacamole":{"x":50,"y":33.3333},"hummus-cremoso":{"x":75,"y":33.3333},"muffins-platano-avena":{"x":100,"y":33.3333},"pasta-tomate-atun":{"x":0,"y":66.6667},"patatas-asadas-rellenas":{"x":25,"y":66.6667},"pollo-curry-expres":{"x":50,"y":66.6667},"potaje-alubias-rapido":{"x":75,"y":66.6667},"salsa-tomate-casera":{"x":100,"y":66.6667},"sopa-ajo-huevo":{"x":0,"y":100},"sopa-tomate-alubias":{"x":25,"y":100},"tacos-pescado":{"x":50,"y":100},"tortitas-fruta":{"x":75,"y":100},"vinagreta-mostaza-limon":{"x":100,"y":100}};const CSL_PHOTO_SPRITE_20="/assets/recipe-sprite-20.webp";
-function recipeSpriteSpec(slug){const p20=CSL_PHOTO_SPRITE_MAP_20[slug];if(p20)return{...p20,src:CSL_PHOTO_SPRITE_20,cols:5,rows:4};const p12=CSL_PHOTO_SPRITE_MAP[slug];if(p12)return{...p12,src:CSL_PHOTO_SPRITE,cols:4,rows:3};return null}
-function applyRecipeSprite(el,spec){if(!el||!spec)return;el.classList.remove("no-photo","tone-sage","tone-mint","tone-peach","tone-butter","tone-clay","tone-paper");el.innerHTML="";el.style.backgroundImage="url('"+spec.src+"')";el.style.backgroundSize=(spec.cols*100)+"% "+(spec.rows*100)+"%";el.style.backgroundPosition=spec.x+"% "+spec.y+"%";el.style.backgroundRepeat="no-repeat";el.style.backgroundColor="#f3efe7"}
-document.querySelectorAll(".related-card").forEach(a=>{const m=(a.getAttribute("href")||"").match(/\/recetas\/([^/]+)\//);if(!m)return;const spec=recipeSpriteSpec(m[1]);if(spec)applyRecipeSprite(a.querySelector(".related-photo"),spec)});
+function applyRelatedRecipeImage(el,slug){
+ if(!el||!slug)return;
+ el.classList.remove("no-photo","tone-sage","tone-mint","tone-peach","tone-butter","tone-clay","tone-paper");
+ el.innerHTML="";
+ el.style.backgroundImage="url('/assets/recipes/"+encodeURIComponent(slug)+".webp')";
+ el.style.backgroundSize="cover";
+ el.style.backgroundPosition="center";
+ el.style.backgroundRepeat="no-repeat";
+ el.style.backgroundColor="#f3efe7";
+}
+document.querySelectorAll(".related-card").forEach(a=>{
+ const m=(a.getAttribute("href")||"").match(/\/recetas\/([^/]+)\//);
+ if(m)applyRelatedRecipeImage(a.querySelector(".related-photo"),m[1]);
+});
 const dynamicCookGuides={
 "hummus-cremoso":{heat:"Sin cocción",time:"3–5 min de triturado; 20–30 min de reposo en frío es opcional",cue:"Debe quedar cremoso y uniforme, pero con cuerpo; corrige agua, limón y sal al final."},
 "pasta-pesto-tomate":{heat:"Pasta en agua hirviendo; acabado con fuego bajo o apagado",time:"Cuece según el envase y retira la pasta aproximadamente 1 min antes del punto final",cue:"La pasta debe quedar al dente y la salsa ligada con un poco de agua de cocción, no aceitosa ni seca."},
