@@ -77,6 +77,45 @@ jobs:
             --virtual-time-budget=7000 \
             --screenshot="audit/desktop-home.png" "https://cocinasinlios.com/"
 
+      - name: Production interaction smoke test
+        shell: bash
+        env:
+          CHROME_PATH: ${{ steps.chrome.outputs.path }}
+        run: |
+          npm install --no-save puppeteer-core
+          cat > /tmp/csl-smoke.cjs <<'NODE'
+          const puppeteer = require(process.cwd() + "/node_modules/puppeteer-core");
+          (async()=>{
+            const browser=await puppeteer.launch({executablePath:process.env.CHROME_PATH,headless:true,args:["--no-sandbox","--disable-gpu"]});
+            const page=await browser.newPage();
+            await page.setViewport({width:390,height:844,deviceScaleFactor:1});
+            const errors=[];
+            page.on("pageerror",e=>errors.push(String(e)));
+
+            await page.goto("https://cocinasinlios.com/que-cocino",{waitUntil:"networkidle2"});
+            await page.click("#go");
+            await page.waitForSelector("#results.show",{timeout:8000});
+            const cards=await page.$eval("#grid .card",els=>els.length);
+            if(cards<1)throw new Error("Qué cocino no generó resultados");
+
+            await page.goto("https://cocinasinlios.com/recetas/pasta-tomate-atun/",{waitUntil:"networkidle2"});
+            await page.waitForSelector(".csl-continue",{timeout:8000});
+            const recent=await page.evaluate(()=>JSON.parse(localStorage.getItem("csl-recientes-v1")||"[]"));
+            if(!Array.isArray(recent)||recent[0]?.slug!=="pasta-tomate-atun")throw new Error("No se guardó la receta reciente");
+
+            await page.goto("https://cocinasinlios.com/mi-rincon",{waitUntil:"networkidle2"});
+            await page.waitForFunction(()=>getComputedStyle(document.querySelector("#recentDetail")).display!=="none",{timeout:8000});
+            const recentLinks=await page.$eval("#recentList .recent-item",els=>els.length);
+            if(recentLinks<1)throw new Error("Mi cocina no muestra recetas recientes");
+
+            if(errors.length)throw new Error("Errores JS en producción: "+errors.join(" | "));
+            require("fs").writeFileSync("audit/smoke.txt","OK\nQué cocino: "+cards+" resultados\nReceta reciente: OK\nMi cocina recientes: "+recentLinks+"\n");
+            console.log("Production smoke test OK");
+            await browser.close();
+          })().catch(async e=>{console.error(e);process.exit(1)});
+          NODE
+          node /tmp/csl-smoke.cjs
+
       - name: Lighthouse mobile
         shell: bash
         run: |
