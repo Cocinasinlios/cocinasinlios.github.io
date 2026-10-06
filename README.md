@@ -3,10 +3,10 @@
 Proyecto editorial propio de cocina doméstica y organización, publicado desde GitHub y servido en https://cocinasinlios.com/.
 
 ## Producto público
-- Qué cocino: tres ideas según tiempo, antojo y objetivo.
+- Qué cocino: tres ideas según tiempo, antojo y objetivo, evitando repetir de forma innecesaria lo visto recientemente.
 - Despensa Sin Líos: checklist local de básicos.
 - Planifica: cinco cenas, compra orientativa y guardado voluntario en el dispositivo.
-- Mi cocina: panel local con despensa, semana, compra, favoritos y “gastar pronto”.
+- Mi cocina: panel local con despensa, semana, compra, favoritos, “gastar pronto” y recetas vistas recientemente.
 - Recetas: biblioteca editorial de 50 recetas completas, todas con imagen propia, URLs estáticas, favoritos, compartir, sustituciones, aprovechamiento y aprendizaje.
 - Explora: rutas por ingrediente para partir de lo que ya hay en casa.
 
@@ -26,4 +26,4 @@ La web se mantiene separada de cualquier actividad de promoción o venta de prod
 
 
 ## Control de calidad
-Cada cambio en `main` ejecuta una comprobación automática de enlaces internos, sitemap, páginas de recetas, assets de imagen y separación del proyecto editorial respecto de actividad comercial de terceros.
+Cada cambio en `main` ejecuta una comprobación automática de enlaces internos, sitemap, páginas de recetas, assets de imagen y separación del proyecto editorial respecto de actividad comercial de terceros. Existe además una auditoría de producción con Lighthouse, capturas móviles y pruebas de interacción real para Qué cocino, recetas recientes y Mi cocina.
