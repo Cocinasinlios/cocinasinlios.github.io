@@ -19,7 +19,7 @@ function applyRelatedRecipeImage(el,slug){
  if(!el||!slug)return;
  el.classList.remove("no-photo","tone-sage","tone-mint","tone-peach","tone-butter","tone-clay","tone-paper");
  el.innerHTML="";
- el.style.backgroundImage="url('/assets/"+"recipes/"+encodeURIComponent(slug)+".webp')";
+ el.style.backgroundImage="url('/"+"assets/"+"recipes/"+encodeURIComponent(slug)+".webp')";
  el.style.backgroundSize="cover";
  el.style.backgroundPosition="center";
  el.style.backgroundRepeat="no-repeat";
