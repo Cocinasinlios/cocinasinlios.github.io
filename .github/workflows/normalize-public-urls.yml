@@ -1,0 +1,89 @@
+name: Normalize public URLs
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/normalize-public-urls.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  normalize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Normalize top-level public URLs
+        shell: python
+        run: |
+          from pathlib import Path
+
+          root = Path(".")
+          names = [
+              "aviso-legal",
+              "cenas-ligeras",
+              "cenas-rapidas",
+              "con-macarena",
+              "cookies",
+              "cuentame-tu-experiencia",
+              "despensa-sin-lios",
+              "explora",
+              "hablamos",
+              "mi-rincon",
+              "plan-semana",
+              "privacidad",
+              "que-cocinar-con-huevos",
+              "que-cocino",
+              "receta",
+              "recetas-aprovechamiento",
+              "recetas-con-arroz",
+              "recetas-con-calabacin",
+              "recetas-con-pollo",
+              "recetas-con-tomate",
+              "recetas",
+              "uso-y-propiedad",
+          ]
+          suffixes = {".html", ".js", ".xml", ".json", ".jsonc", ".md", ".py", ".webmanifest"}
+          changed = []
+
+          for path in root.rglob("*"):
+              if not path.is_file() or ".git" in path.parts or ".github" in path.parts:
+                  continue
+              if path.suffix.lower() not in suffixes:
+                  continue
+              try:
+                  text = path.read_text(encoding="utf-8")
+              except UnicodeDecodeError:
+                  continue
+              new = text
+              for name in names:
+                  new = new.replace(f"https://cocinasinlios.com/{name}.html", f"https://cocinasinlios.com/{name}")
+                  new = new.replace(f"/{name}.html", f"/{name}")
+              if new != text:
+                  path.write_text(new, encoding="utf-8")
+                  changed.append(str(path))
+
+          print(f"Normalized {len(changed)} files")
+          for p in changed:
+              print(" -", p)
+
+      - name: Validate site
+        run: python scripts/qa.py
+
+      - name: Commit normalized URLs
+        shell: bash
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "No URL changes needed."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "Normalize public URLs to production paths"
+          git push
