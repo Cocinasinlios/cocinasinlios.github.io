@@ -41,3 +41,15 @@
  .cook-bit p,.cook-bit b{line-height:1.45!important}
  .global-dock a{font-size:11px!important}
 }
+
+
+/* Post-recipe continuation */
+.csl-continue{padding-top:28px}
+.csl-continue-box{background:#20342b;color:#fff;border-radius:30px;padding:30px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+.csl-continue-box h2{font-size:38px;margin:6px 0 8px}
+.csl-continue-box p{margin:0;color:#cad7cf;max-width:620px}
+.csl-continue-actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.csl-continue .btn{border-color:#fff;color:#fff}
+.csl-continue .btn.primary{background:#fff;color:#20342b}
+@media(max-width:760px){.csl-continue-box{grid-template-columns:1fr}.csl-continue-actions{display:grid;grid-template-columns:1fr;justify-content:stretch}.csl-continue .btn{width:100%}}
+@media print{.csl-continue{display:none!important}}
