@@ -96,11 +96,12 @@ if(document.querySelector("footer") &&
 
 // Homepage continuity: surface saved local progress only when there is something useful to resume.
 if(path==="/"){
-  let pantry={},plan=null,favs=[],soon="";
+  let pantry={},plan=null,favs=[],soon="",recent=[];
   try{pantry=JSON.parse(localStorage.getItem("csl-despensa-v1")||"{}")}catch(e){}
   try{plan=JSON.parse(localStorage.getItem("csl-plan-semana-v1")||"null")}catch(e){}
   try{favs=JSON.parse(localStorage.getItem("csl-favoritos-v1")||"[]")}catch(e){}
   try{soon=localStorage.getItem("csl-gastar-pronto-v1")||""}catch(e){}
+  try{recent=JSON.parse(localStorage.getItem("csl-recientes-v1")||"[]")}catch(e){};if(!Array.isArray(recent))recent=[];
  
   const pantryCount=Object.values(pantry).filter(Boolean).length;
   const cards=[];
@@ -115,6 +116,11 @@ if(path==="/"){
   }
   if(soon.trim()){
     cards.push('<a class="resume-card" href="/que-cocino?gastar='+encodeURIComponent(soon.trim())+'"><small>GASTAR PRONTO</small><b>'+soon.trim().replace(/[<>&"]/g,"")+'</b><span>Buscar una salida →</span></a>');
+  }
+  const last=recent[0];
+  if(last?.slug&&last?.title){
+    const safeTitle=String(last.title).replace(/[<>&"]/g,"");
+    cards.push('<a class="resume-card" href="/recetas/'+encodeURIComponent(last.slug)+'/"><small>ÚLTIMA RECETA</small><b>'+safeTitle+'</b><span>Volver a verla →</span></a>');
   }
   
   const section=document.getElementById("csl-resume");
