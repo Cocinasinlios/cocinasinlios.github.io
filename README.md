@@ -11,7 +11,7 @@ Proyecto editorial propio de cocina doméstica y organización, publicado desde 
 - Explora: rutas por ingrediente para partir de lo que ya hay en casa.
 
 ## Límites
-La web se mantiene separada de cualquier actividad de promoción o venta de productos de terceros. No incorpora cookies publicitarias ni perfilado individual. Las preferencias se guardan localmente en el dispositivo; la medición agregada mediante Cloudflare Web Analytics, cuando esté habilitada en el dominio, no utiliza esas preferencias.
+La web se mantiene separada de cualquier actividad de promoción o venta de productos de terceros. No incorpora cookies publicitarias ni perfilado individual. Las preferencias se guardan localmente en el dispositivo; la medición agregada mediante Cloudflare Web Analytics no utiliza esas preferencias.
 
 ## Producción
 - Dominio: https://cocinasinlios.com/
@@ -20,7 +20,7 @@ La web se mantiene separada de cualquier actividad de promoción o venta de prod
 
 ## Medición
 - No hay identificador de usuario ni cookies publicitarias.
-- Cloudflare Web Analytics puede utilizarse para métricas agregadas cuando esté habilitado en la configuración del dominio.
+- Cloudflare Web Analytics está habilitado para métricas agregadas.
 - Las preferencias de Mi cocina permanecen en el almacenamiento local del dispositivo y no se envían como eventos de analítica.
 - Cualquier nueva medición o proveedor requiere revisar antes la información de privacidad.
 
