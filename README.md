@@ -7,7 +7,7 @@ Proyecto editorial propio de cocina doméstica y organización, publicado desde 
 - Despensa Sin Líos: checklist local de básicos.
 - Planifica: cinco cenas, compra orientativa y guardado voluntario en el dispositivo.
 - Mi cocina: panel local con despensa, semana, compra, favoritos y “gastar pronto”.
-- Recetas: biblioteca editorial de 50 recetas completas, con URLs estáticas, favoritos, compartir, sustituciones, aprovechamiento y aprendizaje.
+- Recetas: biblioteca editorial de 50 recetas completas, todas con imagen propia, URLs estáticas, favoritos, compartir, sustituciones, aprovechamiento y aprendizaje.
 - Explora: rutas por ingrediente para partir de lo que ya hay en casa.
 
 ## Límites
@@ -24,8 +24,6 @@ La web se mantiene separada de cualquier actividad de promoción o venta de prod
 - Las preferencias de Mi cocina permanecen en el almacenamiento local del dispositivo y no se envían como eventos de analítica.
 - Cualquier nueva medición o proveedor requiere revisar antes la información de privacidad.
 
-## Herramienta interna
-- Estudio RRSS: /estudio-rrss.html (noindex). Genera ideas y copys a partir del contenido editorial de la web, sin enviar datos fuera del navegador.
 
 ## Control de calidad
-Cada cambio en `main` ejecuta una comprobación automática de enlaces internos, sitemap, páginas de recetas y separación del proyecto editorial respecto de actividad comercial de terceros.
+Cada cambio en `main` ejecuta una comprobación automática de enlaces internos, sitemap, páginas de recetas, assets de imagen y separación del proyecto editorial respecto de actividad comercial de terceros.
