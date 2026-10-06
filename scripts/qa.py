@@ -218,6 +218,9 @@ for recipe in recipes:
 
 planner = (ROOT / "plan-semana.html").read_text(encoding="utf-8", errors="replace")
 dashboard = (ROOT / "mi-rincon.html").read_text(encoding="utf-8", errors="replace")
+chooser = (ROOT / "que-cocino.html").read_text(encoding="utf-8", errors="replace")
+if not re.search(r"(?:const|let|var)\s+esc\s*=|function\s+esc\s*\(", chooser):
+    problems.append("Qué cocino ha perdido su helper de escape de HTML")
 picker = (ROOT / "que-cocino.html").read_text(encoding="utf-8", errors="replace")
 
 # Small runtime-contract checks for helpers used by dynamic renderers.
