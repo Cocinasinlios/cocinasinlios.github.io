@@ -44,7 +44,7 @@ document.querySelectorAll("header .brand").forEach(a=>{
 });
 
 const desktopNav=[
-  ["/que-cocino","Qué cocino"],
+  ["/que-cocino","Resuelve hoy"],
   ["/plan-semana","Planifica"],
   ["/recetas","Recetas"],
   ["/mi-rincon","Mi cocina"]
