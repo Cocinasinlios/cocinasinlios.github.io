@@ -232,3 +232,43 @@ header .navlinks{font-size:13px!important}
 .recipes-page .learn-note .eyebrow{color:#536158!important}
 .home-page .flow-card>b{color:#887a69!important}
 .csl-visually-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+
+
+/* Homepage conversion refinement 2026-10-07 */
+.home-page .hero-trust{margin-top:12px;font-size:12px;color:#5d665f;line-height:1.45}
+.home-page .hero-trust a{font-weight:850;color:#263e33;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+.home-page .week-preview-section{padding:74px 0;background:#fffdfa;border-block:1px solid rgba(230,221,208,.78)}
+.home-page .week-preview{display:grid;grid-template-columns:.78fr 1.22fr;gap:42px;align-items:center}
+.home-page .week-preview-copy h2{font-family:Georgia,serif;font-size:clamp(40px,4.6vw,62px);font-weight:500;letter-spacing:-1.6px;line-height:1.02;margin:10px 0 16px}
+.home-page .week-preview-copy p{color:#6f7068;max-width:520px}
+.home-page .week-preview-benefits{display:grid;gap:8px;margin:22px 0 24px;font-size:13px;color:#405347}
+.home-page .week-preview-benefits span{display:flex;gap:8px;align-items:flex-start}
+.home-page .week-preview-card{background:#20342b;color:#fff;border-radius:32px;padding:26px;box-shadow:0 28px 80px rgba(31,43,36,.16);position:relative;overflow:hidden}
+.home-page .week-preview-card:after{content:"";position:absolute;width:250px;height:250px;border-radius:50%;right:-110px;top:-120px;background:rgba(243,223,158,.10)}
+.home-page .week-preview-label{position:relative;z-index:1;font-size:10px;letter-spacing:1.3px;font-weight:900;color:#c8d5cd;margin-bottom:13px}
+.home-page .week-days{position:relative;z-index:1;display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.home-page .week-day-preview{min-height:155px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.075);border-radius:19px;padding:14px;display:flex;flex-direction:column}
+.home-page .week-day-preview:nth-child(2n){background:rgba(220,232,216,.12)}
+.home-page .week-day-preview small{font-size:9px;font-weight:900;letter-spacing:1px;color:#bdcec3}
+.home-page .week-day-preview b{font-family:Georgia,serif;font-size:17px;font-weight:500;line-height:1.08;margin:11px 0}
+.home-page .week-day-preview span{margin-top:auto;font-size:10px;color:#d7e1da}
+.home-page .week-preview-foot{position:relative;z-index:1;margin-top:14px;font-size:11px;color:#c7d4cc}
+.home-page .macarena-points{display:grid;gap:7px;margin:18px 0 23px}
+.home-page .macarena-points span{font-size:13px;color:#4f5c54;padding-left:19px;position:relative}
+.home-page .macarena-points span:before{content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;border-radius:50%;background:#c87857}
+.home-page .macarena-actions{display:flex;gap:9px;flex-wrap:wrap}
+@media(max-width:980px){
+ .home-page .week-preview{grid-template-columns:1fr}
+ .home-page .week-preview-copy{max-width:720px}
+ .home-page .week-preview-section{padding:60px 0}
+}
+@media(max-width:700px){
+ .home-page .week-preview-section{padding:50px 0}
+ .home-page .week-preview-card{padding:18px;border-radius:26px}
+ .home-page .week-days{grid-template-columns:1fr}
+ .home-page .week-day-preview{min-height:0;display:grid;grid-template-columns:46px 1fr auto;gap:10px;align-items:center}
+ .home-page .week-day-preview b{margin:0;font-size:17px}
+ .home-page .week-day-preview span{margin:0}
+ .home-page .macarena-actions{display:grid}
+ .home-page .macarena-actions .btn{width:100%}
+}
