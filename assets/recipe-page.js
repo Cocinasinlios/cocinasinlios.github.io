@@ -1,4 +1,6 @@
 (()=>{const r=window.CSL_RECIPE;if(!r)return;
+const recipeFooter=document.querySelector("footer p");
+if(recipeFooter)recipeFooter.textContent="Cocina real: ajusta cantidades y punto a tu casa. Si hay alergias o intolerancias, revisa siempre ingredientes y etiquetado.";
 const recentKey="csl-recientes-v1";
 try{
  let recent=JSON.parse(localStorage.getItem(recentKey)||"[]");
