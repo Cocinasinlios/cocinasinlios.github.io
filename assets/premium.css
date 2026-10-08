@@ -172,6 +172,9 @@ header .navlinks{font-size:13px!important}
 
 /* Contrast accessibility pass: small editorial labels stay in palette but meet normal-text contrast. */
 .eyebrow,.csl-kicker{color:#59685c!important}
+/* Context-aware contrast: global labels stay dark on pale surfaces, but tinted/dark panels override explicitly. */
+.learn .eyebrow,.criterion .eyebrow{color:#5b625c!important}
+.decide .eyebrow,.next .eyebrow,.csl-continue-box .eyebrow,.resume-box .csl-kicker{color:#dce8df!important}
 .dashboard-page .use-soon small{color:#655d49!important}
 
 .csl-install-tip{position:fixed;z-index:180;left:14px;right:14px;bottom:calc(82px + env(safe-area-inset-bottom));display:flex;align-items:center;justify-content:space-between;gap:14px;background:#fffdfa;border:1px solid rgba(39,64,52,.14);border-radius:20px;padding:14px 14px 14px 16px;box-shadow:0 18px 55px rgba(31,43,36,.2);color:#263e33}
