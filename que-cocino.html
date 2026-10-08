@@ -48,7 +48,9 @@ footer{background:#202b24;color:#dce5df;padding:40px 0}footer p{font-size:12px;c
  const params=new URLSearchParams(location.search);
  let state={time:"15",mood:"salado",goal:"resolver"},generated=[];
  const origin=params.get("origen")||"";
+ const auto=params.get("auto")==="1";
  const presetTime=params.get("tiempo"),presetMood=params.get("antojo"),presetGoal=params.get("objetivo");
+ if(auto)state={time:"30",mood:"daigual",goal:"resolver"};
  if(["15","30","60"].includes(presetTime))state.time=presetTime;
  if(["salado","ligera","comfort","dulce","daigual"].includes(presetMood))state.mood=presetMood;
  if(["resolver","aprovechar","aprender"].includes(presetGoal))state.goal=presetGoal;
@@ -89,6 +91,7 @@ footer{background:#202b24;color:#dce5df;padding:40px 0}footer p{font-size:12px;c
  if(useSoon){context.classList.add("show");context.innerHTML="<b>Primero quiero gastar esto.</b><span>"+esc(useSoon)+" · Lo priorizo cuando encaje con una receta de verdad.</span>"}
  else if(paramIngredients.length){context.classList.add("show");context.innerHTML="<b>Partimos de "+paramIngredients.map(esc).join(", ")+".</b><span>Lo priorizaré solo cuando aparezca de verdad en la receta.</span>"}
  else if(origin==="despensa"&&pantryKeys.length){context.classList.add("show");context.innerHTML="<b>Vengo de tu despensa.</b><span>Tengo en cuenta los "+pantryKeys.length+" básicos que acabas de marcar.</span>"}
+ if(auto){context.classList.add("show");context.innerHTML="<b>Modo «decide por mí».</b><span>No te pregunto nada primero: empiezo con 30 minutos, cualquier antojo y lo que ya sé de tu cocina. Si no te encaja, puedes cambiar los filtros después.</span>"}
  document.querySelectorAll(".choices").forEach(g=>{
    g.querySelectorAll(".choice").forEach(b=>{
      const on=state[g.dataset.group]===b.dataset.value;
@@ -175,6 +178,7 @@ footer{background:#202b24;color:#dce5df;padding:40px 0}footer p{font-size:12px;c
    document.getElementById("results").classList.add("show");document.getElementById("results").scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});setTimeout(()=>document.getElementById("resultTitle").focus({preventScroll:true}),300);
  }
  document.getElementById("go").addEventListener("click",render);document.getElementById("again").addEventListener("click",render);
+ if(auto)setTimeout(render,0);
  document.getElementById("share").addEventListener("click",async e=>{const titles=[...document.querySelectorAll("#grid h3")].map(x=>x.textContent);if(!titles.length)return;const txt="Tres ideas Sin Líos ✦\n\n"+titles.map(x=>"• "+x).join("\n")+"\n\nhttps://cocinasinlios.com/que-cocino";try{if(navigator.share)await navigator.share({title:"Qué cocino hoy",text:txt});else{await navigator.clipboard.writeText(txt);e.currentTarget.textContent="Ideas copiadas ✓"}}catch(err){}});
 })();
 </script>
