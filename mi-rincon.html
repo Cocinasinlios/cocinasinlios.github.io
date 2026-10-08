@@ -11,10 +11,10 @@
 <a class="statusbox" href="/despensa-sin-lios"><div class="eyebrow">Tu despensa</div><b id="pantryStatus" aria-live="polite">Sin revisar todavía</b><span id="pantrySub">Marca tus básicos y volverán a aparecer aquí. Abrir despensa →</span></a>
 <div class="statusbox"><div class="eyebrow">Tu semana</div><b id="weekStatus" aria-live="polite">Sin plan guardado</b><span id="weekSub">Cuando guardes una semana, tendrás aquí el resumen.</span></div><div class="statusbox"><div class="eyebrow">Recetas guardadas</div><b id="favStatus" aria-live="polite">Nada guardado</b><span id="favSub">Pulsa ♡ en Recetas para reunir tus favoritas.</span></div><div class="statusbox"><div class="eyebrow">Preferencias</div><b id="avoidStatus" aria-live="polite">Sin filtros</b><span id="avoidSub">Puedes indicar lo que prefieres evitar en Resuelve hoy o Planifica.</span></div>
 </div><div id="weekDetail" class="week-detail" style="display:none"><div class="eyebrow">Tu semana guardada</div><h3>De lunes a viernes, de un vistazo.</h3><div id="weekDays" class="week-days"></div><div id="weekMeta" class="week-meta"></div><div id="savedPrep" class="saved-prep" style="display:none"></div><div class="week-tools"><button id="shareWeek" type="button">Llevarme la semana al móvil</button></div></div><div id="favDetail" class="fav-detail" style="display:none"><div class="eyebrow">Tus recetas guardadas</div><h3>Para volver sin buscar otra vez.</h3><div id="favList" class="fav-list"></div></div><div id="recentDetail" class="recent-detail" style="display:none"><div class="eyebrow">Vistas recientemente</div><h3>Por si quieres volver donde estabas.</h3><div id="recentList" class="recent-list"></div></div><div class="shopping-panel"><div class="eyebrow">Tu compra de esta semana</div><h3>Lo que falta por pasar por caja.</h3><div id="shoppingList" class="shopping-list"><div class="shopping-empty">Guarda una semana desde Planifica y aquí aparecerá una lista orientativa.</div></div><div id="shoppingTools" class="shopping-tools" style="display:none"><button id="clearShopping" type="button">Desmarcar compra</button><button id="shareShopping" type="button">Compartir lista</button></div></div><div class="use-soon"><label for="useSoon">¿Qué necesitas gastar pronto?</label><div class="row"><input id="useSoon" type="text" maxlength="120" placeholder="Ej. calabacín, pollo, tomates"><button id="useSoonGo" type="button">Dame ideas</button></div><small>Se guarda sólo en este dispositivo cuando pulsas el botón.</small></div><div class="privacy-local"><div class="eyebrow">Privacidad local</div><h3>Esto vive en tu dispositivo.</h3><p>Despensa, semana, compra, favoritos, “gastar pronto”, tus ingredientes a evitar y un historial breve de recetas recientes se guardan localmente en este dispositivo para que puedas continuar donde lo dejaste. Esos contenidos permanecen en tu dispositivo. Cloudflare Web Analytics está habilitado para medir visitas y rendimiento de forma agregada y no utiliza los contenidos guardados en Mi cocina.</p><div class="data-tools"><button id="exportLocal" type="button">Exportar Mi cocina</button><label class="import-local" for="importLocal">Importar Mi cocina</label><input id="importLocal" type="file" accept="application/json,.json" hidden><button id="clearLocal" class="danger" type="button">Borrar mis datos</button></div><small class="data-help">Exportar crea una copia JSON que puedes guardar y restaurar en otro dispositivo. No necesita cuenta.</small></div><div id="feedbackPrompt" class="feedback-prompt" hidden><div><div class="eyebrow">Ayúdame a afinar Cocina sin líos</div><h3>Ya has usado algo de la web. ¿Qué te sirvió y qué cambiarías?</h3><p>No busco elogios; me interesa saber qué resolvió algo de verdad y dónde todavía hay fricción.</p></div><a class="btn alt" href="/cuentame-tu-experiencia">Contártelo →</a></div><div class="grid" style="margin-top:24px">
-<a class="card" href="/que-cocino"><b>HOY</b><h3>Resuelve hoy.</h3><p>Para cuando necesitas pasar de cero ideas a tres opciones razonables.</p></a>
-<a class="card" href="/plan-semana"><b>SEMANA</b><h3>Planifica.</h3><p>Crea cinco cenas a tu medida y guarda la semana para volver a ella.</p></a>
+<a class="card" href="/que-cocino?auto=1"><b>HOY</b><h3>Decide por mí.</h3><p>Entra sin configurar nada y empiezo con lo que ya sé de tu cocina.</p></a>
+<a class="card" href="/plan-semana"><b>TU SEMANA</b><h3>Planifica.</h3><p>Crea cinco cenas a tu medida y guarda la semana para volver a ella.</p></a>
+<a class="card" href="/semana-sin-lios"><b>ESTA SEMANA</b><h3>Semana Sin Líos.</h3><p>Una propuesta editorial nueva: cinco cenas, una preparación útil y un ingrediente a aprovechar.</p></a>
 <a class="card" href="/despensa-sin-lios"><b>BASE</b><h3>Despensa.</h3><p>Para revisar qué tienes y qué realmente merece ocupar espacio en casa.</p></a>
-
 <a class="card" href="/recetas"><b>ANTOJO</b><h3>Recetas.</h3><p>Para entrar por lo que te apetece comer.</p></a>
 <a class="card" href="/con-macarena"><b>DETRÁS</b><h3>Macarena.</h3><p>La filosofía y la persona detrás de Cocina sin líos.</p></a>
 </div></div></section></main><footer><div class="wrap"><b>Cocina sin líos con Macarena</b><p>Accesos rápidos del proyecto editorial.</p></div></footer><div class="global-dock"></div><script src="/assets/recipes-data.js"></script><script>
@@ -25,6 +25,7 @@ let p={};try{p=JSON.parse(localStorage.getItem("csl-despensa-v1")||"{}")}catch(e
 const n=Object.values(p).filter(Boolean).length;
 if(n){document.getElementById("pantryStatus").textContent=n+" básicos marcados";document.getElementById("pantrySub").textContent="Tu planificador puede aprovechar esta base."}
 let w=null;try{w=JSON.parse(localStorage.getItem("csl-plan-semana-v1")||"null")}catch(e){}
+let soon="";try{soon=(localStorage.getItem("csl-gastar-pronto-v1")||"").trim()}catch(e){}
 const nextTitle=document.getElementById("nextStepTitle"),nextText=document.getElementById("nextStepText"),nextLink=document.getElementById("nextStepLink");
 const hasWeek=!!(w&&Array.isArray(w.meals)&&w.meals.length);
 if(nextTitle&&nextText&&nextLink){
@@ -32,13 +33,17 @@ if(nextTitle&&nextText&&nextLink){
     nextTitle.textContent="Tu semana ya está resuelta.";
     nextText.textContent="Revisa la compra, abre una receta o cambia de plan cuando lo necesites.";
     nextLink.href="#weekDetail";nextLink.textContent="Ver mi semana →";
+  }else if(soon){
+    nextTitle.textContent="Antes de comprar, gastaría "+soon+".";
+    nextText.textContent="Ya lo tienes marcado como prioritario. Puedo cruzarlo con tu despensa y tus preferencias sin hacerte configurar nada más.";
+    nextLink.href="/que-cocino?auto=1&gastar="+encodeURIComponent(soon);nextLink.textContent="Decide por mí →";
   }else if(n){
     nextTitle.textContent="Ya tienes base. Ahora quítate cinco decisiones.";
     nextText.textContent="Tu despensa está marcada; úsala para generar cinco cenas y una compra consolidada.";
     nextLink.href="/plan-semana";nextLink.textContent="Planificar mi semana →";
   }else{
     nextTitle.textContent="Empieza por marcar lo que ya tienes.";
-    nextText.textContent="Con una despensa básica marcada, Qué cocino y Planifica pueden darte propuestas más útiles.";
+    nextText.textContent="Con una despensa básica marcada, Resuelve hoy y Planifica pueden darte propuestas más útiles.";
     nextLink.href="/despensa-sin-lios";nextLink.textContent="Preparar mi despensa →";
   }
 }
