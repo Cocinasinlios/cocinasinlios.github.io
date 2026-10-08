@@ -236,8 +236,14 @@ jobs:
               data=json.loads(p.read_text())
               cats=data["categories"]
               out.append(name.upper())
+              scores={key:round(cats[key]["score"]*100) for key in ("performance","accessibility","best-practices","seo")}
               for key in ("performance","accessibility","best-practices","seo"):
-                  out.append(f"{key}={round(cats[key]['score']*100)}")
+                  out.append(f"{key}={scores[key]}")
+              if scores["performance"] < 95:
+                  raise SystemExit(f"{name}: performance por debajo de 95 ({scores['performance']})")
+              for key in ("accessibility","best-practices","seo"):
+                  if scores[key] < 100:
+                      raise SystemExit(f"{name}: {key} ha dejado de estar en 100 ({scores[key]})")
               audits=data.get("audits",{})
               for key in ("first-contentful-paint","largest-contentful-paint","cumulative-layout-shift","total-blocking-time","speed-index"):
                   if key in audits:
