@@ -89,7 +89,7 @@ const intro=document.querySelector(".hero .intro");
 if(intro&&!document.querySelector(".recipe-byline")){
   const by=document.createElement("p");
   by.className="recipe-byline";
-  by.innerHTML='Por <a rel="author" href="/con-macarena">Macarena</a> · Cocina sin líos';
+  by.innerHTML='Por <a rel="author" href="/con-macarena">Macarena</a> · <a href="/criterio-editorial">Criterio editorial</a>';
   intro.insertAdjacentElement("afterend",by);
 }
 if(![...document.querySelectorAll('script[type="application/ld+json"]')].some(s=>s.textContent.includes('"BreadcrumbList"'))){
