@@ -31,19 +31,19 @@
   ],
   "shortcuts": [
     {
-      "name": "Qué cocino hoy",
-      "short_name": "Qué cocino",
-      "url": "/que-cocino"
+      "name": "Decide por mí",
+      "short_name": "Decide por mí",
+      "url": "/que-cocino?auto=1"
+    },
+    {
+      "name": "La semana Sin Líos",
+      "short_name": "Esta semana",
+      "url": "/semana-sin-lios"
     },
     {
       "name": "Planifica mi semana",
       "short_name": "Planifica",
       "url": "/plan-semana"
-    },
-    {
-      "name": "Mis recetas",
-      "short_name": "Recetas",
-      "url": "/recetas"
     },
     {
       "name": "Mi cocina",
