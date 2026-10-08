@@ -383,6 +383,26 @@ if sitemap.is_file():
     if len(recipe_urls) != recipe_count:
         problems.append(f"Recetas: {recipe_count} en datos pero {len(recipe_urls)} URLs en sitemap")
 
+image_sitemap = ROOT / "image-sitemap.xml"
+if not image_sitemap.is_file():
+    problems.append("Falta image-sitemap.xml")
+else:
+    ism = image_sitemap.read_text(encoding="utf-8", errors="replace")
+    image_urls = re.findall(r"<image:loc>https://cocinasinlios\.com/assets/recipes/[^<]+</image:loc>", ism)
+    image_recipe_urls = re.findall(r"<loc>https://cocinasinlios\.com/recetas/[^<]+/</loc>", ism)
+    if len(image_urls) != recipe_count or len(image_recipe_urls) != recipe_count:
+        problems.append(f"Sitemap de imágenes desalineado: {len(image_urls)} imágenes / {len(image_recipe_urls)} recetas / {recipe_count} esperadas")
+    for recipe in recipes:
+        slug = recipe.get("slug")
+        image = recipe.get("image")
+        if slug and image and f"https://cocinasinlios.com{image}" not in ism:
+            problems.append(f"Foto ausente del sitemap de imágenes: {slug}")
+robots_path = ROOT / "robots.txt"
+if robots_path.is_file():
+    robots_text = robots_path.read_text(encoding="utf-8", errors="replace")
+    if "https://cocinasinlios.com/image-sitemap.xml" not in robots_text:
+        problems.append("robots.txt no anuncia el sitemap de imágenes")
+
 # PWA/installability integrity.
 manifest_path = ROOT / "site.webmanifest"
 if not manifest_path.is_file():
