@@ -16,3 +16,38 @@ window.CSL_GET_WEEKLY=function(date){
  const items=window.CSL_WEEKLY||[];
  return items.length?items[((week%items.length)+items.length)%items.length]:null;
 };
+window.CSL_WEEKLY_TITLES={
+"fajitas-pollo-verduras":["Fajitas de pollo y verduras","30 min"],
+"pisto-huevo":["Pisto con huevo","45 min"],
+"pasta-tomate-atun":["Pasta con tomate y atún","25 min"],
+"sopa-tomate-alubias":["Sopa de tomate y alubias","30 min"],
+"pizza-verduras":["Pizza casera con verduras","75 min"],
+"pollo-limon-sarten":["Pollo al limón en sartén","25 min"],
+"tortilla-calabacin":["Tortilla de calabacín","30 min"],
+"cuscus-garbanzos-verduras":["Cuscús con garbanzos y verduras","20 min"],
+"bacalao-tomate":["Bacalao con tomate","35 min"],
+"patatas-asadas-rellenas":["Patatas asadas rellenas","55 min"],
+"arroz-salteado-huevo-verduras":["Arroz salteado con huevo y verduras","20 min"],
+"pollo-horno-limon":["Pollo al horno con limón y especias","50 min"],
+"quiche-verduras":["Quiche de verduras","50 min"],
+"ensalada-garbanzos-mediterranea":["Ensalada mediterránea de garbanzos","15 min"],
+"croquetas-pollo-aprovechamiento":["Croquetas de pollo","60 min + frío"],
+"salmon-mostaza-horno":["Salmón al horno con mostaza","25 min"],
+"ensalada-lentejas-verduras":["Ensalada de lentejas y verduras","20 min"],
+"pasta-calabacin-limon":["Pasta con calabacín y limón","25 min"],
+"tacos-pescado":["Tacos de pescado","30 min"],
+"crema-calabaza-zanahoria":["Crema de calabaza y zanahoria","35 min"],
+"sopa-ajo-huevo":["Sopa de ajo con huevo","25 min"],
+"quesadillas-frijoles-maiz":["Quesadillas de frijoles y maíz","20 min"],
+"potaje-alubias-rapido":["Potaje rápido de alubias","35 min"],
+"arroz-tomate-huevo":["Arroz con tomate y huevo","20 min"],
+"pollo-curry-expres":["Pollo al curry exprés","30 min"],
+"shakshuka-rapida":["Shakshuka rápida","25 min"],
+"pescado-papillote":["Pescado en papillote","30 min"],
+"berenjenas-rellenas":["Berenjenas rellenas","55 min"],
+"crumble-manzana":["Crumble de manzana","40 min"],
+"hummus-cremoso":["Hummus cremoso","15 min"],
+"huevos-verduras-pan":["Huevos + verduras + pan","20 min"],
+"pasta-pesto-tomate":["Pasta con pesto y tomate","25 min"],
+"guacamole":["Guacamole sencillo","10 min"]
+};
