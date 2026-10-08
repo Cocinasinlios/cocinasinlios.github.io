@@ -53,3 +53,18 @@
 .csl-continue .btn.primary{background:#fff;color:#20342b}
 @media(max-width:760px){.csl-continue-box{grid-template-columns:1fr}.csl-continue-actions{display:grid;grid-template-columns:1fr;justify-content:stretch}.csl-continue .btn{width:100%}}
 @media print{.csl-continue{display:none!important}}
+
+/* Cross-recipe reuse network */
+.csl-reuse-network{padding:18px 0 66px}
+.csl-reuse-box{background:linear-gradient(135deg,#eef5eb,#fffdfa);border:1px solid var(--line);border-radius:30px;padding:28px}
+.csl-reuse-head{display:grid;grid-template-columns:1fr .8fr;gap:28px;align-items:end;margin-bottom:18px}
+.csl-reuse-head h2{font-size:38px;margin:6px 0 0}
+.csl-reuse-head p{margin:0;color:var(--muted);font-size:13px}
+.csl-reuse-links{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.csl-reuse-link{background:#fff;border:1px solid var(--line);border-radius:20px;padding:17px;display:flex;flex-direction:column;min-height:125px}
+.csl-reuse-link small{font-size:9px;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:#5d6b61}
+.csl-reuse-link b{font-family:Georgia,serif;font-size:22px;font-weight:500;margin:7px 0}
+.csl-reuse-link span{font-size:11px;color:var(--muted);margin-top:auto}
+.csl-reuse-tip{margin-top:12px;padding:13px 15px;border-left:4px solid #c97a58;background:#fff;border-radius:14px;color:#5d625d;font-size:12px}
+@media(max-width:760px){.csl-reuse-head{grid-template-columns:1fr}.csl-reuse-links{grid-template-columns:1fr}.csl-reuse-network{padding-bottom:48px}}
+@media print{.csl-reuse-network{display:none!important}}
