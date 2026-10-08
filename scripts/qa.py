@@ -436,6 +436,48 @@ for page in problem_collections:
         if "/que-cocino?auto=1" not in txt:
             problems.append(f"Colección sin salida a Decide por mí: {page}")
 
+# Validate that dynamic editorial datasets cannot silently drift away from the recipe master.
+if reuse_map.is_file():
+    try:
+        reuse_payload = reuse_map.read_text(encoding="utf-8", errors="replace")
+        reuse_payload = re.sub(r"^\s*window\.CSL_REUSE_MAP\s*=\s*", "", reuse_payload)
+        reuse_payload = re.sub(r";\s*$", "", reuse_payload)
+        reuse_data = json.loads(reuse_payload)
+        known_slugs = {r.get("slug") for r in recipes if r.get("slug")}
+        if set(reuse_data) != known_slugs:
+            missing = sorted(known_slugs - set(reuse_data))
+            extra = sorted(set(reuse_data) - known_slugs)
+            problems.append(f"Red de aprovechamiento desincronizada. Faltan: {missing}; sobran: {extra}")
+        for source_slug, entry in reuse_data.items():
+            for group in (entry.get("links") or []):
+                for target in (group.get("recipes") or []):
+                    slug = target.get("slug")
+                    if slug not in known_slugs:
+                        problems.append(f"Red de aprovechamiento apunta a receta inexistente: {source_slug} -> {slug}")
+    except Exception as exc:
+        problems.append(f"No se puede interpretar reuse-map.js: {exc}")
+
+if weekly_data.is_file():
+    wd = weekly_data.read_text(encoding="utf-8", errors="replace")
+    weekly_blocks = re.findall(r'slugs:\s*\[([^\]]+)\]', wd)
+    weekly_slugs = [s for block in weekly_blocks for s in re.findall(r'["\']([^"\']+)["\']', block)]
+    known_slugs = {r.get("slug") for r in recipes if r.get("slug")}
+    bad_weekly = sorted({s for s in weekly_slugs if s not in known_slugs})
+    if bad_weekly:
+        problems.append(f"Semana Sin Líos usa recetas inexistentes: {bad_weekly}")
+    if len(weekly_blocks) < 8:
+        problems.append("Semana Sin Líos tiene menos de 8 propuestas rotativas")
+
+if manifest_path.is_file():
+    try:
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8", errors="replace"))
+        shortcut_urls = {s.get("url") for s in (manifest.get("shortcuts") or []) if isinstance(s, dict)}
+        for needed in ("/que-cocino?auto=1", "/semana-sin-lios", "/plan-semana", "/mi-rincon"):
+            if needed not in shortcut_urls:
+                problems.append(f"PWA sin acceso diferencial: {needed}")
+    except Exception:
+        pass
+
 if problems:
     print("\nSITE QA: ERROR\n")
     for p in problems:
