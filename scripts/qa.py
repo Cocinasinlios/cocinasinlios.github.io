@@ -42,6 +42,7 @@ CORE = [
     "cocinar-una-vez-comer-dos-dias.html",
     "que-hacer-con-pollo-cocido.html",
     "que-hacer-con-garbanzos-cocidos.html",
+    "que-cenar-hoy.html",
 ]
 
 problems: list[str] = []
