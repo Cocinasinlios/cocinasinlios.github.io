@@ -348,6 +348,18 @@ for page in recipe_pages:
         problems.append(f"Ficha sin canonical: {page.relative_to(ROOT)}")
     slug = page.parent.name
     recipe = recipe_by_slug.get(slug, {})
+    real_image = str(recipe.get("image") or "")
+    hero_match = re.search(r'<div class="hero-photo"[^>]*>\s*<img\b([^>]*)>', text, flags=re.I)
+    if not hero_match:
+        problems.append(f"Ficha sin imagen hero HTML indexable: {slug}")
+    else:
+        attrs = hero_match.group(1)
+        if real_image and real_image not in attrs:
+            problems.append(f"Hero HTML no usa la imagen maestra: {slug}")
+        if not re.search(r'\balt=["\'][^"\']+["\']', attrs, flags=re.I):
+            problems.append(f"Hero HTML sin alt descriptivo: {slug}")
+        if 'fetchpriority="high"' not in attrs:
+            problems.append(f"Hero HTML sin prioridad alta: {slug}")
     runtime_match = re.search(r'window\.CSL_RECIPE=(\{[\s\S]*?\});</script>', text)
     if not runtime_match:
         problems.append(f"Ficha sin datos runtime CSL_RECIPE: {slug}")
