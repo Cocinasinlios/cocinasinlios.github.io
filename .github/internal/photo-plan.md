@@ -1,6 +1,8 @@
 # Plan interno de fotografía · Cocina sin líos
 
-Pendientes: 20 recetas.
+> ESTADO 08/10/2026: COMPLETADO. Las 50 recetas publicadas disponen de imagen individual en `assets/recipes`. Este documento se conserva como referencia de criterios fotográficos.
+
+Pendientes: 0 recetas.
 
 ## Criterios generales
 - Una receta = una imagen individual. Nunca collages.
