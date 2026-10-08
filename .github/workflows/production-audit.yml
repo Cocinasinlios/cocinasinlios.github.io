@@ -109,6 +109,22 @@ jobs:
             echo "SEO OK $url"
           done
 
+      - name: Verify real 404 response
+        shell: bash
+        run: |
+          status="$(curl -sS -L -o /dev/null -w '%{http_code}' https://cocinasinlios.com/esta-ruta-no-existe-csl-404)"
+          echo "404 test status=$status"
+          test "$status" = "404"
+
+      - name: Snapshot security headers
+        shell: bash
+        run: |
+          mkdir -p audit
+          curl -sSI https://cocinasinlios.com/ | tee audit/security-headers.txt
+          echo
+          echo "Relevant headers:"
+          grep -Ei '^(strict-transport-security|content-security-policy|x-content-type-options|referrer-policy|permissions-policy|x-frame-options):' audit/security-headers.txt || true
+
       - name: Find Chrome
         id: chrome
         shell: bash
@@ -200,6 +216,14 @@ jobs:
             --quiet --chrome-flags="--headless=new --no-sandbox" \
             --only-categories=performance,accessibility,best-practices,seo \
             --output=json --output-path=audit/lighthouse-recetas.json
+          lighthouse https://cocinasinlios.com/que-cenar-hoy \
+            --quiet --chrome-flags="--headless=new --no-sandbox" \
+            --only-categories=performance,accessibility,best-practices,seo \
+            --output=json --output-path=audit/lighthouse-seo-landing.json
+          lighthouse https://cocinasinlios.com/recetas/pasta-tomate-atun/ \
+            --quiet --chrome-flags="--headless=new --no-sandbox" \
+            --only-categories=performance,accessibility,best-practices,seo \
+            --output=json --output-path=audit/lighthouse-recipe.json
 
       - name: Summarize Lighthouse
         shell: python
@@ -207,7 +231,7 @@ jobs:
           import json
           from pathlib import Path
           out=[]
-          for name in ("home","recetas"):
+          for name in ("home","recetas","seo-landing","recipe"):
               p=Path(f"audit/lighthouse-{name}.json")
               data=json.loads(p.read_text())
               cats=data["categories"]
