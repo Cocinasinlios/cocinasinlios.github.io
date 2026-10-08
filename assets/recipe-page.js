@@ -1,4 +1,21 @@
 (()=>{const r=window.CSL_RECIPE;if(!r)return;
+function enhanceRecipeStructuredData(){
+ const recipeLd=[...document.querySelectorAll('script[type="application/ld+json"]')].find(s=>s.textContent.includes('"@type":"Recipe"'));
+ if(recipeLd){
+   try{
+     const data=JSON.parse(recipeLd.textContent);
+     if(data.author&&typeof data.author==="object")data.author["@id"]="https://cocinasinlios.com/con-macarena#macarena";
+     recipeLd.textContent=JSON.stringify(data);
+   }catch(e){}
+ }
+ if(!document.querySelector('script[data-csl-breadcrumb]')){
+   const bc=document.createElement("script");
+   bc.type="application/ld+json";bc.dataset.cslBreadcrumb="1";
+   bc.textContent=JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Recetas","item":"https://cocinasinlios.com/recetas"},{"@type":"ListItem","position":2,"name":r.title}]});
+   document.head.appendChild(bc);
+ }
+}
+enhanceRecipeStructuredData();
 const recipeFooter=document.querySelector("footer p");
 if(recipeFooter)recipeFooter.textContent="Cocina real: ajusta cantidades y punto a tu casa. Si hay alergias o intolerancias, revisa siempre ingredientes y etiquetado.";
 const recentKey="csl-recientes-v1";
