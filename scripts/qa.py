@@ -138,6 +138,19 @@ for guide in ingredient_guides:
         if n_cross != 1:
             problems.append(f"Guía de ingrediente con {n_cross} bloques de navegación cruzada: {guide}")
 
+problem_collections = [
+    "cenas-sin-ganas-de-cocinar.html",
+    "cenas-en-15-minutos.html",
+    "cenas-de-despensa.html",
+    "cocinar-una-vez-comer-dos-dias.html",
+]
+for collection in problem_collections:
+    collection_path = ROOT / collection
+    if collection_path.is_file():
+        collection_text = collection_path.read_text(encoding="utf-8", errors="replace")
+        if 'href="/hablamos"' not in collection_text:
+            problems.append(f"Colección SEO sin vía de conversación con Macarena: {collection}")
+
 for title, paths in indexable_titles.items():
     if len(paths) > 1:
         problems.append(f"Páginas indexables: título duplicado '{title}' -> {', '.join(paths)}")
