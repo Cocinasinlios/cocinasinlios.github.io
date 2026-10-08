@@ -171,6 +171,27 @@ for collection in problem_collections:
         if 'href="/hablamos"' not in collection_text:
             problems.append(f"Colección SEO sin vía de conversación con Macarena: {collection}")
 
+# Internal discoverability: every indexable page should be linked from the site,
+# not only listed in a sitemap. Normalize extensionless/trailing-slash paths.
+linked_paths: set[str] = set()
+for html_path in ROOT.rglob("*.html"):
+    if ".git" in html_path.parts:
+        continue
+    html_text = html_path.read_text(encoding="utf-8", errors="replace")
+    for raw in re.findall(r'href=["\']([^"\']+)["\']', html_text, flags=re.I):
+        if not raw.startswith("/") or raw.startswith("//"):
+            continue
+        p = urlsplit(raw).path
+        if p.endswith(".html"):
+            p = p[:-5]
+        p = p.rstrip("/") or "/"
+        linked_paths.add(p)
+
+for canonical in indexable_canonicals:
+    p = urlsplit(canonical).path.rstrip("/") or "/"
+    if p not in linked_paths:
+        problems.append(f"Página indexable huérfana: {canonical}")
+
 for title, paths in indexable_titles.items():
     if len(paths) > 1:
         problems.append(f"Páginas indexables: título duplicado '{title}' -> {', '.join(paths)}")
