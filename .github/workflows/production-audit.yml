@@ -3,9 +3,13 @@ name: Production audit
 on:
   push:
     branches: [main]
-    paths:
-      - ".github/workflows/production-audit.yml"
+    paths-ignore:
+      - ".github/internal/**"
   workflow_dispatch:
+
+concurrency:
+  group: production-audit
+  cancel-in-progress: true
 
 permissions:
   contents: read
