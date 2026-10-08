@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
 Sitemap: https://cocinasinlios.com/sitemap.xml
+Sitemap: https://cocinasinlios.com/image-sitemap.xml
