@@ -35,6 +35,11 @@ CORE = [
     "recetas-con-calabacin.html",
     "recetas-con-pollo.html",
     "recetas-con-arroz.html",
+    "semana-sin-lios.html",
+    "cenas-sin-ganas-de-cocinar.html",
+    "cenas-en-15-minutos.html",
+    "cenas-de-despensa.html",
+    "cocinar-una-vez-comer-dos-dias.html",
 ]
 
 problems: list[str] = []
@@ -393,6 +398,43 @@ if "site.webmanifest" not in site_js:
     problems.append("El sitio no enlaza el manifiesto globalmente")
 if "navigator.serviceWorker.register" not in site_js:
     problems.append("El sitio no registra el service worker")
+
+# Product-layer integrity.
+weekly_page = ROOT / "semana-sin-lios.html"
+weekly_data = ROOT / "assets" / "weekly-data.js"
+reuse_map = ROOT / "assets" / "reuse-map.js"
+recipe_runtime = ROOT / "assets" / "recipe-page.js"
+for required, label in [
+    (weekly_page, "página Semana Sin Líos"),
+    (weekly_data, "datos rotativos de Semana Sin Líos"),
+    (reuse_map, "red de aprovechamiento entre recetas"),
+]:
+    if not required.is_file():
+        problems.append(f"Falta {label}")
+if weekly_page.is_file() and weekly_data.is_file():
+    wp = weekly_page.read_text(encoding="utf-8", errors="replace")
+    wd = weekly_data.read_text(encoding="utf-8", errors="replace")
+    if "CSL_GET_WEEKLY" not in wp or "CSL_GET_WEEKLY" not in wd:
+        problems.append("Semana Sin Líos ha perdido su rotación semanal")
+if recipe_runtime.is_file():
+    rr = recipe_runtime.read_text(encoding="utf-8", errors="replace")
+    if "reuse-map.js" not in rr or "renderReuseNetwork" not in rr:
+        problems.append("Las fichas han perdido la red de aprovechamiento entre recetas")
+if "auto=params.get(\"auto\")==\"1\"" not in picker or "if(auto)setTimeout(render,0)" not in picker:
+    problems.append("Resuelve hoy ha perdido el modo Decide por mí")
+
+problem_collections = [
+    "cenas-sin-ganas-de-cocinar.html",
+    "cenas-en-15-minutos.html",
+    "cenas-de-despensa.html",
+    "cocinar-una-vez-comer-dos-dias.html",
+]
+for page in problem_collections:
+    p = ROOT / page
+    if p.is_file():
+        txt = p.read_text(encoding="utf-8", errors="replace")
+        if "/que-cocino?auto=1" not in txt:
+            problems.append(f"Colección sin salida a Decide por mí: {page}")
 
 if problems:
     print("\nSITE QA: ERROR\n")
