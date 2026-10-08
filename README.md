@@ -1,6 +1,6 @@
 # Cocina sin líos con Macarena
 
-Proyecto editorial propio de cocina doméstica y organización, publicado desde GitHub y servido en https://cocinasinlios.com/.
+Proyecto editorial propio de cocina doméstica y organización para reducir decisiones alrededor de la comida diaria. Web pública: https://cocinasinlios.com/.
 
 ## Producto público
 - [Qué cocinar hoy](https://cocinasinlios.com/que-cocino): tres ideas según tiempo, antojo y objetivo, evitando repetir de forma innecesaria lo visto recientemente.
@@ -10,7 +10,9 @@ Proyecto editorial propio de cocina doméstica y organización, publicado desde 
 - [Recetas](https://cocinasinlios.com/recetas): biblioteca editorial de 50 recetas completas, todas con imagen propia, URLs estáticas, favoritos, compartir, sustituciones, aprovechamiento y aprendizaje.
 - [Explora](https://cocinasinlios.com/explora): rutas por ingrediente para partir de lo que ya hay en casa.
 - [Qué cenar hoy](https://cocinasinlios.com/que-cenar-hoy): entrada directa por tiempo, energía y ganas de decidir.
+- [Semana Sin Líos](https://cocinasinlios.com/semana-sin-lios): cinco cenas conectadas, una preparación útil y un ingrediente para aprovechar mejor.
 - [Recetas de aprovechamiento](https://cocinasinlios.com/recetas-aprovechamiento): hub de sobras e ingredientes para reutilizar con intención.
+- [Criterio editorial](https://cocinasinlios.com/criterio-editorial): principios de utilidad, claridad, adaptación, aprovechamiento, seguridad y transparencia que guían el contenido.
 
 ## Límites
 La web se mantiene separada de cualquier actividad de promoción o venta de productos de terceros. No incorpora cookies publicitarias ni perfilado individual. Las preferencias se guardan localmente en el dispositivo; la medición agregada mediante Cloudflare Web Analytics no utiliza esas preferencias.
