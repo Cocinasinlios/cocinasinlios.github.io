@@ -40,6 +40,7 @@ CORE = [
     "cenas-en-15-minutos.html",
     "cenas-de-despensa.html",
     "cocinar-una-vez-comer-dos-dias.html",
+    "que-hacer-con-pollo-cocido.html",
 ]
 
 problems: list[str] = []
