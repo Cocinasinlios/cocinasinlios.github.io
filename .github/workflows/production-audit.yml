@@ -57,6 +57,8 @@ jobs:
             curl -sS -o /dev/null -w "status=%{http_code}\n" https://cocinasinlios.com/robots.txt
             echo "SITEMAP"
             curl -sS -o /dev/null -w "status=%{http_code}\n" https://cocinasinlios.com/sitemap.xml
+            echo "IMAGE SITEMAP"
+            curl -sS -o /dev/null -w "status=%{http_code}\n" https://cocinasinlios.com/image-sitemap.xml
           } | tee audit/urls.txt
 
       - name: Verify search crawler access
@@ -66,7 +68,7 @@ jobs:
           DESKTOP_UA='Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'
           MOBILE_UA='Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.96 Mobile Safari/537.36 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'
           for ua in "$DESKTOP_UA" "$MOBILE_UA"; do
-            for url in               "https://cocinasinlios.com/"               "https://cocinasinlios.com/robots.txt"               "https://cocinasinlios.com/sitemap.xml"               "https://cocinasinlios.com/que-cocino"; do
+            for url in               "https://cocinasinlios.com/"               "https://cocinasinlios.com/robots.txt"               "https://cocinasinlios.com/sitemap.xml"               "https://cocinasinlios.com/image-sitemap.xml"               "https://cocinasinlios.com/que-cocino"; do
               status="$(curl -A "$ua" -sS -L -o /dev/null -w '%{http_code}' "$url")"
               echo "$status $url"
               test "$status" = "200"
