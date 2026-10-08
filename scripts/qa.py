@@ -70,6 +70,7 @@ for rel in CORE:
 
 indexable_titles: dict[str, list[str]] = {}
 indexable_descriptions: dict[str, list[str]] = {}
+indexable_canonicals: list[str] = []
 
 for path in ROOT.rglob("*"):
     if not path.is_file() or ".git" in path.parts or path.suffix.lower() not in PUBLIC_EXT:
@@ -115,6 +116,7 @@ for path in ROOT.rglob("*"):
                     expected = "https://cocinasinlios.com/" + path.stem
                 if expected and canonical != expected:
                     problems.append(f"Canonical inesperado en {rel_name}: {canonical} (esperado {expected})")
+                indexable_canonicals.append(canonical)
             h1_count = len(re.findall(r"<h1\b", text, flags=re.I))
             if h1_count != 1:
                 problems.append(f"Página indexable con {h1_count} H1: {rel_name}")
@@ -190,6 +192,12 @@ else:
             text = target.read_text(encoding="utf-8", errors="replace")
             if re.search(r'<meta[^>]+name=["\']robots["\'][^>]+content=["\'][^"\']*noindex', text, flags=re.I):
                 problems.append(f"URL noindex incluida en sitemap: {loc}")
+    sitemap_urls = re.findall(r"<loc>(https://cocinasinlios\.com[^<]+)</loc>", sm)
+    for canonical in indexable_canonicals:
+        if canonical not in sitemap_urls:
+            problems.append(f"Página indexable ausente del sitemap: {canonical}")
+    if len(sitemap_urls) != len(set(sitemap_urls)):
+        problems.append("Sitemap con URLs duplicadas")
 
 data = (ROOT / "assets" / "recipes-data.js").read_text(encoding="utf-8", errors="replace")
 recipe_count = len(re.findall(r'"slug"\s*:\s*"[^"]+"', data))
