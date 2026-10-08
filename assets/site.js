@@ -66,8 +66,8 @@ document.querySelectorAll(".global-dock,.dock").forEach(d=>{
 
 document.querySelectorAll("header .navlinks a,.global-dock a,.dock a").forEach(a=>{
   const p=new URL(a.href,location.origin).pathname.replace(/\/$/,"")||"/";
-  const ingredientGuide=["/que-cocinar-con-huevos","/recetas-con-tomate","/recetas-con-calabacin","/recetas-con-pollo","/recetas-con-arroz"].includes(path);
-  if(p===path || ((path.startsWith("/recetas/")||ingredientGuide) && p==="/recetas")){
+  const recipeHub=["/que-cocinar-con-huevos","/recetas-con-tomate","/recetas-con-calabacin","/recetas-con-pollo","/recetas-con-arroz","/cenas-rapidas","/recetas-aprovechamiento","/cenas-ligeras","/cenas-sin-ganas-de-cocinar","/cenas-en-15-minutos","/cenas-de-despensa","/cocinar-una-vez-comer-dos-dias"].includes(path);
+  if(p===path || ((path.startsWith("/recetas/")||recipeHub) && p==="/recetas")){
     a.classList.add("active");
     a.setAttribute("aria-current","page");
   }
