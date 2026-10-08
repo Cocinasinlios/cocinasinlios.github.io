@@ -43,6 +43,7 @@ CORE = [
     "que-hacer-con-pollo-cocido.html",
     "que-hacer-con-garbanzos-cocidos.html",
     "que-cenar-hoy.html",
+    "criterio-editorial.html",
 ]
 
 problems: list[str] = []
