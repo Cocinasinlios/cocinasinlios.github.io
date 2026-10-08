@@ -1,0 +1,127 @@
+name: IndexNow
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: indexnow
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 2
+
+      - name: Wait for production and verify IndexNow key
+        shell: bash
+        run: |
+          KEY="f0d13c3a63a3448dafad3e5256a64439"
+          URL="https://cocinasinlios.com/${KEY}.txt"
+          for i in {1..12}; do
+            if [ "$(curl -sS -o /tmp/indexnow-key -w '%{http_code}' "$URL")" = "200" ] && grep -qx "$KEY" /tmp/indexnow-key; then
+              echo "IndexNow key is live"
+              exit 0
+            fi
+            sleep 10
+          done
+          echo "IndexNow key was not visible in production" >&2
+          exit 1
+
+      - name: Submit changed public pages
+        shell: python
+        env:
+          INDEXNOW_KEY: "f0d13c3a63a3448dafad3e5256a64439"
+        run: |
+          import json
+          import os
+          import re
+          import subprocess
+          import urllib.request
+          from pathlib import Path
+
+          event = json.loads(Path(os.environ["GITHUB_EVENT_PATH"]).read_text())
+          before = event.get("before") or ""
+          after = event.get("after") or os.environ.get("GITHUB_SHA","")
+          zeros = set(before) <= {"0"} if before else True
+
+          if zeros:
+              changed = [str(p.relative_to(".")) for p in Path(".").rglob("*.html")]
+          else:
+              try:
+                  changed = subprocess.check_output(
+                      ["git","diff","--name-only",before,after],
+                      text=True
+                  ).splitlines()
+              except Exception:
+                  changed = []
+
+          urls = set()
+          def add_html(path):
+              p=Path(path)
+              if not p.is_file():
+                  return
+              text=p.read_text(encoding="utf-8",errors="replace")
+              if re.search(r'<meta[^>]+name=["\']robots["\'][^>]+content=["\'][^"\']*noindex',text,re.I):
+                  return
+              if path=="index.html":
+                  urls.add("https://cocinasinlios.com/")
+              elif path.endswith("/index.html"):
+                  urls.add("https://cocinasinlios.com/"+path[:-10])
+              elif path.endswith(".html"):
+                  urls.add("https://cocinasinlios.com/"+path[:-5])
+
+          for path in changed:
+              if path.endswith(".html"):
+                  add_html(path)
+
+          special={
+              "assets/weekly-data.js":[
+                  "https://cocinasinlios.com/",
+                  "https://cocinasinlios.com/semana-sin-lios"
+              ],
+              "assets/recipes-data.js":[
+                  "https://cocinasinlios.com/recetas",
+                  "https://cocinasinlios.com/que-cocino"
+              ]
+          }
+          for path in changed:
+              urls.update(special.get(path,[]))
+
+          urls=sorted(urls)
+          if not urls:
+              print("No changed indexable pages to submit.")
+              raise SystemExit(0)
+
+          key=os.environ["INDEXNOW_KEY"]
+          payload=json.dumps({
+              "host":"cocinasinlios.com",
+              "key":key,
+              "keyLocation":f"https://cocinasinlios.com/{key}.txt",
+              "urlList":urls[:10000],
+          }).encode()
+
+          req=urllib.request.Request(
+              "https://api.indexnow.org/indexnow",
+              data=payload,
+              headers={"Content-Type":"application/json; charset=utf-8"},
+              method="POST",
+          )
+          try:
+              with urllib.request.urlopen(req,timeout=30) as response:
+                  print("IndexNow status:",response.status)
+                  print("Submitted URLs:",len(urls))
+                  for url in urls:
+                      print(" -",url)
+          except urllib.error.HTTPError as exc:
+              body=exc.read().decode("utf-8","replace")
+              print("IndexNow HTTP error:",exc.code,body)
+              raise
