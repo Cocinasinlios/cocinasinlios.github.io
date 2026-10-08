@@ -420,7 +420,7 @@ if recipe_runtime.is_file():
     rr = recipe_runtime.read_text(encoding="utf-8", errors="replace")
     if "reuse-map.js" not in rr or "renderReuseNetwork" not in rr:
         problems.append("Las fichas han perdido la red de aprovechamiento entre recetas")
-if "auto=params.get(\"auto\")==\"1\"" not in picker or "if(auto)setTimeout(render,0)" not in picker:
+if not re.search(r'auto\s*=\s*params\.get\(["\']auto["\']\)\s*===?\s*["\']1["\']', picker) or "if(auto)setTimeout(render,0)" not in picker:
     problems.append("Resuelve hoy ha perdido el modo Decide por mí")
 
 problem_collections = [
