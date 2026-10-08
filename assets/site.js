@@ -78,7 +78,7 @@ document.querySelectorAll("header .navlinks a,.global-dock a,.dock a").forEach(a
 if(document.querySelector("footer")&&!document.querySelector("footer .csl-secondary-nav")){
   const s=document.createElement("div");
   s.className="csl-secondary-nav";
-  s.innerHTML='<a href="/semana-sin-lios">Semana Sin Líos</a> · <a href="/hablamos">Hablemos</a>';
+  s.innerHTML='<a href="/semana-sin-lios">Semana Sin Líos</a> · <a href="/criterio-editorial">Criterio editorial</a> · <a href="/hablamos">Hablemos</a>';
   s.style.cssText="font-size:11px;margin-top:14px;opacity:.88";
   document.querySelector("footer .wrap,footer")?.appendChild(s);
 }
