@@ -36,6 +36,7 @@ jobs:
               "https://cocinasinlios.com/mi-rincon" \
               "https://cocinasinlios.com/explora" \
               "https://cocinasinlios.com/con-macarena" \
+              "https://cocinasinlios.com/criterio-editorial" \
               "https://cocinasinlios.com/despensa-sin-lios" \
               "https://cocinasinlios.com/cenas-en-15-minutos" \
               "https://cocinasinlios.com/cenas-sin-ganas-de-cocinar" \
@@ -165,6 +166,12 @@ jobs:
 
             await page.goto("https://cocinasinlios.com/recetas/pasta-tomate-atun/",{waitUntil:"networkidle2"});
             await page.waitForSelector(".csl-continue",{timeout:8000});
+            const recipeQuality=await page.evaluate(()=>({
+              hero:document.querySelector(".hero-photo img")?.getAttribute("src")||"",
+              editorial:!!document.querySelector('a[href="/criterio-editorial"]')
+            }));
+            if(!recipeQuality.hero.includes("/assets/recipes/pasta-tomate-atun.webp"))throw new Error("La receta no expone hero HTML indexable");
+            if(!recipeQuality.editorial)throw new Error("La receta no enlaza el criterio editorial");
             const recent=await page.evaluate(()=>JSON.parse(localStorage.getItem("csl-recientes-v1")||"[]"));
             if(!Array.isArray(recent)||recent[0]?.slug!=="pasta-tomate-atun")throw new Error("No se guardó la receta reciente");
 
@@ -174,7 +181,7 @@ jobs:
             if(!Number.isInteger(recentLinks)||recentLinks<1)throw new Error("Mi cocina no muestra recetas recientes");
 
             if(errors.length)throw new Error("Errores JS en producción: "+errors.join(" | "));
-            require("fs").writeFileSync("audit/smoke.txt","OK\nQué cocino: "+cards+" resultados\nReceta reciente: OK\nMi cocina recientes: "+recentLinks+"\n");
+            require("fs").writeFileSync("audit/smoke.txt","OK\nQué cocino: "+cards+" resultados\nHero de receta: HTML indexable\nCriterio editorial: enlazado\nReceta reciente: OK\nMi cocina recientes: "+recentLinks+"\n");
             console.log("Production smoke test OK");
             await browser.close();
           })().catch(async e=>{console.error(e);process.exit(1)});
