@@ -128,6 +128,8 @@ if(path==="/"){
   if(section&&grid&&cards.length){
     grid.innerHTML=cards.slice(0,4).join("");
     section.hidden=false;
+    const quickRoutes=document.querySelector(".quick-routes");
+    if(quickRoutes?.parentNode)quickRoutes.parentNode.insertBefore(section,quickRoutes);
   }
 }
 
