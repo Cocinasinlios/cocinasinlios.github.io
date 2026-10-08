@@ -96,6 +96,26 @@ jobs:
           for path in changed:
               urls.update(special.get(path,[]))
 
+          # First controlled seed: when this workflow is introduced/updated,
+          # notify only the editorial/search landing pages we actively want discovered.
+          if ".github/workflows/indexnow.yml" in changed:
+              urls.update({
+                  "https://cocinasinlios.com/",
+                  "https://cocinasinlios.com/que-cocino",
+                  "https://cocinasinlios.com/recetas",
+                  "https://cocinasinlios.com/explora",
+                  "https://cocinasinlios.com/semana-sin-lios",
+                  "https://cocinasinlios.com/cenas-sin-ganas-de-cocinar",
+                  "https://cocinasinlios.com/cenas-en-15-minutos",
+                  "https://cocinasinlios.com/cenas-de-despensa",
+                  "https://cocinasinlios.com/cocinar-una-vez-comer-dos-dias",
+                  "https://cocinasinlios.com/que-cocinar-con-huevos",
+                  "https://cocinasinlios.com/recetas-con-calabacin",
+                  "https://cocinasinlios.com/recetas-con-arroz",
+                  "https://cocinasinlios.com/recetas-con-pollo",
+                  "https://cocinasinlios.com/que-hacer-con-pollo-cocido"
+              })
+
           urls=sorted(urls)
           if not urls:
               print("No changed indexable pages to submit.")
