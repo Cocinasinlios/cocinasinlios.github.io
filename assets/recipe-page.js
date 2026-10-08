@@ -98,6 +98,26 @@ function renderReuseNetwork(){
  target?.insertAdjacentElement("beforebegin",sec);
 }
 if(window.CSL_REUSE_MAP)renderReuseNetwork();else{const s=document.createElement("script");s.src="/assets/reuse-map.js";s.onload=renderReuseNetwork;document.head.appendChild(s)}
+function renderIngredientPaths(){
+ if(document.querySelector(".csl-ingredient-paths"))return;
+ const hay=(String(r.title||"")+" "+(r.ingredients||[]).join(" ")).normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
+ const uses=(r.batch?.uses||[]).map(x=>x.key);
+ const options=[];
+ const add=(href,label)=>{if(!options.some(x=>x.href===href))options.push({href,label})};
+ if(hay.includes("tomate"))add("/recetas-con-tomate","Más ideas con tomate");
+ if(hay.includes("calabac"))add("/recetas-con-calabacin","Qué hacer con calabacín");
+ if(hay.includes("huevo"))add("/que-cocinar-con-huevos","Más cenas con huevos");
+ if(hay.includes("arroz"))add("/recetas-con-arroz","Qué hacer con arroz");
+ if(hay.includes("garbanzo"))add("/que-hacer-con-garbanzos-cocidos","Qué hacer con garbanzos cocidos");
+ if(uses.includes("pollo-cocinado"))add("/que-hacer-con-pollo-cocido","Qué hacer con pollo cocido");
+ else if(hay.includes("pollo"))add("/recetas-con-pollo","Más ideas con pollo");
+ if(!options.length)return;
+ const sec=document.createElement("section");sec.className="csl-ingredient-paths";
+ sec.innerHTML='<div class="wrap csl-ingredient-paths-box"><div class="csl-ingredient-paths-copy"><small>Si te queda ingrediente</small><b>No vuelvas a empezar de cero.</b></div><div class="csl-ingredient-links">'+options.slice(0,3).map(x=>'<a href="'+x.href+'">'+x.label+' →</a>').join("")+'</div></div>';
+ const target=document.querySelector(".csl-continue")||document.querySelector("footer");
+ target?.insertAdjacentElement("beforebegin",sec);
+}
+renderIngredientPaths();
 const relatedSection=document.querySelector(".related-grid")?.closest(".section");
 if(relatedSection&&!document.querySelector(".csl-continue")){
  const uses=(r.plan?.need||[]).slice(0,2).join(",");
