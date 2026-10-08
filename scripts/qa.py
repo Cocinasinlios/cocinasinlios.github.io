@@ -99,8 +99,22 @@ for path in ROOT.rglob("*"):
                 desc_match = re.search(r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+name=["\']description["\']', text, flags=re.I)
             if not desc_match or not desc_match.group(1).strip():
                 problems.append(f"Página indexable sin meta description: {rel_name}")
-            if not re.search(r'<link[^>]+rel=["\']canonical["\'][^>]+href=["\']', text, flags=re.I) and not re.search(r'<link[^>]+href=["\'][^"\']+["\'][^>]+rel=["\']canonical["\']', text, flags=re.I):
+            canonical_match = re.search(r'<link[^>]+rel=["\']canonical["\'][^>]+href=["\']([^"\']+)', text, flags=re.I)
+            if not canonical_match:
+                canonical_match = re.search(r'<link[^>]+href=["\']([^"\']+)["\'][^>]+rel=["\']canonical["\']', text, flags=re.I)
+            if not canonical_match:
                 problems.append(f"Página indexable sin canonical: {rel_name}")
+            else:
+                canonical = canonical_match.group(1)
+                expected = None
+                if rel_name == "index.html":
+                    expected = "https://cocinasinlios.com/"
+                elif rel_name.endswith("/index.html"):
+                    expected = "https://cocinasinlios.com/" + rel_name[:-10]
+                elif path.parent == ROOT and path.suffix.lower() == ".html":
+                    expected = "https://cocinasinlios.com/" + path.stem
+                if expected and canonical != expected:
+                    problems.append(f"Canonical inesperado en {rel_name}: {canonical} (esperado {expected})")
             h1_count = len(re.findall(r"<h1\b", text, flags=re.I))
             if h1_count != 1:
                 problems.append(f"Página indexable con {h1_count} H1: {rel_name}")
