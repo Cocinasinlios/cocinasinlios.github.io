@@ -242,6 +242,18 @@ jobs:
               for key in ("first-contentful-paint","largest-contentful-paint","cumulative-layout-shift","total-blocking-time","speed-index"):
                   if key in audits:
                       out.append(f"{key}={audits[key].get('displayValue')}")
+              failed_accessibility=[]
+              for audit_id, audit in audits.items():
+                  details=audit.get("details") or {}
+                  if audit.get("scoreDisplayMode") in ("binary","numeric") and audit.get("score") not in (None,1):
+                      group=audit.get("group")
+                      if group=="a11y" or audit_id in {
+                          "color-contrast","image-alt","link-name","button-name","label",
+                          "html-has-lang","document-title","heading-order","target-size"
+                      }:
+                          failed_accessibility.append((audit_id,audit.get("title"),audit.get("score")))
+              if failed_accessibility:
+                  out.append("accessibility_failures="+json.dumps(failed_accessibility,ensure_ascii=False))
               out.append("")
           Path("audit/summary.txt").write_text("\n".join(out))
           print("\n".join(out))
