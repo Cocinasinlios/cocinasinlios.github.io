@@ -3,12 +3,14 @@
 Proyecto editorial propio de cocina doméstica y organización, publicado desde GitHub y servido en https://cocinasinlios.com/.
 
 ## Producto público
-- Qué cocino: tres ideas según tiempo, antojo y objetivo, evitando repetir de forma innecesaria lo visto recientemente.
-- Despensa Sin Líos: checklist local de básicos.
-- Planifica: cinco cenas, compra orientativa y guardado voluntario en el dispositivo.
-- Mi cocina: panel local con despensa, semana, compra, favoritos, “gastar pronto” y recetas vistas recientemente.
-- Recetas: biblioteca editorial de 50 recetas completas, todas con imagen propia, URLs estáticas, favoritos, compartir, sustituciones, aprovechamiento y aprendizaje.
-- Explora: rutas por ingrediente para partir de lo que ya hay en casa.
+- [Qué cocinar hoy](https://cocinasinlios.com/que-cocino): tres ideas según tiempo, antojo y objetivo, evitando repetir de forma innecesaria lo visto recientemente.
+- [Despensa Sin Líos](https://cocinasinlios.com/despensa-sin-lios): checklist local de básicos.
+- [Planifica](https://cocinasinlios.com/plan-semana): cinco cenas, compra orientativa y guardado voluntario en el dispositivo.
+- [Mi cocina](https://cocinasinlios.com/mi-rincon): panel local con despensa, semana, compra, favoritos, “gastar pronto” y recetas vistas recientemente.
+- [Recetas](https://cocinasinlios.com/recetas): biblioteca editorial de 50 recetas completas, todas con imagen propia, URLs estáticas, favoritos, compartir, sustituciones, aprovechamiento y aprendizaje.
+- [Explora](https://cocinasinlios.com/explora): rutas por ingrediente para partir de lo que ya hay en casa.
+- [Qué cenar hoy](https://cocinasinlios.com/que-cenar-hoy): entrada directa por tiempo, energía y ganas de decidir.
+- [Recetas de aprovechamiento](https://cocinasinlios.com/recetas-aprovechamiento): hub de sobras e ingredientes para reutilizar con intención.
 
 ## Límites
 La web se mantiene separada de cualquier actividad de promoción o venta de productos de terceros. No incorpora cookies publicitarias ni perfilado individual. Las preferencias se guardan localmente en el dispositivo; la medición agregada mediante Cloudflare Web Analytics no utiliza esas preferencias.

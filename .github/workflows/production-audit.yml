@@ -30,7 +30,6 @@ jobs:
               "https://cocinasinlios.com/" \
               "https://www.cocinasinlios.com/" \
               "https://cocinasinlios.com/que-cocino" \
-            "https://cocinasinlios.com/que-cenar-hoy" \
               "https://cocinasinlios.com/que-cenar-hoy" \
               "https://cocinasinlios.com/plan-semana" \
               "https://cocinasinlios.com/recetas" \
@@ -81,6 +80,8 @@ jobs:
           set -e
           for url in \
             "https://cocinasinlios.com/que-cocino" \
+            "https://cocinasinlios.com/que-cenar-hoy" \
+            "https://cocinasinlios.com/recetas-aprovechamiento" \
             "https://cocinasinlios.com/cenas-en-15-minutos" \
             "https://cocinasinlios.com/cenas-sin-ganas-de-cocinar" \
             "https://cocinasinlios.com/cenas-de-despensa" \
@@ -92,6 +93,11 @@ jobs:
             "https://cocinasinlios.com/que-hacer-con-pollo-cocido" \
             "https://cocinasinlios.com/que-hacer-con-garbanzos-cocidos"; do
             html="$(curl -sS -L --fail "$url")"
+            headers="$(curl -sS -I -L "$url" | tr -d '\r')"
+            if echo "$headers" | grep -Eiq '^x-robots-tag:.*noindex'; then
+              echo "Unexpected X-Robots-Tag noindex: $url" >&2
+              exit 1
+            fi
             echo "$html" | grep -Eiq '<title>[^<]+</title>'
             echo "$html" | grep -Eiq '<link[^>]+rel=["'\'' ]*canonical|<link[^>]+href=[^>]+rel=["'\'' ]*canonical'
             echo "$html" | grep -Eiq '<h1[ >]'
