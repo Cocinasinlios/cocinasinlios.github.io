@@ -41,6 +41,7 @@ CORE = [
     "cenas-de-despensa.html",
     "cocinar-una-vez-comer-dos-dias.html",
     "que-hacer-con-pollo-cocido.html",
+    "que-hacer-con-garbanzos-cocidos.html",
 ]
 
 problems: list[str] = []
