@@ -46,8 +46,8 @@ document.querySelectorAll("header .brand").forEach(a=>{
 const desktopNav=[
   ["/que-cocino","Resuelve hoy"],
   ["/plan-semana","Planifica"],
-  ["/recetas","Recetas"],
-  ["/mi-rincon","Mi cocina"]
+  ["/mi-rincon","Mi cocina"],
+  ["/recetas","Recetas"]
 ];
 document.querySelectorAll("header .navlinks").forEach(n=>{
   n.innerHTML=desktopNav.map(x=>'<a href="'+x[0]+'">'+x[1]+'</a>').join("");
@@ -56,8 +56,8 @@ document.querySelectorAll("header .navlinks").forEach(n=>{
 const dockNav=[
   ["/que-cocino","✦","Hoy"],
   ["/plan-semana","🗓","Semana"],
-  ["/recetas","⌕","Recetas"],
-  ["/mi-rincon","♡","Mi cocina"]
+  ["/mi-rincon","♡","Mi cocina"],
+  ["/recetas","⌕","Recetas"]
 ];
 document.querySelectorAll(".global-dock,.dock").forEach(d=>{
   d.setAttribute("aria-label","Navegación rápida");
@@ -112,22 +112,31 @@ if(path==="/"){
   if(pantryCount){
     cards.push('<a class="resume-card" href="/despensa-sin-lios#checklist"><small>DESPENSA</small><b>'+pantryCount+' básicos marcados</b><span>Seguir completando →</span></a>');
   }
-  if(favs.length){
-    cards.push('<a class="resume-card" href="/recetas?f=guardadas"><small>FAVORITOS</small><b>'+favs.length+' receta'+(favs.length===1?'':'s')+' guardada'+(favs.length===1?'':'s')+'</b><span>Volver a ellas →</span></a>');
-  }
   if(soon.trim()){
-    cards.push('<a class="resume-card" href="/que-cocino?gastar='+encodeURIComponent(soon.trim())+'"><small>GASTAR PRONTO</small><b>'+soon.trim().replace(/[<>&"]/g,"")+'</b><span>Buscar una salida →</span></a>');
+    cards.push('<a class="resume-card" href="/que-cocino?gastar='+encodeURIComponent(soon.trim())+'"><small>GASTAR PRONTO</small><b>'+soon.trim().replace(/[<>&"]/g,"")+'</b><span>Resolverlo ahora →</span></a>');
   }
   const last=recent[0];
   if(last?.slug&&last?.title){
     const safeTitle=String(last.title).replace(/[<>&"]/g,"");
-    cards.push('<a class="resume-card" href="/recetas/'+encodeURIComponent(last.slug)+'/"><small>ÚLTIMA RECETA</small><b>'+safeTitle+'</b><span>Volver a verla →</span></a>');
+    cards.push('<a class="resume-card" href="/recetas/'+encodeURIComponent(last.slug)+'/"><small>ÚLTIMA RECETA</small><b>'+safeTitle+'</b><span>Continuar desde aquí →</span></a>');
+  }
+  if(favs.length){
+    cards.push('<a class="resume-card" href="/recetas?f=guardadas"><small>GUARDADAS</small><b>'+favs.length+' receta'+(favs.length===1?'':'s')+' a mano</b><span>Volver sin buscar →</span></a>');
   }
   
   const section=document.getElementById("csl-resume");
   const grid=document.getElementById("csl-resume-grid");
   if(section&&grid&&cards.length){
     grid.innerHTML=cards.slice(0,4).join("");
+    grid.firstElementChild?.classList.add("csl-priority");
+    const title=section.querySelector("h2");
+    if(title)title.textContent="No empieces de cero.";
+    if(!section.querySelector(".csl-resume-lead")){
+      const lead=document.createElement("p");
+      lead.className="csl-resume-lead";
+      lead.textContent="Ya hay contexto guardado en este dispositivo. Empieza por lo que más te ahorra una decisión ahora.";
+      title?.insertAdjacentElement("afterend",lead);
+    }
     section.hidden=false;
     const quickRoutes=document.querySelector(".quick-routes");
     if(quickRoutes?.parentNode)quickRoutes.parentNode.insertBefore(section,quickRoutes);
