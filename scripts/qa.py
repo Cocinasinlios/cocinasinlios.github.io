@@ -153,9 +153,13 @@ for path in ROOT.rglob("*"):
             if title_match:
                 t = re.sub(r"\s+", " ", title_match.group(1)).strip()
                 indexable_titles.setdefault(t, []).append(rel_name)
+                if len(t) < 18 or len(t) > 68:
+                    warnings.append(f"Title SEO a revisar ({len(t)} caracteres): {rel_name} -> {t}")
             if desc_match:
                 d = re.sub(r"\s+", " ", desc_match.group(1)).strip()
                 indexable_descriptions.setdefault(d, []).append(rel_name)
+                if len(d) < 70 or len(d) > 175:
+                    warnings.append(f"Meta description a revisar ({len(d)} caracteres): {rel_name}")
         for raw in re.findall(r'(?:href|src)=["\']([^"\']+)["\']', text, flags=re.I):
             target = html_target(raw)
             if target is not None and not target.is_file():
