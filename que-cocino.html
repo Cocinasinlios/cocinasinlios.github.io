@@ -43,9 +43,12 @@ footer{background:#202b24;color:#dce5df;padding:40px 0}footer p{font-size:12px;c
 <footer><div class="wrap"><b>Cocina sin líos con Macarena</b><p>Las propuestas se calculan localmente con los datos que hayas guardado en este dispositivo. No necesitas cuenta.</p></div></footer>
 <div class="global-dock"></div>
 <script src="/assets/recipes-data.js"></script>
+<script src="/assets/solutions-data.js"></script>
 <script>
 (()=>{
  const recipes=window.CSL_RECIPES||[];
+ const formulas=window.CSL_SOLUTIONS||[];
+ const candidates=[...recipes,...formulas];
  const esc=s=>String(s??"").replace(/[&<>"\']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","\'":"&#39;"}[m]));
  const params=new URLSearchParams(location.search);
  let state={time:"15",mood:"salado",goal:"resolver"},generated=[];
@@ -80,7 +83,7 @@ footer{background:#202b24;color:#dce5df;padding:40px 0}footer p{font-size:12px;c
  const saveExclusions=()=>{try{localStorage.setItem("csl-exclusions-v1",JSON.stringify(exclusions))}catch(e){}};
  const cat=r=>r.family||r.category;
  const rId=r=>r.id||r.slug;
- const isFav=r=>favs.includes(rId(r))||favs.includes(r.slug);
+ const isFav=r=>r.kind!=="formula"&&(favs.includes(rId(r))||favs.includes(r.slug));
  let useText=norm([useSoon,...paramIngredients].filter(Boolean).join(", ")).split(/[,;]+|\sy\s/).map(x=>x.trim()).filter(x=>x.length>2);
  const mem=document.getElementById("memory"),chips=[];
  if(pantryKeys.length)chips.push("🥫 "+pantryKeys.length+" básicos en tu despensa");
@@ -148,7 +151,7 @@ footer{background:#202b24;color:#dce5df;padding:40px 0}footer p{font-size:12px;c
    exclusions.text=avoidText.value.trim();saveExclusions();
    useSoon=haveText.value.trim();
    useText=norm(useSoon).split(/[,;]+|\sy\s/).map(x=>x.trim()).filter(x=>x.length>2);
-   const eligible=recipes.filter(r=>!isExcluded(r));
+   const eligible=candidates.filter(r=>!isExcluded(r));
    const limit=Number(state.time);
    let pool=eligible.filter(r=>moodOK(r)&&r.minutes<=limit);
    // Tiempo y antojo son condiciones duras. Solo estrechamos a recetas de comida/cena
@@ -174,8 +177,16 @@ footer{background:#202b24;color:#dce5df;padding:40px 0}footer p{font-size:12px;c
    document.getElementById("why").innerHTML=(picked.length<3?"<b>He encontrado "+picked.length+" opción"+(picked.length===1?"":"es")+" sin saltarme tus preferencias.</b> ":"<b>Por qué estas tres.</b>")+"Estoy cruzando "+whyBits.join(", ")+". "+(picked.length<3?(canExpand?"Si puedes llegar a "+nextLimit+" min, tengo "+nextCount+" opciones que sí respetan el antojo. <button id='relaxTime' class='again' type='button'>Ampliar a "+nextLimit+" min</button>":"Puedes quitar una exclusión para abrir más posibilidades."):"Busco tres decisiones buenas y distintas.");
    document.getElementById("relaxTime")?.addEventListener("click",()=>{state.time=String(nextLimit);const g=document.querySelector('.choices[data-group="time"]');g?.querySelectorAll(".choice").forEach(b=>{const on=b.dataset.value===state.time;b.classList.toggle("active",on);b.setAttribute("aria-pressed",String(on))});render()});
    if(!picked.length){document.getElementById("grid").innerHTML='<div class="human">Con esas preferencias no encuentro una opción que pueda recomendarte con confianza. '+(canExpand?"Prueba a ampliar el tiempo con el botón de arriba.":"Prueba a quitar una exclusión.")+'</div>';document.getElementById("results").classList.add("show");document.getElementById("resultTitle").focus();return}
-   document.getElementById("grid").innerHTML=picked.map((r,i)=>{const weekAction=(r.tags||[]).includes("cena")?'<button class="week-add" data-i="'+i+'" type="button">A mi semana</button>':"";return '<article class="card">'+visual(r)+'<div class="body"><small>'+esc(cat(r))+' · '+esc(r.time)+'</small><h3>'+esc(r.title)+'</h3><p>'+esc(r.intro)+'</p><div class="fit">'+esc(fitText(r))+'</div><div class="actions"><a class="btn" href="/recetas/'+encodeURIComponent(r.slug)+'/">Ver receta</a>'+weekAction+'</div></div></article>'}).join("");
-   document.querySelectorAll("[data-i]").forEach(b=>b.addEventListener("click",()=>{const r=picked[Number(b.dataset.i)];if(!(r.tags||[]).includes("cena"))return;try{localStorage.setItem("csl-idea-semana-v1",JSON.stringify({n:r.title,slug:r.slug,...r.plan}));b.textContent="Añadida ✓";b.classList.add("saved");setTimeout(()=>location.href="/plan-semana?idea=1",220)}catch(e){location.href="/plan-semana"}}));
+   document.getElementById("grid").innerHTML=picked.map((r,i)=>{
+     if(r.kind==="formula"){
+       const steps=(r.steps||[]).map(x=>'<li>'+esc(x)+'</li>').join("");
+       return '<article class="card formula-card">'+visual(r)+'<div class="body"><small>PROPUESTA FLEXIBLE · '+esc(r.time)+'</small><h3>'+esc(r.title)+'</h3><p>'+esc(r.intro)+'</p><div class="fit">'+esc(fitText(r))+'</div><div class="formula-note">No es una receta cerrada ni una receta probada de la biblioteca. Es una estructura para adaptar con lo que tengas.</div><div class="formula-steps" id="formula-'+i+'" hidden><b>Cómo la montaría</b><ol>'+steps+'</ol></div><div class="actions"><button class="week-add formula-toggle" data-formula="'+i+'" type="button" aria-expanded="false" aria-controls="formula-'+i+'">Ver montaje</button></div></div></article>';
+     }
+     const weekAction=(r.tags||[]).includes("cena")?'<button class="week-add" data-i="'+i+'" type="button">A mi semana</button>':"";
+     return '<article class="card">'+visual(r)+'<div class="body"><small>'+esc(cat(r))+' · '+esc(r.time)+'</small><h3>'+esc(r.title)+'</h3><p>'+esc(r.intro)+'</p><div class="fit">'+esc(fitText(r))+'</div><div class="actions"><a class="btn" href="/recetas/'+encodeURIComponent(r.slug)+'/">Ver receta</a>'+weekAction+'</div></div></article>'
+   }).join("");
+   document.querySelectorAll("[data-formula]").forEach(b=>b.addEventListener("click",()=>{const box=document.getElementById("formula-"+b.dataset.formula);if(!box)return;const open=box.hidden;box.hidden=!open;b.setAttribute("aria-expanded",String(open));b.textContent=open?"Ocultar montaje":"Ver montaje"}));
+   document.querySelectorAll("[data-i]").forEach(b=>b.addEventListener("click",()=>{const r=picked[Number(b.dataset.i)];if(r?.kind==="formula"||!(r.tags||[]).includes("cena"))return;try{localStorage.setItem("csl-idea-semana-v1",JSON.stringify({n:r.title,slug:r.slug,...r.plan}));b.textContent="Añadida ✓";b.classList.add("saved");setTimeout(()=>location.href="/plan-semana?idea=1",220)}catch(e){location.href="/plan-semana"}}));
    document.getElementById("humanHelp").href="/hablamos?motivo=uso&origen=que-cocino&contexto="+encodeURIComponent(state.time+" min · "+state.mood+" · "+state.goal+(useSoon?" · gastar "+useSoon:""));
    document.getElementById("results").classList.add("show");document.getElementById("results").scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});setTimeout(()=>document.getElementById("resultTitle").focus({preventScroll:true}),300);
  }
