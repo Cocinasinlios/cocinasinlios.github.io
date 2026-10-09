@@ -275,3 +275,17 @@ header .navlinks{font-size:13px!important}
  .home-page .macarena-actions{display:grid}
  .home-page .macarena-actions .btn{width:100%}
 }
+
+
+/* Mobile image cleanup 2026-10-09: keep photography unobstructed. */
+@media(max-width:760px){
+  .home-page .shot::before,
+  .home-page .shot::after,
+  .home-page .feature-card::before,
+  .home-page .feature-card::after,
+  .recipes-page .photo::before,
+  .recipes-page .photo::after{
+    content:none!important;
+    display:none!important;
+  }
+}
