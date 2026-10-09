@@ -182,12 +182,18 @@ jobs:
 
             await page.goto("https://cocinasinlios.com/recetas/pasta-tomate-atun/",{waitUntil:"networkidle2"});
             await page.waitForSelector(".csl-continue",{timeout:8000});
-            const recipeQuality=await page.evaluate(()=>({
-              hero:document.querySelector(".hero-photo img")?.getAttribute("src")||"",
-              editorial:!!document.querySelector('a[href="/criterio-editorial"]')
-            }));
+            const recipeQuality=await page.evaluate(()=>{
+              const ld=[...document.querySelectorAll('script[type="application/ld+json"]')].map(x=>x.textContent).find(x=>x.includes('"@type":"Recipe"'))||"";
+              return {
+                hero:document.querySelector(".hero-photo img")?.getAttribute("src")||"",
+                editorial:!!document.querySelector('a[href="/criterio-editorial"]'),
+                stepId:document.querySelector(".steps .step")?.id||"",
+                schemaStepUrl:ld.includes("#paso-1")
+              };
+            });
             if(!recipeQuality.hero.includes("/assets/recipes/pasta-tomate-atun.webp"))throw new Error("La receta no expone hero HTML indexable");
             if(!recipeQuality.editorial)throw new Error("La receta no enlaza el criterio editorial");
+            if(recipeQuality.stepId!=="paso-1"||!recipeQuality.schemaStepUrl)throw new Error("Los pasos de receta no están anclados al schema");
             const recent=await page.evaluate(()=>JSON.parse(localStorage.getItem("csl-recientes-v1")||"[]"));
             if(!Array.isArray(recent)||recent[0]?.slug!=="pasta-tomate-atun")throw new Error("No se guardó la receta reciente");
 
