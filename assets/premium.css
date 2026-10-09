@@ -289,3 +289,14 @@ header .navlinks{font-size:13px!important}
     display:none!important;
   }
 }
+
+
+/* Product-first continuity 2026-10-09 */
+.csl-resume-lead{max-width:720px;margin:-8px 0 18px;color:#c7d4cc;font-size:13px;line-height:1.55}
+.resume-card.csl-priority{background:#f3df9e!important;color:#20342b!important;border-color:transparent!important;box-shadow:0 14px 34px rgba(0,0,0,.12)}
+.resume-card.csl-priority small,.resume-card.csl-priority span{color:#526057!important}
+.resume-card.csl-priority b{color:#20342b!important}
+@media(max-width:640px){
+  .csl-resume-lead{font-size:12px;margin-bottom:14px}
+  .resume-card.csl-priority{order:-1}
+}
