@@ -300,3 +300,19 @@ header .navlinks{font-size:13px!important}
   .csl-resume-lead{font-size:12px;margin-bottom:14px}
   .resume-card.csl-priority{order:-1}
 }
+
+
+/* Recipe library decision exit 2026-10-09 */
+.recipes-page .decision-exit{padding:0 0 34px}
+.recipes-page .decision-exit-box{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;background:#20342b;color:#fff;border-radius:28px;padding:24px 26px;box-shadow:0 18px 50px rgba(31,43,36,.12)}
+.recipes-page .decision-exit-box h2{font-family:Georgia,serif;font-size:34px;font-weight:500;margin:5px 0 8px}
+.recipes-page .decision-exit-box p{margin:0;color:#c8d5cd;max-width:640px;font-size:13px}
+.recipes-page .decision-exit-box .eyebrow{color:#dce8df!important}
+.recipes-page .decision-exit-actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.recipes-page .decision-exit-actions .btn{background:#fff;color:#20342b;border-color:#fff}
+.recipes-page .decision-exit-actions .btn.primary{background:#f3df9e!important;color:#20342b!important;border-color:#f3df9e!important}
+@media(max-width:700px){
+  .recipes-page .decision-exit-box{grid-template-columns:1fr;padding:20px}
+  .recipes-page .decision-exit-actions{display:grid;justify-content:stretch}
+  .recipes-page .decision-exit-actions .btn{width:100%}
+}
