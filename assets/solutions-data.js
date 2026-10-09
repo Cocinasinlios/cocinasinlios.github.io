@@ -38,12 +38,6 @@ window.CSL_SOLUTIONS=[
         "tomate",
         "limon"
       ]
-    },
-    "contains": {
-      "pescado": false,
-      "carne": false,
-      "huevo": false,
-      "lacteos": false
     }
   },
   {
@@ -83,12 +77,6 @@ window.CSL_SOLUTIONS=[
         "vinagre",
         "frutos"
       ]
-    },
-    "contains": {
-      "pescado": false,
-      "carne": false,
-      "huevo": false,
-      "lacteos": false
     }
   },
   {
@@ -130,12 +118,6 @@ window.CSL_SOLUTIONS=[
         "legumbres",
         "limon"
       ]
-    },
-    "contains": {
-      "pescado": false,
-      "carne": false,
-      "huevo": false,
-      "lacteos": false
     }
   },
   {
@@ -174,12 +156,6 @@ window.CSL_SOLUTIONS=[
         "verdurascong",
         "pan"
       ]
-    },
-    "contains": {
-      "pescado": false,
-      "carne": false,
-      "huevo": true,
-      "lacteos": false
     }
   },
   {
@@ -219,12 +195,6 @@ window.CSL_SOLUTIONS=[
         "limon",
         "vinagre"
       ]
-    },
-    "contains": {
-      "pescado": false,
-      "carne": false,
-      "huevo": false,
-      "lacteos": false
     }
   },
   {
@@ -263,12 +233,6 @@ window.CSL_SOLUTIONS=[
         "protecong",
         "pan"
       ]
-    },
-    "contains": {
-      "pescado": false,
-      "carne": false,
-      "huevo": false,
-      "lacteos": false
     }
   },
   {
@@ -305,12 +269,6 @@ window.CSL_SOLUTIONS=[
         "legumbres",
         "conserva"
       ]
-    },
-    "contains": {
-      "pescado": false,
-      "carne": false,
-      "huevo": false,
-      "lacteos": false
     }
   },
   {
@@ -349,12 +307,6 @@ window.CSL_SOLUTIONS=[
         "protecong",
         "legumbres"
       ]
-    },
-    "contains": {
-      "pescado": false,
-      "carne": false,
-      "huevo": false,
-      "lacteos": false
     }
   },
   {
@@ -395,12 +347,6 @@ window.CSL_SOLUTIONS=[
         "conserva",
         "vinagre"
       ]
-    },
-    "contains": {
-      "pescado": false,
-      "carne": false,
-      "huevo": false,
-      "lacteos": false
     }
   },
   {
@@ -439,12 +385,6 @@ window.CSL_SOLUTIONS=[
         "legumbres",
         "limon"
       ]
-    },
-    "contains": {
-      "pescado": false,
-      "carne": false,
-      "huevo": false,
-      "lacteos": false
     }
   },
   {
