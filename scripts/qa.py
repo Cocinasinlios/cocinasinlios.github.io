@@ -310,6 +310,8 @@ else:
                 problems.append(f"Fórmula sin montaje orientativo: {slug}")
             if not isinstance(solution.get("plan"), dict):
                 problems.append(f"Fórmula sin metadatos de contexto: {slug}")
+            if "contains" in solution:
+                problems.append(f"Fórmula con exclusión rígida; debe filtrarse por ingredientes: {slug}")
     except Exception as exc:
         problems.append(f"No se puede interpretar solutions-data.js: {exc}")
 
