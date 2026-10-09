@@ -1,0 +1,102 @@
+{
+  "version": "2026-10-09",
+  "principle": "Una intención principal, una URL principal. No crear otra landing para la misma consulta salvo que cambie claramente la intención.",
+  "targets": [
+    {
+      "query": "qué cocinar hoy",
+      "url": "/que-cocino",
+      "cluster": "decisión diaria",
+      "status": "priority"
+    },
+    {
+      "query": "qué cenar hoy",
+      "url": "/que-cenar-hoy",
+      "cluster": "decisión diaria",
+      "status": "priority"
+    },
+    {
+      "query": "cenas en 15 minutos",
+      "url": "/cenas-en-15-minutos",
+      "cluster": "cenas por tiempo",
+      "status": "priority"
+    },
+    {
+      "query": "cenas sin ganas de cocinar",
+      "url": "/cenas-sin-ganas-de-cocinar",
+      "cluster": "cenas por energía",
+      "status": "priority"
+    },
+    {
+      "query": "cenas de despensa",
+      "url": "/cenas-de-despensa",
+      "cluster": "despensa",
+      "status": "priority"
+    },
+    {
+      "query": "cocinar una vez comer dos días",
+      "url": "/cocinar-una-vez-comer-dos-dias",
+      "cluster": "aprovechamiento",
+      "status": "priority"
+    },
+    {
+      "query": "qué hacer con arroz cocido",
+      "url": "/recetas-con-arroz",
+      "cluster": "ingredientes y sobras",
+      "status": "priority"
+    },
+    {
+      "query": "qué hacer con calabacín",
+      "url": "/recetas-con-calabacin",
+      "cluster": "ingredientes",
+      "status": "priority"
+    },
+    {
+      "query": "qué cocinar con huevos",
+      "url": "/que-cocinar-con-huevos",
+      "cluster": "ingredientes",
+      "status": "priority"
+    },
+    {
+      "query": "qué hacer con tomates maduros",
+      "url": "/recetas-con-tomate",
+      "cluster": "ingredientes y sobras",
+      "status": "priority"
+    },
+    {
+      "query": "qué hacer con pollo cocido",
+      "url": "/que-hacer-con-pollo-cocido",
+      "cluster": "ingredientes y sobras",
+      "status": "priority"
+    },
+    {
+      "query": "qué hacer con garbanzos cocidos",
+      "url": "/que-hacer-con-garbanzos-cocidos",
+      "cluster": "ingredientes y sobras",
+      "status": "priority"
+    },
+    {
+      "query": "recetas con pollo",
+      "url": "/recetas-con-pollo",
+      "cluster": "ingredientes",
+      "status": "supporting"
+    },
+    {
+      "query": "cenas rápidas",
+      "url": "/cenas-rapidas",
+      "cluster": "cenas por tiempo",
+      "status": "long-term"
+    },
+    {
+      "query": "recetas de aprovechamiento",
+      "url": "/recetas-aprovechamiento",
+      "cluster": "aprovechamiento",
+      "status": "hub"
+    },
+    {
+      "query": "cómo guardar sobras",
+      "url": "/como-guardar-sobras",
+      "cluster": "seguridad y aprovechamiento",
+      "status": "supporting"
+    }
+  ]
+}
