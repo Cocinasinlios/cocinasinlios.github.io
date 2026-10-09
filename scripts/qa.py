@@ -281,6 +281,38 @@ if sitemap.is_file():
         if path != "/" and path not in orphan_exempt and count == 0:
             warnings.append(f"URL del sitemap sin enlace interno entrante detectable: {path}")
 
+# Flexible internal solution layer: useful in Resuelve hoy, never treated as published recipes.
+solutions_path = ROOT / "assets" / "solutions-data.js"
+solutions = []
+if not solutions_path.is_file():
+    problems.append("Falta la capa interna de fórmulas Sin Líos")
+else:
+    try:
+        solutions_payload = solutions_path.read_text(encoding="utf-8", errors="replace")
+        solutions_payload = re.sub(r"^\s*window\.CSL_SOLUTIONS\s*=\s*", "", solutions_payload)
+        solutions_payload = re.sub(r";\s*$", "", solutions_payload)
+        solutions = json.loads(solutions_payload)
+        if len(solutions) < 20:
+            warnings.append(f"Capa interna con poca variedad: {len(solutions)} fórmulas")
+        seen_solution_slugs = set()
+        for solution in solutions:
+            slug = solution.get("slug")
+            if not slug or slug in seen_solution_slugs:
+                problems.append(f"Fórmula con slug ausente o duplicado: {slug}")
+            seen_solution_slugs.add(slug)
+            if solution.get("kind") != "formula":
+                problems.append(f"Solución interna sin kind=formula: {slug}")
+            if not solution.get("title") or not solution.get("intro"):
+                problems.append(f"Fórmula sin título o introducción: {slug}")
+            if not isinstance(solution.get("minutes"), (int, float)) or solution.get("minutes", 0) <= 0:
+                problems.append(f"Fórmula sin minutos válidos: {slug}")
+            if not (solution.get("steps") or []):
+                problems.append(f"Fórmula sin montaje orientativo: {slug}")
+            if not isinstance(solution.get("plan"), dict):
+                problems.append(f"Fórmula sin metadatos de contexto: {slug}")
+    except Exception as exc:
+        problems.append(f"No se puede interpretar solutions-data.js: {exc}")
+
 data = (ROOT / "assets" / "recipes-data.js").read_text(encoding="utf-8", errors="replace")
 recipe_count = len(re.findall(r'"slug"\s*:\s*"[^"]+"', data))
 try:
@@ -352,6 +384,13 @@ chooser = (ROOT / "que-cocino.html").read_text(encoding="utf-8", errors="replace
 if not re.search(r"(?:const|let|var)\s+esc\s*=|function\s+esc\s*\(", chooser):
     problems.append("Qué cocino ha perdido su helper de escape de HTML")
 picker = (ROOT / "que-cocino.html").read_text(encoding="utf-8", errors="replace")
+if "/assets/solutions-data.js" not in chooser or "window.CSL_SOLUTIONS" not in chooser or "const candidates=[...recipes,...formulas]" not in chooser:
+    problems.append("Resuelve hoy no está cargando la capa interna de fórmulas")
+if "/assets/solutions-data.js" in planner or "CSL_SOLUTIONS" in planner:
+    problems.append("Planifica no debe usar fórmulas internas; solo recetas completas")
+if "r.kind===\"formula\"" not in chooser or "PROPUESTA FLEXIBLE" not in chooser:
+    problems.append("Resuelve hoy ha perdido el etiquetado explícito de fórmulas flexibles")
+
 
 # Small runtime-contract checks for helpers used by dynamic renderers.
 for label, source in [("Qué cocino", picker), ("Planifica", planner)]:
