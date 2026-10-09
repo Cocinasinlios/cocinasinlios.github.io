@@ -44,6 +44,7 @@ CORE = [
     "que-hacer-con-garbanzos-cocidos.html",
     "que-cenar-hoy.html",
     "criterio-editorial.html",
+    "como-guardar-sobras.html",
 ]
 
 problems: list[str] = []
