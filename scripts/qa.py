@@ -69,6 +69,33 @@ for rel in CORE:
     if not (ROOT / rel).is_file():
         problems.append(f"Falta página esencial: {rel}")
 
+# SEO intent ownership: keep one canonical target per primary query.
+seo_targets_path = ROOT / ".github" / "internal" / "seo-targets.json"
+if not seo_targets_path.is_file():
+    problems.append("Falta el mapa interno de intenciones SEO")
+else:
+    try:
+        seo_targets_data = json.loads(seo_targets_path.read_text(encoding="utf-8"))
+        seen_queries = {}
+        sitemap_text_for_targets = (ROOT / "sitemap.xml").read_text(encoding="utf-8", errors="replace") if (ROOT / "sitemap.xml").is_file() else ""
+        for target in seo_targets_data.get("targets", []):
+            query = re.sub(r"\s+", " ", str(target.get("query") or "").strip().casefold())
+            url = str(target.get("url") or "").strip()
+            if not query or not url:
+                problems.append("Entrada SEO sin query o URL")
+                continue
+            if query in seen_queries and seen_queries[query] != url:
+                problems.append(f"Canibalización declarada: '{query}' -> {seen_queries[query]} y {url}")
+            seen_queries[query] = url
+            file_target = html_target(url)
+            if file_target is None or not file_target.is_file():
+                problems.append(f"Objetivo SEO sin página pública: {query} -> {url}")
+            absolute = "https://cocinasinlios.com" + (url if url != "/" else "/")
+            if f"<loc>{absolute}</loc>" not in sitemap_text_for_targets:
+                problems.append(f"Objetivo SEO ausente del sitemap: {query} -> {url}")
+    except Exception as exc:
+        problems.append(f"Mapa SEO inválido: {exc}")
+
 indexable_titles: dict[str, list[str]] = {}
 indexable_descriptions: dict[str, list[str]] = {}
 indexable_canonicals: list[str] = []
