@@ -96,6 +96,8 @@ for path in ROOT.rglob("*"):
         if not re.search(r'<html[^>]+lang=["\']es', text, flags=re.I):
             problems.append(f"Página sin lang=es: {rel_name}")
         if not noindex:
+            if not robots_match or "max-image-preview:large" not in robots_match.group(1).casefold():
+                problems.append(f"Página indexable sin max-image-preview:large: {rel_name}")
             desc_match = re.search(r'<meta[^>]+name=["\']description["\'][^>]+content=["\']([^"\']+)', text, flags=re.I)
             if not desc_match:
                 desc_match = re.search(r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+name=["\']description["\']', text, flags=re.I)
