@@ -26,7 +26,7 @@ footer{background:#202b24;color:#dce5df;padding:40px 0}footer p{font-size:12px;c
 <body class="picker-page">
 <header><div class="wrap nav"><a class="brand" href="/"><img src="/assets/logo-cocina-sin-lios.svg" alt="Cocina sin líos con Macarena"></a><nav class="navlinks"></nav></div></header>
 <main>
-<section class="hero"><div class="wrap"><div class="eyebrow">Vamos a resolverlo</div><h1>¿Qué cocinar hoy? Tres ideas según lo que tienes.</h1><p>Dime cuánto tiempo tienes y qué te apetece. Tendré en cuenta tu despensa, lo que quieres evitar y lo que ya has guardado.</p><div id="memory" class="memory"></div></div></section>
+<section class="hero"><div class="wrap"><div class="eyebrow">Vamos a resolverlo</div><h1>¿Qué cocinar hoy? Tres ideas según lo que tienes.</h1><p>Dime cuánto tiempo tienes y qué te apetece. Tendré en cuenta tu despensa, lo que quieres evitar y lo que ya has guardado. Cuando ayude a darte más variedad, puedo combinar recetas completas con propuestas flexibles claramente identificadas.</p><div id="memory" class="memory"></div></div></section>
 <section class="game"><div class="wrap panel"><div id="context" class="context"></div>
 <div class="questions">
 <div class="question"><h2>1. Tiempo</h2><div class="choices" data-group="time" role="group" aria-label="Tiempo disponible"><button type="button" class="choice active" data-value="15" aria-pressed="true">15 min</button><button type="button" class="choice" data-value="30" aria-pressed="false">30 min</button><button type="button" class="choice" data-value="60" aria-pressed="false">Hasta 60 min</button></div></div>
@@ -132,6 +132,8 @@ footer{background:#202b24;color:#dce5df;padding:40px 0}footer p{font-size:12px;c
    if(recentSlugs.has(r.slug))s-=3;
   
    if(generated.includes(r.slug))s-=5;
+   // Complete published recipes win ties; formulas expand variety when they fit materially better.
+   if(r.kind==="formula")s-=1.5;
    return s;
  }
  function fitText(r){
