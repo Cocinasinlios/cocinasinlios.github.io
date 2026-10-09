@@ -327,3 +327,13 @@ header .navlinks{font-size:13px!important}
 .picker-page .formula-steps ol{margin:0;padding-left:18px}
 .picker-page .formula-steps li+li{margin-top:5px}
 .picker-page .formula-toggle{background:#fffdfa}
+
+
+/* Keep chooser imagery clean on mobile too. */
+@media(max-width:760px){
+  .picker-page .photo.editorial::before,
+  .picker-page .photo.editorial::after{
+    content:none!important;
+    display:none!important;
+  }
+}
