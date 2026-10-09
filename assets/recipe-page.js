@@ -1,10 +1,20 @@
 (()=>{const r=window.CSL_RECIPE;if(!r)return;
 function enhanceRecipeStructuredData(){
+ const stepEls=[...document.querySelectorAll(".steps .step")];
+ stepEls.forEach((el,i)=>{if(!el.id)el.id="paso-"+(i+1)});
  const recipeLd=[...document.querySelectorAll('script[type="application/ld+json"]')].find(s=>s.textContent.includes('"@type":"Recipe"'));
  if(recipeLd){
    try{
      const data=JSON.parse(recipeLd.textContent);
      if(data.author&&typeof data.author==="object")data.author["@id"]="https://cocinasinlios.com/con-macarena#macarena";
+     if(Array.isArray(data.recipeInstructions)){
+       data.recipeInstructions.forEach((step,i)=>{
+         if(step&&typeof step==="object"){
+           step.position=step.position||i+1;
+           step.url="https://cocinasinlios.com/recetas/"+encodeURIComponent(r.slug)+"/#paso-"+(i+1);
+         }
+       });
+     }
      recipeLd.textContent=JSON.stringify(data);
    }catch(e){}
  }
