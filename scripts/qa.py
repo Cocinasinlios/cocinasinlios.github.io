@@ -250,6 +250,33 @@ else:
     if len(sitemap_urls) != len(set(sitemap_urls)):
         problems.append("Sitemap con URLs duplicadas")
 
+# Internal-link graph: make orphaned sitemap pages visible before they become SEO debt.
+if sitemap.is_file():
+    sm_for_links = sitemap.read_text(encoding="utf-8", errors="replace")
+    sitemap_paths = [urlsplit(x).path.rstrip("/") or "/" for x in re.findall(r"<loc>(https://cocinasinlios\.com[^<]+)</loc>", sm_for_links)]
+    inbound = {p: 0 for p in sitemap_paths}
+    for source in list(ROOT.rglob("*.html")) + list((ROOT / "assets").glob("*.js")):
+        if not source.is_file() or ".git" in source.parts:
+            continue
+        source_text = source.read_text(encoding="utf-8", errors="replace")
+        source_public = None
+        if source.suffix.lower() == ".html":
+            rel = str(source.relative_to(ROOT))
+            if rel == "index.html":
+                source_public = "/"
+            elif rel.endswith("/index.html"):
+                source_public = "/" + rel[:-10].rstrip("/")
+            elif source.parent == ROOT:
+                source_public = "/" + source.stem
+        for raw in re.findall(r'href\s*=\s*["\'](/[^"\'#?]*)', source_text, flags=re.I):
+            target = urlsplit(raw).path.rstrip("/") or "/"
+            if target in inbound and target != source_public:
+                inbound[target] += 1
+    orphan_exempt = {"/aviso-legal","/privacidad","/cookies","/uso-y-propiedad"}
+    for path, count in inbound.items():
+        if path != "/" and path not in orphan_exempt and count == 0:
+            warnings.append(f"URL del sitemap sin enlace interno entrante detectable: {path}")
+
 data = (ROOT / "assets" / "recipes-data.js").read_text(encoding="utf-8", errors="replace")
 recipe_count = len(re.findall(r'"slug"\s*:\s*"[^"]+"', data))
 try:
