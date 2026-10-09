@@ -316,3 +316,14 @@ header .navlinks{font-size:13px!important}
   .recipes-page .decision-exit-actions{display:grid;justify-content:stretch}
   .recipes-page .decision-exit-actions .btn{width:100%}
 }
+
+
+/* Flexible internal solutions in Resuelve hoy 2026-10-09 */
+.picker-page .formula-card{border-style:dashed}
+.picker-page .formula-card .photo{filter:saturate(.88)}
+.picker-page .formula-note{font-size:11px;line-height:1.45;color:#6b665d;background:#f7f3ea;border:1px solid rgba(39,64,52,.10);border-radius:13px;padding:10px 11px;margin:0 0 12px}
+.picker-page .formula-steps{margin:0 0 12px;background:#eef5eb;border-radius:14px;padding:12px 13px;color:#405347;font-size:12px;line-height:1.5}
+.picker-page .formula-steps b{display:block;color:#274034;margin-bottom:6px}
+.picker-page .formula-steps ol{margin:0;padding-left:18px}
+.picker-page .formula-steps li+li{margin-top:5px}
+.picker-page .formula-toggle{background:#fffdfa}
