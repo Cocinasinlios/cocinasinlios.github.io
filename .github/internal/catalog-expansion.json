@@ -5,244 +5,743 @@
   "principle": "No publicar una ficha nueva hasta tener ingredientes, cantidades, pasos, cocción, seguridad, imagen propia y revisión editorial.",
   "priorities": [
     {
+      "priority": 1,
       "slug": "revuelto-calabacin",
       "title": "Revuelto de calabacín y cebolla",
       "family": "Huevos y tortillas",
       "minutes": 20,
       "reason": "Aumenta cenas de 20 min y salida para calabacín.",
-      "status": "pending-validation"
+      "status": "pending-validation",
+      "validation": {
+        "ingredients_quantified": false,
+        "method_or_temperature_checked": false,
+        "time_checked": false,
+        "doneness_cue_defined": false,
+        "food_safety_reviewed": false,
+        "substitutions_reviewed": false,
+        "servings_and_scaling_checked": false,
+        "editorial_copy_reviewed": false,
+        "own_image_ready": false,
+        "recipe_page_generated": false,
+        "schema_and_open_graph_checked": false,
+        "site_qa_passed": false,
+        "production_audit_passed": false
+      }
     },
     {
+      "priority": 2,
       "slug": "huevos-plato-tomate",
       "title": "Huevos al plato con tomate",
       "family": "Huevos y tortillas",
       "minutes": 25,
       "reason": "Despensa + cena de sartén/horno sencilla.",
-      "status": "pending-validation"
+      "status": "pending-validation",
+      "validation": {
+        "ingredients_quantified": false,
+        "method_or_temperature_checked": false,
+        "time_checked": false,
+        "doneness_cue_defined": false,
+        "food_safety_reviewed": false,
+        "substitutions_reviewed": false,
+        "servings_and_scaling_checked": false,
+        "editorial_copy_reviewed": false,
+        "own_image_ready": false,
+        "recipe_page_generated": false,
+        "schema_and_open_graph_checked": false,
+        "site_qa_passed": false,
+        "production_audit_passed": false
+      }
     },
     {
+      "priority": 3,
       "slug": "tortilla-espinacas",
       "title": "Tortilla de espinacas y cebolla",
       "family": "Huevos y tortillas",
       "minutes": 25,
       "reason": "Amplía huevos y verduras con técnica de humedad.",
-      "status": "pending-validation"
+      "status": "pending-validation",
+      "validation": {
+        "ingredients_quantified": false,
+        "method_or_temperature_checked": false,
+        "time_checked": false,
+        "doneness_cue_defined": false,
+        "food_safety_reviewed": false,
+        "substitutions_reviewed": false,
+        "servings_and_scaling_checked": false,
+        "editorial_copy_reviewed": false,
+        "own_image_ready": false,
+        "recipe_page_generated": false,
+        "schema_and_open_graph_checked": false,
+        "site_qa_passed": false,
+        "production_audit_passed": false
+      }
     },
     {
+      "priority": 4,
       "slug": "merluza-plancha-limon",
       "title": "Merluza a la plancha con limón",
       "family": "Pescado",
       "minutes": 20,
       "reason": "Pescado muy rápido; hueco claro ≤30 min.",
-      "status": "pending-validation"
+      "status": "pending-validation",
+      "validation": {
+        "ingredients_quantified": false,
+        "method_or_temperature_checked": false,
+        "time_checked": false,
+        "doneness_cue_defined": false,
+        "food_safety_reviewed": false,
+        "substitutions_reviewed": false,
+        "servings_and_scaling_checked": false,
+        "editorial_copy_reviewed": false,
+        "own_image_ready": false,
+        "recipe_page_generated": false,
+        "schema_and_open_graph_checked": false,
+        "site_qa_passed": false,
+        "production_audit_passed": false
+      }
     },
     {
+      "priority": 5,
       "slug": "salmon-sarten-limon",
       "title": "Salmón en sartén con limón",
       "family": "Pescado",
       "minutes": 20,
       "reason": "Alternativa rápida al salmón al horno.",
-      "status": "pending-validation"
+      "status": "pending-validation",
+      "validation": {
+        "ingredients_quantified": false,
+        "method_or_temperature_checked": false,
+        "time_checked": false,
+        "doneness_cue_defined": false,
+        "food_safety_reviewed": false,
+        "substitutions_reviewed": false,
+        "servings_and_scaling_checked": false,
+        "editorial_copy_reviewed": false,
+        "own_image_ready": false,
+        "recipe_page_generated": false,
+        "schema_and_open_graph_checked": false,
+        "site_qa_passed": false,
+        "production_audit_passed": false
+      }
     },
     {
+      "priority": 6,
       "slug": "atun-tomate-calabacin",
       "title": "Atún con tomate y calabacín",
       "family": "Pescado",
       "minutes": 25,
       "reason": "Conserva + verdura + despensa.",
-      "status": "pending-validation"
+      "status": "pending-validation",
+      "validation": {
+        "ingredients_quantified": false,
+        "method_or_temperature_checked": false,
+        "time_checked": false,
+        "doneness_cue_defined": false,
+        "food_safety_reviewed": false,
+        "substitutions_reviewed": false,
+        "servings_and_scaling_checked": false,
+        "editorial_copy_reviewed": false,
+        "own_image_ready": false,
+        "recipe_page_generated": false,
+        "schema_and_open_graph_checked": false,
+        "site_qa_passed": false,
+        "production_audit_passed": false
+      }
     },
     {
+      "priority": 7,
       "slug": "pescado-salsa-verde-rapida",
       "title": "Pescado en salsa verde rápida",
       "family": "Pescado",
       "minutes": 30,
       "reason": "Añade salsa sencilla sin duplicar bacalao con tomate.",
-      "status": "pending-validation"
+      "status": "pending-validation",
+      "validation": {
+        "ingredients_quantified": false,
+        "method_or_temperature_checked": false,
+        "time_checked": false,
+        "doneness_cue_defined": false,
+        "food_safety_reviewed": false,
+        "substitutions_reviewed": false,
+        "servings_and_scaling_checked": false,
+        "editorial_copy_reviewed": false,
+        "own_image_ready": false,
+        "recipe_page_generated": false,
+        "schema_and_open_graph_checked": false,
+        "site_qa_passed": false,
+        "production_audit_passed": false
+      }
     },
     {
+      "priority": 8,
       "slug": "pollo-mostaza-sarten",
       "title": "Pollo a la mostaza en sartén",
       "family": "Pollo y carne",
       "minutes": 25,
       "reason": "Cena rápida con salsa corta.",
-      "status": "pending-validation"
+      "status": "pending-validation",
+      "validation": {
+        "ingredients_quantified": false,
+        "method_or_temperature_checked": false,
+        "time_checked": false,
+        "doneness_cue_defined": false,
+        "food_safety_reviewed": false,
+        "substitutions_reviewed": false,
+        "servings_and_scaling_checked": false,
+        "editorial_copy_reviewed": false,
+        "own_image_ready": false,
+        "recipe_page_generated": false,
+        "schema_and_open_graph_checked": false,
+        "site_qa_passed": false,
+        "production_audit_passed": false
+      }
     },
     {
+      "priority": 9,
       "slug": "pollo-pimientos",
       "title": "Pollo con pimientos en sartén",
       "family": "Pollo y carne",
       "minutes": 30,
       "reason": "Más variedad vegetal y familiar.",
-      "status": "pending-validation"
+      "status": "pending-validation",
+      "validation": {
+        "ingredients_quantified": false,
+        "method_or_temperature_checked": false,
+        "time_checked": false,
+        "doneness_cue_defined": false,
+        "food_safety_reviewed": false,
+        "substitutions_reviewed": false,
+        "servings_and_scaling_checked": false,
+        "editorial_copy_reviewed": false,
+        "own_image_ready": false,
+        "recipe_page_generated": false,
+        "schema_and_open_graph_checked": false,
+        "site_qa_passed": false,
+        "production_audit_passed": false
+      }
     },
     {
+      "priority": 10,
       "slug": "picadillo-pavo-verduras",
       "title": "Picadillo de pavo y verduras",
       "family": "Pollo y carne",
       "minutes": 25,
       "reason": "Proteína rápida, adaptable y de aprovechamiento.",
-      "status": "pending-validation"
+      "status": "pending-validation",
+      "validation": {
+        "ingredients_quantified": false,
+        "method_or_temperature_checked": false,
+        "time_checked": false,
+        "doneness_cue_defined": false,
+        "food_safety_reviewed": false,
+        "substitutions_reviewed": false,
+        "servings_and_scaling_checked": false,
+        "editorial_copy_reviewed": false,
+        "own_image_ready": false,
+        "recipe_page_generated": false,
+        "schema_and_open_graph_checked": false,
+        "site_qa_passed": false,
+        "production_audit_passed": false
+      }
     },
     {
+      "priority": 11,
       "slug": "garbanzos-espinacas-rapidos",
       "title": "Garbanzos rápidos con espinacas",
       "family": "Legumbres",
       "minutes": 25,
       "reason": "Cuchara/sartén vegetal rápida.",
-      "status": "pending-validation"
+      "status": "pending-validation",
+      "validation": {
+        "ingredients_quantified": false,
+        "method_or_temperature_checked": false,
+        "time_checked": false,
+        "doneness_cue_defined": false,
+        "food_safety_reviewed": false,
+        "substitutions_reviewed": false,
+        "servings_and_scaling_checked": false,
+        "editorial_copy_reviewed": false,
+        "own_image_ready": false,
+        "recipe_page_generated": false,
+        "schema_and_open_graph_checked": false,
+        "site_qa_passed": false,
+        "production_audit_passed": false
+      }
     },
     {
+      "priority": 12,
       "slug": "alubias-tomate",
       "title": "Alubias con tomate y verduras",
       "family": "Legumbres",
       "minutes": 25,
       "reason": "Despensa y legumbre caliente rápida.",
-      "status": "pending-validation"
+      "status": "pending-validation",
+      "validation": {
+        "ingredients_quantified": false,
+        "method_or_temperature_checked": false,
+        "time_checked": false,
+        "doneness_cue_defined": false,
+        "food_safety_reviewed": false,
+        "substitutions_reviewed": false,
+        "servings_and_scaling_checked": false,
+        "editorial_copy_reviewed": false,
+        "own_image_ready": false,
+        "recipe_page_generated": false,
+        "schema_and_open_graph_checked": false,
+        "site_qa_passed": false,
+        "production_audit_passed": false
+      }
     },
     {
+      "priority": 13,
       "slug": "lentejas-curry",
       "title": "Lentejas al curry rápidas",
       "family": "Legumbres",
       "minutes": 25,
       "reason": "Variedad de sabor sin ampliar tiempo.",
-      "status": "pending-validation"
+      "status": "pending-validation",
+      "validation": {
+        "ingredients_quantified": false,
+        "method_or_temperature_checked": false,
+        "time_checked": false,
+        "doneness_cue_defined": false,
+        "food_safety_reviewed": false,
+        "substitutions_reviewed": false,
+        "servings_and_scaling_checked": false,
+        "editorial_copy_reviewed": false,
+        "own_image_ready": false,
+        "recipe_page_generated": false,
+        "schema_and_open_graph_checked": false,
+        "site_qa_passed": false,
+        "production_audit_passed": false
+      }
     },
     {
+      "priority": 14,
       "slug": "ensalada-alubias-atun",
       "title": "Ensalada de alubias y atún",
       "family": "Legumbres",
       "minutes": 15,
       "reason": "Aumenta opciones reales ≤15 min.",
-      "status": "pending-validation"
+      "status": "pending-validation",
+      "validation": {
+        "ingredients_quantified": false,
+        "method_or_temperature_checked": false,
+        "time_checked": false,
+        "doneness_cue_defined": false,
+        "food_safety_reviewed": false,
+        "substitutions_reviewed": false,
+        "servings_and_scaling_checked": false,
+        "editorial_copy_reviewed": false,
+        "own_image_ready": false,
+        "recipe_page_generated": false,
+        "schema_and_open_graph_checked": false,
+        "site_qa_passed": false,
+        "production_audit_passed": false
+      }
     },
     {
+      "priority": 15,
       "slug": "pasta-ajo-limon",
       "title": "Pasta con ajo, limón y pan crujiente",
       "family": "Pasta, arroz y cereales",
       "minutes": 20,
       "reason": "Despensa, barata y rápida.",
-      "status": "pending-validation"
+      "status": "pending-validation",
+      "validation": {
+        "ingredients_quantified": false,
+        "method_or_temperature_checked": false,
+        "time_checked": false,
+        "doneness_cue_defined": false,
+        "food_safety_reviewed": false,
+        "substitutions_reviewed": false,
+        "servings_and_scaling_checked": false,
+        "editorial_copy_reviewed": false,
+        "own_image_ready": false,
+        "recipe_page_generated": false,
+        "schema_and_open_graph_checked": false,
+        "site_qa_passed": false,
+        "production_audit_passed": false
+      }
     },
     {
+      "priority": 16,
       "slug": "pasta-garbanzos-tomate",
       "title": "Pasta con garbanzos y tomate",
       "family": "Pasta, arroz y cereales",
       "minutes": 25,
       "reason": "Proteína vegetal y despensa.",
-      "status": "pending-validation"
+      "status": "pending-validation",
+      "validation": {
+        "ingredients_quantified": false,
+        "method_or_temperature_checked": false,
+        "time_checked": false,
+        "doneness_cue_defined": false,
+        "food_safety_reviewed": false,
+        "substitutions_reviewed": false,
+        "servings_and_scaling_checked": false,
+        "editorial_copy_reviewed": false,
+        "own_image_ready": false,
+        "recipe_page_generated": false,
+        "schema_and_open_graph_checked": false,
+        "site_qa_passed": false,
+        "production_audit_passed": false
+      }
     },
     {
+      "priority": 17,
       "slug": "arroz-verduras-sarten",
       "title": "Arroz con verduras en sartén",
       "family": "Pasta, arroz y cereales",
       "minutes": 25,
       "reason": "Más salida para arroz cocido.",
-      "status": "pending-validation"
+      "status": "pending-validation",
+      "validation": {
+        "ingredients_quantified": false,
+        "method_or_temperature_checked": false,
+        "time_checked": false,
+        "doneness_cue_defined": false,
+        "food_safety_reviewed": false,
+        "substitutions_reviewed": false,
+        "servings_and_scaling_checked": false,
+        "editorial_copy_reviewed": false,
+        "own_image_ready": false,
+        "recipe_page_generated": false,
+        "schema_and_open_graph_checked": false,
+        "site_qa_passed": false,
+        "production_audit_passed": false
+      }
     },
     {
+      "priority": 18,
       "slug": "cuscus-limon-hierbas",
       "title": "Cuscús con limón, hierbas y garbanzos",
       "family": "Pasta, arroz y cereales",
       "minutes": 15,
       "reason": "Hueco ≤15 min y despensa.",
-      "status": "pending-validation"
+      "status": "pending-validation",
+      "validation": {
+        "ingredients_quantified": false,
+        "method_or_temperature_checked": false,
+        "time_checked": false,
+        "doneness_cue_defined": false,
+        "food_safety_reviewed": false,
+        "substitutions_reviewed": false,
+        "servings_and_scaling_checked": false,
+        "editorial_copy_reviewed": false,
+        "own_image_ready": false,
+        "recipe_page_generated": false,
+        "schema_and_open_graph_checked": false,
+        "site_qa_passed": false,
+        "production_audit_passed": false
+      }
     },
     {
+      "priority": 19,
       "slug": "patatas-salteadas-huevo",
       "title": "Patatas salteadas con huevo y verduras",
       "family": "Verduras",
       "minutes": 25,
       "reason": "Cena completa de base económica.",
-      "status": "pending-validation"
+      "status": "pending-validation",
+      "validation": {
+        "ingredients_quantified": false,
+        "method_or_temperature_checked": false,
+        "time_checked": false,
+        "doneness_cue_defined": false,
+        "food_safety_reviewed": false,
+        "substitutions_reviewed": false,
+        "servings_and_scaling_checked": false,
+        "editorial_copy_reviewed": false,
+        "own_image_ready": false,
+        "recipe_page_generated": false,
+        "schema_and_open_graph_checked": false,
+        "site_qa_passed": false,
+        "production_audit_passed": false
+      }
     },
     {
+      "priority": 20,
       "slug": "calabacin-tomate-sarten",
       "title": "Calabacín y tomate a la sartén",
       "family": "Verduras",
       "minutes": 20,
       "reason": "Refuerza guía de calabacín.",
-      "status": "pending-validation"
+      "status": "pending-validation",
+      "validation": {
+        "ingredients_quantified": false,
+        "method_or_temperature_checked": false,
+        "time_checked": false,
+        "doneness_cue_defined": false,
+        "food_safety_reviewed": false,
+        "substitutions_reviewed": false,
+        "servings_and_scaling_checked": false,
+        "editorial_copy_reviewed": false,
+        "own_image_ready": false,
+        "recipe_page_generated": false,
+        "schema_and_open_graph_checked": false,
+        "site_qa_passed": false,
+        "production_audit_passed": false
+      }
     },
     {
+      "priority": 21,
       "slug": "berenjena-tomate-sarten",
       "title": "Berenjena con tomate en sartén",
       "family": "Verduras",
       "minutes": 30,
       "reason": "Verdura protagonista sin horno largo.",
-      "status": "pending-validation"
+      "status": "pending-validation",
+      "validation": {
+        "ingredients_quantified": false,
+        "method_or_temperature_checked": false,
+        "time_checked": false,
+        "doneness_cue_defined": false,
+        "food_safety_reviewed": false,
+        "substitutions_reviewed": false,
+        "servings_and_scaling_checked": false,
+        "editorial_copy_reviewed": false,
+        "own_image_ready": false,
+        "recipe_page_generated": false,
+        "schema_and_open_graph_checked": false,
+        "site_qa_passed": false,
+        "production_audit_passed": false
+      }
     },
     {
+      "priority": 22,
       "slug": "judias-verdes-patata-huevo",
       "title": "Judías verdes con patata y huevo",
       "family": "Verduras",
       "minutes": 30,
       "reason": "Cena doméstica clásica y completa.",
-      "status": "pending-validation"
+      "status": "pending-validation",
+      "validation": {
+        "ingredients_quantified": false,
+        "method_or_temperature_checked": false,
+        "time_checked": false,
+        "doneness_cue_defined": false,
+        "food_safety_reviewed": false,
+        "substitutions_reviewed": false,
+        "servings_and_scaling_checked": false,
+        "editorial_copy_reviewed": false,
+        "own_image_ready": false,
+        "recipe_page_generated": false,
+        "schema_and_open_graph_checked": false,
+        "site_qa_passed": false,
+        "production_audit_passed": false
+      }
     },
     {
+      "priority": 23,
       "slug": "sopa-fideos-verduras",
       "title": "Sopa rápida de fideos y verduras",
       "family": "Sopas y cremas",
       "minutes": 25,
       "reason": "Cuchara rápida sin legumbre.",
-      "status": "pending-validation"
+      "status": "pending-validation",
+      "validation": {
+        "ingredients_quantified": false,
+        "method_or_temperature_checked": false,
+        "time_checked": false,
+        "doneness_cue_defined": false,
+        "food_safety_reviewed": false,
+        "substitutions_reviewed": false,
+        "servings_and_scaling_checked": false,
+        "editorial_copy_reviewed": false,
+        "own_image_ready": false,
+        "recipe_page_generated": false,
+        "schema_and_open_graph_checked": false,
+        "site_qa_passed": false,
+        "production_audit_passed": false
+      }
     },
     {
+      "priority": 24,
       "slug": "crema-calabacin-puerro",
       "title": "Crema de calabacín y puerro",
       "family": "Sopas y cremas",
       "minutes": 30,
       "reason": "Refuerza calabacín y fondo de nevera.",
-      "status": "pending-validation"
+      "status": "pending-validation",
+      "validation": {
+        "ingredients_quantified": false,
+        "method_or_temperature_checked": false,
+        "time_checked": false,
+        "doneness_cue_defined": false,
+        "food_safety_reviewed": false,
+        "substitutions_reviewed": false,
+        "servings_and_scaling_checked": false,
+        "editorial_copy_reviewed": false,
+        "own_image_ready": false,
+        "recipe_page_generated": false,
+        "schema_and_open_graph_checked": false,
+        "site_qa_passed": false,
+        "production_audit_passed": false
+      }
     },
     {
+      "priority": 25,
       "slug": "crema-tomate",
       "title": "Crema de tomate y verduras",
       "family": "Sopas y cremas",
       "minutes": 30,
       "reason": "Salida para tomate maduro.",
-      "status": "pending-validation"
+      "status": "pending-validation",
+      "validation": {
+        "ingredients_quantified": false,
+        "method_or_temperature_checked": false,
+        "time_checked": false,
+        "doneness_cue_defined": false,
+        "food_safety_reviewed": false,
+        "substitutions_reviewed": false,
+        "servings_and_scaling_checked": false,
+        "editorial_copy_reviewed": false,
+        "own_image_ready": false,
+        "recipe_page_generated": false,
+        "schema_and_open_graph_checked": false,
+        "site_qa_passed": false,
+        "production_audit_passed": false
+      }
     },
     {
+      "priority": 26,
       "slug": "tosta-tomate-huevo",
       "title": "Tosta de tomate y huevo",
       "family": "Horno y masas",
       "minutes": 15,
       "reason": "Cena ultrarrápida y visual.",
-      "status": "pending-validation"
+      "status": "pending-validation",
+      "validation": {
+        "ingredients_quantified": false,
+        "method_or_temperature_checked": false,
+        "time_checked": false,
+        "doneness_cue_defined": false,
+        "food_safety_reviewed": false,
+        "substitutions_reviewed": false,
+        "servings_and_scaling_checked": false,
+        "editorial_copy_reviewed": false,
+        "own_image_ready": false,
+        "recipe_page_generated": false,
+        "schema_and_open_graph_checked": false,
+        "site_qa_passed": false,
+        "production_audit_passed": false
+      }
     },
     {
+      "priority": 27,
       "slug": "pan-pita-garbanzos",
       "title": "Pita con garbanzos y verduras",
       "family": "Horno y masas",
       "minutes": 15,
       "reason": "Formato informal vegetal ≤15 min.",
-      "status": "pending-validation"
+      "status": "pending-validation",
+      "validation": {
+        "ingredients_quantified": false,
+        "method_or_temperature_checked": false,
+        "time_checked": false,
+        "doneness_cue_defined": false,
+        "food_safety_reviewed": false,
+        "substitutions_reviewed": false,
+        "servings_and_scaling_checked": false,
+        "editorial_copy_reviewed": false,
+        "own_image_ready": false,
+        "recipe_page_generated": false,
+        "schema_and_open_graph_checked": false,
+        "site_qa_passed": false,
+        "production_audit_passed": false
+      }
     },
     {
+      "priority": 28,
       "slug": "yogur-avena-fruta",
       "title": "Yogur con avena y fruta",
       "family": "Desayunos y dulce",
       "minutes": 5,
       "reason": "Desayuno real sin cocción.",
-      "status": "pending-validation"
+      "status": "pending-validation",
+      "validation": {
+        "ingredients_quantified": false,
+        "method_or_temperature_checked": false,
+        "time_checked": false,
+        "doneness_cue_defined": false,
+        "food_safety_reviewed": false,
+        "substitutions_reviewed": false,
+        "servings_and_scaling_checked": false,
+        "editorial_copy_reviewed": false,
+        "own_image_ready": false,
+        "recipe_page_generated": false,
+        "schema_and_open_graph_checked": false,
+        "site_qa_passed": false,
+        "production_audit_passed": false
+      }
     },
     {
+      "priority": 29,
       "slug": "manzana-sarten-avena",
       "title": "Manzana templada con avena",
       "family": "Desayunos y dulce",
       "minutes": 15,
       "reason": "Aprovechamiento de fruta y dulce rápido.",
-      "status": "pending-validation"
+      "status": "pending-validation",
+      "validation": {
+        "ingredients_quantified": false,
+        "method_or_temperature_checked": false,
+        "time_checked": false,
+        "doneness_cue_defined": false,
+        "food_safety_reviewed": false,
+        "substitutions_reviewed": false,
+        "servings_and_scaling_checked": false,
+        "editorial_copy_reviewed": false,
+        "own_image_ready": false,
+        "recipe_page_generated": false,
+        "schema_and_open_graph_checked": false,
+        "site_qa_passed": false,
+        "production_audit_passed": false
+      }
     },
     {
+      "priority": 30,
       "slug": "tostada-platano-frutos-secos",
       "title": "Tostada de plátano y frutos secos",
       "family": "Desayunos y dulce",
       "minutes": 10,
       "reason": "Desayuno/merienda de despensa.",
-      "status": "pending-validation"
+      "status": "pending-validation",
+      "validation": {
+        "ingredients_quantified": false,
+        "method_or_temperature_checked": false,
+        "time_checked": false,
+        "doneness_cue_defined": false,
+        "food_safety_reviewed": false,
+        "substitutions_reviewed": false,
+        "servings_and_scaling_checked": false,
+        "editorial_copy_reviewed": false,
+        "own_image_ready": false,
+        "recipe_page_generated": false,
+        "schema_and_open_graph_checked": false,
+        "site_qa_passed": false,
+        "production_audit_passed": false
+      }
     }
-  ]
+  ],
+  "validationGate": {
+    "required": [
+      "ingredients_quantified",
+      "method_or_temperature_checked",
+      "time_checked",
+      "doneness_cue_defined",
+      "food_safety_reviewed",
+      "substitutions_reviewed",
+      "servings_and_scaling_checked",
+      "editorial_copy_reviewed",
+      "own_image_ready",
+      "recipe_page_generated",
+      "schema_and_open_graph_checked",
+      "site_qa_passed",
+      "production_audit_passed"
+    ],
+    "publishRule": "A recipe may move to published only when every required check is true. No partial publication.",
+    "formulaPromotionRule": "A flexible formula may become a published recipe only after the same full validation gate."
+  }
 }
