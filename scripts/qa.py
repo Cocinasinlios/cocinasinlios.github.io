@@ -392,6 +392,9 @@ if "/assets/solutions-data.js" in planner or "CSL_SOLUTIONS" in planner:
     problems.append("Planifica no debe usar fórmulas internas; solo recetas completas")
 if "r.kind===\"formula\"" not in chooser or "PROPUESTA FLEXIBLE" not in chooser:
     problems.append("Resuelve hoy ha perdido el etiquetado explícito de fórmulas flexibles")
+if "picked.filter(x=>x.kind===\"formula\").length>=2" not in chooser or "completePool=pool.filter(r=>r.kind!==\"formula\")" not in chooser:
+    problems.append("Resuelve hoy ha perdido el equilibrio entre recetas completas y fórmulas")
+
 
 
 # Small runtime-contract checks for helpers used by dynamic renderers.
