@@ -571,7 +571,7 @@
         "pescado": false,
         "carne": false,
         "huevo": false,
-        "lacteos": true
+        "lacteos": false
       },
       "plan": {
         "t": "rapida",
@@ -656,7 +656,7 @@
         "pescado": false,
         "carne": false,
         "huevo": false,
-        "lacteos": true
+        "lacteos": false
       },
       "plan": {
         "t": "rapida",
