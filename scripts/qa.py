@@ -281,6 +281,54 @@ if sitemap.is_file():
         if path != "/" and path not in orphan_exempt and count == 0:
             warnings.append(f"URL del sitemap sin enlace interno entrante detectable: {path}")
 
+# Internal catalog expansion pipeline: keep drafts complete and unpublished until the gate is closed.
+roadmap_path = ROOT / ".github" / "internal" / "catalog-expansion.json"
+draft_paths = [
+    ROOT / ".github" / "internal" / "recipe-drafts-batch-01.json",
+    ROOT / ".github" / "internal" / "recipe-drafts-batch-02.json",
+    ROOT / ".github" / "internal" / "recipe-drafts-batch-03.json",
+]
+if roadmap_path.is_file():
+    try:
+        roadmap = json.loads(roadmap_path.read_text(encoding="utf-8"))
+        priorities = roadmap.get("priorities") or []
+        roadmap_slugs = {x.get("slug") for x in priorities if x.get("slug")}
+        drafts = []
+        for dp in draft_paths:
+            if not dp.is_file():
+                problems.append(f"Falta lote interno de borradores: {dp.name}")
+                continue
+            payload = json.loads(dp.read_text(encoding="utf-8"))
+            drafts.extend(payload.get("recipes") or [])
+        draft_slugs = [x.get("slug") for x in drafts if x.get("slug")]
+        if len(draft_slugs) != len(set(draft_slugs)):
+            problems.append("Borradores internos con slugs duplicados")
+        if roadmap_slugs != set(draft_slugs):
+            problems.append("Roadmap de expansión y lotes de borradores están desincronizados")
+        if len(draft_slugs) != 30:
+            warnings.append(f"Pipeline editorial esperaba 30 borradores y tiene {len(draft_slugs)}")
+        public_slugs_for_pipeline = set()
+        try:
+            public_payload = (ROOT / "assets" / "recipes-data.js").read_text(encoding="utf-8")
+            public_payload = re.sub(r"^\s*window\.CSL_RECIPES\s*=\s*", "", public_payload)
+            public_payload = re.sub(r";\s*$", "", public_payload)
+            public_slugs_for_pipeline = {x.get("slug") for x in json.loads(public_payload)}
+        except Exception:
+            pass
+        for draft in drafts:
+            slug = draft.get("slug", "(sin slug)")
+            validation = draft.get("validation") or {}
+            for needed in ("ingredients_quantified","method_or_temperature_checked","time_checked","doneness_cue_defined","food_safety_reviewed","substitutions_reviewed","servings_and_scaling_checked","editorial_copy_reviewed"):
+                if validation.get(needed) is not True:
+                    problems.append(f"Borrador técnico incompleto: {slug} -> {needed}")
+            for blocked in ("own_image_ready","recipe_page_generated","schema_and_open_graph_checked","site_qa_passed","production_audit_passed"):
+                if slug not in public_slugs_for_pipeline and validation.get(blocked) is True:
+                    problems.append(f"Borrador marca fase pública sin estar publicado: {slug} -> {blocked}")
+    except Exception as exc:
+        problems.append(f"Pipeline editorial interno inválido: {exc}")
+else:
+    warnings.append("Falta roadmap interno de expansión del catálogo")
+
 # Flexible internal solution layer: useful in Resuelve hoy, never treated as published recipes.
 solutions_path = ROOT / "assets" / "solutions-data.js"
 solutions = []
