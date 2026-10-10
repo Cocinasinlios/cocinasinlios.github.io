@@ -163,7 +163,21 @@ footer{background:#202b24;color:#dce5df;padding:40px 0}footer p{font-size:12px;c
      if(dinnerLike.length>=3)pool=dinnerLike;
    }
    pool=[...pool].sort((a,b)=>score(b)-score(a));
-   const picked=[];for(const r of pool){if(!picked.some(x=>x.slug===r.slug))picked.push(r);if(picked.length===3)break}
+   const picked=[];
+   // Keep the result set grounded: formulas expand the pool, but complete recipes should
+   // remain visible whenever a reasonably fitting one exists.
+   const completePool=pool.filter(r=>r.kind!=="formula");
+   const formulaPool=pool.filter(r=>r.kind==="formula");
+   const pushUnique=r=>{if(r&&!picked.some(x=>x.slug===r.slug))picked.push(r)};
+   if(completePool.length)pushUnique(completePool[0]);
+   for(const r of pool){
+     if(picked.length>=3)break;
+     if(r.kind==="formula"&&picked.filter(x=>x.kind==="formula").length>=2)continue;
+     pushUnique(r);
+   }
+   if(picked.length<3){
+     for(const r of [...completePool,...formulaPool]){if(picked.length>=3)break;pushUnique(r)}
+   }
    generated.push(...picked.map(x=>x.slug));generated=[...new Set(generated)].slice(-9);
    const goalLabel={resolver:"resolver hoy",aprovechar:"aprovechar mejor",aprender:"aprender algo"}[state.goal]||state.goal;
    const whyBits=["tiempo","antojo",goalLabel];
