@@ -1,0 +1,899 @@
+{
+  "version": 1,
+  "batch": "02",
+  "count": 10,
+  "recipes": [
+    {
+      "slug": "garbanzos-espinacas-rapidos",
+      "title": "Garbanzos rápidos con espinacas",
+      "family": "Legumbres",
+      "category": "Cuchara rápida",
+      "minutes": 25,
+      "time": "25 min",
+      "servings": "2 personas",
+      "baseServings": 2,
+      "difficulty": "Muy fácil",
+      "intro": "Garbanzos cocidos, espinacas y un sofrito corto para tener una cena vegetal sabrosa sin empezar un guiso desde cero.",
+      "ingredients": [
+        "400 g de garbanzos cocidos, escurridos",
+        "200 g de espinacas frescas",
+        "1/2 cebolla",
+        "1 diente de ajo",
+        "250 g de tomate triturado",
+        "1 cucharada de aceite de oliva",
+        "1/2 cucharadita de comino",
+        "Sal"
+      ],
+      "steps": [
+        {
+          "t": "Haz un sofrito corto",
+          "x": "Cocina cebolla y ajo con el aceite 5–6 minutos a fuego medio."
+        },
+        {
+          "t": "Reduce el tomate",
+          "x": "Añade tomate y comino y cocina 8 minutos destapado, hasta que pierda sabor crudo."
+        },
+        {
+          "t": "Añade espinacas y garbanzos",
+          "x": "Incorpora las espinacas y, cuando bajen de volumen, los garbanzos. Cocina 4–5 minutos más, hasta que todo esté bien caliente."
+        }
+      ],
+      "substitutions": [
+        "Espinacas por acelga tierna o kale troceado, ajustando tiempo.",
+        "Garbanzos por alubia blanca.",
+        "Comino por pimentón dulce."
+      ],
+      "cook": {
+        "heat": "Sartén o cazuela a fuego medio",
+        "time": "18–20 min",
+        "cue": "El tomate debe estar reducido, las espinacas tiernas y los garbanzos calientes hasta el centro."
+      },
+      "contains": {
+        "pescado": false,
+        "carne": false,
+        "huevo": false,
+        "lacteos": false
+      },
+      "plan": {
+        "t": "rapida",
+        "s": [
+          "ligera",
+          "aprovecha",
+          "variada"
+        ],
+        "need": [
+          "garbanzos",
+          "espinacas",
+          "tomate"
+        ],
+        "uses": [
+          "legumbres",
+          "tomate",
+          "cebolla",
+          "ajo",
+          "comino"
+        ]
+      },
+      "safety": "Si se reutilizan garbanzos ya cocinados o una preparación previa, mantenerlos refrigerados y recalentar completamente.",
+      "validation": {
+        "ingredients_quantified": true,
+        "method_or_temperature_checked": true,
+        "time_checked": true,
+        "doneness_cue_defined": true,
+        "food_safety_reviewed": true,
+        "substitutions_reviewed": true,
+        "servings_and_scaling_checked": true,
+        "editorial_copy_reviewed": true,
+        "own_image_ready": false,
+        "recipe_page_generated": false,
+        "schema_and_open_graph_checked": false,
+        "site_qa_passed": false,
+        "production_audit_passed": false
+      },
+      "validationSource": "AESAN: cocción suficiente, refrigeración de preparados/sobras y buenas prácticas de higiene.",
+      "status": "validated-draft-awaiting-image-and-publication"
+    },
+    {
+      "slug": "alubias-tomate",
+      "title": "Alubias con tomate y verduras",
+      "family": "Legumbres",
+      "category": "Despensa",
+      "minutes": 25,
+      "time": "25 min",
+      "servings": "2 personas",
+      "baseServings": 2,
+      "difficulty": "Muy fácil",
+      "intro": "Alubias cocidas con tomate, cebolla y pimiento para convertir una conserva de despensa en una cena caliente.",
+      "ingredients": [
+        "400 g de alubias cocidas, escurridas",
+        "300 g de tomate triturado",
+        "1/2 cebolla",
+        "1/2 pimiento rojo",
+        "1 diente de ajo",
+        "1 cucharada de aceite de oliva",
+        "1/2 cucharadita de pimentón dulce",
+        "Sal y pimienta"
+      ],
+      "steps": [
+        {
+          "t": "Cocina la verdura",
+          "x": "Sofríe cebolla, pimiento y ajo con el aceite 7–8 minutos."
+        },
+        {
+          "t": "Reduce el tomate",
+          "x": "Añade tomate y pimentón y cocina 8–10 minutos destapado."
+        },
+        {
+          "t": "Incorpora las alubias",
+          "x": "Añade las alubias y cocina 4–5 minutos, removiendo con cuidado, hasta que el conjunto esté bien caliente."
+        }
+      ],
+      "substitutions": [
+        "Pimiento rojo por verde o zanahoria.",
+        "Alubias por garbanzos o lentejas.",
+        "Añade caldo si prefieres un plato más caldoso."
+      ],
+      "cook": {
+        "heat": "Cazuela a fuego medio",
+        "time": "20–23 min",
+        "cue": "La salsa debe abrazar las alubias y no quedar acuosa."
+      },
+      "contains": {
+        "pescado": false,
+        "carne": false,
+        "huevo": false,
+        "lacteos": false
+      },
+      "plan": {
+        "t": "rapida",
+        "s": [
+          "comfort",
+          "aprovecha",
+          "variada"
+        ],
+        "need": [
+          "alubias",
+          "tomate",
+          "pimiento"
+        ],
+        "uses": [
+          "legumbres",
+          "tomate",
+          "cebolla",
+          "ajo",
+          "pimenton"
+        ]
+      },
+      "safety": "Recalentar completamente si se prepara con antelación y refrigerar las sobras pronto.",
+      "validation": {
+        "ingredients_quantified": true,
+        "method_or_temperature_checked": true,
+        "time_checked": true,
+        "doneness_cue_defined": true,
+        "food_safety_reviewed": true,
+        "substitutions_reviewed": true,
+        "servings_and_scaling_checked": true,
+        "editorial_copy_reviewed": true,
+        "own_image_ready": false,
+        "recipe_page_generated": false,
+        "schema_and_open_graph_checked": false,
+        "site_qa_passed": false,
+        "production_audit_passed": false
+      },
+      "validationSource": "AESAN: cocción suficiente, refrigeración de preparados/sobras y buenas prácticas de higiene.",
+      "status": "validated-draft-awaiting-image-and-publication"
+    },
+    {
+      "slug": "lentejas-curry",
+      "title": "Lentejas al curry rápidas",
+      "family": "Legumbres",
+      "category": "Cuchara rápida",
+      "minutes": 25,
+      "time": "25 min",
+      "servings": "2 personas",
+      "baseServings": 2,
+      "difficulty": "Muy fácil",
+      "intro": "Lentejas cocidas, tomate y curry en una cazuela corta para una cena de cuchara lista en menos de media hora.",
+      "ingredients": [
+        "400 g de lentejas cocidas, escurridas",
+        "1/2 cebolla",
+        "1 zanahoria pequeña",
+        "200 g de tomate triturado",
+        "150 ml de caldo o agua",
+        "1 cucharada de aceite de oliva",
+        "1 cucharadita de curry",
+        "Sal"
+      ],
+      "steps": [
+        {
+          "t": "Cocina la base",
+          "x": "Sofríe cebolla y zanahoria con el aceite 6–7 minutos."
+        },
+        {
+          "t": "Despierta las especias",
+          "x": "Añade el curry, remueve 20 segundos y agrega el tomate. Cocina 6 minutos."
+        },
+        {
+          "t": "Termina con lentejas",
+          "x": "Añade lentejas y caldo y cuece 6–8 minutos a hervor suave, hasta que el guiso tenga cuerpo."
+        }
+      ],
+      "substitutions": [
+        "Curry por comino y pimentón.",
+        "Zanahoria por calabacín.",
+        "Caldo por agua si el sofrito está bien trabajado."
+      ],
+      "cook": {
+        "heat": "Hervor suave",
+        "time": "18–21 min",
+        "cue": "La zanahoria debe estar tierna y el caldo ligeramente ligado."
+      },
+      "contains": {
+        "pescado": false,
+        "carne": false,
+        "huevo": false,
+        "lacteos": false
+      },
+      "plan": {
+        "t": "rapida",
+        "s": [
+          "comfort",
+          "variada"
+        ],
+        "need": [
+          "lentejas",
+          "tomate",
+          "curry"
+        ],
+        "uses": [
+          "legumbres",
+          "tomate",
+          "cebolla",
+          "curry",
+          "caldo"
+        ]
+      },
+      "safety": "Mantener refrigerado si se prepara con antelación y recalentar hasta que esté bien caliente.",
+      "validation": {
+        "ingredients_quantified": true,
+        "method_or_temperature_checked": true,
+        "time_checked": true,
+        "doneness_cue_defined": true,
+        "food_safety_reviewed": true,
+        "substitutions_reviewed": true,
+        "servings_and_scaling_checked": true,
+        "editorial_copy_reviewed": true,
+        "own_image_ready": false,
+        "recipe_page_generated": false,
+        "schema_and_open_graph_checked": false,
+        "site_qa_passed": false,
+        "production_audit_passed": false
+      },
+      "validationSource": "AESAN: cocción suficiente, refrigeración de preparados/sobras y buenas prácticas de higiene.",
+      "status": "validated-draft-awaiting-image-and-publication"
+    },
+    {
+      "slug": "ensalada-alubias-atun",
+      "title": "Ensalada de alubias y atún",
+      "family": "Legumbres",
+      "category": "Cena rápida",
+      "minutes": 15,
+      "time": "15 min",
+      "servings": "2 personas",
+      "baseServings": 2,
+      "difficulty": "Muy fácil",
+      "intro": "Alubias, atún y verduras frescas en una ensalada completa que se monta en quince minutos.",
+      "ingredients": [
+        "350 g de alubias cocidas, escurridas",
+        "2 latas de atún escurrido, unos 160 g",
+        "2 tomates",
+        "1/2 pepino",
+        "1/4 de cebolla",
+        "1 cucharada de aceite de oliva",
+        "1 cucharada de vinagre o zumo de limón",
+        "Sal y pimienta"
+      ],
+      "steps": [
+        {
+          "t": "Escurre bien",
+          "x": "Aclara y escurre las alubias si procede y escurre el atún."
+        },
+        {
+          "t": "Corta las verduras",
+          "x": "Corta tomate, pepino y cebolla en piezas pequeñas y regulares."
+        },
+        {
+          "t": "Aliña al final",
+          "x": "Mezcla todo con aceite, vinagre o limón, sal y pimienta. Deja reposar 5 minutos si tienes tiempo."
+        }
+      ],
+      "substitutions": [
+        "Atún por caballa o bonito en conserva.",
+        "Alubias por garbanzos.",
+        "Pepino por pimiento o zanahoria rallada."
+      ],
+      "cook": {
+        "heat": "Sin cocción",
+        "time": "10–15 min",
+        "cue": "Las alubias deben estar bien escurridas y el aliño repartido sin dejar líquido en el fondo."
+      },
+      "contains": {
+        "pescado": true,
+        "carne": false,
+        "huevo": false,
+        "lacteos": false
+      },
+      "plan": {
+        "t": "rapida",
+        "s": [
+          "ligera",
+          "variada",
+          "aprovecha"
+        ],
+        "need": [
+          "alubias",
+          "atún",
+          "tomate"
+        ],
+        "uses": [
+          "legumbres",
+          "conserva",
+          "tomate",
+          "vinagre",
+          "limon"
+        ]
+      },
+      "safety": "Mantener en frío si no se consume inmediatamente; no dejar una ensalada con pescado a temperatura ambiente durante periodos prolongados.",
+      "validation": {
+        "ingredients_quantified": true,
+        "method_or_temperature_checked": true,
+        "time_checked": true,
+        "doneness_cue_defined": true,
+        "food_safety_reviewed": true,
+        "substitutions_reviewed": true,
+        "servings_and_scaling_checked": true,
+        "editorial_copy_reviewed": true,
+        "own_image_ready": false,
+        "recipe_page_generated": false,
+        "schema_and_open_graph_checked": false,
+        "site_qa_passed": false,
+        "production_audit_passed": false
+      },
+      "validationSource": "AESAN: cocción suficiente, refrigeración de preparados/sobras y buenas prácticas de higiene.",
+      "status": "validated-draft-awaiting-image-and-publication"
+    },
+    {
+      "slug": "pasta-ajo-limon",
+      "title": "Pasta con ajo, limón y pan crujiente",
+      "family": "Pasta, arroz y cereales",
+      "category": "Pasta rápida",
+      "minutes": 20,
+      "time": "20 min",
+      "servings": "2 personas",
+      "baseServings": 2,
+      "difficulty": "Fácil",
+      "intro": "Una pasta de despensa donde ajo, limón, agua de cocción y pan tostado hacen todo el trabajo.",
+      "ingredients": [
+        "180–200 g de pasta",
+        "2 dientes de ajo",
+        "30 ml de aceite de oliva",
+        "1/2 limón",
+        "30 g de pan rallado grueso o pan duro desmigado",
+        "Perejil, opcional",
+        "Sal"
+      ],
+      "steps": [
+        {
+          "t": "Tuesta el pan",
+          "x": "Dora el pan desmigado con una cucharadita de aceite en sartén 2–3 minutos. Reserva."
+        },
+        {
+          "t": "Cuece la pasta",
+          "x": "Cuece la pasta en agua salada y reserva 150 ml del agua de cocción antes de escurrir."
+        },
+        {
+          "t": "Liga la salsa",
+          "x": "Dora suavemente el ajo en el resto del aceite sin quemarlo. Añade la pasta, zumo de limón y agua de cocción poco a poco, removiendo hasta que quede brillante."
+        },
+        {
+          "t": "Termina crujiente",
+          "x": "Añade ralladura de limón y el pan tostado justo al servir."
+        }
+      ],
+      "substitutions": [
+        "Pan crujiente por frutos secos picados.",
+        "Perejil por albahaca o cebollino.",
+        "Añade garbanzos si quieres más proteína."
+      ],
+      "cook": {
+        "heat": "Pasta en agua hirviendo; sartén a fuego medio-bajo",
+        "time": "Según pasta + 3–4 min de acabado",
+        "cue": "La salsa debe quedar ligada y brillante, no aceitosa ni seca."
+      },
+      "contains": {
+        "pescado": false,
+        "carne": false,
+        "huevo": false,
+        "lacteos": false
+      },
+      "plan": {
+        "t": "rapida",
+        "s": [
+          "variada",
+          "comfort",
+          "aprovecha"
+        ],
+        "need": [
+          "pasta",
+          "ajo",
+          "limón",
+          "pan"
+        ],
+        "uses": [
+          "pasta",
+          "ajo",
+          "limon",
+          "pan"
+        ]
+      },
+      "safety": "Consumir recién hecha o refrigerar pronto si sobra.",
+      "validation": {
+        "ingredients_quantified": true,
+        "method_or_temperature_checked": true,
+        "time_checked": true,
+        "doneness_cue_defined": true,
+        "food_safety_reviewed": true,
+        "substitutions_reviewed": true,
+        "servings_and_scaling_checked": true,
+        "editorial_copy_reviewed": true,
+        "own_image_ready": false,
+        "recipe_page_generated": false,
+        "schema_and_open_graph_checked": false,
+        "site_qa_passed": false,
+        "production_audit_passed": false
+      },
+      "validationSource": "AESAN: cocción suficiente, refrigeración de preparados/sobras y buenas prácticas de higiene.",
+      "status": "validated-draft-awaiting-image-and-publication"
+    },
+    {
+      "slug": "pasta-garbanzos-tomate",
+      "title": "Pasta con garbanzos y tomate",
+      "family": "Pasta, arroz y cereales",
+      "category": "Despensa",
+      "minutes": 25,
+      "time": "25 min",
+      "servings": "2 personas",
+      "baseServings": 2,
+      "difficulty": "Muy fácil",
+      "intro": "Pasta, garbanzos y tomate para una cena de despensa que reúne cereal y legumbre en una sola cazuela.",
+      "ingredients": [
+        "180 g de pasta",
+        "250 g de garbanzos cocidos, escurridos",
+        "250 g de tomate triturado",
+        "1/2 cebolla",
+        "1 diente de ajo",
+        "1 cucharada de aceite de oliva",
+        "Orégano",
+        "Sal"
+      ],
+      "steps": [
+        {
+          "t": "Haz la salsa",
+          "x": "Cocina cebolla y ajo con aceite 5 minutos. Añade tomate y orégano y reduce 8 minutos."
+        },
+        {
+          "t": "Cuece la pasta",
+          "x": "Cuece la pasta un minuto menos de lo indicado y reserva agua de cocción."
+        },
+        {
+          "t": "Termina junto",
+          "x": "Añade garbanzos y pasta a la salsa con un poco de agua de cocción. Cocina 1–2 minutos hasta que quede ligada."
+        }
+      ],
+      "substitutions": [
+        "Garbanzos por alubias blancas.",
+        "Tomate triturado por salsa de tomate ya hecha.",
+        "Añade espinacas al final si quieres más verdura."
+      ],
+      "cook": {
+        "heat": "Salsa a fuego medio; pasta en hervor",
+        "time": "20–23 min",
+        "cue": "La pasta debe estar al dente y la salsa adherida, sin exceso de líquido."
+      },
+      "contains": {
+        "pescado": false,
+        "carne": false,
+        "huevo": false,
+        "lacteos": false
+      },
+      "plan": {
+        "t": "rapida",
+        "s": [
+          "comfort",
+          "aprovecha",
+          "variada"
+        ],
+        "need": [
+          "pasta",
+          "garbanzos",
+          "tomate"
+        ],
+        "uses": [
+          "pasta",
+          "legumbres",
+          "tomate",
+          "cebolla",
+          "ajo",
+          "oregano"
+        ]
+      },
+      "safety": "Refrigerar pronto si sobra y recalentar completamente.",
+      "validation": {
+        "ingredients_quantified": true,
+        "method_or_temperature_checked": true,
+        "time_checked": true,
+        "doneness_cue_defined": true,
+        "food_safety_reviewed": true,
+        "substitutions_reviewed": true,
+        "servings_and_scaling_checked": true,
+        "editorial_copy_reviewed": true,
+        "own_image_ready": false,
+        "recipe_page_generated": false,
+        "schema_and_open_graph_checked": false,
+        "site_qa_passed": false,
+        "production_audit_passed": false
+      },
+      "validationSource": "AESAN: cocción suficiente, refrigeración de preparados/sobras y buenas prácticas de higiene.",
+      "status": "validated-draft-awaiting-image-and-publication"
+    },
+    {
+      "slug": "arroz-verduras-sarten",
+      "title": "Arroz con verduras en sartén",
+      "family": "Pasta, arroz y cereales",
+      "category": "Aprovechamiento",
+      "minutes": 25,
+      "time": "25 min",
+      "servings": "2 personas",
+      "baseServings": 2,
+      "difficulty": "Muy fácil",
+      "intro": "Arroz cocido y verduras salteadas para aprovechar una base que ya tienes sin repetir el mismo plato.",
+      "ingredients": [
+        "300 g de arroz cocido y bien refrigerado",
+        "1/2 cebolla",
+        "1 zanahoria",
+        "1/2 calabacín",
+        "1 huevo, opcional",
+        "1 cucharada de aceite de oliva",
+        "1 cucharada de salsa de soja, opcional",
+        "Sal"
+      ],
+      "steps": [
+        {
+          "t": "Prepara las verduras",
+          "x": "Corta las verduras pequeñas y saltea cebolla y zanahoria 4–5 minutos; añade calabacín y cocina 3 minutos más."
+        },
+        {
+          "t": "Añade el arroz",
+          "x": "Sube el fuego, incorpora el arroz frío y separado y saltea 4–5 minutos hasta que esté bien caliente."
+        },
+        {
+          "t": "Termina",
+          "x": "Si usas huevo, aparta el arroz a un lado, cuájalo y mezcla. Añade soja al final si quieres."
+        }
+      ],
+      "substitutions": [
+        "Calabacín por pimiento, guisantes o verduras congeladas.",
+        "Huevo por garbanzos o pollo cocinado.",
+        "Soja por limón y sal."
+      ],
+      "cook": {
+        "heat": "Sartén a fuego medio-alto",
+        "time": "12–15 min",
+        "cue": "El arroz debe quedar suelto y humeante hasta el centro, no húmedo ni apelmazado."
+      },
+      "contains": {
+        "pescado": false,
+        "carne": false,
+        "huevo": true,
+        "lacteos": false
+      },
+      "plan": {
+        "t": "rapida",
+        "s": [
+          "aprovecha",
+          "variada"
+        ],
+        "need": [
+          "arroz cocido",
+          "verduras"
+        ],
+        "uses": [
+          "arroz",
+          "huevos",
+          "cebolla",
+          "verdurascong"
+        ]
+      },
+      "safety": "Usar arroz enfriado y refrigerado correctamente; recalentarlo completamente y no dejarlo a temperatura ambiente durante periodos prolongados.",
+      "validation": {
+        "ingredients_quantified": true,
+        "method_or_temperature_checked": true,
+        "time_checked": true,
+        "doneness_cue_defined": true,
+        "food_safety_reviewed": true,
+        "substitutions_reviewed": true,
+        "servings_and_scaling_checked": true,
+        "editorial_copy_reviewed": true,
+        "own_image_ready": false,
+        "recipe_page_generated": false,
+        "schema_and_open_graph_checked": false,
+        "site_qa_passed": false,
+        "production_audit_passed": false
+      },
+      "validationSource": "AESAN: cocción suficiente, refrigeración de preparados/sobras y buenas prácticas de higiene.",
+      "status": "validated-draft-awaiting-image-and-publication"
+    },
+    {
+      "slug": "cuscus-limon-hierbas",
+      "title": "Cuscús con limón, hierbas y garbanzos",
+      "family": "Pasta, arroz y cereales",
+      "category": "Cena rápida",
+      "minutes": 15,
+      "time": "15 min",
+      "servings": "2 personas",
+      "baseServings": 2,
+      "difficulty": "Muy fácil",
+      "intro": "Cuscús y garbanzos con limón y hierbas para una cena de quince minutos prácticamente sin cocinar.",
+      "ingredients": [
+        "160 g de cuscús",
+        "180 ml de agua o caldo, o la cantidad indicada por el fabricante",
+        "250 g de garbanzos cocidos, escurridos",
+        "1 tomate grande",
+        "1/2 pepino",
+        "1/2 limón",
+        "1 cucharada de aceite de oliva",
+        "Perejil o hierbabuena",
+        "Sal"
+      ],
+      "steps": [
+        {
+          "t": "Hidrata el cuscús",
+          "x": "Vierte el líquido recién hervido sobre el cuscús siguiendo la proporción del envase, tapa y deja reposar."
+        },
+        {
+          "t": "Prepara el resto",
+          "x": "Corta tomate y pepino y escurre bien los garbanzos."
+        },
+        {
+          "t": "Suelta y aliña",
+          "x": "Suelta el cuscús con un tenedor y mezcla con garbanzos, verduras, limón, aceite y hierbas."
+        }
+      ],
+      "substitutions": [
+        "Garbanzos por lentejas.",
+        "Pepino por pimiento.",
+        "Hierbabuena por perejil o cilantro."
+      ],
+      "cook": {
+        "heat": "Hidratación con líquido recién hervido",
+        "time": "5 min de hidratación + montaje",
+        "cue": "El cuscús debe quedar suelto y sin líquido libre."
+      },
+      "contains": {
+        "pescado": false,
+        "carne": false,
+        "huevo": false,
+        "lacteos": false
+      },
+      "plan": {
+        "t": "rapida",
+        "s": [
+          "ligera",
+          "variada",
+          "aprovecha"
+        ],
+        "need": [
+          "cuscús",
+          "garbanzos",
+          "limón"
+        ],
+        "uses": [
+          "legumbres",
+          "limon",
+          "caldo"
+        ]
+      },
+      "safety": "Si se prepara con antelación, enfriar y refrigerar pronto.",
+      "validation": {
+        "ingredients_quantified": true,
+        "method_or_temperature_checked": true,
+        "time_checked": true,
+        "doneness_cue_defined": true,
+        "food_safety_reviewed": true,
+        "substitutions_reviewed": true,
+        "servings_and_scaling_checked": true,
+        "editorial_copy_reviewed": true,
+        "own_image_ready": false,
+        "recipe_page_generated": false,
+        "schema_and_open_graph_checked": false,
+        "site_qa_passed": false,
+        "production_audit_passed": false
+      },
+      "validationSource": "AESAN: cocción suficiente, refrigeración de preparados/sobras y buenas prácticas de higiene.",
+      "status": "validated-draft-awaiting-image-and-publication"
+    },
+    {
+      "slug": "patatas-salteadas-huevo",
+      "title": "Patatas salteadas con huevo y verduras",
+      "family": "Verduras",
+      "category": "Cena de sartén",
+      "minutes": 25,
+      "time": "25 min",
+      "servings": "2 personas",
+      "baseServings": 2,
+      "difficulty": "Fácil",
+      "intro": "Patata ya cocida, verduras y huevo para una cena completa que aprovecha una base preparada.",
+      "ingredients": [
+        "400 g de patata cocida y fría",
+        "1/2 cebolla",
+        "1/2 pimiento",
+        "4 huevos",
+        "1 cucharada de aceite de oliva",
+        "1/2 cucharadita de pimentón",
+        "Sal y pimienta"
+      ],
+      "steps": [
+        {
+          "t": "Dora la patata",
+          "x": "Corta la patata en dados y dórala con la mitad del aceite 7–8 minutos a fuego medio-alto. Reserva."
+        },
+        {
+          "t": "Cocina la verdura",
+          "x": "Añade el resto del aceite, cebolla y pimiento y cocina 6–7 minutos."
+        },
+        {
+          "t": "Añade huevo y patata",
+          "x": "Devuelve la patata, añade pimentón y vierte los huevos batidos. Remueve hasta que queden cuajados y sirve inmediatamente."
+        }
+      ],
+      "substitutions": [
+        "Pimiento por calabacín o champiñones.",
+        "Huevo por garbanzos para una versión vegetal.",
+        "Patata cocida por boniato cocido."
+      ],
+      "cook": {
+        "heat": "Sartén a fuego medio-alto y luego medio",
+        "time": "18–21 min",
+        "cue": "La patata debe estar dorada y el huevo cuajado sin líquido visible."
+      },
+      "contains": {
+        "pescado": false,
+        "carne": false,
+        "huevo": true,
+        "lacteos": false
+      },
+      "plan": {
+        "t": "rapida",
+        "s": [
+          "comfort",
+          "aprovecha"
+        ],
+        "need": [
+          "patata cocida",
+          "huevos",
+          "verduras"
+        ],
+        "uses": [
+          "huevos",
+          "cebolla",
+          "pimenton"
+        ]
+      },
+      "safety": "Refrigerar la patata cocida pronto si se prepara antes y consumir el plato recién hecho.",
+      "validation": {
+        "ingredients_quantified": true,
+        "method_or_temperature_checked": true,
+        "time_checked": true,
+        "doneness_cue_defined": true,
+        "food_safety_reviewed": true,
+        "substitutions_reviewed": true,
+        "servings_and_scaling_checked": true,
+        "editorial_copy_reviewed": true,
+        "own_image_ready": false,
+        "recipe_page_generated": false,
+        "schema_and_open_graph_checked": false,
+        "site_qa_passed": false,
+        "production_audit_passed": false
+      },
+      "validationSource": "AESAN: cocción suficiente, refrigeración de preparados/sobras y buenas prácticas de higiene.",
+      "status": "validated-draft-awaiting-image-and-publication"
+    },
+    {
+      "slug": "calabacin-tomate-sarten",
+      "title": "Calabacín y tomate a la sartén",
+      "family": "Verduras",
+      "category": "Cena ligera",
+      "minutes": 20,
+      "time": "20 min",
+      "servings": "2 personas",
+      "baseServings": 2,
+      "difficulty": "Muy fácil",
+      "intro": "Calabacín dorado y tomate concentrado: una base vegetal que puede ser cena con pan, huevo o legumbre.",
+      "ingredients": [
+        "2 calabacines medianos, unos 650 g",
+        "250 g de tomate triturado",
+        "1/2 cebolla",
+        "1 diente de ajo",
+        "1 cucharada de aceite de oliva",
+        "Orégano",
+        "Sal y pimienta"
+      ],
+      "steps": [
+        {
+          "t": "Dora el calabacín",
+          "x": "Cocina el calabacín en medias lunas con aceite a fuego medio-alto 7–8 minutos, sin amontonar demasiado."
+        },
+        {
+          "t": "Añade aromáticos",
+          "x": "Incorpora cebolla y ajo y cocina 3–4 minutos."
+        },
+        {
+          "t": "Concentra el tomate",
+          "x": "Añade tomate y orégano y cocina destapado 6–8 minutos, hasta que la salsa espese."
+        }
+      ],
+      "substitutions": [
+        "Orégano por albahaca.",
+        "Añade garbanzos para hacerlo plato único.",
+        "Termina con huevo para una cena más completa."
+      ],
+      "cook": {
+        "heat": "Sartén a fuego medio-alto",
+        "time": "17–20 min",
+        "cue": "El calabacín debe estar tierno pero conservar forma; el tomate debe estar concentrado."
+      },
+      "contains": {
+        "pescado": false,
+        "carne": false,
+        "huevo": false,
+        "lacteos": false
+      },
+      "plan": {
+        "t": "rapida",
+        "s": [
+          "ligera",
+          "aprovecha",
+          "variada"
+        ],
+        "need": [
+          "calabacín",
+          "tomate"
+        ],
+        "uses": [
+          "tomate",
+          "cebolla",
+          "ajo",
+          "oregano"
+        ]
+      },
+      "safety": "Consumir recién hecho o refrigerar pronto si sobra.",
+      "validation": {
+        "ingredients_quantified": true,
+        "method_or_temperature_checked": true,
+        "time_checked": true,
+        "doneness_cue_defined": true,
+        "food_safety_reviewed": true,
+        "substitutions_reviewed": true,
+        "servings_and_scaling_checked": true,
+        "editorial_copy_reviewed": true,
+        "own_image_ready": false,
+        "recipe_page_generated": false,
+        "schema_and_open_graph_checked": false,
+        "site_qa_passed": false,
+        "production_audit_passed": false
+      },
+      "validationSource": "AESAN: cocción suficiente, refrigeración de preparados/sobras y buenas prácticas de higiene.",
+      "status": "validated-draft-awaiting-image-and-publication"
+    }
+  ]
+}
