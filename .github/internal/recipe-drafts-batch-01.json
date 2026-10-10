@@ -70,7 +70,7 @@
         "time_checked": true,
         "doneness_cue_defined": true,
         "food_safety_reviewed": true,
-        "substitutions_reviewed": false,
+        "substitutions_reviewed": true,
         "servings_and_scaling_checked": true,
         "editorial_copy_reviewed": true,
         "own_image_ready": false,
@@ -80,7 +80,12 @@
         "production_audit_passed": false
       },
       "validationSource": "AESAN: cocción suficiente de alimentos de origen animal, refrigeración rápida de sobras y prevención de contaminación cruzada.",
-      "status": "validated-draft-awaiting-image-and-publication"
+      "status": "validated-draft-awaiting-image-and-publication",
+      "substitutions": [
+        "Cebolla por puerro.",
+        "Calabacín por champiñones o pimiento, ajustando el tiempo para evaporar agua.",
+        "Añade hierbas frescas al final si quieres cambiar el perfil."
+      ]
     },
     {
       "slug": "huevos-plato-tomate",
@@ -155,7 +160,7 @@
         "time_checked": true,
         "doneness_cue_defined": true,
         "food_safety_reviewed": true,
-        "substitutions_reviewed": false,
+        "substitutions_reviewed": true,
         "servings_and_scaling_checked": true,
         "editorial_copy_reviewed": true,
         "own_image_ready": false,
@@ -165,7 +170,12 @@
         "production_audit_passed": false
       },
       "validationSource": "AESAN: cocción suficiente de alimentos de origen animal, refrigeración rápida de sobras y prevención de contaminación cruzada.",
-      "status": "validated-draft-awaiting-image-and-publication"
+      "status": "validated-draft-awaiting-image-and-publication",
+      "substitutions": [
+        "Tomate triturado por salsa de tomate casera ya preparada.",
+        "Orégano por pimentón o albahaca.",
+        "Añade garbanzos a la salsa para una cena más contundente."
+      ]
     },
     {
       "slug": "tortilla-espinacas",
@@ -233,7 +243,7 @@
         "time_checked": true,
         "doneness_cue_defined": true,
         "food_safety_reviewed": true,
-        "substitutions_reviewed": false,
+        "substitutions_reviewed": true,
         "servings_and_scaling_checked": true,
         "editorial_copy_reviewed": true,
         "own_image_ready": false,
@@ -243,7 +253,12 @@
         "production_audit_passed": false
       },
       "validationSource": "AESAN: cocción suficiente de alimentos de origen animal, refrigeración rápida de sobras y prevención de contaminación cruzada.",
-      "status": "validated-draft-awaiting-image-and-publication"
+      "status": "validated-draft-awaiting-image-and-publication",
+      "substitutions": [
+        "Espinacas por acelga tierna.",
+        "Cebolla por puerro.",
+        "Añade patata cocida en dados si quieres más cuerpo."
+      ]
     },
     {
       "slug": "merluza-plancha-limon",
@@ -313,7 +328,7 @@
         "time_checked": true,
         "doneness_cue_defined": true,
         "food_safety_reviewed": true,
-        "substitutions_reviewed": false,
+        "substitutions_reviewed": true,
         "servings_and_scaling_checked": true,
         "editorial_copy_reviewed": true,
         "own_image_ready": false,
@@ -323,7 +338,12 @@
         "production_audit_passed": false
       },
       "validationSource": "AESAN: cocción suficiente de alimentos de origen animal, refrigeración rápida de sobras y prevención de contaminación cruzada.",
-      "status": "validated-draft-awaiting-image-and-publication"
+      "status": "validated-draft-awaiting-image-and-publication",
+      "substitutions": [
+        "Merluza por otro pescado blanco de grosor similar.",
+        "Perejil por cebollino o eneldo.",
+        "Limón por un chorrito de vinagre suave al final."
+      ]
     },
     {
       "slug": "salmon-sarten-limon",
@@ -392,7 +412,7 @@
         "time_checked": true,
         "doneness_cue_defined": true,
         "food_safety_reviewed": true,
-        "substitutions_reviewed": false,
+        "substitutions_reviewed": true,
         "servings_and_scaling_checked": true,
         "editorial_copy_reviewed": true,
         "own_image_ready": false,
@@ -402,7 +422,12 @@
         "production_audit_passed": false
       },
       "validationSource": "AESAN: cocción suficiente de alimentos de origen animal, refrigeración rápida de sobras y prevención de contaminación cruzada.",
-      "status": "validated-draft-awaiting-image-and-publication"
+      "status": "validated-draft-awaiting-image-and-publication",
+      "substitutions": [
+        "Mostaza por nada o por una cucharadita de miel y limón.",
+        "Salmón por trucha en lomos de grosor similar.",
+        "Limón por lima."
+      ]
     },
     {
       "slug": "atun-tomate-calabacin",
@@ -475,7 +500,7 @@
         "time_checked": true,
         "doneness_cue_defined": true,
         "food_safety_reviewed": true,
-        "substitutions_reviewed": false,
+        "substitutions_reviewed": true,
         "servings_and_scaling_checked": true,
         "editorial_copy_reviewed": true,
         "own_image_ready": false,
@@ -485,7 +510,12 @@
         "production_audit_passed": false
       },
       "validationSource": "AESAN: cocción suficiente de alimentos de origen animal, refrigeración rápida de sobras y prevención de contaminación cruzada.",
-      "status": "validated-draft-awaiting-image-and-publication"
+      "status": "validated-draft-awaiting-image-and-publication",
+      "substitutions": [
+        "Atún por bonito o caballa en conserva.",
+        "Calabacín por berenjena en dados, aumentando unos minutos la cocción.",
+        "Orégano por albahaca."
+      ]
     },
     {
       "slug": "pescado-salsa-verde-rapida",
@@ -561,7 +591,7 @@
         "time_checked": true,
         "doneness_cue_defined": true,
         "food_safety_reviewed": true,
-        "substitutions_reviewed": false,
+        "substitutions_reviewed": true,
         "servings_and_scaling_checked": true,
         "editorial_copy_reviewed": true,
         "own_image_ready": false,
@@ -571,7 +601,12 @@
         "production_audit_passed": false
       },
       "validationSource": "AESAN: cocción suficiente de alimentos de origen animal, refrigeración rápida de sobras y prevención de contaminación cruzada.",
-      "status": "validated-draft-awaiting-image-and-publication"
+      "status": "validated-draft-awaiting-image-and-publication",
+      "substitutions": [
+        "Pescado blanco por merluza, bacalao fresco o pescadilla.",
+        "Harina por nada; la salsa quedará más ligera.",
+        "Perejil por cilantro si encaja con el resto del plato."
+      ]
     },
     {
       "slug": "pollo-mostaza-sarten",
@@ -642,7 +677,7 @@
         "time_checked": true,
         "doneness_cue_defined": true,
         "food_safety_reviewed": true,
-        "substitutions_reviewed": false,
+        "substitutions_reviewed": true,
         "servings_and_scaling_checked": true,
         "editorial_copy_reviewed": true,
         "own_image_ready": false,
@@ -652,7 +687,12 @@
         "production_audit_passed": false
       },
       "validationSource": "AESAN: cocción suficiente de alimentos de origen animal, refrigeración rápida de sobras y prevención de contaminación cruzada.",
-      "status": "validated-draft-awaiting-image-and-publication"
+      "status": "validated-draft-awaiting-image-and-publication",
+      "substitutions": [
+        "Pechuga por contramuslo deshuesado, ajustando el tiempo.",
+        "Mostaza por una salsa corta de limón y ajo.",
+        "Miel por nada si prefieres una salsa más ácida."
+      ]
     },
     {
       "slug": "pollo-pimientos",
@@ -725,7 +765,7 @@
         "time_checked": true,
         "doneness_cue_defined": true,
         "food_safety_reviewed": true,
-        "substitutions_reviewed": false,
+        "substitutions_reviewed": true,
         "servings_and_scaling_checked": true,
         "editorial_copy_reviewed": true,
         "own_image_ready": false,
@@ -735,7 +775,12 @@
         "production_audit_passed": false
       },
       "validationSource": "AESAN: cocción suficiente de alimentos de origen animal, refrigeración rápida de sobras y prevención de contaminación cruzada.",
-      "status": "validated-draft-awaiting-image-and-publication"
+      "status": "validated-draft-awaiting-image-and-publication",
+      "substitutions": [
+        "Pimiento por calabacín o champiñones.",
+        "Pimentón por comino o curry suave.",
+        "Pollo por pavo en tiras de tamaño parecido."
+      ]
     },
     {
       "slug": "picadillo-pavo-verduras",
@@ -807,7 +852,7 @@
         "time_checked": true,
         "doneness_cue_defined": true,
         "food_safety_reviewed": true,
-        "substitutions_reviewed": false,
+        "substitutions_reviewed": true,
         "servings_and_scaling_checked": true,
         "editorial_copy_reviewed": true,
         "own_image_ready": false,
@@ -817,7 +862,12 @@
         "production_audit_passed": false
       },
       "validationSource": "AESAN: cocción suficiente de alimentos de origen animal, refrigeración rápida de sobras y prevención de contaminación cruzada.",
-      "status": "validated-draft-awaiting-image-and-publication"
+      "status": "validated-draft-awaiting-image-and-publication",
+      "substitutions": [
+        "Pavo por pollo picado.",
+        "Calabacín por pimiento o champiñones.",
+        "Pimentón/comino por curry suave u orégano."
+      ]
     }
   ]
 }
