@@ -11,7 +11,7 @@
       "family": "Huevos y tortillas",
       "minutes": 20,
       "reason": "Aumenta cenas de 20 min y salida para calabacín.",
-      "status": "validated-draft-awaiting-image-and-publication",
+      "status": "page-generated-awaiting-image",
       "validation": {
         "ingredients_quantified": true,
         "method_or_temperature_checked": true,
@@ -22,7 +22,7 @@
         "servings_and_scaling_checked": true,
         "editorial_copy_reviewed": true,
         "own_image_ready": false,
-        "recipe_page_generated": false,
+        "recipe_page_generated": true,
         "schema_and_open_graph_checked": false,
         "site_qa_passed": false,
         "production_audit_passed": false
@@ -35,7 +35,7 @@
       "family": "Huevos y tortillas",
       "minutes": 25,
       "reason": "Despensa + cena de sartén/horno sencilla.",
-      "status": "validated-draft-awaiting-image-and-publication",
+      "status": "page-generated-awaiting-image",
       "validation": {
         "ingredients_quantified": true,
         "method_or_temperature_checked": true,
@@ -46,7 +46,7 @@
         "servings_and_scaling_checked": true,
         "editorial_copy_reviewed": true,
         "own_image_ready": false,
-        "recipe_page_generated": false,
+        "recipe_page_generated": true,
         "schema_and_open_graph_checked": false,
         "site_qa_passed": false,
         "production_audit_passed": false
@@ -59,7 +59,7 @@
       "family": "Huevos y tortillas",
       "minutes": 25,
       "reason": "Amplía huevos y verduras con técnica de humedad.",
-      "status": "validated-draft-awaiting-image-and-publication",
+      "status": "page-generated-awaiting-image",
       "validation": {
         "ingredients_quantified": true,
         "method_or_temperature_checked": true,
@@ -70,7 +70,7 @@
         "servings_and_scaling_checked": true,
         "editorial_copy_reviewed": true,
         "own_image_ready": false,
-        "recipe_page_generated": false,
+        "recipe_page_generated": true,
         "schema_and_open_graph_checked": false,
         "site_qa_passed": false,
         "production_audit_passed": false
@@ -83,7 +83,7 @@
       "family": "Pescado",
       "minutes": 20,
       "reason": "Pescado muy rápido; hueco claro ≤30 min.",
-      "status": "validated-draft-awaiting-image-and-publication",
+      "status": "page-generated-awaiting-image",
       "validation": {
         "ingredients_quantified": true,
         "method_or_temperature_checked": true,
@@ -94,7 +94,7 @@
         "servings_and_scaling_checked": true,
         "editorial_copy_reviewed": true,
         "own_image_ready": false,
-        "recipe_page_generated": false,
+        "recipe_page_generated": true,
         "schema_and_open_graph_checked": false,
         "site_qa_passed": false,
         "production_audit_passed": false
@@ -107,7 +107,7 @@
       "family": "Pescado",
       "minutes": 20,
       "reason": "Alternativa rápida al salmón al horno.",
-      "status": "validated-draft-awaiting-image-and-publication",
+      "status": "page-generated-awaiting-image",
       "validation": {
         "ingredients_quantified": true,
         "method_or_temperature_checked": true,
@@ -118,7 +118,7 @@
         "servings_and_scaling_checked": true,
         "editorial_copy_reviewed": true,
         "own_image_ready": false,
-        "recipe_page_generated": false,
+        "recipe_page_generated": true,
         "schema_and_open_graph_checked": false,
         "site_qa_passed": false,
         "production_audit_passed": false
@@ -131,7 +131,7 @@
       "family": "Pescado",
       "minutes": 25,
       "reason": "Conserva + verdura + despensa.",
-      "status": "validated-draft-awaiting-image-and-publication",
+      "status": "page-generated-awaiting-image",
       "validation": {
         "ingredients_quantified": true,
         "method_or_temperature_checked": true,
@@ -142,7 +142,7 @@
         "servings_and_scaling_checked": true,
         "editorial_copy_reviewed": true,
         "own_image_ready": false,
-        "recipe_page_generated": false,
+        "recipe_page_generated": true,
         "schema_and_open_graph_checked": false,
         "site_qa_passed": false,
         "production_audit_passed": false
@@ -155,7 +155,7 @@
       "family": "Pescado",
       "minutes": 30,
       "reason": "Añade salsa sencilla sin duplicar bacalao con tomate.",
-      "status": "validated-draft-awaiting-image-and-publication",
+      "status": "page-generated-awaiting-image",
       "validation": {
         "ingredients_quantified": true,
         "method_or_temperature_checked": true,
@@ -166,7 +166,7 @@
         "servings_and_scaling_checked": true,
         "editorial_copy_reviewed": true,
         "own_image_ready": false,
-        "recipe_page_generated": false,
+        "recipe_page_generated": true,
         "schema_and_open_graph_checked": false,
         "site_qa_passed": false,
         "production_audit_passed": false
@@ -179,7 +179,7 @@
       "family": "Pollo y carne",
       "minutes": 25,
       "reason": "Cena rápida con salsa corta.",
-      "status": "validated-draft-awaiting-image-and-publication",
+      "status": "page-generated-awaiting-image",
       "validation": {
         "ingredients_quantified": true,
         "method_or_temperature_checked": true,
@@ -190,7 +190,7 @@
         "servings_and_scaling_checked": true,
         "editorial_copy_reviewed": true,
         "own_image_ready": false,
-        "recipe_page_generated": false,
+        "recipe_page_generated": true,
         "schema_and_open_graph_checked": false,
         "site_qa_passed": false,
         "production_audit_passed": false
@@ -203,7 +203,7 @@
       "family": "Pollo y carne",
       "minutes": 30,
       "reason": "Más variedad vegetal y familiar.",
-      "status": "validated-draft-awaiting-image-and-publication",
+      "status": "page-generated-awaiting-image",
       "validation": {
         "ingredients_quantified": true,
         "method_or_temperature_checked": true,
@@ -214,7 +214,7 @@
         "servings_and_scaling_checked": true,
         "editorial_copy_reviewed": true,
         "own_image_ready": false,
-        "recipe_page_generated": false,
+        "recipe_page_generated": true,
         "schema_and_open_graph_checked": false,
         "site_qa_passed": false,
         "production_audit_passed": false
@@ -227,7 +227,7 @@
       "family": "Pollo y carne",
       "minutes": 25,
       "reason": "Proteína rápida, adaptable y de aprovechamiento.",
-      "status": "validated-draft-awaiting-image-and-publication",
+      "status": "page-generated-awaiting-image",
       "validation": {
         "ingredients_quantified": true,
         "method_or_temperature_checked": true,
@@ -238,7 +238,7 @@
         "servings_and_scaling_checked": true,
         "editorial_copy_reviewed": true,
         "own_image_ready": false,
-        "recipe_page_generated": false,
+        "recipe_page_generated": true,
         "schema_and_open_graph_checked": false,
         "site_qa_passed": false,
         "production_audit_passed": false
@@ -251,7 +251,7 @@
       "family": "Legumbres",
       "minutes": 25,
       "reason": "Cuchara/sartén vegetal rápida.",
-      "status": "validated-draft-awaiting-image-and-publication",
+      "status": "page-generated-awaiting-image",
       "validation": {
         "ingredients_quantified": true,
         "method_or_temperature_checked": true,
@@ -262,7 +262,7 @@
         "servings_and_scaling_checked": true,
         "editorial_copy_reviewed": true,
         "own_image_ready": false,
-        "recipe_page_generated": false,
+        "recipe_page_generated": true,
         "schema_and_open_graph_checked": false,
         "site_qa_passed": false,
         "production_audit_passed": false
@@ -275,7 +275,7 @@
       "family": "Legumbres",
       "minutes": 25,
       "reason": "Despensa y legumbre caliente rápida.",
-      "status": "validated-draft-awaiting-image-and-publication",
+      "status": "page-generated-awaiting-image",
       "validation": {
         "ingredients_quantified": true,
         "method_or_temperature_checked": true,
@@ -286,7 +286,7 @@
         "servings_and_scaling_checked": true,
         "editorial_copy_reviewed": true,
         "own_image_ready": false,
-        "recipe_page_generated": false,
+        "recipe_page_generated": true,
         "schema_and_open_graph_checked": false,
         "site_qa_passed": false,
         "production_audit_passed": false
@@ -299,7 +299,7 @@
       "family": "Legumbres",
       "minutes": 25,
       "reason": "Variedad de sabor sin ampliar tiempo.",
-      "status": "validated-draft-awaiting-image-and-publication",
+      "status": "page-generated-awaiting-image",
       "validation": {
         "ingredients_quantified": true,
         "method_or_temperature_checked": true,
@@ -310,7 +310,7 @@
         "servings_and_scaling_checked": true,
         "editorial_copy_reviewed": true,
         "own_image_ready": false,
-        "recipe_page_generated": false,
+        "recipe_page_generated": true,
         "schema_and_open_graph_checked": false,
         "site_qa_passed": false,
         "production_audit_passed": false
@@ -323,7 +323,7 @@
       "family": "Legumbres",
       "minutes": 15,
       "reason": "Aumenta opciones reales ≤15 min.",
-      "status": "validated-draft-awaiting-image-and-publication",
+      "status": "page-generated-awaiting-image",
       "validation": {
         "ingredients_quantified": true,
         "method_or_temperature_checked": true,
@@ -334,7 +334,7 @@
         "servings_and_scaling_checked": true,
         "editorial_copy_reviewed": true,
         "own_image_ready": false,
-        "recipe_page_generated": false,
+        "recipe_page_generated": true,
         "schema_and_open_graph_checked": false,
         "site_qa_passed": false,
         "production_audit_passed": false
@@ -347,7 +347,7 @@
       "family": "Pasta, arroz y cereales",
       "minutes": 20,
       "reason": "Despensa, barata y rápida.",
-      "status": "validated-draft-awaiting-image-and-publication",
+      "status": "page-generated-awaiting-image",
       "validation": {
         "ingredients_quantified": true,
         "method_or_temperature_checked": true,
@@ -358,7 +358,7 @@
         "servings_and_scaling_checked": true,
         "editorial_copy_reviewed": true,
         "own_image_ready": false,
-        "recipe_page_generated": false,
+        "recipe_page_generated": true,
         "schema_and_open_graph_checked": false,
         "site_qa_passed": false,
         "production_audit_passed": false
@@ -371,7 +371,7 @@
       "family": "Pasta, arroz y cereales",
       "minutes": 25,
       "reason": "Proteína vegetal y despensa.",
-      "status": "validated-draft-awaiting-image-and-publication",
+      "status": "page-generated-awaiting-image",
       "validation": {
         "ingredients_quantified": true,
         "method_or_temperature_checked": true,
@@ -382,7 +382,7 @@
         "servings_and_scaling_checked": true,
         "editorial_copy_reviewed": true,
         "own_image_ready": false,
-        "recipe_page_generated": false,
+        "recipe_page_generated": true,
         "schema_and_open_graph_checked": false,
         "site_qa_passed": false,
         "production_audit_passed": false
@@ -395,7 +395,7 @@
       "family": "Pasta, arroz y cereales",
       "minutes": 25,
       "reason": "Más salida para arroz cocido.",
-      "status": "validated-draft-awaiting-image-and-publication",
+      "status": "page-generated-awaiting-image",
       "validation": {
         "ingredients_quantified": true,
         "method_or_temperature_checked": true,
@@ -406,7 +406,7 @@
         "servings_and_scaling_checked": true,
         "editorial_copy_reviewed": true,
         "own_image_ready": false,
-        "recipe_page_generated": false,
+        "recipe_page_generated": true,
         "schema_and_open_graph_checked": false,
         "site_qa_passed": false,
         "production_audit_passed": false
@@ -419,7 +419,7 @@
       "family": "Pasta, arroz y cereales",
       "minutes": 15,
       "reason": "Hueco ≤15 min y despensa.",
-      "status": "validated-draft-awaiting-image-and-publication",
+      "status": "page-generated-awaiting-image",
       "validation": {
         "ingredients_quantified": true,
         "method_or_temperature_checked": true,
@@ -430,7 +430,7 @@
         "servings_and_scaling_checked": true,
         "editorial_copy_reviewed": true,
         "own_image_ready": false,
-        "recipe_page_generated": false,
+        "recipe_page_generated": true,
         "schema_and_open_graph_checked": false,
         "site_qa_passed": false,
         "production_audit_passed": false
@@ -443,7 +443,7 @@
       "family": "Verduras",
       "minutes": 25,
       "reason": "Cena completa de base económica.",
-      "status": "validated-draft-awaiting-image-and-publication",
+      "status": "page-generated-awaiting-image",
       "validation": {
         "ingredients_quantified": true,
         "method_or_temperature_checked": true,
@@ -454,7 +454,7 @@
         "servings_and_scaling_checked": true,
         "editorial_copy_reviewed": true,
         "own_image_ready": false,
-        "recipe_page_generated": false,
+        "recipe_page_generated": true,
         "schema_and_open_graph_checked": false,
         "site_qa_passed": false,
         "production_audit_passed": false
@@ -467,7 +467,7 @@
       "family": "Verduras",
       "minutes": 20,
       "reason": "Refuerza guía de calabacín.",
-      "status": "validated-draft-awaiting-image-and-publication",
+      "status": "page-generated-awaiting-image",
       "validation": {
         "ingredients_quantified": true,
         "method_or_temperature_checked": true,
@@ -478,7 +478,7 @@
         "servings_and_scaling_checked": true,
         "editorial_copy_reviewed": true,
         "own_image_ready": false,
-        "recipe_page_generated": false,
+        "recipe_page_generated": true,
         "schema_and_open_graph_checked": false,
         "site_qa_passed": false,
         "production_audit_passed": false
@@ -491,7 +491,7 @@
       "family": "Verduras",
       "minutes": 30,
       "reason": "Verdura protagonista sin horno largo.",
-      "status": "validated-draft-awaiting-image-and-publication",
+      "status": "page-generated-awaiting-image",
       "validation": {
         "ingredients_quantified": true,
         "method_or_temperature_checked": true,
@@ -502,7 +502,7 @@
         "servings_and_scaling_checked": true,
         "editorial_copy_reviewed": true,
         "own_image_ready": false,
-        "recipe_page_generated": false,
+        "recipe_page_generated": true,
         "schema_and_open_graph_checked": false,
         "site_qa_passed": false,
         "production_audit_passed": false
@@ -515,7 +515,7 @@
       "family": "Verduras",
       "minutes": 30,
       "reason": "Cena doméstica clásica y completa.",
-      "status": "validated-draft-awaiting-image-and-publication",
+      "status": "page-generated-awaiting-image",
       "validation": {
         "ingredients_quantified": true,
         "method_or_temperature_checked": true,
@@ -526,7 +526,7 @@
         "servings_and_scaling_checked": true,
         "editorial_copy_reviewed": true,
         "own_image_ready": false,
-        "recipe_page_generated": false,
+        "recipe_page_generated": true,
         "schema_and_open_graph_checked": false,
         "site_qa_passed": false,
         "production_audit_passed": false
@@ -539,7 +539,7 @@
       "family": "Sopas y cremas",
       "minutes": 25,
       "reason": "Cuchara rápida sin legumbre.",
-      "status": "validated-draft-awaiting-image-and-publication",
+      "status": "page-generated-awaiting-image",
       "validation": {
         "ingredients_quantified": true,
         "method_or_temperature_checked": true,
@@ -550,7 +550,7 @@
         "servings_and_scaling_checked": true,
         "editorial_copy_reviewed": true,
         "own_image_ready": false,
-        "recipe_page_generated": false,
+        "recipe_page_generated": true,
         "schema_and_open_graph_checked": false,
         "site_qa_passed": false,
         "production_audit_passed": false
@@ -563,7 +563,7 @@
       "family": "Sopas y cremas",
       "minutes": 30,
       "reason": "Refuerza calabacín y fondo de nevera.",
-      "status": "validated-draft-awaiting-image-and-publication",
+      "status": "page-generated-awaiting-image",
       "validation": {
         "ingredients_quantified": true,
         "method_or_temperature_checked": true,
@@ -574,7 +574,7 @@
         "servings_and_scaling_checked": true,
         "editorial_copy_reviewed": true,
         "own_image_ready": false,
-        "recipe_page_generated": false,
+        "recipe_page_generated": true,
         "schema_and_open_graph_checked": false,
         "site_qa_passed": false,
         "production_audit_passed": false
@@ -587,7 +587,7 @@
       "family": "Sopas y cremas",
       "minutes": 30,
       "reason": "Salida para tomate maduro.",
-      "status": "validated-draft-awaiting-image-and-publication",
+      "status": "page-generated-awaiting-image",
       "validation": {
         "ingredients_quantified": true,
         "method_or_temperature_checked": true,
@@ -598,7 +598,7 @@
         "servings_and_scaling_checked": true,
         "editorial_copy_reviewed": true,
         "own_image_ready": false,
-        "recipe_page_generated": false,
+        "recipe_page_generated": true,
         "schema_and_open_graph_checked": false,
         "site_qa_passed": false,
         "production_audit_passed": false
@@ -611,7 +611,7 @@
       "family": "Horno y masas",
       "minutes": 15,
       "reason": "Cena ultrarrápida y visual.",
-      "status": "validated-draft-awaiting-image-and-publication",
+      "status": "page-generated-awaiting-image",
       "validation": {
         "ingredients_quantified": true,
         "method_or_temperature_checked": true,
@@ -622,7 +622,7 @@
         "servings_and_scaling_checked": true,
         "editorial_copy_reviewed": true,
         "own_image_ready": false,
-        "recipe_page_generated": false,
+        "recipe_page_generated": true,
         "schema_and_open_graph_checked": false,
         "site_qa_passed": false,
         "production_audit_passed": false
@@ -635,7 +635,7 @@
       "family": "Horno y masas",
       "minutes": 15,
       "reason": "Formato informal vegetal ≤15 min.",
-      "status": "validated-draft-awaiting-image-and-publication",
+      "status": "page-generated-awaiting-image",
       "validation": {
         "ingredients_quantified": true,
         "method_or_temperature_checked": true,
@@ -646,7 +646,7 @@
         "servings_and_scaling_checked": true,
         "editorial_copy_reviewed": true,
         "own_image_ready": false,
-        "recipe_page_generated": false,
+        "recipe_page_generated": true,
         "schema_and_open_graph_checked": false,
         "site_qa_passed": false,
         "production_audit_passed": false
@@ -659,7 +659,7 @@
       "family": "Desayunos y dulce",
       "minutes": 5,
       "reason": "Desayuno real sin cocción.",
-      "status": "validated-draft-awaiting-image-and-publication",
+      "status": "page-generated-awaiting-image",
       "validation": {
         "ingredients_quantified": true,
         "method_or_temperature_checked": true,
@@ -670,7 +670,7 @@
         "servings_and_scaling_checked": true,
         "editorial_copy_reviewed": true,
         "own_image_ready": false,
-        "recipe_page_generated": false,
+        "recipe_page_generated": true,
         "schema_and_open_graph_checked": false,
         "site_qa_passed": false,
         "production_audit_passed": false
@@ -683,7 +683,7 @@
       "family": "Desayunos y dulce",
       "minutes": 15,
       "reason": "Aprovechamiento de fruta y dulce rápido.",
-      "status": "validated-draft-awaiting-image-and-publication",
+      "status": "page-generated-awaiting-image",
       "validation": {
         "ingredients_quantified": true,
         "method_or_temperature_checked": true,
@@ -694,7 +694,7 @@
         "servings_and_scaling_checked": true,
         "editorial_copy_reviewed": true,
         "own_image_ready": false,
-        "recipe_page_generated": false,
+        "recipe_page_generated": true,
         "schema_and_open_graph_checked": false,
         "site_qa_passed": false,
         "production_audit_passed": false
@@ -707,7 +707,7 @@
       "family": "Desayunos y dulce",
       "minutes": 10,
       "reason": "Desayuno/merienda de despensa.",
-      "status": "validated-draft-awaiting-image-and-publication",
+      "status": "page-generated-awaiting-image",
       "validation": {
         "ingredients_quantified": true,
         "method_or_temperature_checked": true,
@@ -718,7 +718,7 @@
         "servings_and_scaling_checked": true,
         "editorial_copy_reviewed": true,
         "own_image_ready": false,
-        "recipe_page_generated": false,
+        "recipe_page_generated": true,
         "schema_and_open_graph_checked": false,
         "site_qa_passed": false,
         "production_audit_passed": false
@@ -748,9 +748,9 @@
     "validatedDrafts": 30,
     "pendingValidation": 0,
     "publicNewRecipes": 0,
+    "stagedRecipePages": 30,
     "remainingBlockers": [
       "own_image_ready",
-      "recipe_page_generated",
       "schema_and_open_graph_checked",
       "site_qa_passed",
       "production_audit_passed"
