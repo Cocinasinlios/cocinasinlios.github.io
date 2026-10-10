@@ -1,0 +1,726 @@
+{
+  "version": 1,
+  "count": 30,
+  "briefs": [
+    {
+      "slug": "revuelto-calabacin",
+      "title": "Revuelto de calabacín y cebolla",
+      "targetFile": "/assets/recipes/revuelto-calabacin.webp",
+      "composition": "huevo cuajado cremoso, dados de calabacín dorados y cebolla",
+      "serving": "2 personas",
+      "common": {
+        "style": "fotografía gastronómica doméstica realista; apetecible pero no de restaurante; sin aspecto de IA",
+        "setting": "cocina blanca, elegante, luminosa y cálida, coherente con Cocina sin líos",
+        "light": "luz natural lateral suave",
+        "angle": "30–45 grados o ligeramente cenital",
+        "framing": "plato completo; encuadre limpio; profundidad natural; sin recortes extraños",
+        "avoid": [
+          "texto",
+          "logos",
+          "marcas de agua",
+          "decoración excesiva",
+          "ingredientes que no pertenecen a la receta",
+          "vajilla llamativa que compita con la comida",
+          "manos deformes",
+          "look plástico o hiperperfecto"
+        ]
+      }
+    },
+    {
+      "slug": "huevos-plato-tomate",
+      "title": "Huevos al plato con tomate",
+      "targetFile": "/assets/recipes/huevos-plato-tomate.webp",
+      "composition": "salsa de tomate espesa con huevos cuajados visibles y pan al lado",
+      "serving": "2 personas",
+      "common": {
+        "style": "fotografía gastronómica doméstica realista; apetecible pero no de restaurante; sin aspecto de IA",
+        "setting": "cocina blanca, elegante, luminosa y cálida, coherente con Cocina sin líos",
+        "light": "luz natural lateral suave",
+        "angle": "30–45 grados o ligeramente cenital",
+        "framing": "plato completo; encuadre limpio; profundidad natural; sin recortes extraños",
+        "avoid": [
+          "texto",
+          "logos",
+          "marcas de agua",
+          "decoración excesiva",
+          "ingredientes que no pertenecen a la receta",
+          "vajilla llamativa que compita con la comida",
+          "manos deformes",
+          "look plástico o hiperperfecto"
+        ]
+      }
+    },
+    {
+      "slug": "tortilla-espinacas",
+      "title": "Tortilla de espinacas y cebolla",
+      "targetFile": "/assets/recipes/tortilla-espinacas.webp",
+      "composition": "tortilla abierta o porción cortada con espinacas y cebolla reconocibles",
+      "serving": "2 personas",
+      "common": {
+        "style": "fotografía gastronómica doméstica realista; apetecible pero no de restaurante; sin aspecto de IA",
+        "setting": "cocina blanca, elegante, luminosa y cálida, coherente con Cocina sin líos",
+        "light": "luz natural lateral suave",
+        "angle": "30–45 grados o ligeramente cenital",
+        "framing": "plato completo; encuadre limpio; profundidad natural; sin recortes extraños",
+        "avoid": [
+          "texto",
+          "logos",
+          "marcas de agua",
+          "decoración excesiva",
+          "ingredientes que no pertenecen a la receta",
+          "vajilla llamativa que compita con la comida",
+          "manos deformes",
+          "look plástico o hiperperfecto"
+        ]
+      }
+    },
+    {
+      "slug": "merluza-plancha-limon",
+      "title": "Merluza a la plancha con limón",
+      "targetFile": "/assets/recipes/merluza-plancha-limon.webp",
+      "composition": "lomo de merluza dorado, limón y perejil; interior jugoso",
+      "serving": "2 personas",
+      "common": {
+        "style": "fotografía gastronómica doméstica realista; apetecible pero no de restaurante; sin aspecto de IA",
+        "setting": "cocina blanca, elegante, luminosa y cálida, coherente con Cocina sin líos",
+        "light": "luz natural lateral suave",
+        "angle": "30–45 grados o ligeramente cenital",
+        "framing": "plato completo; encuadre limpio; profundidad natural; sin recortes extraños",
+        "avoid": [
+          "texto",
+          "logos",
+          "marcas de agua",
+          "decoración excesiva",
+          "ingredientes que no pertenecen a la receta",
+          "vajilla llamativa que compita con la comida",
+          "manos deformes",
+          "look plástico o hiperperfecto"
+        ]
+      }
+    },
+    {
+      "slug": "salmon-sarten-limon",
+      "title": "Salmón en sartén con limón",
+      "targetFile": "/assets/recipes/salmon-sarten-limon.webp",
+      "composition": "lomo de salmón dorado con limón y una salsa corta brillante",
+      "serving": "2 personas",
+      "common": {
+        "style": "fotografía gastronómica doméstica realista; apetecible pero no de restaurante; sin aspecto de IA",
+        "setting": "cocina blanca, elegante, luminosa y cálida, coherente con Cocina sin líos",
+        "light": "luz natural lateral suave",
+        "angle": "30–45 grados o ligeramente cenital",
+        "framing": "plato completo; encuadre limpio; profundidad natural; sin recortes extraños",
+        "avoid": [
+          "texto",
+          "logos",
+          "marcas de agua",
+          "decoración excesiva",
+          "ingredientes que no pertenecen a la receta",
+          "vajilla llamativa que compita con la comida",
+          "manos deformes",
+          "look plástico o hiperperfecto"
+        ]
+      }
+    },
+    {
+      "slug": "atun-tomate-calabacin",
+      "title": "Atún con tomate y calabacín",
+      "targetFile": "/assets/recipes/atun-tomate-calabacin.webp",
+      "composition": "calabacín reconocible, tomate espeso y lascas de atún",
+      "serving": "2 personas",
+      "common": {
+        "style": "fotografía gastronómica doméstica realista; apetecible pero no de restaurante; sin aspecto de IA",
+        "setting": "cocina blanca, elegante, luminosa y cálida, coherente con Cocina sin líos",
+        "light": "luz natural lateral suave",
+        "angle": "30–45 grados o ligeramente cenital",
+        "framing": "plato completo; encuadre limpio; profundidad natural; sin recortes extraños",
+        "avoid": [
+          "texto",
+          "logos",
+          "marcas de agua",
+          "decoración excesiva",
+          "ingredientes que no pertenecen a la receta",
+          "vajilla llamativa que compita con la comida",
+          "manos deformes",
+          "look plástico o hiperperfecto"
+        ]
+      }
+    },
+    {
+      "slug": "pescado-salsa-verde-rapida",
+      "title": "Pescado en salsa verde rápida",
+      "targetFile": "/assets/recipes/pescado-salsa-verde-rapida.webp",
+      "composition": "lomo de pescado blanco en salsa verde ligera con perejil",
+      "serving": "2 personas",
+      "common": {
+        "style": "fotografía gastronómica doméstica realista; apetecible pero no de restaurante; sin aspecto de IA",
+        "setting": "cocina blanca, elegante, luminosa y cálida, coherente con Cocina sin líos",
+        "light": "luz natural lateral suave",
+        "angle": "30–45 grados o ligeramente cenital",
+        "framing": "plato completo; encuadre limpio; profundidad natural; sin recortes extraños",
+        "avoid": [
+          "texto",
+          "logos",
+          "marcas de agua",
+          "decoración excesiva",
+          "ingredientes que no pertenecen a la receta",
+          "vajilla llamativa que compita con la comida",
+          "manos deformes",
+          "look plástico o hiperperfecto"
+        ]
+      }
+    },
+    {
+      "slug": "pollo-mostaza-sarten",
+      "title": "Pollo a la mostaza en sartén",
+      "targetFile": "/assets/recipes/pollo-mostaza-sarten.webp",
+      "composition": "trozos de pollo dorado cubiertos por salsa corta de mostaza",
+      "serving": "2 personas",
+      "common": {
+        "style": "fotografía gastronómica doméstica realista; apetecible pero no de restaurante; sin aspecto de IA",
+        "setting": "cocina blanca, elegante, luminosa y cálida, coherente con Cocina sin líos",
+        "light": "luz natural lateral suave",
+        "angle": "30–45 grados o ligeramente cenital",
+        "framing": "plato completo; encuadre limpio; profundidad natural; sin recortes extraños",
+        "avoid": [
+          "texto",
+          "logos",
+          "marcas de agua",
+          "decoración excesiva",
+          "ingredientes que no pertenecen a la receta",
+          "vajilla llamativa que compita con la comida",
+          "manos deformes",
+          "look plástico o hiperperfecto"
+        ]
+      }
+    },
+    {
+      "slug": "pollo-pimientos",
+      "title": "Pollo con pimientos en sartén",
+      "targetFile": "/assets/recipes/pollo-pimientos.webp",
+      "composition": "tiras de pollo dorado con pimientos rojo y verde",
+      "serving": "2 personas",
+      "common": {
+        "style": "fotografía gastronómica doméstica realista; apetecible pero no de restaurante; sin aspecto de IA",
+        "setting": "cocina blanca, elegante, luminosa y cálida, coherente con Cocina sin líos",
+        "light": "luz natural lateral suave",
+        "angle": "30–45 grados o ligeramente cenital",
+        "framing": "plato completo; encuadre limpio; profundidad natural; sin recortes extraños",
+        "avoid": [
+          "texto",
+          "logos",
+          "marcas de agua",
+          "decoración excesiva",
+          "ingredientes que no pertenecen a la receta",
+          "vajilla llamativa que compita con la comida",
+          "manos deformes",
+          "look plástico o hiperperfecto"
+        ]
+      }
+    },
+    {
+      "slug": "picadillo-pavo-verduras",
+      "title": "Picadillo de pavo y verduras",
+      "targetFile": "/assets/recipes/picadillo-pavo-verduras.webp",
+      "composition": "pavo picado suelto con zanahoria y calabacín visibles",
+      "serving": "2 personas",
+      "common": {
+        "style": "fotografía gastronómica doméstica realista; apetecible pero no de restaurante; sin aspecto de IA",
+        "setting": "cocina blanca, elegante, luminosa y cálida, coherente con Cocina sin líos",
+        "light": "luz natural lateral suave",
+        "angle": "30–45 grados o ligeramente cenital",
+        "framing": "plato completo; encuadre limpio; profundidad natural; sin recortes extraños",
+        "avoid": [
+          "texto",
+          "logos",
+          "marcas de agua",
+          "decoración excesiva",
+          "ingredientes que no pertenecen a la receta",
+          "vajilla llamativa que compita con la comida",
+          "manos deformes",
+          "look plástico o hiperperfecto"
+        ]
+      }
+    },
+    {
+      "slug": "garbanzos-espinacas-rapidos",
+      "title": "Garbanzos rápidos con espinacas",
+      "targetFile": "/assets/recipes/garbanzos-espinacas-rapidos.webp",
+      "composition": "garbanzos enteros, espinacas y tomate ligados",
+      "serving": "2 personas",
+      "common": {
+        "style": "fotografía gastronómica doméstica realista; apetecible pero no de restaurante; sin aspecto de IA",
+        "setting": "cocina blanca, elegante, luminosa y cálida, coherente con Cocina sin líos",
+        "light": "luz natural lateral suave",
+        "angle": "30–45 grados o ligeramente cenital",
+        "framing": "plato completo; encuadre limpio; profundidad natural; sin recortes extraños",
+        "avoid": [
+          "texto",
+          "logos",
+          "marcas de agua",
+          "decoración excesiva",
+          "ingredientes que no pertenecen a la receta",
+          "vajilla llamativa que compita con la comida",
+          "manos deformes",
+          "look plástico o hiperperfecto"
+        ]
+      }
+    },
+    {
+      "slug": "alubias-tomate",
+      "title": "Alubias con tomate y verduras",
+      "targetFile": "/assets/recipes/alubias-tomate.webp",
+      "composition": "alubias blancas enteras con tomate y pimiento",
+      "serving": "2 personas",
+      "common": {
+        "style": "fotografía gastronómica doméstica realista; apetecible pero no de restaurante; sin aspecto de IA",
+        "setting": "cocina blanca, elegante, luminosa y cálida, coherente con Cocina sin líos",
+        "light": "luz natural lateral suave",
+        "angle": "30–45 grados o ligeramente cenital",
+        "framing": "plato completo; encuadre limpio; profundidad natural; sin recortes extraños",
+        "avoid": [
+          "texto",
+          "logos",
+          "marcas de agua",
+          "decoración excesiva",
+          "ingredientes que no pertenecen a la receta",
+          "vajilla llamativa que compita con la comida",
+          "manos deformes",
+          "look plástico o hiperperfecto"
+        ]
+      }
+    },
+    {
+      "slug": "lentejas-curry",
+      "title": "Lentejas al curry rápidas",
+      "targetFile": "/assets/recipes/lentejas-curry.webp",
+      "composition": "lentejas en guiso corto de curry, textura ligada no caldosa en exceso",
+      "serving": "2 personas",
+      "common": {
+        "style": "fotografía gastronómica doméstica realista; apetecible pero no de restaurante; sin aspecto de IA",
+        "setting": "cocina blanca, elegante, luminosa y cálida, coherente con Cocina sin líos",
+        "light": "luz natural lateral suave",
+        "angle": "30–45 grados o ligeramente cenital",
+        "framing": "plato completo; encuadre limpio; profundidad natural; sin recortes extraños",
+        "avoid": [
+          "texto",
+          "logos",
+          "marcas de agua",
+          "decoración excesiva",
+          "ingredientes que no pertenecen a la receta",
+          "vajilla llamativa que compita con la comida",
+          "manos deformes",
+          "look plástico o hiperperfecto"
+        ]
+      }
+    },
+    {
+      "slug": "ensalada-alubias-atun",
+      "title": "Ensalada de alubias y atún",
+      "targetFile": "/assets/recipes/ensalada-alubias-atun.webp",
+      "composition": "alubias, atún, tomate y pepino claramente distinguibles",
+      "serving": "2 personas",
+      "common": {
+        "style": "fotografía gastronómica doméstica realista; apetecible pero no de restaurante; sin aspecto de IA",
+        "setting": "cocina blanca, elegante, luminosa y cálida, coherente con Cocina sin líos",
+        "light": "luz natural lateral suave",
+        "angle": "30–45 grados o ligeramente cenital",
+        "framing": "plato completo; encuadre limpio; profundidad natural; sin recortes extraños",
+        "avoid": [
+          "texto",
+          "logos",
+          "marcas de agua",
+          "decoración excesiva",
+          "ingredientes que no pertenecen a la receta",
+          "vajilla llamativa que compita con la comida",
+          "manos deformes",
+          "look plástico o hiperperfecto"
+        ]
+      }
+    },
+    {
+      "slug": "pasta-ajo-limon",
+      "title": "Pasta con ajo, limón y pan crujiente",
+      "targetFile": "/assets/recipes/pasta-ajo-limon.webp",
+      "composition": "pasta brillante con ajo, ralladura de limón y pan crujiente",
+      "serving": "2 personas",
+      "common": {
+        "style": "fotografía gastronómica doméstica realista; apetecible pero no de restaurante; sin aspecto de IA",
+        "setting": "cocina blanca, elegante, luminosa y cálida, coherente con Cocina sin líos",
+        "light": "luz natural lateral suave",
+        "angle": "30–45 grados o ligeramente cenital",
+        "framing": "plato completo; encuadre limpio; profundidad natural; sin recortes extraños",
+        "avoid": [
+          "texto",
+          "logos",
+          "marcas de agua",
+          "decoración excesiva",
+          "ingredientes que no pertenecen a la receta",
+          "vajilla llamativa que compita con la comida",
+          "manos deformes",
+          "look plástico o hiperperfecto"
+        ]
+      }
+    },
+    {
+      "slug": "pasta-garbanzos-tomate",
+      "title": "Pasta con garbanzos y tomate",
+      "targetFile": "/assets/recipes/pasta-garbanzos-tomate.webp",
+      "composition": "pasta corta con garbanzos y salsa de tomate adherida",
+      "serving": "2 personas",
+      "common": {
+        "style": "fotografía gastronómica doméstica realista; apetecible pero no de restaurante; sin aspecto de IA",
+        "setting": "cocina blanca, elegante, luminosa y cálida, coherente con Cocina sin líos",
+        "light": "luz natural lateral suave",
+        "angle": "30–45 grados o ligeramente cenital",
+        "framing": "plato completo; encuadre limpio; profundidad natural; sin recortes extraños",
+        "avoid": [
+          "texto",
+          "logos",
+          "marcas de agua",
+          "decoración excesiva",
+          "ingredientes que no pertenecen a la receta",
+          "vajilla llamativa que compita con la comida",
+          "manos deformes",
+          "look plástico o hiperperfecto"
+        ]
+      }
+    },
+    {
+      "slug": "arroz-verduras-sarten",
+      "title": "Arroz con verduras en sartén",
+      "targetFile": "/assets/recipes/arroz-verduras-sarten.webp",
+      "composition": "arroz suelto con zanahoria, calabacín y huevo opcional",
+      "serving": "2 personas",
+      "common": {
+        "style": "fotografía gastronómica doméstica realista; apetecible pero no de restaurante; sin aspecto de IA",
+        "setting": "cocina blanca, elegante, luminosa y cálida, coherente con Cocina sin líos",
+        "light": "luz natural lateral suave",
+        "angle": "30–45 grados o ligeramente cenital",
+        "framing": "plato completo; encuadre limpio; profundidad natural; sin recortes extraños",
+        "avoid": [
+          "texto",
+          "logos",
+          "marcas de agua",
+          "decoración excesiva",
+          "ingredientes que no pertenecen a la receta",
+          "vajilla llamativa que compita con la comida",
+          "manos deformes",
+          "look plástico o hiperperfecto"
+        ]
+      }
+    },
+    {
+      "slug": "cuscus-limon-hierbas",
+      "title": "Cuscús con limón, hierbas y garbanzos",
+      "targetFile": "/assets/recipes/cuscus-limon-hierbas.webp",
+      "composition": "cuscús suelto con garbanzos, tomate, pepino y hierbas",
+      "serving": "2 personas",
+      "common": {
+        "style": "fotografía gastronómica doméstica realista; apetecible pero no de restaurante; sin aspecto de IA",
+        "setting": "cocina blanca, elegante, luminosa y cálida, coherente con Cocina sin líos",
+        "light": "luz natural lateral suave",
+        "angle": "30–45 grados o ligeramente cenital",
+        "framing": "plato completo; encuadre limpio; profundidad natural; sin recortes extraños",
+        "avoid": [
+          "texto",
+          "logos",
+          "marcas de agua",
+          "decoración excesiva",
+          "ingredientes que no pertenecen a la receta",
+          "vajilla llamativa que compita con la comida",
+          "manos deformes",
+          "look plástico o hiperperfecto"
+        ]
+      }
+    },
+    {
+      "slug": "patatas-salteadas-huevo",
+      "title": "Patatas salteadas con huevo y verduras",
+      "targetFile": "/assets/recipes/patatas-salteadas-huevo.webp",
+      "composition": "dados de patata dorados, pimiento y huevo revuelto",
+      "serving": "2 personas",
+      "common": {
+        "style": "fotografía gastronómica doméstica realista; apetecible pero no de restaurante; sin aspecto de IA",
+        "setting": "cocina blanca, elegante, luminosa y cálida, coherente con Cocina sin líos",
+        "light": "luz natural lateral suave",
+        "angle": "30–45 grados o ligeramente cenital",
+        "framing": "plato completo; encuadre limpio; profundidad natural; sin recortes extraños",
+        "avoid": [
+          "texto",
+          "logos",
+          "marcas de agua",
+          "decoración excesiva",
+          "ingredientes que no pertenecen a la receta",
+          "vajilla llamativa que compita con la comida",
+          "manos deformes",
+          "look plástico o hiperperfecto"
+        ]
+      }
+    },
+    {
+      "slug": "calabacin-tomate-sarten",
+      "title": "Calabacín y tomate a la sartén",
+      "targetFile": "/assets/recipes/calabacin-tomate-sarten.webp",
+      "composition": "medias lunas de calabacín y tomate concentrado",
+      "serving": "2 personas",
+      "common": {
+        "style": "fotografía gastronómica doméstica realista; apetecible pero no de restaurante; sin aspecto de IA",
+        "setting": "cocina blanca, elegante, luminosa y cálida, coherente con Cocina sin líos",
+        "light": "luz natural lateral suave",
+        "angle": "30–45 grados o ligeramente cenital",
+        "framing": "plato completo; encuadre limpio; profundidad natural; sin recortes extraños",
+        "avoid": [
+          "texto",
+          "logos",
+          "marcas de agua",
+          "decoración excesiva",
+          "ingredientes que no pertenecen a la receta",
+          "vajilla llamativa que compita con la comida",
+          "manos deformes",
+          "look plástico o hiperperfecto"
+        ]
+      }
+    },
+    {
+      "slug": "berenjena-tomate-sarten",
+      "title": "Berenjena con tomate en sartén",
+      "targetFile": "/assets/recipes/berenjena-tomate-sarten.webp",
+      "composition": "dados de berenjena tiernos y dorados con tomate",
+      "serving": "2 personas",
+      "common": {
+        "style": "fotografía gastronómica doméstica realista; apetecible pero no de restaurante; sin aspecto de IA",
+        "setting": "cocina blanca, elegante, luminosa y cálida, coherente con Cocina sin líos",
+        "light": "luz natural lateral suave",
+        "angle": "30–45 grados o ligeramente cenital",
+        "framing": "plato completo; encuadre limpio; profundidad natural; sin recortes extraños",
+        "avoid": [
+          "texto",
+          "logos",
+          "marcas de agua",
+          "decoración excesiva",
+          "ingredientes que no pertenecen a la receta",
+          "vajilla llamativa que compita con la comida",
+          "manos deformes",
+          "look plástico o hiperperfecto"
+        ]
+      }
+    },
+    {
+      "slug": "judias-verdes-patata-huevo",
+      "title": "Judías verdes con patata y huevo",
+      "targetFile": "/assets/recipes/judias-verdes-patata-huevo.webp",
+      "composition": "judías verdes, patata y huevo cocido o a la plancha claramente visibles",
+      "serving": "2 personas",
+      "common": {
+        "style": "fotografía gastronómica doméstica realista; apetecible pero no de restaurante; sin aspecto de IA",
+        "setting": "cocina blanca, elegante, luminosa y cálida, coherente con Cocina sin líos",
+        "light": "luz natural lateral suave",
+        "angle": "30–45 grados o ligeramente cenital",
+        "framing": "plato completo; encuadre limpio; profundidad natural; sin recortes extraños",
+        "avoid": [
+          "texto",
+          "logos",
+          "marcas de agua",
+          "decoración excesiva",
+          "ingredientes que no pertenecen a la receta",
+          "vajilla llamativa que compita con la comida",
+          "manos deformes",
+          "look plástico o hiperperfecto"
+        ]
+      }
+    },
+    {
+      "slug": "sopa-fideos-verduras",
+      "title": "Sopa rápida de fideos y verduras",
+      "targetFile": "/assets/recipes/sopa-fideos-verduras.webp",
+      "composition": "caldo limpio con fideos finos, zanahoria, puerro y calabacín",
+      "serving": "2 personas",
+      "common": {
+        "style": "fotografía gastronómica doméstica realista; apetecible pero no de restaurante; sin aspecto de IA",
+        "setting": "cocina blanca, elegante, luminosa y cálida, coherente con Cocina sin líos",
+        "light": "luz natural lateral suave",
+        "angle": "30–45 grados o ligeramente cenital",
+        "framing": "plato completo; encuadre limpio; profundidad natural; sin recortes extraños",
+        "avoid": [
+          "texto",
+          "logos",
+          "marcas de agua",
+          "decoración excesiva",
+          "ingredientes que no pertenecen a la receta",
+          "vajilla llamativa que compita con la comida",
+          "manos deformes",
+          "look plástico o hiperperfecto"
+        ]
+      }
+    },
+    {
+      "slug": "crema-calabacin-puerro",
+      "title": "Crema de calabacín y puerro",
+      "targetFile": "/assets/recipes/crema-calabacin-puerro.webp",
+      "composition": "crema verde pálida, lisa y casera con remate mínimo",
+      "serving": "4 raciones",
+      "common": {
+        "style": "fotografía gastronómica doméstica realista; apetecible pero no de restaurante; sin aspecto de IA",
+        "setting": "cocina blanca, elegante, luminosa y cálida, coherente con Cocina sin líos",
+        "light": "luz natural lateral suave",
+        "angle": "30–45 grados o ligeramente cenital",
+        "framing": "plato completo; encuadre limpio; profundidad natural; sin recortes extraños",
+        "avoid": [
+          "texto",
+          "logos",
+          "marcas de agua",
+          "decoración excesiva",
+          "ingredientes que no pertenecen a la receta",
+          "vajilla llamativa que compita con la comida",
+          "manos deformes",
+          "look plástico o hiperperfecto"
+        ]
+      }
+    },
+    {
+      "slug": "crema-tomate",
+      "title": "Crema de tomate y verduras",
+      "targetFile": "/assets/recipes/crema-tomate.webp",
+      "composition": "crema rojo anaranjada, lisa, con aspecto casero",
+      "serving": "4 raciones",
+      "common": {
+        "style": "fotografía gastronómica doméstica realista; apetecible pero no de restaurante; sin aspecto de IA",
+        "setting": "cocina blanca, elegante, luminosa y cálida, coherente con Cocina sin líos",
+        "light": "luz natural lateral suave",
+        "angle": "30–45 grados o ligeramente cenital",
+        "framing": "plato completo; encuadre limpio; profundidad natural; sin recortes extraños",
+        "avoid": [
+          "texto",
+          "logos",
+          "marcas de agua",
+          "decoración excesiva",
+          "ingredientes que no pertenecen a la receta",
+          "vajilla llamativa que compita con la comida",
+          "manos deformes",
+          "look plástico o hiperperfecto"
+        ]
+      }
+    },
+    {
+      "slug": "tosta-tomate-huevo",
+      "title": "Tosta de tomate y huevo",
+      "targetFile": "/assets/recipes/tosta-tomate-huevo.webp",
+      "composition": "tosta crujiente con tomate y huevo visible",
+      "serving": "2 personas",
+      "common": {
+        "style": "fotografía gastronómica doméstica realista; apetecible pero no de restaurante; sin aspecto de IA",
+        "setting": "cocina blanca, elegante, luminosa y cálida, coherente con Cocina sin líos",
+        "light": "luz natural lateral suave",
+        "angle": "30–45 grados o ligeramente cenital",
+        "framing": "plato completo; encuadre limpio; profundidad natural; sin recortes extraños",
+        "avoid": [
+          "texto",
+          "logos",
+          "marcas de agua",
+          "decoración excesiva",
+          "ingredientes que no pertenecen a la receta",
+          "vajilla llamativa que compita con la comida",
+          "manos deformes",
+          "look plástico o hiperperfecto"
+        ]
+      }
+    },
+    {
+      "slug": "pan-pita-garbanzos",
+      "title": "Pita con garbanzos y verduras",
+      "targetFile": "/assets/recipes/pan-pita-garbanzos.webp",
+      "composition": "pita abierta con garbanzos, tomate, pepino y cebolla",
+      "serving": "2 personas",
+      "common": {
+        "style": "fotografía gastronómica doméstica realista; apetecible pero no de restaurante; sin aspecto de IA",
+        "setting": "cocina blanca, elegante, luminosa y cálida, coherente con Cocina sin líos",
+        "light": "luz natural lateral suave",
+        "angle": "30–45 grados o ligeramente cenital",
+        "framing": "plato completo; encuadre limpio; profundidad natural; sin recortes extraños",
+        "avoid": [
+          "texto",
+          "logos",
+          "marcas de agua",
+          "decoración excesiva",
+          "ingredientes que no pertenecen a la receta",
+          "vajilla llamativa que compita con la comida",
+          "manos deformes",
+          "look plástico o hiperperfecto"
+        ]
+      }
+    },
+    {
+      "slug": "yogur-avena-fruta",
+      "title": "Yogur con avena y fruta",
+      "targetFile": "/assets/recipes/yogur-avena-fruta.webp",
+      "composition": "bol de yogur con avena y fruta fresca reconocible",
+      "serving": "1 persona",
+      "common": {
+        "style": "fotografía gastronómica doméstica realista; apetecible pero no de restaurante; sin aspecto de IA",
+        "setting": "cocina blanca, elegante, luminosa y cálida, coherente con Cocina sin líos",
+        "light": "luz natural lateral suave",
+        "angle": "30–45 grados o ligeramente cenital",
+        "framing": "plato completo; encuadre limpio; profundidad natural; sin recortes extraños",
+        "avoid": [
+          "texto",
+          "logos",
+          "marcas de agua",
+          "decoración excesiva",
+          "ingredientes que no pertenecen a la receta",
+          "vajilla llamativa que compita con la comida",
+          "manos deformes",
+          "look plástico o hiperperfecto"
+        ]
+      }
+    },
+    {
+      "slug": "manzana-sarten-avena",
+      "title": "Manzana templada con avena",
+      "targetFile": "/assets/recipes/manzana-sarten-avena.webp",
+      "composition": "dados de manzana templada con avena tostada y frutos secos",
+      "serving": "2 personas",
+      "common": {
+        "style": "fotografía gastronómica doméstica realista; apetecible pero no de restaurante; sin aspecto de IA",
+        "setting": "cocina blanca, elegante, luminosa y cálida, coherente con Cocina sin líos",
+        "light": "luz natural lateral suave",
+        "angle": "30–45 grados o ligeramente cenital",
+        "framing": "plato completo; encuadre limpio; profundidad natural; sin recortes extraños",
+        "avoid": [
+          "texto",
+          "logos",
+          "marcas de agua",
+          "decoración excesiva",
+          "ingredientes que no pertenecen a la receta",
+          "vajilla llamativa que compita con la comida",
+          "manos deformes",
+          "look plástico o hiperperfecto"
+        ]
+      }
+    },
+    {
+      "slug": "tostada-platano-frutos-secos",
+      "title": "Tostada de plátano y frutos secos",
+      "targetFile": "/assets/recipes/tostada-platano-frutos-secos.webp",
+      "composition": "tostada con plátano en rodajas y frutos secos picados",
+      "serving": "1 persona",
+      "common": {
+        "style": "fotografía gastronómica doméstica realista; apetecible pero no de restaurante; sin aspecto de IA",
+        "setting": "cocina blanca, elegante, luminosa y cálida, coherente con Cocina sin líos",
+        "light": "luz natural lateral suave",
+        "angle": "30–45 grados o ligeramente cenital",
+        "framing": "plato completo; encuadre limpio; profundidad natural; sin recortes extraños",
+        "avoid": [
+          "texto",
+          "logos",
+          "marcas de agua",
+          "decoración excesiva",
+          "ingredientes que no pertenecen a la receta",
+          "vajilla llamativa que compita con la comida",
+          "manos deformes",
+          "look plástico o hiperperfecto"
+        ]
+      }
+    }
+  ]
+}
