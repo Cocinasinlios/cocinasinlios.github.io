@@ -1,0 +1,823 @@
+{
+  "version": 1,
+  "batch": "01",
+  "count": 10,
+  "recipes": [
+    {
+      "slug": "revuelto-calabacin",
+      "title": "Revuelto de calabacín y cebolla",
+      "family": "Huevos y tortillas",
+      "category": "Cena rápida",
+      "minutes": 20,
+      "time": "20 min",
+      "servings": "2 personas",
+      "baseServings": 2,
+      "difficulty": "Muy fácil",
+      "intro": "Una cena de sartén rápida donde la clave es quitar agua al calabacín antes de añadir el huevo.",
+      "ingredients": [
+        "1 calabacín mediano, unos 350 g",
+        "1/2 cebolla, unos 80 g",
+        "4 huevos",
+        "1 cucharada de aceite de oliva",
+        "Sal y pimienta"
+      ],
+      "steps": [
+        {
+          "t": "Cocina la cebolla",
+          "x": "Corta la cebolla fina y cocínala con el aceite a fuego medio 4–5 minutos, hasta que esté blanda."
+        },
+        {
+          "t": "Seca el calabacín en la sartén",
+          "x": "Añade el calabacín en dados o medias lunas y cocina 7–9 minutos a fuego medio-alto, removiendo lo justo, hasta que esté tierno y haya perdido buena parte del agua."
+        },
+        {
+          "t": "Añade el huevo",
+          "x": "Bate los huevos con una pizca de sal, baja ligeramente el fuego y añádelos. Remueve hasta que estén cuajados a tu gusto y sirve inmediatamente."
+        }
+      ],
+      "cook": {
+        "heat": "Sartén a fuego medio y medio-alto",
+        "time": "12–15 min de sartén",
+        "cue": "El calabacín debe estar tierno pero no aguado; el huevo debe verse cuajado y húmedo, no líquido."
+      },
+      "contains": {
+        "pescado": false,
+        "carne": false,
+        "huevo": true,
+        "lacteos": false
+      },
+      "plan": {
+        "t": "rapida",
+        "s": [
+          "ligera",
+          "variada",
+          "aprovecha"
+        ],
+        "need": [
+          "calabacín",
+          "cebolla",
+          "huevos"
+        ],
+        "uses": [
+          "huevos",
+          "cebolla"
+        ]
+      },
+      "safety": "Consumir el revuelto recién hecho. Para personas vulnerables, cocinar el huevo completamente.",
+      "validation": {
+        "ingredients_quantified": true,
+        "method_or_temperature_checked": true,
+        "time_checked": true,
+        "doneness_cue_defined": true,
+        "food_safety_reviewed": true,
+        "substitutions_reviewed": false,
+        "servings_and_scaling_checked": true,
+        "editorial_copy_reviewed": true,
+        "own_image_ready": false,
+        "recipe_page_generated": false,
+        "schema_and_open_graph_checked": false,
+        "site_qa_passed": false,
+        "production_audit_passed": false
+      },
+      "validationSource": "AESAN: cocción suficiente de alimentos de origen animal, refrigeración rápida de sobras y prevención de contaminación cruzada.",
+      "status": "validated-draft-awaiting-image-and-publication"
+    },
+    {
+      "slug": "huevos-plato-tomate",
+      "title": "Huevos al plato con tomate",
+      "family": "Huevos y tortillas",
+      "category": "Cena de despensa",
+      "minutes": 25,
+      "time": "25 min",
+      "servings": "2 personas",
+      "baseServings": 2,
+      "difficulty": "Muy fácil",
+      "intro": "Tomate concentrado, huevos y pan: una cena sencilla que funciona cuando la salsa está lista antes de añadir el huevo.",
+      "ingredients": [
+        "350 g de tomate triturado",
+        "1/2 cebolla, unos 80 g",
+        "1 diente de ajo",
+        "4 huevos",
+        "1 cucharada de aceite de oliva",
+        "1/2 cucharadita de orégano",
+        "Sal y pimienta",
+        "Pan para acompañar"
+      ],
+      "steps": [
+        {
+          "t": "Reduce el tomate",
+          "x": "Sofríe cebolla y ajo con el aceite 4–5 minutos. Añade el tomate, orégano y sal y cocina 10–12 minutos destapado, hasta que espese."
+        },
+        {
+          "t": "Añade los huevos",
+          "x": "Haz cuatro huecos en la salsa, casca un huevo en cada uno y tapa."
+        },
+        {
+          "t": "Cuaja y sirve",
+          "x": "Cocina a fuego medio-bajo 4–6 minutos, hasta que la clara esté cuajada. Sirve de inmediato con pan."
+        }
+      ],
+      "cook": {
+        "heat": "Sartén tapada a fuego medio-bajo",
+        "time": "10–12 min salsa + 4–6 min huevos",
+        "cue": "La salsa no debe estar acuosa y la clara debe estar completamente blanca."
+      },
+      "contains": {
+        "pescado": false,
+        "carne": false,
+        "huevo": true,
+        "lacteos": false
+      },
+      "plan": {
+        "t": "rapida",
+        "s": [
+          "comfort",
+          "aprovecha",
+          "variada"
+        ],
+        "need": [
+          "tomate",
+          "huevos",
+          "pan"
+        ],
+        "uses": [
+          "tomate",
+          "huevos",
+          "ajo",
+          "cebolla",
+          "pan"
+        ]
+      },
+      "safety": "Servir inmediatamente. Si se prepara para personas vulnerables, cuajar también la yema.",
+      "validation": {
+        "ingredients_quantified": true,
+        "method_or_temperature_checked": true,
+        "time_checked": true,
+        "doneness_cue_defined": true,
+        "food_safety_reviewed": true,
+        "substitutions_reviewed": false,
+        "servings_and_scaling_checked": true,
+        "editorial_copy_reviewed": true,
+        "own_image_ready": false,
+        "recipe_page_generated": false,
+        "schema_and_open_graph_checked": false,
+        "site_qa_passed": false,
+        "production_audit_passed": false
+      },
+      "validationSource": "AESAN: cocción suficiente de alimentos de origen animal, refrigeración rápida de sobras y prevención de contaminación cruzada.",
+      "status": "validated-draft-awaiting-image-and-publication"
+    },
+    {
+      "slug": "tortilla-espinacas",
+      "title": "Tortilla de espinacas y cebolla",
+      "family": "Huevos y tortillas",
+      "category": "Cena sencilla",
+      "minutes": 25,
+      "time": "25 min",
+      "servings": "2 personas",
+      "baseServings": 2,
+      "difficulty": "Fácil",
+      "intro": "Una tortilla vegetal en la que controlar el agua de las espinacas importa más que añadir más huevo.",
+      "ingredients": [
+        "250 g de espinacas frescas",
+        "1/2 cebolla, unos 80 g",
+        "4 huevos",
+        "1 cucharada de aceite de oliva",
+        "Sal y pimienta"
+      ],
+      "steps": [
+        {
+          "t": "Pocha la cebolla",
+          "x": "Cocina la cebolla con el aceite a fuego medio 5–6 minutos."
+        },
+        {
+          "t": "Reduce las espinacas",
+          "x": "Añade las espinacas en tandas y cocina hasta que pierdan volumen. Sigue 2–3 minutos más para evaporar el exceso de agua."
+        },
+        {
+          "t": "Cuaja la tortilla",
+          "x": "Mezcla con los huevos batidos y cuaja en sartén antiadherente a fuego medio-bajo 3–4 minutos por la primera cara y 1–3 minutos por la segunda, según el punto deseado."
+        }
+      ],
+      "cook": {
+        "heat": "Sartén a fuego medio-bajo",
+        "time": "10 min relleno + 4–7 min cuajado",
+        "cue": "El relleno debe estar seco antes del huevo; la tortilla no debe soltar líquido al cortarla."
+      },
+      "contains": {
+        "pescado": false,
+        "carne": false,
+        "huevo": true,
+        "lacteos": false
+      },
+      "plan": {
+        "t": "rapida",
+        "s": [
+          "ligera",
+          "variada"
+        ],
+        "need": [
+          "espinacas",
+          "cebolla",
+          "huevos"
+        ],
+        "uses": [
+          "huevos",
+          "cebolla"
+        ]
+      },
+      "safety": "Consumir recién hecha. Para personas vulnerables, cuajar completamente.",
+      "validation": {
+        "ingredients_quantified": true,
+        "method_or_temperature_checked": true,
+        "time_checked": true,
+        "doneness_cue_defined": true,
+        "food_safety_reviewed": true,
+        "substitutions_reviewed": false,
+        "servings_and_scaling_checked": true,
+        "editorial_copy_reviewed": true,
+        "own_image_ready": false,
+        "recipe_page_generated": false,
+        "schema_and_open_graph_checked": false,
+        "site_qa_passed": false,
+        "production_audit_passed": false
+      },
+      "validationSource": "AESAN: cocción suficiente de alimentos de origen animal, refrigeración rápida de sobras y prevención de contaminación cruzada.",
+      "status": "validated-draft-awaiting-image-and-publication"
+    },
+    {
+      "slug": "merluza-plancha-limon",
+      "title": "Merluza a la plancha con limón",
+      "family": "Pescado",
+      "category": "Pescado rápido",
+      "minutes": 20,
+      "time": "20 min",
+      "servings": "2 personas",
+      "baseServings": 2,
+      "difficulty": "Muy fácil",
+      "intro": "Una merluza sencilla donde secar bien el pescado y no moverlo demasiado marca la diferencia.",
+      "ingredients": [
+        "2 lomos de merluza de 160–180 g cada uno",
+        "1 cucharada de aceite de oliva",
+        "1/2 limón",
+        "1 diente de ajo, opcional",
+        "Perejil",
+        "Sal"
+      ],
+      "steps": [
+        {
+          "t": "Seca y sazona",
+          "x": "Seca bien la superficie de la merluza con papel de cocina y sazona justo antes de cocinar."
+        },
+        {
+          "t": "Cocina la primera cara",
+          "x": "Calienta una sartén antiadherente con el aceite. Cocina la merluza 3–4 minutos sin moverla."
+        },
+        {
+          "t": "Termina y aliña",
+          "x": "Da la vuelta y cocina 2–4 minutos más, según grosor. Retira cuando el centro esté opaco y se separe en lascas. Termina con limón y perejil."
+        }
+      ],
+      "cook": {
+        "heat": "Sartén a fuego medio-alto",
+        "time": "5–8 min según grosor",
+        "cue": "El centro debe estar opaco y separarse fácilmente en lascas; no debe verse traslúcido."
+      },
+      "contains": {
+        "pescado": true,
+        "carne": false,
+        "huevo": false,
+        "lacteos": false
+      },
+      "plan": {
+        "t": "rapida",
+        "s": [
+          "ligera",
+          "variada"
+        ],
+        "need": [
+          "merluza",
+          "limón"
+        ],
+        "uses": [
+          "protecong",
+          "limon",
+          "ajo",
+          "hierbascong"
+        ]
+      },
+      "safety": "Cocinar el pescado completamente y evitar contaminación cruzada entre crudo y cocinado.",
+      "validation": {
+        "ingredients_quantified": true,
+        "method_or_temperature_checked": true,
+        "time_checked": true,
+        "doneness_cue_defined": true,
+        "food_safety_reviewed": true,
+        "substitutions_reviewed": false,
+        "servings_and_scaling_checked": true,
+        "editorial_copy_reviewed": true,
+        "own_image_ready": false,
+        "recipe_page_generated": false,
+        "schema_and_open_graph_checked": false,
+        "site_qa_passed": false,
+        "production_audit_passed": false
+      },
+      "validationSource": "AESAN: cocción suficiente de alimentos de origen animal, refrigeración rápida de sobras y prevención de contaminación cruzada.",
+      "status": "validated-draft-awaiting-image-and-publication"
+    },
+    {
+      "slug": "salmon-sarten-limon",
+      "title": "Salmón en sartén con limón",
+      "family": "Pescado",
+      "category": "Pescado rápido",
+      "minutes": 20,
+      "time": "20 min",
+      "servings": "2 personas",
+      "baseServings": 2,
+      "difficulty": "Muy fácil",
+      "intro": "Salmón dorado por fuera y jugoso por dentro, con una salsa corta de limón hecha en la misma sartén.",
+      "ingredients": [
+        "2 lomos de salmón de 150–170 g cada uno",
+        "1 cucharada de aceite de oliva",
+        "1/2 limón",
+        "1 cucharadita de mostaza, opcional",
+        "2 cucharadas de agua",
+        "Sal y pimienta"
+      ],
+      "steps": [
+        {
+          "t": "Dora el salmón",
+          "x": "Seca el pescado, sazona y cocina en sartén caliente con aceite 3–4 minutos por la primera cara."
+        },
+        {
+          "t": "Termina la cocción",
+          "x": "Da la vuelta y cocina 2–4 minutos más según grosor, hasta que el centro esté hecho y se separe en lascas."
+        },
+        {
+          "t": "Haz una salsa corta",
+          "x": "Retira el salmón, baja el fuego y añade agua, limón y mostaza. Remueve 20–30 segundos y vierte sobre el pescado."
+        }
+      ],
+      "cook": {
+        "heat": "Sartén a fuego medio-alto",
+        "time": "5–8 min de pescado",
+        "cue": "El centro debe estar opaco y separarse en lascas; la superficie puede quedar dorada sin quemarse."
+      },
+      "contains": {
+        "pescado": true,
+        "carne": false,
+        "huevo": false,
+        "lacteos": false
+      },
+      "plan": {
+        "t": "rapida",
+        "s": [
+          "ligera",
+          "variada"
+        ],
+        "need": [
+          "salmón",
+          "limón"
+        ],
+        "uses": [
+          "protecong",
+          "limon",
+          "mostaza"
+        ]
+      },
+      "safety": "Cocinar completamente y servir recién hecho.",
+      "validation": {
+        "ingredients_quantified": true,
+        "method_or_temperature_checked": true,
+        "time_checked": true,
+        "doneness_cue_defined": true,
+        "food_safety_reviewed": true,
+        "substitutions_reviewed": false,
+        "servings_and_scaling_checked": true,
+        "editorial_copy_reviewed": true,
+        "own_image_ready": false,
+        "recipe_page_generated": false,
+        "schema_and_open_graph_checked": false,
+        "site_qa_passed": false,
+        "production_audit_passed": false
+      },
+      "validationSource": "AESAN: cocción suficiente de alimentos de origen animal, refrigeración rápida de sobras y prevención de contaminación cruzada.",
+      "status": "validated-draft-awaiting-image-and-publication"
+    },
+    {
+      "slug": "atun-tomate-calabacin",
+      "title": "Atún con tomate y calabacín",
+      "family": "Pescado",
+      "category": "Despensa rápida",
+      "minutes": 25,
+      "time": "25 min",
+      "servings": "2 personas",
+      "baseServings": 2,
+      "difficulty": "Muy fácil",
+      "intro": "Una sartén rápida de calabacín, tomate y conserva de atún para días de despensa.",
+      "ingredients": [
+        "1 calabacín mediano, unos 350 g",
+        "250 g de tomate triturado",
+        "2 latas de atún al natural o en aceite, escurridas, unos 160 g",
+        "1/2 cebolla",
+        "1 cucharada de aceite de oliva",
+        "Orégano",
+        "Sal y pimienta"
+      ],
+      "steps": [
+        {
+          "t": "Dora el calabacín",
+          "x": "Cocina cebolla y calabacín con el aceite a fuego medio-alto 8–10 minutos, hasta que estén tiernos y hayan perdido agua."
+        },
+        {
+          "t": "Reduce el tomate",
+          "x": "Añade el tomate y el orégano y cocina 8–10 minutos destapado."
+        },
+        {
+          "t": "Añade el atún al final",
+          "x": "Incorpora el atún escurrido, mezcla solo 1–2 minutos para calentarlo y retira."
+        }
+      ],
+      "cook": {
+        "heat": "Sartén a fuego medio-alto",
+        "time": "18–22 min",
+        "cue": "El calabacín debe estar tierno y la salsa espesa, sin charco de agua."
+      },
+      "contains": {
+        "pescado": true,
+        "carne": false,
+        "huevo": false,
+        "lacteos": false
+      },
+      "plan": {
+        "t": "rapida",
+        "s": [
+          "ligera",
+          "aprovecha",
+          "variada"
+        ],
+        "need": [
+          "calabacín",
+          "tomate",
+          "atún"
+        ],
+        "uses": [
+          "tomate",
+          "conserva",
+          "cebolla",
+          "oregano"
+        ]
+      },
+      "safety": "Usar la conserva una vez abierta de inmediato o refrigerarla en recipiente adecuado si sobra.",
+      "validation": {
+        "ingredients_quantified": true,
+        "method_or_temperature_checked": true,
+        "time_checked": true,
+        "doneness_cue_defined": true,
+        "food_safety_reviewed": true,
+        "substitutions_reviewed": false,
+        "servings_and_scaling_checked": true,
+        "editorial_copy_reviewed": true,
+        "own_image_ready": false,
+        "recipe_page_generated": false,
+        "schema_and_open_graph_checked": false,
+        "site_qa_passed": false,
+        "production_audit_passed": false
+      },
+      "validationSource": "AESAN: cocción suficiente de alimentos de origen animal, refrigeración rápida de sobras y prevención de contaminación cruzada.",
+      "status": "validated-draft-awaiting-image-and-publication"
+    },
+    {
+      "slug": "pescado-salsa-verde-rapida",
+      "title": "Pescado en salsa verde rápida",
+      "family": "Pescado",
+      "category": "Pescado en salsa",
+      "minutes": 30,
+      "time": "30 min",
+      "servings": "2 personas",
+      "baseServings": 2,
+      "difficulty": "Fácil",
+      "intro": "Una salsa breve de ajo, perejil y caldo que termina de cocinar el pescado sin secarlo.",
+      "ingredients": [
+        "2 lomos de pescado blanco de 160–180 g cada uno",
+        "1 diente de ajo",
+        "1 cucharada de aceite de oliva",
+        "120 ml de caldo o agua",
+        "1 cucharadita de harina, opcional",
+        "2 cucharadas de perejil picado",
+        "Sal"
+      ],
+      "steps": [
+        {
+          "t": "Haz la base",
+          "x": "Dora suavemente el ajo con el aceite sin que tome color oscuro. Si usas harina, añádela y cocina 30 segundos."
+        },
+        {
+          "t": "Forma la salsa",
+          "x": "Añade el caldo poco a poco y remueve hasta que quede una salsa ligera. Incorpora la mitad del perejil."
+        },
+        {
+          "t": "Cocina el pescado",
+          "x": "Introduce el pescado, tapa y cocina a hervor muy suave 6–9 minutos según grosor, girándolo una vez si hace falta."
+        },
+        {
+          "t": "Termina",
+          "x": "Retira cuando el pescado esté opaco y se separe en lascas. Añade el resto del perejil."
+        }
+      ],
+      "cook": {
+        "heat": "Hervor muy suave",
+        "time": "6–9 min de pescado",
+        "cue": "El pescado debe estar opaco hasta el centro y separarse fácilmente en lascas."
+      },
+      "contains": {
+        "pescado": true,
+        "carne": false,
+        "huevo": false,
+        "lacteos": false
+      },
+      "plan": {
+        "t": "rapida",
+        "s": [
+          "ligera",
+          "variada"
+        ],
+        "need": [
+          "pescado blanco",
+          "ajo",
+          "perejil"
+        ],
+        "uses": [
+          "protecong",
+          "ajo",
+          "caldo",
+          "hierbascong"
+        ]
+      },
+      "safety": "Mantener la salsa a hervor suave pero suficiente para cocinar completamente el pescado.",
+      "validation": {
+        "ingredients_quantified": true,
+        "method_or_temperature_checked": true,
+        "time_checked": true,
+        "doneness_cue_defined": true,
+        "food_safety_reviewed": true,
+        "substitutions_reviewed": false,
+        "servings_and_scaling_checked": true,
+        "editorial_copy_reviewed": true,
+        "own_image_ready": false,
+        "recipe_page_generated": false,
+        "schema_and_open_graph_checked": false,
+        "site_qa_passed": false,
+        "production_audit_passed": false
+      },
+      "validationSource": "AESAN: cocción suficiente de alimentos de origen animal, refrigeración rápida de sobras y prevención de contaminación cruzada.",
+      "status": "validated-draft-awaiting-image-and-publication"
+    },
+    {
+      "slug": "pollo-mostaza-sarten",
+      "title": "Pollo a la mostaza en sartén",
+      "family": "Pollo y carne",
+      "category": "Cena rápida",
+      "minutes": 25,
+      "time": "25 min",
+      "servings": "2 personas",
+      "baseServings": 2,
+      "difficulty": "Fácil",
+      "intro": "Pollo dorado y una salsa corta de mostaza hecha con los jugos de la sartén.",
+      "ingredients": [
+        "350 g de pechuga o contramuslo de pollo sin hueso",
+        "1 cucharada de aceite de oliva",
+        "1 cucharada de mostaza",
+        "100 ml de caldo o agua",
+        "1 cucharadita de miel, opcional",
+        "1 cucharadita de zumo de limón",
+        "Sal y pimienta"
+      ],
+      "steps": [
+        {
+          "t": "Dora el pollo",
+          "x": "Corta el pollo en piezas uniformes, sazona y dóralo con el aceite a fuego medio-alto 6–8 minutos, girándolo para que tome color."
+        },
+        {
+          "t": "Termina la cocción",
+          "x": "Baja a fuego medio, añade el caldo y cocina 4–6 minutos más, hasta que el pollo esté completamente hecho."
+        },
+        {
+          "t": "Liga la salsa",
+          "x": "Añade mostaza, miel si usas y limón. Cocina 1 minuto removiendo hasta que la salsa cubra ligeramente el pollo."
+        }
+      ],
+      "cook": {
+        "heat": "Sartén a fuego medio-alto y luego medio",
+        "time": "11–15 min",
+        "cue": "El pollo debe estar completamente opaco en el centro y los jugos salir claros; no debe quedar ninguna zona rosada."
+      },
+      "contains": {
+        "pescado": false,
+        "carne": true,
+        "huevo": false,
+        "lacteos": false
+      },
+      "plan": {
+        "t": "rapida",
+        "s": [
+          "comfort",
+          "variada"
+        ],
+        "need": [
+          "pollo",
+          "mostaza"
+        ],
+        "uses": [
+          "protecong",
+          "mostaza",
+          "caldo",
+          "limon"
+        ]
+      },
+      "safety": "Cocinar el pollo completamente. Evitar que utensilios usados con pollo crudo toquen el alimento ya cocinado.",
+      "validation": {
+        "ingredients_quantified": true,
+        "method_or_temperature_checked": true,
+        "time_checked": true,
+        "doneness_cue_defined": true,
+        "food_safety_reviewed": true,
+        "substitutions_reviewed": false,
+        "servings_and_scaling_checked": true,
+        "editorial_copy_reviewed": true,
+        "own_image_ready": false,
+        "recipe_page_generated": false,
+        "schema_and_open_graph_checked": false,
+        "site_qa_passed": false,
+        "production_audit_passed": false
+      },
+      "validationSource": "AESAN: cocción suficiente de alimentos de origen animal, refrigeración rápida de sobras y prevención de contaminación cruzada.",
+      "status": "validated-draft-awaiting-image-and-publication"
+    },
+    {
+      "slug": "pollo-pimientos",
+      "title": "Pollo con pimientos en sartén",
+      "family": "Pollo y carne",
+      "category": "Cena familiar",
+      "minutes": 30,
+      "time": "30 min",
+      "servings": "2 personas",
+      "baseServings": 2,
+      "difficulty": "Fácil",
+      "intro": "Pollo y pimientos en una sartén amplia, con cocción por tandas para dorar en lugar de hervir.",
+      "ingredients": [
+        "350 g de pollo en tiras",
+        "1 pimiento rojo",
+        "1 pimiento verde",
+        "1/2 cebolla",
+        "1 cucharada de aceite de oliva",
+        "1 cucharadita de pimentón dulce",
+        "60 ml de agua o caldo",
+        "Sal y pimienta"
+      ],
+      "steps": [
+        {
+          "t": "Dora el pollo",
+          "x": "Sazona el pollo y dóralo con la mitad del aceite 5–7 minutos en sartén amplia. Retira a un plato."
+        },
+        {
+          "t": "Cocina las verduras",
+          "x": "Añade el resto del aceite, cebolla y pimientos en tiras. Cocina 8–10 minutos a fuego medio-alto."
+        },
+        {
+          "t": "Reúne y termina",
+          "x": "Devuelve el pollo, añade pimentón y agua o caldo y cocina 4–5 minutos más, hasta que el pollo esté completamente hecho."
+        }
+      ],
+      "cook": {
+        "heat": "Sartén a fuego medio-alto",
+        "time": "18–22 min",
+        "cue": "Los pimientos deben estar tiernos con algo de mordida y el pollo completamente opaco en el centro."
+      },
+      "contains": {
+        "pescado": false,
+        "carne": true,
+        "huevo": false,
+        "lacteos": false
+      },
+      "plan": {
+        "t": "rapida",
+        "s": [
+          "variada",
+          "comfort"
+        ],
+        "need": [
+          "pollo",
+          "pimientos",
+          "cebolla"
+        ],
+        "uses": [
+          "protecong",
+          "cebolla",
+          "pimenton",
+          "caldo"
+        ]
+      },
+      "safety": "Cocinar el pollo completamente y limpiar tabla/cuchillo tras manipularlo crudo.",
+      "validation": {
+        "ingredients_quantified": true,
+        "method_or_temperature_checked": true,
+        "time_checked": true,
+        "doneness_cue_defined": true,
+        "food_safety_reviewed": true,
+        "substitutions_reviewed": false,
+        "servings_and_scaling_checked": true,
+        "editorial_copy_reviewed": true,
+        "own_image_ready": false,
+        "recipe_page_generated": false,
+        "schema_and_open_graph_checked": false,
+        "site_qa_passed": false,
+        "production_audit_passed": false
+      },
+      "validationSource": "AESAN: cocción suficiente de alimentos de origen animal, refrigeración rápida de sobras y prevención de contaminación cruzada.",
+      "status": "validated-draft-awaiting-image-and-publication"
+    },
+    {
+      "slug": "picadillo-pavo-verduras",
+      "title": "Picadillo de pavo y verduras",
+      "family": "Pollo y carne",
+      "category": "Cena rápida",
+      "minutes": 25,
+      "time": "25 min",
+      "servings": "2 personas",
+      "baseServings": 2,
+      "difficulty": "Muy fácil",
+      "intro": "Carne picada de pavo y verduras en una sartén, útil para comer tal cual o rellenar tacos, patatas o bowls.",
+      "ingredients": [
+        "350 g de carne picada de pavo",
+        "1/2 cebolla",
+        "1 zanahoria",
+        "1/2 calabacín, unos 180 g",
+        "1 cucharada de aceite de oliva",
+        "1 cucharadita de pimentón o comino",
+        "2 cucharadas de tomate triturado",
+        "Sal y pimienta"
+      ],
+      "steps": [
+        {
+          "t": "Sofríe las verduras",
+          "x": "Cocina cebolla, zanahoria y calabacín con el aceite 7–8 minutos, hasta que estén tiernos y hayan perdido agua."
+        },
+        {
+          "t": "Añade el pavo",
+          "x": "Sube un poco el fuego, añade la carne y deshazla con una espátula. Cocina 7–9 minutos, hasta que no queden partes rosadas."
+        },
+        {
+          "t": "Termina el sabor",
+          "x": "Añade especias y tomate y cocina 2–3 minutos más, hasta que el conjunto quede jugoso pero no acuoso."
+        }
+      ],
+      "cook": {
+        "heat": "Sartén a fuego medio-alto",
+        "time": "16–20 min",
+        "cue": "La carne debe estar completamente cocinada, sin zonas rosadas, y las verduras tiernas."
+      },
+      "contains": {
+        "pescado": false,
+        "carne": true,
+        "huevo": false,
+        "lacteos": false
+      },
+      "plan": {
+        "t": "rapida",
+        "s": [
+          "aprovecha",
+          "variada"
+        ],
+        "need": [
+          "pavo",
+          "verduras"
+        ],
+        "uses": [
+          "cebolla",
+          "pimenton",
+          "comino",
+          "tomate"
+        ]
+      },
+      "safety": "Cocinar la carne picada completamente y evitar contaminación cruzada.",
+      "validation": {
+        "ingredients_quantified": true,
+        "method_or_temperature_checked": true,
+        "time_checked": true,
+        "doneness_cue_defined": true,
+        "food_safety_reviewed": true,
+        "substitutions_reviewed": false,
+        "servings_and_scaling_checked": true,
+        "editorial_copy_reviewed": true,
+        "own_image_ready": false,
+        "recipe_page_generated": false,
+        "schema_and_open_graph_checked": false,
+        "site_qa_passed": false,
+        "production_audit_passed": false
+      },
+      "validationSource": "AESAN: cocción suficiente de alimentos de origen animal, refrigeración rápida de sobras y prevención de contaminación cruzada.",
+      "status": "validated-draft-awaiting-image-and-publication"
+    }
+  ]
+}
