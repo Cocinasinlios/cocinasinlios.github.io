@@ -1,0 +1,862 @@
+{
+  "version": 1,
+  "batch": "03",
+  "count": 10,
+  "recipes": [
+    {
+      "slug": "berenjena-tomate-sarten",
+      "title": "Berenjena con tomate en sartén",
+      "family": "Verduras",
+      "category": "Cena vegetal",
+      "minutes": 30,
+      "time": "30 min",
+      "servings": "2 personas",
+      "baseServings": 2,
+      "difficulty": "Fácil",
+      "intro": "Berenjena dorada y tomate concentrado en una sartén, con textura y sabor sin necesidad de hornear.",
+      "ingredients": [
+        "1 berenjena grande, unos 450 g",
+        "300 g de tomate triturado",
+        "1/2 cebolla",
+        "1 diente de ajo",
+        "1 1/2 cucharadas de aceite de oliva",
+        "1/2 cucharadita de orégano",
+        "Sal y pimienta"
+      ],
+      "steps": [
+        {
+          "t": "Dora la berenjena",
+          "x": "Corta la berenjena en dados, añade una pizca de sal y dórala con 1 cucharada de aceite a fuego medio-alto 8–10 minutos, removiendo lo justo."
+        },
+        {
+          "t": "Añade cebolla y ajo",
+          "x": "Incorpora el resto del aceite, cebolla y ajo y cocina 4–5 minutos."
+        },
+        {
+          "t": "Concentra el tomate",
+          "x": "Añade tomate y orégano y cocina destapado 10–12 minutos, hasta que la berenjena esté tierna y la salsa espesa."
+        }
+      ],
+      "substitutions": [
+        "Orégano por albahaca.",
+        "Añade garbanzos para convertirla en plato único.",
+        "Tomate triturado por salsa de tomate ya preparada."
+      ],
+      "cook": {
+        "heat": "Sartén a fuego medio-alto y luego medio",
+        "time": "22–27 min",
+        "cue": "La berenjena debe estar completamente tierna y cremosa por dentro, y el tomate sin exceso de agua."
+      },
+      "contains": {
+        "pescado": false,
+        "carne": false,
+        "huevo": false,
+        "lacteos": false
+      },
+      "plan": {
+        "t": "mixta",
+        "s": [
+          "ligera",
+          "aprovecha",
+          "variada"
+        ],
+        "need": [
+          "berenjena",
+          "tomate"
+        ],
+        "uses": [
+          "tomate",
+          "cebolla",
+          "ajo",
+          "oregano"
+        ]
+      },
+      "safety": "Refrigerar pronto si se prepara con antelación o sobra.",
+      "validation": {
+        "ingredients_quantified": true,
+        "method_or_temperature_checked": true,
+        "time_checked": true,
+        "doneness_cue_defined": true,
+        "food_safety_reviewed": true,
+        "substitutions_reviewed": true,
+        "servings_and_scaling_checked": true,
+        "editorial_copy_reviewed": true,
+        "own_image_ready": false,
+        "recipe_page_generated": false,
+        "schema_and_open_graph_checked": false,
+        "site_qa_passed": false,
+        "production_audit_passed": false
+      },
+      "validationSource": "AESAN: cocción suficiente, refrigeración de preparados/sobras y buenas prácticas de higiene.",
+      "status": "validated-draft-awaiting-image-and-publication"
+    },
+    {
+      "slug": "judias-verdes-patata-huevo",
+      "title": "Judías verdes con patata y huevo",
+      "family": "Verduras",
+      "category": "Cena de siempre",
+      "minutes": 30,
+      "time": "30 min",
+      "servings": "2 personas",
+      "baseServings": 2,
+      "difficulty": "Muy fácil",
+      "intro": "Judías verdes, patata y huevo: una cena doméstica sencilla que funciona cuando cada ingrediente llega a su punto.",
+      "ingredients": [
+        "350 g de judías verdes",
+        "350 g de patatas",
+        "4 huevos",
+        "1 cucharada de aceite de oliva",
+        "1 cucharada de vinagre o zumo de limón, opcional",
+        "Sal y pimienta"
+      ],
+      "steps": [
+        {
+          "t": "Cuece la patata",
+          "x": "Corta la patata en trozos medianos y cuécela en agua con sal 12–15 minutos."
+        },
+        {
+          "t": "Añade las judías",
+          "x": "Incorpora las judías verdes los últimos 7–9 minutos, hasta que estén tiernas pero no deshechas."
+        },
+        {
+          "t": "Haz los huevos",
+          "x": "Cuece los huevos 9–10 minutos para yema firme o prepáralos a la plancha si vas a comer el plato inmediatamente."
+        },
+        {
+          "t": "Aliña",
+          "x": "Escurre bien, sirve con el huevo y termina con aceite, pimienta y un punto de vinagre o limón."
+        }
+      ],
+      "substitutions": [
+        "Judías verdes por brócoli o guisantes, ajustando el tiempo.",
+        "Huevo por atún o garbanzos.",
+        "Patata por boniato."
+      ],
+      "cook": {
+        "heat": "Hervor suave",
+        "time": "20–25 min",
+        "cue": "La patata debe atravesarse sin resistencia y las judías estar tiernas manteniendo forma."
+      },
+      "contains": {
+        "pescado": false,
+        "carne": false,
+        "huevo": true,
+        "lacteos": false
+      },
+      "plan": {
+        "t": "rapida",
+        "s": [
+          "ligera",
+          "variada"
+        ],
+        "need": [
+          "judías verdes",
+          "patata",
+          "huevos"
+        ],
+        "uses": [
+          "huevos",
+          "vinagre",
+          "limon"
+        ]
+      },
+      "safety": "Si se usan huevos a la plancha para personas vulnerables, cuajarlos completamente.",
+      "validation": {
+        "ingredients_quantified": true,
+        "method_or_temperature_checked": true,
+        "time_checked": true,
+        "doneness_cue_defined": true,
+        "food_safety_reviewed": true,
+        "substitutions_reviewed": true,
+        "servings_and_scaling_checked": true,
+        "editorial_copy_reviewed": true,
+        "own_image_ready": false,
+        "recipe_page_generated": false,
+        "schema_and_open_graph_checked": false,
+        "site_qa_passed": false,
+        "production_audit_passed": false
+      },
+      "validationSource": "AESAN: cocción suficiente, refrigeración de preparados/sobras y buenas prácticas de higiene.",
+      "status": "validated-draft-awaiting-image-and-publication"
+    },
+    {
+      "slug": "sopa-fideos-verduras",
+      "title": "Sopa rápida de fideos y verduras",
+      "family": "Sopas y cremas",
+      "category": "Cuchara rápida",
+      "minutes": 25,
+      "time": "25 min",
+      "servings": "2 personas",
+      "baseServings": 2,
+      "difficulty": "Muy fácil",
+      "intro": "Una sopa rápida de diario con verduras pequeñas y fideos, pensada para resolverse en una sola cazuela.",
+      "ingredients": [
+        "750 ml de caldo",
+        "1 zanahoria",
+        "1/2 puerro",
+        "100 g de calabacín",
+        "80 g de fideos finos",
+        "1 cucharadita de aceite de oliva",
+        "Sal y pimienta"
+      ],
+      "steps": [
+        {
+          "t": "Cocina la base",
+          "x": "Sofríe puerro y zanahoria con el aceite 4–5 minutos."
+        },
+        {
+          "t": "Añade caldo y verdura",
+          "x": "Incorpora el caldo y el calabacín y hierve suavemente 7–8 minutos."
+        },
+        {
+          "t": "Cuece los fideos",
+          "x": "Añade los fideos y cocina el tiempo indicado por el fabricante, normalmente 3–6 minutos. Ajusta sal al final."
+        }
+      ],
+      "substitutions": [
+        "Fideos por arroz fino o pasta pequeña, ajustando tiempo.",
+        "Puerro por cebolla.",
+        "Calabacín por verduras congeladas."
+      ],
+      "cook": {
+        "heat": "Hervor suave",
+        "time": "15–20 min",
+        "cue": "Las verduras deben estar tiernas y los fideos cocidos pero no pasados."
+      },
+      "contains": {
+        "pescado": false,
+        "carne": false,
+        "huevo": false,
+        "lacteos": false
+      },
+      "plan": {
+        "t": "rapida",
+        "s": [
+          "ligera",
+          "comfort"
+        ],
+        "need": [
+          "caldo",
+          "fideos",
+          "verduras"
+        ],
+        "uses": [
+          "caldo",
+          "verdurascong"
+        ]
+      },
+      "safety": "Si sobra, enfriar y refrigerar pronto; recalentar completamente.",
+      "validation": {
+        "ingredients_quantified": true,
+        "method_or_temperature_checked": true,
+        "time_checked": true,
+        "doneness_cue_defined": true,
+        "food_safety_reviewed": true,
+        "substitutions_reviewed": true,
+        "servings_and_scaling_checked": true,
+        "editorial_copy_reviewed": true,
+        "own_image_ready": false,
+        "recipe_page_generated": false,
+        "schema_and_open_graph_checked": false,
+        "site_qa_passed": false,
+        "production_audit_passed": false
+      },
+      "validationSource": "AESAN: cocción suficiente, refrigeración de preparados/sobras y buenas prácticas de higiene.",
+      "status": "validated-draft-awaiting-image-and-publication"
+    },
+    {
+      "slug": "crema-calabacin-puerro",
+      "title": "Crema de calabacín y puerro",
+      "family": "Sopas y cremas",
+      "category": "Crema",
+      "minutes": 30,
+      "time": "30 min",
+      "servings": "4 raciones",
+      "baseServings": 4,
+      "difficulty": "Muy fácil",
+      "intro": "Una crema suave de calabacín y puerro donde usar poco líquido al principio evita terminar con una sopa aguada.",
+      "ingredients": [
+        "700 g de calabacín",
+        "1 puerro grande, unos 180 g",
+        "1 patata pequeña, unos 150 g",
+        "600 ml de caldo o agua",
+        "1 cucharada de aceite de oliva",
+        "Sal y pimienta",
+        "1 cucharadita de zumo de limón, opcional"
+      ],
+      "steps": [
+        {
+          "t": "Sofríe el puerro",
+          "x": "Cocina el puerro con el aceite y una pizca de sal 5–6 minutos."
+        },
+        {
+          "t": "Cuece la verdura",
+          "x": "Añade calabacín y patata, mezcla y cubre casi por completo con el líquido. Cuece 15–18 minutos."
+        },
+        {
+          "t": "Tritura y ajusta",
+          "x": "Tritura hasta quedar fina. Añade más líquido solo si hace falta y corrige sal, pimienta y limón."
+        }
+      ],
+      "substitutions": [
+        "Patata por alubia blanca para dar cuerpo.",
+        "Puerro por cebolla.",
+        "Caldo por agua."
+      ],
+      "cook": {
+        "heat": "Hervor suave",
+        "time": "20–24 min",
+        "cue": "La patata debe romperse fácilmente con un tenedor antes de triturar."
+      },
+      "contains": {
+        "pescado": false,
+        "carne": false,
+        "huevo": false,
+        "lacteos": false
+      },
+      "plan": {
+        "t": "rapida",
+        "s": [
+          "ligera",
+          "aprovecha"
+        ],
+        "need": [
+          "calabacín",
+          "puerro",
+          "patata"
+        ],
+        "uses": [
+          "caldo",
+          "limon"
+        ]
+      },
+      "safety": "Refrigerar pronto si no se consume inmediatamente.",
+      "validation": {
+        "ingredients_quantified": true,
+        "method_or_temperature_checked": true,
+        "time_checked": true,
+        "doneness_cue_defined": true,
+        "food_safety_reviewed": true,
+        "substitutions_reviewed": true,
+        "servings_and_scaling_checked": true,
+        "editorial_copy_reviewed": true,
+        "own_image_ready": false,
+        "recipe_page_generated": false,
+        "schema_and_open_graph_checked": false,
+        "site_qa_passed": false,
+        "production_audit_passed": false
+      },
+      "validationSource": "AESAN: cocción suficiente, refrigeración de preparados/sobras y buenas prácticas de higiene.",
+      "status": "validated-draft-awaiting-image-and-publication"
+    },
+    {
+      "slug": "crema-tomate",
+      "title": "Crema de tomate y verduras",
+      "family": "Sopas y cremas",
+      "category": "Aprovechamiento",
+      "minutes": 30,
+      "time": "30 min",
+      "servings": "4 raciones",
+      "baseServings": 4,
+      "difficulty": "Fácil",
+      "intro": "Tomate maduro y verduras en una crema útil para aprovechar fruta muy madura sin depender de nata.",
+      "ingredients": [
+        "800 g de tomates maduros o tomate triturado",
+        "1/2 cebolla",
+        "1 zanahoria",
+        "1/2 pimiento rojo",
+        "250 ml de caldo o agua",
+        "1 cucharada de aceite de oliva",
+        "1/2 cucharadita de orégano",
+        "Sal y pimienta"
+      ],
+      "steps": [
+        {
+          "t": "Cocina las verduras",
+          "x": "Sofríe cebolla, zanahoria y pimiento con el aceite 7–8 minutos."
+        },
+        {
+          "t": "Concentra el tomate",
+          "x": "Añade el tomate y orégano y cocina destapado 8–10 minutos."
+        },
+        {
+          "t": "Cuece y tritura",
+          "x": "Añade el caldo, cuece 8–10 minutos más y tritura. Ajusta el líquido al final."
+        }
+      ],
+      "substitutions": [
+        "Pimiento por calabacín.",
+        "Añade alubia blanca para más cuerpo.",
+        "Orégano por albahaca."
+      ],
+      "cook": {
+        "heat": "Hervor suave",
+        "time": "23–28 min",
+        "cue": "La zanahoria debe estar tierna y el tomate haber perdido su sabor crudo antes de triturar."
+      },
+      "contains": {
+        "pescado": false,
+        "carne": false,
+        "huevo": false,
+        "lacteos": false
+      },
+      "plan": {
+        "t": "rapida",
+        "s": [
+          "ligera",
+          "aprovecha",
+          "variada"
+        ],
+        "need": [
+          "tomates maduros",
+          "verduras"
+        ],
+        "uses": [
+          "tomate",
+          "cebolla",
+          "caldo",
+          "oregano"
+        ]
+      },
+      "safety": "Refrigerar pronto si sobra y recalentar completamente.",
+      "validation": {
+        "ingredients_quantified": true,
+        "method_or_temperature_checked": true,
+        "time_checked": true,
+        "doneness_cue_defined": true,
+        "food_safety_reviewed": true,
+        "substitutions_reviewed": true,
+        "servings_and_scaling_checked": true,
+        "editorial_copy_reviewed": true,
+        "own_image_ready": false,
+        "recipe_page_generated": false,
+        "schema_and_open_graph_checked": false,
+        "site_qa_passed": false,
+        "production_audit_passed": false
+      },
+      "validationSource": "AESAN: cocción suficiente, refrigeración de preparados/sobras y buenas prácticas de higiene.",
+      "status": "validated-draft-awaiting-image-and-publication"
+    },
+    {
+      "slug": "tosta-tomate-huevo",
+      "title": "Tosta de tomate y huevo",
+      "family": "Horno y masas",
+      "category": "Cena rápida",
+      "minutes": 15,
+      "time": "15 min",
+      "servings": "2 personas",
+      "baseServings": 2,
+      "difficulty": "Muy fácil",
+      "intro": "Pan crujiente, tomate y huevo para una cena de quince minutos con ingredientes básicos.",
+      "ingredients": [
+        "4 rebanadas de pan",
+        "2 tomates maduros",
+        "4 huevos",
+        "1 cucharada de aceite de oliva",
+        "Sal y pimienta",
+        "Orégano o perejil, opcional"
+      ],
+      "steps": [
+        {
+          "t": "Tuesta el pan",
+          "x": "Tuesta el pan hasta que esté crujiente por fuera."
+        },
+        {
+          "t": "Prepara el tomate",
+          "x": "Ralla o pica el tomate, escurre parte del exceso de agua y mézclalo con sal y aceite."
+        },
+        {
+          "t": "Haz los huevos",
+          "x": "Cocina los huevos a la plancha o revueltos y colócalos sobre el pan con tomate. Sirve inmediatamente."
+        }
+      ],
+      "substitutions": [
+        "Tomate por aguacate o hummus.",
+        "Huevo por conserva de pescado o garbanzos machacados.",
+        "Pan por pita o tortilla tostada."
+      ],
+      "cook": {
+        "heat": "Tostador/sartén y fuego medio para el huevo",
+        "time": "8–12 min",
+        "cue": "El pan debe estar crujiente y el huevo cuajado al punto deseado sin clara líquida."
+      },
+      "contains": {
+        "pescado": false,
+        "carne": false,
+        "huevo": true,
+        "lacteos": false
+      },
+      "plan": {
+        "t": "rapida",
+        "s": [
+          "variada",
+          "comfort"
+        ],
+        "need": [
+          "pan",
+          "tomate",
+          "huevos"
+        ],
+        "uses": [
+          "pan",
+          "tomate",
+          "huevos"
+        ]
+      },
+      "safety": "Servir recién hecho; para personas vulnerables, cuajar completamente el huevo.",
+      "validation": {
+        "ingredients_quantified": true,
+        "method_or_temperature_checked": true,
+        "time_checked": true,
+        "doneness_cue_defined": true,
+        "food_safety_reviewed": true,
+        "substitutions_reviewed": true,
+        "servings_and_scaling_checked": true,
+        "editorial_copy_reviewed": true,
+        "own_image_ready": false,
+        "recipe_page_generated": false,
+        "schema_and_open_graph_checked": false,
+        "site_qa_passed": false,
+        "production_audit_passed": false
+      },
+      "validationSource": "AESAN: cocción suficiente, refrigeración de preparados/sobras y buenas prácticas de higiene.",
+      "status": "validated-draft-awaiting-image-and-publication"
+    },
+    {
+      "slug": "pan-pita-garbanzos",
+      "title": "Pita con garbanzos y verduras",
+      "family": "Horno y masas",
+      "category": "Cena informal",
+      "minutes": 15,
+      "time": "15 min",
+      "servings": "2 personas",
+      "baseServings": 2,
+      "difficulty": "Muy fácil",
+      "intro": "Pan pita, garbanzos, verduras y una salsa rápida para una cena informal que se monta sin apenas cocinar.",
+      "ingredients": [
+        "2 panes pita grandes",
+        "250 g de garbanzos cocidos, escurridos",
+        "1 tomate",
+        "1/2 pepino",
+        "1/4 de cebolla",
+        "2 cucharadas de hummus o yogur natural, opcional",
+        "1/2 limón",
+        "Sal y pimienta"
+      ],
+      "steps": [
+        {
+          "t": "Calienta el pan",
+          "x": "Calienta las pitas en sartén o tostador hasta que estén flexibles y ligeramente doradas."
+        },
+        {
+          "t": "Prepara el relleno",
+          "x": "Mezcla garbanzos, tomate, pepino y cebolla con limón, sal y pimienta."
+        },
+        {
+          "t": "Monta al final",
+          "x": "Abre la pita, unta la salsa si usas y rellena justo antes de comer para que el pan no se humedezca."
+        }
+      ],
+      "substitutions": [
+        "Garbanzos por lentejas escurridas.",
+        "Hummus por guacamole o vinagreta espesa.",
+        "Pepino por pimiento."
+      ],
+      "cook": {
+        "heat": "Sartén o tostador",
+        "time": "10–15 min",
+        "cue": "La pita debe estar caliente y el relleno bien escurrido."
+      },
+      "contains": {
+        "pescado": false,
+        "carne": false,
+        "huevo": false,
+        "lacteos": true
+      },
+      "plan": {
+        "t": "rapida",
+        "s": [
+          "ligera",
+          "variada",
+          "aprovecha"
+        ],
+        "need": [
+          "pita",
+          "garbanzos",
+          "verduras"
+        ],
+        "uses": [
+          "legumbres",
+          "limon",
+          "cebolla"
+        ]
+      },
+      "safety": "Mantener el relleno refrigerado si se prepara con antelación.",
+      "validation": {
+        "ingredients_quantified": true,
+        "method_or_temperature_checked": true,
+        "time_checked": true,
+        "doneness_cue_defined": true,
+        "food_safety_reviewed": true,
+        "substitutions_reviewed": true,
+        "servings_and_scaling_checked": true,
+        "editorial_copy_reviewed": true,
+        "own_image_ready": false,
+        "recipe_page_generated": false,
+        "schema_and_open_graph_checked": false,
+        "site_qa_passed": false,
+        "production_audit_passed": false
+      },
+      "validationSource": "AESAN: cocción suficiente, refrigeración de preparados/sobras y buenas prácticas de higiene.",
+      "status": "validated-draft-awaiting-image-and-publication"
+    },
+    {
+      "slug": "yogur-avena-fruta",
+      "title": "Yogur con avena y fruta",
+      "family": "Desayunos y dulce",
+      "category": "Desayuno",
+      "minutes": 5,
+      "time": "5 min",
+      "servings": "1 persona",
+      "baseServings": 1,
+      "difficulty": "Muy fácil",
+      "intro": "Yogur, avena y fruta en un bol de cinco minutos con textura y saciedad sin receta complicada.",
+      "ingredients": [
+        "180 g de yogur natural o alternativa vegetal",
+        "35 g de copos de avena",
+        "150 g de fruta fresca",
+        "15 g de frutos secos o semillas, opcional",
+        "1 cucharadita de miel, opcional"
+      ],
+      "steps": [
+        {
+          "t": "Haz la base",
+          "x": "Pon el yogur en un bol y mezcla con la avena si prefieres que empiece a hidratarse."
+        },
+        {
+          "t": "Añade la fruta",
+          "x": "Corta la fruta justo antes de servir y colócala encima."
+        },
+        {
+          "t": "Termina con textura",
+          "x": "Añade frutos secos o semillas al final para que se mantengan crujientes."
+        }
+      ],
+      "substitutions": [
+        "Yogur por alternativa vegetal sin azúcar.",
+        "Avena por muesli sencillo.",
+        "Fruta fresca por fruta descongelada bien escurrida."
+      ],
+      "cook": {
+        "heat": "Sin cocción",
+        "time": "5 min",
+        "cue": "La avena puede comerse al momento o dejarse unos minutos para que se hidrate."
+      },
+      "contains": {
+        "pescado": false,
+        "carne": false,
+        "huevo": false,
+        "lacteos": true
+      },
+      "plan": {
+        "t": "rapida",
+        "s": [
+          "ligera",
+          "variada"
+        ],
+        "need": [
+          "yogur",
+          "avena",
+          "fruta"
+        ],
+        "uses": [
+          "frutos"
+        ]
+      },
+      "safety": "Mantener el yogur refrigerado hasta el momento de servir.",
+      "validation": {
+        "ingredients_quantified": true,
+        "method_or_temperature_checked": true,
+        "time_checked": true,
+        "doneness_cue_defined": true,
+        "food_safety_reviewed": true,
+        "substitutions_reviewed": true,
+        "servings_and_scaling_checked": true,
+        "editorial_copy_reviewed": true,
+        "own_image_ready": false,
+        "recipe_page_generated": false,
+        "schema_and_open_graph_checked": false,
+        "site_qa_passed": false,
+        "production_audit_passed": false
+      },
+      "validationSource": "AESAN: cocción suficiente, refrigeración de preparados/sobras y buenas prácticas de higiene.",
+      "status": "validated-draft-awaiting-image-and-publication"
+    },
+    {
+      "slug": "manzana-sarten-avena",
+      "title": "Manzana templada con avena",
+      "family": "Desayunos y dulce",
+      "category": "Desayuno o merienda",
+      "minutes": 15,
+      "time": "15 min",
+      "servings": "2 personas",
+      "baseServings": 2,
+      "difficulty": "Muy fácil",
+      "intro": "Manzana salteada y avena tostada para aprovechar fruta madura en un desayuno o merienda caliente.",
+      "ingredients": [
+        "2 manzanas",
+        "50 g de copos de avena",
+        "1 cucharada de agua",
+        "1 cucharadita de aceite suave o mantequilla",
+        "1 cucharadita de miel o azúcar, opcional",
+        "15 g de frutos secos, opcional"
+      ],
+      "steps": [
+        {
+          "t": "Cocina la manzana",
+          "x": "Corta la manzana en dados y cocínala con el agua y la grasa 6–8 minutos a fuego medio, hasta que esté tierna."
+        },
+        {
+          "t": "Tuesta la avena",
+          "x": "Añade la avena y cocina 2–3 minutos removiendo."
+        },
+        {
+          "t": "Termina",
+          "x": "Añade el endulzante si usas y los frutos secos al final. Sirve templado."
+        }
+      ],
+      "substitutions": [
+        "Manzana por pera.",
+        "Avena por pan desmigado tostado.",
+        "Frutos secos por semillas."
+      ],
+      "cook": {
+        "heat": "Sartén a fuego medio",
+        "time": "10–12 min",
+        "cue": "La manzana debe estar tierna pero mantener forma y la avena oler tostada sin quemarse."
+      },
+      "contains": {
+        "pescado": false,
+        "carne": false,
+        "huevo": false,
+        "lacteos": false
+      },
+      "plan": {
+        "t": "rapida",
+        "s": [
+          "comfort",
+          "aprovecha"
+        ],
+        "need": [
+          "manzanas",
+          "avena"
+        ],
+        "uses": [
+          "frutos"
+        ]
+      },
+      "safety": "Consumir al momento o refrigerar pronto si se guarda.",
+      "validation": {
+        "ingredients_quantified": true,
+        "method_or_temperature_checked": true,
+        "time_checked": true,
+        "doneness_cue_defined": true,
+        "food_safety_reviewed": true,
+        "substitutions_reviewed": true,
+        "servings_and_scaling_checked": true,
+        "editorial_copy_reviewed": true,
+        "own_image_ready": false,
+        "recipe_page_generated": false,
+        "schema_and_open_graph_checked": false,
+        "site_qa_passed": false,
+        "production_audit_passed": false
+      },
+      "validationSource": "AESAN: cocción suficiente, refrigeración de preparados/sobras y buenas prácticas de higiene.",
+      "status": "validated-draft-awaiting-image-and-publication"
+    },
+    {
+      "slug": "tostada-platano-frutos-secos",
+      "title": "Tostada de plátano y frutos secos",
+      "family": "Desayunos y dulce",
+      "category": "Desayuno o merienda",
+      "minutes": 10,
+      "time": "10 min",
+      "servings": "1 persona",
+      "baseServings": 1,
+      "difficulty": "Muy fácil",
+      "intro": "Pan tostado, plátano y frutos secos para una merienda o desayuno rápido que aprovecha fruta madura.",
+      "ingredients": [
+        "2 rebanadas de pan",
+        "1 plátano maduro",
+        "20 g de crema de cacahuete o almendra, opcional",
+        "15 g de frutos secos picados",
+        "1 cucharadita de miel, opcional",
+        "1 pizca de sal"
+      ],
+      "steps": [
+        {
+          "t": "Tuesta el pan",
+          "x": "Tuesta el pan hasta que esté crujiente."
+        },
+        {
+          "t": "Añade la base",
+          "x": "Unta crema de frutos secos si usas y reparte el plátano en rodajas o machacado."
+        },
+        {
+          "t": "Termina",
+          "x": "Añade frutos secos, una pizca mínima de sal y miel si quieres más dulzor."
+        }
+      ],
+      "substitutions": [
+        "Plátano por pera o manzana fina.",
+        "Crema de frutos secos por tahini.",
+        "Pan por tortita de avena ya preparada."
+      ],
+      "cook": {
+        "heat": "Tostador o sartén",
+        "time": "5–10 min",
+        "cue": "El pan debe estar crujiente; monta justo antes de comer para que no se ablande."
+      },
+      "contains": {
+        "pescado": false,
+        "carne": false,
+        "huevo": false,
+        "lacteos": false
+      },
+      "plan": {
+        "t": "rapida",
+        "s": [
+          "comfort",
+          "aprovecha"
+        ],
+        "need": [
+          "pan",
+          "plátano",
+          "frutos secos"
+        ],
+        "uses": [
+          "pan",
+          "frutos"
+        ]
+      },
+      "safety": "Preparar justo antes de consumir.",
+      "validation": {
+        "ingredients_quantified": true,
+        "method_or_temperature_checked": true,
+        "time_checked": true,
+        "doneness_cue_defined": true,
+        "food_safety_reviewed": true,
+        "substitutions_reviewed": true,
+        "servings_and_scaling_checked": true,
+        "editorial_copy_reviewed": true,
+        "own_image_ready": false,
+        "recipe_page_generated": false,
+        "schema_and_open_graph_checked": false,
+        "site_qa_passed": false,
+        "production_audit_passed": false
+      },
+      "validationSource": "AESAN: cocción suficiente, refrigeración de preparados/sobras y buenas prácticas de higiene.",
+      "status": "validated-draft-awaiting-image-and-publication"
+    }
+  ]
+}
