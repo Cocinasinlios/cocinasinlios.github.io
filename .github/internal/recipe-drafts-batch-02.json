@@ -85,13 +85,13 @@
         "servings_and_scaling_checked": true,
         "editorial_copy_reviewed": true,
         "own_image_ready": false,
-        "recipe_page_generated": false,
+        "recipe_page_generated": true,
         "schema_and_open_graph_checked": false,
         "site_qa_passed": false,
         "production_audit_passed": false
       },
       "validationSource": "AESAN: cocción suficiente, refrigeración de preparados/sobras y buenas prácticas de higiene.",
-      "status": "validated-draft-awaiting-image-and-publication"
+      "status": "page-generated-awaiting-image"
     },
     {
       "slug": "alubias-tomate",
@@ -175,13 +175,13 @@
         "servings_and_scaling_checked": true,
         "editorial_copy_reviewed": true,
         "own_image_ready": false,
-        "recipe_page_generated": false,
+        "recipe_page_generated": true,
         "schema_and_open_graph_checked": false,
         "site_qa_passed": false,
         "production_audit_passed": false
       },
       "validationSource": "AESAN: cocción suficiente, refrigeración de preparados/sobras y buenas prácticas de higiene.",
-      "status": "validated-draft-awaiting-image-and-publication"
+      "status": "page-generated-awaiting-image"
     },
     {
       "slug": "lentejas-curry",
@@ -264,13 +264,13 @@
         "servings_and_scaling_checked": true,
         "editorial_copy_reviewed": true,
         "own_image_ready": false,
-        "recipe_page_generated": false,
+        "recipe_page_generated": true,
         "schema_and_open_graph_checked": false,
         "site_qa_passed": false,
         "production_audit_passed": false
       },
       "validationSource": "AESAN: cocción suficiente, refrigeración de preparados/sobras y buenas prácticas de higiene.",
-      "status": "validated-draft-awaiting-image-and-publication"
+      "status": "page-generated-awaiting-image"
     },
     {
       "slug": "ensalada-alubias-atun",
@@ -354,13 +354,13 @@
         "servings_and_scaling_checked": true,
         "editorial_copy_reviewed": true,
         "own_image_ready": false,
-        "recipe_page_generated": false,
+        "recipe_page_generated": true,
         "schema_and_open_graph_checked": false,
         "site_qa_passed": false,
         "production_audit_passed": false
       },
       "validationSource": "AESAN: cocción suficiente, refrigeración de preparados/sobras y buenas prácticas de higiene.",
-      "status": "validated-draft-awaiting-image-and-publication"
+      "status": "page-generated-awaiting-image"
     },
     {
       "slug": "pasta-ajo-limon",
@@ -447,13 +447,13 @@
         "servings_and_scaling_checked": true,
         "editorial_copy_reviewed": true,
         "own_image_ready": false,
-        "recipe_page_generated": false,
+        "recipe_page_generated": true,
         "schema_and_open_graph_checked": false,
         "site_qa_passed": false,
         "production_audit_passed": false
       },
       "validationSource": "AESAN: cocción suficiente, refrigeración de preparados/sobras y buenas prácticas de higiene.",
-      "status": "validated-draft-awaiting-image-and-publication"
+      "status": "page-generated-awaiting-image"
     },
     {
       "slug": "pasta-garbanzos-tomate",
@@ -538,13 +538,13 @@
         "servings_and_scaling_checked": true,
         "editorial_copy_reviewed": true,
         "own_image_ready": false,
-        "recipe_page_generated": false,
+        "recipe_page_generated": true,
         "schema_and_open_graph_checked": false,
         "site_qa_passed": false,
         "production_audit_passed": false
       },
       "validationSource": "AESAN: cocción suficiente, refrigeración de preparados/sobras y buenas prácticas de higiene.",
-      "status": "validated-draft-awaiting-image-and-publication"
+      "status": "page-generated-awaiting-image"
     },
     {
       "slug": "arroz-verduras-sarten",
@@ -625,13 +625,13 @@
         "servings_and_scaling_checked": true,
         "editorial_copy_reviewed": true,
         "own_image_ready": false,
-        "recipe_page_generated": false,
+        "recipe_page_generated": true,
         "schema_and_open_graph_checked": false,
         "site_qa_passed": false,
         "production_audit_passed": false
       },
       "validationSource": "AESAN: cocción suficiente, refrigeración de preparados/sobras y buenas prácticas de higiene.",
-      "status": "validated-draft-awaiting-image-and-publication"
+      "status": "page-generated-awaiting-image"
     },
     {
       "slug": "cuscus-limon-hierbas",
@@ -714,13 +714,13 @@
         "servings_and_scaling_checked": true,
         "editorial_copy_reviewed": true,
         "own_image_ready": false,
-        "recipe_page_generated": false,
+        "recipe_page_generated": true,
         "schema_and_open_graph_checked": false,
         "site_qa_passed": false,
         "production_audit_passed": false
       },
       "validationSource": "AESAN: cocción suficiente, refrigeración de preparados/sobras y buenas prácticas de higiene.",
-      "status": "validated-draft-awaiting-image-and-publication"
+      "status": "page-generated-awaiting-image"
     },
     {
       "slug": "patatas-salteadas-huevo",
@@ -800,13 +800,13 @@
         "servings_and_scaling_checked": true,
         "editorial_copy_reviewed": true,
         "own_image_ready": false,
-        "recipe_page_generated": false,
+        "recipe_page_generated": true,
         "schema_and_open_graph_checked": false,
         "site_qa_passed": false,
         "production_audit_passed": false
       },
       "validationSource": "AESAN: cocción suficiente, refrigeración de preparados/sobras y buenas prácticas de higiene.",
-      "status": "validated-draft-awaiting-image-and-publication"
+      "status": "page-generated-awaiting-image"
     },
     {
       "slug": "calabacin-tomate-sarten",
@@ -887,13 +887,13 @@
         "servings_and_scaling_checked": true,
         "editorial_copy_reviewed": true,
         "own_image_ready": false,
-        "recipe_page_generated": false,
+        "recipe_page_generated": true,
         "schema_and_open_graph_checked": false,
         "site_qa_passed": false,
         "production_audit_passed": false
       },
       "validationSource": "AESAN: cocción suficiente, refrigeración de preparados/sobras y buenas prácticas de higiene.",
-      "status": "validated-draft-awaiting-image-and-publication"
+      "status": "page-generated-awaiting-image"
     }
   ]
 }
